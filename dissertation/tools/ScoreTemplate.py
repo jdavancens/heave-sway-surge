@@ -1,9 +1,14 @@
-# -*- coding: utf-8 -*-
+'''
+Created on Oct 31, 2015
+
+@author: josephdavancens
+'''
 from abjad import *  # @UnusedWildImport
 from abjad.tools import abctools
 from abjad.tools import indicatortools
 from abjad.tools import instrumenttools
 from abjad.tools import scoretools
+
 
 class ScoreTemplate(abctools.AbjadValueObject):
     r'''Score template.
