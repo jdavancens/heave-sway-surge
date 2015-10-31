@@ -1,6 +1,13 @@
 eclipse.preferences.version=1
 encoding//dissertation/__init__.py=utf-8
 encoding//dissertation/materials/__init__.py=utf-8
+encoding//dissertation/materials/context_names/__init__.py=utf-8
+encoding//dissertation/materials/context_names/__metadata__.py=utf-8
+encoding//dissertation/materials/context_names/definition.py=utf-8
+encoding//dissertation/materials/instruments/definition.py=utf-8
+encoding//dissertation/materials/score_setup/__init__.py=utf-8
+encoding//dissertation/materials/score_setup/__metadata__.py=utf-8
+encoding//dissertation/materials/score_setup/definition.py=utf-8
 encoding//dissertation/segments/__init__.py=utf-8
 encoding//dissertation/tools/ScoreTemplate.py=utf-8
 encoding//dissertation/tools/__init__.py=utf-8
