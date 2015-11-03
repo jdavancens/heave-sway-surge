@@ -4,18 +4,87 @@ Created on Oct 31, 2015
 
 @author: josephdavancens
 '''
+import copy
+from abjad import *  # @UnusedWildImport
+from abjad.tools import indicatortools
+from dissertation.tools.ScopeTokenParser import ScopeTokenParser
+from dissertation.tools import MusicHandler
 
-from abjad import *
-from abjad.tools import instrumenttools, indicatortools
-from abjad.tools import lilypondfiletools
-from abjad.tools import scoretools
-from  dissertation.tools.SegmentMakerBaseClass import SegmentMakerBaseClass
+class SegmentMakerBaseClass(abctools.AbjadObject):  # @UndefinedVariable
+    r'''Segment-maker baseclass.
+    '''
+
+    ### CLASS VARIABLES ###
+
+    __slots__ = (
+        '_lilypond_file',
+        '_previous_segment_metadata',
+        '_segment_metadata',
+        )
+
+    ### INITIALIZER ###
+
+    def __init__(self,):
+        self._lilypond_file = None
+
+    ### SPECIAL METHODS ###
+
+    def __call__(
+        self,
+        segment_metadata=None,
+        previous_segment_metadata=None,
+        ):
+        r'''Calls segment-maker.
+
+        Returns LilyPond file.
+        '''
+        segment_metadata = datastructuretools.TypedOrderedDict(
+            segment_metadata)
+        previous_segment_metadata = datastructuretools.TypedOrderedDict(
+            previous_segment_metadata)
+        self._segment_metadata = segment_metadata
+        self._previous_segment_metadata = previous_segment_metadata
+        lilypond_file = self._make_lilypond_file()
+        assert isinstance(lilypond_file, lilypondfiletools.LilyPondFile)  # @UndefinedVariable
+        self._lilypond_file = lilypond_file
+        return self._lilypond_file, self._segment_metadata
+
+    def __eq__(self, expr):
+        r'''Is true if `expr` is a segment-maker with equivalent properties.
+        '''
+        return systemtools.StorageFormatManager.compare(self, expr)
+
+    def __hash__(self):
+        r'''Hashes segment-maker.
+        '''
+        hash_values = systemtools.StorageFormatManager.get_hash_values(self)
+        return hash(hash_values)
+
+    def __illustrate__(self, **kwargs):
+        r'''Illustrates segment-maker.
+
+        Returns LilyPond file.
+        '''
+        lilypond_file, metadata = self(**kwargs)  # @UnusedVariable
+        return lilypond_file
+
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def lilypond_file(self):
+        r'''Gets segment LilyPond file.
+
+        Created when segment-maker is called.
+
+        Returns LilyPond file.
+        '''
+        return self._lilypond_file
+
 class SegmentMaker(SegmentMakerBaseClass):
     '''Segment-maker
     Fills a score template with music created in a segment_xx definition
     '''
     ### CLASS ATTRIBUTES ###
-
     __slots__ = (
         '_cached_score_template_start_clefs',
         '_cached_score_template_start_instruments',
@@ -38,10 +107,43 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     ### INITIALIZER ###
 
-    def __init__(self, params):
-        '''
-        Constructor
-        '''
+
+    def __init__(
+        self,
+        final_barline=False,
+        final_markup=None,
+        final_markup_extra_offset=None,
+        measures_per_stage=None,
+        music_makers=None,
+        raise_approximate_duration=False,
+        show_stage_annotations=False,
+        tempo_map=None,
+        time_signatures=None,
+        transpose_score=False,
+        ):
+        import dissertation
+        superclass = super(SegmentMaker, self)
+        superclass.__init__()
+        self._initialize_music_makers(music_makers, dissertation.tools)  # @UndefinedVariable
+        self.final_barline = final_barline
+        if final_markup is not None:
+            assert isinstance(final_markup, markuptools.Markup)# @UndefinedVariable
+        self._final_markup = final_markup
+        if final_markup_extra_offset is not None:
+            assert isinstance(final_markup_extra_offset, tuple)
+        self._final_markup_extra_offset = final_markup_extra_offset
+        self.measures_per_stage = measures_per_stage
+        self._music_handlers = []
+        self._music_maker_class = dissertation.tools.MusicMaker# @UndefinedVariable
+        self._initialize_time_signatures(time_signatures)
+        self.raise_approximate_duration = bool(raise_approximate_duration)
+        assert isinstance(show_stage_annotations, bool)
+        self._show_stage_annotations = show_stage_annotations
+        self.tempo_map = tempo_map
+        assert isinstance(transpose_score, bool)
+        self._transpose_score = transpose_score
+
+
     ### SPECIAL METHODS ###
 
     def __call__(
@@ -66,7 +168,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._populate_time_signature_context()
         self._annotate_stages()
         with systemtools.Timer() as timer:
-            print('\tInterpreting music-makers ... ', end='')
+            print("\tInterpreting music-makers ... ")
             self._interpret_music_makers()
             message = '{} sec.'
             message = message.format(int(timer.elapsed_time))
@@ -85,6 +187,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._check_well_formedness()
         self._update_segment_metadata(dissertation.materials)
         self._raise_approximate_duration_in_seconds()
+        print("aoerih")
         return self.lilypond_file, self._segment_metadata
 
     ### PRIVATE METHODS ###
@@ -112,7 +215,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         for stage_index in range(self.stage_count):
             stage_number = stage_index + 1
             result = self._stage_number_to_measure_indices(stage_number)
-            start_measure_index, stop_measure_index = result
+            start_measure_index, stop_measure_index = result  # @UnusedVariable
             rehearsal_letter = self._get_rehearsal_letter()
             string = '[{}{}]'.format(rehearsal_letter, stage_number)
             markup = Markup(string)
@@ -145,7 +248,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         cached_instruments = self._cached_score_template_start_instruments
         previous_instruments = self._previous_segment_metadata.get(
             'end_instruments_by_staff', datastructuretools.TypedOrderedDict())
-        prototype = instrumenttools.Instrument
+        prototype = instrumenttools.Instrument# @UndefinedVariable
         for staff in iterate(self._score).by_class(Staff):
             if inspect_(staff).has_indicator(prototype):
                 continue
@@ -167,7 +270,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         letter_number = segment_number - 1
         if letter_number == 0:
             return
-        rehearsal_mark = indicatortools.RehearsalMark(number=letter_number)
+        rehearsal_mark = indicatortools.RehearsalMark(number=letter_number)# @UndefinedVariable
         voice = self._score['Time Signature Context']
         first_leaf = inspect_(voice).get_leaf(0)
         attach(rehearsal_mark, first_leaf)
@@ -176,8 +279,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         if not self.tempo_map:
             return
         context = self._score['Time Signature Context']
-        skips = list(iterate(context).by_class(scoretools.Leaf))
-        tempo_spanner = spannertools.TempoSpanner(
+        skips = list(iterate(context).by_class(scoretools.Leaf))# @UndefinedVariable
+        tempo_spanner = spannertools.TempoSpanner(# @UndefinedVariable
             start_with_parenthesized_tempo=False,
             )
         attach(tempo_spanner, skips)
@@ -187,11 +290,11 @@ class SegmentMaker(SegmentMakerBaseClass):
                 message = message.format(stage_number, 0, self.stage_count)
                 raise Exception(message)
             result = self._stage_number_to_measure_indices(stage_number)
-            start_measure_index, stop_measure_index = result
+            start_measure_index, stop_measure_index = result  # @UnusedVariable
             start_measure = context[start_measure_index]
             assert isinstance(start_measure, Measure), start_measure
             start_skip = start_measure[0]
-            assert isinstance(start_skip, scoretools.Skip), start_skip
+            assert isinstance(start_skip, scoretools.Skip), start_skip# @UndefinedVariable
             attach(directive, start_skip, is_annotation=True)
 
     def _check_well_formedness(self):
@@ -233,7 +336,7 @@ class SegmentMaker(SegmentMakerBaseClass):
     def _get_time_signatures(self, start_stage=None, stop_stage=None):
         counts = len(self.time_signatures), sum(self.measures_per_stage)
         assert counts[0] == counts[1], counts
-        stages = sequencetools.partition_sequence_by_counts(
+        stages = sequencetools.partition_sequence_by_counts(# @UndefinedVariable
             self.time_signatures,
             self.measures_per_stage,
             )
@@ -243,8 +346,26 @@ class SegmentMaker(SegmentMakerBaseClass):
         else:
             stop_index = stop_stage
             stages = stages[start_index:stop_index]
-            time_signatures = sequencetools.flatten_sequence(stages)
+            time_signatures = sequencetools.flatten_sequence(stages)# @UndefinedVariable
         return time_signatures
+
+    def _initialize_music_makers(self, music_makers, makers_package):
+        music_makers = music_makers or []
+        music_makers = list(music_makers)
+        for music_maker in music_makers:
+            assert isinstance(music_maker, makers_package.MusicMaker)
+        self._music_makers = music_makers
+
+
+    def _initialize_time_signatures(self, time_signatures):
+        time_signatures = time_signatures or ()
+        time_signatures_ = list(time_signatures)  # @UnusedVariable
+        time_signatures_ = []
+        for time_signature in time_signatures:
+            time_signature = indicatortools.TimeSignature(time_signature)
+            time_signatures_.append(time_signature)
+        time_signatures_ = tuple(time_signatures_)
+        self.time_signatures = time_signatures_
 
     def _interpret_music_handlers(self):
         for music_handler in self.music_handlers:
@@ -253,7 +374,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                 music_handler.scope.context_name,
                 music_handler.scope.stages,
                 )
-            print(message, end='')
+            print(message)
             with systemtools.Timer() as timer:
                 self._interpret_music_handler(music_handler)
             message = '{} sec.'
@@ -263,13 +384,13 @@ class SegmentMaker(SegmentMakerBaseClass):
     def _interpret_music_makers(self):
         self._make_music_for_time_signature_context()
         self._attach_tempo_indicators()
-        for voice in iterate(self._score).by_class(scoretools.Voice):
+        for voice in iterate(self._score).by_class(scoretools.Voice):# @UndefinedVariable
             self._make_music_for_voice(voice)
 
     def _label_instrument_changes(self):
-        prototype = instrumenttools.Instrument
+        prototype = instrumenttools.Instrument# @UndefinedVariable
         for staff_group in iterate(self._score).by_class(StaffGroup):
-            leaves = iterate(staff_group).by_class(scoretools.Leaf)
+            leaves = iterate(staff_group).by_class(scoretools.Leaf)# @UndefinedVariable
             for leaf_index, leaf in enumerate(leaves):
                 instruments = inspect_(leaf).get_indicators(prototype)
                 if not instruments:
@@ -293,12 +414,12 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     def _make_instrument_change_markup(self, instrument):
         string = 'to {}'.format(instrument.instrument_name)
-        markup = markuptools.Markup(string, direction=Up)
+        markup = markuptools.Markup(string, direction=1)# @UndefinedVariable
         markup = markup.box().override(('box-padding', 0.75))
         return markup
 
     def _make_lilypond_file(self):
-        lilypond_file = lilypondfiletools.make_basic_lilypond_file(self._score)
+        lilypond_file = lilypondfiletools.make_basic_lilypond_file(self._score)# @UndefinedVariable
         for item in lilypond_file.items[:]:
             if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
                 lilypond_file.items.remove(item)
@@ -334,7 +455,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             if music_maker.stages is None:
                 continue
             if next_stage < music_maker.start_stage:
-                start_stage = next_stage
+                start_stage = next_stage  # @UnusedVariable
                 stop_stage = music_maker.start_stage - 1
                 time_signatures = self._get_time_signatures(
                     start_stage=next_stage,
@@ -366,15 +487,15 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     def _make_skip_filled_measures(self, time_signatures=None):
         time_signatures = time_signatures or self.time_signatures
-        measures = scoretools.make_spacer_skip_measures(time_signatures)
+        measures = scoretools.make_spacer_skip_measures(time_signatures)# @UndefinedVariable
         return measures
 
     def _populate_time_signature_contexts(self):
         measures = self._make_skip_filled_measures()
-        leaves = iterate(measures).be_class(scoretools.Leaf)
+        leaves = iterate(measures).be_class(scoretools.Leaf)# @UndefinedVariable
         leaves = list(leaves)
         first_leaf = leaves[0]
-        dummy_first_bar_command = indicatortools.LilyPondCommand('bar ""')
+        dummy_first_bar_command = indicatortools.LilyPondCommand('bar ""')# @UndefinedVariable
         attach(dummy_first_bar_command, first_leaf)
         time_signature_context = self._score['Time Signature Context']
         time_signature_context.extend(measures)
@@ -384,7 +505,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             return
         context = self._score['Time Signature Context']
         current_tempo = None
-        leaves = iterate(context).by_class(scoretools.Leaf)
+        leaves = iterate(context).by_class(scoretools.Leaf)# @UndefinedVariable
         measure_summaries = []
         tempo_index = 0
         is_trending = False
@@ -440,7 +561,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         dictionary = datastructuretools.TypedOrderedDict()
         self._cached_score_template_start_clefs = dictionary
         for staff_group in iterate(self.score).by_class(StaffGroup):
-            prototype = instrumenttools.Instrument
+            prototype = instrumenttools.Instrument# @UndefinedVariable
             instrument = inspect_(staff_group).get_indicator(prototype)
             instrument_name = self._instrument_to_instrument_name(
                 instrument,
@@ -448,17 +569,17 @@ class SegmentMaker(SegmentMakerBaseClass):
                 )
             self._cached_score_template_start_instruments[staff_group.name] = \
                 instrument_name
-            detach(instrumenttools.Instrument, staff_group)
+            detach(instrumenttools.Instrument, staff_group)# @UndefinedVariable
 
     def _transpose_instruments(self):
         if not self.transpose_score:
             return
         for voice in iterate(self._score).by_class(Voice):
-            for leaf in iterate(voice).by_class(scoretools.Leaf):
+            for leaf in iterate(voice).by_class(scoretools.Leaf):# @UndefinedVariable
                 if not isinstance(leaf, (Note, Chord)):
                     continue
                 inspector = inspect_(leaf)
-                prototype = instrumenttools.Instrument
+                prototype = instrumenttools.Instrument# @UndefinedVariable
                 instrument = inspector.get_effective(prototype)
                 if instrument is None:
                     continue
@@ -553,3 +674,92 @@ class SegmentMaker(SegmentMakerBaseClass):
         return self._transpose_score
 
     ### PUBLIC METHODS ###
+    def copy_music_maker(self, _context_name, _stage, **kwargs):
+        music_maker = self.get_music_maker(_context_name, _stage)
+        music_maker = copy.deepcopy(music_maker)
+        new_music_maker = new(music_maker, **kwargs)
+        self.music_makers.append(new_music_maker)
+        return new_music_maker
+
+    def get_music_maker(self, context_name, stage):
+        music_makers = []  # @UnusedVariable
+        for music_maker in self.music_makers:
+            if music_maker.context_name == context_name:
+                start = music_maker.start_stage
+                stop = music_maker.stop_stage + 1
+                if stage in range(start, stop):
+                    return music_maker
+        message = 'no music-maker for {!r} found for stage {}.'
+        message = message.format(context_name, stage)
+        raise KeyError(message)
+
+    def make_music_handler(
+        self,
+        scope,
+        specifiers,
+        ):
+        parser = ScopeTokenParser()
+        scope_tokens = []
+        if isinstance(scope, tuple):
+            simple_scopes = parser._to_simple_scopes(scope)
+            scope_tokens.extend(simple_scopes)
+        elif isinstance(scope, list):
+            for scope_token in scope:
+                simple_scopes = parser._to_simple_scopes(scope_token)
+                scope_tokens.extend(simple_scopes)
+        else:
+            raise TypeError(scope)
+        music_handlers = []
+        for scope_token in scope_tokens:
+            music_handler = MusicHandler(
+                scope=scope_token,
+                specifiers=specifiers,
+                )
+            self._music_handlers.append(music_handler)
+            music_handlers.append(music_handler)
+        if len(music_handlers) == 1:
+            return music_handlers[0]
+        else:
+            return music_handlers
+
+    def make_music_maker(
+        self,
+        context_name=None,
+        division_maker=None,
+        instrument=None,
+        rewrite_meter=False,
+        rhythm_maker=None,
+        rhythm_overwrites=None,
+        split_at_measure_boundaries=False,
+        stages=None,
+        start_tempo=None,
+        stop_tempo=None,
+        ):
+        r'''Makes music-maker
+
+        Appends music-maker to segment-maker's list of music-makers.
+
+        Returns new music-maker.
+        '''
+        music_maker = self._music_maker_class(
+            context_name=context_name,
+            division_maker=division_maker,
+            instrument=instrument,
+            rewrite_meter=rewrite_meter,
+            rhythm_maker=rhythm_maker,
+            rhythm_overwrites=rhythm_overwrites,
+            split_at_measure_boundaries=split_at_measure_boundaries,
+            stages=stages,
+            start_tempo=start_tempo,
+            stop_tempo=stop_tempo,
+            )
+        self.music_makers.append(music_maker)
+        return music_maker
+
+    def validate_time_signatures(self):
+        r'''Is true when the sum of all measures per stage equals
+        total number of measures in segment. Otherwise false.
+
+        Returns boolean.
+        '''
+        return sum(self.measures_per_stage) == self.measure_count
