@@ -3,15 +3,7 @@ Created on Oct 31, 2015
 
 @author: josephdavancens
 '''
-from abjad import *  # @UnusedWildImport
-from abjad.tools import abctools
-from abjad.tools import rhythmmakertools
-from abjad.tools import metertools
-from experimental.tools import makertools
-from abjad.tools import sequencetools
-from abjad.tools import scoretools
-from abjad.tools import selectiontools
-from abjad.tools import indicatortools
+from abjad import *
 
 class MusicMaker(abctools.AbjadValueObject):
     r''' music-maker
@@ -22,8 +14,8 @@ class MusicMaker(abctools.AbjadValueObject):
         '_rhythm_overwrites',
         '_stages',
         'context_name',
-        'division_maker',
-        'instrument',
+        'divisions',
+        'instrument_name',
         'rewrite_meter',
         'rhythm_maker',
         'split_at_measure_boundaries',
@@ -32,57 +24,52 @@ class MusicMaker(abctools.AbjadValueObject):
         )
 
 
-
     ### INTITIALIZER ###
     def __init__(
         self,
         context_name=None,
-        division_maker=None,
-        instrument=None,
+        instrument_name=None,
         rewrite_meter=False,
         rhythm_maker = None,
         rhythm_overwrites=None,
         split_at_measure_boundaries=False,
-        staff_line_count=None,
         stages=None,
         start_tempo=None,
         stop_tempo=None,
         ):
         self.context_name = context_name
-        if (not 'Maker' in division_maker.__class__.name__ and
-            not 'DivisionCallback' in division_maker.__class__.__name__):
-            division_maker = makertools.SplitByDurationsDivisionCallback(
-                durations=division_maker,
-                )
-        self.division_maker = division_maker
-        self.instrument = instrument
+        self.instrument_name = instrument_name
         self.rewrite_meter = rewrite_meter
         self.rhythm_maker = rhythm_maker
         self.rhythm_overwrites = rhythm_overwrites
         self.split_at_measure_boundaries = split_at_measure_boundaries
-        self._staff_line_count = staff_line_count
         self.stages = stages
         self.start_tempo = start_tempo
         self.stop_tempo = stop_tempo
 
     ### SPECIAL METHODS ###
-    def __call__(self, effective_staff_name, time_signatures=None):
+    def __call__(
+            self,
+            effective_staff_name,
+            divisions=None,
+            time_signatures=None
+        ):
         r'''Calls music-maker
 
-        Returns music as a selectin.
+        Returns music as a selection.
         '''
         for time_signature in time_signatures:
             assert isinstance(time_signature, indicatortools.TimeSignature)
-        music = self._make_rhythm(time_signatures)
+        music = self._make_rhythm(divisions, time_signatures)
         assert isinstance(music, (tuple, list, Voice)), repr(music)
         first_item = music[0]
         if isinstance(first_item, selectiontools.Selection):
             first_component = first_item
         first_leaf = inspect_(first_component).get_leaf(0)
         assert isinstance(first_leaf, scoretools.Leaf), repr(first_leaf)
-        if self.instrument is not None:
+        if self.instrument_name is not None:
             self._attach_instrument(
-                self.instrument,
+                self.instrument_name,
                 first_leaf,
                 effective_staff_name,
                 scope=Staff,
@@ -90,49 +77,31 @@ class MusicMaker(abctools.AbjadValueObject):
         return music
     ### PRIVATE PROPERTIES ###
 
-    @property
-    def _storage_format_specification(self):
-        manager = systemtools.StorageFormatManager
-        keyword_argument_names = \
-            manager.get_signature_keyword_argument_names(self)
-        if not self.rhythm_overwrites:
-            keyword_argument_names = list(keyword_argument_names)
-            keyword_argument_names.remove('rhythm_overwrites')
-        return systemtools.StorageFormatSpecification(
-            self,
-            keyword_argument_names=keyword_argument_names
-            )
-
     ### PRIVATE METHODS ###
 
     def _attach_instrument(
         self,
-        instrument,
+        instrument_name,
         component,
         effective_staff_name,
         scope=None,
         ):
-        self._check_instrument(instrument, effective_staff_name)
-        attach(instrument, component, scope=scope)
+        self._check_instrument(instrument_name, effective_staff_name)
+        attach(instrument_name, component, scope=scope)
 
-    def _check_instrument(self, instrument, effective_staff_name):
+    def _check_instrument(self, instrument_name, effective_staff_name):
         from dissertation.materials import score_setup
         message = 'cannot attach {!r} to {}.'
-        message = message.format(instrument, effective_staff_name)
+        message = message.format(instrument_name, effective_staff_name)
         allowable_instruments = \
             score_setup[effective_staff_name]
-        if not isinstance(instrument, allowable_instruments):
+        if not isinstance(instrument_name, allowable_instruments):
             raise Exception(message)
-
-    def _get_division_maker(self):
-        return self._division_maker
 
     def _get_rhythm_maker(self):
         return self.rhythm_maker
 
-    def _make_rhythm(self, time_signatures):
-        division_maker = self._get_division_maker()
-        divisions = division_maker(time_signatures)
+    def _make_rhythm(self, divisions, time_signatures):
         divisions = sequencetools.flatten_sequence(divisions)
         rhythm_maker = self._get_rhythm_maker()
         selections = rhythm_maker(divisions)
@@ -175,7 +144,6 @@ class MusicMaker(abctools.AbjadValueObject):
                 new_music_selection
         music = dummy_music_voice[:]  # @UnusedVariable
         return dummy_music_voice
-        #do something that returns a rhythm
 
     ### PUBLIC PROPERTIES ###
 

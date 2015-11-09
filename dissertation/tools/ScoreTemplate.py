@@ -4,11 +4,7 @@ Created on Oct 31, 2015
 
 @author: josephdavancens
 '''
-from abjad import *  # @UnusedWildImport
-from abjad.tools import abctools
-from abjad.tools import indicatortools
-from abjad.tools import instrumenttools
-from abjad.tools import scoretools
+from abjad import *
 
 class ScoreTemplate(abctools.AbjadValueObject):
     r'''Score template.

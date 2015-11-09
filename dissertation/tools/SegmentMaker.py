@@ -5,13 +5,11 @@ Created on Oct 31, 2015
 @author: josephdavancens
 '''
 import copy
-from abjad import *  # @UnusedWildImport
-from abjad.tools import indicatortools
-from dissertation.tools.ScopeTokenParser import ScopeTokenParser
-from dissertation.tools import MusicHandler
+from abjad import *
 
 class SegmentMakerBaseClass(abctools.AbjadObject):  # @UndefinedVariable
     r'''Segment-maker baseclass.
+
     '''
 
     ### CLASS VARIABLES ###
@@ -45,7 +43,7 @@ class SegmentMakerBaseClass(abctools.AbjadObject):  # @UndefinedVariable
         self._segment_metadata = segment_metadata
         self._previous_segment_metadata = previous_segment_metadata
         lilypond_file = self._make_lilypond_file()
-        assert isinstance(lilypond_file, lilypondfiletools.LilyPondFile)  # @UndefinedVariable
+        assert isinstance(lilypond_file, lilypondfiletools.LilyPondFile)
         self._lilypond_file = lilypond_file
         return self._lilypond_file, self._segment_metadata
 
@@ -163,22 +161,20 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._make_score(dissertation.tools.ScoreTemplate())
         self._remove_score_template_start_instruments(dissertation.materials)
         self._remove_score_template_start_clefs()
-        self._make_lilypond_file()
-        self._configure_lilypond_file()
-        self._populate_time_signature_context()
+        self._make_lilypond_file() #initialize lilypond file blocks
+        self._configure_lilypond_file() #apply style sheet
+        self._populate_time_signature_context() #add time sigs, tempi, skips
         self._annotate_stages()
         with systemtools.Timer() as timer:
             print("\tInterpreting music-makers ... ")
-            self._interpret_music_makers()
+            self._interpret_music_makers() #make music for voice
             message = '{} sec.'
             message = message.format(int(timer.elapsed_time))
             print(message)
         print('\tInterpreting music-handlers ... ')
-        self._interpret_music_handlers()
+        self._interpret_music_handlers() #fill lilypond file
         self._attach_first_segment_default_instruments(dissertation.materials)
         self._attach_first_segment_default_clefs()
-#        self._apply_previous_segment_end_settings(dissertation.materials)
-#        self._move_instruments_from_notes_back_to_rests(khamr.materials)
         self._label_instrument_changes()
         self._transpose_instruments()
         self._attach_rehearsal_mark()
@@ -187,7 +183,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._check_well_formedness()
         self._update_segment_metadata(dissertation.materials)
         self._raise_approximate_duration_in_seconds()
-        print("aoerih")
+        print("...Done")
         return self.lilypond_file, self._segment_metadata
 
     ### PRIVATE METHODS ###
@@ -261,9 +257,9 @@ class SegmentMaker(SegmentMakerBaseClass):
                 instrument_name = previous_instruments.get(staff.name)
                 if instrument_name is None:
                     instrument_name = cached_instruments.get(staff.name)
-                instrument = materials_package.instruments[instrument_name]
-                instrument = copy.deepcopy(instrument)
-                attach(instrument, staff)
+                instrument_name = materials_package.instruments[instrument_name]
+                instrument_name = copy.deepcopy(instrument_name)
+                attach(instrument_name, staff)
 
     def _attach_rehearsal_mark(self):
         segment_number = self._segment_metadata['segment_number']
@@ -308,13 +304,35 @@ class SegmentMaker(SegmentMakerBaseClass):
     def _configure_lilypond_file(self):
         lilypond_file = self._lilypond_file
         lilypond_file.use_relative_includes = True
-        path = os.path.join(
+        stylesheet_path = os.path.join(
             '..',
             '..',
             'stylesheets',
             'stylesheet.ily',
             )
-        lilypond_file.file_initial_user_includes.append(path)
+        color_span_def_path = os.path.join(
+            '..',
+            '..',
+            'stylesheets',
+            'color_span_def.ily',
+            )
+        scheme_path = os.path.join(
+            '..',
+            '..',
+            'stylesheets',
+            'scheme.ily',
+            )
+        stencils_path = os.path.join(
+            '..',
+            '..',
+            'stylesheets',
+            'stencils.ily',
+            )
+
+        lilypond_file.file_initial_user_includes.append(stylesheet_path)
+        lilypond_file.file_initial_user_includes.append(color_span_def_path)
+        lilypond_file.file_initial_user_includes.append(scheme_path)
+        lilypond_file.file_initial_user_includes.append(stencils_path)
         if 1 < self._segment_metadata['segment_number']:
             path = os.path.join(
                 '..',
@@ -350,6 +368,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         return time_signatures
 
     def _initialize_music_makers(self, music_makers, makers_package):
+
         music_makers = music_makers or []
         music_makers = list(music_makers)
         for music_maker in music_makers:
@@ -366,6 +385,11 @@ class SegmentMaker(SegmentMakerBaseClass):
             time_signatures_.append(time_signature)
         time_signatures_ = tuple(time_signatures_)
         self.time_signatures = time_signatures_
+
+    def _interpret_music_handler(self, music_handler):
+
+        pass
+
 
     def _interpret_music_handlers(self):
         for music_handler in self.music_handlers:
@@ -403,8 +427,8 @@ class SegmentMaker(SegmentMakerBaseClass):
                     previous_instrument = result
                 elif (leaf_index == 0 and
                     1 < self._segment_metadata.get('segment_number')):
-                    instrument = self._get_previous_instrument(staff_group.name)
-                    previous_instrument = instrument
+                    instrument_name = self._get_previous_instrument(staff_group.name)
+                    previous_instrument = instrument_name
                 else:
                     continue
                 if previous_instrument != current_instrument:
@@ -412,8 +436,8 @@ class SegmentMaker(SegmentMakerBaseClass):
                         current_instrument)
                     attach(markup, leaf)
 
-    def _make_instrument_change_markup(self, instrument):
-        string = 'to {}'.format(instrument.instrument_name)
+    def _make_instrument_change_markup(self, instrument_name):
+        string = 'to {}'.format(instrument_name.instrument_name)
         markup = markuptools.Markup(string, direction=1)# @UndefinedVariable
         markup = markup.box().override(('box-padding', 0.75))
         return markup
@@ -440,6 +464,11 @@ class SegmentMaker(SegmentMakerBaseClass):
                 attach(stop_tempo, last_leaf, scope=Score)
 
     def _make_music_for_voice(self, voice):
+        '''Get the music maker assigned to voice.
+        If there's no music, make rests.
+        Call the music maker.
+        Add the music to the voice
+        '''
         assert not len(voice), repr(voice)
         music_makers = self._get_music_makers_for_context(voice.name)
         music_makers.sort(key=lambda x: x.stages[0])
@@ -562,9 +591,9 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._cached_score_template_start_clefs = dictionary
         for staff_group in iterate(self.score).by_class(StaffGroup):
             prototype = instrumenttools.Instrument# @UndefinedVariable
-            instrument = inspect_(staff_group).get_indicator(prototype)
+            instrument_name = inspect_(staff_group).get_indicator(prototype)
             instrument_name = self._instrument_to_instrument_name(
-                instrument,
+                instrument_name,
                 materials_package,
                 )
             self._cached_score_template_start_instruments[staff_group.name] = \
@@ -580,16 +609,16 @@ class SegmentMaker(SegmentMakerBaseClass):
                     continue
                 inspector = inspect_(leaf)
                 prototype = instrumenttools.Instrument# @UndefinedVariable
-                instrument = inspector.get_effective(prototype)
-                if instrument is None:
+                instrument_name = inspector.get_effective(prototype)
+                if instrument_name is None:
                     continue
-                assert isinstance(instrument, prototype), repr(instrument)
+                assert isinstance(instrument_name, prototype), repr(instrument_name)
                 try:
-                    instrument.transpose_from_sounding_pitch_to_written_pitch(
+                    instrument_name.transpose_from_sounding_pitch_to_written_pitch(
                         leaf)
                 except KeyError:
                     sounding_pitch_number = leaf.written_pitch.pitch_number
-                    i = instrument.sounding_pitch_of_written_middle_c.pitch_number
+                    i = instrument_name.sounding_pitch_of_written_middle_c.pitch_number
                     written_pitch_number = sounding_pitch_number - i
                     leaf.written_pitch = written_pitch_number
 
@@ -726,7 +755,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self,
         context_name=None,
         division_maker=None,
-        instrument=None,
+        instrument_name=None,
         rewrite_meter=False,
         rhythm_maker=None,
         rhythm_overwrites=None,
@@ -744,7 +773,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         music_maker = self._music_maker_class(
             context_name=context_name,
             division_maker=division_maker,
-            instrument=instrument,
+            instrument_name=instrument_name,
             rewrite_meter=rewrite_meter,
             rhythm_maker=rhythm_maker,
             rhythm_overwrites=rhythm_overwrites,

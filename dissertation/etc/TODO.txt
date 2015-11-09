@@ -1,0 +1,9 @@
+* Add normal staff to each instrument in score def
+* Add gradient function to color spanner
+* Core functionality assertions, tests
+* Pitch structure interpreter
+* Woodwind fingering utility
+* String fingering utility
+* Piano-four-hands option
+** Midi output handler
+** Abjad to Music XML exporter

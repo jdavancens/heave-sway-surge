@@ -6,17 +6,21 @@ Created on Oct 31, 2015
 '''
 # this is where you write music
 from abjad import *
-from abjad.tools import rhythmmakertools
-from dissertation.materials.instruments.definition import instruments
-from dissertation.tools.SegmentMaker import SegmentMaker
 from experimental import *
-from dissertation.tools.DivisionMaker import DivisionMaker
+import dissertation
+
+
+
+#===============================================================================
+# ABBREVIATIONS AND ALIASES
+#===============================================================================
+
 
 #===============================================================================
 # SEGMENT-MAKER
 #===============================================================================
 
-segment_maker = SegmentMaker(
+segment_maker = dissertation.tools.SegmentMaker(
     measures_per_stage = [5],
     raise_approximate_duration = False,
     show_stage_annotations=False,
@@ -32,14 +36,14 @@ assert segment_maker.validate_time_signatures()
 # MUSIC-MAKERS
 #===============================================================================
 
-
-segment_maker.make_music_maker(
-    context_name='Oboe Music Voice',
-    division_maker=DivisionMaker.fuse_by_counts(
+oboe_music_maker = segment_maker.make_music_maker(
+    stages=(1),
+    context_name=dissertation.materials.context_names['Oboe Pressure Voice'],
+    instrument_name=dissertation.materials.instruments['oboe'],
+    division_maker=beat_division_maker
+        .fuse_by_counts(
             counts=[2,3,4,5,6,7],
-            )
-        ,
-    instrument=instruments['oboe'],
+            ),
     rewrite_meter=True,
     rhythm_maker=rhythmmakertools.IncisedRhythmMaker(
         incise_specifier=rhythmmakertools.InciseSpecifier(
@@ -56,13 +60,15 @@ segment_maker.make_music_maker(
             use_messiaen_style_ties=True,
             ),
         ),
-    rhythm_overwrites=None,
-    split_at_measure_boundaries=True,
-    stages=(1,1),
-    start_tempo=Tempo((Duration(1,4), 88)),
-    stop_tempo=Tempo((Duration(1,4), 88)),
     )
 
 #===============================================================================
 # MUSIC-HANDLERS
 #===============================================================================
+oboe_music_handler = \
+    dissertation.tools.music_handlers.WoodwindAirPressureHandler(
+        music_maker=oboe_music_maker,
+        air_pressure_vectors = (),
+        pattern = (0, 1, 2, 1, 3)
+        )
+

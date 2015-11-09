@@ -1,0 +1,45 @@
+define variable
+    (define variable-name value)
+print variable
+    (display variable-name)
+print variable on its own line
+    (display variable-name)(display "\n")
+set variable
+    (set! variable-name value)
+booleans
+    #t, #f
+numbers
+    1, 1.5
+strings
+    "this is a string"
+quotation marks and backslashes in strings
+    "\\this is a \"string\" -> \this is a "string"
+pairs
+    (cons a b), displays as (a . b)
+    can also be entered as '(a . b)
+get elements of pair
+   (define mypair (cons a b))
+   (car mypair) -> a
+   (cdr mypair) -> b
+lists
+    (list 1 2 3)
+    can also be entered as '(1 2 3)
+alist
+    (def my-alist '((1 . "a") (2 . "b") (3 . "c"))) /// (key . value)
+    (assoc 2 my-alist) -> (2 . "b")
+    (cdr (assoc 2 my-alist)) -> "b"
+binary operations
+    (+ 1 2) -> 3
+procedures
+    (define (function-name arg1 arg2 ... argn)
+        scheme-expression-with-return-value)
+predicates
+      (define (less-than-ten? x) (< x 10)) -> returns #t or #f
+conditionals
+    if
+        (if test-expression true-expression false-expression)
+    cond
+        (cond (test-expression-1 result-expression-sequence-1)
+            (test-expression-2 result-expression-sequence-2)
+            ...
+            (test-expression-n result-expression-sequence-n))

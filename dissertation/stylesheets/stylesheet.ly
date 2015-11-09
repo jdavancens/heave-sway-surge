@@ -195,6 +195,7 @@
         \name WoodwindFingeringStaffGroup
         \type Engraver_group
         \alias StaffGroup
+        \accepts Staff
         \accepts WoodwindFingeringMusicStaff
     }
     \context {
@@ -203,6 +204,7 @@
         \type Engraver_group
         \alias StaffGroup
         \accepts RhythmicStaff
+        \accepts Staff
         \accepts SungMusicStaff
         \accepts WoodwindPressureMusicStaff
         \accepts WoodwindFingeringStaffGroup
@@ -242,6 +244,7 @@
         \name StringSpaceStaffGroup
         \type Engraver_group
         \alias StaffGroup
+        \accepts Staff
         \accepts StringSpaceMusicStaff
     }
     \context {
@@ -249,6 +252,7 @@
         \name StringInstrumentStaffGroup
         \type Engraver_group
         \alias StaffGroup
+        \accepts Staff
         \accepts RhythmicStaff
         \accepts StringSpaceStaffGroup
     }
