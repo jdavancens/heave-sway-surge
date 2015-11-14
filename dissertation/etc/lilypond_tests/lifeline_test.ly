@@ -50,7 +50,7 @@ sq =
 			    \omit Staff.Clef
 			    \omit Staff.TimeSignature
 				<<
-					\new Voice {
+					\new Voice = "Fingering Voice"{
 						\override NoteHead.stencil = \sq
 						\override NoteHead.X-offset = 0
 						\override Stem.transparent = ##t
@@ -65,7 +65,7 @@ sq =
 						r4
 					}
 
-					\new Voice {
+					\new Voice = "Lifeline Voice"{
 						\override NoteHead.stencil = \sq
 						\override NoteHead.X-offset = 0
 						\override NoteHead.transparent = ##t

@@ -39,4 +39,4 @@ def format_scheme_color_string(self, hsb_color):
         )
     return color_string
 
-def rgb_to_hsb(self, rgb_tuple):
+#def rgb_to_hsb(self, rgb_tuple):

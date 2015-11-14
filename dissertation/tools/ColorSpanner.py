@@ -6,7 +6,7 @@ Created on Nov 5, 2015
 '''
 from abjad.tools.spannertools import HorizontalBracketSpanner
 
-class ColorSpanner(spannertools.HorizontalBracketSpanner):
+class ColorSpanner(HorizontalBracketSpanner):
     r'''
     classdocs
     '''

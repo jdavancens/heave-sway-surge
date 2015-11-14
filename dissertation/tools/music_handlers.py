@@ -13,30 +13,19 @@ from abjad.tools.scoretools.GraceContainer import GraceContainer
 from abjad.tools import scoretools
 from dissertation.tools import ColorSpanner
 from abjad.tools import datastructuretools
-from dissertation.tools import graphicstools
+from dissertation.tools.graphics_tools import *
+from dissertation.tools.shortcuts import *
+from math import floor
+from abjad.tools import lilypondnametools
+import copy
 
-def map_fraction_to_treble_staff_position_and_y_offset(
+def map_fraction_to_treble_staff_position(
     fraction,
     number_of_staff_lines):
     fractional_staff_position = \
         (fraction * ((number_of_staff_lines * 2) - 2)) + 2
-    staff_position = floor(fraction)
-    y_offset = (fractional_staff_position - staff_posisition) / 2.0
-    y_offset = float(y_offset)
-    return staff_position, y_offset
-
-def text_spanner_with_text(start_text, stop_text):
-    text_spanner = spannertools.TextSpanner()
-    start = Markup(start_text)
-    stop = Markup(stop_text)
-    override(text_spanner).bound_details__left__text = start
-    override(text_spanner).bound_details__right_text = stop
-    override(text_spanner).\
-        bound_details__left__stencil_align_dir_y = 0
-    override(text_spanner).\
-        bound_details__right__stencil_align_dir_y = 0
-    override(text_spanner).dash_fraction = 1.0
-    return text_spanner
+    staff_position = round(fractional_staff_position)
+    return staff_position
 
 class WoodwindAirPressureHandler(abctools.AbjadObject):
     '''An air-pressure handler for woodwind instruments
@@ -54,7 +43,7 @@ class WoodwindAirPressureHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
+        '_music_maker',
         'air_pressure_vectors',
         'pattern'
     )
@@ -67,53 +56,64 @@ class WoodwindAirPressureHandler(abctools.AbjadObject):
         air_pressure_vectors=None,
         pattern=None,
         ):
-        self.music_maker = music_maker
+        self._music_maker = music_maker
         self.air_pressure_vectors = air_pressure_vectors
         self.pattern = pattern
 
     ### SPECIAL METHODS ###
 
     def __call__(self):
-        voice = self.music_maker()
-        voice.context_name = self.music_maker.context_name
+        #voice = self._music_maker()
+        voice = Voice("c'4 c'4. c'2 c'2 ~ c'8 c'2.")
+        instrument_name = self._music_maker.instrument_name
+        voice.name = instrument_name.capitalize()+" Pressure Voice"
+        voice.context_name = self._music_maker.context_name
         cycle = datastructuretools.CyclicTuple(self.pattern)
-        cursor = datastructuretools.Cursor()
-        for logical_tie in iterate(voice).logical_tie():
-            vector = air_pressure_vectors[cursor.next()]
-            fraction = vector.pressure_start
-            staff_position, y_offset = \
-                map_fraction_to_treble_staff_position_and_y_offset(
+        cursor = datastructuretools.Cursor(cycle)
+        last_vowel = None
+        pairwise = sequencetools.iterate_sequence_nwise
+        #add hidden after grace notes
+        for logical_tie in iterate(voice).by_logical_tie():
+            hidden_grace_after(logical_tie[-1])
+        for current, next in pairwise(iterate(voice).by_logical_tie()):
+            #get pressure vector
+            vector = self.air_pressure_vectors[cursor.next()[0]]
+            #set note height to air pressure
+            fraction = vector.air_pressure[0]
+            staff_position = map_fraction_to_treble_staff_position(
                     fraction,
-                    number_of_staff_lines
+                    number_of_staff_lines=5
                     )
             named_pitch = pitchtools.NamedPitch.from_staff_position(
                 staff_position)
-            logical_tie[0].named_pitch = named_pitch
-            override(logical_tie[0]).note_head.y_offset = y_offset
-            #TODO vector spanners
+            for leaf in current:
+                assert isinstance(leaf, Note)
+                leaf.written_pitch = named_pitch
+            staccato = vector.staccato
+            if staccato:
+                if len(current) > 1:
+                    first = current[0]
+                    bar_note_head(leaf)
+                else:
+                    for x in current[1:]:
+                        point_note_head(leaf)
+            else:
+                for x in current:
+                    point_note_head(leaf)
 
-            if vector.staccato:
-                staccatissimo = indicatortools.Articulation('staccatissimo')
-                attach(logical_tie[0], staccatissimo)
-            if vector.tongue_articulated:
-                tenuto = indicatortools.Articulation('tenuto')
-                attach(logical_tie[0], tenuto)
 
-            if vector.vowel_start is not None and vector.vowel_stop is not None:
-                vowel_spanner = text_spanner_with_text(
-                    vector.vowel_start, vector.vowel_stop)
-                override(vowel_spanner).bound__details__right__arrow = True
-                attach(logical_tie[0], vowel_spanner)
-            if vector.vowel_start is not None and vector.vowel_stop is None:
-                vowel_spanner = text_spanner_with_text(vector.vowel_start, '')
-                attach(logical_tie[0], vowel_spanner)
-            if vector.vowel_start is None and vector.vowel_stop is not None:
-                vowel_spanner = text_spanner_with_text('', vector.vowel_stop)
-                attach(logical_tie[0], vowel_spanner)
+        f(voice)
+        return [voice]
 
-        glissando = spannertools.Glissando()
-        attach(glissando, voice[:])
-        return voice
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name
 
 class WoodwindFingeringHandler(abctools.AbjadObject):
     '''A fingering handler for woodwind instruments
@@ -123,10 +123,10 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__=(
-        'music_maker',
-        'fingerings',
-        'pattern',
-        ''
+        '_music_maker',
+        '_fingerings',
+        '_hand',
+        '_pattern',
         )
 
     ### INITIALIZER ###
@@ -134,39 +134,71 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
     def __init__(
         self,
         music_maker=None,
+        hand=None,
         fingerings=None,
         pattern=None
         ):
-        self.music_maker=music_maker
-        self.fingerings=fingerings
-        self.pattern=pattern
+        self._music_maker = music_maker
+        self._hand = hand
+        self._fingerings = fingerings
+        self._pattern = pattern
 
     ### SPECIAL METHODS ###
 
     def __call__(self):
-        voice = self.music_maker()
-        voice.context_name = self.music_maker.context_name
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+        hand = self._hand
+        instrument = self._music_maker.instrument_name
+        voice = self._music_maker()
+        name = instrument.capitalize()+" "+hand.capitalize()+" Hand Fingering"
+        context_name = "Woodwind"+hand.capitalize()+"HandFingering"
+        cycle = datastructuretools.CyclicTuple(self._pattern)
         cursor = datastructuretools.Cursor(cycle)
+        fingerings = self._fingerings
         for logical_tie in iterate(voice).by_logical_tie():
-            fingering = fingerings[cursor.next()].as_binary_list()
+            fingering = fingerings[cursor.next()[0]].as_binary_list()
             glissando_map_list = []
             for x in range(len(fingering)):
                 if fingering[x] == 1:
-                    mapping = schemetools.Pair(x, x)
+                    mapping = schemetools.SchemePair(x, x)
                     glissando_map_list.append(mapping)
-            glissando_map_vector = lilypondtools.SchemeVector(
+            glissando_map_vector = schemetools.SchemeVector(
                 glissando_map_list)
-            set(voice).glissandoMap = glissando_map_vector
+            glissando_map = lilypondnametools.LilyPondContextSetting(
+                context_name='Voice',
+                context_property='glissandoMap',
+                value=glissando_map_vector
+                )
+
             chord = ""
             if len(fingering) == 5:
                 chord = "e' g' b' d'' f''"
             else:
-                chord = "f' a' c' e''"
-            logical_tie[0] = Chord(chord, logical_tie[0].written_duration)
+                chord = "f' a' c'' e''"
+            chord = Chord(chord, logical_tie[0].written_duration)
+            attach(glissando_map, chord)
+            mutate(logical_tie[0]).replace(chord)
+
+        lifeline_voice = copy.deepcopy(voice)
         glissando = spannertools.Glissando()
-        attach(glissando, voice[:])
-        return voice
+        attach(glissando, lifeline_voice[:])
+        voice.name = name+" Voice"
+        lifeline_voice.name = name+" Lifeline Voice"
+        voice.context_name = context_name+'Voice'
+        lifeline_voice.context_name = context_name+"LifelineVoice"
+        return [voice, lifeline_voice]
+
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name
+
+    def name(self):
+        return self._music_maker.name
 
 class PianoHandler(abctools.AbjadObject):
     '''
@@ -175,13 +207,13 @@ class PianoHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
+        '_music_maker',
         'articulation_pattern',
         'articulation_sequence',
         'dynamics_pattern',
         'dynamics_sequence',
         'grace_pattern',
         'grace_sequence',
-        'music_maker',
         'pedaling_indices',
         'pitch_pattern',
         'pitch_sequence',
@@ -199,16 +231,17 @@ class PianoHandler(abctools.AbjadObject):
         grace_sequence=None,
         music_maker=None,
         pedaling_indices=None,
-        pedaling_pattern=None):
+        pedaling_pattern=None,
         pitch_pattern=None,
         pitch_sequence=None,
+        ):
+        self._music_maker=music_maker
         self.articulation_pattern=articulation_pattern
         self.articulation_sequence=articulation_sequence
         self.dynamics_pattern=dynamics_pattern
         self.dynamics_sequence=dynamics_sequence
         self.grace_pattern=grace_pattern
         self.grace_sequence=grace_sequence
-        self.music_maker=music_maker
         self.pedaling_indices=pedaling_indices
         self.pitch_pattern=pitch_pattern
         self.pitch_sequence=pitch_sequence
@@ -218,8 +251,8 @@ class PianoHandler(abctools.AbjadObject):
     ### SPECIAL METHODS ###
 
     def __call__ (self):
-        voice = self.music_maker()
-        voice.context_name = self.music_maker.context_name
+        voice = self._music_maker()
+        voice.context_name = self.music_maker._context_name
         grace_cycle = datastructuretools.CyclicTuple(self.grace_pattern)
         grace_cursor = datastructuretools.Cursor(grace_cycle)
         pitch_cycle = datastructuretools.CyclicTuple(self.pitch_pattern)
@@ -276,6 +309,16 @@ class PianoHandler(abctools.AbjadObject):
             attach(pedal_spanner, voice[start:stop])
         return voice
 
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name()
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name()
+
 class StringBowHandler(abctools.AbjadObject):
     '''A bow action handler for string instruments
     '''
@@ -283,7 +326,7 @@ class StringBowHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
+        '_music_maker',
         'bow_vectors',
         'pattern',
         'color',
@@ -297,7 +340,7 @@ class StringBowHandler(abctools.AbjadObject):
         bow_vectors=None,
         pattern=None,
         color=None):
-        self.music_maker = music_maker
+        self._music_maker = music_maker
         self.bow_vectors = bow_vectors
         self.pattern = pattern
         self.color = color
@@ -306,8 +349,8 @@ class StringBowHandler(abctools.AbjadObject):
     ### SPECIAL METHODS ###
 
     def __call__ (self):
-        voice = self.music_maker()
-        voice_alt = self.music_maker()
+        voice = self._music_maker()
+        voice_alt = self._music_maker()
         bow_vector_cycle = datastructuretools.CyclicTuple(self.pattern)
         bow_vector_cursor = datastructuretools.Cursor(bow_vector_cycle)
         last_string_id = None
@@ -318,20 +361,20 @@ class StringBowHandler(abctools.AbjadObject):
             contact_point = bow_vector.contact_point()
             height = bow_vector.height()
             pressure = bow_vector.pressure()
-            staccato = bow_vector.staccato()
-            strings = bow_vector.strings()
+            staccato = bow_vector._staccato()
+            strings = bow_vector._string_ids()
             h = self.color[0]
             s = self.color[1]
             b = self.color[2]
             color_start = (h, s * float(pressure[0]) * 0.75 + 25, b)
             color_stop = (h, s * float(pressure[1]) * 0.75 + 25, b)
-            #staccato notehead
-            if bow_vector.staccato():
+            #_staccato notehead
+            if bow_vector._staccato():
                 logical_tie[0].note_head = bow_vector.height()
                 override(logical_tie[0]).note_head.transparent = False
                 override(logical_tie[0]).note_head.color = \
                     graphicstools.format_scheme_color(color_start)
-            #color spanner on even indices
+            #color spanners
             else:
                 color_spanner = ColorSpanner(
                         start_min=height[0],
@@ -354,6 +397,15 @@ class StringBowHandler(abctools.AbjadObject):
                 string_id_markup = Markup(string_id, direction=Up)
                 attach(string_id_markup, logical_tie[0])
 
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name()
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name()
 
 class StringFingeringHandler(abctools.AbjadObject):
     '''
@@ -362,7 +414,7 @@ class StringFingeringHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
+        '_music_maker',
         'fingering',
         'pattern',
         'color'
@@ -377,7 +429,7 @@ class StringFingeringHandler(abctools.AbjadObject):
         pattern=None,
         color=None
         ):
-        self.music_maker = music_maker
+        self._music_maker = music_maker
         self.finger_vectors = finger_vectors
         self.pattern = pattern
         self.color = color
@@ -385,8 +437,8 @@ class StringFingeringHandler(abctools.AbjadObject):
     ### SPECIAL METHDS ###
 
     def __call__(self):
-        voice = self.music_maker()
-        voice_alt = self.music_maker()
+        voice = self._music_maker()
+        voice_alt = self._music_maker()
         finger_vector_cycle = datastructuretools.CyclicTuple(self.finger_vectors)
         finger_vector_cursor = datastructuretools.CyclicTuple(finger_vector_cycle)
         max_spread = 0
@@ -406,7 +458,7 @@ class StringFingeringHandler(abctools.AbjadObject):
             height = finger_vector.height()
             pressure = finger_vector.pressure()
             spread = finger_vector.spread()
-            strings = finger_vector.strings()
+            strings = finger_vector._string_ids()
             # attach color spanner
             start_min = height[0] - int(spread[0] * max_spread)
             start_max = height[0] + int(spread[0] * max_spread)
@@ -435,6 +487,16 @@ class StringFingeringHandler(abctools.AbjadObject):
                 string_id_markup = Markup.center_column(string_ids)
                 attach(string_id_markup, logical_tie[0])
 
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name()
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name()
+
 class NormalMusicHandler(abctools.AbjadObject):
     '''
     '''
@@ -442,7 +504,7 @@ class NormalMusicHandler(abctools.AbjadObject):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
+        '_music_maker',
         'pitch_segments',
         'pitch_segment_pattern',
         'dynamics',
@@ -469,7 +531,7 @@ class NormalMusicHandler(abctools.AbjadObject):
         trills=None,
         stem_tremolos=None
         ):
-        self.music_maker = music_maker
+        self._music_maker = music_maker
         self.pitch_carriers = pitch_carriers
         self.pitch_carrier_pattern = pitch_carrier_pattern
         self.dynamics = dynamics
@@ -483,7 +545,7 @@ class NormalMusicHandler(abctools.AbjadObject):
     ### SPECIAL METHDS ###
 
     def __call__(self):
-        voice = self.music_maker()
+        voice = self._music_maker()
         pitch_segment_cycle = datastructuretools.CyclicTuple(self.pitch_segments)
         pitch_segment_cursor = datastructuretools.Cursor(pitch_segment_cycle)
         articulation_cycle = datastructuretools.CyclicTuple(self.articualtions)
@@ -541,6 +603,16 @@ class NormalMusicHandler(abctools.AbjadObject):
             for trill in trills:
                 trill = spannertools.TrillSpanner()
                 attach(trill, logical_ties[trill[0]:trill[1]])
+
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def context_name(self):
+        return self._music_maker.context_name()
+
+    @property
+    def instrument_name(self):
+        return self._music_maker.instrument_name()
 
 
 

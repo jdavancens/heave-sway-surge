@@ -1,3 +1,8 @@
+comments
+    ; single line
+    #!
+        multi-line
+    !#
 define variable
     (define variable-name value)
 print variable

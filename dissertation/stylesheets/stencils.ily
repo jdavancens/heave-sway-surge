@@ -1,15 +1,5 @@
 \version "2.19.29"
-oneStencil = #(ly:make-stencil (list 'embedded-ps
-	"gsave
-	currentpoint translate
-	0 -0.5 moveto
-	(1) show
-	grestore
-	") 
-	(cons 0 0) 
-	(cons 0 0))
-
-keyDownStencil = 
+squareStencil =
 	#(ly:make-stencil (list 'embedded-ps
 		"gsave
 		currentpoint translate
@@ -24,25 +14,11 @@ keyDownStencil =
 		grestore" )
 	(cons 0 1.3125)
 	(cons -.75 .75))
+squareNoteHead = \override NoteHead.stencil = \squareStencil
 
-pointStencil = 
-	#(ly:make-stencil (list 'embedded-ps
-		"gsave
-		currentpoint translate
-		newpath
-		0 0 moveto
-		0 0 lineto
-		0 0 lineto
-		0 0 lineto
-		0 0 lineto
-		closepath
-		fill
-		grestore" )
-	(cons 0 0)
-	(cons 0 0))
-pointNoteHead = \override NoteHead.stencil = \pointStencil
 
-shadedBox = 
+
+shadedBox =
 	#(ly:make-stencil (list 'embedded-ps
 	"
 		gsave
@@ -61,7 +37,7 @@ shadedBox =
 		" )
 	(cons 0 0)
 	(cons 100 50))
-	
+
 % color individual staff lines xxx.stencil = #(color-staff-lines
 #(define-public ((color-staff-lines . rest) grob)
    (define (index-cell cell dir)
@@ -94,12 +70,12 @@ shadedBox =
             (set-cdr! span-points width)
             (let* ((bound (ly:spanner-bound grob dir))
                    (bound-ext (ly:grob-extent bound bound X)))
-              
+
               (index-set-cell! span-points dir
                                (ly:grob-relative-coordinate bound common X))
               (if (and (not (ly:item-break-dir bound))
                        (not (interval-empty? bound-ext)))
-                  (index-set-cell! span-points dir 
+                  (index-set-cell! span-points dir
                                    (+ (index-cell span-points dir)
                                       (index-cell bound-ext dir))))))
         (index-set-cell! span-points dir (- (index-cell span-points dir)
@@ -130,10 +106,10 @@ shadedBox =
                                (* position staff-space 0.5) Y)))
                        (and (pair? colors)
                             (set! colors (cdr colors)))))
-                   line-positions)       
+                   line-positions)
          (let* ((line-count (ly:grob-property grob 'line-count 5))
                 (height (* (1- line-count) (/ staff-space 2))))
-           (do ((i 0 (1+ i)))                      
+           (do ((i 0 (1+ i)))
                ((= i line-count))
              (let ((color (if (and (pair? colors)
                                    (> (length colors) i))

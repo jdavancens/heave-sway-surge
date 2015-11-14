@@ -3,10 +3,9 @@ score template :
 context names : list of lilypond contexts
 instruments : list of instruments
 MusicMaker : data->abjad rhythm voice
-MusicHandler abjad rhythm voice,
-    action data model->abjad score->lilypond
+MusicHandler segment_maker->abjad score->lilypond
 ScoreTemplate : set up score structure
-SegmentMaker : make music, typeset
+SegmentMaker : rhythm_maker, 
 
 
 section definition

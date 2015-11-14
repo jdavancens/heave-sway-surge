@@ -6,69 +6,219 @@ Created on Oct 31, 2015
 '''
 # this is where you write music
 from abjad import *
-from experimental import *
-import dissertation
+from dissertation.materials.context_names import context_names
+from dissertation.tools.music_handlers import *
+from dissertation.tools.MusicMaker import MusicMaker
+from dissertation.tools.SegmentMaker import SegmentMaker
+from dissertation.tools.instrument_actions import *
+from abjad.tools import rhythmmakertools
+from dissertation.materials.time_signatures import time_signatures
 
 
-
-#===============================================================================
-# ABBREVIATIONS AND ALIASES
-#===============================================================================
-
+measures_per_stage = [5]
+time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4)]
+tempo_map = [(1, Tempo(Duration(1,4), 88))]
 
 #===============================================================================
 # SEGMENT-MAKER
 #===============================================================================
 
-segment_maker = dissertation.tools.SegmentMaker(
-    measures_per_stage = [5],
-    raise_approximate_duration = False,
-    show_stage_annotations=False,
-    tempo_map=[(1, Tempo(Duration(1,4), 88))],
-    time_signatures=[(2, 8),(3, 8),(2, 4),(5, 8),(3, 4)],
-    )
-
-assert segment_maker.measure_count == 5
-assert segment_maker.stage_count == 1
-assert segment_maker.validate_time_signatures()
+segment_maker = SegmentMaker(
+        measures_per_stage=measures_per_stage,
+        segment_number = 1,
+        tempo_map=tempo_map,
+        time_signatures=time_signatures,
+        )
 
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
 
-oboe_music_maker = segment_maker.make_music_maker(
+beam_specifier = rhythmmakertools.BeamSpecifier(
+    beam_each_division=True,
+    beam_divisions_together=False
+    )
+duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
+    forbid_meter_rewriting=False
+    )
+
+oboe_pressure_music_maker = MusicMaker(
     stages=(1),
-    context_name=dissertation.materials.context_names['Oboe Pressure Voice'],
-    instrument_name=dissertation.materials.instruments['oboe'],
-    division_maker=beat_division_maker
-        .fuse_by_counts(
-            counts=[2,3,4,5,6,7],
+    context_name='WoodwindPressureVoice',
+    instrument_name='oboe',
+    divisions=[(1, 4)],
+    time_signatures=time_signatures,
+    rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
+        talea=rhythmmakertools.Talea(
+            counts=[4,3,2,1],
+            denominator=16,
             ),
-    rewrite_meter=True,
-    rhythm_maker=rhythmmakertools.IncisedRhythmMaker(
-        incise_specifier=rhythmmakertools.InciseSpecifier(
-            prefix_talea=[-1],
-            prefix_counts=[0],
-            suffix_talea=[-1],
-            suffix_counts=[1],
-            talea_denominator=8
+        )
+    )
+
+oboe_lh_fingering_music_maker = MusicMaker(
+    stages=(1),
+    context_name='WoodwindLeftHandFingeringVoice',
+    instrument_name='oboe',
+    time_signatures=time_signatures,
+    divisions=[(3, 8), (2, 4), (5, 8), (3, 4), (2, 8)],
+    rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
+        talea=rhythmmakertools.Talea(
+            counts=[1,2,3,4],
+            denominator=16,
             ),
-        output_masks=[
-            rhythmmakertools.silence_every([2,5], period=6),
-            ],
-        tie_specifier=rhythmmakertools.TieSpecifier(
-            use_messiaen_style_ties=True,
+        )
+    )
+oboe_rh_fingering_music_maker = MusicMaker(
+    stages=(1),
+    context_name='WoodwindRightHandFingeringVoice',
+    instrument_name='oboe',
+    time_signatures=time_signatures,
+    divisions=[(2, 4), (5, 8), (3, 4), (2, 8), (3, 8)],
+    rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
+        talea=rhythmmakertools.Talea(
+            counts=[2,1,4,3],
+            denominator=16,
             ),
+        )
+    )
+
+#===============================================================================
+#  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SEGMENTS
+#===============================================================================
+
+oboe_pressure_vectors = (
+    WoodwindAirPressureVector(
+            instrument_name='oboe',
+            air_pressure_start=Fraction(0, 1),
+            air_pressure_stop=Fraction(2,3),
+            lip_pressure_start=Fraction(1,1),
+            lip_pressure_stop=Fraction(1,2),
+            staccato=False,
+            tongue_articulated=False,
+            vowel_start='o',
+            vowel_stop='a',
+        ),
+    WoodwindAirPressureVector(
+            instrument_name='oboe',
+            air_pressure_start=Fraction(4,5),
+            air_pressure_stop=Fraction(4,5),
+            lip_pressure_start=Fraction(0,1),
+            lip_pressure_stop=Fraction(1,2),
+            staccato=True,
+            tongue_articulated=True,
+            vowel_start='e',
+            vowel_stop='i',
+        ),
+    WoodwindAirPressureVector(
+            instrument_name='oboe',
+            air_pressure_start=Fraction(2,3),
+            air_pressure_stop=Fraction(1,3),
+            lip_pressure_start=Fraction(1,5),
+            lip_pressure_stop=Fraction(2,5),
+            staccato=False,
+            tongue_articulated=True,
+            vowel_start='a',
+            vowel_stop='u',
+        )
+    )
+
+oboe_lh_fingerings = (
+    WoodwindFingering(
+        instrument_name='oboe',
+        hand=Left,
+        fingering={
+            'thumb':'down',
+            'index':'c',
+            'middle':None,
+            'ring':None,
+            'pinky':'down'
+            }
+        ),
+    WoodwindFingering(
+        instrument_name='oboe',
+        hand=Left,
+        fingering={
+            'thumb':None,
+            'index':'down',
+            'middle':'down',
+            'ring':None,
+            'pinky':None
+            }
+        ),
+    )
+
+oboe_rh_fingerings = (
+    WoodwindFingering(
+        instrument_name='oboe',
+        hand=Right,
+        fingering={
+            'index':'down',
+            'middle':None,
+            'ring':None,
+            'pinky':None
+            }
+        ),
+    WoodwindFingering(
+        instrument_name='oboe',
+        hand=Right,
+        fingering={
+            'index':None,
+            'middle':'down',
+            'ring':None,
+            'pinky':None
+            }
+        ),
+    WoodwindFingering(
+        instrument_name='oboe',
+        hand=Right,
+        fingering={
+            'index':None,
+            'middle':None,
+            'ring':'down',
+            'pinky':None
+            }
         ),
     )
 
 #===============================================================================
 # MUSIC-HANDLERS
 #===============================================================================
-oboe_music_handler = \
-    dissertation.tools.music_handlers.WoodwindAirPressureHandler(
-        music_maker=oboe_music_maker,
-        air_pressure_vectors = (),
-        pattern = (0, 1, 2, 1, 3)
+
+oboe_pressure_music_handler = WoodwindAirPressureHandler(
+        music_maker=oboe_pressure_music_maker,
+        air_pressure_vectors=oboe_pressure_vectors,
+        pattern=(0, 1, 2, 1)
         )
 
+oboe_lh_fingering_music_handler = WoodwindFingeringHandler(
+        music_maker=oboe_lh_fingering_music_maker,
+        hand='Left',
+        fingerings=oboe_lh_fingerings,
+        pattern=(0, 1, 1, 0)
+        )
+oboe_rh_fingering_music_handler = WoodwindFingeringHandler(
+        music_maker=oboe_rh_fingering_music_maker,
+        hand='Right',
+        fingerings=oboe_rh_fingerings,
+        pattern=(0, 1, 2, 1)
+        )
+# clarinet, saxophone, piano a, piano b, violin, viola, cello, bass handlers
+
+
+#add music handlers to segment maker
+music_handlers = [
+    oboe_pressure_music_handler,
+    oboe_lh_fingering_music_handler,
+    oboe_rh_fingering_music_handler
+    ]
+segment_maker.add_music_handlers(music_handlers)
+
+#===============================================================================
+# RETURN SCORE FUNCTION
+#===============================================================================
+
+def make_segment():
+    # interpret music handlers and return score
+    segment = segment_maker()
+    return segment

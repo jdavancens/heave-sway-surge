@@ -1,0 +1,5 @@
+scheme expressions start with #
+combine all scheme expressions in a lilypond file
+    #(begin
+        (define foo 0)
+        (define bar 1))
