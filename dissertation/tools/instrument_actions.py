@@ -14,14 +14,14 @@ class BowVector(abctools.AbjadObject):
         ::
             >>>bow_action = BowAction(
             ...    instrument_name='violin',
-            ...    _pressure_start=Fraction(4,5),
-            ...    _pressure_stop=Fraction(3, 4),
-            ...    _contact_point_start=Fraction(1, 16),
-            ...    _contact_point_stop=Fraction(1,4),
-            ...    _height_start=Fraction(1, 15),
-            ...    _height_stop=Fraction(2,5),
-            ...    _string_ids=('c', 'g')
-            ...    _staccato=True,
+            ...    pressure_start=Fraction(4,5),
+            ...    pressure_stop=Fraction(3, 4),
+            ...    contact_point_start=Fraction(1, 16),
+            ...    contact_point_stop=Fraction(1,4),
+            ...    height_start=Fraction(1, 15),
+            ...    height_stop=Fraction(2,5),
+            ...    string_ids=('c', 'g')
+            ...    staccato=True,
             ...)
     '''
 
@@ -29,14 +29,14 @@ class BowVector(abctools.AbjadObject):
 
     __slots__ = (
         '_instrument_name',
-        '_pressure_start',
-        '_pressure_stop',
-        '_contact_point_start',
-        '_contact_point_stop'
-        '_height_start',
-        '_height_stop',
-        '_string_ids',
-        '_staccato'
+        'pressure_start',
+        'pressure_stop',
+        'contact_point_start',
+        'contact_point_stop'
+        'height_start',
+        'height_stop',
+        'string_ids',
+        'staccato'
         )
 
     ### INTIALIZER ###
@@ -57,39 +57,39 @@ class BowVector(abctools.AbjadObject):
             self._instrument_name = instrument_name
         else:
             raise TypeError(instrument_name + "is not a string")
-        self._pressure_start = pressure_start
-        self._pressure_stop = pressure_stop
-        self._contact_point_start = contact_point_start
-        self._contact_point_stop = contact_point_stop
-        self._height_start = height_start
-        self._height_stop = height_stop
-        self._string_ids = string_ids
-        self._staccato = staccato
+        self.pressure_start = pressure_start
+        self.pressure_stop = pressure_stop
+        self.contact_point_start = contact_point_start
+        self.contact_point_stop = contact_point_stop
+        self.height_start = height_start
+        self.height_stop = height_stop
+        self.string_ids = string_ids
+        self.staccato = staccato
 
     ### PUBLIC PROPERTIES ###
 
     @property
     def contact_point(self):
-        return (self._contact_point_start, self._contact_point_stop)
+        return (self.contact_point_start, self.contact_point_stop)
 
     @property
     def height(self):
-        return (self._height_start, self._height_stop)
+        return (self.height_start, self.height_stop)
 
     @property
     def instrument_name(self):
         return self._instrument_name
     @property
     def pressure(self):
-        return (self._pressure_start, self._pressure_stop)
+        return (self.pressure_start, self.pressure_stop)
 
     @property
     def staccato(self):
-        return self._staccato
+        return self.staccato
 
     @property
     def string_ids(self):
-        return self._string_ids
+        return self.string_ids
 
 class FingerVector(abctools.AbjadObject):
     '''A string instrument left hand finger vector
@@ -99,13 +99,13 @@ class FingerVector(abctools.AbjadObject):
         ::
             >>>finger_vector = FingerVector(
             ...    instrument_name='violin',
-            ...    _pressure_start = Fraction(2, 7),
-            ...    _pressure_stop = Fraction(3, 5),
-            ...    _height_start = Fraction(1, 23),
-            ...    _height_stop = Fraction(3, 23),
+            ...    pressure_start = Fraction(2, 7),
+            ...    pressure_stop = Fraction(3, 5),
+            ...    height_start = Fraction(1, 23),
+            ...    height_stop = Fraction(3, 23),
             ...    spread_start = Fraction(1, 1),
             ...    spread_stop = Fraction(1, 5),
-            ...    _string_ids = ('d', 'a')
+            ...    string_ids = ('d', 'a')
             ...)
 
     '''
@@ -114,13 +114,13 @@ class FingerVector(abctools.AbjadObject):
 
     __slots__ = (
         '_instrument_name',
-        '_pressure_start',
-        '_pressure_stop',
-        '_height_start',
-        '_height_stop',
+        'pressure_start',
+        'pressure_stop',
+        'height_start',
+        'height_stop',
         '_spread_start',
         '_spread_stop',
-        '_string_ids',
+        'string_ids',
         )
 
     ### INITIALIZER ###
@@ -137,19 +137,19 @@ class FingerVector(abctools.AbjadObject):
         strings=None
         ):
         self._instrument_name = instrument_name
-        self._pressure_start = pressure_start
-        self._pressure_stop = pressure_stop
-        self._height_start = height_start
-        self._height_stop = height_stop
+        self.pressure_start = pressure_start
+        self.pressure_stop = pressure_stop
+        self.height_start = height_start
+        self.height_stop = height_stop
         self._spread_start = spread_start
         self._spread_stop = spread_stop
-        self._string_ids = strings
+        self.string_ids = strings
 
     ### PUBLIC PROPERTIES ###
 
     @property
     def height(self):
-        return (self._height_start, self._height_stop)
+        return (self.height_start, self.height_stop)
 
     @property
     def instrument_name(self):
@@ -157,7 +157,7 @@ class FingerVector(abctools.AbjadObject):
 
     @property
     def pressure(self):
-        return (self._pressure_start, self._pressure_stop)
+        return (self.pressure_start, self.pressure_stop)
 
     @property
     def spread(self):
@@ -165,7 +165,7 @@ class FingerVector(abctools.AbjadObject):
 
     @property
     def string_ids(self):
-        return self._string_ids
+        return self.string_ids
 
 class WoodwindAirPressureVector(abctools.AbjadObject):
     '''A woodwind air pressure vector
@@ -179,7 +179,7 @@ class WoodwindAirPressureVector(abctools.AbjadObject):
             ...    air_pressure_stop=Fraction(2,3),
             ...    lip_pressure_start=Fraction(1,1),
             ...    lip_pressure_stop=(Fraction(1,2),
-            ...    _staccato=False,
+            ...    staccato=False,
             ...    tongue_articlated=True,
             ...    vowel_start='o',
             ...    vowel_stop='i'
@@ -194,7 +194,7 @@ class WoodwindAirPressureVector(abctools.AbjadObject):
         '_air_pressure_stop',
         '_lip_pressure_start',
         '_lip_pressure_stop',
-        '_staccato',
+        'staccato',
         '_tongue_articulated',
         '_vowel_start',
         '_vowel_stop',)
@@ -218,7 +218,7 @@ class WoodwindAirPressureVector(abctools.AbjadObject):
         self._air_pressure_stop = air_pressure_stop
         self._lip_pressure_start = lip_pressure_start
         self._lip_pressure_stop = lip_pressure_stop
-        self._staccato = staccato
+        self.staccato = staccato
         self._tongue_articulated = tongue_articulated
         self._vowel_start = vowel_start
         self._vowel_stop = vowel_stop
@@ -239,7 +239,7 @@ class WoodwindAirPressureVector(abctools.AbjadObject):
 
     @property
     def staccato(self):
-        return self._staccato
+        return self.staccato
 
     @property
     def tongue_articulated(self):

@@ -7,7 +7,6 @@ MusicHandler segment_maker->abjad score->lilypond
 ScoreTemplate : set up score structure
 SegmentMaker : rhythm_maker, 
 
-
 section definition
     defines time signatures and tempi
     defines rhythms

@@ -4,7 +4,8 @@ Created on Nov 6, 2015
 
 @author: josephdavancens
 '''
-def hsb_to_rgb(self, hsb_tuple):
+from abjad import *
+def hsb_to_rgb(hsb_tuple):
     h = hsb_tuple[0]
     s = hsb_tuple[1]
     b = hsb_tuple[2]
@@ -29,14 +30,17 @@ def hsb_to_rgb(self, hsb_tuple):
     rgb[2] = rgb[2] + m
     return tuple(rgb)
 
-def format_scheme_color_string(self, hsb_color):
-    rgb_color = hsb_to_rgb(hsb_color)
-    color_string = "(rgb-color {0} {1} {2})"
-    color_string.format(
-        str(rgb_color),
-        str(rgb_color),
-        str(rgb_color)
+def scheme_rgb_color(hsb_tuple):
+    assert isinstance(hsb_tuple, tuple)
+    assert len(hsb_tuple) == 3
+    rgb_tuple = hsb_to_rgb(hsb_tuple)
+    scheme_color = schemetools.Scheme(
+        'rgb-color',
+        rgb_tuple[0],
+        rgb_tuple[1],
+        rgb_tuple[2],
         )
-    return color_string
+    print(format(scheme_color))
+    return scheme_color
 
 #def rgb_to_hsb(self, rgb_tuple):

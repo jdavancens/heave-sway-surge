@@ -33,23 +33,14 @@ segment_maker = SegmentMaker(
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
-
-beam_specifier = rhythmmakertools.BeamSpecifier(
-    beam_each_division=True,
-    beam_divisions_together=False
-    )
-duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
-    forbid_meter_rewriting=False
-    )
-
-oboe_pressure_music_maker = MusicMaker(
+music_maker = MusicMaker(
     stages=(1),
     context_name='WoodwindPressureVoice',
     instrument_name='oboe',
-    divisions=[(1, 4)],
+    divisions=[(3, 8), (2, 4), (5, 8), (3, 4), (2, 8)],
     time_signatures=time_signatures,
     rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
-        talea=rhythmmakertools.Talea(
+        talea_left=rhythmmakertools.Talea(
             counts=[4,3,2,1],
             denominator=16,
             ),
@@ -63,7 +54,7 @@ oboe_lh_fingering_music_maker = MusicMaker(
     time_signatures=time_signatures,
     divisions=[(3, 8), (2, 4), (5, 8), (3, 4), (2, 8)],
     rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
-        talea=rhythmmakertools.Talea(
+        talea_left=rhythmmakertools.Talea(
             counts=[1,2,3,4],
             denominator=16,
             ),
@@ -76,7 +67,7 @@ oboe_rh_fingering_music_maker = MusicMaker(
     time_signatures=time_signatures,
     divisions=[(2, 4), (5, 8), (3, 4), (2, 8), (3, 8)],
     rhythm_maker=rhythmmakertools.TaleaRhythmMaker(
-        talea=rhythmmakertools.Talea(
+        talea_left=rhythmmakertools.Talea(
             counts=[2,1,4,3],
             denominator=16,
             ),
@@ -87,7 +78,7 @@ oboe_rh_fingering_music_maker = MusicMaker(
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SEGMENTS
 #===============================================================================
 
-oboe_pressure_vectors = (
+vectors = (
     WoodwindAirPressureVector(
             instrument_name='oboe',
             air_pressure_start=Fraction(0, 1),
@@ -185,22 +176,22 @@ oboe_rh_fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-oboe_pressure_music_handler = WoodwindAirPressureHandler(
-        music_maker=oboe_pressure_music_maker,
-        air_pressure_vectors=oboe_pressure_vectors,
+oboe_pressure_music_handler = WoodwindEmbouchureHandler(
+        music_maker=music_maker,
+        air_pressure_vectors=vectors,
         pattern=(0, 1, 2, 1)
         )
 
 oboe_lh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=oboe_lh_fingering_music_maker,
         hand='Left',
-        fingerings=oboe_lh_fingerings,
+        fingerings_left=oboe_lh_fingerings,
         pattern=(0, 1, 1, 0)
         )
 oboe_rh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=oboe_rh_fingering_music_maker,
         hand='Right',
-        fingerings=oboe_rh_fingerings,
+        fingerings_left=oboe_rh_fingerings,
         pattern=(0, 1, 2, 1)
         )
 # clarinet, saxophone, piano a, piano b, violin, viola, cello, bass handlers

@@ -52,9 +52,9 @@ class MusicMaker:
             time_signature = indicatortools.TimeSignature(pair)
             self.time_signatures.append(time_signature)
 
-        divisions_fractions = [Fraction(pair[0], pair[1]) for pair in divisions]
+        divisions_fractions = [Duration(pair) for pair in divisions]
         divisions_sum = sum(divisions_fractions)
-        time_sigs_fractions = [Fraction(pair[0], pair[1]) for pair in divisions]
+        time_sigs_fractions = [Duration(pair) for pair in time_signatures]
         time_sigs_sum = sum(time_sigs_fractions)
         assert divisions_sum == time_sigs_sum
 
@@ -66,6 +66,7 @@ class MusicMaker:
         '''
         from dissertation.materials.instruments import instruments
         voice = self._make_rhythm()
+        assert isinstance(voice, Voice)
         return voice
 
     ### PRIVATE METHODS ###
@@ -76,11 +77,16 @@ class MusicMaker:
         time_signatures = self.time_signatures
         rhythm = rhythm_maker(divisions)
         rhythm = sequencetools.flatten_sequence(rhythm)
-        shards = mutate(rhythm).split(time_signatures)
-        for shard, time_signature in zip(shards, time_signatures):
-            mutate(shard).rewrite_meter(time_signature)
         voice = Voice(rhythm)
-        return voice
+        leaves = voice.select_leaves()
+        shards = mutate(leaves).split(time_signatures)
+        rewritten_voice = Voice()
+        for shard, time_signature in zip(shards, time_signatures):
+            measure = Measure(time_signature, shard)
+            rewritten_voice.append(measure)
+            meter = metertools.Meter(time_signature)
+            mutate(measure[:]).rewrite_meter(meter,boundary_depth=1)
+        return rewritten_voice
 
     ### PUBLIC PROPERTIES ###
 

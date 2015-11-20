@@ -313,25 +313,25 @@ class SegmentMaker(SegmentMakerBaseClass):
             import context_names
         for music_handler in self._music_handlers:
             instrument_name = music_handler.instrument_name
-            voices = music_handler()
-            for voice in voices:
+            voices_left = music_handler()
+            for voice in voices_left:
                 voice_context_name = voice.context_name
-                for staff in iterate(self._score).by_class(Staff):
-                    staff_context_name = staff.context_name
-                    staff_name = staff.name
+                for staff_left in iterate(self._score).by_class(Staff):
+                    staff_context_name = staff_left.context_name
+                    staff_name = staff_left.name
                     staff_accepts_voice = False
                     for voice_context in context_names[staff_context_name]:
                         if voice_context == voice_context_name:
                             staff_accepts_voice = True
                     if staff_accepts_voice \
                         and instrument_name.capitalize() in staff_name:
-                            staff.append(copy.deepcopy(voice))
+                            staff_left.append(copy.deepcopy(voice))
 
 
     def _label_instrument_changes(self):
         prototype = instrumenttools.Instrument# @UndefinedVariable
-        for staff_group in iterate(self._score).by_class(StaffGroup):
-            leaves = iterate(staff_group).by_class(scoretools.Leaf)# @UndefinedVariable
+        for fingering_staff_group in iterate(self._score).by_class(StaffGroup):
+            leaves = iterate(fingering_staff_group).by_class(scoretools.Leaf)# @UndefinedVariable
             for leaf_index, leaf in enumerate(leaves):
                 instruments = inspect_(leaf).get_indicators(prototype)
                 if not instruments:
@@ -344,7 +344,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                     previous_instrument = result
                 elif (leaf_index == 0 and \
                     1 < self._segment_number):
-                    instrument_name = self._get_previous_instrument(staff_group.name)
+                    instrument_name = self._get_previous_instrument(fingering_staff_group.name)
                     previous_instrument = instrument_name
                 else:
                     continue

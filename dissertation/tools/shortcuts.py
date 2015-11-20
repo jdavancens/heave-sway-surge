@@ -6,80 +6,185 @@ Created on Nov 13, 2015
 '''
 from abjad import *
 
-def hidden_grace_after(leaf):
-    assert isinstance(leaf, Note)
-    grace = scoretools.GraceContainer("c'16", kind='after')
-    point_note_head(grace[0])
-    attach(grace, leaf)
+def hidden_grace_after(leaf, named_pitch):
+    grace_note = Note(named_pitch, Duration(1,16))
+    point_note_head(grace_note)
+    override(grace_note).stem.stencil = False
+    override(grace_note).beam.stencil = False
+    override(grace_note).flag.stencil = False
+    grace_container = scoretools.GraceContainer([grace_note], kind='after')
+    attach(grace_container, leaf)
 
-def gliss(leaf):
-    assert isinstance(leaf, Note)
-    glissando = spannertools.Glissando()
-    attach(glissando, leaf)
+def gliss(expr):
+    glissando = indicatortools.LilyPondCommand('glissando', format_slot='right')
+    attach(glissando, expr)
 
-def gliss_skip(leaf):
-    assert isinstance(leaf, Note)
-    override(leaf).note_column.glissando_skip = True
-    point_note_head(leaf)
+def gliss_skip(expr):
+    override(expr).note_column.glissando_skip = True
 
 def bar_note_head(leaf):
-    assert isinstance(leaf, Note)
     command = indicatortools.LilyPondCommand('barNoteHead')
     attach(command, leaf)
 
 def point_note_head(leaf):
-    assert isinstance(leaf, Note)
     override(leaf).note_head.stencil =  schemetools.Scheme('point-stencil')
 
 def square_note_head(leaf):
-    assert isinstance(leaf, Note)
-    command = indicatortools.LilypondCommand('squareNoteHead')
+    command = indicatortools.LilyPondCommand('squareNoteHead')
     attach(command, leaf)
 
-def string_name_spanner(selection, string_name_start=None, string_name_stop=None):
-    assert instanceof(selection, selectiontools.ContiguousSelection)
-    selection = sequencetools.flatten_sequence(selection)
-    string_name_spanner = spannertools.TextSpanner()
-    if string_name_start is not None and string_name_stop is not None:
-        string_name_spanner = text_spanner_with_text(
-            string_name_start, string_name_stop)
-        override(string_name_spanner).text_spanner\
-            .bound__details__right_arrow = True
-    if string_name_start is not None and string_name_stop is None:
-        string_name_spanner = text_spanner_with_text(string_name_start, '')
-    if string_name_start is None and string_name_stop is not None:
-        string_name_spanner = text_spanner_with_text('', string_name_stop)
-        override(string_name_spanner).text_spanner\
-            .bound__details__right_arrow = True
-    attach(string_name_spanner, selection[:])
+def text_spanner(selection, vowels, last_vowel):
+    direction = Down
+    text_padding = 1
+    staff_padding = 4
 
-def text_spanner_with_text(start_text, stop_text):
-    text_spanner = spannertools.TextSpanner()
-    start = Markup(start_text)
-    stop = Markup(stop_text)
-    override(text_spanner).text_spanner.bound_details__left__text = start
-    override(text_spanner).text_spanner.bound_details__right__text = stop
-    override(text_spanner).text_spanner.bound_details__right__padding = 2.5
-    override(text_spanner).text_spanner.\
-        bound_details__left__stencil_align_dir_y = 0
-    override(text_spanner).text_spanner.\
-        bound_details__right__stencil_align_dir_y = 0
-    override(text_spanner).text_spanner.dash_fraction = 1.0
-    return text_spanner
+    first = selection[0]
+    last = selection[-1]
+    vowel_start = vowels[0]
+    vowel_stop = vowels[1]
 
-def vowel_spanner(selection, vowel_start=None, vowel_stop=None):
-    assert instanceof(selection, selectiontools.ContiguousSelection)
-    selection = sequencetools.flatten_sequence(selection)
-    vowel_spanner = spannertools.TextSpanner()
-    if vowel_start is not None and vowel_stop is not None:
-        vowel_spanner = text_spanner_with_text(
-            vowel_start, vowel_stop)
-        override(vowel_spanner).text_spanner\
-            .bound__details__right_arrow = True
-    if vowel_start is not None and vowel_stop is None:
-        vowel_spanner = text_spanner_with_text(vowel_start, '')
-    if vowel_start is None and vowel_stop is not None:
-        vowel_spanner = text_spanner_with_text('', vowel_stop)
-        override(vowel_spanner).text_spanner\
-            .bound__details__right_arrow = True
-    attach(vowel_spanner, selection[:])
+    start_command = indicatortools.LilyPondCommand("startTextSpan", format_slot='right')
+    stop_command = indicatortools.LilyPondCommand("stopTextSpan", format_slot='right')
+    left_markup = Markup(vowel_start).bold()
+    right_markup = Markup(vowel_stop).bold()
+    spanner_bound_padding = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=('bound-padding'),
+        value=10
+        )
+
+    spanner_left_text = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound-details',
+            'left',
+            'text'
+            ),
+        value=left_markup
+        )
+    spanner_right_text = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound-details',
+            'right',
+            'text'
+            ),
+        value=right_markup
+        )
+    spanner_left_alignment = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound_details',
+            'left',
+            'Y'
+            ),
+        value=-10
+        )
+    spanner_right_alignment = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound_details',
+            'right',
+            'Y'
+            ),
+        value=10
+        )
+    spanner_left_padding = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound-details',
+            'left',
+            'padding'
+            ),
+        value=0
+        )
+    spanner_right_padding = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound-details',
+            'right',
+            'padding'
+            ),
+        value=text_padding
+        )
+    spanner_direction = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=('direction'),
+        value=direction
+        )
+    spanner_line = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=('style'),
+        value=schemetools.SchemeSymbol('line')
+        )
+    spanner_no_line = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=('style'),
+        value=schemetools.SchemeSymbol('none')
+        )
+    spanner_staff_padding = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=('staff-padding'),
+        value=staff_padding
+        )
+    spanner_arrow = lilypondnametools.LilyPondGrobOverride(
+        grob_name='TextSpanner',
+        is_once=True,
+        property_path=(
+            'bound-details',
+            'right',
+            'arrow'
+            ),
+        value=True,
+        )
+    if vowel_start == last_vowel:
+        if vowel_start != vowel_stop:
+            attach(spanner_left_alignment, first)
+            attach(spanner_right_alignment, first)
+            attach(spanner_right_text, first)
+            attach(spanner_left_padding, first)
+            attach(spanner_right_padding, first)
+            attach(spanner_direction, first)
+            attach(spanner_line, first)
+            attach(spanner_arrow, first)
+            attach(spanner_staff_padding, first)
+            attach(start_command, first)
+            attach(stop_command, last)
+
+    else:
+        if vowel_start == vowel_stop:
+            attach(spanner_left_alignment, first)
+            attach(spanner_right_alignment, first)
+            attach(spanner_left_text, first)
+            attach(spanner_left_padding, first)
+            attach(spanner_right_padding, first)
+            attach(spanner_direction, first)
+            attach(spanner_no_line, first)
+            attach(spanner_staff_padding, first)
+            attach(start_command, first)
+            attach(stop_command, last)
+        else:
+            attach(spanner_left_text, first)
+            attach(spanner_left_alignment, first)
+            attach(spanner_right_alignment, first)
+            attach(spanner_right_text, first)
+            attach(spanner_left_padding, first)
+            attach(spanner_right_padding, first)
+            attach(spanner_direction, first)
+            attach(spanner_line, first)
+            attach(spanner_arrow, first)
+            attach(spanner_staff_padding, first)
+            attach(start_command, first)
+            attach(stop_command, last)
+

@@ -1,12 +1,23 @@
-define barNoteHead in stylesheet
-
+* redefine handlers to allow multiple patterns for different p
+  parameters
+* write tests for:
+    SegmentMaker
+    music_handlers
+        piano handler
+        normal music handler
+        string-bow, and string-finger handler
+    make_segment
+    build_score
+* cleanup functions
+    discrete crescendos (p,mp,mf,f = p<f for fast runs)
+    staccati
 
 * Add gradient function to color spanner
     * Learn scheme, postscript, ly functions
 * or define new spanner based on glissando that starts on a
-    note or chord and extends to a note, chord, rest or skip
-    takes start_min, start_max, stop_min, start_max,
-    color, start_saturation, stop_saturation
+  note or chord and extends to a note, chord, rest or skip
+  takes start_min, start_max, stop_min, start_max,
+  color, start_saturation, stop_saturation
 * Core functionality assertions, tests
 * Pitch structure interpreter
 * Woodwind fingering utility
