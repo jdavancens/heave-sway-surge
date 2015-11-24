@@ -5,10 +5,10 @@ Created on Nov 19, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.music_handlers import PianoHandler
+from dissertation.tools.handlers.PianoActionHandler import PianoActionHandler
 from dissertation.tools.MusicMaker import MusicMaker
 import os
-from abjad.tools.pitchtools.PitchVector import PitchVector
+from dissertation.tools.handlers.PianoPedalingHandler import PianoPedalingHandler
 
 def make_lilypond_file(expr):
     lilypond_file = lilypondfiletools.make_basic_lilypond_file(expr)
@@ -19,9 +19,9 @@ def make_lilypond_file(expr):
     stylesheet_path = os.path.join(
         'stylesheet.ily',
         )
-
     lilypond_file.file_initial_user_includes.append(stylesheet_path)
     return lilypond_file
+
 talea_left = rhythmmakertools.Talea(
         counts = [3, 5, 2, 2, 1, 3],
         denominator = 16
@@ -37,7 +37,6 @@ talea_rhythm_maker_right = rhythmmakertools.TaleaRhythmMaker(
         talea_right
     )
 music_maker_left = MusicMaker(
-    context_name='Voice',
     divisions=[(4,4)] * 1,
     instrument_name='Piano',
     rhythm_maker=talea_rhythm_maker_left,
@@ -70,7 +69,6 @@ dynamics_left = (
     indicatortools.Dynamic('ff')
     )
 music_maker_right = MusicMaker(
-    context_name='Voice',
     divisions=[(4,4)] * 1,
     instrument_name='Piano',
     rhythm_maker=talea_rhythm_maker_right,
@@ -102,7 +100,7 @@ dynamics_right = (
     indicatortools.Dynamic('mp'),
     indicatortools.Dynamic('f')
     )
-handler_left = PianoHandler(
+handler_left = PianoActionHandler(
     music_maker=music_maker_left,
     pitch_sets=pitch_sets_left,
     pitch_pattern=(0,1,2),
@@ -111,7 +109,7 @@ handler_left = PianoHandler(
     dynamics=dynamics_left,
     dynamic_pattern=(0,0,0,1,1,2)
     )
-handler_right = PianoHandler(
+handler_right = PianoActionHandler(
     music_maker=music_maker_right,
     pitch_sets=pitch_sets_right,
     pitch_pattern=(0,1,2,1),
@@ -120,16 +118,34 @@ handler_right = PianoHandler(
     dynamics=dynamics_right,
     dynamic_pattern=(2,2,1,1,0,0)
     )
+pedal_rhythm_maker = rhythmmakertools.NoteRhythmMaker()
+pedal_music_maker = MusicMaker(
+    divisions=[(4,4)] * 1,
+    instrument_name='Piano',
+    rhythm_maker=pedal_rhythm_maker,
+    stages=[0,1,2],
+    start_tempo=Tempo((1,4), 60),
+    stop_tempo=Tempo((1,4), 120),
+    time_signatures=[(4,4)] * 1
+    )
+pedal_handler = PianoPedalingHandler(
+    music_maker=pedal_music_maker,
+    sustain_pedal_on=True,
+    soft_pedal_on=True
+    )
 time_signature_staff = Staff("s1")
 time_signature_staff.context_name = "TimeSignatureContext"
-voice_left = handler_left()
-voice_right = handler_right()
+voice_left = handler_left()[0]
+voice_right = handler_right()[0]
+voice_pedal = pedal_handler()[0]
 staff_left = Staff([voice_left])
 staff_right = Staff([voice_right])
+staff_pedal = Staff([voice_pedal], context_name="PianoPedalingStaff")
 piano_staff = StaffGroup([staff_right, staff_left])
 piano_staff.context_name = 'PianoStaff'
 staff_group = StaffGroup()
 staff_group.append(piano_staff)
+staff_group.append(staff_pedal)
 staff_group.context_name = "PianoStaffGroup"
 score = Score([time_signature_staff, staff_group])
 lilypond_file = make_lilypond_file(score)

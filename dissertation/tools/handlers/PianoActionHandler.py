@@ -7,24 +7,7 @@ Created on Nov 20, 2015
 
 from abjad import *
 from dissertation.tools.shortcuts import *
-from math import floor
 import copy
-from dissertation.tools import graphics_tools
-
-def map_fraction_to_treble_staff_position(
-    fraction,
-    number_of_staff_lines):
-    fractional_staff_position = \
-        (fraction * ((number_of_staff_lines * 2) - 2)) + 2
-    staff_position = round(fractional_staff_position)
-    return staff_position
-
-def map_fraction_to_grayscale_rgb(fraction):
-    fl = (float(fraction) * 0.75) + 0.25
-    fl = 1 - fl
-    hsb_tuple = (0, 0, fl)
-    scheme_color = graphics_tools.scheme_rgb_color(hsb_tuple)
-    return scheme_color
 
 class PianoActionHandler(abctools.AbjadObject):
 
@@ -55,8 +38,15 @@ class PianoActionHandler(abctools.AbjadObject):
         self.music_maker = music_maker
         self.articulations = articulations
         self.articulation_pattern = articulation_pattern
-        self.dynamics = dynamics
+        if isinstance(dynamics, indicatortools.Dynamic):
+            self.dynamics = [dynamics]
+        elif isinstance(dynamics, tuple):
+            self.dynamics = dynamics
+        else:
+            self.dynamics = None
         self.dynamic_pattern = dynamic_pattern
+        if dynamics is not None and dynamic_pattern is None:
+            self.dynamic_pattern = range(len(dynamics))
         self.pitch_sets = pitch_sets
         self.pitch_pattern = pitch_pattern
 
@@ -64,29 +54,28 @@ class PianoActionHandler(abctools.AbjadObject):
 
     def __call__ (self):
         voice = self.music_maker()
-        voice.name = "Piano Voice"
-        voice.context_name = self.music_maker._context_name
+        voice.name = self.music_maker.name
         self._attach_pitches(voice)
         self._attach_articulations(voice)
         self._attach_dynamics(voice)
         self._attach_clef(voice)
-        return voice
+        return [voice]
 
     ### PRIVATE METHODS ###
 
     def _attach_articulations(self, voice):
-        articulation_cycle = datastructuretools.CyclicTuple(self.articulation_pattern)
-        articulation_cursor = datastructuretools.Cursor(articulation_cycle)
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            articulation = self.articulations[articulation_cursor.next()[0]]
-            if articulation is not None:
-                attach(articulation, logical_tie[0])
+        if self.articulations is not None:
+            articulation_cycle = datastructuretools.CyclicTuple(self.articulation_pattern)
+            articulation_cursor = datastructuretools.Cursor(articulation_cycle)
+            for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+                articulation = self.articulations[articulation_cursor.next()[0]]
+                if articulation is not None:
+                    attach(articulation, logical_tie[0])
 
     def _attach_clef(self, voice):
         all_pitches = []
         for pitch_set in self.pitch_sets:
-            all_pitches.extend(pitch_set.items)
-        print(all_pitches)
+            all_pitches.extend(pitch_set)
         all_pitches = pitchtools.PitchSet(
             items=all_pitches,
             item_class=type(all_pitches[0])
@@ -102,11 +91,13 @@ class PianoActionHandler(abctools.AbjadObject):
 
 
     def _attach_dynamics(self, voice):
+
         dynamics_cycle = datastructuretools.CyclicTuple(self.dynamic_pattern)
         dynamics_cursor = datastructuretools.Cursor(dynamics_cycle)
         last_dynamic = None
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            dynamic = self.dynamics[dynamics_cursor.next()[0]]
+            i = dynamics_cursor.next()[0]
+            dynamic = self.dynamics[i]
             if dynamic is not None:
                 if dynamic != last_dynamic:
                     attach(dynamic, logical_tie[0])
@@ -122,7 +113,7 @@ class PianoActionHandler(abctools.AbjadObject):
                     note.note_head = pitch_set.items[0]
                 else:
                     chord = Chord(
-                        pitch_set.items,
+                        pitch_set,
                         note.written_duration
                         )
                     mutate(note).replace(chord)
@@ -130,9 +121,9 @@ class PianoActionHandler(abctools.AbjadObject):
     ### PUBLIC PROPERTIES ###
 
     @property
-    def context_name(self):
-        return self.music_maker.context_name()
+    def instrument_name(self):
+        return self.music_maker.instrument_name
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name()
+    def name(self):
+        return self.music_maker.name

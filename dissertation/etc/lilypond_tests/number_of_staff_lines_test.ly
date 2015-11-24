@@ -1,5 +1,11 @@
 \version "2.18.29"
-\layout{}
+\layout{
+    \context {
+        \Score
+        \override StaffGrouper.staff-staff-spacing.padding = #10
+
+    }
+}
 \paper{}
 \score{
     \new StaffGroup{
@@ -33,19 +39,11 @@
                 b'1
             }
             \new Staff{
-                \override Staff.StaffSymbol.line-count = #8
-                b'1
-            }
-            \new Staff{
-                \override Staff.StaffSymbol.line-count = #9
-                b'1
-            }
-            \new Staff{
                 \override Staff.StaffSymbol.line-count = #10
                 b'1
             }
             \new Staff{
-                \override Staff.StaffSymbol.line-count = #28
+                \override Staff.StaffSymbol.line-count = #30
                 b'1
             }
 

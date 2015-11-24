@@ -5,7 +5,7 @@ Created on Nov 20, 2015
 @author: josephdavancens
 '''
 
-class WoodwindFingering(abctools.AbjadObject):
+class WoodwindFingering(object):
 
     ### CLASS ATTRIBUTES ###
 
@@ -28,6 +28,10 @@ class WoodwindFingering(abctools.AbjadObject):
         self._instrument_name = instrument_name
         self._hand = hand
         self._fingering = fingering
+        if hand == Left:
+            assert len(fingering) == 5
+        if hand == Right:
+            assert len(fingering) == 4
 
     ### PUBLIC PROPERTIES ###
 

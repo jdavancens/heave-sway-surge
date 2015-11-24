@@ -96,125 +96,15 @@ pad = 0.5
                 (right
                     (attch-dir . -1)
                     (end-on-accidental . #t)
-                    (padding . 1)
+                    (padding . 0)
                 )
                 (left
                     (attach-dir . 1)
-                    (padding . -1)
+                    (padding . 0)
                 )
             )
     }
-    \context {
-        \Voice
-        \name StringSpaceVoice
-        \alias Voice
-        \type Engraver_group
-        \consists Font_size_engraver
-        \consists Output_property_engraver
-        \consists Arpeggio_engraver
-        \consists Multi_measure_rest_engraver
-        \consists Text_spanner_engraver
-        \consists Grob_pq_engraver
-        \consists Note_head_line_engraver
-        \consists Glissando_engraver
-        \consists Ligature_bracket_engraver
-        \consists Breathing_sign_engraver
-        \consists Grace_beam_engraver
-        \consists New_fingering_engraver
-        \consists Chord_tremolo_engraver
-        \consists Percent_repeat_engraver
-        \consists Slash_repeat_engraver
-        \consists Text_engraver
-        \consists Dynamic_engraver
-        \consists Dynamic_align_engraver
-        \consists Fingering_engraver
-        \consists Script_column_engraver
-        \consists Rhythmic_column_engraver
-        \consists Cluster_spanner_engraver
-        \consists Tie_engraver
-        \consists Tuplet_engraver
-        \consists Note_heads_engraver
-        \consists Rest_engraver
-        \consists Stem_engraver
-        \consists Beam_engraver
-        \consists Phrasing_slur_engraver
-        \consists Slur_engraver
-        \consists Script_engraver
-    }
-    \context {
-        \Voice
-        \name WoodwindFingeringLifelineVoice
-        \alias Voice
-        \type Engraver_group
-        \consists Font_size_engraver
-        \consists Output_property_engraver
-        \consists Arpeggio_engraver
-        \consists Multi_measure_rest_engraver
-        \consists Text_spanner_engraver
-        \consists Grob_pq_engraver
-        \consists Note_head_line_engraver
-        \consists Glissando_engraver
-        \consists Ligature_bracket_engraver
-        \consists Breathing_sign_engraver
-        \consists Grace_beam_engraver
-        \consists New_fingering_engraver
-        \consists Chord_tremolo_engraver
-        \consists Percent_repeat_engraver
-        \consists Slash_repeat_engraver
-        \consists Text_engraver
-        \consists Dynamic_engraver
-        \consists Dynamic_align_engraver
-        \consists Fingering_engraver
-        \consists Script_column_engraver
-        \consists Rhythmic_column_engraver
-        \consists Cluster_spanner_engraver
-        \consists Tie_engraver
-        \consists Tuplet_engraver
-        \consists Note_heads_engraver
-        \consists Rest_engraver
-        \consists Stem_engraver
-        \consists Beam_engraver
-        \consists Phrasing_slur_engraver
-        \consists Slur_engraver
-        \consists Script_engraver
-    }
-    \context {
-        \Voice
-        \name WoodwindFingeringVoice
-        \alias Voice
-        \type Engraver_group
-        \consists Font_size_engraver
-        \consists Output_property_engraver
-        \consists Arpeggio_engraver
-        \consists Multi_measure_rest_engraver
-        \consists Text_spanner_engraver
-        \consists Grob_pq_engraver
-        \consists Note_head_line_engraver
-        \consists Glissando_engraver
-        \consists Ligature_bracket_engraver
-        \consists Breathing_sign_engraver
-        \consists Grace_beam_engraver
-        \consists New_fingering_engraver
-        \consists Chord_tremolo_engraver
-        \consists Percent_repeat_engraver
-        \consists Slash_repeat_engraver
-        \consists Text_engraver
-        \consists Dynamic_engraver
-        \consists Dynamic_align_engraver
-        \consists Fingering_engraver
-        \consists Script_column_engraver
-        \consists Rhythmic_column_engraver
-        \consists Cluster_spanner_engraver
-        \consists Tie_engraver
-        \consists Tuplet_engraver
-        \consists Note_heads_engraver
-        \consists Rest_engraver
-        \consists Stem_engraver
-        \consists Beam_engraver
-        \consists Phrasing_slur_engraver
-        \consists Slur_engraver
-        \consists Script_engraver
-    }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%STAVES
     \context {
@@ -230,7 +120,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts WoodwindLeftHandFingeringVoice
         \omit Clef
         \omit TimeSignature
         \omit StaffSymbol
@@ -240,11 +129,12 @@ pad = 0.5
         \omit Beam
         \omit Flag
         \override NoteHead.stencil = #point-stencil
+        pedalSustainStyle = #'mixed
         squashedPosition = #0
     }
     \context {
         \Staff
-        \name StringBowRhythmStaff
+        \name StringBowingRhythmStaff
         \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
@@ -255,7 +145,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts StringSpaceVoice
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -267,7 +156,7 @@ pad = 0.5
     }
     \context {
         \Staff
-        \name StringFingerRhythmStaff
+        \name StringFingeringRhythmStaff
         \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
@@ -278,7 +167,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts StringSpaceVoice
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -300,7 +188,6 @@ pad = 0.5
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
         \accepts Voice
-        \accepts StringSpaceVoice
         \omit Beam
         \omit Clef
         \omit Dots
@@ -308,14 +195,17 @@ pad = 0.5
         \omit Stem
         \omit Tie
         \omit TimeSignature
+
         \override StaffSymbol.line-count = #30
         \override StaffSymbol.stencil = #(color-staff-lines
-            #f white white white white
+            black white white white white
+            white white black white white
             white white white white white
             white white white white white
             white white white white white
-            white white white white #f
+            white white white white black
             )
+
     }
     \context {
         \name TimeSignatureContext
@@ -383,7 +273,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts WoodwindLeftHandFingeringVoice
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -404,8 +293,7 @@ pad = 0.5
         \consists Rest_collision_engraver
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
-        \accepts WoodwindLeftHandFingeringVoice
-        \accepts WoodwindLeftHandFingeringLifelineVoice
+        \accepts Voice
         \hide Beam
         \hide Clef
         \hide Dots
@@ -418,7 +306,7 @@ pad = 0.5
     }
     \context {
         \Staff
-        \name WoodwindPressureRhythmStaff
+        \name WoodwindEmbouchureRhythmStaff
         \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
@@ -429,7 +317,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts WoodwindPressureVoice
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -440,7 +327,7 @@ pad = 0.5
     }
     \context {
         \Staff
-        \name WoodwindPressureStaff
+        \name WoodwindEmbouchureStaff
         \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
@@ -450,7 +337,6 @@ pad = 0.5
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
         \accepts Voice
-        \accepts WoodwindPressureVoice
         \omit Beam
         \omit Clef
         \omit Dots
@@ -473,7 +359,6 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        \accepts WoodwindLeftHandFingeringVoice
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -494,8 +379,7 @@ pad = 0.5
         \consists Rest_collision_engraver
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
-        \accepts WoodwindLeftHandFingeringVoice
-        \accepts WoodwindLeftHandFingeringLifelineVoice
+        \accepts Voice
         \hide Beam
         \hide Clef
         \hide Dots
@@ -506,9 +390,6 @@ pad = 0.5
         \override NoteHead.stencil = \squareStencil
         \override StaffSymbol.line-count = 4
     }
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SUB-INSTRUMENT STAFF GROUPS
     \context {
         \StaffGroup
@@ -535,7 +416,6 @@ pad = 0.5
         \consists Span_bar_engraver
         \consists Span_arpeggio_engraver
     }
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
     \context {
         \StaffGroup
@@ -556,8 +436,8 @@ pad = 0.5
         \name StringInstrumentStaffGroup
         \alias StaffGroup
         \type Engraver_group
-        \accepts StringBowRhythmStaff
-        \accepts StringFingerRhythmStaff
+        \accepts StringBowingRhythmStaff
+        \accepts StringFingeringRhythmStaff
         \accepts StringSpaceStaffGroup
         \consists Output_property_engraver
         \consists Vertical_align_engraver
@@ -571,8 +451,11 @@ pad = 0.5
         \name WoodwindInstrumentStaffGroup
         \alias StaffGroup
         \type Engraver_group
-        \accepts WoodwindPressureStaff
+        \accepts WoodwindEmbouchureRhythmStaff
+        \accepts WoodwindEmbouchureStaff
+        \accepts WoodwindLeftHandFingeringRhythmStaff
         \accepts WoodwindFingeringStaffGroup
+        \accepts WoodwindRightHandFingeringRhythmStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \consists Span_bar_stub_engraver
@@ -603,15 +486,17 @@ pad = 0.5
         \accepts PianoPedalingStaff
         \accepts PianoStaff
         \accepts PianoStaffGroup
-        \accepts StringBowRhythmStaff
+        \accepts Staff
+        \accepts StringBowingRhythmStaff
         \accepts StringFingeringRhythmStaff
         \accepts StringSpaceStaff
         \accepts StringSpaceStaffGroup
+        \accepts StringInstrumentStaffGroup
         \accepts TimeSignatureContext
         \accepts WoodwindLeftHandFingeringStaff
         \accepts WoodwindLeftHandFingeringRhythmStaff
-        \accepts WoodwindPressureRhythmStaff
-        \accepts WoodwindPressureStaff
+        \accepts WoodwindEmbouchureRhythmStaff
+        \accepts WoodwindEmbouchureStaff
         \accepts WoodwindFingeringStaffGroup
         \accepts WoodwindInstrumentStaffGroup
         \remove Bar_number_engraver

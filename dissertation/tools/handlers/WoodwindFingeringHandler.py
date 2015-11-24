@@ -7,26 +7,9 @@ Created on Nov 20, 2015
 
 from abjad import *
 from dissertation.tools.shortcuts import *
-from math import floor
 import copy
-from dissertation.tools import graphics_tools
 
-def map_fraction_to_treble_staff_position(
-    fraction,
-    number_of_staff_lines):
-    fractional_staff_position = \
-        (fraction * ((number_of_staff_lines * 2) - 2)) + 2
-    staff_position = round(fractional_staff_position)
-    return staff_position
-
-def map_fraction_to_grayscale_rgb(fraction):
-    fl = (float(fraction) * 0.75) + 0.25
-    fl = 1 - fl
-    hsb_tuple = (0, 0, fl)
-    scheme_color = graphics_tools.scheme_rgb_color(hsb_tuple)
-    return scheme_color
-
-class WoodwindFingeringHandler(abctools.AbjadObject):
+class WoodwindFingeringHandler(object):
     '''A fingering handler for woodwind instruments
 
     '''
@@ -58,7 +41,9 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
 
     def __call__(self):
         voice = self.music_maker()
+        voice.name = self.music_maker.name
         rhythm_voice = copy.deepcopy(voice)
+        rhythm_voice.name = self.music_maker.name + " Rhythm"
         self._handle_fingerings(voice)
         lifeline_voice = self._make_lifeline_voice(voice)
         return [voice, lifeline_voice, rhythm_voice]
@@ -66,17 +51,16 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
     ### PRIVATE METHODS @@@
 
     def _handle_fingerings(self, voice):
-        self._name_voice_and_context(voice)
 
         cycle = datastructuretools.CyclicTuple(self.pattern)
         cursor = datastructuretools.Cursor(cycle)
 
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             i = cursor.next()[0]
-            fingering = self.fingerings[0][i]
+            fingering = self.fingerings[i]
             fingering = fingering.as_binary_list()
             pitches = []
-            if self.hand == Left:
+            if self.hand == 'Left':
                 pitches = [4, 7, 11, 14, 17]
             else:
                 pitches = [5, 9, 12, 16]
@@ -104,14 +88,17 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
 
     def _make_lifeline_voice(self, voice):
         lifeline_voice = copy.deepcopy(voice)
-        self._name_lifeline_voice_and_context(lifeline_voice)
+        lifeline_voice.name = '{} Hand {}'.format(
+            self.hand,
+            "Fingering Lifeline"
+            )
 
         cycle = datastructuretools.CyclicTuple(self.pattern)
         cursor = datastructuretools.Cursor(cycle)
 
         for logical_tie in iterate(lifeline_voice).by_logical_tie(pitched=True):
             chord = None
-            if self.hand == Left:
+            if self.hand == 'Left':
                 chord = "e' g' b' d'' f''"
             else:
                 chord = "f' a' c'' e''"
@@ -124,7 +111,7 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
         grace_chord = Chord(last_leaf.written_pitches, Duration(1,16))
         for note_head in grace_chord.note_heads:
             note_head.tweak.transparent = True
-        grace_container = GraceContainer([grace_chord], kind='after')
+        grace_container = scoretools.GraceContainer([grace_chord], kind='after')
         attach(grace_container, last_leaf)
 
         cycle = datastructuretools.CyclicTuple(self.pattern)
@@ -132,11 +119,11 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
 
         for logical_tie in iterate(lifeline_voice).by_logical_tie(pitched=True):
             i = cursor.next()[0]
-            fingering = self.fingerings[0][i]
+            fingering = self.fingerings[i]
             fingering = fingering.as_binary_list()
             glissando_map = self._make_glissando_map(fingering, voice.context_name)
             attach(glissando_map, logical_tie[0])
-            gliss(logical_tie[0])
+            gliss(logical_tie[0], color=None)
             if len(logical_tie)>1:
                 for chord in logical_tie[1:]:
                     gliss_skip(chord)
@@ -164,43 +151,12 @@ class WoodwindFingeringHandler(abctools.AbjadObject):
             )
         return glissando_map
 
-    def _name_voice_and_context(self, voice):
-        hand = str(self.hand)
-        instrument_name = self.music_maker.instrument_name
-        voice.name = \
-            instrument_name.capitalize()+" "+\
-            hand.capitalize()+\
-            " Hand Fingering Voice"
-        voice.context_name = "Woodwind"+hand.capitalize()+"HandFingeringVoice"
-
-    def _name_lifeline_voice_and_context(self, lifeline_voice):
-        hand = str(self.hand)
-        instrument_name = self.music_maker.instrument_name
-        lifeline_voice.name = \
-            instrument_name.capitalize()+" "+\
-            hand.capitalize()+\
-            " Hand Fingering Lifeline Voice"
-        lifeline_voice.context_name = \
-            "Woodwind"+hand.capitalize()+"HandFingeringLifelineVoice"
-
-    def _name_rhythm_voice_and_context(self, rhythm_voice):
-        hand = str(self._hand)
-        instrument_name = self.music_maker.instrument_name
-        rhythm_voice.name = \
-            instrument_name.capitalize()+" "+\
-            hand.capitalize()+\
-            " Hand Fingering Rhythm Voice"
-        rhythm_voice.context_name = \
-            "Woodwind"+hand.capitalize()+"HandFingeringRhythmVoice"
-
     ### PUBLIC PROPERTIES ###
 
     @property
-    def context_name(self):
-        return self.music_maker.context_name
-
     def instrument_name(self):
         return self.music_maker.instrument_name
 
+    @property
     def name(self):
         return self.music_maker.name

@@ -2,15 +2,17 @@
   parameters
 * write tests for:
     SegmentMaker
-    music_handlers
-        piano handler
-        normal music handler
-        string-bow, and string-finger handler
     make_segment
     build_score
+* overwrite functions
+    erasure: make rests
+    rhythm overwrites: recursively subdivide
+
 * cleanup functions
-    discrete crescendos (p,mp,mf,f = p<f for fast runs)
-    staccati
+    discrete crescendos (p,mp,mf,f = p<f for fast runs n>2)
+    staccati (change logical_tie[1:] to rest)
+    redundant piano dynamics
+
 
 * Add gradient function to color spanner
     * Learn scheme, postscript, ly functions

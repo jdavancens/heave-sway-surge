@@ -15,8 +15,8 @@ class MusicMaker:
     '''
     ## CLASS ATTRIBUTES ###
     __slots__ = (
-        '_context_name',
         '_instrument_name',
+        '_name',
         '_stages',
         'divisions',
         'rhythm_maker',
@@ -30,9 +30,9 @@ class MusicMaker:
     ### INTITIALIZER ###
     def __init__(
         self,
-        context_name=None,
         divisions=None,
         instrument_name=None,
+        name=None,
         rhythm_maker = None,
         stages=None,
         start_tempo=None,
@@ -40,9 +40,9 @@ class MusicMaker:
         time_signatures=None
         ):
 
-        self._context_name = context_name
         self.divisions = divisions
         self._instrument_name = instrument_name
+        self._name = name
         self.rhythm_maker = rhythm_maker
         self._stages = stages
         self.start_tempo = start_tempo
@@ -51,7 +51,6 @@ class MusicMaker:
         for pair in time_signatures:
             time_signature = indicatortools.TimeSignature(pair)
             self.time_signatures.append(time_signature)
-
         divisions_fractions = [Duration(pair) for pair in divisions]
         divisions_sum = sum(divisions_fractions)
         time_sigs_fractions = [Duration(pair) for pair in time_signatures]
@@ -64,7 +63,6 @@ class MusicMaker:
 
         Returns music as a selection.
         '''
-        from dissertation.materials.instruments import instruments
         voice = self._make_rhythm()
         assert isinstance(voice, Voice)
         return voice
@@ -72,31 +70,29 @@ class MusicMaker:
     ### PRIVATE METHODS ###
 
     def _make_rhythm(self):
-        divisions = self.divisions
-        rhythm_maker = self.rhythm_maker
         time_signatures = self.time_signatures
-        rhythm = rhythm_maker(divisions)
+        rhythm = self.rhythm_maker(self.divisions)
         rhythm = sequencetools.flatten_sequence(rhythm)
         voice = Voice(rhythm)
-        leaves = voice.select_leaves()
-        shards = mutate(leaves).split(time_signatures)
-        rewritten_voice = Voice()
-        for shard, time_signature in zip(shards, time_signatures):
-            measure = Measure(time_signature, shard)
-            rewritten_voice.append(measure)
-            meter = metertools.Meter(time_signature)
-            mutate(measure[:]).rewrite_meter(meter,boundary_depth=1)
-        return rewritten_voice
+#         leaves = voice.select_leaves()
+#         shards = mutate(leaves).split(time_signatures)
+#         rewritten_voice = Voice()
+#         for shard, time_signature in zip(shards, time_signatures):
+#             measure = Measure(time_signature, shard)
+#             meter = metertools.Meter(time_signature)
+#             mutate(measure[:]).rewrite_meter(meter)
+#             rewritten_voice.append(measure)
+        return voice
 
     ### PUBLIC PROPERTIES ###
 
     @property
-    def context_name(self):
-        return self._context_name
-
-    @property
     def instrument_name(self):
         return self._instrument_name
+
+    @property
+    def name(self):
+        return self._name
 
     @property
     def stages(self):

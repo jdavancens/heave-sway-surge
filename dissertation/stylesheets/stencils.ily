@@ -14,29 +14,24 @@ squareStencil =
 		grestore" )
 	(cons 0 1.3125)
 	(cons -.75 .75))
-squareNoteHead = \override NoteHead.stencil = \squareStencil
+squareNoteHead = \once \override NoteHead.stencil = \squareStencil
 
-
-
-shadedBox =
-	#(ly:make-stencil (list 'embedded-ps
-	"
-		gsave
-		currentpoint translate
-		0 1 100
-		{
-			100 div setgray
-			newpath
-			0 0 moveto
-			0 2 rlineto
-			closepath
-			stroke
-			0.1 0 translate
-		} for
-		grestore
-		" )
-	(cons 0 0)
-	(cons 100 50))
+barStencil =
+    #(ly:make-stencil (list 'embedded-ps
+        "gsave
+        currentpoint translate
+        newpath
+        0. 0.5 moveto
+        2 0.5 lineto
+        2 -0.5 lineto
+        0. -0.5 lineto
+        0. 0.5 lineto
+        closepath
+        fill
+        grestore" )
+    (cons 0 1.3125)
+    (cons -.75 .75))
+barNoteHead = \once \override NoteHead.stencil = \barStencil
 
 % color individual staff lines xxx.stencil = #(color-staff-lines
 #(define-public ((color-staff-lines . rest) grob)

@@ -6,24 +6,8 @@ Created on Nov 20, 2015
 '''
 from abjad import *
 from dissertation.tools.shortcuts import *
-from math import floor
 import copy
 from dissertation.tools import graphics_tools
-
-def map_fraction_to_treble_staff_position(
-    fraction,
-    number_of_staff_lines):
-    fractional_staff_position = \
-        (fraction * ((number_of_staff_lines * 2) - 2)) + 2
-    staff_position = round(fractional_staff_position)
-    return staff_position
-
-def map_fraction_to_grayscale_rgb(fraction):
-    fl = (float(fraction) * 0.75) + 0.25
-    fl = 1 - fl
-    hsb_tuple = (0, 0, fl)
-    scheme_color = graphics_tools.scheme_rgb_color(hsb_tuple)
-    return scheme_color
 
 class StringFingeringHandler(object):
     r'''
@@ -33,26 +17,151 @@ class StringFingeringHandler(object):
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-
+        'music_maker',
+        'fingerings',
+        'pattern',
+        'color',
+        'number_of_staff_lines'
     )
 
     ### INTIALIZER ###
 
-    def __init__(
+    def __init__ (
         self,
-        ):
-
+        music_maker=None,
+        fingerings=None,
+        pattern=None,
+        color=None,
+        number_of_staff_lines=None):
+        self.music_maker = music_maker
+        self.fingerings = fingerings
+        self.pattern = pattern
+        self.color = color
+        self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
 
-
-
-    ### PRIVATE PROPERTIES ###
-
-
+    def __call__ (self):
+        voice = self.music_maker()
+        self._annotate_logical_ties(voice)
+        rhythm_voice = copy.deepcopy(voice)
+        self._name_voices(voice, rhythm_voice)
+        self._handle_fingering_voice(voice)
+        self._handle_rhythm_voice(rhythm_voice)
+        return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
 
+    def _annotate_logical_tie(self, logical_tie, fingering):
+        height_start = indicatortools.Annotation(
+            'height_start', fingering.height[0])
+        height_stop = indicatortools.Annotation(
+            'height_stop', fingering.height[1])
+        pressure_start = indicatortools.Annotation(
+            'pressure_start', fingering.pressure[0])
+        pressure_stop = indicatortools.Annotation(
+            'pressure_stop', fingering.pressure[1])
+        attach(height_start, logical_tie[0])
+        attach(height_stop, logical_tie[0])
+        attach(pressure_start, logical_tie[0])
+        attach(pressure_stop, logical_tie[0])
 
+    def _annotate_from_next_logical_tie(self, current, next):
+        if isinstance(current[0], Note) and isinstance(next[0], Note):
+            next_height_start = inspect_(next[0]).get_annotation('height_start')
+            next_height_start = indicatortools.Annotation(
+                'next_height_start',
+                next_height_start)
+            attach(next_height_start, current[0])
+
+    def _annotate_logical_ties(self, voice):
+        logical_ties = list(iterate(voice).by_logical_tie())
+        cycle = datastructuretools.CyclicTuple(self.pattern)
+        cursor = datastructuretools.Cursor(cycle)
+        for logical_tie in logical_ties:
+            if isinstance(logical_tie[0], Note):
+                i = cursor.next()[0]
+                fingering = self.fingerings[i]
+                self._annotate_logical_tie(logical_tie, fingering)
+        for i in range(len(logical_ties)-1):
+            if isinstance(logical_ties[i][0], Note):
+                self._annotate_from_next_logical_tie(
+                    logical_ties[i],
+                    logical_ties[i+1])
+
+    def _handle_fingering_voice(self, voice):
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            self._map_note_heads(logical_tie)
+            self._insert_gliss_anchor(logical_tie)
+            self._handle_height_and_pressure(logical_tie)
+
+    def _handle_height_and_pressure(self, logical_tie):
+        pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
+        color = graphics_tools.desaturate_rgb(
+                pressure,
+                self.color
+                )
+        color = graphics_tools.scheme_rgb_color(color)
+        point_note_head(logical_tie[0])
+        gliss(logical_tie[0], color)
+        if len(logical_tie) > 1:
+            for leaf in logical_tie[1:]:
+                gliss_skip(leaf)
+                point_note_head(leaf)
+
+    def _handle_rhythm_voice(self, rhythm_voice):
+        for leaf in rhythm_voice.select_leaves(
+                allow_discontiguous_leaves=True,
+                leaf_classes=Note
+                ):
+            point_note_head(leaf)
+
+    def _insert_gliss_anchor(self, logical_tie):
+        height_stop = inspect_(logical_tie[0]).get_annotation('height_stop')
+        next_height_start = inspect_(logical_tie[0]).get_annotation('next_height_start')
+        staff_position = self._map_fraction_to_treble_staff_position(
+            height_stop,
+            number_of_staff_lines=self.number_of_staff_lines
+                )
+        named_pitch = pitchtools.NamedPitch.from_staff_position(
+            staff_position)
+        if height_stop != next_height_start:
+            hidden_grace_after(logical_tie[-1], named_pitch)
+
+    def _map_fraction_to_treble_staff_position(
+        self,
+        fraction,
+        number_of_staff_lines
+        ):
+        if 0 <= number_of_staff_lines < 3:
+            staff_position = 6
+        else:
+            staff_position = fraction * ((2 * number_of_staff_lines) - 4)
+            staff_position = round(staff_position) + 8 - number_of_staff_lines
+        return staff_position
+
+    def _map_note_heads(self, logical_tie):
+        height_start = inspect_(logical_tie[0]).get_annotation('height_start')
+        staff_position = self._map_fraction_to_treble_staff_position(
+            height_start,
+            number_of_staff_lines=self.number_of_staff_lines
+            )
+        named_pitch = pitchtools.NamedPitch.from_staff_position(
+            staff_position)
+        for leaf in logical_tie:
+            leaf.written_pitch = named_pitch
+
+    def _name_voices(self, voice, rhythm_voice):
+        instrument_name = self.music_maker.instrument_name
+        voice.name = self.music_maker.name
+        rhythm_voice.name = self.music_maker.name + " Rhythm"
 
     ### PUBLIC PROPERTIES ###
+
+    @property
+    def instrument_name(self):
+        return self.music_maker.instrument_name
+
+    @property
+    def name(self):
+        return self.music_maker.name

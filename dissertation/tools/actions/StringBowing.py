@@ -7,21 +7,6 @@ Created on Nov 20, 2015
 
 class StringBowing(object):
     '''A bow parameter change
-
-    .. container:: example
-
-        ::
-            >>>bow_action = BowAction(
-            ...    instrument_name='violin',
-            ...    pressure_start=Fraction(4,5),
-            ...    pressure_stop=Fraction(3, 4),
-            ...    contact_point_start=Fraction(1, 16),
-            ...    contact_point_stop=Fraction(1,4),
-            ...    height_start=Fraction(1, 15),
-            ...    height_stop=Fraction(2,5),
-            ...    string_ids=('c', 'g')
-            ...    staccato=True,
-            ...)
     '''
 
     ## CLASS ATTRIBUTES ###
@@ -31,7 +16,7 @@ class StringBowing(object):
         'pressure_start',
         'pressure_stop',
         'contact_point_start',
-        'contact_point_stop'
+        'contact_point_stop',
         'height_start',
         'height_stop',
         'string_ids',
@@ -78,14 +63,8 @@ class StringBowing(object):
     @property
     def instrument_name(self):
         return self._instrument_name
+
     @property
     def pressure(self):
         return (self.pressure_start, self.pressure_stop)
 
-    @property
-    def staccato(self):
-        return self.staccato
-
-    @property
-    def string_ids(self):
-        return self.string_ids

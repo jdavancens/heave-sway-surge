@@ -7,6 +7,7 @@ Created on Oct 31, 2015
 import copy
 import os
 from abjad import *
+from dissertation.materials.staff_map import staff_map
 from dissertation.tools.ScoreTemplate import ScoreTemplate
 
 class SegmentMakerBaseClass(abctools.AbjadObject):
@@ -167,6 +168,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         return self.lilypond_file
 
     ### PRIVATE METHODS ###
+
     def _add_final_barline(self):
         abbreviation = '|'
         if self._is_last_segment:
@@ -205,7 +207,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         letter_number = segment_number - 1
         if letter_number == 0:
             return
-        rehearsal_mark = indicatortools.RehearsalMark(number=letter_number)# @UndefinedVariable
+        rehearsal_mark = indicatortools.RehearsalMark(number=letter_number)
         voice = self._score['Time Signature Context']
         first_leaf = inspect_(voice).get_leaf(0)
         attach(rehearsal_mark, first_leaf)
@@ -214,8 +216,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         if not self.tempo_map:
             return
         context = self._score['Time Signature Context']
-        skips = list(iterate(context).by_class(scoretools.Leaf))# @UndefinedVariable
-        tempo_spanner = spannertools.TempoSpanner(# @UndefinedVariable
+        skips = list(iterate(context).by_class(scoretools.Leaf))
+        tempo_spanner = spannertools.TempoSpanner(
             start_with_parenthesized_tempo=False,
             )
         attach(tempo_spanner, skips)
@@ -225,11 +227,11 @@ class SegmentMaker(SegmentMakerBaseClass):
                 message = message.format(stage_number, 0, self.stage_count)
                 raise Exception(message)
             result = self._stage_number_to_measure_indices(stage_number)
-            start_measure_index, stop_measure_index = result  # @UnusedVariable
+            start_measure_index, stop_measure_index = result
             start_measure = context[start_measure_index]
             assert isinstance(start_measure, Measure), start_measure
             start_skip = start_measure[0]
-            assert isinstance(start_skip, scoretools.Skip), start_skip# @UndefinedVariable
+            assert isinstance(start_skip, scoretools.Skip), start_skip
             attach(directive, start_skip, is_annotation=True)
 
     def _check_well_formedness(self):
@@ -281,7 +283,7 @@ class SegmentMaker(SegmentMakerBaseClass):
     def _get_time_signatures(self, start_stage=None, stop_stage=None):
         counts = len(self.time_signatures), sum(self.measures_per_stage)
         assert counts[0] == counts[1], counts
-        stages = sequencetools.partition_sequence_by_counts(# @UndefinedVariable
+        stages = sequencetools.partition_sequence_by_counts(
             self.time_signatures,
             self.measures_per_stage,
             )
@@ -291,12 +293,12 @@ class SegmentMaker(SegmentMakerBaseClass):
         else:
             stop_index = stop_stage
             stages = stages[start_index:stop_index]
-            time_signatures = sequencetools.flatten_sequence(stages)# @UndefinedVariable
+            time_signatures = sequencetools.flatten_sequence(stages)
         return time_signatures
 
     def _initialize_time_signatures(self, time_signatures):
         time_signatures = time_signatures or ()
-        time_signatures_ = list(time_signatures)  # @UnusedVariable
+        time_signatures_ = list(time_signatures)
         time_signatures_ = []
         for time_signature in time_signatures:
             time_signature = indicatortools.TimeSignature(time_signature)
@@ -305,33 +307,28 @@ class SegmentMaker(SegmentMakerBaseClass):
         self.time_signatures = time_signatures_
 
     def _interpret_music_handlers(self):
-        '''Calls each music handler and inserts the resulting voice in the
-        appropriate staves
-
-        '''
-        from dissertation.materials.context_names \
-            import context_names
         for music_handler in self._music_handlers:
-            instrument_name = music_handler.instrument_name
-            voices_left = music_handler()
-            for voice in voices_left:
-                voice_context_name = voice.context_name
-                for staff_left in iterate(self._score).by_class(Staff):
-                    staff_context_name = staff_left.context_name
-                    staff_name = staff_left.name
-                    staff_accepts_voice = False
-                    for voice_context in context_names[staff_context_name]:
-                        if voice_context == voice_context_name:
-                            staff_accepts_voice = True
-                    if staff_accepts_voice \
-                        and instrument_name.capitalize() in staff_name:
-                            staff_left.append(copy.deepcopy(voice))
-
+            handler_instrument_name = music_handler.instrument_name
+            handler_name = music_handler.name
+            #print("******** HANDLER INSTRUMENT NAME ********", handler_instrument_name)
+            #print("******** HANDLER NAME ********", handler_name)
+            voices = music_handler()
+            for voice in voices:
+                voice_name = voice.name
+                for staff in iterate(self._score).by_class(Staff):
+                    staff_name = staff.name
+                    if handler_instrument_name in staff_name:
+                        staff_name = staff_name.replace(handler_instrument_name, '')
+                        staff_name = staff_name.strip()
+                        if voice_name in staff_map[staff_name]:
+                            #print("STAFF NAME *STRIPPED", staff_name)
+                            #print("VOICE NAME", voice_name, "STAFF MAP", staff_map[staff_name])
+                            staff.append(copy.deepcopy(voice))
 
     def _label_instrument_changes(self):
-        prototype = instrumenttools.Instrument# @UndefinedVariable
+        prototype = instrumenttools.Instrument
         for fingering_staff_group in iterate(self._score).by_class(StaffGroup):
-            leaves = iterate(fingering_staff_group).by_class(scoretools.Leaf)# @UndefinedVariable
+            leaves = iterate(fingering_staff_group).by_class(scoretools.Leaf)
             for leaf_index, leaf in enumerate(leaves):
                 instruments = inspect_(leaf).get_indicators(prototype)
                 if not instruments:
@@ -355,7 +352,7 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     def _make_instrument_change_markup(self, instrument_name):
         string = 'to {}'.format(instrument_name.instrument_name)
-        markup = markuptools.Markup(string, direction=1)# @UndefinedVariable
+        markup = markuptools.Markup(string, direction=1)
         markup = markup.box().override(('box-padding', 0.75))
         return markup
 
@@ -370,57 +367,15 @@ class SegmentMaker(SegmentMakerBaseClass):
         context_name = 'Time Signature Context'
         context = self._score[context_name]
         music_makers = self._get_music_makers_for_context(context_name)
-        for music_maker in music_makers:
-            if music_maker.start_tempo is not None:
-                start_tempo = new(music_maker.start_tempo)
+        for fingering_music_maker in music_makers:
+            if fingering_music_maker.start_tempo is not None:
+                start_tempo = new(fingering_music_maker.start_tempo)
                 first_leaf = inspect_(context).get_leaf(0)
                 attach(start_tempo, first_leaf, scope=Score)
-            if music_maker.stop_tempo is not None:
-                stop_tempo = new(music_maker.stop_tempo)
+            if fingering_music_maker.stop_tempo is not None:
+                stop_tempo = new(fingering_music_maker.stop_tempo)
                 last_leaf = inspect_(context).get_leaf(-1)
                 attach(stop_tempo, last_leaf, scope=Score)
-
-    def _make_music_for_voice(self, voice):
-        '''Get the music maker assigned to voice.
-        If there's no music, make rests.
-        Call the music maker.
-        Add the music to the voice
-        '''
-        assert not len(voice), repr(voice)
-        music_makers = self._get_music_makers_for_context(voice.name)
-        music_makers.sort(key=lambda x: x.stages[0])
-        assert self._stages_do_not_overlap(music_makers)
-        if not music_makers:
-            measures = self._make_rests()
-            voice.extend(measures)
-            return
-        effective_staff = inspect_(voice).get_effective_staff()
-        effective_staff_name = effective_staff.context_name
-        next_stage = 1
-        for music_maker in music_makers:
-            if music_maker.stages is None:
-                continue
-            if next_stage < music_maker.start_stage:
-                start_stage = next_stage
-                stop_stage = music_maker.start_stage - 1
-                time_signatures = self._get_time_signatures(
-                    start_stage=next_stage,
-                    stop_stage=stop_stage,
-                    )
-                measures = self._make_rests(time_signatures)
-                voice.extend(measures)
-            time_signatures = self._get_time_signatures(*music_maker.stages)
-            music = music_maker(
-                effective_staff_name,
-                time_signatures=time_signatures,
-                )
-            voice.extend(music)
-            next_stage = music_maker.stop_stage + 1
-        if next_stage <= self.stage_count:
-            time_signatures = self._get_time_signatures(
-                next_stage, self.stage_count)
-            measures = self._make_rests(time_signatures)
-            voice.extend(measures)
 
     def _make_score(self, score_template):
         score = score_template()
@@ -443,7 +398,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         first_leaf = leaves[0]
         dummy_first_bar_command = indicatortools.LilyPondCommand('bar ""')
         attach(dummy_first_bar_command, first_leaf)
-        time_signature_context = self._score['Time Signature Context']
+        time_signature_context = self._score['Time Signatures and Tempi']
         time_signature_context.extend(measures)
 
     def _raise_approximate_duration_in_seconds(self):
@@ -555,7 +510,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         return self._music_makers
 
     @property
-    def music_handlers(self):
+    def get_music_handlers(self):
         r'''Gets music-handlers.
 
         Returns tuples of music-handlers.
@@ -592,17 +547,18 @@ class SegmentMaker(SegmentMakerBaseClass):
         return self._transpose_score
 
     ### PUBLIC METHODS ###
-    def add_music_handlers(self, music_handlers):
-        self._music_handlers.extend(music_handlers)
+
+    def add_music_handlers(self, get_music_handlers):
+        self._music_handlers.extend(get_music_handlers)
 
     def get_music_maker(self, context_name, stage):
         music_makers = []
-        for music_maker in self.music_makers:
-            if music_maker.context_name == context_name:
-                start = music_maker.start_stage
-                stop = music_maker.stop_stage + 1
+        for fingering_music_maker in self.music_makers:
+            if fingering_music_maker.context_name == context_name:
+                start = fingering_music_maker.start_stage
+                stop = fingering_music_maker.stop_stage + 1
                 if stage in range(start, stop):
-                    return music_maker
+                    return fingering_music_maker
         message = 'no music-maker for {!r} found for stage {}.'
         message = message.format(context_name, stage)
         raise KeyError(message)

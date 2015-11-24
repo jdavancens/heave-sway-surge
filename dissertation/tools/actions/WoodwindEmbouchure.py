@@ -4,9 +4,7 @@ Created on Nov 20, 2015
 
 @author: josephdavancens
 '''
-from dissertation.tools.actions import Action
-
-class WoodwindEmbouchure(abctools.AbjadObject):
+class WoodwindEmbouchure(object):
 
     ### CLASS ATTRIBUTES ###
 
@@ -17,7 +15,7 @@ class WoodwindEmbouchure(abctools.AbjadObject):
         '_lip_pressure_start',
         '_lip_pressure_stop',
         'staccato',
-        '_tongue_articulated',
+        'tongue_articulated',
         '_vowel_start',
         '_vowel_stop',)
 
@@ -41,7 +39,7 @@ class WoodwindEmbouchure(abctools.AbjadObject):
         self._lip_pressure_start = lip_pressure_start
         self._lip_pressure_stop = lip_pressure_stop
         self.staccato = staccato
-        self._tongue_articulated = tongue_articulated
+        self.tongue_articulated = tongue_articulated
         self._vowel_start = vowel_start
         self._vowel_stop = vowel_stop
 
@@ -58,14 +56,6 @@ class WoodwindEmbouchure(abctools.AbjadObject):
     @property
     def lip_pressure(self):
         return (self._lip_pressure_start, self._lip_pressure_stop)
-
-    @property
-    def staccato(self):
-        return self.staccato
-
-    @property
-    def tongue_articulated(self):
-        return self._tongue_articulated
 
     @property
     def vowel(self):

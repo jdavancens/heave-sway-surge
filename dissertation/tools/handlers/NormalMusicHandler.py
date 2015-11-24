@@ -7,24 +7,7 @@ Created on Nov 20, 2015
 
 from abjad import *
 from dissertation.tools.shortcuts import *
-from math import floor
-import copy
 from dissertation.tools import graphics_tools
-
-def map_fraction_to_treble_staff_position(
-    fraction,
-    number_of_staff_lines):
-    fractional_staff_position = \
-        (fraction * ((number_of_staff_lines * 2) - 2)) + 2
-    staff_position = round(fractional_staff_position)
-    return staff_position
-
-def map_fraction_to_grayscale_rgb(fraction):
-    fl = (float(fraction) * 0.75) + 0.25
-    fl = 1 - fl
-    hsb_tuple = (0, 0, fl)
-    scheme_color = graphics_tools.scheme_rgb_color(hsb_tuple)
-    return scheme_color
 
 class NormalMusicHandler(object):
     '''
@@ -34,11 +17,11 @@ class NormalMusicHandler(object):
 
     __slots__ = (
         'music_maker',
-        'pitch_segments',
-        'pitch_segment_pattern',
+        'pitch_sets',
+        'pitch_sets_pattern',
         'dynamics',
         'articulations',
-        'articulation_pattern'
+        'articulation_pattern',
         'slurs',
         'glissandi',
         'trills',
@@ -50,8 +33,8 @@ class NormalMusicHandler(object):
     def __init__(
         self,
         music_maker=None,
-        pitch_carriers=None,
-        pitch_carrier_pattern=None,
+        pitch_sets=None,
+        pitch_sets_pattern=None,
         dynamics=None,
         articulations=None,
         articulation_pattern=None,
@@ -61,8 +44,8 @@ class NormalMusicHandler(object):
         stem_tremolos=None
         ):
         self.music_maker = music_maker
-        self.pitch_carriers = pitch_carriers
-        self.pitch_carrier_pattern = pitch_carrier_pattern
+        self.pitch_sets = pitch_sets
+        self.pitch_sets_pattern = pitch_sets_pattern
         self.dynamics = dynamics
         self.articulations = articulations
         self.articulation_pattern = articulation_pattern
@@ -75,70 +58,103 @@ class NormalMusicHandler(object):
 
     def __call__(self):
         voice = self.music_maker()
-        pitch_segment_cycle = datastructuretools.CyclicTuple(self.pitch_segments)
-        pitch_segment_cursor = datastructuretools.Cursor(pitch_segment_cycle)
-        articulation_cycle = datastructuretools.CyclicTuple(self.articualtions)
-        articulation_cursor = datastructuretools.Cursor(articulation_cycle)
-        for logical_tie in iterate(voice).by_logical_tie():
-            #attach pitch carriers
-            pitch_carrier = pitch_carrier[pitch_segment_cursor.next()]
-            for x in iterate(logical_tie).by_class(Note, Chord):
-                written_duration = x.written_duration
-                if isinstance(x, Note):
-                    x.note_head = pitch_carrier
-                if isinstance(x, Chord):
-                    x.note_heads = pitch_carrier
-            #attach articulations
-            articulation = articulations[articulation_cursor.next()]
-            attach(articulation, logical_tie[0])
-        #attach dynamics and hairpins ((index ,  dynamic) , (index , dynamic))
-        logical_ties = list(iterate(voice).by_logical_tie())
-        last_dynamic = None
-        for dynamic in dynamics:
-            start_index = dynamic[0][0]
-            stop_index = dynamic[1][0]
-            start_dynamic = dynamic[0][1]
-            stop_dynamic = dynamic[1][1]
-            if start_dynamic != stop_dynamic:
-                hairpin_descriptor = None
-                if start_dynamic != last_dynamic:
-                    if Dynamic(start_dynamic) < Dynamic(stop_dynamic):
-                        hairpin_descriptor = start_dynamic + " < " +stop_dynamic
-                    else:
-                        hairpin_descriptor = start_dynamic + " > " + stop_dynamic
-                hairpin = spannertools.Hairpin(
-                    hairpin_descriptor,
-                    include_rests = True
-                    )
-                attach(hairpin, logical_ties[start_index:stop_index])
+        self._handle_pitches(voice)
+        self._handle_articulations(voice)
+        self._handle_dynamics(voice)
+        self._handle_slurs(voice)
+        self._handle_glissandi(voice)
+        self._handle_stem_tremolos(voice)
+        self._handle_trills(voice)
+        return [voice]
+
+
+    ### PRIVATE METHODS ###
+
+    def _handle_articulations(self, voice):
+        articulation_cycle = datastructuretools.CyclicTuple(self.articulation_pattern)
+        cursor = datastructuretools.Cursor(articulation_cycle)
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            i = self.articulation_pattern[cursor.next()[0]]
+            articulations = self.articulations[i]
+            if isinstance(articulations, Articulation):
+                attach(articulations, logical_tie[0])
             else:
-                if start_dynamic != last_dynamic:
-                    dynamic_marking = Dynamic(start_dynamic)
-                    attach(dynamic_marking, logical_ties[start_index])
-        #attach slurs, glissandi, stem tremolos and trills
-        if slurs is not None:
-            for slur in slurs:
-                slur = spannertools.Slur()
-                attach(slur, logical_ties[slur[0]:slur[1]])
-        if glissandi is not None:
-            for glissando in glissandi:
+                for articulation in articulations:
+                    attach(articulation, logical_tie[0])
+
+
+    def _handle_dynamics(self, voice):
+        logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
+        start_dynamic = self.dynamics[0]
+        stop_dynamic = self.dynamics[1]
+        if start_dynamic != stop_dynamic:
+            hairpin_descriptor = None
+            if start_dynamic.ordinal < stop_dynamic.ordinal:
+                hairpin_descriptor = start_dynamic.name + " < " + stop_dynamic.name
+            else:
+                hairpin_descriptor = start_dynamic.name + " > " + stop_dynamic.name
+            hairpin = spannertools.Hairpin(
+                hairpin_descriptor,
+                include_rests = True
+                )
+            selection = select([logical_ties[0][0],logical_ties[-1][0]])
+            hairpin._unconstrain_contiguity()
+            attach(hairpin, selection)
+            print(start_dynamic)
+            #attach(start_dynamic, logical_ties[0][0])
+            #attach(stop_dynamic, logical_ties[-1][0])
+        else:
+            attach(start_dynamic, logical_ties[0][0])
+
+    def _handle_glissandi(self, voice):
+        if self.glissandi is not None or False:
+            leaves = iterate(voice).by_class(scoretools.Leaf)
+            for group in iterate(leaves).by_run((Note, Chord)):
                 glissando = spannertools.Glissando()
-                attach(glissando, logical_ties[glissando[0]:glissando[1]])
-        if stem_tremolos is not None:
-            for stem_tremolo in stem_tremolos:
-                stem_tremolo = spannertools.StemTremoloSpanner()
-                attach(stem_tremolo, logical_ties[stem_tremolo[0]:stem_tremolo[1]])
-        if trills is not None:
-            for trill in trills:
+                attach(glissando, group)
+
+
+    def _handle_pitches(self, voice):
+        pitch_cycle = datastructuretools.CyclicTuple(self.pitch_sets_pattern)
+        pitch_cursor = datastructuretools.Cursor(pitch_cycle)
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            pitch_set = self.pitch_sets[pitch_cursor.next()[0]]
+            for note in logical_tie:
+                if len(pitch_set) == 1:
+                    note.note_head = pitch_set.items[0]
+                else:
+                    chord = Chord(
+                        pitch_set.items,
+                        note.written_duration
+                        )
+                    mutate(note).replace(chord)
+
+    def _handle_slurs(self, voice):
+        if self.slurs is not None or False:
+            leaves = iterate(voice).by_class(scoretools.Leaf)
+            for group in iterate(leaves).by_run((Note, Chord)):
+                slur = spannertools.Slur()
+                attach(slur, group)
+
+    def _handle_stem_tremolos(self, voice):
+        if self.stem_tremolos is not None or False:
+            stremelo = spannertools.StemTremoloSpanner()
+            attach(stremelo, voice[:])
+
+    def _handle_trills(self, voice):
+        if self.slurs is not None or False:
+            leaves = iterate(voice).by_class(scoretools.Leaf)
+            for group in iterate(leaves).by_run((Note, Chord)):
                 trill = spannertools.TrillSpanner()
-                attach(trill, logical_ties[trill[0]:trill[1]])
+                attach(trill, group)
+
 
     ### PUBLIC PROPERTIES ###
 
     @property
-    def context_name(self):
-        return self.music_maker.context_name()
+    def instrument_name(self):
+        return self.music_maker.instrument_name
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name()
+    def name(self):
+        return self.music_maker.name

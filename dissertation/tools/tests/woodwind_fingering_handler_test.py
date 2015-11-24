@@ -5,8 +5,8 @@ Created on Nov 18, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.instrument_actions import WoodwindFingering
-from dissertation.tools.music_handlers import WoodwindFingeringHandler
+from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
+from dissertation.tools.handlers.WoodwindFingeringHandler import WoodwindFingeringHandler
 from dissertation.tools.MusicMaker import MusicMaker
 import os
 
@@ -23,18 +23,18 @@ def make_lilypond_file(expr):
     lilypond_file.file_initial_user_includes.append(stylesheet_path)
     return lilypond_file
 
-talea = rhythmmakertools.Talea(
+fingering_talea = rhythmmakertools.Talea(
         counts = [3, 5, 2, 2, 1, 3],
         denominator = 16
     )
-talea_rhythm_maker = rhythmmakertools.TaleaRhythmMaker(
-        talea
+fingering_talea_rhythm_maker = rhythmmakertools.TaleaRhythmMaker(
+        fingering_talea
     )
-music_maker = MusicMaker(
+fingering_music_maker = MusicMaker(
     context_name='WoodwindFingeringVoice',
     divisions=[(4,4)] * 1,
     instrument_name='Oboe',
-    rhythm_maker=talea_rhythm_maker,
+    rhythm_maker=fingering_talea_rhythm_maker,
     stages=[0,1,2],
     start_tempo=Tempo((1,4), 60),
     stop_tempo=Tempo((1,4), 120),
@@ -110,13 +110,13 @@ fingerings_right = (
         )
     ),
 handler_left = WoodwindFingeringHandler(
-    music_maker=music_maker,
+    fingering_music_maker=fingering_music_maker,
     hand=Left,
     fingerings=fingerings_left,
     pattern=(0,1,2)
     )
 handler_right = WoodwindFingeringHandler(
-    music_maker=music_maker,
+    fingering_music_maker=fingering_music_maker,
     hand=Right,
     fingerings=fingerings_right,
     pattern=(2,1,0)
@@ -141,12 +141,12 @@ rhythm_staff_right.append(voices_right[2])
 rhythm_staff_right.context_name = "WoodwindRightHandFingeringRhythmStaff"
 fingering_staff_group = StaffGroup()
 fingering_staff_group.context_name = "WoodwindFingeringStaffGroup"
-fingering_staff_group.append(rhythm_staff_left)
 fingering_staff_group.append(staff_left)
 fingering_staff_group.append(staff_right)
-fingering_staff_group.append(rhythm_staff_right)
 score = Score()
+score.append(rhythm_staff_left)
 score.append(fingering_staff_group)
+score.append(rhythm_staff_right)
 lilypond_file = make_lilypond_file(score)
 conf = systemtools.AbjadConfiguration()
 abjad_output_directory = conf.abjad_output_directory

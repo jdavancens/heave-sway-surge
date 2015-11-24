@@ -33,7 +33,7 @@ segment_maker = SegmentMaker(
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
-music_maker = MusicMaker(
+fingering_music_maker = MusicMaker(
     stages=(1),
     context_name='WoodwindPressureVoice',
     instrument_name='oboe',
@@ -78,8 +78,8 @@ oboe_rh_fingering_music_maker = MusicMaker(
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SEGMENTS
 #===============================================================================
 
-vectors = (
-    WoodwindAirPressureVector(
+bowings = (
+    WoodwindEmbouchure(
             instrument_name='oboe',
             air_pressure_start=Fraction(0, 1),
             air_pressure_stop=Fraction(2,3),
@@ -90,7 +90,7 @@ vectors = (
             vowel_start='o',
             vowel_stop='a',
         ),
-    WoodwindAirPressureVector(
+    WoodwindEmbouchure(
             instrument_name='oboe',
             air_pressure_start=Fraction(4,5),
             air_pressure_stop=Fraction(4,5),
@@ -101,7 +101,7 @@ vectors = (
             vowel_start='e',
             vowel_stop='i',
         ),
-    WoodwindAirPressureVector(
+    WoodwindEmbouchure(
             instrument_name='oboe',
             air_pressure_start=Fraction(2,3),
             air_pressure_stop=Fraction(1,3),
@@ -177,19 +177,19 @@ oboe_rh_fingerings = (
 #===============================================================================
 
 oboe_pressure_music_handler = WoodwindEmbouchureHandler(
-        music_maker=music_maker,
-        air_pressure_vectors=vectors,
+        fingering_music_maker=fingering_music_maker,
+        air_pressure_vectors=bowings,
         pattern=(0, 1, 2, 1)
         )
 
 oboe_lh_fingering_music_handler = WoodwindFingeringHandler(
-        music_maker=oboe_lh_fingering_music_maker,
+        fingering_music_maker=oboe_lh_fingering_music_maker,
         hand='Left',
         fingerings_left=oboe_lh_fingerings,
         pattern=(0, 1, 1, 0)
         )
 oboe_rh_fingering_music_handler = WoodwindFingeringHandler(
-        music_maker=oboe_rh_fingering_music_maker,
+        fingering_music_maker=oboe_rh_fingering_music_maker,
         hand='Right',
         fingerings_left=oboe_rh_fingerings,
         pattern=(0, 1, 2, 1)
@@ -198,12 +198,12 @@ oboe_rh_fingering_music_handler = WoodwindFingeringHandler(
 
 
 #add music handlers to segment maker
-music_handlers = [
+get_music_handlers = [
     oboe_pressure_music_handler,
     oboe_lh_fingering_music_handler,
     oboe_rh_fingering_music_handler
     ]
-segment_maker.add_music_handlers(music_handlers)
+segment_maker.add_music_handlers(get_music_handlers)
 
 #===============================================================================
 # RETURN SCORE FUNCTION
