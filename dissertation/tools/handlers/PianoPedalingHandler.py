@@ -56,8 +56,8 @@ class PianoPedalingHandler(object):
     ### PUBLIC PROPERTIES ###
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name
+    def instrument(self):
+        return self.music_maker.instrument
 
     @property
     def name(self):

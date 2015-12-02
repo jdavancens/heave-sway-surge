@@ -1,9 +1,6 @@
 * redefine handlers to allow multiple patterns for different p
   parameters
-* write tests for:
-    SegmentMaker
-    make_segment
-    build_score
+
 * overwrite functions
     erasure: make rests
     rhythm overwrites: recursively subdivide
@@ -14,16 +11,21 @@
     redundant piano dynamics
 
 
-* Add gradient function to color spanner
-    * Learn scheme, postscript, ly functions
 * or define new spanner based on glissando that starts on a
   note or chord and extends to a note, chord, rest or skip
   takes start_min, start_max, stop_min, start_max,
   color, start_saturation, stop_saturation
+
 * Core functionality assertions, tests
+
 * Pitch structure interpreter
+
 * Woodwind fingering utility
+
 * String fingering utility
+
 * Piano-four-hands option
+
 ** Midi output handler
+
 ** Abjad to Music XML exporter

@@ -6,6 +6,7 @@ Created on Oct 31, 2015
 '''
 import copy
 import os
+from pprint import pprint
 from abjad import *
 from dissertation.materials.staff_map import staff_map
 from dissertation.tools.ScoreTemplate import ScoreTemplate
@@ -308,47 +309,23 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     def _interpret_music_handlers(self):
         for music_handler in self._music_handlers:
-            handler_instrument_name = music_handler.instrument_name
-            handler_name = music_handler.name
-            #print("******** HANDLER INSTRUMENT NAME ********", handler_instrument_name)
-            #print("******** HANDLER NAME ********", handler_name)
-            voices = music_handler()
-            for voice in voices:
-                voice_name = voice.name
-                for staff in iterate(self._score).by_class(Staff):
-                    staff_name = staff.name
-                    if handler_instrument_name in staff_name:
-                        staff_name = staff_name.replace(handler_instrument_name, '')
-                        staff_name = staff_name.strip()
-                        if voice_name in staff_map[staff_name]:
-                            #print("STAFF NAME *STRIPPED", staff_name)
-                            #print("VOICE NAME", voice_name, "STAFF MAP", staff_map[staff_name])
-                            staff.append(copy.deepcopy(voice))
+            for voice in music_handler():
+                for staff_group in self._score[1]:
+                    staff_group_instrument = inspect_(staff_group).get_indicator(instrumenttools.Instrument)
+                    voice_instrument = inspect_(voice).get_indicator(instrumenttools.Instrument)
+                    if staff_group_instrument.instrument_name == voice_instrument.instrument_name:
+                        for staff in iterate(staff_group).by_class(Staff):
+                            if voice.name in staff_map[staff.name]:
+                                staff.append(voice)
+        for voice in iterate(self._score[1]).by_class(Voice):
+            instrument = inspect_(voice).get_indicator(instrumenttools.Instrument)
+            detach(instrumenttools.Instrument, voice)
+
 
     def _label_instrument_changes(self):
-        prototype = instrumenttools.Instrument
-        for fingering_staff_group in iterate(self._score).by_class(StaffGroup):
-            leaves = iterate(fingering_staff_group).by_class(scoretools.Leaf)
-            for leaf_index, leaf in enumerate(leaves):
-                instruments = inspect_(leaf).get_indicators(prototype)
-                if not instruments:
-                    continue
-                assert len(instruments) == 1
-                current_instrument = instruments[0]
-                previous_leaf = inspect_(leaf).get_leaf(-1)
-                if previous_leaf is not None:
-                    result = inspect_(previous_leaf).get_effective(prototype)
-                    previous_instrument = result
-                elif (leaf_index == 0 and \
-                    1 < self._segment_number):
-                    instrument_name = self._get_previous_instrument(fingering_staff_group.name)
-                    previous_instrument = instrument_name
-                else:
-                    continue
-                if previous_instrument != current_instrument:
-                    markup = self._make_instrument_change_markup(
-                        current_instrument)
-                    attach(markup, leaf)
+        '''TODO
+        '''
+        pass
 
     def _make_instrument_change_markup(self, instrument_name):
         string = 'to {}'.format(instrument_name.instrument_name)

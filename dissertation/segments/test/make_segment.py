@@ -15,6 +15,7 @@ from dissertation.segments.test import viola_definition
 from dissertation.segments.test import cello_definition
 from dissertation.segments.test import bass_definition
 from dissertation.tools.SegmentMaker import SegmentMaker
+import pprint
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]

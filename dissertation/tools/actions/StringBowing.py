@@ -5,6 +5,8 @@ Created on Nov 20, 2015
 @author: josephdavancens
 '''
 
+from abjad import *
+
 class StringBowing(object):
     '''A bow parameter change
     '''
@@ -12,7 +14,7 @@ class StringBowing(object):
     ## CLASS ATTRIBUTES ###
 
     __slots__ = (
-        '_instrument_name',
+        '_instrument',
         'pressure_start',
         'pressure_stop',
         'contact_point_start',
@@ -27,7 +29,7 @@ class StringBowing(object):
 
     def __init__(
         self,
-        instrument_name=None,
+        instrument=None,
         pressure_start=None,
         pressure_stop=None,
         contact_point_start=None,
@@ -37,10 +39,7 @@ class StringBowing(object):
         string_ids=None,
         staccato=False,
         ):
-        if isinstance(instrument_name, type("string")):
-            self._instrument_name = instrument_name
-        else:
-            raise TypeError(instrument_name + "is not a string")
+        assert isinstance(instrument, instrumenttools.Instrument)
         self.pressure_start = pressure_start
         self.pressure_stop = pressure_stop
         self.contact_point_start = contact_point_start
@@ -61,10 +60,9 @@ class StringBowing(object):
         return (self.height_start, self.height_stop)
 
     @property
-    def instrument_name(self):
-        return self._instrument_name
+    def instrument(self):
+        return self._instrument
 
     @property
     def pressure(self):
         return (self.pressure_start, self.pressure_stop)
-

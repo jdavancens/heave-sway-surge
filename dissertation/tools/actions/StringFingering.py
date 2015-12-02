@@ -4,12 +4,15 @@ Created on Nov 20, 2015
 
 @author: josephdavancens
 '''
+
+from abjad import *
+
 class StringFingering(object):
 
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        '_instrument_name',
+        '_instrument',
         'pressure_start',
         'pressure_stop',
         'height_start',
@@ -20,13 +23,14 @@ class StringFingering(object):
 
     def __init__(
         self,
-        instrument_name=None,
+        instrument=None,
         pressure_start=None,
         pressure_stop=None,
         height_start=None,
         height_stop=None,
         ):
-        self._instrument_name = instrument_name
+        assert(isinstance(instrument, instrumenttools.Instrument))
+        self._instrument = instrument
         self.pressure_start = pressure_start
         self.pressure_stop = pressure_stop
         self.height_start = height_start
@@ -39,8 +43,8 @@ class StringFingering(object):
         return (self.height_start, self.height_stop)
 
     @property
-    def instrument_name(self):
-        return self._instrument_name
+    def instrument(self):
+        return self._instrument
 
     @property
     def pressure(self):

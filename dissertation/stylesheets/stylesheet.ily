@@ -134,6 +134,8 @@ pad = 0.5
         \omit Stem
         \omit Beam
         \omit Flag
+        \omit Tie
+        \omit Slur
         \override NoteHead.stencil = #point-stencil
         pedalSustainStyle = #'mixed
         squashedPosition = #0

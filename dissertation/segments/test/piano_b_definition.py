@@ -11,7 +11,7 @@ from dissertation.tools.MusicMaker import MusicMaker
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]
-tempo_map = [(1, Tempo(Duration(1,4), 88))]
+piano = instrumenttools.Piano(instrument_name='Piano B', short_instrument_name="Pn. B")
 
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -28,7 +28,7 @@ note_rhythm_maker = rhythmmakertools.NoteRhythmMaker()
 #===============================================================================
 rh_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Piano B',
+    instrument=piano,
     name='Right Hand',
     divisions=divisions,
     time_signatures=time_signatures,
@@ -37,7 +37,7 @@ rh_music_maker = MusicMaker(
 
 lh_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Piano B',
+    instrument=piano,
     name='Left Hand',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -45,7 +45,7 @@ lh_music_maker = MusicMaker(
     )
 ped_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Piano B',
+    instrument=piano,
     name='Pedaling',
     time_signatures=time_signatures,
     divisions=divisions,

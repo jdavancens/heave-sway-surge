@@ -1,4 +1,4 @@
-% 2015-11-23 02:40
+% 2015-12-01 18:32
 
 \version "2.19.29"
 \language "english"
@@ -58,9 +58,9 @@
             } <<
                 %%% \set Staff.instrumentName = \markup { Oboe } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Ob. } %%%
-                \context Staff = "Oboe Voice" {
+                \context Staff = "Voice" {
                 }
-                \context WoodwindEmbouchureRhythmStaff = "Oboe Embouchure Rhythm" {
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
                     \context Voice = "Embouchure Rhythm" {
                         \times 4/5 {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -296,7 +296,7 @@
                         }
                     }
                 }
-                \context WoodwindEmbouchureStaff = "Oboe Embouchure" {
+                \context WoodwindEmbouchureStaff = "Embouchure" {
                     \context Voice = "Embouchure" {
                         \times 4/5 {
                             \once \override Glissando.color = #(rgb-color 0.9333333333333333 0.7 0.9333333333333333)
@@ -553,7 +553,7 @@
                         }
                     }
                 }
-                \context WoodwindLeftHandFingeringRhythmStaff = "Oboe Left Hand Fingering Rhythm" {
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
                     \context Voice = "Left Hand Fingering Rhythm" {
                         {
                             c'8 [
@@ -603,8 +603,8 @@
                         }
                     }
                 }
-                \context WoodwindFingeringStaffGroup = "Oboe Fingering Staff Group" <<
-                    \context WoodwindLeftHandFingeringStaff = "Oboe Left Hand Fingering" <<
+                \context WoodwindFingeringStaffGroup = "Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
                         \context Voice = "Left Hand Fingering" {
                             {
                                 <e' g' f''>8 [
@@ -1090,7 +1090,7 @@
                             }
                         }
                     >>
-                    \context WoodwindRightHandFingeringStaff = "Oboe Right Hand Fingering" <<
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
                         \context Voice = "Right Hand Fingering" {
                             {
                                 <f'>8
@@ -1366,7 +1366,7 @@
                         }
                     >>
                 >>
-                \context WoodwindRightHandFingeringRhythmStaff = "Oboe Right Hand Fingering Rhythm" {
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
                     \context Voice = "Right Hand Fingering Rhythm" {
                         {
                             c'8
@@ -1416,9 +1416,9 @@
             } <<
                 %%% \set Staff.instrumentName = \markup { Clarinet in B-flat } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Cl. in B-flat } %%%
-                \context Staff = "Clarinet Voice" {
+                \context Staff = "Voice" {
                 }
-                \context WoodwindEmbouchureRhythmStaff = "Clarinet Embouchure Rhythm" {
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
                     \context Voice = "Embouchure Rhythm" {
                         {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -1543,7 +1543,7 @@
                         }
                     }
                 }
-                \context WoodwindEmbouchureStaff = "Clarinet Embouchure" {
+                \context WoodwindEmbouchureStaff = "Embouchure" {
                     \context Voice = "Embouchure" {
                         {
                             \once \override Glissando.color = #(rgb-color 0.9333333333333333 0.7 0.9333333333333333)
@@ -1678,7 +1678,7 @@
                         }
                     }
                 }
-                \context WoodwindLeftHandFingeringRhythmStaff = "Clarinet Left Hand Fingering Rhythm" {
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
                     \context Voice = "Left Hand Fingering Rhythm" {
                         \times 2/3 {
                             r8
@@ -1721,8 +1721,8 @@
                         }
                     }
                 }
-                \context WoodwindFingeringStaffGroup = "Clarinet Fingering Staff Group" <<
-                    \context WoodwindLeftHandFingeringStaff = "Clarinet Left Hand Fingering" <<
+                \context WoodwindFingeringStaffGroup = "Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
                         \context Voice = "Left Hand Fingering" {
                             \times 2/3 {
                                 r8
@@ -2152,7 +2152,7 @@
                             }
                         }
                     >>
-                    \context WoodwindRightHandFingeringStaff = "Clarinet Right Hand Fingering" <<
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
                         \context Voice = "Right Hand Fingering" {
                             \times 2/3 {
                                 <f' a' c'' e''>16
@@ -2574,7 +2574,7 @@
                         }
                     >>
                 >>
-                \context WoodwindRightHandFingeringRhythmStaff = "Clarinet Right Hand Fingering Rhythm" {
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
                     \context Voice = "Right Hand Fingering Rhythm" {
                         \times 2/3 {
                             c'16
@@ -2630,9 +2630,9 @@
             } <<
                 %%% \set Staff.instrumentName = \markup { Alto saxophone } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Alt. sax. } %%%
-                \context Staff = "Saxophone Voice" {
+                \context Staff = "Voice" {
                 }
-                \context WoodwindEmbouchureRhythmStaff = "Saxophone Embouchure Rhythm" {
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
                     \context Voice = "Embouchure Rhythm" {
                         {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -2898,7 +2898,7 @@
                         }
                     }
                 }
-                \context WoodwindEmbouchureStaff = "Saxophone Embouchure" {
+                \context WoodwindEmbouchureStaff = "Embouchure" {
                     \context Voice = "Embouchure" {
                         {
                             \once \override Glissando.color = #(rgb-color 0.9333333333333333 0.7 0.9333333333333333)
@@ -3188,7 +3188,7 @@
                         }
                     }
                 }
-                \context WoodwindLeftHandFingeringRhythmStaff = "Saxophone Left Hand Fingering Rhythm" {
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
                     \context Voice = "Left Hand Fingering Rhythm" {
                         \times 4/7 {
                             c'8
@@ -3234,8 +3234,8 @@
                         }
                     }
                 }
-                \context WoodwindFingeringStaffGroup = "Saxophone Fingering Staff Group" <<
-                    \context WoodwindLeftHandFingeringStaff = "Saxophone Left Hand Fingering" <<
+                \context WoodwindFingeringStaffGroup = "Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
                         \context Voice = "Left Hand Fingering" {
                             \times 4/7 {
                                 <e'>8
@@ -3696,7 +3696,7 @@
                             }
                         }
                     >>
-                    \context WoodwindRightHandFingeringStaff = "Saxophone Right Hand Fingering" <<
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
                         \context Voice = "Right Hand Fingering" {
                             \times 2/3 {
                                 <f'>16
@@ -4163,7 +4163,7 @@
                         }
                     >>
                 >>
-                \context WoodwindRightHandFingeringRhythmStaff = "Saxophone Right Hand Fingering Rhythm" {
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
                     \context Voice = "Right Hand Fingering Rhythm" {
                         \times 2/3 {
                             c'16
@@ -4216,14 +4216,14 @@
                 }
             >>
             \tag piano
-            \context PianoStaffGroup = "Piano A Staff Group" \with {
-                instrumentName = \markup { Piano A }
-                shortInstrumentName = \markup { Pn. A. }
-            } <<
-                %%% \set PianoStaff.instrumentName = \markup { Piano } %%%
-                %%% \set PianoStaff.shortInstrumentName = \markup { Pf. } %%%
-                \context PianoStaff = "Piano A Staff" <<
-                    \context Piano = "Piano A Right Hand" {
+            \context PianoStaffGroup = "Piano A Staff Group" <<
+                %%% \set PianoStaff.instrumentName = \markup { Piano A } %%%
+                %%% \set PianoStaff.shortInstrumentName = \markup { Pn. A } %%%
+                \context PianoStaff = "Piano A Staff" \with {
+                    instrumentName = \markup { Piano A }
+                    shortInstrumentName = \markup { Pn. A. }
+                } <<
+                    \context Staff = "Right Hand" {
                         \context Voice = "Right Hand" {
                             {
                                 r4
@@ -4268,7 +4268,7 @@
                             }
                         }
                     }
-                    \context Piano = "Piano A Left Hand" {
+                    \context Staff = "Left Hand" {
                         \context Voice = "Left Hand" {
                             \times 4/7 {
                                 \clef "bass"
@@ -4324,7 +4324,7 @@
                         }
                     }
                 >>
-                \context PianoPedalingStaff = "Piano A Pedaling" {
+                \context PianoPedalingStaff = "Pedaling" {
                     \context Voice = "Pedaling" {
                         c'4 \sustainOn
                         c'4.
@@ -4348,14 +4348,14 @@
                 }
             >>
             \tag piano
-            \context PianoStaffGroup = "Piano B Staff Group" \with {
-                instrumentName = \markup { Piano B }
-                shortInstrumentName = \markup { Pn. B. }
-            } <<
-                %%% \set PianoStaff.instrumentName = \markup { Piano } %%%
-                %%% \set PianoStaff.shortInstrumentName = \markup { Pf. } %%%
-                \context PianoStaff = "Piano B Staff" <<
-                    \context Piano = "Piano B Right Hand" {
+            \context PianoStaffGroup = "Piano B Staff Group" <<
+                %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
+                %%% \set PianoStaff.shortInstrumentName = \markup { Pn. B } %%%
+                \context PianoStaff = "Piano B Staff" \with {
+                    instrumentName = \markup { Piano B }
+                    shortInstrumentName = \markup { Pn. B. }
+                } <<
+                    \context Staff = "Right Hand" {
                         \context Voice = "Right Hand" {
                             \times 4/7 {
                                 <f' af' c'' ef''>4 \mp
@@ -4400,7 +4400,7 @@
                             }
                         }
                     }
-                    \context Piano = "Piano B Left Hand" {
+                    \context Staff = "Left Hand" {
                         \context Voice = "Left Hand" {
                             \times 2/3 {
                                 \clef "bass"
@@ -4458,7 +4458,7 @@
                         }
                     }
                 >>
-                \context PianoPedalingStaff = "Piano B Pedaling" {
+                \context PianoPedalingStaff = "Pedaling" {
                     \context Voice = "Pedaling" {
                         c'4 \sustainOn
                         c'4.
@@ -4488,7 +4488,7 @@
             } <<
                 %%% \set Staff.instrumentName = \markup { Violin } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Vn. } %%%
-                \context StringBowingRhythmStaff = "Violin Bowing Rhythm" {
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
                     \context Voice = "Bowing Rhythm" {
                         {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -4778,8 +4778,8 @@
                         }
                     }
                 }
-                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
-                    \context StringSpaceStaff = "Violin String Space" <<
+                \context StringSpaceStaffGroup = "String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
                         \context Voice = "Bowing" {
                             {
                                 \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
@@ -5334,7 +5334,7 @@
                         }
                     >>
                 >>
-                \context StringFingeringRhythmStaff = "Violin Fingering Rhythm" {
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
                     \context Voice = "Fingering Rhythm" {
                         \times 4/7 {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -5410,7 +5410,7 @@
             } <<
                 %%% \set Staff.instrumentName = \markup { Viola } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Va. } %%%
-                \context StringBowingRhythmStaff = "Viola Bowing Rhythm" {
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
                     \context Voice = "Bowing Rhythm" {
                         \times 4/5 {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -5720,8 +5720,8 @@
                         }
                     }
                 }
-                \context StringSpaceStaffGroup = "Viola String Space Staff Group" <<
-                    \context StringSpaceStaff = "Viola String Space" <<
+                \context StringSpaceStaffGroup = "String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
                         \context Voice = "Bowing" {
                             \times 4/5 {
                                 \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
@@ -6222,7 +6222,7 @@
                         }
                     >>
                 >>
-                \context StringFingeringRhythmStaff = "Viola Fingering Rhythm" {
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
                     \context Voice = "Fingering Rhythm" {
                         {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -6278,13 +6278,13 @@
                 }
             >>
             \tag strings.cello
-            \context StringInstrumentStaffGroup = "Cello Cello Staff Group" \with {
+            \context StringInstrumentStaffGroup = "Cello Staff Group" \with {
                 instrumentName = \markup { Cello }
                 shortInstrumentName = \markup { Vc. }
             } <<
                 %%% \set Staff.instrumentName = \markup { Cello } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Vc. } %%%
-                \context StringBowingRhythmStaff = "Cello Bowing Rhythm" {
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
                     \context Voice = "Bowing Rhythm" {
                         \times 4/7 {
                             r8.
@@ -6645,8 +6645,8 @@
                         }
                     }
                 }
-                \context StringSpaceStaffGroup = "Cello String Space Staff Group" <<
-                    \context StringSpaceStaff = "Cello String Space" <<
+                \context StringSpaceStaffGroup = "String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
                         \context Voice = "Bowing" {
                             \times 4/7 {
                                 r8.
@@ -7227,7 +7227,7 @@
                         }
                     >>
                 >>
-                \context StringFingeringRhythmStaff = "Cello Fingering Rhythm" {
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
                     \context Voice = "Fingering Rhythm" {
                         \times 4/7 {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -7289,13 +7289,13 @@
                 }
             >>
             \tag strings.bass
-            \context StringInstrumentStaffGroup = "Bass  Staff Group" \with {
-                instrumentName = \markup { Bass }
+            \context StringInstrumentStaffGroup = "Bass Staff Group" \with {
+                instrumentName = \markup { Contrabass }
                 shortInstrumentName = \markup { Cb. }
             } <<
                 %%% \set Staff.instrumentName = \markup { Contrabass } %%%
                 %%% \set Staff.shortInstrumentName = \markup { Cb. } %%%
-                \context StringBowingRhythmStaff = "Bass Bowing Rhythm" {
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
                     \context Voice = "Bowing Rhythm" {
                         \times 4/5 {
                             \once \override NoteHead #'stencil = #point-stencil
@@ -7667,8 +7667,8 @@
                         }
                     }
                 }
-                \context StringSpaceStaffGroup = "Bass String Space Staff Group" <<
-                    \context StringSpaceStaff = "Bass String Space" <<
+                \context StringSpaceStaffGroup = "String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
                         \context Voice = "Bowing" {
                             \times 4/5 {
                                 \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
@@ -8343,7 +8343,7 @@
                         }
                     >>
                 >>
-                \context StringFingeringRhythmStaff = "Bass Fingering Rhythm" {
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
                     \context Voice = "Fingering Rhythm" {
                         \times 4/5 {
                             \once \override NoteHead #'stencil = #point-stencil

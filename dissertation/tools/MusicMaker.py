@@ -15,13 +15,11 @@ class MusicMaker:
     '''
     ## CLASS ATTRIBUTES ###
     __slots__ = (
-        '_instrument_name',
+        '_instrument',
         '_name',
         '_stages',
         'divisions',
         'rhythm_maker',
-        'start_tempo',
-        'stop_tempo',
         'time_signatures'
         )
 
@@ -31,22 +29,20 @@ class MusicMaker:
     def __init__(
         self,
         divisions=None,
-        instrument_name=None,
+        instrument=None,
         name=None,
         rhythm_maker = None,
         stages=None,
-        start_tempo=None,
-        stop_tempo=None,
         time_signatures=None
         ):
+        assert(isinstance(instrument, instrumenttools.Instrument))
+        assert(isinstance(rhythm_maker, rhythmmakertools.RhythmMaker))
 
         self.divisions = divisions
-        self._instrument_name = instrument_name
+        self._instrument = instrument
         self._name = name
         self.rhythm_maker = rhythm_maker
         self._stages = stages
-        self.start_tempo = start_tempo
-        self.stop_tempo = stop_tempo
         self.time_signatures = []
         for pair in time_signatures:
             time_signature = indicatortools.TimeSignature(pair)
@@ -74,6 +70,7 @@ class MusicMaker:
         rhythm = self.rhythm_maker(self.divisions)
         rhythm = sequencetools.flatten_sequence(rhythm)
         voice = Voice(rhythm)
+        attach(self._instrument, voice)
 #         leaves = voice.select_leaves()
 #         shards = mutate(leaves).split(time_signatures)
 #         rewritten_voice = Voice()
@@ -87,8 +84,8 @@ class MusicMaker:
     ### PUBLIC PROPERTIES ###
 
     @property
-    def instrument_name(self):
-        return self._instrument_name
+    def instrument(self):
+        return self._instrument
 
     @property
     def name(self):

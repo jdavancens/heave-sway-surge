@@ -13,7 +13,7 @@ from dissertation.tools.MusicMaker import MusicMaker
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]
-tempo_map = [(1, Tempo(Duration(1,4), 88))]
+alto_sax = instrumenttools.AltoSaxophone()
 
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -30,7 +30,7 @@ tuplet_rhythm_maker = rhythmmakertools.TupletRhythmMaker
 #===============================================================================
 embouchure_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Saxophone',
+    instrument=alto_sax,
     name='Embouchure',
     divisions=divisions,
     time_signatures=time_signatures,
@@ -39,7 +39,7 @@ embouchure_music_maker = MusicMaker(
 
 lh_fingering_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Saxophone',
+    instrument=alto_sax,
     name='Left Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -47,7 +47,7 @@ lh_fingering_music_maker = MusicMaker(
     )
 rh_fingering_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Saxophone',
+    instrument=alto_sax,
     name='Right Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -60,7 +60,7 @@ rh_fingering_music_maker = MusicMaker(
 
 embouchures = (
     WoodwindEmbouchure(
-            instrument_name='Saxophone',
+            instrument=alto_sax,
             air_pressure_start=Fraction(0, 1),
             air_pressure_stop=Fraction(1, 6),
             lip_pressure_start=Fraction(1,1),
@@ -69,7 +69,7 @@ embouchures = (
             tongue_articulated=False,
         ),
     WoodwindEmbouchure(
-            instrument_name='Saxophone',
+            instrument=alto_sax,
             air_pressure_start=Fraction(2, 5),
             air_pressure_stop=Fraction(2, 5),
             lip_pressure_start=Fraction(0, 1),
@@ -78,7 +78,7 @@ embouchures = (
             tongue_articulated=False,
         ),
     WoodwindEmbouchure(
-            instrument_name='Saxophone',
+            instrument=alto_sax,
             air_pressure_start=Fraction(2, 3),
             air_pressure_stop=Fraction(1, 6),
             lip_pressure_start=Fraction(1, 1),
@@ -90,8 +90,8 @@ embouchures = (
 
 lh_fingerings = (
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Left,
+        instrument=alto_sax,
+        hand='left',
         fingering={
             'thumb':'down',
             'index':None,
@@ -101,8 +101,8 @@ lh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Left,
+        instrument=alto_sax,
+        hand='left',
         fingering={
             'thumb':'down',
             'index':'down',
@@ -112,8 +112,8 @@ lh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Left,
+        instrument=alto_sax,
+        hand='left',
         fingering={
             'thumb':None,
             'index': None,
@@ -126,8 +126,8 @@ lh_fingerings = (
 
 rh_fingerings = (
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Right,
+        instrument=alto_sax,
+        hand='right',
         fingering={
             'index':'down',
             'middle':None,
@@ -136,8 +136,8 @@ rh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Right,
+        instrument=alto_sax,
+        hand='right',
         fingering={
             'index':None,
             'middle':None,
@@ -146,8 +146,8 @@ rh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Saxophone',
-        hand=Right,
+        instrument=alto_sax,
+        hand='right',
         fingering={
             'index':'down',
             'middle':None,
@@ -171,13 +171,13 @@ embouchure_music_handler = WoodwindEmbouchureHandler(
 
 lh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=lh_fingering_music_maker,
-        hand='Left',
+        hand='left',
         fingerings=lh_fingerings,
         pattern=(0, 1, 2, 0)
         )
 rh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=rh_fingering_music_maker,
-        hand='Right',
+        hand='right',
         fingerings=rh_fingerings,
         pattern=(2, 0, 1, 1, 0, 2)
         )
@@ -189,4 +189,3 @@ music_handlers = [
 
 def get_music_handlers():
     return music_handlers
-

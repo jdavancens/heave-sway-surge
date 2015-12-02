@@ -5,12 +5,14 @@ Created on Nov 20, 2015
 @author: josephdavancens
 '''
 
+from abjad import *
+
 class WoodwindFingering(object):
 
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        '_instrument_name',
+        '_instrument',
         '_hand',
         '_fingering',
         )
@@ -19,55 +21,61 @@ class WoodwindFingering(object):
 
     def __init__(
         self,
-        instrument_name=None,
+        instrument=None,
         hand=None,
         fingering=None,
         ):
         assert(isinstance(fingering, dict))
         assert(3 < len(fingering) < 6)
-        self._instrument_name = instrument_name
+        assert(hand=="left" or hand=="right")
+        assert(isinstance(instrument, instrumenttools.Instrument))
+        self._instrument = instrument
         self._hand = hand
         self._fingering = fingering
-        if hand == Left:
+        if hand == "left":
             assert len(fingering) == 5
-        if hand == Right:
+        if hand == "right":
             assert len(fingering) == 4
+
+    ### SPECIAL METHODS ###
+
+    def __eq__(self, other):
+        if (self._fingering == other.fingering and
+            self._hand == other.hand and
+            self._instrument == other.instrument):
+            return True
+        else:
+            return False
+
+    def __repr__(self):
+        s = ""
+        if self._hand == "left":
+            s = "{} {} {} {} {}"
+            thumb = str(self._fingering['thumb'])
+            index = str(self._fingering['index'])
+            middle = str(self._fingering['middle'])
+            ring = str(self._fingering['ring'])
+            pinky = str(self._fingering['pinky'])
+            s = thumb+' '+index+' '+middle+' '+ring+' '+pinky
+        elif self._hand == "right":
+            s= "{} {} {} {}"
+            index = str(self._fingering['index'])
+            middle = str(self._fingering['middle'])
+            ring = str(self._fingering['ring'])
+            pinky = str(self._fingering['pinky'])
+            s = index+' '+middle+' '+ring+' '+pinky
+        return s
 
     ### PUBLIC PROPERTIES ###
 
-    def as_binary_list(self):
-        l = []
-        if 'thumb' in self.fingering:
-            if self.fingering['thumb'] is not None:
-                l.append(1)
-            else:
-                l.append(0)
-        if self.fingering['index'] is not None:
-            l.append(1)
-        else:
-            l.append(0)
-        if self.fingering['middle'] is not None:
-            l.append(1)
-        else:
-            l.append(0)
-        if self.fingering['ring'] is not None:
-            l.append(1)
-        else:
-            l.append(0)
-        if self.fingering['pinky'] is not None:
-            l.append(1)
-        else:
-            l.append(0)
-        return l
-
     @property
-    def instrument_name(self):
-        return self._instrument_name
+    def fingering(self):
+        return self._fingering
 
     @property
     def hand(self):
         return self._hand
 
     @property
-    def fingering(self):
-        return self._fingering
+    def instrument(self):
+        return self._instrument

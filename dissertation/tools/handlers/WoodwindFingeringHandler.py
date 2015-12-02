@@ -33,7 +33,7 @@ class WoodwindFingeringHandler(object):
         pattern=None
         ):
         self.music_maker = music_maker
-        self.hand = hand
+        self.hand = hand.lower()
         self.fingerings = fingerings
         self.pattern = pattern
 
@@ -60,7 +60,7 @@ class WoodwindFingeringHandler(object):
             fingering = self.fingerings[i]
             fingering = fingering.as_binary_list()
             pitches = []
-            if self.hand == 'Left':
+            if self.hand == 'left':
                 pitches = [4, 7, 11, 14, 17]
             else:
                 pitches = [5, 9, 12, 16]
@@ -89,7 +89,7 @@ class WoodwindFingeringHandler(object):
     def _make_lifeline_voice(self, voice):
         lifeline_voice = copy.deepcopy(voice)
         lifeline_voice.name = '{} Hand {}'.format(
-            self.hand,
+            self.hand.capitalize(),
             "Fingering Lifeline"
             )
 
@@ -98,7 +98,7 @@ class WoodwindFingeringHandler(object):
 
         for logical_tie in iterate(lifeline_voice).by_logical_tie(pitched=True):
             chord = None
-            if self.hand == 'Left':
+            if self.hand == 'left':
                 chord = "e' g' b' d'' f''"
             else:
                 chord = "f' a' c'' e''"
@@ -154,8 +154,8 @@ class WoodwindFingeringHandler(object):
     ### PUBLIC PROPERTIES ###
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name
+    def instrument(self):
+        return self.music_maker.instrument
 
     @property
     def name(self):

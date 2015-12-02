@@ -13,7 +13,7 @@ from dissertation.tools.MusicMaker import MusicMaker
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]
-tempo_map = [(1, Tempo(Duration(1,4), 88))]
+oboe = instrumenttools.Oboe()
 
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -29,7 +29,7 @@ tuplet_ratios_rh = [(1, -1), (1, 1, 1), (1,), (1, 1, 1, 1)]
 #===============================================================================
 embouchure_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Oboe',
+    instrument=oboe,
     name='Embouchure',
     divisions=divisions,
     time_signatures=time_signatures,
@@ -38,7 +38,7 @@ embouchure_music_maker = MusicMaker(
 
 lh_fingering_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Oboe',
+    instrument=oboe,
     name='Left Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -46,7 +46,7 @@ lh_fingering_music_maker = MusicMaker(
     )
 rh_fingering_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Oboe',
+    instrument=oboe,
     name='Right Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -59,7 +59,7 @@ rh_fingering_music_maker = MusicMaker(
 
 embouchures = (
     WoodwindEmbouchure(
-            instrument_name='Oboe',
+            instrument=oboe,
             air_pressure_start=Fraction(0, 1),
             air_pressure_stop=Fraction(1, 6),
             lip_pressure_start=Fraction(1,1),
@@ -68,7 +68,7 @@ embouchures = (
             tongue_articulated=False,
         ),
     WoodwindEmbouchure(
-            instrument_name='Oboe',
+            instrument=oboe,
             air_pressure_start=Fraction(2, 5),
             air_pressure_stop=Fraction(2, 5),
             lip_pressure_start=Fraction(0, 1),
@@ -77,7 +77,7 @@ embouchures = (
             tongue_articulated=False,
         ),
     WoodwindEmbouchure(
-            instrument_name='Oboe',
+            instrument=oboe,
             air_pressure_start=Fraction(2, 3),
             air_pressure_stop=Fraction(1, 6),
             lip_pressure_start=Fraction(1, 1),
@@ -89,8 +89,8 @@ embouchures = (
 
 lh_fingerings = (
     WoodwindFingering(
-        instrument_name='Oboe',
-        hand=Left,
+        instrument=oboe,
+        hand='left',
         fingering={
             'thumb':'down',
             'index':'c',
@@ -100,8 +100,8 @@ lh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Oboe',
-        hand=Left,
+        instrument=oboe,
+        hand='left',
         fingering={
             'thumb':None,
             'index':'down',
@@ -114,8 +114,8 @@ lh_fingerings = (
 
 rh_fingerings = (
     WoodwindFingering(
-        instrument_name='Oboe',
-        hand=Right,
+        instrument=oboe,
+        hand='right',
         fingering={
             'index':'down',
             'middle':None,
@@ -124,8 +124,8 @@ rh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Oboe',
-        hand=Right,
+        instrument=oboe,
+        hand='right',
         fingering={
             'index':None,
             'middle':'down',
@@ -134,8 +134,8 @@ rh_fingerings = (
             }
         ),
     WoodwindFingering(
-        instrument_name='Oboe',
-        hand=Right,
+        instrument=oboe,
+        hand='right',
         fingering={
             'index':None,
             'middle':None,
@@ -159,13 +159,13 @@ embouchure_music_handler = WoodwindEmbouchureHandler(
 
 lh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=lh_fingering_music_maker,
-        hand='Left',
+        hand='left',
         fingerings=lh_fingerings,
         pattern=(0, 1, 1, 0)
         )
 rh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=rh_fingering_music_maker,
-        hand='Right',
+        hand='right',
         fingerings=rh_fingerings,
         pattern=(0, 1, 2, 1)
         )

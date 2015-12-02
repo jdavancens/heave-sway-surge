@@ -1,0 +1,76 @@
+# -*- coding: UTF-8 -*-
+''' A4, B4, C5, E5, F5
+'''
+from abjad import *
+from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
+oboe = instrumenttools.Oboe()
+left_hand_fingerings=(
+    WoodwindFingering(
+        instrument=oboe,
+        hand='left',
+        fingering={
+            'thumb':None,
+            'index':'down',
+            'middle':None,
+            'ring':None,
+            'pinky':None}
+    ),
+    WoodwindFingering(
+        instrument=oboe,
+        hand='left',
+        fingering={
+            'thumb':None,
+            'index':'down',
+            'middle':'down',
+            'ring':None,
+            'pinky':None}
+    ),
+    WoodwindFingering(
+        instrument=oboe,
+        hand='left',
+        fingering={
+            'thumb':'I',
+            'index':'down',
+            'middle':'down',
+            'ring':'down',
+            'pinky':None}
+    )
+)
+right_hand_fingerings=(
+    WoodwindFingering(
+        instrument=oboe,
+        hand='right',
+        fingering={
+            'index':None,
+            'middle':None,
+            'ring':None,
+            'pinky':None}
+    ),
+    WoodwindFingering(
+        instrument=oboe,
+        hand='right',
+        fingering={
+            'index':'down',
+            'middle':None,
+            'ring':None,
+            'pinky':None}
+    ),
+    WoodwindFingering(
+        instrument=oboe,
+        hand='right',
+        fingering={
+            'index':'down',
+            'middle':'down',
+            'ring':None,
+            'pinky':None}
+    ),
+    WoodwindFingering(
+        instrument=oboe,
+        hand='right',
+        fingering={
+            'index':'down',
+            'middle':'down',
+            'ring':'f',
+            'pinky':None}
+    ),
+)

@@ -152,15 +152,15 @@ class StringFingeringHandler(object):
             leaf.written_pitch = named_pitch
 
     def _name_voices(self, voice, rhythm_voice):
-        instrument_name = self.music_maker.instrument_name
+        instrument = self.music_maker.instrument
         voice.name = self.music_maker.name
         rhythm_voice.name = self.music_maker.name + " Rhythm"
 
     ### PUBLIC PROPERTIES ###
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name
+    def instrument(self):
+        return self.music_maker.instrument
 
     @property
     def name(self):

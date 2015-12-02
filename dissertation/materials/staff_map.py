@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 '''
 Created on Nov 22, 2015
-
 @author: josephdavancens
+
+A dictionary that holds mappings from voice to staff. The keys of the dictionary
+are staff names and the values are valid voice names
+
 '''
 staff_map = {
     'Voice': ('Voice',),

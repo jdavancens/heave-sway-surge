@@ -4,12 +4,15 @@ Created on Nov 20, 2015
 
 @author: josephdavancens
 '''
+
+from abjad import *
+
 class WoodwindEmbouchure(object):
 
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        '_instrument_name',
+        '_instrument',
         '_air_pressure_start',
         '_air_pressure_stop',
         '_lip_pressure_start',
@@ -23,7 +26,7 @@ class WoodwindEmbouchure(object):
 
     def __init__ (
         self,
-        instrument_name=None,
+        instrument=None,
         air_pressure_start=None,
         air_pressure_stop=None,
         lip_pressure_start=None,
@@ -33,7 +36,8 @@ class WoodwindEmbouchure(object):
         vowel_start=None,
         vowel_stop=None
         ):
-        self._instrument_name = instrument_name
+        assert(isinstance(instrument, instrumenttools.Instrument))
+        self._instrument = instrument
         self._air_pressure_start = air_pressure_start
         self._air_pressure_stop = air_pressure_stop
         self._lip_pressure_start = lip_pressure_start
@@ -50,8 +54,8 @@ class WoodwindEmbouchure(object):
         return (self._air_pressure_start, self._air_pressure_stop)
 
     @property
-    def instrument_name(self):
-        return self._instrument_name
+    def instrument(self):
+        return self._instrument
 
     @property
     def lip_pressure(self):

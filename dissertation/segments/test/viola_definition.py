@@ -14,6 +14,7 @@ from dissertation.tools.MusicMaker import MusicMaker
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]
 tempo_map = [(1, Tempo(Duration(1,4), 88))]
+viola = instrumenttools.Viola()
 
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -30,7 +31,7 @@ tuplet_rhythm_maker = rhythmmakertools.TupletRhythmMaker
 
 bowing_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Viola',
+    instrument=viola,
     name='Bowing',
     divisions=divisions,
     time_signatures=time_signatures,
@@ -39,7 +40,7 @@ bowing_music_maker = MusicMaker(
 
 fingering_music_maker = MusicMaker(
     stages=(1),
-    instrument_name='Viola',
+    instrument=viola,
     name='Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
@@ -52,7 +53,7 @@ fingering_music_maker = MusicMaker(
 
 bowings = (
     StringBowing(
-            instrument_name='Viola',
+            instrument=viola,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
             pressure_start=Fraction(0, 1),
@@ -63,7 +64,7 @@ bowings = (
             staccato=False,
         ),
     StringBowing(
-            instrument_name='Viola',
+            instrument=viola,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
             pressure_start=Fraction(1, 5),
@@ -77,28 +78,28 @@ bowings = (
 
 fingerings = (
     StringFingering(
-        instrument_name='Viola',
+        instrument=viola,
         height_start=Fraction(2, 30),
         height_stop=Fraction(3, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
     StringFingering(
-        instrument_name='Viola',
+        instrument=viola,
         height_start=Fraction(6, 30),
         height_stop=Fraction(4, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
     StringFingering(
-        instrument_name='Viola',
+        instrument=viola,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
     StringFingering(
-        instrument_name='Viola',
+        instrument=viola,
         height_start=Fraction(5, 30),
         height_stop=Fraction(1, 30),
         pressure_start=Fraction(0, 1),
@@ -131,4 +132,3 @@ music_handlers = [
 
 def get_music_handlers():
     return music_handlers
-
