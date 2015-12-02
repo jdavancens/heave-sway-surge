@@ -67,54 +67,108 @@ class WoodwindFingeringCombination(object):
         center_column = []
         left_hand = []
         right_hand = []
+        instrument_name = self._instrument.instrument_name
+        if isinstance(self._instrument, instrumenttools.Oboe):
+            if lt is 'down':
+                left_hand.append('thumb')
+            elif lt is not None:
+                left_hand.append(lt)
 
-        if lt is 'down':
-            left_hand.append('thumb')
-        elif lt is not None:
-            left_hand.append(lt)
+            if li is 'down':
+                center_column.append('one')
+            elif li is 'half':
+                center_column.append('one1h')
+            elif li is not None:
+                left_hand.append(li)
 
-        if li is 'down':
-            center_column.append('one')
-        elif li is 'half':
-            center_column.append('one1h')
-        elif li is not None:
-            left_hand.append(li)
+            if lm is 'down':
+                center_column.append('two')
+            elif lm is not None:
+                left_hand.append(lm)
 
-        if lm is 'down':
-            center_column.append('two')
-        elif lm is not None:
-            left_hand.append(lm)
+            if lr is 'down':
+                center_column.append('three')
+            elif lr is not None:
+                left_hand.append(lr)
 
-        if lr is 'down':
-            center_column.append('three')
-        elif lr is not None:
-            left_hand.append(lr)
+            if lp is 'B':
+                left_hand.append('low-b')
+            elif lp is not None:
+                left_hand.append(lp)
 
-        if lp is 'B':
-            left_hand.append('low-b')
-        elif lp is not None:
-            left_hand.append(lp)
+            if ri is 'down':
+                center_column.append('four')
+            elif ri is not None:
+                right_hand.append(ri)
 
-        if ri is 'down':
-            center_column.append('four')
-        elif ri is not None:
-            right_hand.append(ri)
+            if rm is 'down':
+                center_column.append('five')
+            elif rm is not None:
+                right_hand.append(rm)
 
-        if rm is 'down':
-            center_column.append('five')
-        elif rm is not None:
-            right_hand.append(rm)
+            if rr is 'down':
+                center_column.append('six')
+            elif rr is not None:
+                right_hand.append(rr)
 
-        if rr is 'down':
-            center_column.append('six')
-        elif rr is not None:
-            right_hand.append(rr)
+            if rp is not None:
+                right_hand.append(rp)
 
-        if rp is not None:
-            right_hand.append(rp)
+        if isinstance(self._instrument, instrumenttools.ClarinetInBFlat):
+            if lt is 't':
+                left_hand.append('thumb')
+            elif lt is  'r':
+                left_hand.append('R')
+            elif lt is 'rt' or lt is 'tr':
+                left_hand.append('thumb')
+                left_hand.append('R')
+
+            if li is 'down':
+                center_column.append('one')
+            elif li is not None:
+                left_hand.append(li)
+
+            if lm is 'down':
+                center_column.append('two')
+            elif lm is not None:
+                left_hand.append(lm)
+
+            if lr is 'down':
+                center_column.append('three')
+            elif lr is not None:
+                left_hand.append(lr)
+
+            if lp is not None:
+                left_hand.append(lp)
+
+            if ri is 'down':
+                center_column.append('four')
+            elif ri is not None:
+                right_hand.append(ri)
+
+            if rm is 'down':
+                center_column.append('five')
+            elif rm is not None:
+                right_hand.append(rm)
+
+            if rr is 'down':
+                center_column.append('six')
+            elif rr is not None:
+                right_hand.append(rr)
+
+            if rp is not None:
+                right_hand.append(rp)
+
+            instrument_name = 'clarinet'
+
+        if isinstance(self._instrument, instrumenttools.AltoSaxophone):
+            instrument_name = 'saxophone'
+
+        if isinstance(self._instrument, instrumenttools.BassClarinet):
+            instrument_name = 'bass-clarinet'
 
         woodwind_fingering = instrumenttools.WoodwindFingering(
-            instrument_name=self._instrument.instrument_name,
+            instrument_name=instrument_name,
             center_column=center_column,
             right_hand=right_hand,
             left_hand=left_hand,

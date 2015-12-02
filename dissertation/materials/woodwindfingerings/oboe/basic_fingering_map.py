@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+    Oboe basic fingering map.
     Pitch name refers to the written (transposed) pitch for the instrument,
     as opposed to the sounding pitch.
 
