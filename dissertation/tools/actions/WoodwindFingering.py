@@ -67,6 +67,56 @@ class WoodwindFingering(object):
         return s
 
     ### PUBLIC PROPERTIES ###
+    def as_binary_list(self):
+        l = []
+        if self._hand == 'left':
+            thumb = self._fingering['thumb']
+            index = self._fingering['index']
+            middle = self._fingering['middle']
+            ring = self._fingering['ring']
+            pinky = self._fingering['pinky']
+            if thumb is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if index is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if middle is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if ring is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if pinky is not None:
+                l.append(1)
+            else:
+                l.append(0)
+        elif self._hand == 'right':
+            index = self._fingering['index']
+            middle = self._fingering['middle']
+            ring = self._fingering['ring']
+            pinky = self._fingering['pinky']
+            if index is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if middle is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if ring is not None:
+                l.append(1)
+            else:
+                l.append(0)
+            if pinky is not None:
+                l.append(1)
+            else:
+                l.append(0)
+        return l
 
     @property
     def fingering(self):

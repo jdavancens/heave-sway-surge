@@ -2,10 +2,10 @@
 ''' A4, B4, C5, E5, F5
 '''
 from abjad import *
-from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
+from dissertation import *
 oboe = instrumenttools.Oboe()
 left_hand_fingerings=(
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='left',
         fingering={
@@ -15,7 +15,7 @@ left_hand_fingerings=(
             'ring':None,
             'pinky':None}
     ),
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='left',
         fingering={
@@ -25,7 +25,7 @@ left_hand_fingerings=(
             'ring':None,
             'pinky':None}
     ),
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='left',
         fingering={
@@ -37,7 +37,7 @@ left_hand_fingerings=(
     )
 )
 right_hand_fingerings=(
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='right',
         fingering={
@@ -46,7 +46,7 @@ right_hand_fingerings=(
             'ring':None,
             'pinky':None}
     ),
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='right',
         fingering={
@@ -55,7 +55,7 @@ right_hand_fingerings=(
             'ring':None,
             'pinky':None}
     ),
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='right',
         fingering={
@@ -64,7 +64,7 @@ right_hand_fingerings=(
             'ring':None,
             'pinky':None}
     ),
-    WoodwindFingering(
+    actions.WoodwindFingering(
         instrument=oboe,
         hand='right',
         fingering={

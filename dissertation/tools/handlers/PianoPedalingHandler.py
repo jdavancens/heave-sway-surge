@@ -33,24 +33,25 @@ class PianoPedalingHandler(object):
 
     ### SPECIAL METHODS ###
 
-    def __call__(self):
-        voice = self.music_maker()
+    def __call__(self, current_stage):
+        voice = self.music_maker(current_stage)
         voice.name = self.music_maker.name
-        logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
-        first = logical_ties[0]
-        last = logical_ties[-1]
-        hidden_grace_after(last[-1], pitchtools.NamedPitch('C4'))
-        final_grace = inspect_(last[-1]).get_grace_container()[0]
-        if self.sustain_pedal_on:
-            sustain_pedal_down = indicatortools.LilyPondCommand('sustainOn', format_slot='right')
-            sustain_pedal_up = indicatortools.LilyPondCommand('sustainOff', format_slot='right')
-            attach(sustain_pedal_down, first[0])
-            attach(sustain_pedal_up, final_grace)
-        if self.soft_pedal_on:
-            soft_pedal_down = indicatortools.LilyPondCommand('unaCorda', format_slot='right')
-            soft_pedal_up = indicatortools.LilyPondCommand('treCorde', format_slot='right')
-            attach(soft_pedal_down, first[0])
-            attach(soft_pedal_up, final_grace)
+        if current_stage in self.music_maker.stages:
+            logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
+            first = logical_ties[0]
+            last = logical_ties[-1]
+            hidden_grace_after(last[-1], pitchtools.NamedPitch('C4'))
+            final_grace = inspect_(last[-1]).get_grace_container()[0]
+            if self.sustain_pedal_on:
+                sustain_pedal_down = indicatortools.LilyPondCommand('sustainOn', format_slot='right')
+                sustain_pedal_up = indicatortools.LilyPondCommand('sustainOff', format_slot='right')
+                attach(sustain_pedal_down, first[0])
+                attach(sustain_pedal_up, final_grace)
+            if self.soft_pedal_on:
+                soft_pedal_down = indicatortools.LilyPondCommand('unaCorda', format_slot='right')
+                soft_pedal_up = indicatortools.LilyPondCommand('treCorde', format_slot='right')
+                attach(soft_pedal_down, first[0])
+                attach(soft_pedal_up, final_grace)
         return [voice]
 
     ### PUBLIC PROPERTIES ###

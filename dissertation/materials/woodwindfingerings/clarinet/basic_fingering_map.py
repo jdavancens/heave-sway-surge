@@ -11,7 +11,7 @@
         ring: None, down
         pinky: None, cis, e, fis
     right hand:
-        index: None, down, one, two, three, four
+        index: None, down, 1, 2, 3, 4, 3,4
         middle: None, down
         ring: None, down, b
         pinky: None, e, f, fis, gis
@@ -728,7 +728,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':'four',
+                'index':'4',
                 'middle':None,
                 'ring':None,
                 'pinky':None}

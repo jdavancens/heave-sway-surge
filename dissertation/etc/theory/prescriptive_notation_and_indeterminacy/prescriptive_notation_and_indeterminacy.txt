@@ -1,0 +1,8 @@
+*Intro*
+In my dissertation composition, with the working title Viscera, I employ a specialized notation system as means to achieve certain compositional ends. The notation is prescriptive, i.e., it specifies what kind of actions an instrumentalist should perform. This is contrasted with traditional musical notation, which specifies what kind of sounds the instrumentalist should make.
+
+*Description*
+The notation system uses a combination of woodwind fingering tablature, traditional rhythmic notation, and two-dimensional vector art representing instrument parameter changes. Each instrument in the ensemble is assigned a staff group. The content of each staff group varies depending on the instrument family. Woodwind staff groups have an embouchure parameter staff and left and right hand fingering tablature staves. Each of these three staves is paired with a percussion-like staff indicating the rhythm of the prescribed actions. The piano staves are standard. Stringed instrument staff groups contain one large staff representing the vertical string-space of the instrument, from the nut to the bridge, and two rhythm staves for bowing and fingering actions.
+
+*Why*
+I opted to design this notational system for a few reasons.

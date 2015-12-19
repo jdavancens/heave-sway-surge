@@ -41,7 +41,7 @@ class NormalMusicHandler(object):
         slurs=None,
         glissandi=None,
         trills=None,
-        stem_tremolos=None
+        stem_tremolos=None,
         ):
         self.music_maker = music_maker
         self.pitch_sets = pitch_sets
@@ -53,18 +53,20 @@ class NormalMusicHandler(object):
         self.glissandi = glissandi
         self.trills = trills
         self.stem_tremolos = stem_tremolos
+        self.stages=stages
 
     ### SPECIAL METHDS ###
 
-    def __call__(self):
-        voice = self.music_maker()
-        self._handle_pitches(voice)
-        self._handle_articulations(voice)
-        self._handle_dynamics(voice)
-        self._handle_slurs(voice)
-        self._handle_glissandi(voice)
-        self._handle_stem_tremolos(voice)
-        self._handle_trills(voice)
+    def __call__(self, current_stage):
+        voice = self.music_maker(current_stage)
+        if current_stage in self.music_maker.stages:
+            self._handle_pitches(voice)
+            self._handle_articulations(voice)
+            self._handle_dynamics(voice)
+            self._handle_slurs(voice)
+            self._handle_glissandi(voice)
+            self._handle_stem_tremolos(voice)
+            self._handle_trills(voice)
         return [voice]
 
 

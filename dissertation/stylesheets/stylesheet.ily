@@ -1,8 +1,8 @@
 \version "2.19.29"
 
 
-#(set-default-paper-size "arch c" 'portrait)
-#(set-global-staff-size 12)
+#(set-default-paper-size "11x17" 'portrait)
+#(set-global-staff-size 10)
 
 \include "stencils.ily"
 
@@ -71,7 +71,7 @@ pad = 0.5
         \center-align {
             %\override #'(font-name . "Times")
             \fontsize #10 {
-               \line {Chiral}
+               \line {Viscera}
             }
         }
     }

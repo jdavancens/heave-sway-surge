@@ -143,13 +143,20 @@ class WoodwindFingeringCombination(object):
 
             if ri is 'down':
                 center_column.append('four')
-            elif ri is not None:
-                right_hand.append(ri)
+            elif ri is '1':
+                right_hand.append('one')
+            elif ri is '2':
+                right_hand.append('two')
+            elif ri is '3':
+                right_hand.append('three')
+            elif ri is '4':
+                right_hand.append('four')
+            elif ri is '3,4':
+                right_hand.append('three')
+                right_hand.append('four')
 
             if rm is 'down':
                 center_column.append('five')
-            elif rm is not None:
-                right_hand.append(rm)
 
             if rr is 'down':
                 center_column.append('six')
@@ -162,10 +169,77 @@ class WoodwindFingeringCombination(object):
             instrument_name = 'clarinet'
 
         if isinstance(self._instrument, instrumenttools.AltoSaxophone):
-            instrument_name = 'saxophone'
+            if lt is "t" or lt is 'T':
+                left_hand.append('T')
 
-        if isinstance(self._instrument, instrumenttools.BassClarinet):
-            instrument_name = 'bass-clarinet'
+            if isinstance(li, tuple):
+                for x in li:
+                    if x == 'down':
+                        print(x)
+                        center_column.append('one')
+                    else:
+                        left_hand.append(x)
+            elif li is 'down':
+                center_column.append('one')
+            elif li is not None:
+                left_hand.append(li)
+
+            if lm is 'down':
+                center_column.append('two')
+            elif lm is not None:
+                left_hand.append(lm)
+
+            if lr is 'down':
+                center_column.append('three')
+            elif lr is not None:
+                left_hand.append(lr)
+
+            if isinstance(lp, tuple):
+                for x in lp:
+                    left_hand.append(x)
+            elif lp is not None:
+                left_hand.append(lp)
+
+            if isinstance(ri, tuple):
+                for x in ri:
+                    if x is 'down':
+                        center_column.append('four')
+                    else:
+                        right_hand.append(x)
+            elif ri is 'down':
+                center_column.append('four')
+            elif ri is not None:
+                right_hand.append(ri)
+
+            if isinstance(rm, tuple):
+                for x in rm:
+                    if x == 'down':
+                        center_column.append('five')
+                    else:
+                        right_hand.append('x')
+            elif rm is 'down':
+                center_column.append('five')
+            elif rm is not None:
+                right_hand.append(rm)
+
+            if isinstance(rr, tuple):
+                for x in rr:
+                    if x == 'down':
+                        center_column.append('six')
+                    else:
+                        right_hand.append('x')
+            elif rr is 'down':
+                center_column.append('six')
+            elif rr is not None:
+                right_hand.append(rr)
+
+            if isinstance(rp, tuple):
+                for x in rp:
+                    right_hand.append(x)
+            elif rp is not None:
+                right_hand.append(rp)
+
+            instrument_name = 'saxophone'
 
         woodwind_fingering = instrumenttools.WoodwindFingering(
             instrument_name=instrument_name,

@@ -41,13 +41,17 @@ class StringBowingHandler(object):
 
     ### SPECIAL METHODS ###
 
-    def __call__ (self):
-        voice = self.music_maker()
-        self._annotate_logical_ties(voice)
-        rhythm_voice = copy.deepcopy(voice)
-        self._name_voices(voice, rhythm_voice)
-        self._handle_bowing_voice(voice)
-        self._handle_rhythm_voice(rhythm_voice)
+    def __call__ (self, current_stage):
+        voice = self.music_maker(current_stage)
+        rhythm_voice = None
+        if current_stage in self.music_maker.stages:
+            self._annotate_logical_ties(voice)
+            rhythm_voice = copy.deepcopy(voice)
+            self._name_voices(voice, rhythm_voice)
+            self._handle_bowing_voice(voice)
+            self._handle_rhythm_voice(rhythm_voice)
+        else:
+            rhythm_voice = copy.deepcopy(voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###

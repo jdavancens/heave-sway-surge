@@ -31,7 +31,7 @@ class MusicMaker:
         divisions=None,
         instrument=None,
         name=None,
-        rhythm_maker = None,
+        rhythm_maker=None,
         stages=None,
         time_signatures=None
         ):
@@ -44,6 +44,7 @@ class MusicMaker:
         self.rhythm_maker = rhythm_maker
         self._stages = stages
         self.time_signatures = []
+        time_signatures = sequencetools.flatten_sequence(time_signatures)
         for pair in time_signatures:
             time_signature = indicatortools.TimeSignature(pair)
             self.time_signatures.append(time_signature)
@@ -54,16 +55,24 @@ class MusicMaker:
         assert divisions_sum == time_sigs_sum
 
     ### SPECIAL METHODS ###
-    def __call__(self):
+    def __call__(self, current_stage):
         r'''Calls music-maker
 
         Returns music as a selection.
         '''
-        voice = self._make_rhythm()
+        if current_stage in self._stages:
+            voice = self._make_rhythm()
+        else:
+            voice = self._make_rests()
         assert isinstance(voice, Voice)
         return voice
 
     ### PRIVATE METHODS ###
+    def _make_rests(self):
+        time_signatures = self.time_signatures
+        rests = scoretools.make_rests(time_signatures)
+        voice = Voice(rests)
+        attach(self._instrument, voice)
 
     def _make_rhythm(self):
         time_signatures = self.time_signatures

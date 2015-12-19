@@ -39,12 +39,13 @@ class WoodwindFingeringHandler(object):
 
     ### SPECIAL METHODS ###
 
-    def __call__(self):
-        voice = self.music_maker()
+    def __call__(self, current_stage):
+        voice = self.music_maker(current_stage)
         voice.name = self.music_maker.name
         rhythm_voice = copy.deepcopy(voice)
         rhythm_voice.name = self.music_maker.name + " Rhythm"
-        self._handle_fingerings(voice)
+        if current_stage in self.music_maker.stages:
+            self._handle_fingerings(voice)
         lifeline_voice = self._make_lifeline_voice(voice)
         return [voice, lifeline_voice, rhythm_voice]
 
@@ -58,7 +59,9 @@ class WoodwindFingeringHandler(object):
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             i = cursor.next()[0]
             fingering = self.fingerings[i]
+
             fingering = fingering.as_binary_list()
+
             pitches = []
             if self.hand == 'left':
                 pitches = [4, 7, 11, 14, 17]
@@ -152,7 +155,6 @@ class WoodwindFingeringHandler(object):
         return glissando_map
 
     ### PUBLIC PROPERTIES ###
-
     @property
     def instrument(self):
         return self.music_maker.instrument

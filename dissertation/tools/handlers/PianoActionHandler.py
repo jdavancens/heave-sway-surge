@@ -21,6 +21,7 @@ class PianoActionHandler(abctools.AbjadObject):
         'dynamic_pattern',
         'pitch_sets',
         'pitch_pattern',
+
         )
 
     ### INTIALIZER ###
@@ -52,13 +53,14 @@ class PianoActionHandler(abctools.AbjadObject):
 
     ### SPECIAL METHODS ###
 
-    def __call__ (self):
-        voice = self.music_maker()
+    def __call__ (self, current_stage):
+        voice = self.music_maker(current_stage)
         voice.name = self.music_maker.name
-        self._attach_pitches(voice)
-        self._attach_articulations(voice)
-        self._attach_dynamics(voice)
-        self._attach_clef(voice)
+        if current_stage in self.music_maker.stages:
+            self._attach_pitches(voice)
+            self._attach_articulations(voice)
+            self._attach_dynamics(voice)
+            self._attach_clef(voice)
         return [voice]
 
     ### PRIVATE METHODS ###

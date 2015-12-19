@@ -52,13 +52,14 @@ class WoodwindEmbouchureHandler(object):
 
     ### SPECIAL METHODS ###
 
-    def __call__(self):
-        voice = self.music_maker()
+    def __call__(self, current_stage):
+        voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
         voice.name = self.music_maker.name
         rhythm_voice.name = self.music_maker.name + " Rhythm"
-        self._handle_embouchure_voice(voice)
-        self._handle_rhythm_voice(rhythm_voice)
+        if current_stage in self.music_maker.stages:
+            self._handle_embouchure_voice(voice)
+            self._handle_rhythm_voice(rhythm_voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
