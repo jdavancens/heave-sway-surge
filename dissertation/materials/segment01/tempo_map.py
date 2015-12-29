@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+r''' Tempi for each stage in segment. tempo_map is a dictionary with measure
+number keys and tempo values.
+
+'''
 from abjad.tools.indicatortools.Tempo import Tempo
 from abjad.tools.durationtools.Duration import Duration
 from dissertation.materials.segment01.time_signatures import time_signatures

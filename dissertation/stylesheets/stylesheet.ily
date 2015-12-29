@@ -143,6 +143,11 @@ pad = 0.5
     }
     \context {
         \Staff
+        \omit KeySignature
+        \omit TimeSignature
+    }
+    \context {
+        \Staff
         \name StringBowingRhythmStaff
         \alias Staff
         \type Engraver_group
@@ -294,7 +299,7 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #UP
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #0
+        \override VerticalAxisGroup.staff-staff-spacing.padding = #1
     }
     \context {
         \Staff
@@ -421,7 +426,7 @@ pad = 0.5
         \override NoteHead.stencil = \squareStencil
         \override NoteHead.X-offset = #-0.5
         \override StaffSymbol.line-count = #4
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #-2
+        \override VerticalAxisGroup.staff-staff-spacing.padding = #-1
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SUB-INSTRUMENT STAFF GROUPS
     \context {
@@ -574,6 +579,5 @@ pad = 0.5
         systemStartDelimiter = #'SystemStartBar
         \omit SystemStartBar
         tupletFullLength = ##t
-        \RemoveEmptyStaves
     }
 }

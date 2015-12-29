@@ -15,12 +15,38 @@ oboe = instrumenttools.Oboe()
 #===============================================================================
 
 divisions = sequencetools.flatten_sequence(time_signatures)
-tuplet_ratios_embouchure = [(1, 1, 1, -2), (2, 2, 3), (1, 1, 2), (2, -3), (1, 1)]
-tuplet_ratios_lh = [(1, 1), (-2, 3), (-1, 1, 1, 1, 1, 3), (4, 2, 1)]
-tuplet_ratios_rh = [(1, -1), (1, 1, 1), (1,), (1, 1, 1, 1)]
+tuplet_ratios_embouchure = [
+    (1, 1, 1,-2),
+    (2, 2, 3),
+    (1, 1, 2),
+    (2, 3),
+    (1, 1)
+    ]
+tuplet_ratios_lh = [
+    (1, 1),
+    (-2, 3),
+    (-1, 1, 1, 1, 1, 3),
+    (4, 2, 1)
+    ]
+tuplet_ratios_rh = [
+    (1, -1),
+    (1, 1, 1),
+    (1,),
+    (1, 1, 1, 1)
+    ]
+
+# silence mask
+# sustain mask
 
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
-stages=(0,1,2,3,4)
+duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
+    rewrite_meter=True, spell_metrically=True,
+)
+tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
+    avoid_dots=True, flatten_trivial_tuplets=True, simplify_tuplets=True,
+    is_diminution=False,
+)
+stages = (0, 2)
 
 #===============================================================================
 # MUSIC-MAKERS
@@ -31,7 +57,11 @@ embouchure_music_maker = MusicMaker(
     name='Embouchure',
     divisions=divisions,
     time_signatures=time_signatures,
-    rhythm_maker=tuplet_maker(tuplet_ratios=tuplet_ratios_embouchure)
+    rhythm_maker=tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure,
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+        )
     )
 
 lh_fingering_music_maker = MusicMaker(
@@ -40,7 +70,11 @@ lh_fingering_music_maker = MusicMaker(
     name='Left Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
-    rhythm_maker=tuplet_maker(tuplet_ratios=tuplet_ratios_lh)
+    rhythm_maker=tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh,
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+        )
     )
 rh_fingering_music_maker = MusicMaker(
     stages=stages,
@@ -48,7 +82,11 @@ rh_fingering_music_maker = MusicMaker(
     name='Right Hand Fingering',
     time_signatures=time_signatures,
     divisions=divisions,
-    rhythm_maker=tuplet_maker(tuplet_ratios=tuplet_ratios_rh)
+    rhythm_maker=tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh,
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+        )
     )
 
 #===============================================================================

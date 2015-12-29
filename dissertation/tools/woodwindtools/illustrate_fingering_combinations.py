@@ -1,6 +1,7 @@
 # -*- coding utf-8 -*-
 from abjad import *
 from dissertation import *
+
 def illustrate_fingering_combinations(instrument, fingering_maps, left_hand_fingerings, right_hand_fingerings):
     staff = Staff()
     attach(instrument, staff)

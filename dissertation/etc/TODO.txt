@@ -1,7 +1,16 @@
-* redefine handlers to allow multiple patterns for different p
-  parameters
+############################################################################BUGS
 
-* overwrite functions
+* fix 2nd tempo marking
+* rounded corners on lines
+
+########################################################################FEATURES
+* Complete and verify woodwind fingering maps
+
+* tests for each instrument
+
+* redefine handlers to allow multiple patterns for different parameters
+
+* overwrite functions and masks
     erasure: make rests
     rhythm overwrites: recursively subdivide
 
@@ -10,19 +19,17 @@
     staccati (change logical_tie[1:] to rest)
     redundant piano dynamics
 
-
-* or define new spanner based on glissando that starts on a
-  note or chord and extends to a note, chord, rest or skip
-  takes start_min, start_max, stop_min, start_max,
-  color, start_saturation, stop_saturation
-
-* Core functionality assertions, tests
-
-* Pitch structure interpreter
+* Core functionality error handling assertions, unit tests
 
 * Woodwind fingering utility
+    combine all woodwind fingerings (standard, alt, qt, multiphonic)
+    illustrate
 
 * String fingering utility
+    string fraction for 12-tet pitches
+    show pitch for harmonic node
+
+##########################################################################FUTURE
 
 * Piano-four-hands option
 

@@ -1,0 +1,25 @@
+section definition : list of makers and handlers
+score template :
+context names : list of lilypond contexts
+instruments : list of instruments
+MusicMaker : data->abjad rhythm voice
+MusicHandler segment_maker->abjad score->lilypond
+ScoreTemplate : set up score structure
+SegmentMaker : rhythm_maker, 
+
+section definition
+    defines time signatures and tempi
+    defines rhythms
+    defines instrument actions
+
+ segment maker
+    intitalizes lilypond file
+    adds style sheet
+    creates time signatures context
+    calls music maker on each voice
+        makes music
+    interprets music handlers
+        fills lilypond file with music commands
+    returns lilypond file
+
+

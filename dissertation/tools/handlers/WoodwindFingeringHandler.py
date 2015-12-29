@@ -98,8 +98,9 @@ class WoodwindFingeringHandler(object):
 
         cycle = datastructuretools.CyclicTuple(self.pattern)
         cursor = datastructuretools.Cursor(cycle)
-
-        for logical_tie in iterate(lifeline_voice).by_logical_tie(pitched=True):
+        logical_ties = list(iterate(lifeline_voice).by_logical_tie(pitched=True))
+        if len(logical_ties) == 0 : return lifeline_voice
+        for logical_tie in logical_ties:
             chord = None
             if self.hand == 'left':
                 chord = "e' g' b' d'' f''"
@@ -108,7 +109,6 @@ class WoodwindFingeringHandler(object):
             for note in logical_tie:
                 chord = Chord(chord, note.written_duration)
                 mutate(note).replace(chord)
-        logical_ties = list(iterate(lifeline_voice).by_logical_tie(pitched=True))
         last_tie = logical_ties[-1]
         last_leaf = last_tie.leaves[-1]
         grace_chord = Chord(last_leaf.written_pitches, Duration(1,16))

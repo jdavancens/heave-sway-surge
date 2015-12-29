@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.17)  19 DEC 2015 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.17)  22 DEC 2015 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,21 +218,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2015basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no Ã in font cmti10!
 Missing character: There is no ¼ in font cmti10!
-
-Overfull \hbox (7.18985pt too wide) in paragraph at lines 45--45
-[]\OT1/cmr/bx/n/12 Indeterminate sounds in oth-er-wise de-ter-im-i-nate mu-si-c
-al con-texts 
- []
-
-[2] [3] (./prescriptive_notation_and_indeterminacy.aux) ) 
+ [2]
+[3] [4] (./prescriptive_notation_and_indeterminacy.aux) ) 
 Here is how much of TeX's memory you used:
- 2274 strings out of 494501
- 32844 string characters out of 6167029
- 92259 words of memory out of 5000000
- 5531 multiletter control sequences out of 15000+600000
- 10848 words of font info for 40 fonts, out of 8000000 for 9000
+ 2276 strings out of 494501
+ 32876 string characters out of 6167029
+ 93259 words of memory out of 5000000
+ 5533 multiletter control sequences out of 15000+600000
+ 11207 words of font info for 41 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 42i,6n,26p,880b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,6n,26p,1281b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/20
 15basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
 e/2015basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/
@@ -242,11 +237,11 @@ local/texlive/2015basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2015basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2015basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on prescriptive_notation_and_indeterminacy.pdf (3 pages, 94038 b
-ytes).
+Output written on prescriptive_notation_and_indeterminacy.pdf (4 pages, 100124 
+bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

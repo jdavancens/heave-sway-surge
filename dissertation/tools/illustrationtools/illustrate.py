@@ -1,6 +1,6 @@
 # -*- coding utf-8 -*-
 from abjad import *
-def illustrate(expr, file_name):
+def illustrate(expr, file_path):
     lilypond_file = lilypondfiletools.make_basic_lilypond_file(expr)
     lilypond_file.default_paper_size = 'letter', 'portrait'
     lilypond_file.global_staff_size = 12
@@ -41,14 +41,41 @@ def illustrate(expr, file_name):
         source_context_name='RhythmicStaff',
         )
     lilypond_file.layout_block.items.append(context_block)
+    ly_path = file_path + '.ly'
+    persist(lilypond_file).as_ly(ly_path)
+    systemtools.IOManager.run_lilypond(ly_path)
 
-
-
-
-
-    abjad_output_directory = conf.abjad_output_directory
-    this_file = os.path.abspath(__file__)
-    build_path = os.path.dirname(this_file)
-    ly_path = os.path.join(build_path, file_name)
-    show(lilypond_file, return_timing=True)
-    systemtools.IOManager.save_last_ly_as(ly_path)
+def _make_time_signature_context_block(
+    font_size=3,
+    minimum_distance=10,
+    padding=4,
+    ):
+    from abjad.tools import layouttools
+    from abjad.tools import lilypondfiletools
+    assert isinstance(font_size, (int, float))
+    assert isinstance(padding, (int, float))
+    context_block = lilypondfiletools.ContextBlock(
+        type_='Engraver_group',
+        name='TimeSignatureContext',
+        )
+    context_block.consists_commands.append('Axis_group_engraver')
+    context_block.consists_commands.append('Time_signature_engraver')
+    override(context_block).time_signature.X_extent = (0, 0)
+    override(context_block).time_signature.X_offset = schemetools.Scheme(
+        'ly:self-alignment-interface::x-aligned-on-self')
+    override(context_block).time_signature.Y_extent = (0, 0)
+    override(context_block).time_signature.break_align_symbol = False
+    override(context_block).time_signature.break_visibility = \
+        schemetools.Scheme('end-of-line-invisible')
+    override(context_block).time_signature.font_size = font_size
+    override(context_block).time_signature.self_alignment_X = \
+        schemetools.Scheme('center')
+    spacing_vector = layouttools.make_spacing_vector(
+        0,
+        minimum_distance,
+        padding,
+        0,
+        )
+    override(context_block).vertical_axis_group.default_staff_staff_spacing = \
+        spacing_vector
+    return context_block

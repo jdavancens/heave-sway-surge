@@ -23,8 +23,6 @@ class MusicMaker:
         'time_signatures'
         )
 
-
-
     ### INTITIALIZER ###
     def __init__(
         self,
@@ -73,9 +71,9 @@ class MusicMaker:
         rests = scoretools.make_rests(time_signatures)
         voice = Voice(rests)
         attach(self._instrument, voice)
+        return voice
 
     def _make_rhythm(self):
-        time_signatures = self.time_signatures
         rhythm = self.rhythm_maker(self.divisions)
         rhythm = sequencetools.flatten_sequence(rhythm)
         voice = Voice(rhythm)
