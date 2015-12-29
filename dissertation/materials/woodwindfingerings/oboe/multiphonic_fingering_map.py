@@ -11,13 +11,13 @@
         thumb: None, I, II
         index: None, down, half
         middle: None, down, d, b
-        ring: None, down, cs
-        pinky: None, gs, ef, b, bf, f
+        ring: None, down, cis
+        pinky: None, gis, ees, b, bes, f
     right hand:
-        index: None, down, gs, a
+        index: None, down, gis, a
         middle: None, down, d
         ring: None, down, f
-        pinky: None, c, cs, ef
+        pinky: None, c, cis, ees
 '''
 from abjad import *
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
@@ -120,7 +120,7 @@ multiphonic_fingering_map = {
                 'index':'down',
                 'middle':'down',
                 'ring':None,
-                'pinky':'ef'}
+                'pinky':'ees'}
             )
         ),
     # 5
@@ -145,7 +145,7 @@ multiphonic_fingering_map = {
                 'index':None,
                 'middle':'down',
                 'ring':'down',
-                'pinky':'cs'}
+                'pinky':'cis'}
             )
         ),
     # 6
@@ -220,7 +220,7 @@ multiphonic_fingering_map = {
                 'index':'down',
                 'middle':'half',
                 'ring':'down',
-                'pinky':'ef'}
+                'pinky':'ees'}
             )
         ),
     # 9
@@ -295,7 +295,7 @@ multiphonic_fingering_map = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
-                'pinky':'ef'}
+                'pinky':'ees'}
             )
         ),
     # 12
@@ -325,7 +325,32 @@ multiphonic_fingering_map = {
         ),
     # 13
     pitchtools.PitchSet(
-        items=['G4', 'Eb5', 'C6'],
+        items=['G4', 'D5', 'B5'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':'down',
+                'ring':'half',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':'half',
+                'pinky':'ees'}
+            )
+        ),
+    # 14
+    pitchtools.PitchSet(
+        items=['G#4', 'A4', 'C6'],
         item_class=pitchtools.NamedPitch
     ):
         (WoodwindFingering(
@@ -346,6 +371,56 @@ multiphonic_fingering_map = {
                 'middle':'down',
                 'ring':None,
                 'pinky':'c'}
+            )
+        ),
+    # 15
+    pitchtools.PitchSet(
+        items=['G#4', 'A4', 'C5','D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 16 FIGURE OUT DOUBLE
+    pitchtools.PitchSet(
+        items=['G#4', 'A4', 'G#5'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
             )
         ),
 }

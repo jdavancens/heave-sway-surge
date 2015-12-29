@@ -83,11 +83,15 @@ class WoodwindFingeringCombination(object):
 
             if lm is 'down':
                 center_column.append('two')
+            elif lm is 'half':
+                center_column.append('two1h')
             elif lm is not None:
                 left_hand.append(lm)
 
             if lr is 'down':
                 center_column.append('three')
+            elif lr is 'half':
+                center_column.append('three1h')
             elif lr is not None:
                 left_hand.append(lr)
 
@@ -98,16 +102,22 @@ class WoodwindFingeringCombination(object):
 
             if ri is 'down':
                 center_column.append('four')
+            elif ri is 'half':
+                center_column.append('four1h')
             elif ri is not None:
                 right_hand.append(ri)
 
             if rm is 'down':
                 center_column.append('five')
+            elif rm is 'half':
+                center_column.append('five1h')
             elif rm is not None:
                 right_hand.append(rm)
 
             if rr is 'down':
                 center_column.append('six')
+            elif rr is 'half':
+                center_column.append('six1h')
             elif rr is not None:
                 right_hand.append(rr)
 

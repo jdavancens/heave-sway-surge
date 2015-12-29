@@ -1,5 +1,7 @@
 # -*- coding utf-8 -*-
 from abjad import *
+import os
+
 def illustrate(expr, file_path):
     lilypond_file = lilypondfiletools.make_basic_lilypond_file(expr)
     lilypond_file.default_paper_size = 'letter', 'portrait'
@@ -19,6 +21,8 @@ def illustrate(expr, file_path):
     lilypond_file.layout_block.items.append(context_block)
     context_block.accepts_commands.append('TimeSignatureContext')
     context_block.remove_commands.append('Bar_number_engraver')
+    moment = schemetools.SchemeMoment(1, 4)
+    set_(context_block).proportional_notation_duration = moment
     override(context_block).beam.breakable = True
     override(context_block).spacing_spanner.strict_grace_spacing = True
     override(context_block).spacing_spanner.strict_note_spacing = True
@@ -26,7 +30,6 @@ def illustrate(expr, file_path):
     override(context_block).tuplet_bracket.bracket_visibility = True
     override(context_block).tuplet_bracket.padding = 2
 
-    # provided as a stub position for user customization
     context_block = lilypondfiletools.ContextBlock(
         source_context_name='StaffGroup',
         )
@@ -41,7 +44,14 @@ def illustrate(expr, file_path):
         source_context_name='RhythmicStaff',
         )
     lilypond_file.layout_block.items.append(context_block)
+
     ly_path = file_path + '.ly'
+    pdf_path = file_path + '.pdf'
+    if os.access(ly_path, os.F_OK):
+        os.remove(ly_path)
+    if os.access(pdf_path, os.F_OK):
+        os.remove(pdf_path)
+
     persist(lilypond_file).as_ly(ly_path)
     systemtools.IOManager.run_lilypond(ly_path)
 

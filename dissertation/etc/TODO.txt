@@ -11,8 +11,11 @@
 * redefine handlers to allow multiple patterns for different parameters
 
 * overwrite functions and masks
-    erasure: make rests
-    rhythm overwrites: recursively subdivide
+    rhythm overwrites: recursive subdivision
+    dynamics mask
+    silence mask
+    articulation mask
+    sustain mask
 
 * cleanup functions
     discrete crescendos (p,mp,mf,f = p<f for fast runs n>2)
@@ -21,18 +24,21 @@
 
 * Core functionality error handling assertions, unit tests
 
-* Woodwind fingering utility
-    combine all woodwind fingerings (standard, alt, qt, multiphonic)
-    illustrate
+* Woodwind fingerings
+    combine all woodwind fingerings (standard, alt, qt, multiphonic) and
+        illustrate
+    better way to handle woodwind fingering combinations
+    include alt key indicators in tablature
 
 * String fingering utility
     string fraction for 12-tet pitches
     show pitch for harmonic node
 
 ##########################################################################FUTURE
+* sphinx documentation
 
 * Piano-four-hands option
 
-** Midi output handler
+* Midi output handler
 
-** Abjad to Music XML exporter
+* Abjad to Music XML exporter
