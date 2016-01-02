@@ -423,4 +423,954 @@ multiphonic_fingering_map = {
                 'pinky':None}
             )
         ),
+    # 17
+    pitchtools.PitchSet(
+        items=['Ab4', 'B5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'ees'}
+            )
+        ),
+    # 48
+    pitchtools.PitchSet(
+        items=['Bb4', 'Eb5', 'Db6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 49
+    pitchtools.PitchSet(
+        items=['Bb4', 'E5', 'C#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+            )
+        ),
+    # 50
+    pitchtools.PitchSet(
+        items=['B4', 'Eb5', 'Db6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 51
+    pitchtools.PitchSet(
+        items=['B4', 'Eb5', 'C#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+            )
+        ),
+    # 52
+    pitchtools.PitchSet(
+        items=['B4', 'B5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'bes'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':'down',
+                'pinky':'c'}
+            )
+        ),
+    # 53
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'C6', 'E6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'bes'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':('down', 'f'),
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 54
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'Ab5', 'Db6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':'half',
+                'pinky':'c'}
+            )
+        ),
+    # 55
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'C6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'II',
+                'index':'down',
+                'middle':'half',
+                'ring':'down',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 56
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':'ees'}
+            )
+        ),
+    # 57
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'ees'}
+            )
+        ),
+    # 58
+    pitchtools.PitchSet(
+        items=['B4', 'C5', 'E6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'ees'}
+            )
+        ),
+    # 59
+    pitchtools.PitchSet(
+        items=['B4', 'Db5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'bes'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'c'}
+            )
+        ),
+    # 60
+    pitchtools.PitchSet(
+        items=['B4', 'D5', 'C6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'f'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 61
+    pitchtools.PitchSet(
+        items=['B4', 'Eb5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 62
+    pitchtools.PitchSet(
+        items=['B4', 'E5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+            )
+        ),
+    # 63
+    pitchtools.PitchSet(
+        items=['B4', 'F5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+            )
+        ),
+    # 64
+    pitchtools.PitchSet(
+        items=['B4', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'bes'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 65
+    pitchtools.PitchSet(
+        items=['B4', 'Eb5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':'banana',
+                'pinky':None}
+            )
+        ),
+    # 66
+    pitchtools.PitchSet(
+        items=['B4', 'E5', 'Db6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'cis'}
+            )
+        ),
+    # 67
+    pitchtools.PitchSet(
+        items=['B4', 'E5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+            )
+        ),
+    # 68
+    pitchtools.PitchSet(
+        items=['B4', 'F5', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 69
+    pitchtools.PitchSet(
+        items=['B4', 'F#5', 'D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 70
+    pitchtools.PitchSet(
+        items=['B4', 'F#5', 'D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'bes'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 71
+    pitchtools.PitchSet(
+        items=['B4', 'D6', 'F#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'III',
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+            )
+        ),
+    # 72
+    pitchtools.PitchSet(
+        items=['C5', 'Eb5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'c'}
+            )
+        ),
+    # 73
+    pitchtools.PitchSet(
+        items=['C5', 'E5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':('down','f'),
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 74
+    pitchtools.PitchSet(
+        items=['C5', 'G5', 'E6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'ees'}
+            )
+        ),
+    # 75
+    pitchtools.PitchSet(
+        items=['C5', 'E5', 'D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':('down','f'),
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 76
+    pitchtools.PitchSet(
+        items=['C5', 'E5', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':'cis'}
+            )
+        ),
+    # 77
+    pitchtools.PitchSet(
+        items=['C5', 'F#5', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':'ees'}
+            )
+        ),
+    # 78
+    pitchtools.PitchSet(
+        items=['C5', 'G5', 'D#6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+            )
+        ),
+    # 79
+    pitchtools.PitchSet(
+        items=['C5', 'Ab5', 'D6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+            )
+        ),
+    # 80
+    pitchtools.PitchSet(
+        items=['C5', 'G5', 'Eb6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'banana',
+                'ring':'down',
+                'pinky':'ees'}
+            )
+        ),
+    # 85
+    pitchtools.PitchSet(
+        items=['D5', 'F#5', 'C6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'II',
+                'index':'down',
+                'middle':'half',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'ees'}
+            )
+        ),
+    # 86
+    pitchtools.PitchSet(
+        items=['D5', 'Bb5', 'Db6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':None,
+                'index':'half',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':'down',
+                'ring':'half',
+                'pinky':'cis'}
+            )
+        ),
+    # 87
+    pitchtools.PitchSet(
+        items=['D5', 'E5', 'Gb5'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'b'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':'down',
+                'middle':('down','f'),
+                'ring':None,
+                'pinky':'c'}
+            )
+        ),
+    # 88
+    pitchtools.PitchSet(
+        items=['G5', 'E6'],
+        item_class=pitchtools.NamedPitch
+    ):
+        (WoodwindFingering(
+            instrument=oboe,
+            hand='left',
+            fingering= {
+                'thumb':'I',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+            ),
+        WoodwindFingering(
+            instrument=oboe,
+            hand='right',
+            fingering = {
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'c'}
+            )
+        ),
 }

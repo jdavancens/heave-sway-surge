@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-'''
-Created on Nov 10, 2015
-
-@author: josephdavancens
-'''
-
 from abjad import *
 from dissertation import *
 from dissertation.segments.segment01.make_segment import make_segment

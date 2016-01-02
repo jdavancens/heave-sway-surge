@@ -4,8 +4,9 @@ import os
 
 def illustrate(expr, file_path):
     lilypond_file = lilypondfiletools.make_basic_lilypond_file(expr)
+    lilypond_file.header_block.tagline = False
     lilypond_file.default_paper_size = 'letter', 'portrait'
-    lilypond_file.global_staff_size = 12
+    lilypond_file.global_staff_size = 14
     lilypond_file.paper_block.left_margin = 20
     vector = layouttools.make_spacing_vector(0, 0, 12, 0)
     lilypond_file.paper_block.system_system_spacing = vector

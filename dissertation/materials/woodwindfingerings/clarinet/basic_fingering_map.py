@@ -5,13 +5,13 @@
     as opposed to the sounding pitch.
 
     left hand:
-        thumb: None, t, r, rt
+        thumb: None, t, r,
         index: None, down, gis, a
         middle: None, down, es
         ring: None, down
         pinky: None, cis, e, fis
     right hand:
-        index: None, down, 1, 2, 3, 4, 3,4
+        index: None, down, 1, 2, 3, 4,
         middle: None, down
         ring: None, down, b
         pinky: None, e, f, fis, gis
@@ -466,7 +466,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -487,7 +487,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -508,7 +508,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -529,7 +529,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -550,7 +550,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -571,7 +571,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -592,7 +592,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -613,7 +613,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -634,7 +634,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -655,7 +655,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -676,7 +676,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -697,7 +697,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -718,7 +718,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -739,7 +739,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -760,7 +760,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -781,7 +781,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -802,7 +802,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -823,7 +823,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -844,7 +844,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -865,7 +865,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -886,7 +886,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':None,
@@ -907,7 +907,7 @@ basic_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'rt',
+                'thumb':('r', 't'),
                 'index':None,
                 'middle':'down',
                 'ring':None,
