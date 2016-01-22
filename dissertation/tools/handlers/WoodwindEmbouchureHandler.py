@@ -30,8 +30,8 @@ class WoodwindEmbouchureHandler(object):
         'music_maker',
         'embouchures',
         'pattern',
+        'color',
         'number_of_staff_lines',
-        'color'
     )
 
     ### INTIALIZER ###
@@ -41,25 +41,29 @@ class WoodwindEmbouchureHandler(object):
         music_maker=None,
         embouchures=None,
         pattern=None,
-        number_of_staff_lines=None,
         color=None,
+        number_of_staff_lines=None,
         ):
+
         self.music_maker = music_maker
         self.embouchures = embouchures
         self.pattern = pattern
-        self.number_of_staff_lines = number_of_staff_lines
         self.color = color
+        self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
 
     def __call__(self, current_stage):
         voice = self.music_maker(current_stage)
-        rhythm_voice = copy.deepcopy(voice)
-        voice.name = self.music_maker.name
-        rhythm_voice.name = self.music_maker.name + " Rhythm"
+        rhythm_voice = None
         if current_stage in self.music_maker.stages:
+            self._annotate_logical_ties(voice)
+            rhythm_voice = copy.deepcopy(voice)
+            self._name_voices(voice, rhythm_voice)
             self._handle_embouchure_voice(voice)
             self._handle_rhythm_voice(rhythm_voice)
+        else:
+            rhythm_voice = copy.deepcopy(voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
@@ -111,8 +115,7 @@ class WoodwindEmbouchureHandler(object):
         cursor = datastructuretools.Cursor(cycle)
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
-                i = cursor.next()[0]
-                embouchure = self.embouchures[i]
+                embouchure = self.embouchures[cursor.next()[0]]
                 self._annotate_logical_tie(logical_tie, embouchure)
         for i in range(len(logical_ties)-1):
             if isinstance(logical_ties[i][0], Note):
@@ -139,37 +142,15 @@ class WoodwindEmbouchureHandler(object):
             direction=Up
             )
 
-    def _handle_embouchure_voice(self, voice):
-        cycle = datastructuretools.CyclicTuple(self.pattern)
-        cursor = datastructuretools.Cursor(cycle)
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            embouchure = self.embouchures[cursor.next()[0]]
-            self._map_note_heads(logical_tie, embouchure)
-            self._insert_spanner_anchor(logical_tie, embouchure)
-            self._handle_air_pressure(logical_tie, embouchure)
-
-    def _handle_rhythm_voice(self, rhythm_voice):
-        cycle = datastructuretools.CyclicTuple(self.pattern)
-        cursor = datastructuretools.Cursor(cycle)
-        last_vowel_markup = None
-        for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
-            embouchure = self.embouchures[cursor.next()[0]]
-            self._insert_spanner_anchor(logical_tie, embouchure)
-            tongue_articulated = embouchure.tongue_articulated
-            if tongue_articulated:
-                accent = indicatortools.Articulation('accent')
-                attach(accent, logical_tie[0])
-        for leaf in rhythm_voice.select_leaves(
-                allow_discontiguous_leaves=True,
-                leaf_classes=Note
-                ):
-            point_note_head(leaf)
-
-    def _handle_air_pressure(self, logical_tie, embouchure):
-        color = self.color
-        color = graphics_tools.desaturate_rgb(embouchure.air_pressure[0], color)
+    def _handle_air_pressure(self, logical_tie):
+        air_pressure = inspect_(logical_tie[0]).get_annotation('air_pressure_start')
+        color = graphics_tools.desaturate_rgb(
+                air_pressure,
+                self.color
+                )
         color = graphics_tools.scheme_rgb_color(color)
-        if embouchure.staccato:
+        staccato = inspect_(logical_tie[0]).get_annotation('staccato')
+        if staccato:
             bar_note_head(logical_tie[0])
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
@@ -182,24 +163,71 @@ class WoodwindEmbouchureHandler(object):
                     gliss_skip(leaf)
                     point_note_head(leaf)
 
-    def _insert_spanner_anchor(self, logical_tie, embouchure):
-        air_pressure = embouchure.air_pressure[1]
-        fractional_staff_position = \
-            (air_pressure * ((self.number_of_staff_lines * 2) - 2)) + 2
-        staff_position = round(fractional_staff_position)
+    def _handle_embouchure_voice(self, voice):
+        cycle = datastructuretools.CyclicTuple(self.pattern)
+        cursor = datastructuretools.Cursor(cycle)
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            embouchure = self.embouchures[cursor.next()[0]]
+            self._map_note_heads(logical_tie)
+            self._insert_gliss_anchor(logical_tie)
+            self._handle_air_pressure(logical_tie)
+
+    def _handle_rhythm_voice(self, rhythm_voice):
+        for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
+            self._insert_spanner_anchor(logical_tie)
+            # tongue_articulated = embouchure.tongue_articulated
+            # if tongue_articulated:
+            #     accent = indicatortools.Articulation('accent')
+            #     attach(accent, logical_tie[0])
+        for leaf in rhythm_voice.select_leaves(
+                allow_discontiguous_leaves=True,
+                leaf_classes=Note
+                ):
+            point_note_head(leaf)
+
+    def _insert_gliss_anchor(self, logical_tie):
+        air_pressure_stop = inspect_(logical_tie[0]).get_annotation('air_pressure_stop')
+        next_air_pressure_start = inspect_(logical_tie[0]).get_annotation('next_air_pressure_start')
+        staff_position = self._map_fraction_to_treble_staff_position(
+            air_pressure_stop,
+            number_of_staff_lines=self.number_of_staff_lines
+        )
         named_pitch = pitchtools.NamedPitch.from_staff_position(
             staff_position)
+        if air_pressure_stop != next_air_pressure_start:
+            hidden_grace_after(logical_tie[-1], named_pitch)
+
+    def _insert_spanner_anchor(self, logical_tie):
+        named_pitch = pitchtools.NamedPitch("c'")
         hidden_grace_after(logical_tie[-1], named_pitch)
 
-    def _map_note_heads(self, logical_tie, embouchure):
-        air_pressure = embouchure.air_pressure[0]
-        fractional_staff_position = \
-            (air_pressure * ((self.number_of_staff_lines * 2) - 2)) + 2
-        staff_position = round(fractional_staff_position)
+    def _map_fraction_to_treble_staff_position(
+        self,
+        fraction,
+        number_of_staff_lines
+        ):
+        if 0 <= number_of_staff_lines < 3:
+            staff_position = 6
+        else:
+            staff_position = fraction * ((2 * number_of_staff_lines) - 4)
+            staff_position = round(staff_position) + 8 - number_of_staff_lines
+        return staff_position
+
+    def _map_note_heads(self, logical_tie):
+        air_pressure_start = inspect_(logical_tie[0]).get_annotation('air_pressure_start')
+        staff_position = self._map_fraction_to_treble_staff_position(
+            air_pressure_start,
+            number_of_staff_lines=self.number_of_staff_lines
+            )
         named_pitch = pitchtools.NamedPitch.from_staff_position(
             staff_position)
         for leaf in logical_tie:
             leaf.written_pitch = named_pitch
+
+    def _name_voices(self, voice, rhythm_voice):
+        instrument = self.music_maker.instrument
+        voice.name = self.music_maker.name
+        rhythm_voice.name = self.music_maker.name + " Rhythm"
 
     ### PUBLIC PROPERTIES ###
 

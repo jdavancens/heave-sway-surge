@@ -1,17 +1,18 @@
 # -*- coding utf-8 -*-
 from abjad import *
-import os
+import datetime,os
 
 def illustrate(expr, file_path):
     lilypond_file = lilypondfiletools.make_basic_lilypond_file(expr)
     lilypond_file.header_block.tagline = False
     lilypond_file.default_paper_size = 'letter', 'portrait'
-    lilypond_file.global_staff_size = 14
-    lilypond_file.paper_block.left_margin = 20
-    vector = layouttools.make_spacing_vector(0, 0, 12, 0)
+    lilypond_file.global_staff_size = 16
+    lilypond_file.paper_block.left_margin = 25
+    lilypond_file.paper_block.right_margin = 20
+    vector = layouttools.make_spacing_vector(0, 0, 10, 0)
     lilypond_file.paper_block.system_system_spacing = vector
     lilypond_file.layout_block.indent = 0
-    lilypond_file.layout_block.ragged_right = True
+    lilypond_file.layout_block.ragged_right = False
     command = indicatortools.LilyPondCommand('accidentalStyle forget')
     lilypond_file.layout_block.items.append(command)
     block = _make_time_signature_context_block(font_size=1, padding=6)
@@ -22,7 +23,7 @@ def illustrate(expr, file_path):
     lilypond_file.layout_block.items.append(context_block)
     context_block.accepts_commands.append('TimeSignatureContext')
     context_block.remove_commands.append('Bar_number_engraver')
-    moment = schemetools.SchemeMoment(1, 4)
+    moment = schemetools.SchemeMoment(1, 6)
     set_(context_block).proportional_notation_duration = moment
     override(context_block).beam.breakable = True
     override(context_block).spacing_spanner.strict_grace_spacing = True
@@ -53,8 +54,18 @@ def illustrate(expr, file_path):
     if os.access(pdf_path, os.F_OK):
         os.remove(pdf_path)
 
-    persist(lilypond_file).as_ly(ly_path)
-    systemtools.IOManager.run_lilypond(ly_path)
+    with systemtools.Timer() as timer:
+        print("Illustrating...")
+        persist(lilypond_file).as_ly(ly_path)
+        seconds = int(timer.elapsed_time)
+        time = str(datetime.timedelta(seconds=seconds))
+        print(time)
+    with systemtools.Timer() as timer:
+        print("Making PDF...")
+        systemtools.IOManager.run_lilypond(ly_path)
+        seconds = int(timer.elapsed_time)
+        time = str(datetime.timedelta(seconds=seconds))
+        print(time)
 
 def _make_time_signature_context_block(
     font_size=3,

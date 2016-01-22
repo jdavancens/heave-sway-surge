@@ -4,11 +4,11 @@ squareStencil =
 		"gsave
 		currentpoint translate
 		newpath
-		0.125 0.4 moveto
-		1.125 0.4 lineto
-		1.125 -0.4 lineto
-		0.125 -0.4 lineto
-		0.125 0.4 lineto
+		0.125 0.45 moveto
+		1.0 0.45 lineto
+		1.0 -0.45 lineto
+		0.125 -0.45 lineto
+		0.125 0.45 lineto
 		closepath
 		fill
 		grestore" )

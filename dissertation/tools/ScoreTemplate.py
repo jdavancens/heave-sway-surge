@@ -37,10 +37,23 @@ class ScoreTemplate(abctools.AbjadValueObject):
 
     ### SPECIAL METHODS ###
 
-    def __call__(self):
+    def __call__(
+        self,
+        instrument_list=[
+            'oboe',
+            'clarinet',
+            'saxophone',
+            'piano a',
+            'piano b',
+            'violin',
+            'viola',
+            'cello',
+            'bass',
+            ]
+        ):
         r'''Calls score template.
         Creates time signature, voice, staff and staff group contexts and tags
-        Returns score.
+        Returns a score.
         '''
 
         time_signature_context = scoretools.Context(
@@ -436,8 +449,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(instrumenttools.Contrabass(), bass_staff_group)
         set_(bass_staff_group).instrument_name = Markup('Contrabass')
         set_(bass_staff_group).short_instrument_name = Markup('Cb.')
-        ensemble_staff_group = StaffGroup(
-            [
+        list_of_instrument_groups = [
                 oboe_staff_group,
                 clarinet_staff_group,
                 saxophone_staff_group,
@@ -447,11 +459,16 @@ class ScoreTemplate(abctools.AbjadValueObject):
                 viola_staff_group,
                 cello_staff_group,
                 bass_staff_group
-                ],
+            ]
+        ensemble_staff_group = StaffGroup(
+            [],
             context_name='EnsembleStaffGroup',
             name='Ensemble Staff Group'
-        )
-
+            )
+        for instrument_name in instrument_list:
+            for instrument_group in list_of_instrument_groups:
+                if instrument_name in instrument_group.name.lower():
+                    ensemble_staff_group.append(instrument_group)
         score = Score(
             [
             time_signature_context,
@@ -462,7 +479,6 @@ class ScoreTemplate(abctools.AbjadValueObject):
         return score
 
     ### PRIVATE METHODS ###
-
     def _attach_tag(self, instrument_tag, context):
         assert isinstance(instrument_tag, str), repr(str)
         tag_string = 'tag {}'.format(instrument_tag)

@@ -19,52 +19,6 @@ from abjad import *
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
 oboe = instrumenttools.Oboe()
 alternate_fingering_map = {
-    pitchtools.NamedPitch("Bb3"):(
-        WoodwindFingering(
-            instrument=oboe,
-            hand='left',
-            fingering={
-                'thumb':None,
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'bes',
-            }
-        ),
-        WoodwindFingering(
-            instrument=oboe,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'c'
-            }
-        )
-    ),
-    pitchtools.NamedPitch("B3"):(
-        WoodwindFingering(
-            instrument=oboe,
-            hand='left',
-            fingering={
-                'thumb':None,
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'b',
-            }
-        ),
-        WoodwindFingering(
-            instrument=oboe,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'c'
-            }
-        )
-    ),
     pitchtools.NamedPitch("Eb4"):(
         WoodwindFingering(
             instrument=oboe,
@@ -594,29 +548,7 @@ alternate_fingering_map = {
             }
         )
     ),
-    pitchtools.NamedPitch("Ab6"):(
-        WoodwindFingering(
-            instrument=oboe,
-            hand='left',
-            fingering={
-                'thumb':'I',
-                'index':'down',
-                'middle':None,
-                'ring':None,
-                'pinky':None,
-            }
-        ),
-        WoodwindFingering(
-            instrument=oboe,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':None,
-                'ring':None,
-                'pinky':None
-            }
-        )
-    ),
+
     pitchtools.NamedPitch("C#5"):(
         WoodwindFingering(
             instrument=oboe,

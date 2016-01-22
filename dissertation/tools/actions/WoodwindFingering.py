@@ -34,8 +34,44 @@ class WoodwindFingering(object):
         self._fingering = fingering
         if hand == "left":
             assert len(fingering) == 5
+            if isinstance(fingering['thumb'], str):
+                fingering['thumb'] = (fingering['thumb'],)
+            elif fingering['thumb'] is not None:
+                fingering['thumb'] = tuple(sorted(fingering['thumb']))
+            if isinstance(fingering['index'], str):
+                fingering['index'] = (fingering['index'],)
+            elif fingering['index'] is not None:
+                fingering['index'] = tuple(sorted(fingering['index']))
+            if isinstance(fingering['middle'], str):
+                fingering['middle'] = (fingering['middle'],)
+            elif fingering['middle'] is not None:
+                fingering['middle'] = tuple(sorted(fingering['middle']))
+            if isinstance(fingering['ring'], str):
+                fingering['ring'] = (fingering['ring'],)
+            elif fingering['ring'] is not None:
+                fingering['ring'] = tuple(sorted(fingering['ring']))
+            if isinstance(fingering['pinky'], str):
+                fingering['pinky'] = (fingering['pinky'],)
+            elif fingering['pinky'] is not None:
+                fingering['pinky'] = tuple(sorted(fingering['pinky']))
         if hand == "right":
             assert len(fingering) == 4
+            if isinstance(fingering['index'], str):
+                fingering['index'] = (fingering['index'],)
+            elif fingering['index'] is not None:
+                fingering['index'] = tuple(sorted(fingering['index']))
+            if isinstance(fingering['middle'], str):
+                fingering['middle'] = (fingering['middle'],)
+            elif fingering['middle'] is not None:
+                fingering['middle'] = tuple(sorted(fingering['middle']))
+            if isinstance(fingering['ring'], str):
+                fingering['ring'] = (fingering['ring'],)
+            elif fingering['ring'] is not None:
+                fingering['ring'] = tuple(sorted(fingering['ring']))
+            if isinstance(fingering['pinky'], str):
+                fingering['pinky'] = (fingering['pinky'],)
+            elif fingering['pinky'] is not None:
+                fingering['pinky'] = tuple(sorted(fingering['pinky']))
 
     ### SPECIAL METHODS ###
 
@@ -68,55 +104,116 @@ class WoodwindFingering(object):
 
     ### PUBLIC PROPERTIES ###
     def as_binary_list(self):
-        l = []
-        if self._hand == 'left':
-            thumb = self._fingering['thumb']
-            index = self._fingering['index']
-            middle = self._fingering['middle']
-            ring = self._fingering['ring']
-            pinky = self._fingering['pinky']
-            if thumb is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if index is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if middle is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if ring is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if pinky is not None:
-                l.append(1)
-            else:
-                l.append(0)
-        elif self._hand == 'right':
-            index = self._fingering['index']
-            middle = self._fingering['middle']
-            ring = self._fingering['ring']
-            pinky = self._fingering['pinky']
-            if index is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if middle is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if ring is not None:
-                l.append(1)
-            else:
-                l.append(0)
-            if pinky is not None:
-                l.append(1)
-            else:
-                l.append(0)
-        return l
+        binary_list = []
+        if self.hand == 'left':
+            if self.fingering['thumb'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['index'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['middle'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['ring'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['pinky'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+        else:
+            if self.fingering['index'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['middle'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['ring'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+            if self.fingering['pinky'] is not None:
+                binary_list.append(1)
+            else: binary_list.append(0)
+        return binary_list
+
+    def key_markup(key):
+        d = {
+            'R':Markup('R', direction=Up),
+            'I':Markup('I', direction=Up),
+            'II':Markup('II', direction=Up),
+            'III':Markup('III', direction=Up),
+            'a':Markup('A'),
+            'bes':Markup.concat([Markup('B'), Markup.flat()]),
+            'b':Markup('B'),
+            'c':Markup('C'),
+            'cis':Markup.concat([Markup('C'), Markup.sharp()]),
+            'd':Markup('D'),
+            'ees':Markup.concat([Markup('E'), Markup.flat()]),
+            'e':Markup('E'),
+            'f':Markup('F'),
+            'fis':Markup.concat([Markup('F'), Markup.sharp()]),
+            'g':Markup('G'),
+            'gis':Markup.concat([Markup('G'), Markup.sharp()]),
+            'one':Markup(1).finger(),
+            'two':Markup(2).finger(),
+            'three':Markup(3).finger(),
+            'four':Markup(4).finger(),
+            'front-f':Markup('F'),
+            'low-bes':Markup.concat([Markup('B'), Markup.flat()]),
+            'low-c':Markup('C'),
+            'high-fis':Markup.concat([Markup('F'), Markup.sharp()]),
+            'down':None,
+            'half':None,
+        }
+        return d[key]
+    def key_options(self, instrument, hand, finger):
+        d ={
+            'oboe':{
+                'left':{
+                    'thumb':('I','II','III'),
+                    'index':('down','half',),
+                    'middle':('down','half','gis','a'),
+                    'ring':('down','half','b', 'd'),
+                    'pinky':('cis'),
+                },
+                'right':{
+                    'index':('down','half','gis','a'),
+                    'middle':('down','half','d'),
+                    'ring':('down','f'),
+                    'pinky':('c','cis','ees')
+                }
+            },
+            'clarinet':{
+                'left':{
+                    'thumb':('thumb','R'),
+                    'index':('down','gis','a'),
+                    'middle':('down',),
+                    'ring':('down','ees'),
+                    'pinky':('cis','e','fis'),
+                },
+                'right':{
+                    'index':('down','one','two','three','four'),
+                    'middle':('down',),
+                    'ring':('down','b'),
+                    'pinky':('e','f','fis','gis')
+                }
+            },
+            'saxophone':{
+                'left':{
+                    'thumb':('T',),
+                    'index':('down','bes','ees','d','front-f'),
+                    'middle':('down','f'),
+                    'ring':('down',),
+                    'pinky':('gis','cis','b','low-bes'),
+                },
+                'right':{
+                    'index':('down','e','c','bes'),
+                    'middle':('down','high-fis'),
+                    'ring':('down','fis'),
+                    'pinky':('ees','low-c')
+                }
+            }
+        }
 
     @property
     def fingering(self):

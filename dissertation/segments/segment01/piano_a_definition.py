@@ -18,28 +18,17 @@ piano = instrumenttools.Piano(
 #===============================================================================
 
 divisions = sequencetools.flatten_sequence(time_signatures)
-tuplet_ratios_lh = [
-    (1, 1, 1, 1, 1, 1, 1),
-    (-1,),
-    (1, 1, 1, 1, 1, 1),
-    (-1,),
-    (1, 1, 1, 3),
-    (1, 1, 1, 1, 3)
-    ]
-tuplet_ratios_rh = [
-    (-1,),
-    (4, 1, 1),
-    (3, 1, 1),
-    (4, 1, 1, 1),
-    (4, 3, 2, 1)
-    ]
-
+rh_talea  = rhythmmakertools.Talea(
+    counts=[1,5,1,4,1,6,1,3],
+    denominator=16
+    )
 # silence mask
 # sustain mask
 
-tuplet_maker = rhythmmakertools.TupletRhythmMaker
+talea_maker = rhythmmakertools.TaleaRhythmMaker(
+    talea=rh_talea,
+)
 note_maker = rhythmmakertools.NoteRhythmMaker()
-
 duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     rewrite_meter=True, spell_metrically=True,
 )
@@ -47,59 +36,36 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     avoid_dots=True, flatten_trivial_tuplets=True, simplify_tuplets=True,
     is_diminution=False,
 )
-stages = (0, 1, 2)
 
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
 rh_music_maker = MusicMaker(
-    stages=(1,),
+    stages=(0,),
     instrument=piano,
     name='Right Hand',
     divisions=divisions,
     time_signatures=time_signatures,
-    rhythm_maker=tuplet_maker(
-        tuplet_ratios=tuplet_ratios_rh,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tuplet_spelling_specifier=tuplet_spelling_specifier,
-        )
-    )
-
-lh_music_maker = MusicMaker(
-    stages=(1,),
-    instrument=piano,
-    name='Left Hand',
-    time_signatures=time_signatures,
-    divisions=divisions,
-    rhythm_maker=tuplet_maker(
-        tuplet_ratios=tuplet_ratios_lh,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tuplet_spelling_specifier=tuplet_spelling_specifier,
-        )
+    rhythm_maker=talea_maker
     )
 ped_music_maker = MusicMaker(
-    stages=(1,),
+    stages=(0,),
     instrument=piano,
     name='Pedaling',
     time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=note_maker
-    )
+)
 
 #===============================================================================
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SETS
 #===============================================================================
-
-named_pitch = pitchtools.NamedPitch
 rh_pitch_sets = (
-    (named_pitch('F4'), named_pitch('Ab4'), named_pitch('C5'), named_pitch('Eb5')),
-    )
-lh_pitch_sets = (
-    (named_pitch('G3'), named_pitch('Ab3'), named_pitch('Bb3')),
-    (named_pitch('Eb3'), named_pitch('G3'), named_pitch('C4')),
-    (named_pitch('C3'), named_pitch('F3'), named_pitch('Bb3'))
-    )
-
+    pitchtools.PitchSet(
+        items=[pitchtools.NamedPitch('A4')],
+        item_class=pitchtools.NamedPitch,
+    ),
+)
 
 #===============================================================================
 # MUSIC-HANDLERS
@@ -109,13 +75,7 @@ rh_handler = handlers.PianoActionHandler(
     music_maker=rh_music_maker,
     pitch_sets=rh_pitch_sets,
     pitch_pattern=(0,),
-    dynamics = (Dynamic('mp'),)
-    )
-lh_handler = handlers.PianoActionHandler(
-    music_maker=lh_music_maker,
-    pitch_sets=lh_pitch_sets,
-    pitch_pattern=(0, 0, 0, 1, 1, 2, 2, 1, 2, 1),
-    dynamics = (Dynamic('mp'),)
+    dynamics = (Dynamic('pp'),)
     )
 ped_handler = handlers.PianoPedalingHandler(
     music_maker=ped_music_maker,
@@ -123,7 +83,6 @@ ped_handler = handlers.PianoPedalingHandler(
     )
 music_handlers = [
     rh_handler,
-    lh_handler,
     ped_handler
     ]
 

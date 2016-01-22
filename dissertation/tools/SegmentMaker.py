@@ -5,6 +5,7 @@ Created on Oct 31, 2015
 @author: josephdavancens
 '''
 import copy
+import datetime
 import os
 from pprint import pprint
 from abjad import *
@@ -30,6 +31,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         '_stages',
         '_transpose_score',
         'final_barline',
+        'instrument_list',
         'name',
         'number_of_stages',
         'raise_approximate_duration',
@@ -45,6 +47,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         final_barline=False,
         final_markup=None,
         final_markup_extra_offset=None,
+        instrument_list=None,
         is_last_segment=False,
         raise_approximate_duration=False,
         show_stage_annotations=False,
@@ -66,6 +69,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._final_markup_extra_offset = final_markup_extra_offset
         self._is_last_segment = is_last_segment
         self.first_bar_number = first_bar_number
+        self.instrument_list = instrument_list
         self._music_handlers = list()
         self.number_of_stages = number_of_stages
         self.raise_approximate_duration = raise_approximate_duration
@@ -101,7 +105,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         # self._add_final_barline()
         # self._add_final_markup()
         self._check_well_formedness()
-        # self._raise_approximate_duration_in_seconds()
+        self._raise_approximate_duration_in_seconds()
 
         print("...Done")
         return self.lilypond_file
@@ -276,7 +280,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         r''' Creates a blank score from a template object and configures bar
         numbers. Returns the blank score.
         '''
-        score = score_template()
+        score = score_template(self.instrument_list)
         first_bar_number = self.first_bar_number
         if first_bar_number is not None:
             set_(score).current_bar_number = first_bar_number
@@ -307,7 +311,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         attach(dummy_first_bar_command, first_leaf)
         time_signature_context = self._score[0]
         time_signature_context.extend(measures)
-        self._attach_tempo_indicators()
+        #self._attach_tempo_indicators()
 
     def _raise_approximate_duration_in_seconds(self):
         r''' Calculates the duration, in seconds, of the segment and raises an
@@ -405,6 +409,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         Returns pair or none.
         '''
         return self._final_markup_extra_offset
+
 
     @property
     def measure_count(self):

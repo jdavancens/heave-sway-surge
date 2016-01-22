@@ -23,7 +23,7 @@ pad = 0.5
         " "
     }
     evenHeaderMarkup = \markup \fill-line { " " }
-    left-margin = 1.5\in
+
     oddFooterMarkup = \markup \fill-line {
         " "
         \concat {
@@ -38,6 +38,7 @@ pad = 0.5
     print-page-number = ##t
     ragged-bottom = ##t
     ragged-last-bottom = ##t
+    left-margin = 1\in
     right-margin = 1\in
     markup-system-spacing = #'(
         (basic-distance . 0)
@@ -70,7 +71,7 @@ pad = 0.5
     title = \markup \column {
         \center-align {
             %\override #'(font-name . "Times")
-            \fontsize #10 {
+            \fontsize #5 {
                \line {Viscera}
             }
         }
@@ -96,7 +97,7 @@ pad = 0.5
                 (right
                     (attch-dir . -1)
                     (end-on-accidental . #t)
-                    (padding . 0.6)
+                    (padding . 0.5)
                 )
                 (left
                     (attach-dir . 1)
@@ -573,9 +574,9 @@ pad = 0.5
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override VerticalAxisGroup.remove-first = ##t
         autoBeaming = ##t
-        defaultBarType = #"!"
+        defaultBarType = #"|"
         markFormatter = #format-mark-box-alphabet
-        proportionalNotationDuration = #(ly:make-moment 1 48)
+        proportionalNotationDuration = #(ly:make-moment 1 32)
         systemStartDelimiter = #'SystemStartBar
         \omit SystemStartBar
         tupletFullLength = ##t

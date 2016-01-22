@@ -32,7 +32,8 @@ class StringFingeringHandler(object):
         fingerings=None,
         pattern=None,
         color=None,
-        number_of_staff_lines=None):
+        number_of_staff_lines=None
+        ):
         self.music_maker = music_maker
         self.fingerings = fingerings
         self.pattern = pattern

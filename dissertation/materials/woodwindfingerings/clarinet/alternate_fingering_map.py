@@ -5,13 +5,13 @@
     as opposed to the sounding pitch.
 
     left hand:
-        thumb: None, t, r,
+        thumb: None, thumb, R,
         index: None, down, gis, a
-        middle: None, down, es
-        ring: None, down
-        pinky: None, cis, e, fis
+        middle: None, down
+        ring: None, down, ees
+        pinky: None, cis, e, f, fis
     right hand:
-        index: None, down, 1, 2, 3, 4
+        index: None, down, one, two, three, four
         middle: None, down
         ring: None, down, b
         pinky: None, e, f, fis, gis
@@ -25,7 +25,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -46,7 +46,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -67,7 +67,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -88,7 +88,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -109,7 +109,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -130,7 +130,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -140,7 +140,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':'4',
+                'index':'four',
                 'middle':None,
                 'ring':'b',
                 'pinky':None}
@@ -151,17 +151,17 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'down',
-                'middle':'ees',
-                'ring':None,
+                'middle':None,
+                'ring':'ees',
                 'pinky':None}
         ),
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':'4',
+                'index':'four',
                 'middle':None,
                 'ring':'down',
                 'pinky':'f'}
@@ -172,7 +172,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -182,7 +182,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':('3', '4'),
+                'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
                 'pinky':None}
@@ -193,7 +193,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'t',
+                'thumb':'thumb',
                 'index':'gis',
                 'middle':None,
                 'ring':None,
@@ -203,7 +203,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':('3', '4'),
+                'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
                 'pinky':None}
@@ -245,7 +245,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':'2',
+                'index':'two',
                 'middle':None,
                 'ring':None,
                 'pinky':None}
@@ -256,7 +256,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -277,7 +277,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -298,7 +298,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -319,7 +319,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -340,7 +340,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -361,7 +361,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -382,7 +382,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'ees',
@@ -403,7 +403,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -424,7 +424,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -445,7 +445,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -455,7 +455,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':('3', '4'),
+                'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
                 'pinky':None}
@@ -466,7 +466,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -476,7 +476,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='right',
             fingering = {
-                'index':'2',
+                'index':'two',
                 'middle':None,
                 'ring':None,
                 'pinky':None}
@@ -487,7 +487,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -508,7 +508,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':'r',
+                'thumb':'R',
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -529,7 +529,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -550,7 +550,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -571,9 +571,9 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
-                'index':None,
-                'middle':'down',
+                'thumb':('R', 'thumb'),
+                'index':'down',
+                'middle':None,
                 'ring':None,
                 'pinky':None}
         ),
@@ -592,7 +592,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -613,7 +613,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -634,7 +634,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'gis',
                 'middle':'down',
                 'ring':'down',
@@ -655,7 +655,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -676,7 +676,7 @@ alternate_fingering_map = {
             instrument=clarinet,
             hand='left',
             fingering= {
-                'thumb':('r', 't'),
+                'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':None,
                 'ring':None,

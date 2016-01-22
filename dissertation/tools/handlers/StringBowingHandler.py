@@ -32,7 +32,9 @@ class StringBowingHandler(object):
         bowings=None,
         pattern=None,
         color=None,
-        number_of_staff_lines=None):
+        number_of_staff_lines=None
+        ):
+
         self.music_maker = music_maker
         self.bowings = bowings
         self.pattern = pattern

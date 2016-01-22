@@ -16,6 +16,7 @@ class WoodwindFingeringCombination(object):
         '_instrument',
         '_left',
         '_right',
+        '_predicted_pitches'
     )
 
     ### INTITIALIZER ###
@@ -25,24 +26,36 @@ class WoodwindFingeringCombination(object):
         instrument=None,
         left=None,
         right=None,
+        predicted_pitches=None,
         ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         assert(isinstance(left, WoodwindFingering))
         assert(isinstance(right, WoodwindFingering))
+        assert(
+            predicted_pitches == None or \
+            isinstance(predicted_pitches, list) or \
+            isinstance(predicted_pitches, tuple) or \
+            isinstance(predicted_pitches, pitchtools.PitchSet)
+            )
         assert(left.hand == 'left')
         assert(right.hand == 'right')
         assert(left.instrument == right.instrument)
         self._instrument = instrument
         self._left = left
         self._right = right
+        self._predicted_pitches = predicted_pitches
 
 
     ### SPECIAL METHODS ###
 
     def __repr__(self):
         inst_name = self._instrument.instrument_name.capitalize()
-        s = inst_name + ": " + str(self._left) + " | " + str(self._right)
-        return s
+        pitches = str(self._predicted_pitches)
+        lh = str(self._left)
+        rh = str(self._right)
+        string = "{}: {}, {} | {}"
+        string = string.format(inst_name, pitches, lh, rh)
+        return string
 
     ### PRIVATE METHODS ###
 
@@ -132,12 +145,25 @@ class WoodwindFingeringCombination(object):
         return self._left
 
     @property
-    def markup(self):
+    def right(self):
+        return self._right
+
+    @property
+    def predicted_pitches(self):
+        return self._predicted_pitches
+
+    ### PUBLIC METHODS ###
+
+    def markup(self, duration=Duration(1,1), sounding=True, size=0.75, graphical=False):
+        r''' Creates a chord object with predicted pitches, attaches a Lilypond
+            woodwind fingering diagram and returns it.
+        '''
         instrument_name = self._instrument.instrument_name
         if isinstance(self._instrument, instrumenttools.ClarinetInBFlat):
             instrument_name = 'clarinet'
         elif isinstance(self._instrument, instrumenttools.AltoSaxophone):
             instrument_name = 'saxophone'
+            graphical = True
 
         commands = self._parse()
 
@@ -149,15 +175,13 @@ class WoodwindFingeringCombination(object):
             )
         fingering_command = woodwind_fingering()
         not_graphical = markuptools.MarkupCommand(
-            'override', schemetools.SchemePair('graphical', False))
+            'override', schemetools.SchemePair('graphical', graphical))
         size = markuptools.MarkupCommand(
-            'override', schemetools.SchemePair('size', 0.67))
+            'override', schemetools.SchemePair('size', size))
         thickness = markuptools.MarkupCommand(
             'override', schemetools.SchemePair('thickness', 0.4))
         markup = markuptools.Markup(contents=
-            [size, thickness, fingering_command], direction=Down)
-        return markup
-
-    @property
-    def right(self):
-        return self._right
+            [not_graphical, size, thickness, fingering_command], direction=Down)
+        chord = Chord(self._predicted_pitches, duration)
+        attach(markup, chord)
+        return chord

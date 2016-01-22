@@ -5,11 +5,8 @@ Created on Nov 22, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.actions.StringBowing import StringBowing
-from dissertation.tools.actions.StringFingering import StringFingering
-from dissertation.tools.handlers.StringBowingHandler import StringBowingHandler
-from dissertation.tools.handlers.StringFingeringHandler import StringFingeringHandler
-from dissertation.tools.MusicMaker import MusicMaker
+from dissertation import *
+from dissertation.materials.segment01 import *
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]
@@ -52,7 +49,7 @@ fingering_music_maker = MusicMaker(
 #===============================================================================
 
 bowings = (
-    StringBowing(
+    actions.StringBowing(
             instrument=violin,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
@@ -63,7 +60,7 @@ bowings = (
             string_ids=('g', 'd'),
             staccato=False,
         ),
-    StringBowing(
+    actions.StringBowing(
             instrument=violin,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
@@ -77,28 +74,28 @@ bowings = (
     )
 
 fingerings = (
-    StringFingering(
+    actions.StringFingering(
         instrument=violin,
         height_start=Fraction(2, 30),
         height_stop=Fraction(3, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
-    StringFingering(
+    actions.StringFingering(
         instrument=violin,
         height_start=Fraction(6, 30),
         height_stop=Fraction(4, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
-    StringFingering(
+    actions.StringFingering(
         instrument=violin,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
         pressure_start=Fraction(0, 1),
         pressure_stop=Fraction(0, 1)
         ),
-    StringFingering(
+    actions.StringFingering(
         instrument=violin,
         height_start=Fraction(5, 30),
         height_stop=Fraction(1, 30),
@@ -111,14 +108,14 @@ fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-bowing_music_handler = StringBowingHandler(
+bowing_music_handler = handlers.StringBowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
         pattern=(0, 1),
         number_of_staff_lines=30,
         color=(255, 69, 0)
         )
-fingering_music_handler = StringFingeringHandler(
+fingering_music_handler = handlers.StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
         pattern=(0, 2, 1, 3, 2, 1, 3, 0, 1),

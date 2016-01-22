@@ -1,206 +1,876 @@
-# -*- coding: utf-8 -*-
+# Category 1, Fingering -*- coding: utf-8 -*-
 '''
     Clarinet multiphonic fingering map.
     Pitch name refers to the written (transposed) pitch for the instrument,
     as opposed to the sounding pitch.
 
     left hand:
-        thumb: None, t, r,
+        thumb: None, thumb, R,
         index: None, down, gis, a
-        middle: None, down, es
-        ring: None, down
-        pinky: None, cis, e, fis
+        middle: None, down
+        ring: None, down, ees
+        pinky: None, cis, e, f, fis
     right hand:
-        index: None, down, 1, 2, 3, 4,
+        index: None, down, one(B), two(Bb), three(F#), four(Eb),
         middle: None, down
         ring: None, down, b
         pinky: None, e, f, fis, gis
+
+    Drawn from New Directions for Clarinet, Revised Edition by Phillip Rehfeldt
+    Chapter 3: Multiple Sonorities, Multiphonic Possibilities
+        Category 1: all dynamics, flexible
+        Category 2: soft attacks, crescendo to mf-f, more resistant
+        Category 3: quiet, little or no crescendo
+        Category 4: loud, with beats
+        Category 5: dyads, soft
+        Category 6: variable in upper partials, shrill, two or more partials
+            possible. Omitted due to similarity to normal fingerings.
 '''
 from abjad import *
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
 clarinet = instrumenttools.ClarinetInBFlat()
 multiphonic_fingering_map = {
+##CATEGORY 1####################################################################
+    # Category 1, Fingering 1
     pitchtools.PitchSet(
-        pitchtools.NamedPitch('C4'),
-        pitchtools.NamedPitch('Bb5')
+        items=['Bb3', 'E5', 'Eb6'],
+        item_class=pitchtools.NamedPitch,
     ):(
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
             fingering={
-                'thumb':'t',
-                'index':'down',
+                'thumb':'thumb',
+                'index':None,
                 'middle':'down',
                 'ring':'down',
-                'pinky':'cis'}
+                'pinky':None}
         ),
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
             fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'fis'}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('D4'),
-        pitchtools.NamedPitch('B5')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':'t',
                 'index':'down',
                 'middle':None,
                 'ring':'down',
+                'pinky':'fis'}
+        ),
+    ),
+    # Category 1, Fingering 2
+    pitchtools.PitchSet(
+        items=['D4', 'D#5', 'G6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'ees',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'f'}
+        ),
+    ),
+    # Category 1, Fingering 3
+    pitchtools.PitchSet(
+        items=['D4', 'G5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 4
+    pitchtools.PitchSet(
+        items=['D4', 'G#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 5
+    pitchtools.PitchSet(
+        items=['D4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 6
+    pitchtools.PitchSet(
+        items=['D#4', 'F#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 7
+    pitchtools.PitchSet(
+        items=['D#4', 'G5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 8
+    pitchtools.PitchSet(
+        items=['D4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 9
+    pitchtools.PitchSet(
+        items=['D#4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 10
+    pitchtools.PitchSet(
+        items=['E4', 'G#5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 11
+    pitchtools.PitchSet(
+        items=['E4', 'A5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
                 'pinky':'cis'}
         ),
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
             fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':None}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('Eb4'),
-        pitchtools.NamedPitch('Db6')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':'t',
                 'index':None,
                 'middle':'down',
                 'ring':'down',
-                'pinky':None}
-        ),
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':None,
-                'pinky':None}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('E4'),
-        pitchtools.NamedPitch('B4')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':'t',
-                'index':('down', 'gis'),
-                'middle':'down',
-                'ring':'down',
-                'pinky':'e'}
-        ),
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':None}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('E4'),
-        pitchtools.NamedPitch('C5')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':'t',
-                'index':('down', 'gis'),
-                'middle':'down',
-                'ring':'down',
-                'pinky':None}
-        ),
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':'down',
-                'pinky':'e'}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('F5'),
-        pitchtools.NamedPitch('Ab5')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':('r','t'),
-                'index':'down',
-                'middle':'down',
-                'ring':None,
-                'pinky':None}
-        ),
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='right',
-            fingering={
-                'index':'down',
-                'middle':'down',
-                'ring':None,
-                'pinky':None}
-        )
-    ),
-    pitchtools.PitchSet(
-        pitchtools.NamedPitch('F4'),
-        pitchtools.NamedPitch('A5')
-    ):(
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='left',
-            fingering={
-                'thumb':('r','t'),
-                'index':'down',
-                'middle':'down',
-                'ring':None,
-                'pinky':None}
-        ),
-        WoodwindFingering(
-            instrument=clarinet,
-            hand='right',
-            fingering={
-                'index':None,
-                'middle':'down',
-                'ring':'b',
                 'pinky':'gis'}
-        )
+        ),
     ),
+    # Category 1, Fingering 12
     pitchtools.PitchSet(
-        pitchtools.NamedPitch('F#4'),
-        pitchtools.NamedPitch('B4')
+        items=['E4', 'A#5', 'E6'],
+        item_class=pitchtools.NamedPitch,
     ):(
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
             fingering={
-                'thumb':'t',
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'}
+        ),
+    ),
+    # Category 1, Fingering 13
+    pitchtools.PitchSet(
+        items=['F#4', 'B5', 'F6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':None,
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 14
+    pitchtools.PitchSet(
+        items=['F#4', 'A5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 15
+    pitchtools.PitchSet(
+        items=['F#4', 'A#5', 'E6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 16
+    pitchtools.PitchSet(
+        items=['G#4', 'C#6', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'two',
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 17
+    pitchtools.PitchSet(
+        items=['A4', 'A5', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'two',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+    ),
+    # Category 1, Fingering 18
+    pitchtools.PitchSet(
+        items=['A4', 'C6', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'two',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+    ),
+##CATEGORY 2####################################################################
+    # Category 2, Fingering 1
+    pitchtools.PitchSet(
+        items=['D#4', 'F#4', 'F5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'}
+        ),
+    ),
+    # Category 2, Fingering 2
+    pitchtools.PitchSet(
+        items=['D#4', 'G#4', 'F#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None}
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':'e'}
+        ),
+    ),
+    # Category 2, Fingering 3
+    pitchtools.PitchSet(
+        items=['F4', 'B4', 'G#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 4
+    pitchtools.PitchSet(
+        items=['C4', 'E5', 'A#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+    # Category 2, Fingering 5
+    pitchtools.PitchSet(
+        items=['C4', 'E5', 'A#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 6
+    pitchtools.PitchSet(
+        items=['C4', 'F#5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 7
+    pitchtools.PitchSet(
+        items=['D4', 'F5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 8
+    pitchtools.PitchSet(
+        items=['D4', 'F#5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':('down','ees'),
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 9
+    pitchtools.PitchSet(
+        items=['E4', 'F#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'fis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 10
+    pitchtools.PitchSet(
+        items=['F4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 11
+    pitchtools.PitchSet(
+        items=['G4', 'F#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 12
+    pitchtools.PitchSet(
+        items=['F4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'f'
+            }
+        ),
+    ),
+    # Category 2, Fingering 13
+    pitchtools.PitchSet(
+        items=['G#4', 'G#5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'gis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 14
+    pitchtools.PitchSet(
+        items=['F#4', 'A5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'b',
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 15
+    pitchtools.PitchSet(
+        items=['G#4', 'G5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
                 'index':('down','a'),
                 'middle':'down',
                 'ring':'down',
-                'pinky':None}
+                'pinky':None
+            }
         ),
         WoodwindFingering(
             instrument=clarinet,
@@ -209,7 +879,1608 @@ multiphonic_fingering_map = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
-                'pinky':'e'}
-        )
+                'pinky':'f'
+            }
+        ),
+    ),
+    # Category 2, Fingering 16
+    pitchtools.PitchSet(
+        items=['G4', 'A5', 'E6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'two',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 17
+    pitchtools.PitchSet(
+        items=['G#4', 'G#5', 'E6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb', 'R'),
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 18
+    pitchtools.PitchSet(
+        items=['F#4', 'B5', 'F6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 19
+    pitchtools.PitchSet(
+        items=['C4', 'C6', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+    # Category 2, Fingering 20
+    pitchtools.PitchSet(
+        items=['G#4', 'C6', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb', 'R'),
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'four',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+    # Category 2, Fingering 21
+    pitchtools.PitchSet(
+        items=['G#4', 'C#6', 'E6','G6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb', 'R'),
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':None,
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+##CATEGORY 3####################################################################
+# Category 3, Fingering 1
+    pitchtools.PitchSet(
+        items=['E4', 'A#4', 'G5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb', 'R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':'fis'
+            }
+        ),
+    ),
+# skipped 2 (duplicate pitches)
+# Category 3, Fingering 3
+    pitchtools.PitchSet(
+        items=['B3', 'D5', 'G#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 3, Fingering 4
+    pitchtools.PitchSet(
+        items=['D#4', 'C5', 'G#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 3, Fingering 5
+    pitchtools.PitchSet(
+        items=['E4', 'B4', 'G#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 3, Fingering 6
+    pitchtools.PitchSet(
+        items=['F4', 'C5', 'A5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 3, Fingering 7
+    pitchtools.PitchSet(
+        items=['C#4', 'D#5', 'A5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':('down','four'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 3, Fingering 8
+    pitchtools.PitchSet(
+        items=['E4', 'C#5', 'A5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 3, Fingering 9
+    pitchtools.PitchSet(
+        items=['F#4', 'C5', 'A5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 10
+    pitchtools.PitchSet(
+        items=['F4', 'D5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+# Category 3, Fingering 11
+    pitchtools.PitchSet(
+        items=['F#4', 'C5', 'A#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 12
+    pitchtools.PitchSet(
+        items=['D4', 'C#5', 'A#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+# Category 3, Fingering 13
+    pitchtools.PitchSet(
+        items=['F#4', 'D5', 'A#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 14
+    pitchtools.PitchSet(
+        items=['G4', 'D5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 15
+    pitchtools.PitchSet(
+        items=['C#4', 'F5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':('down','four'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 16
+    pitchtools.PitchSet(
+        items=['D#4', 'E5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 17a
+    pitchtools.PitchSet(
+        items=['F4', 'F5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 18b
+    pitchtools.PitchSet(
+        items=['F#4', 'D#5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 19
+    pitchtools.PitchSet(
+        items=['F#4', 'D#5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'four',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+# Category 3, Fingering 20
+    pitchtools.PitchSet(
+        items=['F#4', 'D#5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':('three','four'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 21
+    pitchtools.PitchSet(
+        items=['D#4', 'F5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 22
+    pitchtools.PitchSet(
+        items=['F4', 'E5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 23
+    pitchtools.PitchSet(
+        items=['F#4', 'E5', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 24
+    pitchtools.PitchSet(
+        items=['F4', 'F#5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 25
+    pitchtools.PitchSet(
+        items=['D#4', 'E5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 3, Fingering 26
+    pitchtools.PitchSet(
+        items=['F4', 'G5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 3, Fingering 27
+    pitchtools.PitchSet(
+        items=['E4', 'F#5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 3, Fingering 28
+    pitchtools.PitchSet(
+        items=['F4', 'F5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'R',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 29
+    pitchtools.PitchSet(
+        items=['F#4', 'F#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 30
+    pitchtools.PitchSet(
+        items=['G4', 'F#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'R',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 3, Fingering 31
+    pitchtools.PitchSet(
+        items=['G#4', 'G#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 3, Fingering 32
+    pitchtools.PitchSet(
+        items=['F4', 'G5', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 3, Fingering 33
+    pitchtools.PitchSet(
+        items=['G#4', 'F5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 3, Fingering 34
+    pitchtools.PitchSet(
+        items=['F#4', 'G5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+#(skipped 35)
+##CATEGORY 4####################################################################
+# Category 4, Fingering 1
+    pitchtools.PitchSet(
+        items=['Bb3', 'F5', 'Bb5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 4, Fingering 2
+    pitchtools.PitchSet(
+        items=['D4', 'F#5', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 4, Fingering 3
+    pitchtools.PitchSet(
+        items=['D4', 'A5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 4, Fingering 4
+    pitchtools.PitchSet(
+        items=['D#4', 'A5', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 4, Fingering 5
+    pitchtools.PitchSet(
+        items=['D#4', 'A5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 4, Fingering 6
+    pitchtools.PitchSet(
+        items=['D#4', 'A#5', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+#(skipped 7)
+##CATEGORY 5 ###################################################################
+# Category 5, Fingering 1
+    pitchtools.PitchSet(
+        items=['D#4', 'C5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 5, Fingering 2
+    pitchtools.PitchSet(
+        items=['G4', 'C5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':('down','a'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 5, Fingering 3
+    pitchtools.PitchSet(
+        items=['F#4', 'C#5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':('down','gis'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'fis'
+            }
+        ),
+    ),
+# Category 5, Fingering 4
+    pitchtools.PitchSet(
+        items=['F4', 'D5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'thumb',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':('down', 'two'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 5, Fingering 5
+    pitchtools.PitchSet(
+        items=['F4', 'D5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':'e'
+            }
+        ),
+    ),
+# Category 5, Fingering 6
+    pitchtools.PitchSet(
+        items=['E4', 'G5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'gis'
+            }
+        ),
+    ),
+# Category 5, Fingering 7
+    pitchtools.PitchSet(
+        items=['G4', 'B5'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'ees',
+                'pinky':'fis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 5, Fingering 8
+    pitchtools.PitchSet(
+        items=['F4', 'C6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':None,
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'gis'
+            }
+        ),
+    ),
+#(skipped 9)
+# Category 5, Fingering 10
+    pitchtools.PitchSet(
+        items=['F#4', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':'cis'
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':None,
+                'pinky':'fis'
+            }
+        ),
+    ),
+# Category 5, Fingering 11
+    pitchtools.PitchSet(
+        items=['G#4', 'C#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 5, Fingering 12
+    pitchtools.PitchSet(
+        items=['G4', 'D6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':'R',
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':None,
+                'ring':None,
+                'pinky':None
+            }
+        ),
+    ),
+# Category 5, Fingering 13
+    pitchtools.PitchSet(
+        items=['G#4', 'D#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'gis',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':'f'
+            }
+        ),
+    ),
+# Category 5, Fingering 14
+    pitchtools.PitchSet(
+        items=['B4', 'F#6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':'down',
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':('one','two'),
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+    ),
+# Category 5, Fingering 15
+    pitchtools.PitchSet(
+        items=['F#4', 'A6'],
+        item_class=pitchtools.NamedPitch,
+    ):(
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='left',
+            fingering={
+                'thumb':('thumb','R'),
+                'index':None,
+                'middle':'down',
+                'ring':'down',
+                'pinky':None
+            }
+        ),
+        WoodwindFingering(
+            instrument=clarinet,
+            hand='right',
+            fingering={
+                'index':'down',
+                'middle':'down',
+                'ring':'b',
+                'pinky':None
+            }
+        ),
     ),
 }
