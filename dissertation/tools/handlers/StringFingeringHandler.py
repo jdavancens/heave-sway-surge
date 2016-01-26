@@ -108,7 +108,7 @@ class StringFingeringHandler(object):
                 )
         color = graphics_tools.scheme_rgb_color(color)
         point_note_head(logical_tie[0])
-        gliss(logical_tie[0], color)
+        gliss(logical_tie[0], color=color, thickness=2)
         if len(logical_tie) > 1:
             for leaf in logical_tie[1:]:
                 gliss_skip(leaf)

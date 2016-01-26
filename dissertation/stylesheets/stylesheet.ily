@@ -1,17 +1,12 @@
 \version "2.19.29"
-
-
+\include "stencils.ily"
 #(set-default-paper-size "11x17" 'portrait)
 #(set-global-staff-size 10)
-
-\include "stencils.ily"
-
 longSpace = 16
 shortSpace = 10
 color = #blue
 pad = 0.5
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
         " "
@@ -38,29 +33,32 @@ pad = 0.5
     print-page-number = ##t
     ragged-bottom = ##t
     ragged-last-bottom = ##t
+    ragged-right = ##f
+    indent = 0\in
     left-margin = 1\in
-    right-margin = 1\in
+    right-margin = 0.5\in
+    top-margin = 0.5\in
     markup-system-spacing = #'(
         (basic-distance . 0)
-        (minimum-distance . 40)
+        (minimum-distance . 0)
         (padding . 0)
         (stretchability . 0)
     )
     system-system-spacing = #'(
-        (basic-distance . 0)
+        (basic-distance . 14)
         (minimum-distance . 14)
         (padding . 0)
         (stretchability . 0)
     )
     top-system-spacing = #'(
-        (basic-distance . 0)
-        (minimum-distance . 26)
+        (basic-distance . 14)
+        (minimum-distance . 14)
         (padding . 0)
         (stretchability . 0)
     )
-    top-margin = 1\in
-}
 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
 \header {
     composer = \markup {
         %\override #'(font-name . "Times")
@@ -77,14 +75,10 @@ pad = 0.5
         }
     }
 }
-
 \layout {
     \accidentalStyle modern
-    indent = 0
-    ragged-bottom = ##t
-    ragged-last = ##t
-    ragged-right = ##t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%VOICES
+    % VOICE
     \context {
         \Voice
         \remove Forbid_line_break_engraver
@@ -106,14 +100,7 @@ pad = 0.5
             )
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%STAVES
-    \context {
-        \PianoStaff
-        \omit KeySignature
-        \omit TimeSignature
-        \override StaffGrouper.staff-staff-spacing.padding = #3
-        \override StaffGrouper.staffgroup-staff-spacing.padding = #0
-        systemStartDelimiter = #'SystemStartBrace
-    }
+    % PIANO PEDALING STAFF
     \context {
         \Staff
         \name PianoPedalingStaff
@@ -140,13 +127,28 @@ pad = 0.5
         \override NoteHead.stencil = #point-stencil
         pedalSustainStyle = #'mixed
         squashedPosition = #0
-        \override VerticalAxisGroup.staff_staff_spacing.padding = #6
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 8)
+            (padding . 0)
+            (stretchability . 0)
+        )
     }
+    % STAFF
     \context {
         \Staff
+        \remove Metronome_mark_engraver
+        \remove Bar_number_engraver
         \omit KeySignature
         \omit TimeSignature
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 0)
+            (stretchability . 0)
+        )
     }
+    % STRING BOWING RHYTHM STAFF
     \context {
         \Staff
         \name StringBowingRhythmStaff
@@ -169,8 +171,14 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #UP
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #2
+        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 0)
+            (stretchability . 0)
+        )%}
     }
+    % STRING FINGERING RHYTHM STAFF
     \context {
         \Staff
         \name StringFingeringRhythmStaff
@@ -192,7 +200,14 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #DOWN
+        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 0)
+            (stretchability . 0)
+        )%}
     }
+    % STRING SPACE STAFF
     \context {
         \Staff
         \name StringSpaceStaff
@@ -204,6 +219,7 @@ pad = 0.5
         \consists Rest_collision_engraver
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
+        \consists System_start_delimiter_engraver
         \accepts Voice
         \omit Beam
         \omit Clef
@@ -215,7 +231,6 @@ pad = 0.5
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
-
         \override StaffSymbol.line-count = #30
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
@@ -225,8 +240,14 @@ pad = 0.5
             white white white white white
             white white white white black
             )
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #2
+        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 0)
+            (stretchability . 0)
+        )%}
     }
+    % TIME SIGNATURE STAFF
     \context {
         \name TimeSignatureContext
         \type Engraver_group
@@ -247,7 +268,9 @@ pad = 0.5
         \override MetronomeMark.break-align-symbols = #'(left-edge)
         \override MetronomeMark.extra-offset = #'(0 . 4)
         \override MetronomeMark.font-size = 3
+        \override MetronomeMark.outside-staff-priority = 0
         \override RehearsalMark.X-extent = #'(0 . 0)
+        \override RehearsalMark.Y-extent = #'(0 . 0)
         \override RehearsalMark.X-offset = 6
         \override RehearsalMark.Y-offset = -2.25
         \override RehearsalMark.break-align-symbols = #'(time-signature)
@@ -270,65 +293,15 @@ pad = 0.5
         \override TimeSignature.font-size = 3
         \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'(
-            (basic-distance . 10)
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
             (minimum-distance . 10)
-            (padding . 10)
+            (padding . 0)
             (stretchability . 0)
         )
         \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
-        \override VerticalAxisGroup.remove-first = ##f
     }
-    \context {
-        \Staff
-        \name WoodwindLeftHandFingeringRhythmStaff
-        \alias Staff
-        \type Engraver_group
-        \consists Output_property_engraver
-        \consists Font_size_engraver
-        \consists Separating_line_group_engraver
-        \consists Rest_collision_engraver
-        \consists Axis_group_engraver
-        \consists Staff_symbol_engraver
-        \consists Pitch_squash_engraver
-        \accepts Voice
-        \omit Clef
-        \omit Glissando
-        \omit TimeSignature
-        \omit StaffSymbol
-        \override NoteHead.stencil = #point-stencil
-        \override StaffSymbol.line-count = #1
-        squashedPosition = #0
-        \override Stem.direction = #UP
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #1
-    }
-    \context {
-        \Staff
-        \name WoodwindLeftHandFingeringStaff
-        \alias Staff
-        \type Engraver_group
-        \consists Output_property_engraver
-        \consists Font_size_engraver
-        \consists Separating_line_group_engraver
-        \consists Rest_collision_engraver
-        \consists Axis_group_engraver
-        \consists Staff_symbol_engraver
-        \accepts Voice
-        \hide Beam
-        \hide Clef
-        \hide Dots
-        \hide Flag
-        \hide Rest
-        \hide Stem
-        \hide Tie
-        \omit TimeSignature
-        \omit TupletBracket
-        \omit TupletNumber
-        \override NoteHead.stencil = \squareStencil
-        \override NoteHead.X-offset = #-0.5
-        \override StaffSymbol.line-count = 5
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #-2
-    }
+    % WOODIWIND EMBOUCHURE RHYTHM STAFF
     \context {
         \Staff
         \name WoodwindEmbouchureRhythmStaff
@@ -342,15 +315,22 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
+        %{\omit BarLine%}
         \omit Clef
         \omit Glissando
         \omit TimeSignature
         \omit StaffSymbol
         \override StaffSymbol.line-count = #1
-        \override VerticalAxisGroup.staff-staff-spacing.padding = 2
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 1)
+            (stretchability . 0)
+        )
         squashedPosition = #0
         \override Stem.direction = #UP
     }
+    % WOODWIND EMBOUCHURE STAFF
     \context {
         \Staff
         \name WoodwindEmbouchureStaff
@@ -378,8 +358,78 @@ pad = 0.5
                                                 black white white white white
                                                 white white white white black
                                                 )
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #5
+        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 0)
+            (stretchability . 0)
+        )%}
     }
+    % WOODWIND LEFT HAND FINGERING RHYTHM STAFF
+    \context {
+        \Staff
+        \name WoodwindLeftHandFingeringRhythmStaff
+        \alias Staff
+        \type Engraver_group
+        \consists Output_property_engraver
+        \consists Font_size_engraver
+        \consists Separating_line_group_engraver
+        \consists Rest_collision_engraver
+        \consists Axis_group_engraver
+        \consists Staff_symbol_engraver
+        \consists Pitch_squash_engraver
+        \accepts Voice
+        %{\omit BarLine%}
+        \omit Clef
+        \omit Glissando
+        \omit TimeSignature
+        \omit StaffSymbol
+        \override NoteHead.stencil = #point-stencil
+        \override StaffSymbol.line-count = #1
+        squashedPosition = #0
+        \override Stem.direction = #UP
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 0)
+            (stretchability . 0)
+        )
+    }
+    % WOODWIND LEFT HAND FINGERING STAFF
+    \context {
+        \Staff
+        \name WoodwindLeftHandFingeringStaff
+        \alias Staff
+        \type Engraver_group
+        \consists Output_property_engraver
+        \consists Font_size_engraver
+        \consists Separating_line_group_engraver
+        \consists Rest_collision_engraver
+        \consists Axis_group_engraver
+        \consists Staff_symbol_engraver
+        \accepts Voice
+        \hide Beam
+        \hide Clef
+        \hide Dots
+        \hide Flag
+        \hide Rest
+        \hide Stem
+        \hide Tie
+        \omit TimeSignature
+        \omit TupletBracket
+        \omit TupletNumber
+        \override NoteHead.stencil = \squareStencil
+        \override NoteHead.X-offset = #-0.5
+        \override StaffSymbol.line-count = 5
+        \override StaffSymbol.staff-space = 1.5
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . -1)
+            (stretchability . 0)
+        )
+    }
+    % WOODWIND RIGHT HAND FINGERING RHYTHM STAFF
     \context {
         \Staff
         \name WoodwindRightHandFingeringRhythmStaff
@@ -393,6 +443,7 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
+        %{\omit BarLine%}
         \omit Clef
         \omit Glissando
         \omit TimeSignature
@@ -401,7 +452,14 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #DOWN
+        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 0)
+            (stretchability . 0)
+        )%}
     }
+    % WOODWIND RIGHT HAND FINGERING STAFF
     \context {
         \Staff
         \name WoodwindRightHandFingeringStaff
@@ -427,9 +485,35 @@ pad = 0.5
         \override NoteHead.stencil = \squareStencil
         \override NoteHead.X-offset = #-0.5
         \override StaffSymbol.line-count = #4
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #-1
+        \override StaffSymbol.staff-space = 1.5
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . -4)
+            (stretchability . 0)
+        )
     }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SUB-INSTRUMENT STAFF GROUPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF SUB-GROUPS
+    % PIANO STAFF
+    % PIANO STAFF
+    \context {
+        \PianoStaff
+        \omit KeySignature
+        \omit TimeSignature
+        \override StaffGrouper.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . -8)
+            (stretchability . 0)
+        )
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . -8)
+            (stretchability . 0)
+        )
+    }
+    % STRING SPACE STAFF GROUP
     \context {
         \StaffGroup
         \name StringSpaceStaffGroup
@@ -439,7 +523,13 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
+        %{\override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 48)
+            (minimum-distance . 48)
+            (padding . 48)
+            (stretchability . 0))%}
     }
+    % WOODWIND FINGERING STAFF GROUP
     \context {
         \StaffGroup
         \name WoodwindFingeringStaffGroup
@@ -450,8 +540,15 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
+        %{\override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . -8)
+            (stretchability . 0))%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
+    % PIANO STAFF GROUP
+    % PIANO STAFF GROUP
     \context {
         \StaffGroup
         \name PianoStaffGroup
@@ -462,24 +559,36 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
-        \override StaffGrouper.staffgroup-staff-spacing.padding = #10
+        %\override BarLine.allow-span-bar = ##f
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 12)
+            (padding . 0)
+            (stretchability . 0))
     }
+    % STRING INSTRUMENT STAFF GROUP
     \context {
         \StaffGroup
         \name StringInstrumentStaffGroup
         \alias StaffGroup
         \type Engraver_group
         \accepts StringBowingRhythmStaff
-        \accepts StringFingeringRhythmStaff
         \accepts StringSpaceStaffGroup
+        \accepts StringFingeringRhythmStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
-        systemStartDelimiter = #'SystemStartBracket
-        \override SystemStartBracket.padding = #0
-        \override StaffGrouper.staffgroup-staff-spacing.padding = #12
+        \remove System_start_delimiter_engraver
+        %systemStartDelimiter = ##f
+        %\override BarLine.allow-span-bar = ##f
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 60)
+            (minimum-distance . 60)
+            (padding . 60)
+            (stretchability . 0))
 
     }
+    % WOODWIND INSTRUMENT STAFF GROUP
     \context {
         \StaffGroup
         \name WoodwindInstrumentStaffGroup
@@ -487,18 +596,26 @@ pad = 0.5
         \type Engraver_group
         \accepts WoodwindEmbouchureRhythmStaff
         \accepts WoodwindEmbouchureStaff
+        \accepts Staff
         \accepts WoodwindLeftHandFingeringRhythmStaff
         \accepts WoodwindFingeringStaffGroup
         \accepts WoodwindRightHandFingeringRhythmStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
+        %{\omit BarLine%}
         systemStartDelimiter = #'SystemStartBracket
-        \override SystemStartBracket.padding = #0
-        \override StaffGrouper.staffgroup-staff-spacing.padding = #12
+        %\override BarLine.allow-span-bar = ##f
+        \override SystemStartBar.padding = #1
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 10)
+            (padding . 0)
+            (stretchability . 0))
 
     }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SUPRA-INSTRUMENT STAFF GROUPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT GROUP STAFF GROUPS
+    % ENSEMBLE STAFF GROUP
     \context {
         \StaffGroup
         \name EnsembleStaffGroup
@@ -506,34 +623,22 @@ pad = 0.5
         \type Engraver_group
         \accepts StringInstrumentStaffGroup
         \accepts PianoStaffGroup
-        \accepts PianoPedalingStaff
         \accepts WoodwindInstrumentStaffGroup
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
+    % SCORE
     \context {
         \Score
         \accepts EnsembleStaffGroup
-        \accepts PianoPedalingStaff
-        \accepts PianoStaff
-        \accepts PianoStaffGroup
-        \accepts Staff
-        \accepts StringBowingRhythmStaff
-        \accepts StringFingeringRhythmStaff
-        \accepts StringSpaceStaff
-        \accepts StringSpaceStaffGroup
-        \accepts StringInstrumentStaffGroup
         \accepts TimeSignatureContext
-        \accepts WoodwindLeftHandFingeringStaff
-        \accepts WoodwindLeftHandFingeringRhythmStaff
-        \accepts WoodwindEmbouchureRhythmStaff
-        \accepts WoodwindEmbouchureStaff
-        \accepts WoodwindFingeringStaffGroup
-        \accepts WoodwindInstrumentStaffGroup
         \remove Bar_number_engraver
+        \remove Time_signature_engraver
+        \remove Metronome_mark_engraver
         \remove Mark_engraver
+        \remove System_start_delimiter_engraver
         \override Barline.hair-thickness = 0.5
         \override BarLine.space-alist = #'(
             (time-signature extra-space . 0.0)
@@ -565,6 +670,7 @@ pad = 0.5
         \override Stem.stemlet-length = #0.75
         \override TextScript.X-extent = ##f
         \override TextScript.Y-extent = #'(-1.5 . 1.5)
+        \override TextScript.padding = 2
         \override TrillSpanner.bound-details.right.padding = 2
         \override TupletBracket.breakable = ##t
         \override TupletBracket.full-length-to-extent = ##t
@@ -572,13 +678,14 @@ pad = 0.5
         \override TupletBracket.staff-padding = 0
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
-        \override VerticalAxisGroup.remove-first = ##t
-        autoBeaming = ##t
+        %{\override VerticalAxisGroup.remove-first = ##t%}
+        autoBeaming = ##f
         defaultBarType = #"|"
-        markFormatter = #format-mark-box-alphabet
+        %{barNumberFormatter = #format-oval-barnumbers
+        markFormatter = #format-mark-box-alphabet%}
         proportionalNotationDuration = #(ly:make-moment 1 32)
-        systemStartDelimiter = #'SystemStartBar
-        \omit SystemStartBar
+        %{systemStartDelimiter = #'SystemStartBar
+        \omit SystemStartBar%}
         tupletFullLength = ##t
     }
 }

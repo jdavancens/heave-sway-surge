@@ -23,6 +23,7 @@ def make_segment():
         segment_number=1,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
+        first_bar_number=1,
         instrument_list=[
             'oboe',
             'clarinet',
@@ -44,16 +45,19 @@ def make_segment():
     viola_handlers = viola_definition.get_music_handlers()
     cello_handlers = cello_definition.get_music_handlers()
     bass_handlers = bass_definition.get_music_handlers()
-    music_handlers = list()
-    music_handlers.extend(oboe_handlers)
-    music_handlers.extend(clarinet_handlers)
-    music_handlers.extend(saxophone_handlers)
-    music_handlers.extend(piano_a_handlers)
-    music_handlers.extend(piano_b_handlers)
-    music_handlers.extend(violin_handlers)
-    music_handlers.extend(viola_handlers)
-    music_handlers.extend(cello_handlers)
-    music_handlers.extend(bass_handlers)
+
+    music_handlers = [
+        oboe_handlers,
+        clarinet_handlers,
+        saxophone_handlers,
+        piano_a_handlers,
+        piano_b_handlers,
+        violin_handlers,
+        viola_handlers,
+        cello_handlers,
+        bass_handlers
+    ]
+    music_handlers = sequencetools.flatten_sequence(music_handlers)
     segment_maker.add_music_handlers(music_handlers)
     segment = segment_maker()
     return segment

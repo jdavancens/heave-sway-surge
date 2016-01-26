@@ -135,6 +135,7 @@ class StringBowingHandler(object):
             self._map_note_heads(logical_tie)
             self._insert_gliss_anchor(logical_tie)
             self._handle_height_and_pressure(logical_tie)
+            self._handle_string_ids(logical_tie)
 
     def _handle_contact_points(self, logical_tie):
         start = inspect_(logical_tie[0]).get_annotation('contact_point_start')
@@ -171,7 +172,7 @@ class StringBowingHandler(object):
                     point_note_head(leaf)
         else:
             point_note_head(logical_tie[0])
-            gliss(logical_tie[0], color)
+            gliss(logical_tie[0], color=color, thickness=2)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)
@@ -180,7 +181,7 @@ class StringBowingHandler(object):
     def _handle_rhythm_voice(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
             self._insert_spanner_anchor(logical_tie)
-            self._handle_string_ids(logical_tie)
+            #self._handle_string_ids(logical_tie)
             #self._handle_contact_points(logical_tie)
         for leaf in rhythm_voice.select_leaves(
                 allow_discontiguous_leaves=True,

@@ -32,7 +32,7 @@ fingering_talea_rhythm_maker = rhythmmakertools.TaleaRhythmMaker(
         fingering_talea
     )
 fingering_music_maker = MusicMaker(
-    divisions=[(4,4)] * 1,
+    divisions=[(4,4)],
     instrument=instrumenttools.Oboe(),
     rhythm_maker=fingering_talea_rhythm_maker,
     stages=[0,],
@@ -130,7 +130,7 @@ rhythm_staff_left = Staff()
 rhythm_staff_left.append(voices_left[2])
 rhythm_staff_left.context_name = "WoodwindLeftHandFingeringRhythmStaff"
 
-voices_right = handler_right()
+voices_right = handler_right(0)
 staff_right = Staff(is_simultaneous=True)
 staff_right.append(voices_right[0])
 staff_right.append(voices_right[1])

@@ -9,11 +9,12 @@ import sys
 if __name__ == '__main__':
 
     part_name = sys.argv[1]
-
+    part_name_snake = stringtools.to_snake_case(part_name)
+    print(part_name_snake)
     this_file = os.path.abspath(__file__)
     build_path = os.path.dirname(this_file)
-    part_ly_path = os.path.join(build_path, part_name+'.ly')
-    part_pdf_path = os.path.join(build_path, part_name+'.pdf')
+    part_ly_path = os.path.join(build_path, part_name_snake+'.ly')
+    part_pdf_path = os.path.join(build_path, part_name_snake+'.pdf')
     if os.access(part_ly_path, os.F_OK):
         os.remove(part_ly_path)
     if os.access(part_pdf_path, os.F_OK):

@@ -53,20 +53,26 @@ class NormalMusicHandler(object):
         self.glissandi = glissandi
         self.trills = trills
         self.stem_tremolos = stem_tremolos
-        self.stages=stages
 
     ### SPECIAL METHDS ###
 
     def __call__(self, current_stage):
         voice = self.music_maker(current_stage)
+        voice.name = self.music_maker.name
         if current_stage in self.music_maker.stages:
             self._handle_pitches(voice)
-            self._handle_articulations(voice)
-            self._handle_dynamics(voice)
-            self._handle_slurs(voice)
-            self._handle_glissandi(voice)
-            self._handle_stem_tremolos(voice)
-            self._handle_trills(voice)
+            if self.articulations is not None:
+                self._handle_articulations(voice)
+            if self.dynamics is not None:
+                self._handle_dynamics(voice)
+            if self.slurs is not None:
+                self._handle_slurs(voice)
+            if self.glissandi is not None:
+                self._handle_glissandi(voice)
+            if self.stem_tremolos is not None:
+                self._handle_stem_tremolos(voice)
+            if self.trills is not None:
+                self._handle_trills(voice)
         return [voice]
 
 
@@ -154,8 +160,8 @@ class NormalMusicHandler(object):
     ### PUBLIC PROPERTIES ###
 
     @property
-    def instrument_name(self):
-        return self.music_maker.instrument_name
+    def instrument(self):
+        return self.music_maker.instrument
 
     @property
     def name(self):

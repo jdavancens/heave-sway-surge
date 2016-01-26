@@ -157,7 +157,7 @@ class WoodwindEmbouchureHandler(object):
                     point_note_head(leaf)
         else:
             point_note_head(logical_tie[0])
-            gliss(logical_tie[0], color)
+            gliss(logical_tie[0], color=color, thickness=3)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)

@@ -9,12 +9,16 @@ from dissertation import *
 from dissertation.materials.segment01 import *
 
 clarinet = instrumenttools.ClarinetInBFlat()
-
+color = (255,0,0)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
 time_signatures = time_signatures[0][0][0:16]
 divisions = sequencetools.flatten_sequence(time_signatures)
+talea_voice = rhythmmakertools.Talea(
+    counts=[-3, 3, -3],
+    denominator=8
+)
 talea_embouchure = rhythmmakertools.Talea(
     counts=[7, -2],
     denominator=8
@@ -30,15 +34,18 @@ tuplet_ratios_rh = [
     (2, 1, 1, 2),
     ]
 
-talea_maker = rhythmmakertools.TaleaRhythmMaker(
-    talea=talea_embouchure,
-    )
+talea_maker = rhythmmakertools.TaleaRhythmMaker
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
-    rewrite_meter=True, spell_metrically=True,
+    decrease_durations_monotonically=True,
+    forbid_meter_rewriting=False,
+    rewrite_meter=True,
+    spell_metrically='unassignable',
     )
 tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
-    avoid_dots=True, flatten_trivial_tuplets=True, simplify_tuplets=True,
+    avoid_dots=True,
+    flatten_trivial_tuplets=True,
+    simplify_tuplets=True,
     is_diminution=True,
 )
 stages = (0,)
@@ -46,14 +53,26 @@ stages = (0,)
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
+voice_music_maker = MusicMaker(
+    stages=stages,
+    instrument=clarinet,
+    name='Voice',
+    divisions=divisions,
+    time_signatures=time_signatures,
+    rhythm_maker=talea_maker(
+        talea=talea_voice,
+    )
+)
 embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=clarinet,
     name='Embouchure',
     divisions=divisions,
     time_signatures=time_signatures,
-    rhythm_maker=talea_maker
+    rhythm_maker=talea_maker(
+        talea=talea_embouchure,
     )
+)
 lh_fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=clarinet,
@@ -82,7 +101,14 @@ rh_fingering_music_maker = MusicMaker(
 #===============================================================================
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SEGMENTS
 #===============================================================================
-
+voice_pitch_sets = (
+    pitchtools.PitchSet(["a'"], item_class=pitchtools.NamedPitch),
+    pitchtools.PitchSet(["c'"], item_class=pitchtools.NamedPitch),
+    pitchtools.PitchSet(["f'"], item_class=pitchtools.NamedPitch),
+    pitchtools.PitchSet(["e'"], item_class=pitchtools.NamedPitch),
+    pitchtools.PitchSet(["d'"], item_class=pitchtools.NamedPitch),
+    pitchtools.PitchSet(["g'"], item_class=pitchtools.NamedPitch),
+)
 embouchures = (
     actions.WoodwindEmbouchure(
             instrument=clarinet,
@@ -155,13 +181,17 @@ rh_fingerings = (
 #===============================================================================
 # MUSIC-HANDLERS
 #===============================================================================
-
+voice_music_handler = handlers.NormalMusicHandler(
+    music_maker=voice_music_maker,
+    pitch_sets=voice_pitch_sets,
+    pitch_sets_pattern=(0,1,2,3,4,5),
+)
 embouchure_music_handler = handlers.WoodwindEmbouchureHandler(
         music_maker=embouchure_music_maker,
         embouchures=embouchures,
         pattern=(0, 1, 1, 1, 1, 1, 1, 1, 1, 1),
         number_of_staff_lines=10,
-        color=(238, 0, 238)
+        color=color
         )
 
 lh_fingering_music_handler = handlers.WoodwindFingeringHandler(
@@ -177,6 +207,7 @@ rh_fingering_music_handler = handlers.WoodwindFingeringHandler(
         pattern=(0, 1)
         )
 music_handlers = [
+    voice_music_handler,
     embouchure_music_handler,
     lh_fingering_music_handler,
     rh_fingering_music_handler

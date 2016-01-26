@@ -17,15 +17,16 @@ bass = instrumenttools.Contrabass()
 time_signatures = time_signatures[0][0][0:16]
 divisions = sequencetools.flatten_sequence(time_signatures)
 tuplet_ratios_lh = [
-    (-1,),
-    (-1,),
-    (-1,),
-    (1,2,3,4)
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (1,2,3,4)
     ]
 tuplet_ratios_rh = [
-    (2, 1, 1, 2),
-    (1, 2, 1),
-    (2, 1, 1, 2),
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (-1,),
+    (-1,), (-1,), (-1,), (3,1,1,2),
     ]
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(

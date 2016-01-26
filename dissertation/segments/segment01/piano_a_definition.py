@@ -22,21 +22,12 @@ rh_talea  = rhythmmakertools.Talea(
     counts=[1,5,1,4,1,6,1,3],
     denominator=16
     )
-# silence mask
-# sustain mask
-
+note_maker = rhythmmakertools.NoteRhythmMaker()
+duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier()
 talea_maker = rhythmmakertools.TaleaRhythmMaker(
     talea=rh_talea,
+    duration_spelling_specifier=duration_spelling_specifier
 )
-note_maker = rhythmmakertools.NoteRhythmMaker()
-duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
-    rewrite_meter=True, spell_metrically=True,
-)
-tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
-    avoid_dots=True, flatten_trivial_tuplets=True, simplify_tuplets=True,
-    is_diminution=False,
-)
-
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
@@ -48,6 +39,12 @@ rh_music_maker = MusicMaker(
     time_signatures=time_signatures,
     rhythm_maker=talea_maker
     )
+lh_music_maker = MusicMaker(
+    stages=(0,),
+    instrument=piano,
+    name='Left Hand',
+    time_signatures=time_signatures
+)
 ped_music_maker = MusicMaker(
     stages=(0,),
     instrument=piano,
@@ -56,7 +53,6 @@ ped_music_maker = MusicMaker(
     divisions=divisions,
     rhythm_maker=note_maker
 )
-
 #===============================================================================
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SETS
 #===============================================================================
@@ -66,23 +62,25 @@ rh_pitch_sets = (
         item_class=pitchtools.NamedPitch,
     ),
 )
-
 #===============================================================================
 # MUSIC-HANDLERS
 #===============================================================================
-
 rh_handler = handlers.PianoActionHandler(
     music_maker=rh_music_maker,
     pitch_sets=rh_pitch_sets,
     pitch_pattern=(0,),
     dynamics = (Dynamic('pp'),)
     )
+lh_handler = handlers.PianoActionHandler(
+    music_maker=lh_music_maker,
+)
 ped_handler = handlers.PianoPedalingHandler(
     music_maker=ped_music_maker,
     sustain_pedal_on=True
     )
 music_handlers = [
     rh_handler,
+    lh_handler,
     ped_handler
     ]
 

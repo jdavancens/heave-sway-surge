@@ -29,7 +29,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         '_segment_number',
         '_show_stage_annotations',
         '_stages',
-        '_transpose_score',
         'final_barline',
         'instrument_list',
         'name',
@@ -56,7 +55,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         segment_number=None,
         tempo_map=None,
         time_signatures=None,
-        transpose_score=False,
         ):
         superclass = super(SegmentMaker, self)
         superclass.__init__()
@@ -77,7 +75,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._segment_number = segment_number
         self.tempo_map = tempo_map
         self.time_signatures = time_signatures
-        self._transpose_score = transpose_score
 
 
     ### SPECIAL METHODS ###
@@ -92,20 +89,20 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._make_score(ScoreTemplate())
         self._make_lilypond_file()
         self._configure_lilypond_file()
+
         self._populate_time_signature_contexts()
-        self._annotate_stages()
+        #self._annotate_stages(n_measures)
         with systemtools.Timer() as timer:
             print("Interpreting music handlers ... ")
             self._interpret_music_handlers()
             seconds = int(timer.elapsed_time)
             time = str(datetime.timedelta(seconds=seconds))
             print(time)
-        # self._transpose_instruments()
-        # self._attach_rehearsal_mark()
-        # self._add_final_barline()
-        # self._add_final_markup()
+        self._attach_rehearsal_mark()
+        self._add_final_barline()
+        self._add_final_markup()
         self._check_well_formedness()
-        self._raise_approximate_duration_in_seconds()
+        #self._raise_approximate_duration_in_seconds()
 
         print("...Done")
         return self.lilypond_file
@@ -227,25 +224,33 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         for stage in range(self.number_of_stages):
             print("\tStage", stage+1, "of", self.number_of_stages)
+            # match voices to staff
             for i, music_handler in enumerate(self._music_handlers):
-                string = '\t\tMusic handler: {} {}'
-                handler_instrument = music_handler.instrument.instrument_name.capitalize()
-                handler_name = music_handler.name
-                string = string.format(handler_instrument, handler_name)
-                print(string)
-                for voice in music_handler(stage):
-                    for staff_group in self._score[1]:
-                        staff_group_instrument = inspect_(staff_group).get_indicator(instrumenttools.Instrument)
-                        voice_instrument = inspect_(voice).get_indicator(instrumenttools.Instrument)
-                        if staff_group_instrument.instrument_name == voice_instrument.instrument_name:
-                            for staff in iterate(staff_group).by_class(Staff):
-                                if voice.name in staff_map[staff.name]:
-                                    staff.append(voice)
-
-            for voice in iterate(self._score[1]).by_class(Voice):
-                if inspect_(voice).has_indicator(instrumenttools.Instrument):
-                    instrument = inspect_(voice).get_indicator(instrumenttools.Instrument)
-                    detach(instrumenttools.Instrument, voice)
+                # make string identifier for handler
+                handler_instrument = music_handler.instrument.instrument_name
+                handler_instrument = handler_instrument.title()
+                handler_name = music_handler.name.title()
+                handler_string = '\t\tMusic handler: {} {}'
+                handler_string = handler_string.format(
+                    handler_instrument, handler_name)
+                print(handler_string)
+                voices = music_handler(stage)
+                for voice in voices:
+                    voice_instrument = inspect_(voice).get_indicator(
+                        instrumenttools.Instrument)
+                    for staff in iterate(self._score).by_class(Staff):
+                        staff_instrument = inspect_(staff).get_indicator(
+                            instrumenttools.Instrument)
+                        if voice.name in staff_map[staff.name] and \
+                                voice_instrument==staff_instrument:
+                            # print(voice_instrument.instrument_name,'|',staff_instrument.instrument_name)
+                            # print(voice.name,'|',staff_map[staff.name])
+                            # print("")
+                            detach(instrumenttools.Instrument, voice)
+                            staff.append(voice)
+        # strip instruments from staves
+        for staff in iterate(self._score).by_class(Staff):
+            detach(instrumenttools.Instrument, staff)
         print("Interpreted music handlers")
 
     def _label_instrument_changes(self):
@@ -362,31 +367,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         message = '{} seconds'
         message = message.format(total_duration)
         raise Exception(message)
-
-    def _transpose_instruments(self):
-        r''' Transposes music for transposing instruments
-        '''
-        if not self.transpose_score:
-            return
-        for voice in iterate(self._score).by_class(Voice):
-            for leaf in iterate(voice).by_class(scoretools.Leaf):
-                if not isinstance(leaf, (Note, Chord)):
-                    continue
-                inspector = inspect_(leaf)
-                prototype = instrumenttools.Instrument
-                instrument_name = inspector.get_effective(prototype)
-                if instrument_name is None:
-                    continue
-                assert isinstance(instrument_name, prototype), repr(instrument_name)
-                try:
-                    instrument_name.transpose_from_sounding_pitch_to_written_pitch(
-                        leaf)
-                except KeyError:
-                    sounding_pitch_number = leaf.written_pitch.pitch_number
-                    i = instrument_name.sounding_pitch_of_written_middle_c.pitch_number
-                    written_pitch_number = sounding_pitch_number - i
-                    leaf.written_pitch = written_pitch_number
-
 
     ### PUBLIC PROPERTIES ###
 

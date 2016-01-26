@@ -10,8 +10,11 @@ from abjad.tools import sequencetools
 
 
 class MusicMaker:
-    r''' music-maker
-
+    r''' MusicMaker calls a specified rhythm maker with a list of divisions and
+    time signatures for each specified stage. If no rhythm maker is supplied, or
+    the current stage is inactive, MusicMaker creates a list of full measure
+    skips.
+    Returns a voice with rhythms on middle-c, skips or both.
     '''
     ## CLASS ATTRIBUTES ###
     __slots__ = (
@@ -34,24 +37,20 @@ class MusicMaker:
         time_signatures=None
         ):
         assert(isinstance(instrument, instrumenttools.Instrument))
-        assert(isinstance(rhythm_maker, rhythmmakertools.RhythmMaker))
-
+        assert(time_signatures is not None)
         self.divisions = divisions
         self._instrument = instrument
         self._name = name
         self.rhythm_maker = rhythm_maker
         self._stages = stages
-        self.time_signatures = []
-        time_signatures = sequencetools.flatten_sequence(time_signatures)
-        for pair in time_signatures:
-            time_signature = indicatortools.TimeSignature(pair)
-            self.time_signatures.append(time_signature)
-        divisions_fractions = [Duration(pair) for pair in divisions]
-        divisions_sum = sum(divisions_fractions)
-        time_sigs_fractions = [Duration(pair) for pair in time_signatures]
-        time_sigs_sum = sum(time_sigs_fractions)
-        assert divisions_sum == time_sigs_sum
-
+        self.time_signatures = sequencetools.flatten_sequence(time_signatures)
+        # check that divisions and time signatures are the same duration
+        if self.divisions is not None:
+            divisions_fractions = [Duration(pair) for pair in divisions]
+            divisions_sum = sum(divisions_fractions)
+            time_sigs_fractions = [Duration(pair) for pair in self.time_signatures]
+            time_sigs_sum = sum(time_sigs_fractions)
+            assert divisions_sum == time_sigs_sum
     ### SPECIAL METHODS ###
     def __call__(self, current_stage):
         r'''Calls music-maker
@@ -59,34 +58,48 @@ class MusicMaker:
         Returns music as a selection.
         '''
         if current_stage in self._stages:
-            voice = self._make_rhythm()
+            if self.rhythm_maker is None:
+                voice = self._make_skips()
+            else:
+                voice = self._make_rhythm()
         else:
-            voice = self._make_rests()
+            voice = self._make_skips()
         assert isinstance(voice, Voice)
         return voice
 
+
     ### PRIVATE METHODS ###
-    def _make_rests(self):
-        time_signatures = self.time_signatures
-        rests = scoretools.make_rests(time_signatures)
-        voice = Voice(rests)
+    def _make_skips(self):
+        skips = scoretools.make_skips((1,1), self.time_signatures)
+        voice = Voice(skips)
         attach(self._instrument, voice)
         return voice
 
     def _make_rhythm(self):
+        # flat style
         rhythm = self.rhythm_maker(self.divisions)
-        rhythm = sequencetools.flatten_sequence(rhythm)
         voice = Voice(rhythm)
         attach(self._instrument, voice)
-#         leaves = voice.select_leaves()
-#         shards = mutate(leaves).split(time_signatures)
-#         rewritten_voice = Voice()
-#         for shard, time_signature in zip(shards, time_signatures):
-#             measure = Measure(time_signature, shard)
-#             meter = metertools.Meter(time_signature)
-#             mutate(measure[:]).rewrite_meter(meter)
-#             rewritten_voice.append(measure)
         return voice
+
+        # chunk style (doesn't work)
+        # rhythm = self.rhythm_maker(self.divisions)
+        # voice = Voice(rhythm)
+        # for chunk in rhythm:
+        #     all_rest = True
+        #     for component in chunk:
+        #         if not isinstance(component, Rest):
+        #             all_rest = False
+        #         for
+        #     if all_rest:
+        #         duration = chunk.get_duration()
+        #         skip = scoretools.make_skips((1,1), [duration])
+        #         voice.append(skip)
+        #     else:
+        #         voice.append(chunk)
+        # attach(self._instrument, voice)
+        # return voice
+
 
     ### PUBLIC PROPERTIES ###
 

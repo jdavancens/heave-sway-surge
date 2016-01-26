@@ -15,9 +15,9 @@ def hidden_grace_after(leaf, named_pitch):
     grace_container = scoretools.GraceContainer([grace_note], kind='after')
     attach(grace_container, leaf)
 
-def gliss(leaf, color):
+def gliss(leaf, color, thickness=0.5):
     if color is not None:
-        override = lilypondnametools.LilyPondGrobOverride(
+        color_override = lilypondnametools.LilyPondGrobOverride(
             context_name=None,
             grob_name='Glissando',
             is_once=True,
@@ -26,7 +26,17 @@ def gliss(leaf, color):
                 ),
             value=color
             )
-        attach(override, leaf)
+        thickness_override = lilypondnametools.LilyPondGrobOverride(
+            context_name=None,
+            grob_name='Glissando',
+            is_once=True,
+            property_path=(
+                'thickness'
+                ),
+            value=thickness
+            )
+        attach(color_override, leaf)
+        attach(thickness_override, leaf)
     glissando = indicatortools.LilyPondCommand('glissando', format_slot='right')
     attach(glissando, leaf)
 
@@ -323,4 +333,3 @@ def text_spanner_start_stop(selection, markups, next_markup, direction):
             attach(spanner_staff_padding, first_leaf)
             attach(start_command, first_leaf)
             attach(stop_command, last_leaf)
-
