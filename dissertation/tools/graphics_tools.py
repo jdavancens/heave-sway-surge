@@ -18,6 +18,15 @@ def desaturate_rgb(saturation, rgb_tuple):
     rgb = colorsys.hsv_to_rgb(h, s, v)
     return (rgb[0]*255., rgb[1]*255., rgb[2]*255.)
 
+def change_luminance(luminance, rgb_tuple):
+    hls = colorsys.rgb_to_hls(
+        rgb_tuple[0],
+        rgb_tuple[1],
+        rgb_tuple[2]
+    )
+    rgb = colorsys.hls_to_rgb(hls[0], hls[1], luminance)
+    return (rgb[0]*255., rgb[1]*255., rgb[2]*255.)
+
 def scheme_rgb_color(rgb_tuple):
     assert isinstance(rgb_tuple, tuple)
     assert len(rgb_tuple) == 3

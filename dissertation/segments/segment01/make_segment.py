@@ -15,15 +15,17 @@ from dissertation.segments.segment01 import violin_definition
 from dissertation.segments.segment01 import viola_definition
 from dissertation.segments.segment01 import cello_definition
 from dissertation.segments.segment01 import bass_definition
-from dissertation.materials.segment01.time_signatures import time_signatures
+from dissertation.materials.segment01.time_signatures import *
 from dissertation.materials.segment01.tempo_map import tempo_map
 def make_segment():
     segment_maker = SegmentMaker(
-        number_of_stages=1,
+        number_of_stages=2,
         segment_number=1,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         first_bar_number=1,
+        measures_per_stage=measures_per_stage,
+        show_stage_annotations=True,
         instrument_list=[
             'oboe',
             'clarinet',

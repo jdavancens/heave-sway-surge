@@ -15,7 +15,7 @@ from dissertation.segments.segment01 import violin_definition
 from dissertation.segments.segment01 import viola_definition
 from dissertation.segments.segment01 import cello_definition
 from dissertation.segments.segment01 import bass_definition
-from dissertation.materials.segment01.time_signatures import time_signatures
+from dissertation.materials.segment01.time_signatures import *
 from dissertation.materials.segment01.tempo_map import tempo_map
 def make_part(part_name):
     segment_maker = SegmentMaker(
@@ -23,6 +23,9 @@ def make_part(part_name):
         segment_number=1,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
+        first_bar_number = 1,
+        measures_per_stage=measures_per_stage,
+        show_stage_annotations=True,
         instrument_list=[part_name]
         )
     oboe_handlers = oboe_definition.get_music_handlers()

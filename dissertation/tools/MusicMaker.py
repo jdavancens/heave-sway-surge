@@ -76,13 +76,13 @@ class MusicMaker:
         return voice
 
     def _make_rhythm(self):
-        # flat style
+        #flat style
         rhythm = self.rhythm_maker(self.divisions)
         voice = Voice(rhythm)
         attach(self._instrument, voice)
         return voice
 
-        # chunk style (doesn't work)
+        # # chunk style
         # rhythm = self.rhythm_maker(self.divisions)
         # voice = Voice(rhythm)
         # for chunk in rhythm:
@@ -90,13 +90,10 @@ class MusicMaker:
         #     for component in chunk:
         #         if not isinstance(component, Rest):
         #             all_rest = False
-        #         for
         #     if all_rest:
-        #         duration = chunk.get_duration()
-        #         skip = scoretools.make_skips((1,1), [duration])
-        #         voice.append(skip)
-        #     else:
-        #         voice.append(chunk)
+        #         for rest in chunk:
+        #             duration = rest.written_duration
+        #             rest = Skip(duration)
         # attach(self._instrument, voice)
         # return voice
 

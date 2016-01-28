@@ -26,8 +26,9 @@ if __name__ == '__main__':
         time = str(datetime.timedelta(seconds=seconds))
         print(time)
     with systemtools.Timer() as timer:
-        print("Typesetting Lilypond file ... ")
+        print("Running Lilypond ... ")
         systemtools.IOManager.run_lilypond(score_ly_path)
         seconds = int(timer.elapsed_time)
         time = str(datetime.timedelta(seconds=seconds))
         print(time)
+    systemtools.IOManager.open_file(score_pdf_path)

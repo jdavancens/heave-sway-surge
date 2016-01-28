@@ -31,6 +31,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         '_stages',
         'final_barline',
         'instrument_list',
+        'measures_per_stage',
         'name',
         'number_of_stages',
         'raise_approximate_duration',
@@ -52,6 +53,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         show_stage_annotations=False,
         first_bar_number=None,
         number_of_stages=None,
+        measures_per_stage=None,
         segment_number=None,
         tempo_map=None,
         time_signatures=None,
@@ -70,12 +72,12 @@ class SegmentMaker(SegmentMakerBaseClass):
         self.instrument_list = instrument_list
         self._music_handlers = list()
         self.number_of_stages = number_of_stages
+        self.measures_per_stage = measures_per_stage
         self.raise_approximate_duration = raise_approximate_duration
         self._show_stage_annotations = show_stage_annotations
         self._segment_number = segment_number
         self.tempo_map = tempo_map
         self.time_signatures = time_signatures
-
 
     ### SPECIAL METHODS ###
 
@@ -91,16 +93,17 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._configure_lilypond_file()
 
         self._populate_time_signature_contexts()
-        #self._annotate_stages(n_measures)
+        self._annotate_stages()
+
         with systemtools.Timer() as timer:
             print("Interpreting music handlers ... ")
             self._interpret_music_handlers()
             seconds = int(timer.elapsed_time)
             time = str(datetime.timedelta(seconds=seconds))
             print(time)
-        self._attach_rehearsal_mark()
-        self._add_final_barline()
-        self._add_final_markup()
+        #self._attach_rehearsal_mark()
+        #self._add_final_barline()
+        #self._add_final_markup()
         self._check_well_formedness()
         #self._raise_approximate_duration_in_seconds()
 
@@ -135,21 +138,27 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         if not self.show_stage_annotations:
             return
-        context = self._score['Time Signature Context']
-        for stage_index in range(self.stage_count):
+        print('Annotating stages...')
+        context = self._score[0]
+        for stage_index in range(self.number_of_stages):
             stage_number = stage_index + 1
             result = self._stage_number_to_measure_indices(stage_number)
             start_measure_index, stop_measure_index = result
-            rehearsal_letter = self._get_rehearsal_letter()
-            string = '[{}{}]'.format(rehearsal_letter, stage_number)
-            markup = Markup(string)
-            markup = markup.with_color('blue')
-            markup = markup.smaller()
+            rehearsal_letter = self._get_rehearsal_letter(self._segment_number)
+            rehearsal_mark = indicatortools.RehearsalMark(number=start_measure_index+1)
             start_measure = context[start_measure_index]
-            attach(markup, start_measure)
+            attach(rehearsal_mark, start_measure)
+            scheme = schemetools.Scheme('format-mark-box-alphabet')
+            set_(self._score).markFormatter = scheme
+            # string = '[{}{}]'.format(rehearsal_letter, stage_number)
+            # markup = Markup(string)
+            # markup = markup.with_color('blue')
+            # markup = markup.smaller()
+            # start_measure = context[start_measure_index]
+            #attach(markup, start_measure)
 
     def _attach_rehearsal_mark(self):
-        r''' Adds rehearsal mark to score
+        r''' Adds rehearsal mark (segment #) to score
         '''
         segment_number = self._segment_number
         letter_number = segment_number - 1
@@ -218,6 +227,14 @@ class SegmentMaker(SegmentMakerBaseClass):
             lilypond_file.header_block.title = None
             lilypond_file.header_block.composer = None
 
+    def _get_rehearsal_letter(self, segment_number):
+        if segment_number == 1:
+            return ''
+        segment_index = segment_number - 1
+        rehearsal_ordinal = ord('A') - 1 + segment_index
+        rehearsal_letter = chr(rehearsal_ordinal)
+        return rehearsal_letter
+
     def _interpret_music_handlers(self):
         r''' Fills the empty score with music based on each instrument's music
         handler and maker. Removes instrument indicators from staff contexts.
@@ -238,19 +255,21 @@ class SegmentMaker(SegmentMakerBaseClass):
                 for voice in voices:
                     voice_instrument = inspect_(voice).get_indicator(
                         instrumenttools.Instrument)
+                    voice_instrument = voice_instrument.instrument_name
+                    voice_instrument = voice_instrument.title()
                     for staff in iterate(self._score).by_class(Staff):
-                        staff_instrument = inspect_(staff).get_indicator(
-                            instrumenttools.Instrument)
+                        staff_instrument = inspect_(staff).get_annotation('instrument')
+                        # print(voice_instrument,'|',staff_instrument)
                         if voice.name in staff_map[staff.name] and \
                                 voice_instrument==staff_instrument:
-                            # print(voice_instrument.instrument_name,'|',staff_instrument.instrument_name)
                             # print(voice.name,'|',staff_map[staff.name])
                             # print("")
                             detach(instrumenttools.Instrument, voice)
                             staff.append(voice)
-        # strip instruments from staves
-        for staff in iterate(self._score).by_class(Staff):
-            detach(instrumenttools.Instrument, staff)
+        # # remove empty staves
+        # for staff in iterate(self._score).by_class(Staff):
+        #     if len(staff) == 0:
+        #         self._score.remove(staff)
         print("Interpreted music handlers")
 
     def _label_instrument_changes(self):
@@ -368,6 +387,12 @@ class SegmentMaker(SegmentMakerBaseClass):
         message = message.format(total_duration)
         raise Exception(message)
 
+    def _stage_number_to_measure_indices(self, stage_number):
+        assert stage_number <= self.stage_count
+        measure_indices = mathtools.cumulative_sums(self.measures_per_stage)
+        start_measure_index = measure_indices[stage_number-1]
+        stop_measure_index = measure_indices[stage_number] - 1
+        return start_measure_index, stop_measure_index
     ### PUBLIC PROPERTIES ###
 
     @property
@@ -397,7 +422,8 @@ class SegmentMaker(SegmentMakerBaseClass):
 
         Returns nonnegative integer.
         '''
-        return len(self.time_signatures)
+        time_signatures = sequencetools.flatten_sequence(self.time_signatures)
+        return len(time_signatures)
 
     @property
     def music_makers(self):

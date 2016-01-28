@@ -134,13 +134,21 @@ class ScoreTemplate(abctools.AbjadValueObject):
             context_name='WoodwindRightHandFingeringRhythmStaff',
             name='Right Hand Fingering Rhythm',
             )
-        attach(instrumenttools.Oboe(), oboe_sung_staff)
-        attach(instrumenttools.Oboe(), oboe_embouchure_staff)
-        attach(instrumenttools.Oboe(), oboe_embouchure_rhythm_staff)
-        attach(instrumenttools.Oboe(), oboe_lh_fingering_staff)
-        attach(instrumenttools.Oboe(), oboe_rh_fingering_staff)
-        attach(instrumenttools.Oboe(), oboe_lh_fingering_rhythm_staff)
-        attach(instrumenttools.Oboe(), oboe_rh_fingering_rhythm_staff)
+        attach(instrumenttools.Oboe(instrument_name='Voice',short_instrument_name='V'), oboe_sung_staff)
+        attach(instrumenttools.Oboe(instrument_name='Emb.',short_instrument_name='E'), oboe_embouchure_staff)
+        attach(instrumenttools.Oboe(instrument_name=None,short_instrument_name=None), oboe_embouchure_rhythm_staff)
+        attach(instrumenttools.Oboe(instrument_name='L.H.',short_instrument_name='L.H.'), oboe_lh_fingering_staff)
+        attach(instrumenttools.Oboe(instrument_name='R.H.',short_instrument_name='R.H.'), oboe_rh_fingering_staff)
+        attach(instrumenttools.Oboe(instrument_name=None,short_instrument_name=None), oboe_lh_fingering_rhythm_staff)
+        attach(instrumenttools.Oboe(instrument_name=None,short_instrument_name=None), oboe_rh_fingering_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Oboe')
+        attach(instrument_annotation, oboe_sung_staff)
+        attach(instrument_annotation, oboe_embouchure_staff)
+        attach(instrument_annotation, oboe_embouchure_rhythm_staff)
+        attach(instrument_annotation, oboe_lh_fingering_staff)
+        attach(instrument_annotation, oboe_rh_fingering_staff)
+        attach(instrument_annotation, oboe_lh_fingering_rhythm_staff)
+        attach(instrument_annotation, oboe_rh_fingering_rhythm_staff)
         oboe_fingering_staff_group = StaffGroup(
             [oboe_lh_fingering_staff, oboe_rh_fingering_staff],
             context_name='WoodwindFingeringStaffGroup',
@@ -199,13 +207,21 @@ class ScoreTemplate(abctools.AbjadValueObject):
             context_name='WoodwindRightHandFingeringRhythmStaff',
             name='Right Hand Fingering Rhythm',
             )
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_sung_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_embouchure_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_embouchure_rhythm_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_lh_fingering_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_rh_fingering_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_lh_fingering_rhythm_staff)
-        attach(instrumenttools.ClarinetInBFlat(), clarinet_rh_fingering_rhythm_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name='Voice', short_instrument_name='V'), clarinet_sung_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name='Emb.', short_instrument_name='Emb.'), clarinet_embouchure_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name=None, short_instrument_name=None), clarinet_embouchure_rhythm_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name='L.H.', short_instrument_name='L.H.'), clarinet_lh_fingering_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name='R.H.', short_instrument_name='R.H.'), clarinet_rh_fingering_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name=None, short_instrument_name=None), clarinet_lh_fingering_rhythm_staff)
+        attach(instrumenttools.ClarinetInBFlat(instrument_name=None, short_instrument_name=None), clarinet_rh_fingering_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Clarinet In B-Flat')
+        attach(instrument_annotation, clarinet_sung_staff)
+        attach(instrument_annotation, clarinet_embouchure_staff)
+        attach(instrument_annotation, clarinet_embouchure_rhythm_staff)
+        attach(instrument_annotation, clarinet_lh_fingering_staff)
+        attach(instrument_annotation, clarinet_rh_fingering_staff)
+        attach(instrument_annotation, clarinet_lh_fingering_rhythm_staff)
+        attach(instrument_annotation, clarinet_rh_fingering_rhythm_staff)
         clarinet_fingering_staff_group = StaffGroup(
             [clarinet_lh_fingering_staff, clarinet_rh_fingering_staff],
             context_name='WoodwindFingeringStaffGroup',
@@ -264,13 +280,21 @@ class ScoreTemplate(abctools.AbjadValueObject):
             context_name='WoodwindRightHandFingeringRhythmStaff',
             name='Right Hand Fingering Rhythm',
             )
-        attach(instrumenttools.AltoSaxophone(), saxophone_sung_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_embouchure_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_embouchure_rhythm_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_lh_fingering_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_rh_fingering_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_lh_fingering_rhythm_staff)
-        attach(instrumenttools.AltoSaxophone(), saxophone_rh_fingering_rhythm_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name='Voice', short_instrument_name='V'), saxophone_sung_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name='Emb.', short_instrument_name='Emb.'), saxophone_embouchure_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name=None, short_instrument_name=None), saxophone_embouchure_rhythm_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name='L.H.', short_instrument_name='L.H.'), saxophone_lh_fingering_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name='R.H.', short_instrument_name='R.H.'), saxophone_rh_fingering_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name=None, short_instrument_name=None), saxophone_lh_fingering_rhythm_staff)
+        attach(instrumenttools.AltoSaxophone(instrument_name=None, short_instrument_name=None), saxophone_rh_fingering_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Alto Saxophone')
+        attach(instrument_annotation, saxophone_sung_staff)
+        attach(instrument_annotation, saxophone_embouchure_staff)
+        attach(instrument_annotation, saxophone_embouchure_rhythm_staff)
+        attach(instrument_annotation, saxophone_lh_fingering_staff)
+        attach(instrument_annotation, saxophone_rh_fingering_staff)
+        attach(instrument_annotation, saxophone_lh_fingering_rhythm_staff)
+        attach(instrument_annotation, saxophone_rh_fingering_rhythm_staff)
         saxophone_fingering_staff_group = StaffGroup(
             [saxophone_lh_fingering_staff, saxophone_rh_fingering_staff],
             context_name='WoodwindFingeringStaffGroup',
@@ -292,8 +316,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
         set_(saxophone_staff_group).short_instrument_name = Markup('Sax.')
 
         #################################################################PIANO A
-        piano_a = instrumenttools.Piano(
-            instrument_name='Piano A', short_instrument_name='Pn. A')
+        piano_a = instrumenttools.Piano(instrument_name='Piano A', short_instrument_name='Pno. A')
         piano_a_lh_staff = Staff(
             [],
             context_name='Staff',
@@ -308,7 +331,9 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(bass_clef, piano_a_lh_staff)
         attach(piano_a, piano_a_lh_staff)
         attach(piano_a, piano_a_rh_staff)
-
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Piano A')
+        attach(instrument_annotation, piano_a_lh_staff)
+        attach(instrument_annotation, piano_a_rh_staff)
         piano_a_staff = StaffGroup(
             [piano_a_rh_staff, piano_a_lh_staff],
             context_name='PianoStaff',
@@ -320,17 +345,15 @@ class ScoreTemplate(abctools.AbjadValueObject):
             name='Pedaling',
             )
         attach(piano_a, piano_a_pedaling_staff)
+        attach(instrument_annotation, piano_a_pedaling_staff)
         piano_a_staff_group = StaffGroup(
             [piano_a_staff, piano_a_pedaling_staff],
             context_name='PianoStaffGroup',
             name='Piano A Staff Group'
             )
-        set_(piano_a_staff_group).instrument_name = Markup('Piano A')
-        set_(piano_a_staff_group).short_instrument_name = Markup('Pn. A')
 
         #################################################################PIANO B
-        piano_b = instrumenttools.Piano(
-            instrument_name='Piano B', short_instrument_name='Pn. B')
+        piano_b = instrumenttools.Piano(instrument_name='Piano B', short_instrument_name='Pno. B')
         piano_b_lh_staff = Staff(
             [],
             context_name='Staff',
@@ -350,6 +373,9 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(bass_clef, piano_b_lh_staff)
         attach(piano_b, piano_b_lh_staff)
         attach(piano_b, piano_b_rh_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Piano B')
+        attach(instrument_annotation, piano_b_lh_staff)
+        attach(instrument_annotation, piano_b_rh_staff)
         piano_b_pedaling_staff = Staff(
             [],
             context_name='PianoPedalingStaff',
@@ -361,11 +387,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
             context_name='PianoStaffGroup',
             name='Piano B Staff Group'
             )
-        set_(piano_b_staff_group).instrument_name = Markup('Piano B')
-        set_(piano_b_staff_group).short_instrument_name = Markup('Pn. B')
+        attach(instrument_annotation, piano_b_pedaling_staff)
 
         ##################################################################VIOLIN
-        violin = instrumenttools.Violin()
+        violin = instrumenttools.Violin(instrument_name=None, short_instrument_name=None)
         violin_bow_rhythm_staff = Staff(
             [],
             context_name='StringBowingRhythmStaff',
@@ -385,6 +410,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(violin, violin_bow_rhythm_staff)
         attach(violin, violin_string_space_staff)
         attach(violin, violin_finger_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Violin')
+        attach(instrument_annotation, violin_bow_rhythm_staff)
+        attach(instrument_annotation, violin_string_space_staff)
+        attach(instrument_annotation, violin_finger_rhythm_staff)
         violin_string_space_staff_group = StaffGroup(
             [violin_string_space_staff],
             context_name='StringSpaceStaffGroup',
@@ -396,14 +425,14 @@ class ScoreTemplate(abctools.AbjadValueObject):
                 violin_string_space_staff_group,
                 violin_finger_rhythm_staff
             ],
-            context_name="StringInstrumentStaffGroup",
+            context_name='StringInstrumentStaffGroup',
             name='Violin Staff Group'
             )
         set_(violin_staff_group).instrument_name = Markup('Violin')
         set_(violin_staff_group).short_instrument_name = Markup('Vn.')
 
         ###################################################################VIOLA
-        viola = instrumenttools.Viola()
+        viola = instrumenttools.Viola(instrument_name=None, short_instrument_name=None)
         viola_bow_rhythm_staff = Staff(
             [],
             context_name='StringBowingRhythmStaff',
@@ -423,6 +452,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(viola, viola_bow_rhythm_staff)
         attach(viola, viola_string_space_staff)
         attach(viola, viola_finger_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Viola')
+        attach(instrument_annotation, viola_bow_rhythm_staff)
+        attach(instrument_annotation, viola_string_space_staff)
+        attach(instrument_annotation, viola_finger_rhythm_staff)
         viola_string_space_staff_group = StaffGroup(
             [viola_string_space_staff],
             context_name='StringSpaceStaffGroup',
@@ -434,14 +467,14 @@ class ScoreTemplate(abctools.AbjadValueObject):
                 viola_string_space_staff_group,
                 viola_finger_rhythm_staff
             ],
-            context_name="StringInstrumentStaffGroup",
+            context_name='StringInstrumentStaffGroup',
             name='Viola Staff Group'
             )
         set_(viola_staff_group).instrument_name = Markup('Viola')
         set_(viola_staff_group).short_instrument_name = Markup('Va.')
 
         ###################################################################CELLO
-        cello = instrumenttools.Cello()
+        cello = instrumenttools.Cello(instrument_name=None, short_instrument_name=None)
         cello_bow_rhythm_staff = Staff(
             [],
             context_name='StringBowingRhythmStaff',
@@ -461,6 +494,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(cello, cello_bow_rhythm_staff)
         attach(cello, cello_string_space_staff)
         attach(cello, cello_finger_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Cello')
+        attach(instrument_annotation, cello_bow_rhythm_staff)
+        attach(instrument_annotation, cello_string_space_staff)
+        attach(instrument_annotation, cello_finger_rhythm_staff)
         cello_string_space_staff_group = StaffGroup(
             [cello_string_space_staff],
             context_name='StringSpaceStaffGroup',
@@ -472,14 +509,14 @@ class ScoreTemplate(abctools.AbjadValueObject):
                 cello_string_space_staff_group,
                 cello_finger_rhythm_staff
             ],
-            context_name="StringInstrumentStaffGroup",
+            context_name='StringInstrumentStaffGroup',
             name='Cello Staff Group'
             )
         set_(cello_staff_group).instrument_name = Markup('Cello')
         set_(cello_staff_group).short_instrument_name = Markup('Vc.')
 
         ####################################################################BASS
-        bass = instrumenttools.Contrabass()
+        bass = instrumenttools.Contrabass(instrument_name=None,short_instrument_name=None)
         bass_bow_rhythm_staff = Staff(
             [],
             context_name='StringBowingRhythmStaff',
@@ -499,6 +536,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
         attach(bass, bass_bow_rhythm_staff)
         attach(bass, bass_string_space_staff)
         attach(bass, bass_finger_rhythm_staff)
+        instrument_annotation = indicatortools.Annotation(name='instrument', value='Contrabass')
+        attach(instrument_annotation, bass_bow_rhythm_staff)
+        attach(instrument_annotation, bass_string_space_staff)
+        attach(instrument_annotation, bass_finger_rhythm_staff)
         bass_string_space_staff_group = StaffGroup(
             [bass_string_space_staff],
             context_name='StringSpaceStaffGroup',
@@ -510,7 +551,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
                 bass_string_space_staff_group,
                 bass_finger_rhythm_staff
             ],
-            context_name="StringInstrumentStaffGroup",
+            context_name='StringInstrumentStaffGroup',
             name='Contrabass Staff Group'
             )
         set_(bass_staff_group).instrument_name = Markup('Contrabass')

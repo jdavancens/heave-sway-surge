@@ -1,4 +1,4 @@
-% 2016-01-26 00:13
+% 2016-01-27 15:15
 
 \version "2.19.29"
 \language "english"
@@ -13,12 +13,14 @@
 \score {
     \context Score = "Score" \with {
         currentBarNumber = #1
+        markFormatter = #format-mark-box-alphabet
     } <<
         \context TimeSignatureContext = "Time Signatures and Tempi" {
             {
                 \time 3/4
                 \tempo 4=54
                 \bar ""
+                \mark #1
                 s1 * 3/4
             }
             {
@@ -162,6 +164,7 @@
             {
                 \time 5/8
                 \tempo 4=68
+                \mark #37
                 s1 * 5/8
             }
             {
@@ -761,6 +764,8 @@
                 shortInstrumentName = \markup { Ob. }
             } <<
                 \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Embouchure Rhythm" {
                         \once \override NoteHead #'stencil = #point-stencil
                         c'2. ~
@@ -873,12 +878,31 @@
                             \once \override Stem #'stencil = ##f
                             c'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { E }
                     \context Voice = "Embouchure" {
-                        \once \override Glissando.color = #(rgb-color 1.0 0.75 0.75)
+                        \once \override Glissando.color = #(rgb-color 127.5 127.5 127.5)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         a2. \glissando ~
@@ -894,7 +918,7 @@
                             c'''16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
@@ -916,7 +940,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -935,7 +959,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -951,7 +975,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -967,7 +991,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -986,7 +1010,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
@@ -1005,7 +1029,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
@@ -1017,10 +1041,29 @@
                             \once \override Stem #'stencil = ##f
                             b'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
                     \context Voice = "Voice" {
                         r4.
                         a'4.
@@ -1051,10 +1094,29 @@
                         a'8
                         r4.
                         r4.
-                        \bar "|"
+                    }
+                    \context Voice = "Voice" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Left Hand Fingering Rhythm" {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 6/7 {
@@ -1146,12 +1208,31 @@
                             c'8.
                             c'8
                             c'16 ]
-                            \bar "|"
                         }
+                    }
+                    \context Voice = "Left Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindFingeringStaffGroup = "Oboe Fingering Staff Group" <<
                     \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
                         \context Voice = "Left Hand Fingering" {
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 6/7 {
@@ -1837,7 +1918,6 @@
                                     \tweak #'transparent ##f
                                     f''
                                 >16 ]
-                                \bar "|"
                             }
                         }
                         \context Voice = "Left Hand Fingering Lifeline" {
@@ -2702,11 +2782,30 @@
                                         f''
                                     >16
                                 }
-                                \bar "|"
                             }
+                        }
+                        \context Voice = "Left Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                     \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
                         \context Voice = "Right Hand Fingering" {
                             <
                                 \tweak #'transparent ##t
@@ -3327,7 +3426,6 @@
                                 \tweak #'transparent ##t
                                 e''
                             >8 ]
-                            \bar "|"
                         }
                         \context Voice = "Right Hand Fingering Lifeline" {
                             \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
@@ -4094,11 +4192,30 @@
                                     e''
                                 >16
                             }
-                            \bar "|"
+                        }
+                        \context Voice = "Right Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                 >>
                 \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Right Hand Fingering Rhythm" {
                         c'4
                         c'8 [
@@ -4188,7 +4305,24 @@
                         c'16
                         c'16
                         c'8 ]
-                        \bar "|"
+                    }
+                    \context Voice = "Right Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
             >>
@@ -4197,6 +4331,8 @@
                 shortInstrumentName = \markup { Cl. }
             } <<
                 \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Embouchure Rhythm" {
                         \once \override NoteHead #'stencil = #point-stencil
                         c'2. ~
@@ -4309,12 +4445,31 @@
                             \once \override Stem #'stencil = ##f
                             c'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { Emb. }
                     \context Voice = "Embouchure" {
-                        \once \override Glissando.color = #(rgb-color 1.0 0.75 0.75)
+                        \once \override Glissando.color = #(rgb-color 127.5 127.5 127.5)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         a2. \glissando ~
@@ -4330,7 +4485,7 @@
                             c'''16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
@@ -4352,7 +4507,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -4371,7 +4526,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -4387,7 +4542,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -4403,7 +4558,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -4422,7 +4577,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
@@ -4441,7 +4596,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
@@ -4453,10 +4608,29 @@
                             \once \override Stem #'stencil = ##f
                             b'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
                     \context Voice = "Voice" {
                         r4.
                         a'4.
@@ -4487,10 +4661,29 @@
                         a'8
                         r4.
                         r4.
-                        \bar "|"
+                    }
+                    \context Voice = "Voice" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Left Hand Fingering Rhythm" {
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/5 {
@@ -4560,12 +4753,31 @@
                         \times 3/5 {
                             c'4.
                             c'4
-                            \bar "|"
                         }
+                    }
+                    \context Voice = "Left Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindFingeringStaffGroup = "Clarinet Fingering Staff Group" <<
                     \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
                         \context Voice = "Left Hand Fingering" {
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 3/5 {
@@ -5042,7 +5254,6 @@
                                     \tweak #'transparent ##f
                                     f''
                                 >4
-                                \bar "|"
                             }
                         }
                         \context Voice = "Left Hand Fingering Lifeline" {
@@ -5647,11 +5858,30 @@
                                         f''
                                     >16
                                 }
-                                \bar "|"
                             }
+                        }
+                        \context Voice = "Left Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                     \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
                         \context Voice = "Right Hand Fingering" {
                             <
                                 \tweak #'transparent ##t
@@ -6272,7 +6502,6 @@
                                 \tweak #'transparent ##f
                                 e''
                             >8 ]
-                            \bar "|"
                         }
                         \context Voice = "Right Hand Fingering Lifeline" {
                             \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
@@ -7084,11 +7313,30 @@
                                     e''
                                 >16
                             }
-                            \bar "|"
+                        }
+                        \context Voice = "Right Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                 >>
                 \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Right Hand Fingering Rhythm" {
                         c'4
                         c'8 [
@@ -7178,7 +7426,24 @@
                         c'16
                         c'16
                         c'8 ]
-                        \bar "|"
+                    }
+                    \context Voice = "Right Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
             >>
@@ -7187,6 +7452,8 @@
                 shortInstrumentName = \markup { Sax. }
             } <<
                 \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Embouchure Rhythm" {
                         \once \override NoteHead #'stencil = #point-stencil
                         c'2. ~
@@ -7299,12 +7566,31 @@
                             \once \override Stem #'stencil = ##f
                             c'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { Emb. }
                     \context Voice = "Embouchure" {
-                        \once \override Glissando.color = #(rgb-color 1.0 0.75 0.75)
+                        \once \override Glissando.color = #(rgb-color 127.5 127.5 127.5)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         a2. \glissando ~
@@ -7320,7 +7606,7 @@
                             c'''16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
@@ -7342,7 +7628,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -7361,7 +7647,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -7377,7 +7663,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -7393,7 +7679,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -7412,7 +7698,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
@@ -7431,7 +7717,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 1.0 0.375 0.375)
+                        \once \override Glissando.color = #(rgb-color 64.25 190.75 190.75)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
@@ -7443,10 +7729,29 @@
                             \once \override Stem #'stencil = ##f
                             b'16
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Embouchure" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
                     \context Voice = "Voice" {
                         r4.
                         a'4.
@@ -7477,10 +7782,29 @@
                         a'8
                         r4.
                         r4.
-                        \bar "|"
+                    }
+                    \context Voice = "Voice" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Left Hand Fingering Rhythm" {
                         c'4
                         c'8
@@ -7553,11 +7877,30 @@
                         c'8 [
                         c'16
                         c'8. ]
-                        \bar "|"
+                    }
+                    \context Voice = "Left Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
                 \context WoodwindFingeringStaffGroup = "Alto Saxophone Fingering Staff Group" <<
                     \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
                         \context Voice = "Left Hand Fingering" {
                             <
                                 \tweak #'transparent ##t
@@ -8103,7 +8446,6 @@
                                 \tweak #'transparent ##t
                                 f''
                             >8. ]
-                            \bar "|"
                         }
                         \context Voice = "Left Hand Fingering Lifeline" {
                             \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
@@ -8794,10 +9136,29 @@
                                     f''
                                 >16
                             }
-                            \bar "|"
+                        }
+                        \context Voice = "Left Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                     \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
                         \context Voice = "Right Hand Fingering" {
                             <
                                 \tweak #'transparent ##t
@@ -9418,7 +9779,6 @@
                                 \tweak #'transparent ##t
                                 e''
                             >8 ]
-                            \bar "|"
                         }
                         \context Voice = "Right Hand Fingering Lifeline" {
                             \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
@@ -10230,11 +10590,30 @@
                                     e''
                                 >16
                             }
-                            \bar "|"
+                        }
+                        \context Voice = "Right Hand Fingering" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     >>
                 >>
                 \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Right Hand Fingering Rhythm" {
                         c'4
                         c'8 [
@@ -10324,16 +10703,32 @@
                         c'16
                         c'16
                         c'8 ]
-                        \bar "|"
+                    }
+                    \context Voice = "Right Hand Fingering Rhythm" {
+                        s1 * 3/4
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 3/8
+                        s1 * 1/2
+                        s1 * 3/8
                     }
                 }
             >>
-            \context PianoStaffGroup = "Piano A Staff Group" \with {
-                instrumentName = \markup { Piano A }
-                shortInstrumentName = \markup { Pn. A }
-            } <<
+            \context PianoStaffGroup = "Piano A Staff Group" <<
                 \context PianoStaff = "Piano A PianoStaff" <<
                     \context Staff = "Right Hand" {
+                        \set PianoStaff.instrumentName = \markup { Piano A }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                         \context Voice = "Right Hand" {
                             a'16 \pp
                             a'4 ~
@@ -11079,11 +11474,758 @@
                             a'4 ~
                             a'16 [
                             a'16 ]
-                            \bar "|"
+                        }
+                        \context Voice = "Right Hand" {
+                            a'16 \pp
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16 [
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16 [
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'16 ~
+                            a'16 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'16 ~
+                            a'16 [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'16 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16 [
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16
+                            a'16
+                            a'4
+                            a'16
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'4
+                            a'16
+                            a'4
+                            a'16 [
+                            a'8 ~ ]
+                            a'4
+                            a'16 [
+                            a'8. ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8. ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4.
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'16 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'8 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8. ~ ]
+                            a'8 [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16
+                            a'16 ~ ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16 [
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 ~
+                            a'16 [
+                            a'16
+                            a'8.
+                            a'16
+                            a'8 ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16 ]
+                            a'4.
+                            a'16
+                            a'8. [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
+                            a'4
+                            a'16 [
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8 ~ ]
+                            a'16 [
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16
+                            a'8 ~ ]
+                            a'8 [
+                            a'16
+                            a'8. ~ ]
+                            a'8. [
+                            a'16
+                            a'8.
+                            a'16 ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ]
                         }
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
+                        \set PianoStaff.instrumentName = \markup { Piano A }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                         \context Voice = "Left Hand" {
                             s1 * 3/4
                             s1 * 1/2
@@ -11269,11 +12411,198 @@
                             s1 * 3/8
                             s1 * 1/2
                             s1 * 3/8
-                            \bar "|"
+                        }
+                        \context Voice = "Left Hand" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/16
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 7/16
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 5/16
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     }
                 >>
                 \context PianoPedalingStaff = "Pedaling" {
+                    %%% \set PianoStaff.instrumentName = \markup { Piano A } %%%
+                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. A } %%%
                     \context Voice = "Pedaling" {
                         c'2. \sustainOn
                         c'2
@@ -11519,16 +12848,260 @@
                             \once \override Stem #'stencil = ##f
                             c'16 \sustainOff
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Pedaling" {
+                        c'2. \sustainOn
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'4 ~
+                        c'16
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'4..
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4 ~
+                        c'16
+                        c'4
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        \afterGrace
+                        c'4.
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16 \sustainOff
+                        }
                     }
                 }
             >>
-            \context PianoStaffGroup = "Piano B Staff Group" \with {
-                instrumentName = \markup { Piano B }
-                shortInstrumentName = \markup { Pn. B }
-            } <<
+            \context PianoStaffGroup = "Piano B Staff Group" <<
                 \context PianoStaff = "Piano B PianoStaff" <<
                     \context Staff = "Right Hand" {
+                        \set PianoStaff.instrumentName = \markup { Piano B }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                         \context Voice = "Right Hand" {
                             a'4 \mp ~
                             a'16
@@ -12232,11 +13805,716 @@
                             a'16 ~ ]
                             a'4
                             a'8
-                            \bar "|"
+                        }
+                        \context Voice = "Right Hand" {
+                            a'4 \mp ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8. ]
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8. [
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8. [
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8. ]
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8. [
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8. [
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'16 ~
+                            a'8 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8. ]
+                            a'16 [
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8. [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8 ]
+                            a'8.
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'8. ~ ]
+                            a'8
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8 ]
+                            a'8.
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'8. ~ ]
+                            a'8
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8 ]
+                            a'8. [
+                            a'8. ~ ]
+                            a'8
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8 ]
+                            a'8.
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'8 ~ ]
+                            a'8. [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8. [
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8. ]
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8. [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'8.
+                            a'8 ~ ]
+                            a'8.
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8.
+                            a'16 [
+                            a'8
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'16 ~ ]
+                            a'8. [
+                            a'8.
+                            a'16
+                            a'16 ~ ]
+                            a'16 [
+                            a'8. ]
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16
+                            a'8
+                            a'16 ~ ]
+                            a'8
+                            a'4 ~
+                            a'16 [
+                            a'8. ~ ]
+                            a'16 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8 ~ ]
+                            a'16
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'8. ~ ]
+                            a'8
+                            a'4
+                            a'8. [
+                            a'16 ]
+                            a'8 [
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'4
+                            a'8. [
+                            a'16
+                            a'8 ]
+                            a'8.
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16
+                            a'8 ]
+                            a'8.
+                            a'4 ~
+                            a'16 [
+                            a'8 ~ ]
+                            a'8 [
+                            a'8.
+                            a'16 ]
+                            a'8 [
+                            a'8. ]
+                            a'4 ~
+                            a'16
+                            a'4
+                            a'8 ~
+                            a'16 [
+                            a'16
+                            a'8
+                            a'8.
+                            a'16 ~ ]
+                            a'4
+                            a'8
                         }
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
+                        \set PianoStaff.instrumentName = \markup { Piano B }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                         \context Voice = "Left Hand" {
                             s1 * 3/4
                             s1 * 1/2
@@ -12422,11 +14700,198 @@
                             s1 * 3/8
                             s1 * 1/2
                             s1 * 3/8
-                            \bar "|"
+                        }
+                        \context Voice = "Left Hand" {
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/16
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 7/16
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 3/4
+                            s1 * 5/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 5/16
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 1/2
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 5/8
+                            s1 * 3/8
+                            s1 * 1/2
+                            s1 * 3/8
                         }
                     }
                 >>
                 \context PianoPedalingStaff = "Pedaling" {
+                    %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
+                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
                     \context Voice = "Pedaling" {
                         c'2. \sustainOn
                         c'2
@@ -12672,7 +15137,252 @@
                             \once \override Stem #'stencil = ##f
                             c'16 \sustainOff
                         }
-                        \bar "|"
+                    }
+                    \context Voice = "Pedaling" {
+                        c'2. \sustainOn
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'4 ~
+                        c'16
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2.
+                        c'2
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'4..
+                        c'4.
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2.
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2.
+                        c'2 ~
+                        c'8
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4 ~
+                        c'16
+                        c'4
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2.
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'2
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2 ~
+                        c'8
+                        c'4.
+                        c'2
+                        \afterGrace
+                        c'4.
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16 \sustainOff
+                        }
                     }
                 }
             >>
@@ -12681,12 +15391,20 @@
                 shortInstrumentName = \markup { Vn. }
             } <<
                 \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Bowing Rhythm" {
                         r2.
                         r2
                         r2
                         r8
-                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
+                            c'16 [
+                            c'8 ]
+                            c'4
+                            c'8.
+                        }
                         r2
                         r8
                         r2
@@ -12704,58 +15422,49 @@
                         r2
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/5 {
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'16 [
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'4
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \bar "|"
                         }
                     }
                 }
                 \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
                     \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
                         \context Voice = "Bowing" {
                             r2.
                             r2
                             r2
                             r8
-                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''16 \glissando [
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''8 \glissando ]
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''4 \glissando
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''8. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
                             r2
                             r8
                             r2
@@ -12773,91 +15482,100 @@
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 3/5 {
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
                                 g'''''16 \glissando [
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    g
-                                                }
-                                        }
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    b'''''16
-                                }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
-                                g''''8 \glissando
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    d
-                                                }
-                                        }
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    f'''16
-                                }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                g'''''8 \glissando
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
                                 g'''''8. \glissando ]
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    g
-                                                }
-                                        }
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    b'''''16
-                                }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g''''4 \glissando
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    d
-                                                }
-                                        }
+                                g'''''4 \glissando
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
                                     \once \override NoteHead #'stencil = #point-stencil
                                     \once \override Stem #'stencil = ##f
-                                    f'''16
+                                    g'''''16
                                 }
-                                \bar "|"
                             }
                         }
-                        \context Voice = "Fingering" {
+                        \context Voice = "Bowing String Number" {
                             r2.
                             r2
                             r2
                             r8
-                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                        }
+                                    }
+                                ef''16 [
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''8 ]
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                        }
+                                    }
+                                ef''4
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''8.
+                            }
                             r2
                             r8
                             r2
@@ -12874,12 +15592,81 @@
                             r4.
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                        }
+                                    }
+                                ef''16 [
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''8
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                        }
+                                    }
+                                ef''8. ]
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''4
+                            }
+                        }
+                        \context Voice = "Fingering" {
+                            r2.
+                            r2
+                            r2
+                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
                             \times 6/7 {
                                 \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                f,,8. \glissando [
+                                f,,8 \glissando [
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -12915,7 +15702,7 @@
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                d,8 \glissando ]
+                                d,8. \glissando ]
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -12923,18 +15710,95 @@
                                     \once \override Stem #'stencil = ##f
                                     d,,16
                                 }
-                                \bar "|"
+                            }
+                            r2
+                            r8
+                            r2
+                            r2
+                            r4.
+                            r2
+                            r8
+                            r2
+                            r2
+                            r8
+                            r4.
+                            r2
+                            r8
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 6/7 {
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,8. \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,8 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
                             }
                         }
                     >>
                 >>
                 \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Fingering Rhythm" {
                         r2.
                         r2
                         r2
                         r8
-                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8. ]
+                        }
                         r2
                         r8
                         r2
@@ -12960,7 +15824,6 @@
                             c'16
                             \once \override NoteHead #'stencil = #point-stencil
                             c'8 ]
-                            \bar "|"
                         }
                     }
                 }
@@ -12970,14 +15833,18 @@
                 shortInstrumentName = \markup { Va. }
             } <<
                 \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Bowing Rhythm" {
                         r2.
                         r2
                         r2
                         r8
                         r4.
-                        r2
-                        r8
+                        r16
+                        c'4
+                        c'8. [
+                        c'8 ]
                         r2
                         r2
                         r4.
@@ -12993,60 +15860,60 @@
                         r2
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/5 {
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'16 [
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'4
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \bar "|"
                         }
                     }
                 }
                 \context StringSpaceStaffGroup = "Viola String Space Staff Group" <<
                     \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
                         \context Voice = "Bowing" {
                             r2.
                             r2
                             r2
                             r8
                             r4.
-                            r2
-                            r8
+                            r16
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''4 \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''8. \glissando [
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''8 \glissando ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
                             r2
                             r2
                             r4.
@@ -13062,31 +15929,11 @@
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 3/5 {
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g'''''16 \glissando [
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    g
-                                                    d
-                                                }
-                                        }
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    g'''''16
-                                }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
-                                g''''8 \glissando
+                                g''''16 \glissando [
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13094,11 +15941,11 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g'''''8. \glissando ]
+                                g'''''8 \glissando
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13106,11 +15953,11 @@
                                     \once \override Stem #'stencil = ##f
                                     g'''''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g''''4 \glissando
+                                g''''8. \glissando ]
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13118,7 +15965,81 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \bar "|"
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                        }
+                        \context Voice = "Bowing String Number" {
+                            r2.
+                            r2
+                            r2
+                            r8
+                            r4.
+                            r16
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \whiteout
+                                    \box
+                                        \raise
+                                            #0.5
+                                            \fontsize
+                                                #-4
+                                                \column
+                                                    {
+                                                        \bold
+                                                            G
+                                                        \bold
+                                                            D
+                                                    }
+                                }
+                            ef''4
+                            ef''8. [
+                            ef''8 ]
+                            r2
+                            r2
+                            r4.
+                            r2
+                            r8
+                            r2
+                            r2
+                            r8
+                            r4.
+                            r2
+                            r8
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''16 [
+                                ef''8
+                                ef''8. ]
+                                ef''4
                             }
                         }
                         \context Voice = "Fingering" {
@@ -13127,8 +16048,46 @@
                             r2
                             r8
                             r4.
-                            r2
-                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/7 {
+                                r8
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,4. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                            }
                             r2
                             r2
                             r4.
@@ -13144,19 +16103,19 @@
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 6/7 {
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                f,,8. \glissando [
+                                d,8. \glissando [
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
                                     \once \override NoteHead #'stencil = #point-stencil
                                     \once \override Stem #'stencil = ##f
-                                    a,,16
+                                    d,,16
                                 }
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
@@ -13168,7 +16127,7 @@
                                     \once \override Stem #'stencil = ##f
                                     b16
                                 }
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
@@ -13180,7 +16139,7 @@
                                     \once \override Stem #'stencil = ##f
                                     b,,16
                                 }
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
@@ -13192,20 +16151,29 @@
                                     \once \override Stem #'stencil = ##f
                                     d,,16
                                 }
-                                \bar "|"
                             }
                         }
                     >>
                 >>
                 \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Fingering Rhythm" {
                         r2.
                         r2
                         r2
                         r8
                         r4.
-                        r2
-                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/7 {
+                            r8
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4.
+                        }
                         r2
                         r2
                         r4.
@@ -13229,7 +16197,6 @@
                             c'16
                             \once \override NoteHead #'stencil = #point-stencil
                             c'8 ]
-                            \bar "|"
                         }
                     }
                 }
@@ -13239,14 +16206,22 @@
                 shortInstrumentName = \markup { Vc. }
             } <<
                 \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Bowing Rhythm" {
                         r2.
                         r2
                         r2
                         r8
-                        r4.
-                        r2
-                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            r4.
+                            c'8
+                        }
+                        c'8.
+                        c'4
+                        c'16 [
+                        c'8 ]
                         r2
                         r2
                         r4.
@@ -13262,60 +16237,86 @@
                         r2
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/5 {
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'16 [
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'4
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \bar "|"
                         }
                     }
                 }
                 \context StringSpaceStaffGroup = "Cello String Space Staff Group" <<
                     \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
                         \context Voice = "Bowing" {
                             r2.
                             r2
                             r2
                             r8
-                            r4.
-                            r2
-                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''8. \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''4 \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''16 \glissando [
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''8 \glissando ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
                             r2
                             r2
                             r4.
@@ -13331,31 +16332,11 @@
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 3/5 {
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g'''''16 \glissando [
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    g
-                                                    d
-                                                }
-                                        }
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    g'''''16
-                                }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
-                                g''''8 \glissando
+                                g''''16 \glissando [
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13363,11 +16344,11 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g'''''8. \glissando ]
+                                g'''''8 \glissando
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13375,11 +16356,11 @@
                                     \once \override Stem #'stencil = ##f
                                     g'''''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                g''''4 \glissando
+                                g''''8. \glissando ]
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13387,7 +16368,85 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \bar "|"
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                        }
+                        \context Voice = "Bowing String Number" {
+                            r2.
+                            r2
+                            r2
+                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''8
+                            }
+                            ef''8.
+                            ef''4
+                            ef''16 [
+                            ef''8 ]
+                            r2
+                            r2
+                            r4.
+                            r2
+                            r8
+                            r2
+                            r2
+                            r8
+                            r4.
+                            r2
+                            r8
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''16 [
+                                ef''8
+                                ef''8. ]
+                                ef''4
                             }
                         }
                         \context Voice = "Fingering" {
@@ -13395,9 +16454,85 @@
                             r2
                             r2
                             r8
-                            r4.
-                            r2
-                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,16 \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,16 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/7 {
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,4. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                            }
                             r2
                             r2
                             r4.
@@ -13417,25 +16552,25 @@
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                f,,8. \glissando [
+                                d,8. \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,16 \glissando
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
                                     \once \override NoteHead #'stencil = #point-stencil
                                     \once \override Stem #'stencil = ##f
                                     a,,16
-                                }
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
-                                \once \override Glissando.thickness = 2
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
-                                a,16 \glissando
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    b16
                                 }
                                 \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
                                 \once \override Glissando.thickness = 2
@@ -13453,28 +16588,45 @@
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                d,8 \glissando ]
+                                f,,8 \glissando ]
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
                                     \once \override NoteHead #'stencil = #point-stencil
                                     \once \override Stem #'stencil = ##f
-                                    d,,16
+                                    a,,16
                                 }
-                                \bar "|"
                             }
                         }
                     >>
                 >>
                 \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Fingering Rhythm" {
                         r2.
                         r2
                         r2
                         r8
-                        r4.
-                        r2
-                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            r4.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                        }
                         r2
                         r2
                         r4.
@@ -13498,7 +16650,6 @@
                             c'16
                             \once \override NoteHead #'stencil = #point-stencil
                             c'8 ]
-                            \bar "|"
                         }
                     }
                 }
@@ -13508,14 +16659,18 @@
                 shortInstrumentName = \markup { Cb. }
             } <<
                 \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Bowing Rhythm" {
                         r2.
                         r2
                         r2
                         r8
                         r4.
-                        r2
-                        r8
+                        c'16 [
+                        c'8
+                        c'8. ]
+                        c'4
                         r2
                         r2
                         r4.
@@ -13531,60 +16686,71 @@
                         r2
                         \tweak #'text #tuplet-number::calc-fraction-text
                         \times 3/5 {
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'16 [
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
                             c'4
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
-                            \bar "|"
                         }
                     }
                 }
                 \context StringSpaceStaffGroup = "Contrabass String Space Staff Group" <<
                     \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
                         \context Voice = "Bowing" {
                             r2.
                             r2
                             r2
                             r8
                             r4.
-                            r2
-                            r8
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''16 \glissando [
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''8 \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''8. \glissando ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''4 \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
                             r2
                             r2
                             r4.
@@ -13600,19 +16766,11 @@
                             r2
                             \tweak #'text #tuplet-number::calc-fraction-text
                             \times 3/5 {
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
                                 g'''''16 \glissando [
-                                    ^ \markup {
-                                        \bold
-                                            \column
-                                                {
-                                                    g
-                                                    d
-                                                }
-                                        }
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13620,8 +16778,8 @@
                                     \once \override Stem #'stencil = ##f
                                     g'''''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
                                 g''''8 \glissando
@@ -13632,8 +16790,8 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.8176470588235294 0.75)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
                                 g'''''8. \glissando ]
@@ -13644,8 +16802,8 @@
                                     \once \override Stem #'stencil = ##f
                                     g'''''16
                                 }
-                                \once \override Glissando.color = #(rgb-color 1.0 0.7082352941176471 0.6)
-                                \once \override Glissando.thickness = 2
+                                \once \override Glissando.color = #(rgb-color 1.0 0.2705882352941176 0.0)
+                                \once \override Glissando.thickness = 3
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
                                 g''''4 \glissando
@@ -13656,7 +16814,69 @@
                                     \once \override Stem #'stencil = ##f
                                     f'''16
                                 }
-                                \bar "|"
+                            }
+                        }
+                        \context Voice = "Bowing String Number" {
+                            r2.
+                            r2
+                            r2
+                            r8
+                            r4.
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \whiteout
+                                    \box
+                                        \raise
+                                            #0.5
+                                            \fontsize
+                                                #-4
+                                                \column
+                                                    {
+                                                        \bold
+                                                            G
+                                                        \bold
+                                                            D
+                                                    }
+                                }
+                            ef''16 [
+                            ef''8
+                            ef''8. ]
+                            ef''4
+                            r2
+                            r2
+                            r4.
+                            r2
+                            r8
+                            r2
+                            r2
+                            r8
+                            r4.
+                            r2
+                            r8
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            \bold
+                                                                G
+                                                            \bold
+                                                                D
+                                                        }
+                                    }
+                                ef''16 [
+                                ef''8
+                                ef''8. ]
+                                ef''4
                             }
                         }
                         \context Voice = "Fingering" {
@@ -13665,8 +16885,57 @@
                             r2
                             r8
                             r4.
-                            r2
-                            r8
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/7 {
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,4. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,8 \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,8 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                            }
                             r2
                             r2
                             r4.
@@ -13686,19 +16955,7 @@
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                f,,8. \glissando [
-                                {
-                                    \once \override Beam #'stencil = ##f
-                                    \once \override Flag #'stencil = ##f
-                                    \once \override NoteHead #'stencil = #point-stencil
-                                    \once \override Stem #'stencil = ##f
-                                    a,,16
-                                }
-                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
-                                \once \override Glissando.thickness = 2
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \afterGrace
-                                a,16 \glissando
+                                a,8. \glissando [
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13722,7 +16979,7 @@
                                 \once \override Glissando.thickness = 2
                                 \once \override NoteHead #'stencil = #point-stencil
                                 \afterGrace
-                                d,8 \glissando ]
+                                d,16 \glissando
                                 {
                                     \once \override Beam #'stencil = ##f
                                     \once \override Flag #'stencil = ##f
@@ -13730,20 +16987,42 @@
                                     \once \override Stem #'stencil = ##f
                                     d,,16
                                 }
-                                \bar "|"
+                                \once \override Glissando.color = #(rgb-color 0.6264705882352941 0.7166666666666667 0.803921568627451)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,8 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
                             }
                         }
                     >>
                 >>
                 \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                     \context Voice = "Fingering Rhythm" {
                         r2.
                         r2
                         r2
                         r8
                         r4.
-                        r2
-                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 ]
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4
+                        }
                         r2
                         r2
                         r4.
@@ -13767,7 +17046,6 @@
                             c'16
                             \once \override NoteHead #'stencil = #point-stencil
                             c'8 ]
-                            \bar "|"
                         }
                     }
                 }

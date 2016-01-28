@@ -45,16 +45,18 @@ class StringBowingHandler(object):
 
     def __call__ (self, current_stage):
         voice = self.music_maker(current_stage)
-        rhythm_voice = None
+        rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
+            string_number_voice = None
             self._annotate_logical_ties(voice)
-            rhythm_voice = copy.deepcopy(voice)
-            self._name_voices(voice, rhythm_voice)
+            string_number_voice = copy.deepcopy(voice)
             self._handle_bowing_voice(voice)
+            self._handle_string_number_voice(string_number_voice)
             self._handle_rhythm_voice(rhythm_voice)
+            self._name_voices(voice, rhythm_voice, string_number_voice)
+            return [voice, rhythm_voice, string_number_voice]
         else:
-            rhythm_voice = copy.deepcopy(voice)
-        return [voice, rhythm_voice]
+            return[voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
 
@@ -130,13 +132,27 @@ class StringBowingHandler(object):
                     logical_ties[i],
                     logical_ties[i+1])
 
+    def _attach_glissando(self, logical_tie):
+        pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
+        color = graphics_tools.desaturate_rgb(
+            pressure,
+            self.color
+            )
+        color = graphics_tools.scheme_rgb_color(color)
+        staccato = inspect_(logical_tie[0]).get_annotation('staccato')
+        if not staccato:
+            gliss(logical_tie[0], color=color, thickness=3)
+            if len(logical_tie) > 1:
+                for leaf in logical_tie[1:]:
+                    gliss_skip(leaf)
+
     def _handle_bowing_voice(self, voice):
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             self._map_note_heads(logical_tie)
             self._insert_gliss_anchor(logical_tie)
-            self._handle_height_and_pressure(logical_tie)
-            self._handle_string_ids(logical_tie)
-
+            self._attach_glissando(logical_tie)
+            self._hide_note_heads(logical_tie)
+            # self._handle_string_ids(logical_tie)
     def _handle_contact_points(self, logical_tie):
         start = inspect_(logical_tie[0]).get_annotation('contact_point_start')
         left_markup = Markup.fraction(start.numerator, start.denominator)
@@ -157,53 +173,54 @@ class StringBowingHandler(object):
             direction=Down
             )
 
-    def _handle_height_and_pressure(self, logical_tie):
-        pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
-        color = graphics_tools.desaturate_rgb(
-                pressure,
-                self.color
-                )
-        color = graphics_tools.scheme_rgb_color(color)
-        staccato = inspect_(logical_tie[0]).get_annotation('staccato')
-        if staccato:
-            bar_note_head(logical_tie[0])
-            if len(logical_tie) > 1:
-                for leaf in logical_tie[1:]:
-                    point_note_head(leaf)
-        else:
-            point_note_head(logical_tie[0])
-            gliss(logical_tie[0], color=color, thickness=2)
-            if len(logical_tie) > 1:
-                for leaf in logical_tie[1:]:
-                    gliss_skip(leaf)
-                    point_note_head(leaf)
-
     def _handle_rhythm_voice(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
-            self._insert_spanner_anchor(logical_tie)
-            #self._handle_string_ids(logical_tie)
-            #self._handle_contact_points(logical_tie)
-        for leaf in rhythm_voice.select_leaves(
-                allow_discontiguous_leaves=True,
-                leaf_classes=Note
-                ):
-            point_note_head(leaf)
+            # self._insert_spanner_anchor(logical_tie) # FUTURE: BOW CONTACT POINT MARKUP
+            #self._hide_note_heads(logical_tie)
+            pass
+
+    def _handle_string_number_voice(self, string_number_voice):
+        for logical_tie in iterate(string_number_voice).by_logical_tie(pitched=True):
+            self._map_note_heads(logical_tie)
+            self._handle_string_ids(logical_tie)
 
     def _handle_string_ids(self, logical_tie):
+        r'''Looks at the current logical tie and the previous. If different,
+        changes the note-head of the first element of the logical tie to textual
+        representation of string id number
+        '''
+        for leaf in logical_tie:
+            new_pitch = self._map_fraction_to_treble_staff_position(
+                Fraction(2,3),
+                self.number_of_staff_lines,
+            )
+            leaf.written_pitch = new_pitch
+
         string_ids = inspect_(logical_tie[0]).get_annotation('string_ids')
         if isinstance(string_ids, str):
             string_ids = datastructuretools.TypedTuple(string_ids)
         else:
             string_ids = datastructuretools.TypedTuple(string_ids)
         last_string_ids = inspect_(logical_tie[0]).get_annotation('previous_string_ids')
-        column = []
-        for string_id in string_ids:
-            markup = Markup(string_id, direction=Up)
-            column.append(markup)
-        current = Markup.column(column, direction=Up).bold()
-        current.override(('staff-padding', 4))
         if string_ids != last_string_ids:
-            attach(current, logical_tie[0])
+            column = []
+            for string_id in string_ids:
+                markup = Markup(string_id.capitalize()).bold()
+                column.append(markup)
+            markup = Markup.column(column, direction=None)
+            markup = markup.fontsize(-4)
+            markup = markup.raise_(0.5)
+            markup = markup.box()
+            #markup = markup.with_dimensions((0,1),(0,0))
+            markup = markup.whiteout()
+            override(logical_tie[0]).note_head.stencil = 'ly:text-interface::print'
+            override(logical_tie[0]).note_head.text = markup
+            #override(logical_tie[0]).note_head.extra_offset = (0, -8)
+            #override(logical_tie)
+
+    def _hide_note_heads(self, logical_tie):
+        for leaf in logical_tie:
+            point_note_head(leaf)
 
     def _insert_gliss_anchor(self, logical_tie):
         height_stop = inspect_(logical_tie[0]).get_annotation('height_stop')
@@ -244,11 +261,11 @@ class StringBowingHandler(object):
         for leaf in logical_tie:
             leaf.written_pitch = named_pitch
 
-    def _name_voices(self, voice, rhythm_voice):
+    def _name_voices(self, voice, rhythm_voice, string_number_voice):
         instrument = self.music_maker.instrument
         voice.name = self.music_maker.name
         rhythm_voice.name = self.music_maker.name + ' Rhythm'
-
+        string_number_voice.name = self.music_maker.name + ' String Number'
     ### PUBLIC PROPERTIES ###
 
     @property

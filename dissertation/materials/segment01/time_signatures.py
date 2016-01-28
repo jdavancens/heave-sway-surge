@@ -50,10 +50,25 @@ for stage in stages:
     for duration in stage:
         subdivisions.append(rhythmtools.bifurcate_duration(duration))
     divisions.append(tuple(subdivisions))
+measnum = 1
+
+# print measure list
+measures_per_stage = []
+for i, division in enumerate(divisions):
+    n_meas = 0
+    for subdivision in division:
+        for duration in subdivision:
+            # stage_string = 'Stage {}, Measure {}: {}'
+            # stage_string = stage_string.format(i+1, measnum, duration.pair)
+            # print(stage_string)
+            n_meas += 1
+    measures_per_stage.append(n_meas)
+measures_per_stage = tuple(measures_per_stage)
+
 
 #make time signatures from resulting divisions (stage(stage division(time siginature)))
 time_signatures = []
-for divisions in divisions:
+for i, divisions in enumerate(divisions):
     stage = []
     for subdivision in divisions:
         stage_division = []
@@ -65,5 +80,4 @@ for divisions in divisions:
             stage_division.append(time_signature)
         stage.append(tuple(stage_division))
     time_signatures.append(tuple(stage))
-
 time_signatures = tuple(time_signatures)

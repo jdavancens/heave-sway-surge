@@ -18,13 +18,13 @@ time_signatures = time_signatures[0][0][0:16]
 divisions = sequencetools.flatten_sequence(time_signatures)
 tuplet_ratios_lh = [
     (-1,), (-1,), (-1,), (-1,),
-    (-1,), (-1,), (-1,), (-1,),
+    (-1,4,3,2), (-1,), (-1,), (-1,),
     (-1,), (-1,), (-1,), (-1,),
     (-1,), (-1,), (-1,), (1,2,3,4)
     ]
 tuplet_ratios_rh = [
     (-1,), (-1,), (-1,), (-1,),
-    (-1,), (-1,), (-1,), (-1,),
+    (-1,2,1,3), (-1,), (-1,), (-1,),
     (-1,), (-1,), (-1,), (-1,),
     (-1,), (-1,), (-1,), (3,1,1,2),
     ]
@@ -75,8 +75,8 @@ bowings = (
             instrument=viola,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
-            pressure_start=Fraction(0, 1),
-            pressure_stop=Fraction(1, 3),
+            pressure_start=Fraction(1, 1),
+            pressure_stop=Fraction(1, 1),
             contact_point_start=Fraction(1, 4),
             contact_point_stop=Fraction(3, 4),
             string_ids=('g', 'd'),
@@ -86,8 +86,8 @@ bowings = (
             instrument=viola,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
-            pressure_start=Fraction(1, 5),
-            pressure_stop=Fraction(1, 5),
+            pressure_start=Fraction(1, 1),
+            pressure_stop=Fraction(1, 1),
             contact_point_start=Fraction(1, 1),
             contact_point_stop=Fraction(0, 1),
             string_ids=('g', 'd'),
@@ -135,14 +135,14 @@ bowing_music_handler = handlers.StringBowingHandler(
         bowings=bowings,
         pattern=(0, 1),
         number_of_staff_lines=30,
-        color=(255, 69, 0)
+        color=(255, 0, 0)
         )
 fingering_music_handler = handlers.StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
         pattern=(0, 2, 1, 3, 2, 1, 3, 0, 1),
         number_of_staff_lines=30,
-        color=(24, 116, 205)
+        color=(0, 0, 255)
         )
 music_handlers = [
     bowing_music_handler,

@@ -7,7 +7,6 @@ Created on Oct 31, 2015
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment01 import *
-
 oboe = instrumenttools.Oboe()
 color = (255,0,0)
 #===============================================================================
@@ -204,7 +203,6 @@ embouchure_music_handler = handlers.WoodwindEmbouchureHandler(
     number_of_staff_lines=10,
     color=color
 )
-
 lh_fingering_music_handler = handlers.WoodwindFingeringHandler(
     music_maker=lh_fingering_music_maker,
     hand='left',

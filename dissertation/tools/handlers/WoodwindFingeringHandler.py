@@ -42,17 +42,19 @@ class WoodwindFingeringHandler(object):
     ### SPECIAL METHODS ###
 
     def __call__(self, current_stage):
+
+        # voice is active during current stage
+        voice = self.music_maker(current_stage)
+        rhythm_voice = None
+        rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
-            # voice is active during current stage
-            voice = self.music_maker(current_stage)
-            rhythm_voice = copy.deepcopy(voice)
             self._handle_fingerings(voice)
             lifeline_voice = self._make_lifeline_voice(voice)
             self._name_voices(voice, rhythm_voice, lifeline_voice)
             voices = [voice, rhythm_voice, lifeline_voice]
         else:
-            # voice is not active, all rests
-            voice = self._make_resting_voice()
+            voices = [voice, rhythm_voice]
+            self._name_voices(voice, rhythm_voice, None)
         return voices
 
     ### PRIVATE METHODS ###
@@ -188,17 +190,15 @@ class WoodwindFingeringHandler(object):
                 )
             return glissando_map
 
-    def _make_resting_voices(self):
-        pass
-
     def _name_voices(self, voice, rhythm_voice, lifeline_voice):
         instrument = self.music_maker.instrument
         voice.name = self.music_maker.name
         rhythm_voice.name = self.music_maker.name + ' Rhythm'
-        lifeline_voice.name = '{} Hand {}'.format(
-            self.hand.capitalize(),
-            "Fingering Lifeline"
-            )
+        if lifeline_voice is not None:
+            lifeline_voice.name = '{} Hand {}'.format(
+                self.hand.capitalize(),
+                "Fingering Lifeline"
+                )
     ### PUBLIC PROPERTIES ###
     @property
     def instrument(self):

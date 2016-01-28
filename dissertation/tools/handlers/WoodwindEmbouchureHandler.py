@@ -55,15 +55,12 @@ class WoodwindEmbouchureHandler(object):
 
     def __call__(self, current_stage):
         voice = self.music_maker(current_stage)
-        rhythm_voice = None
+        rhythm_voice = copy.deepcopy(voice)
+        self._name_voices(voice, rhythm_voice)
         if current_stage in self.music_maker.stages:
             self._annotate_logical_ties(voice)
-            rhythm_voice = copy.deepcopy(voice)
-            self._name_voices(voice, rhythm_voice)
             self._handle_embouchure_voice(voice)
             self._handle_rhythm_voice(rhythm_voice)
-        else:
-            rhythm_voice = copy.deepcopy(voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
@@ -144,7 +141,7 @@ class WoodwindEmbouchureHandler(object):
 
     def _handle_air_pressure(self, logical_tie):
         air_pressure = inspect_(logical_tie[0]).get_annotation('air_pressure_start')
-        color = graphics_tools.desaturate_rgb(
+        color = graphics_tools.change_luminance(
                 air_pressure,
                 self.color
                 )

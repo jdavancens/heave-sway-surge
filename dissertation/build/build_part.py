@@ -10,11 +10,11 @@ if __name__ == '__main__':
 
     part_name = sys.argv[1]
     part_name_snake = stringtools.to_snake_case(part_name)
-    print(part_name_snake)
     this_file = os.path.abspath(__file__)
     build_path = os.path.dirname(this_file)
     part_ly_path = os.path.join(build_path, part_name_snake+'.ly')
     part_pdf_path = os.path.join(build_path, part_name_snake+'.pdf')
+    # remove old files
     if os.access(part_ly_path, os.F_OK):
         os.remove(part_ly_path)
     if os.access(part_pdf_path, os.F_OK):
@@ -35,3 +35,4 @@ if __name__ == '__main__':
         seconds = int(timer.elapsed_time)
         time = str(datetime.timedelta(seconds=seconds))
         print(time)
+    systemtools.IOManager.open_file(part_pdf_path)

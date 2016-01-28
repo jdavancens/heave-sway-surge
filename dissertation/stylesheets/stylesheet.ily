@@ -34,11 +34,11 @@ pad = 0.5
     ragged-bottom = ##t
     ragged-last-bottom = ##t
     ragged-right = ##f
-    indent = 0\in
+    indent = 0.5\in
     left-margin = 1\in
     right-margin = 0.5\in
     top-margin = 0.5\in
-    markup-system-spacing = #'(
+    %{markup-system-spacing = #'(
         (basic-distance . 0)
         (minimum-distance . 0)
         (padding . 0)
@@ -55,7 +55,7 @@ pad = 0.5
         (minimum-distance . 14)
         (padding . 0)
         (stretchability . 0)
-    )
+    )%}
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
@@ -82,6 +82,7 @@ pad = 0.5
     \context {
         \Voice
         \remove Forbid_line_break_engraver
+        \omit InstrumentName
         \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
         \override Glissando.thickness = #4
@@ -115,6 +116,7 @@ pad = 0.5
         \consists Pitch_squash_engraver
         \accepts Voice
         \omit Clef
+        \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
         \hide NoteHead
@@ -141,6 +143,8 @@ pad = 0.5
         \remove Bar_number_engraver
         \omit KeySignature
         \omit TimeSignature
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.X-offset = #-6
         \override VerticalAxisGroup.staff-staff-spacing = #'(
             (basic-distance . 12)
             (minimum-distance . 12)
@@ -163,6 +167,7 @@ pad = 0.5
         \consists Pitch_squash_engraver
         \accepts Voice
         \omit Clef
+        \omit InstrumentName
         \omit Glissando
         \omit TimeSignature
         \omit StaffSymbol
@@ -194,6 +199,7 @@ pad = 0.5
         \accepts Voice
         \omit Clef
         \omit Glissando
+        \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
         \override NoteHead.stencil = #point-stencil
@@ -221,6 +227,7 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists System_start_delimiter_engraver
         \accepts Voice
+        \hide Accidental
         \omit Beam
         \omit Clef
         \omit Dots
@@ -231,6 +238,8 @@ pad = 0.5
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.X-offset = #-6
         \override StaffSymbol.line-count = #30
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
@@ -266,21 +275,21 @@ pad = 0.5
         \override MetronomeMark.X-extent = #'(0 . 0)
         \override MetronomeMark.Y-extent = #'(0 . 0)
         \override MetronomeMark.break-align-symbols = #'(left-edge)
-        \override MetronomeMark.extra-offset = #'(0 . 4)
+        \override MetronomeMark.extra-offset = #'(0 . 2)
         \override MetronomeMark.font-size = 3
         \override MetronomeMark.outside-staff-priority = 0
         \override RehearsalMark.X-extent = #'(0 . 0)
         \override RehearsalMark.Y-extent = #'(0 . 0)
         \override RehearsalMark.X-offset = 6
-        \override RehearsalMark.Y-offset = -2.25
+        \override RehearsalMark.Y-offset = 12
         \override RehearsalMark.break-align-symbols = #'(time-signature)
         \override RehearsalMark.break-visibility = #end-of-line-invisible
-        \override RehearsalMark.font-name = "Times New Roman"
+        %{\override RehearsalMark.font-name = "Times New Roman"%}
         \override RehearsalMark.font-size = 10
         \override RehearsalMark.outside-staff-priority = 500
         \override RehearsalMark.self-alignment-X = #center
-        \override Script.font-size = 6
-        \override Script.extra-offset = #'(4 . -9)
+        \override Script.font-size = 10
+        \override Script.extra-offset = #'(4 . 12)
         \override TextScript.font-size = 6
         \override TextScript.outside-staff-priority = 600
         \override TextScript.padding = 8
@@ -315,9 +324,10 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        %{\omit BarLine%}
+        \omit BarLine
         \omit Clef
         \omit Glissando
+        \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
         \override StaffSymbol.line-count = #1
@@ -353,6 +363,8 @@ pad = 0.5
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.X-offset = #-6
         \override StaffSymbol.line-count = #10
         \override StaffSymbol.stencil = #(color-staff-lines
                                                 black white white white white
@@ -379,9 +391,10 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        %{\omit BarLine%}
+        \omit BarLine
         \omit Clef
         \omit Glissando
+        \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
         \override NoteHead.stencil = #point-stencil
@@ -418,6 +431,8 @@ pad = 0.5
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.X-offset = #-6
         \override NoteHead.stencil = \squareStencil
         \override NoteHead.X-offset = #-0.5
         \override StaffSymbol.line-count = 5
@@ -443,9 +458,10 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
-        %{\omit BarLine%}
+        \omit BarLine
         \omit Clef
         \omit Glissando
+        \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
         \override NoteHead.stencil = #point-stencil
@@ -482,6 +498,8 @@ pad = 0.5
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.X-offset = #-6
         \override NoteHead.stencil = \squareStencil
         \override NoteHead.X-offset = #-0.5
         \override StaffSymbol.line-count = #4
@@ -495,11 +513,11 @@ pad = 0.5
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF SUB-GROUPS
     % PIANO STAFF
-    % PIANO STAFF
     \context {
         \PianoStaff
         \omit KeySignature
         \omit TimeSignature
+        %\omit InstrumentName
         \override StaffGrouper.staff-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
@@ -523,6 +541,7 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
+        \omit InstrumentName
         %{\override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 48)
             (minimum-distance . 48)
@@ -539,7 +558,10 @@ pad = 0.5
         \accepts WoodwindRightHandFingeringStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
-        \remove System_start_delimiter_engraver
+        systemStartDelimiter = #'SystemStartBar
+        \override SystemStartBar.padding = #-7.5
+        \override SystemStartBar.thickness = #2
+        %{\remove System_start_delimiter_engraver%}
         %{\override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
@@ -559,7 +581,10 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
+        \omit InstrumentName
         %\override BarLine.allow-span-bar = ##f
+        %{\override InstrumentName.direction = #RIGHT
+        \override InstrumentName.padding = #2%}
         \override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 12)
@@ -579,6 +604,9 @@ pad = 0.5
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
         \remove System_start_delimiter_engraver
+        \override InstrumentName.direction = #LEFT
+        \override InstrumentName.self-alignment-X = #1
+        \override InstrumentName.padding = #-4
         %systemStartDelimiter = ##f
         %\override BarLine.allow-span-bar = ##f
         \override StaffGrouper.staffgroup-staff-spacing = #'(
@@ -605,12 +633,14 @@ pad = 0.5
         \consists Instrument_name_engraver
         %{\omit BarLine%}
         systemStartDelimiter = #'SystemStartBracket
-        %\override BarLine.allow-span-bar = ##f
-        \override SystemStartBar.padding = #1
+        \override BarLine.allow-span-bar = ##f
+        \override InstrumentName.self-alignment-X = #LEFT
+        \override InstrumentName.padding = #1
+        \override SystemStartBracket.padding = #7
         \override StaffGrouper.staffgroup-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 10)
-            (padding . 0)
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 12)
             (stretchability . 0))
 
     }
@@ -627,6 +657,7 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
+        %{\override BarLine.allow-span_bar = ##f%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
     % SCORE

@@ -20,5 +20,5 @@ staff_map = {
     'Pedaling' : ('Pedaling',),
     'Bowing Rhythm' : ('Bowing Rhythm',),
     'Fingering Rhythm' : ('Fingering Rhythm',),
-    'String Space' : ('Bowing', 'Fingering')
+    'String Space' : ('Bowing','Bowing String Number','Fingering')
     }

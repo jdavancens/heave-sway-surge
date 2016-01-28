@@ -32,7 +32,7 @@ talea_maker = rhythmmakertools.TaleaRhythmMaker(
 # MUSIC-MAKERS
 #===============================================================================
 rh_music_maker = MusicMaker(
-    stages=(0,),
+    stages=(0,1),
     instrument=piano,
     name='Right Hand',
     divisions=divisions,
@@ -40,13 +40,13 @@ rh_music_maker = MusicMaker(
     rhythm_maker=talea_maker
     )
 lh_music_maker = MusicMaker(
-    stages=(0,),
+    stages=(0,1),
     instrument=piano,
     name='Left Hand',
     time_signatures=time_signatures
 )
 ped_music_maker = MusicMaker(
-    stages=(0,),
+    stages=(0,1),
     instrument=piano,
     name='Pedaling',
     time_signatures=time_signatures,
