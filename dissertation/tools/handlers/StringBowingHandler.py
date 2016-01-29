@@ -217,6 +217,12 @@ class StringBowingHandler(object):
             override(logical_tie[0]).note_head.text = markup
             #override(logical_tie[0]).note_head.extra_offset = (0, -8)
             #override(logical_tie)
+            if len(logical_tie) > 1:
+                for leaf in logical_tie[1:]:
+                    point_note_head(leaf)
+        else:
+            for leaf in logical_tie:
+                point_note_head(leaf)
 
     def _hide_note_heads(self, logical_tie):
         for leaf in logical_tie:
