@@ -19,7 +19,7 @@ class StringFingeringHandler(object):
     __slots__ = (
         'music_maker',
         'fingerings',
-        'pattern',
+        'patterns',
         'color',
         'number_of_staff_lines'
     )
@@ -30,15 +30,18 @@ class StringFingeringHandler(object):
         self,
         music_maker=None,
         fingerings=None,
-        pattern=None,
+        patterns=None,
         color=None,
         number_of_staff_lines=None
         ):
         self.music_maker = music_maker
         self.fingerings = fingerings
-        self.pattern = pattern
-        self.color = color
+        self.patterns = patterns
         self.number_of_staff_lines = number_of_staff_lines
+        if color is None:
+            self.color = (0,0,255)
+        else:
+            self.color = color
 
     ### SPECIAL METHODS ###
 
@@ -46,7 +49,7 @@ class StringFingeringHandler(object):
         voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
-            self._annotate_logical_ties(voice)
+            self._annotate_logical_ties(voice, current_stage)
             self._name_voices(voice, rhythm_voice)
             self._handle_fingering_voice(voice)
             self._handle_rhythm_voice(rhythm_voice)
@@ -77,9 +80,14 @@ class StringFingeringHandler(object):
             attach(next_height_start, current[0])
 
     def _annotate_logical_ties(self, voice):
-        logical_ties = list(iterate(voice).by_logical_tie())
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.patterns)
+        pattern = self.patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
+
+        logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
                 i = cursor.next()[0]

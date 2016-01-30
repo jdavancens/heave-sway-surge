@@ -18,10 +18,10 @@ class NormalMusicHandler(object):
     __slots__ = (
         'music_maker',
         'pitch_sets',
-        'pitch_sets_pattern',
+        'pitch_set_patterns',
         'dynamics',
         'articulations',
-        'articulation_pattern',
+        'articulation_patterns',
         'slurs',
         'glissandi',
         'trills',
@@ -34,10 +34,10 @@ class NormalMusicHandler(object):
         self,
         music_maker=None,
         pitch_sets=None,
-        pitch_sets_pattern=None,
+        pitch_set_patterns=None,
         dynamics=None,
         articulations=None,
-        articulation_pattern=None,
+        articulation_patterns=None,
         slurs=None,
         glissandi=None,
         trills=None,
@@ -45,10 +45,10 @@ class NormalMusicHandler(object):
         ):
         self.music_maker = music_maker
         self.pitch_sets = pitch_sets
-        self.pitch_sets_pattern = pitch_sets_pattern
+        self.pitch_set_patterns = pitch_set_patterns
         self.dynamics = dynamics
         self.articulations = articulations
-        self.articulation_pattern = articulation_pattern
+        self.articulation_patterns = articulation_patterns
         self.slurs = slurs
         self.glissandi = glissandi
         self.trills = trills
@@ -60,9 +60,9 @@ class NormalMusicHandler(object):
         voice = self.music_maker(current_stage)
         voice.name = self.music_maker.name
         if current_stage in self.music_maker.stages:
-            self._handle_pitches(voice)
+            self._handle_pitches(voice, current_stage)
             if self.articulations is not None:
-                self._handle_articulations(voice)
+                self._handle_articulations(voice, current_stage)
             if self.dynamics is not None:
                 self._handle_dynamics(voice)
             if self.slurs is not None:
@@ -78,12 +78,16 @@ class NormalMusicHandler(object):
 
     ### PRIVATE METHODS ###
 
-    def _handle_articulations(self, voice):
-        articulation_cycle = datastructuretools.CyclicTuple(self.articulation_pattern)
-        cursor = datastructuretools.Cursor(articulation_cycle)
+    def _handle_articulations(self, voice, current_stage):
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.articulation_patterns)
+        pattern = self.articulation_patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
+        cursor = datastructuretools.Cursor(cycle)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            i = self.articulation_pattern[cursor.next()[0]]
-            articulations = self.articulations[i]
+            articulation_index = pattern[cursor.next()[0]]
+            articulations = self.articulations[articulation_index]
             if isinstance(articulations, Articulation):
                 attach(articulations, logical_tie[0])
             else:
@@ -122,11 +126,16 @@ class NormalMusicHandler(object):
                 attach(glissando, group)
 
 
-    def _handle_pitches(self, voice):
-        pitch_cycle = datastructuretools.CyclicTuple(self.pitch_sets_pattern)
-        pitch_cursor = datastructuretools.Cursor(pitch_cycle)
+    def _handle_pitches(self, voice, current_stage):
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.pitch_set_patterns)
+        pattern = self.pitch_set_patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
+        cursor = datastructuretools.Cursor(cycle)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            pitch_set = self.pitch_sets[pitch_cursor.next()[0]]
+            pitch_set_index = cursor.next()[0]
+            pitch_set = self.pitch_sets[pitch_set_index]
             for note in logical_tie:
                 if len(pitch_set) == 1:
                     note.note_head = pitch_set.items[0]

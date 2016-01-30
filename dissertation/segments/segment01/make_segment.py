@@ -17,9 +17,10 @@ from dissertation.segments.segment01 import cello_definition
 from dissertation.segments.segment01 import bass_definition
 from dissertation.materials.segment01.time_signatures import *
 from dissertation.materials.segment01.tempo_map import tempo_map
-def make_segment():
+
+def make_segment(number_of_stages=None):
     segment_maker = SegmentMaker(
-        number_of_stages=2,
+        number_of_stages=number_of_stages,
         segment_number=1,
         tempo_map=tempo_map,
         time_signatures=time_signatures,

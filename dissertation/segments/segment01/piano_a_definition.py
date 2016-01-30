@@ -8,10 +8,15 @@ from abjad import *
 from dissertation import *
 from dissertation.materials.segment01 import *
 
+#===============================================================================
+#  GLOBAL VARIABLES
+#===============================================================================
+
 piano = instrumenttools.Piano(
     instrument_name='Piano A',
     short_instrument_name="Pn. A"
     )
+stages = (1,)
 
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -28,11 +33,12 @@ talea_maker = rhythmmakertools.TaleaRhythmMaker(
     talea=rh_talea,
     duration_spelling_specifier=duration_spelling_specifier
 )
+
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
 rh_music_maker = MusicMaker(
-    stages=(0,1),
+    stages=stages,
     instrument=piano,
     name='Right Hand',
     divisions=divisions,
@@ -40,19 +46,20 @@ rh_music_maker = MusicMaker(
     rhythm_maker=talea_maker
     )
 lh_music_maker = MusicMaker(
-    stages=(0,1),
+    stages=stages,
     instrument=piano,
     name='Left Hand',
     time_signatures=time_signatures
 )
 ped_music_maker = MusicMaker(
-    stages=(0,1),
+    stages=stages,
     instrument=piano,
     name='Pedaling',
     time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=note_maker
 )
+
 #===============================================================================
 #  INSTRUMENT ACTIONS: VECTORS, FINGERINGS, AND PITCH SETS
 #===============================================================================
@@ -68,7 +75,7 @@ rh_pitch_sets = (
 rh_handler = handlers.PianoActionHandler(
     music_maker=rh_music_maker,
     pitch_sets=rh_pitch_sets,
-    pitch_pattern=(0,),
+    pitch_patterns=[[0]],
     dynamics = (Dynamic('pp'),)
     )
 lh_handler = handlers.PianoActionHandler(

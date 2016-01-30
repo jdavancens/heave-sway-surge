@@ -3,10 +3,13 @@
 from abjad import *
 from dissertation import *
 from dissertation.segments.segment01.make_segment import make_segment
-import datetime
-import os
+import datetime, os, sys
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        number_of_stages = int(sys.argv[1])
+    else:
+        number_of_stages = None
     this_file = os.path.abspath(__file__)
     build_path = os.path.dirname(this_file)
     score_ly_path = os.path.join(build_path, 'score.ly')
@@ -17,7 +20,7 @@ if __name__ == '__main__':
         os.remove(score_pdf_path)
 
     print("Making segment ...")
-    segment = make_segment()
+    segment = make_segment(number_of_stages)
     print("Made segment")
     with systemtools.Timer() as timer:
         print("Making Lilypond file ... ")

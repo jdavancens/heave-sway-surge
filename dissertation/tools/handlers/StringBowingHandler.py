@@ -19,7 +19,7 @@ class StringBowingHandler(object):
     __slots__ = (
         'music_maker',
         'bowings',
-        'pattern',
+        'patterns',
         'color',
         'number_of_staff_lines'
         )
@@ -30,15 +30,18 @@ class StringBowingHandler(object):
         self,
         music_maker=None,
         bowings=None,
-        pattern=None,
+        patterns=None,
         color=None,
         number_of_staff_lines=None
         ):
 
         self.music_maker = music_maker
         self.bowings = bowings
-        self.pattern = pattern
-        self.color = color
+        self.patterns = patterns
+        if color is None:
+            self.color = (255,0,0)
+        else:
+            self.color = color
         self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
@@ -48,7 +51,7 @@ class StringBowingHandler(object):
         rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
             string_number_voice = None
-            self._annotate_logical_ties(voice)
+            self._annotate_logical_ties(voice, current_stage)
             string_number_voice = copy.deepcopy(voice)
             self._handle_bowing_voice(voice)
             self._handle_string_number_voice(string_number_voice)
@@ -112,9 +115,14 @@ class StringBowingHandler(object):
             attach(previous_string_ids, current[0])
 
     def _annotate_logical_ties(self, voice):
-        logical_ties = list(iterate(voice).by_logical_tie())
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.patterns)
+        pattern = self.patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
+
+        logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
                 i = cursor.next()[0]
@@ -134,7 +142,7 @@ class StringBowingHandler(object):
 
     def _attach_glissando(self, logical_tie):
         pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
-        color = graphics_tools.desaturate_rgb(
+        color = graphics_tools.change_luminance(
             pressure,
             self.color
             )
@@ -203,26 +211,75 @@ class StringBowingHandler(object):
             string_ids = datastructuretools.TypedTuple(string_ids)
         last_string_ids = inspect_(logical_tie[0]).get_annotation('previous_string_ids')
         if string_ids != last_string_ids:
-            column = []
-            for string_id in string_ids:
-                markup = Markup(string_id.capitalize()).bold()
-                column.append(markup)
-            markup = Markup.column(column, direction=None)
-            markup = markup.fontsize(-4)
-            markup = markup.raise_(0.5)
-            markup = markup.box()
-            #markup = markup.with_dimensions((0,1),(0,0))
-            markup = markup.whiteout()
-            override(logical_tie[0]).note_head.stencil = 'ly:text-interface::print'
-            override(logical_tie[0]).note_head.text = markup
-            #override(logical_tie[0]).note_head.extra_offset = (0, -8)
-            #override(logical_tie)
+            self._text_to_note_head(logical_tie[0],string_ids, enclosure='box')
+            # column = []
+            # for string_id in string_ids:
+            #     markup = Markup(string_id.capitalize()).bold()
+            #     column.append(markup)
+            # markup = Markup.column(column, direction=None)
+            # markup = markup.fontsize(-4)
+            # markup = markup.raise_(0.5)
+            # markup = markup.box()
+            # #markup = markup.with_dimensions((0,1),(0,0))
+            # markup = markup.whiteout()
+            # override(logical_tie[0]).note_head.stencil = 'ly:text-interface::print'
+            # override(logical_tie[0]).note_head.text = markup
+            # #override(logical_tie[0]).note_head.extra_offset = (0, -8)
+            # #override(logical_tie)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     point_note_head(leaf)
         else:
             for leaf in logical_tie:
                 point_note_head(leaf)
+
+    def _text_to_note_head(
+        self,
+        note,
+        text_or_tuple,
+        orientation='x',
+        size=-4,
+        enclosure=None,
+        bold=False,
+        uppercase=False,
+        ):
+        # make a list even if one string
+        if isinstance(text_or_tuple, str):
+            text_list = [text_or_tuple]
+        else:
+            text_list = text_or_tuple
+        # handle vertical and horizontal orientations
+        if orientation == 'y':
+            if len(text_list)<2:
+                markup_string = text_list[0]
+            else:
+                markup_string = ','.join(text_list)
+            if uppercase:
+                markup = markup.upper()
+            markup = Markup(markup_string)
+            if bold:
+                markup = markup.bold()
+        else:
+            column = []
+            for text in text_list:
+                if capitalize:
+                    text = text.upper()
+                markup = Markup(text)
+                if bold:
+                    markup = markup.bold()
+                column.append(Markup(text))
+            markup = Markup.column(column, direction=None)
+
+        markup = markup.fontsize(size)
+        markup = markup.raise_(0.5)
+        if enclosure == 'box':
+            markup = markup.box()
+        elif enclosure == 'circle':
+            markup = markup.circle()
+        markup = markup.whiteout()
+        override(note).note_head.stencil = 'ly:text-interface::print'
+        override(note).note_head.text = markup
+
 
     def _hide_note_heads(self, logical_tie):
         for leaf in logical_tie:

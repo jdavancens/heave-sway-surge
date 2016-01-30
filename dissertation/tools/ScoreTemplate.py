@@ -70,9 +70,11 @@ class ScoreTemplate(abctools.AbjadValueObject):
                     bass finger rhythm staff
     '''
 
-    ### SPECIAL METHODS ###
+    ### CLASS ATTRIBUTES ###
+    __slots__ = ('instrument_list')
 
-    def __call__(
+    ### SPECIAL METHODS ###
+    def __init__(
         self,
         instrument_list=[
             'oboe',
@@ -85,7 +87,10 @@ class ScoreTemplate(abctools.AbjadValueObject):
             'cello',
             'bass',
             ]
-        ):
+    ):
+        self.instrument_list = instrument_list
+
+    def __call__(self):
         r'''Calls score template.
         Creates time signature, voice, staff and staff group contexts
         Returns a score.
@@ -559,20 +564,42 @@ class ScoreTemplate(abctools.AbjadValueObject):
 
         ####################################################ENSEMBLE STAFF GROUP
         ensemble_staff_group = StaffGroup(
-            [
-                oboe_staff_group,
-                clarinet_staff_group,
-                saxophone_staff_group,
-                piano_a_staff_group,
-                piano_b_staff_group,
-                violin_staff_group,
-                viola_staff_group,
-                cello_staff_group,
-                bass_staff_group
-            ],
             context_name='EnsembleStaffGroup',
             name='Ensemble Staff Group'
-            )
+        )
+        if 'oboe' in self.instrument_list:
+            ensemble_staff_group.append(oboe_staff_group)
+        if 'clarinet' in self.instrument_list:
+            ensemble_staff_group.append(clarinet_staff_group)
+        if 'saxophone' in self.instrument_list:
+            ensemble_staff_group.append(saxophone_staff_group)
+        if 'piano a' in self.instrument_list:
+            ensemble_staff_group.append(piano_a_staff_group)
+        if 'piano b' in self.instrument_list:
+            ensemble_staff_group.append(piano_b_staff_group)
+        if 'violin' in self.instrument_list:
+            ensemble_staff_group.append(violin_staff_group)
+        if 'viola' in self.instrument_list:
+            ensemble_staff_group.append(viola_staff_group)
+        if 'cello' in self.instrument_list:
+            ensemble_staff_group.append(cello_staff_group)
+        if 'bass' in self.instrument_list:
+            ensemble_staff_group.append(bass_staff_group)
+        # ensemble_staff_group = StaffGroup(
+        #     [
+        #         oboe_staff_group,
+        #         clarinet_staff_group,
+        #         saxophone_staff_group,
+        #         piano_a_staff_group,
+        #         piano_b_staff_group,
+        #         violin_staff_group,
+        #         viola_staff_group,
+        #         cello_staff_group,
+        #         bass_staff_group
+        #     ],
+        #     context_name='EnsembleStaffGroup',
+        #     name='Ensemble Staff Group'
+        #     )
 
         ###################################################################SCORE
         score = Score(

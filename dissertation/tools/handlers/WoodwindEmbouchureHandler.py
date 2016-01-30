@@ -29,7 +29,7 @@ class WoodwindEmbouchureHandler(object):
     __slots__ = (
         'music_maker',
         'embouchures',
-        'pattern',
+        'patterns',
         'color',
         'number_of_staff_lines',
     )
@@ -40,15 +40,18 @@ class WoodwindEmbouchureHandler(object):
         self,
         music_maker=None,
         embouchures=None,
-        pattern=None,
+        patterns=None,
         color=None,
         number_of_staff_lines=None,
         ):
 
         self.music_maker = music_maker
         self.embouchures = embouchures
-        self.pattern = pattern
-        self.color = color
+        self.patterns = patterns
+        if color is None:
+            self.color = (255,0,0)
+        else:
+            self.color = color
         self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
@@ -58,7 +61,7 @@ class WoodwindEmbouchureHandler(object):
         rhythm_voice = copy.deepcopy(voice)
         self._name_voices(voice, rhythm_voice)
         if current_stage in self.music_maker.stages:
-            self._annotate_logical_ties(voice)
+            self._annotate_logical_ties(voice, current_stage)
             self._handle_embouchure_voice(voice)
             self._handle_rhythm_voice(rhythm_voice)
         return [voice, rhythm_voice]
@@ -106,10 +109,14 @@ class WoodwindEmbouchureHandler(object):
                 next_vowel_start)
             attach(next_vowel_start, current[0])
 
-    def _annotate_logical_ties(self, voice):
-        logical_ties = list(iterate(voice).by_logical_tie())
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+    def _annotate_logical_ties(self, voice, current_stage):
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.patterns)
+        pattern = self.patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
+        logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
                 embouchure = self.embouchures[cursor.next()[0]]
@@ -161,10 +168,7 @@ class WoodwindEmbouchureHandler(object):
                     point_note_head(leaf)
 
     def _handle_embouchure_voice(self, voice):
-        cycle = datastructuretools.CyclicTuple(self.pattern)
-        cursor = datastructuretools.Cursor(cycle)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            embouchure = self.embouchures[cursor.next()[0]]
             self._map_note_heads(logical_tie)
             self._insert_gliss_anchor(logical_tie)
             self._handle_air_pressure(logical_tie)

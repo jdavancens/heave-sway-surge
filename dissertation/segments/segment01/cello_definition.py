@@ -129,20 +129,17 @@ fingerings = (
 #===============================================================================
 # MUSIC-HANDLERS
 #===============================================================================
-
 bowing_music_handler = handlers.StringBowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
-        pattern=(0, 1),
+        patterns=[[0,1]],
         number_of_staff_lines=30,
-        color=(255, 69, 0)
         )
 fingering_music_handler = handlers.StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
-        pattern=(0, 2, 1, 3, 2, 1, 3, 0, 1),
+        patterns=[[0, 2, 1, 3, 2, 1, 3, 0, 1]],
         number_of_staff_lines=30,
-        color=(24, 116, 205)
         )
 music_handlers = [
     bowing_music_handler,

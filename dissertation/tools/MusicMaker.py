@@ -42,7 +42,10 @@ class MusicMaker:
         self._instrument = instrument
         self._name = name
         self.rhythm_maker = rhythm_maker
-        self._stages = stages
+        if isinstance(stages, int):
+            self.stages = (stages,)
+        else:
+            self._stages = stages
         self.time_signatures = sequencetools.flatten_sequence(time_signatures)
         # check that divisions and time signatures are the same duration
         if self.divisions is not None:

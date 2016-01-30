@@ -16,11 +16,11 @@ class PianoActionHandler(abctools.AbjadObject):
     __slots__ = (
         'music_maker',
         'articulations',
-        'articulation_pattern',
+        'articulation_patterns',
         'dynamics',
-        'dynamic_pattern',
+        'dynamic_patterns',
         'pitch_sets',
-        'pitch_pattern',
+        'pitch_patterns',
         )
 
     ### INTIALIZER ###
@@ -28,27 +28,25 @@ class PianoActionHandler(abctools.AbjadObject):
     def __init__ (
         self,
         articulations=None,
-        articulation_pattern=None,
+        articulation_patterns=None,
         dynamics=None,
-        dynamic_pattern=None,
+        dynamic_patterns=None,
         music_maker=None,
         pitch_sets=None,
-        pitch_pattern=None,
+        pitch_patterns=None,
         ):
         self.music_maker = music_maker
         self.articulations = articulations
-        self.articulation_pattern = articulation_pattern
+        self.articulation_patterns = articulation_patterns
         if isinstance(dynamics, indicatortools.Dynamic):
             self.dynamics = [dynamics]
         elif isinstance(dynamics, tuple):
             self.dynamics = dynamics
         else:
             self.dynamics = None
-        self.dynamic_pattern = dynamic_pattern
-        if dynamics is not None and dynamic_pattern is None:
-            self.dynamic_pattern = range(len(dynamics))
+        self.dynamic_patterns = dynamic_patterns
         self.pitch_sets = pitch_sets
-        self.pitch_pattern = pitch_pattern
+        self.pitch_patterns = pitch_patterns
 
     ### SPECIAL METHODS ###
 
@@ -56,17 +54,21 @@ class PianoActionHandler(abctools.AbjadObject):
         voice = self.music_maker(current_stage)
         voice.name = self.music_maker.name
         if current_stage in self.music_maker.stages:
-            self._attach_pitches(voice)
-            self._attach_articulations(voice)
-            self._attach_dynamics(voice)
+            self._attach_pitches(voice, current_stage)
+            self._attach_articulations(voice, current_stage)
+            self._attach_dynamics(voice, current_stage)
             self._attach_clef(voice)
         return [voice]
 
     ### PRIVATE METHODS ###
 
-    def _attach_articulations(self, voice):
+    def _attach_articulations(self, voice, current_stage):
         if self.articulations is not None:
-            articulation_cycle = datastructuretools.CyclicTuple(self.articulation_pattern)
+            stages = self.music_maker.stages
+            current_stage_index = stages.index(current_stage)
+            pattern_index = current_stage_index % len(self.articulation_patterns)
+            pattern = self.articulation_patterns[pattern_index]
+            articulation_cycle = datastructuretools.CyclicTuple(pattern)
             articulation_cursor = datastructuretools.Cursor(articulation_cycle)
             for logical_tie in iterate(voice).by_logical_tie(pitched=True):
                 articulation = self.articulations[articulation_cursor.next()[0]]
@@ -92,9 +94,17 @@ class PianoActionHandler(abctools.AbjadObject):
                 attach(bass_clef, voice.select_leaves()[0])
 
 
-    def _attach_dynamics(self, voice):
-        if self.dynamic_pattern is not None:
-            dynamics_cycle = datastructuretools.CyclicTuple(self.dynamic_pattern)
+    def _attach_dynamics(self, voice, current_stage):
+        if self.dynamic_patterns is not None:
+            stages = self.music_maker.stages
+            current_stage_index = stages.index(current_stage)
+            print('patterns', self.dynamic_patterns)
+            print('current_stage_index', current_stage_index)
+            pattern_index = current_stage_index % len(self.dynamic_patterns)
+            print('pattern_index', pattern_index)
+            pattern = self.dynamic_patterns[pattern_index]
+            print('pattern', pattern)
+            dynamics_cycle = datastructuretools.CyclicTuple(pattern)
             dynamics_cursor = datastructuretools.Cursor(dynamics_cycle)
             last_dynamic = None
             for logical_tie in iterate(voice).by_logical_tie(pitched=True):
@@ -105,9 +115,13 @@ class PianoActionHandler(abctools.AbjadObject):
                         attach(dynamic, logical_tie[0])
                     last_dynamic = dynamic
 
-    def _attach_pitches(self, voice):
-        if self.pitch_pattern is not None:
-            pitch_cycle = datastructuretools.CyclicTuple(self.pitch_pattern)
+    def _attach_pitches(self, voice, current_stage):
+        if self.pitch_patterns is not None:
+            stages = self.music_maker.stages
+            current_stage_index = stages.index(current_stage)
+            pattern_index = current_stage_index % len(self.pitch_patterns)
+            pattern = self.pitch_patterns[pattern_index]
+            pitch_cycle = datastructuretools.CyclicTuple(pattern)
             pitch_cursor = datastructuretools.Cursor(pitch_cycle)
             for logical_tie in iterate(voice).by_logical_tie(pitched=True):
                 pitch_set = self.pitch_sets[pitch_cursor.next()[0]]

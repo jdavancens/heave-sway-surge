@@ -22,7 +22,7 @@ class WoodwindFingeringHandler(object):
         'music_maker',
         'fingerings',
         'hand',
-        'pattern',
+        'patterns',
         )
 
     ### INITIALIZER ###
@@ -32,12 +32,12 @@ class WoodwindFingeringHandler(object):
         music_maker=None,
         hand=None,
         fingerings=None,
-        pattern=None
+        patterns=None
         ):
         self.music_maker = music_maker
         self.hand = hand.lower()
         self.fingerings = fingerings
-        self.pattern = pattern
+        self.patterns = patterns
 
     ### SPECIAL METHODS ###
 
@@ -48,8 +48,8 @@ class WoodwindFingeringHandler(object):
         rhythm_voice = None
         rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
-            self._handle_fingerings(voice)
-            lifeline_voice = self._make_lifeline_voice(voice)
+            self._handle_fingerings(voice, current_stage)
+            lifeline_voice = self._make_lifeline_voice(voice, current_stage)
             self._name_voices(voice, rhythm_voice, lifeline_voice)
             voices = [voice, rhythm_voice, lifeline_voice]
         else:
@@ -59,10 +59,14 @@ class WoodwindFingeringHandler(object):
 
     ### PRIVATE METHODS ###
 
-    def _handle_fingerings(self, voice):
-        logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+    def _handle_fingerings(self, voice, current_stage):
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.patterns)
+        pattern = self.patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
+        logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
         last_chord = None
         for logical_tie in logical_ties:
             fingering = self.fingerings[cursor.next()[0]]
@@ -135,7 +139,7 @@ class WoodwindFingeringHandler(object):
                             note_head.tweak.transparent = True
                 last_chord = chord
 
-    def _make_lifeline_voice(self, voice):
+    def _make_lifeline_voice(self, voice, current_stage):
         # copy voice to lifeline voice
         lifeline_voice = copy.deepcopy(voice)
         logical_ties = list(iterate(lifeline_voice).by_logical_tie(pitched=True))
@@ -148,7 +152,11 @@ class WoodwindFingeringHandler(object):
         grace_container = scoretools.GraceContainer([grace_chord], kind='after')
         attach(grace_container, last_leaf)
         # add lifelines (glissandi) to note heads
-        cycle = datastructuretools.CyclicTuple(self.pattern)
+        stages = self.music_maker.stages
+        current_stage_index = stages.index(current_stage)
+        pattern_index = current_stage_index % len(self.patterns)
+        pattern = self.patterns[pattern_index]
+        cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
         for logical_tie in logical_ties:
             for chord in logical_tie:

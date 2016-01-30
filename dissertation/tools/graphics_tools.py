@@ -10,19 +10,19 @@ def desaturate_rgb(saturation, rgb_tuple):
     hsv = colorsys.rgb_to_hsv(
         rgb_tuple[0]/255.,
         rgb_tuple[1]/255.,
-        rgb_tuple[2]/255.)
+        rgb_tuple[2]/255.
+    )
     h = hsv[0]
-    s = hsv[1]
+    s = (hsv[1] * saturation * 0.75) + (hsv[1] * 0.25)
     v = hsv[2]
-    s = (s * saturation * 0.75) + (s * 0.25)
     rgb = colorsys.hsv_to_rgb(h, s, v)
     return (rgb[0]*255., rgb[1]*255., rgb[2]*255.)
 
 def change_luminance(luminance, rgb_tuple):
     hls = colorsys.rgb_to_hls(
-        rgb_tuple[0],
-        rgb_tuple[1],
-        rgb_tuple[2]
+        rgb_tuple[0]/255.,
+        rgb_tuple[1]/255.,
+        rgb_tuple[2]/255.
     )
     rgb = colorsys.hls_to_rgb(hls[0], hls[1], luminance)
     return (rgb[0]*255., rgb[1]*255., rgb[2]*255.)

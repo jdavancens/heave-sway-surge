@@ -9,7 +9,6 @@ from dissertation import *
 from dissertation.materials.segment01 import *
 
 clarinet = instrumenttools.ClarinetInBFlat()
-color = (255,0,0)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
@@ -184,27 +183,26 @@ rh_fingerings = (
 voice_music_handler = handlers.NormalMusicHandler(
     music_maker=voice_music_maker,
     pitch_sets=voice_pitch_sets,
-    pitch_sets_pattern=(0,1,2,3,4,5),
+    pitch_set_patterns=[[0,1,2,3,4,5]]
 )
 embouchure_music_handler = handlers.WoodwindEmbouchureHandler(
         music_maker=embouchure_music_maker,
         embouchures=embouchures,
-        pattern=(0, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+        patterns=[[0, 1, 1, 1, 1, 1, 1, 1, 1, 1]],
         number_of_staff_lines=10,
-        color=color
         )
 
 lh_fingering_music_handler = handlers.WoodwindFingeringHandler(
         music_maker=lh_fingering_music_maker,
         hand='left',
         fingerings=lh_fingerings,
-        pattern=(0, 1)
+        patterns=[[0,1]]
         )
 rh_fingering_music_handler = handlers.WoodwindFingeringHandler(
         music_maker=rh_fingering_music_maker,
         hand='right',
         fingerings=rh_fingerings,
-        pattern=(0, 1)
+        patterns=[[0,1]]
         )
 music_handlers = [
     voice_music_handler,
