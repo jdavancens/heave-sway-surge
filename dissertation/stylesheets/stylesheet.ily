@@ -85,18 +85,19 @@ pad = 0.5
         \omit InstrumentName
         \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
-        \override Glissando.thickness = #4
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-500
         \override Glissando.gap = #0
         \override Glissando.bound-details =
             #'(
                 (right
                     (attch-dir . -1)
                     (end-on-accidental . #t)
-                    (padding . 0.5)
+                    (padding . 0)
                 )
                 (left
                     (attach-dir . 1)
-                    (padding . -0.6)
+                    (padding . 0.667)
                 )
             )
     }
@@ -397,7 +398,8 @@ pad = 0.5
         \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
-        \override NoteHead.stencil = #point-stencil
+        \hide NoteHead
+        \override NoteHead.stem-attachment = #'(-0.5 . 0)
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #UP
@@ -433,8 +435,7 @@ pad = 0.5
         \omit TupletNumber
         \override InstrumentName.self-alignment-X = #LEFT
         \override InstrumentName.X-offset = #-6
-        \override NoteHead.stencil = \squareStencil
-        \override NoteHead.X-offset = #-0.5
+        \override NoteHead.stem-attachment = #'(0.75 . 0)
         \override StaffSymbol.line-count = 5
         \override StaffSymbol.staff-space = 1.5
         \override VerticalAxisGroup.staff-staff-spacing = #'(
@@ -464,7 +465,8 @@ pad = 0.5
         \omit InstrumentName
         \omit TimeSignature
         \omit StaffSymbol
-        \override NoteHead.stencil = #point-stencil
+        \hide NoteHead
+        \override NoteHead.stem-attachment = #'(0.5 . 0)
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #DOWN
@@ -500,8 +502,7 @@ pad = 0.5
         \omit TupletNumber
         \override InstrumentName.self-alignment-X = #LEFT
         \override InstrumentName.X-offset = #-6
-        \override NoteHead.stencil = \squareStencil
-        \override NoteHead.X-offset = #-0.5
+        \override NoteHead.stem-attachment = #'(-0.75 . 0)
         \override StaffSymbol.line-count = #4
         \override StaffSymbol.staff-space = 1.5
         \override VerticalAxisGroup.staff-staff-spacing = #'(

@@ -46,7 +46,7 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
 tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     avoid_dots=True,
     flatten_trivial_tuplets=True,
-    simplify_tuplets=True,
+    simplify_redundant_tuplets=True,
     is_diminution=True,
 )
 

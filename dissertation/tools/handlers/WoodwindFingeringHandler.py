@@ -13,7 +13,8 @@ import copy
 
 class WoodwindFingeringHandler(object):
     '''A fingering handler for woodwind instruments.
-
+        Maps key index to staff position
+        Key indication as note head (open, closed), articulation (side keys)
     '''
 
     ### CLASS ATTRIBUTES ###
@@ -51,7 +52,7 @@ class WoodwindFingeringHandler(object):
             self._handle_fingerings(voice, current_stage)
             lifeline_voice = self._make_lifeline_voice(voice, current_stage)
             self._name_voices(voice, rhythm_voice, lifeline_voice)
-            voices = [voice, rhythm_voice, lifeline_voice]
+            voices = [voice, lifeline_voice, rhythm_voice]
         else:
             voices = [voice, rhythm_voice]
             self._name_voices(voice, rhythm_voice, None)
@@ -70,73 +71,35 @@ class WoodwindFingeringHandler(object):
         last_chord = None
         for logical_tie in logical_ties:
             fingering = self.fingerings[cursor.next()[0]]
-            # make chord from staff position
             if self.hand == 'left':
                 pitches = [4, 7, 11, 14, 17]
+                t = fingering.fingering['thumb']
+                i = fingering.fingering['index']
+                m = fingering.fingering['middle']
+                r = fingering.fingering['ring']
+                p = fingering.fingering['pinky']
+                fingers = [p, r, m, i, t]
             else:
                 pitches = [5, 9, 12, 16]
+                i = fingering.fingering['index']
+                m = fingering.fingering['middle']
+                r = fingering.fingering['ring']
+                p = fingering.fingering['pinky']
+                fingers = [p, r, m, i]
             for note in logical_tie:
                 chord = Chord(pitches, note.written_duration)
-
-                # add key markup for each finger to chord
-
-                r'''
-                    t = fingering.fingering['thumb'] or None
-                    i = fingering.fingering['index'] or None
-                    m = fingering.fingering['middle'] or None
-                    r = fingering.fingering['ring'] or None
-                    p = fingering.fingering['pinky'] or None
-
-                    if self.hand == 'left':
-                        fingers = [t,i,m,r,p]
-                        for i, note in enumerate(chord.note_heads):
-
-                    else:
-
-
-                '''
                 mutate(note).replace(chord)
-
-
-                # if self.hand == 'left':
-                #     if fingering.fingering['thumb'] is not None:
-                #         for key in fingering.fingering['thumb']:
-                #             if key is not 'thumb' and key is not 'T':
-                #                 markup = WoodwindFingering.key_markup(key)
-                #                 attach(markup, chord)
-                # if fingering.fingering['index'] is not None:
-                #     for key in fingering.fingering['index']:
-                #         if key is not 'down' and key is not 'half':
-                #             markup = WoodwindFingering.key_markup(key)
-                #             attach(markup, chord)
-                # if fingering.fingering['middle'] is not None:
-                #     for key in fingering.fingering['middle']:
-                #         if key is not 'down' and key is not 'half':
-                #             markup = WoodwindFingering.key_markup(key)
-                #             attach(markup, chord)
-                # if fingering.fingering['ring'] is not None:
-                #     for key in fingering.fingering['ring']:
-                #         if key is not 'down' and key is not 'half':
-                #             markup = WoodwindFingering.key_markup(key)
-                #             attach(markup, chord)
-                # if fingering.fingering['pinky'] is not None:
-                #     for key in fingering.fingering['pinky']:
-                #         if key is not 'down' and key is not 'half':
-                #             markup = WoodwindFingering.key_markup(key)
-                #             attach(markup, chord)
-
                 # hide noteheads for inactive keys and if continuation from last fingering
-                binary_list = fingering.as_binary_list()
-                binary_list.reverse()
                 for i, note_head in enumerate(chord.note_heads):
-                    if binary_list[i] == 0:
-                        note_head.tweak.transparent = True
+                    if fingers[i] is None:
+                        note_head.tweak.stencil = schemetools.Scheme('point-stencil')
                     else:
-                        note_head.tweak.transparent = False
-
-                    if last_chord is not None:
-                        if not last_chord.note_heads[i].tweak.transparent:
-                            note_head.tweak.transparent = True
+                        markup = self._make_note_head_markup(fingers[i])
+                        note_head.tweak.stencil = 'ly:text-interface::print'
+                        note_head.tweak.text = markup
+                    # if last_chord is not None:
+                    #     if not last_chord.note_heads[i].tweak.transparent:
+                    #         note_head.tweak.stencil = schemetools.Scheme('point-stencil')
                 last_chord = chord
 
     def _make_lifeline_voice(self, voice, current_stage):
@@ -161,7 +124,7 @@ class WoodwindFingeringHandler(object):
         for logical_tie in logical_ties:
             for chord in logical_tie:
                 for note_head in chord.note_heads:
-                    note_head.tweak.transparent = True
+                    note_head.tweak.stencil = schemetools.Scheme('point-stencil')
             fingering = self.fingerings[cursor.next()[0]]
             glissando_map = self._make_glissando_map(fingering, lifeline_voice.context_name)
             if glissando_map is not None :
@@ -171,13 +134,8 @@ class WoodwindFingeringHandler(object):
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
                        gliss_skip(chord)
-        labeltools.remove_markup_from_leaves_in_expr(lifeline_voice)
+        label(lifeline_voice).remove_markup()
         return lifeline_voice
-
-    def _handle_rhythm_voice(self, rhythm_voice):
-        self_name_rhythm_voice_and_context(rhythm_voice)
-        for leaf in rhythm_voice.select_leaves():
-            point_note_head(leaf)
 
     def _make_glissando_map(self, fingering, context_name):
         binary_list = fingering.as_binary_list()
@@ -198,6 +156,87 @@ class WoodwindFingeringHandler(object):
                 )
             return glissando_map
 
+    def _make_key_name_markup(self, key_name):
+        pitch = ['a','b','c','d','e','f','g','cis','fis','gis','ees','bes']
+        alt_pitch = ['low-bes', 'high-fis', 'low-c', 'front-f']
+        other = ['R', 'one', 'two', 'three', 'four', 'I', 'II', "III", 'banana']
+        if key_name in ('thumb', 'T', 'thumb', 'half', 'down'):
+            return None
+        if key_name.lower() in pitch:
+            if len(pitch) > 1:
+                p = key_name[0]
+                p = Markup(p.upper())
+                acc = pitch[1:]
+                if acc == 'es':
+                    acc = Markup.flat().raise_(0.5)
+                else:
+                    acc = Markup.sharp().raise_(0.5)
+            markup = Markup.concat([p,acc])
+        elif key_name.lower() in alt_pitch:
+            alt, pitch = key_name.split('-')
+            alt = Markup(alt)
+            if len(pitch) > 1:
+                p = pitch[0]
+                p = Markup(p.upper())
+                acc = pitch[1:]
+                if acc == 'es':
+                    acc = Markup.flat().raise_(0.5)
+                else:
+                    acc = Markup.sharp().raise_(0.5)
+            pitch = Markup.concat([p,acc])
+            markup = Markup.concat([alt, pitch])
+        elif key_name.lower() in other:
+            if key_name is 'one':
+                markup = Markup('I')
+            elif key_name is 'two':
+                markup = Markup('II')
+            elif key_name is 'three':
+                markup = Markup('III')
+            elif key_name is 'four':
+                markup = Markup('IV')
+            elif key_name is 'banana':
+                markup = Markup('bn')
+            else:
+                markup = Markup(key_name)
+        else:
+            markup = Markup(key_name)
+        markup = markup.raise_(-0.75)
+        markup = markup.fontsize(-6)
+        markup = markup.whiteout()
+        markup = markup.circle()
+        markup = markup.pad_around(0)
+        return markup
+
+    def _make_note_head_markup(self, key_combination):
+        ''' key names: a, b, c, d, e, f, g, cis, ees, bes, low-bes, cis, fis,
+        gis, high-fis, low-c, front-f, thumb, T, R, banana, one, two, three,
+        four, h, I, II, III.
+        positions: down, half
+        (down)
+        (half)
+        (b)
+        (down, b)
+        (half, b)
+        '''
+        markups = []
+        for key in key_combination:
+            if key.lower() in ('t', 'thumb', 'down'):
+                box = Markup.filled_box((-0.5, 0.5), (-0.5, 0.5), 0.)
+                markups.append(box)
+            elif key.lower() is 'half':
+                dot = Markup.filled_box((-0.2, 0.2), (-0.2, 0.2), 0.)
+                dot_in_box = dot.box().whiteout()
+                markups.append(dot_in_box)
+            else:
+                markup = self._make_key_name_markup(key)
+                markups.append(markup)
+        if len(markups) > 1:
+            markups.reverse()
+            markup = Markup.concat(markups).fontsize(-4)
+            return markup
+        else:
+            return markups[0]
+
     def _name_voices(self, voice, rhythm_voice, lifeline_voice):
         instrument = self.music_maker.instrument
         voice.name = self.music_maker.name
@@ -207,6 +246,7 @@ class WoodwindFingeringHandler(object):
                 self.hand.capitalize(),
                 "Fingering Lifeline"
                 )
+
     ### PUBLIC PROPERTIES ###
     @property
     def instrument(self):

@@ -79,7 +79,7 @@ class StringFingeringHandler(object):
                 next_height_start)
             attach(next_height_start, current[0])
 
-    def _annotate_logical_ties(self, voice):
+    def _annotate_logical_ties(self, voice, current_stage):
         stages = self.music_maker.stages
         current_stage_index = stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)

@@ -114,7 +114,7 @@ class StringBowingHandler(object):
                 )
             attach(previous_string_ids, current[0])
 
-    def _annotate_logical_ties(self, voice):
+    def _annotate_logical_ties(self, voice, current_stage):
         stages = self.music_maker.stages
         current_stage_index = stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
@@ -254,15 +254,15 @@ class StringBowingHandler(object):
                 markup_string = text_list[0]
             else:
                 markup_string = ','.join(text_list)
+            markup = Markup(markup_string)
             if uppercase:
                 markup = markup.upper()
-            markup = Markup(markup_string)
             if bold:
                 markup = markup.bold()
         else:
             column = []
             for text in text_list:
-                if capitalize:
+                if uppercase:
                     text = text.upper()
                 markup = Markup(text)
                 if bold:

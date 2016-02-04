@@ -33,7 +33,7 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     rewrite_meter=True, spell_metrically=True,
     )
 tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
-    avoid_dots=True, flatten_trivial_tuplets=True, simplify_tuplets=True,
+    avoid_dots=True, flatten_trivial_tuplets=True, simplify_redundant_tuplets=True,
     is_diminution=True,
 )
 stages = (0,)

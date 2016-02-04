@@ -9,14 +9,14 @@ import sys
 if __name__ == '__main__':
     # get inputs parameters
     if len(sys.argv) == 1:
-        part_name = raw_input("Enter part name: ")
+        part_name = input("Enter part name: ")
         part_name_snake_case = stringtools.to_snake_case(part_name)
-        number_of_stages = raw_input("Enter number of stages to build: ")
+        number_of_stages = input("Enter number of stages to build: ")
         number_of_stages = int(number_of_stages)
     if len(sys.argv) == 2:
         part_name = sys.argv[1]
         part_name_snake_case = stringtools.to_snake_case(part_name)
-        number_of_stages = raw_input("Enter number of stages to build: ")
+        number_of_stages = input("Enter number of stages to build: ")
         number_of_stages = int(number_of_stages)
     if len(sys.argv) == 3:
         part_name = sys.argv[1]

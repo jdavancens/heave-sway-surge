@@ -32,6 +32,7 @@ class WoodwindFingering(object):
         self._instrument = instrument
         self._hand = hand
         self._fingering = fingering
+        # make tuples
         if hand == "left":
             assert len(fingering) == 5
             if isinstance(fingering['thumb'], str):
@@ -138,34 +139,34 @@ class WoodwindFingering(object):
 
     def key_markup(key):
         d = {
-            'R':Markup('R', direction=Up),
-            'I':Markup('I', direction=Up),
-            'II':Markup('II', direction=Up),
-            'III':Markup('III', direction=Up),
-            'a':Markup('A', direction=Down),
-            'bes':Markup(r"B\flat", direction=Down),
-            'b':Markup('B', direction=Down),
-            'c':Markup('C', direction=Down),
-            'cis':Markup(r"C\sharp", direction=Down),
-            'd':Markup('D', direction=Down),
-            'ees':Markup(r"E\flat", direction=Down),
-            'e':Markup('E', direction=Down),
-            'f':Markup('F', direction=Down),
-            'fis':Markup(r"F\sharp", direction=Down),
-            'g':Markup('G', direction=Down),
-            'gis':Markup(r"G\sharp", direction=Down),
-            'one':Markup(1, direction=Down).finger(),
-            'two':Markup(2, direction=Down).finger(),
-            'three':Markup(3, direction=Down).finger(),
-            'four':Markup(4, direction=Down).finger(),
-            'front-f':Markup('F', direction=Down),
-            'low-bes':Markup(r"B\flat", direction=Down),
-            'low-c':Markup('C', direction=Down),
-            'high-fis':Markup(r"F\sharp", direction=Down),
+            'R':Markup('R'),
+            'I':Markup('I'),
+            'II':Markup('II'),
+            'III':Markup('III'),
+            'a':Markup('A'),
+            'bes':Markup(r"B\flat"),
+            'b':Markup('B'),
+            'c':Markup('C'),
+            'cis':Markup(r"C\sharp"),
+            'd':Markup('D'),
+            'ees':Markup(r"E\flat"),
+            'e':Markup('E'),
+            'f':Markup('F'),
+            'fis':Markup(r"F\sharp"),
+            'g':Markup('G'),
+            'gis':Markup(r"G\sharp"),
+            'one':Markup(1).finger(),
+            'two':Markup(2).finger(),
+            'three':Markup(3).finger(),
+            'four':Markup(4).finger(),
+            'front-f':Markup('F'),
+            'low-bes':Markup(r"B\flat"),
+            'low-c':Markup('C'),
+            'high-fis':Markup(r"F\sharp"),
             'down':None,
             'half':None,
         }
-        return d[key]
+        return d[key].fontsize(-4)._raise(-0.5).whiteout()
     def key_options(self, instrument, hand, finger):
         d ={
             'oboe':{
