@@ -130,7 +130,7 @@ class WoodwindFingeringHandler(object):
             if glissando_map is not None :
                 attach(glissando_map, logical_tie[0])
                 color = scheme_rgb_color((0,0,0))
-                gliss(logical_tie[0], color=color, thickness=4)
+                gliss(logical_tie[0], color=color,thickness=3)
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
                        gliss_skip(chord)
@@ -200,7 +200,7 @@ class WoodwindFingeringHandler(object):
                 markup = Markup(key_name)
         else:
             markup = Markup(key_name)
-        markup = markup.raise_(-0.75)
+        markup = markup.raise_(-0.55)
         markup = markup.fontsize(-6)
         markup = markup.whiteout()
         markup = markup.circle()

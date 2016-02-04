@@ -15,7 +15,7 @@ piano = instrumenttools.Piano(
     instrument_name='Piano B',
     short_instrument_name="Pn. B"
     )
-stages = (0, 1)
+stages = (0,)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================

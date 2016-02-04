@@ -1,4 +1,4 @@
-% 2016-02-04 10:39
+% 2016-02-04 10:50
 
 \version "2.19.29"
 \language "english"
@@ -451,6 +451,490 @@
                 \context PianoPedalingStaff = "Pedaling" {
                     %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
                     %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Violin Staff Group" \with {
+                instrumentName = \markup { Violin }
+                shortInstrumentName = \markup { Vn. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                    \context Voice = "Bowing Rhythm" {
+                        r2.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
+                            c'16 [
+                            c'8 ]
+                            c'4
+                            c'8.
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        r2
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
+                            c'16 [
+                            c'8
+                            c'8. ]
+                            c'4
+                        }
+                    }
+                }
+                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                        \context Voice = "Bowing" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''16 \glissando [
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''8 \glissando ]
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''4 \glissando
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''8. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''16 \glissando [
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''8 \glissando
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                g'''''8. \glissando ]
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                        }
+                        \context Voice = "Bowing String Number" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                        }
+                                    }
+                                ef''16 [
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            d
+                                                        }
+                                    }
+                                ef''8 ]
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                        }
+                                    }
+                                ef''4
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            d
+                                                        }
+                                    }
+                                ef''8.
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                        }
+                                    }
+                                ef''16 [
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            d
+                                                        }
+                                    }
+                                ef''8
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                        }
+                                    }
+                                ef''8. ]
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            d
+                                                        }
+                                    }
+                                ef''4
+                            }
+                        }
+                        \context Voice = "Fingering" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 6/7 {
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,8 \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,8. \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 6/7 {
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,8. \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,8 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                            }
+                        }
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                    \context Voice = "Fingering Rhythm" {
+                        r2.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8. ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        r2
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8. [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 ]
+                        }
+                    }
                 }
             >>
             \context StringInstrumentStaffGroup = "Viola Staff Group" \with {

@@ -30,7 +30,6 @@ class WoodwindEmbouchureHandler(object):
         'music_maker',
         'embouchures',
         'patterns',
-        'color',
         'number_of_staff_lines',
     )
 
@@ -41,17 +40,12 @@ class WoodwindEmbouchureHandler(object):
         music_maker=None,
         embouchures=None,
         patterns=None,
-        color=None,
         number_of_staff_lines=None,
         ):
 
         self.music_maker = music_maker
         self.embouchures = embouchures
         self.patterns = patterns
-        if color is None:
-            self.color = (255,0,0)
-        else:
-            self.color = color
         self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
@@ -146,12 +140,10 @@ class WoodwindEmbouchureHandler(object):
             direction=Up
             )
 
-    def _handle_air_pressure(self, logical_tie):
-        air_pressure = inspect_(logical_tie[0]).get_annotation('air_pressure_start')
-        color = graphics_tools.change_luminance(
-                air_pressure,
-                self.color
-                )
+    def _handle_lip_pressure(self, logical_tie):
+        lip_pressure = inspect_(logical_tie[0]).get_annotation('lip_pressure_start')
+        color = (lip_pressure * Fraction(1,2)) + Fraction(1,2)
+        color = graphics_tools.grayscale_to_rgb(lip_pressure)
         color = graphics_tools.scheme_rgb_color(color)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if staccato:
@@ -161,7 +153,7 @@ class WoodwindEmbouchureHandler(object):
                     point_note_head(leaf)
         else:
             point_note_head(logical_tie[0])
-            gliss(logical_tie[0], color=color, thickness=3)
+            gliss(logical_tie[0], color=color, thickness=2)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)
@@ -171,7 +163,7 @@ class WoodwindEmbouchureHandler(object):
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             self._map_note_heads(logical_tie)
             self._insert_gliss_anchor(logical_tie)
-            self._handle_air_pressure(logical_tie)
+            self._handle_lip_pressure(logical_tie)
 
     def _handle_rhythm_voice(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):

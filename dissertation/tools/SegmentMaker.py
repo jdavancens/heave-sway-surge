@@ -324,6 +324,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         else:
             override(score).bar_number.transparent = True
         self._score = score
+        # show score structure
+        # for x in inspect_(score).get_descendants():print(x)
 
     def _make_skip_filled_measures(self):
         r''' Creates measures with measure-length skips for time signature context.

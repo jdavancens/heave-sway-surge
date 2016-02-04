@@ -1,7 +1,7 @@
 \version "2.19.29"
 \include "stencils.ily"
 #(set-default-paper-size "11x17" 'portrait)
-#(set-global-staff-size 10)
+#(set-global-staff-size 9)
 longSpace = 16
 shortSpace = 10
 color = #blue
@@ -38,7 +38,8 @@ pad = 0.5
     left-margin = 1\in
     right-margin = 0.5\in
     top-margin = 0.5\in
-    %{markup-system-spacing = #'(
+    system-separator-markup = \slashSeparator
+    markup-system-spacing = #'(
         (basic-distance . 0)
         (minimum-distance . 0)
         (padding . 0)
@@ -55,7 +56,7 @@ pad = 0.5
         (minimum-distance . 14)
         (padding . 0)
         (stretchability . 0)
-    )%}
+    )
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
@@ -85,8 +86,8 @@ pad = 0.5
         \omit InstrumentName
         \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
-        \override Glissando.thickness = #3
-        \override Glissando.layer = #-500
+        \override Glissando.thickness = #5
+        \override Glissando.layer = #-50
         \override Glissando.gap = #0
         \override Glissando.bound-details =
             #'(
@@ -121,6 +122,7 @@ pad = 0.5
         \omit TimeSignature
         \omit StaffSymbol
         \hide NoteHead
+        \omit BarLine
         \omit Dots
         \omit Stem
         \omit Beam
@@ -130,10 +132,12 @@ pad = 0.5
         \override NoteHead.stencil = #point-stencil
         pedalSustainStyle = #'mixed
         squashedPosition = #0
+        \override PianoPedalBracket.bound-padding = #0
+        \override SustainPedal.padding = #-12
         \override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 8)
-            (padding . 0)
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 12)
             (stretchability . 0)
         )
     }
@@ -167,6 +171,7 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
+        \omit BarLine
         \omit Clef
         \omit InstrumentName
         \omit Glissando
@@ -178,9 +183,9 @@ pad = 0.5
         squashedPosition = #0
         \override Stem.direction = #UP
         %{\override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 0)
-            (padding . 0)
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 12)
             (stretchability . 0)
         )%}
     }
@@ -198,6 +203,7 @@ pad = 0.5
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
         \accepts Voice
+        \omit BarLine
         \omit Clef
         \omit Glissando
         \omit InstrumentName
@@ -207,12 +213,12 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #DOWN
-        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 0)
-            (padding . 0)
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 12)
+            (minimum-distance . 12)
+            (padding . 12)
             (stretchability . 0)
-        )%}
+        )
     }
     % STRING SPACE STAFF
     \context {
@@ -359,6 +365,7 @@ pad = 0.5
         \omit Clef
         \omit Dots
         \omit Flag
+        \omit MetronomeMark
         \omit Stem
         \omit Tie
         \omit TimeSignature
@@ -406,7 +413,7 @@ pad = 0.5
         \override VerticalAxisGroup.staff-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
-            (padding . 0)
+            (padding . -4)
             (stretchability . 0)
         )
     }
@@ -438,6 +445,7 @@ pad = 0.5
         \override NoteHead.stem-attachment = #'(0.75 . 0)
         \override StaffSymbol.line-count = 5
         \override StaffSymbol.staff-space = 1.5
+        \override StaffSymbol.layer = #-100
         \override VerticalAxisGroup.staff-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
@@ -470,12 +478,12 @@ pad = 0.5
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
         \override Stem.direction = #DOWN
-        %{\override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 0)
-            (padding . 0)
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 10)
+            (minimum-distance . 10)
+            (padding . 10)
             (stretchability . 0)
-        )%}
+        )
     }
     % WOODWIND RIGHT HAND FINGERING STAFF
     \context {
@@ -518,17 +526,16 @@ pad = 0.5
         \PianoStaff
         \omit KeySignature
         \omit TimeSignature
-        %\omit InstrumentName
         \override StaffGrouper.staff-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
-            (padding . -8)
+            (padding . -16)
             (stretchability . 0)
         )
         \override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
-            (padding . -8)
+            (padding . -16)
             (stretchability . 0)
         )
     }
@@ -583,7 +590,7 @@ pad = 0.5
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
         \omit InstrumentName
-        %\override BarLine.allow-span-bar = ##f
+        \override BarLine.allow-span-bar = ##f
         %{\override InstrumentName.direction = #RIGHT
         \override InstrumentName.padding = #2%}
         \override StaffGrouper.staffgroup-staff-spacing = #'(
@@ -609,7 +616,7 @@ pad = 0.5
         \override InstrumentName.self-alignment-X = #1
         \override InstrumentName.padding = #-4
         %systemStartDelimiter = ##f
-        %\override BarLine.allow-span-bar = ##f
+        \override BarLine.allow-span-bar = ##f
         \override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 60)
             (minimum-distance . 60)
@@ -639,9 +646,9 @@ pad = 0.5
         \override InstrumentName.padding = #1
         \override SystemStartBracket.padding = #7
         \override StaffGrouper.staffgroup-staff-spacing = #'(
-            (basic-distance . 12)
-            (minimum-distance . 12)
-            (padding . 12)
+            (basic-distance . 16)
+            (minimum-distance . 16)
+            (padding . 16)
             (stretchability . 0))
 
     }
@@ -658,7 +665,7 @@ pad = 0.5
         \consists Output_property_engraver
         \consists Vertical_align_engraver
         \remove System_start_delimiter_engraver
-        %{\override BarLine.allow-span_bar = ##f%}
+        \override BarLine.allow-span-bar = ##f
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
     % SCORE
@@ -711,7 +718,7 @@ pad = 0.5
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         %{\override VerticalAxisGroup.remove-first = ##t%}
-        autoBeaming = ##f
+        autoBeaming = ##t
         defaultBarType = #"|"
         %{barNumberFormatter = #format-oval-barnumbers
         markFormatter = #format-mark-box-alphabet%}

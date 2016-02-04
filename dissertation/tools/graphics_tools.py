@@ -6,6 +6,12 @@ Created on Nov 6, 2015
 '''
 from abjad import *
 import colorsys
+def grayscale_to_rgb(value):
+    value = 1 - float(value)
+    value *= 255.
+    value = round(value)
+    return (value, value, value)
+
 def desaturate_rgb(saturation, rgb_tuple):
     hsv = colorsys.rgb_to_hsv(
         rgb_tuple[0]/255.,
@@ -25,7 +31,8 @@ def change_luminance(luminance, rgb_tuple):
         rgb_tuple[2]/255.
     )
     rgb = colorsys.hls_to_rgb(hls[0], hls[1], luminance)
-    return (rgb[0]*255., rgb[1]*255., rgb[2]*255.)
+    rgb = [round(x * 255) for x in rgb]
+    return tuple(rgb)
 
 def scheme_rgb_color(rgb_tuple):
     assert isinstance(rgb_tuple, tuple)

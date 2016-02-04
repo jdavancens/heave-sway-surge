@@ -12,7 +12,7 @@ oboe = instrumenttools.Oboe()
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 divisions = sequencetools.flatten_sequence(time_signatures)
-stages = (0,1,3,4)
+stages = (0,)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
@@ -45,9 +45,11 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
 )
 tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     avoid_dots=True,
+    rewrite_rest_filled_tuplets=True,
     flatten_trivial_tuplets=True,
-    simplify_redundant_tuplets=True,
     is_diminution=True,
+    simplify_redundant_tuplets=True,
+    use_note_duration_bracket=False,
 )
 
 #===============================================================================
@@ -113,10 +115,10 @@ voice_pitch_sets = (
 embouchures = (
     actions.WoodwindEmbouchure(
             instrument=oboe,
-            air_pressure_start=Fraction(0, 1),
-            air_pressure_stop=Fraction(1, 1),
-            lip_pressure_start=Fraction(1, 1),
-            lip_pressure_stop=Fraction(1, 1),
+            air_pressure_start=Fraction(1, 10),
+            air_pressure_stop=Fraction(1, 2),
+            lip_pressure_start=Fraction(1, 2),
+            lip_pressure_stop=Fraction(1, 2),
             staccato=False,
             tongue_articulated=False,
     ),

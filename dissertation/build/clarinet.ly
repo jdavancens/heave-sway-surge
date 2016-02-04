@@ -1,4 +1,4 @@
-% 2016-02-04 07:52
+% 2016-02-04 11:13
 
 \version "2.19.29"
 \language "english"
@@ -322,7 +322,7 @@
                     \set Staff.instrumentName = \markup { Emb. }
                     \set Staff.shortInstrumentName = \markup { Emb. }
                     \context Voice = "Embouchure" {
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         a2. \glissando ~
@@ -338,7 +338,7 @@
                             c'''16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
@@ -360,7 +360,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -379,7 +379,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
@@ -395,7 +395,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -411,7 +411,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
@@ -430,7 +430,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
@@ -449,7 +449,7 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
+                        \once \override Glissando.color = #(rgb-color 0.7490196078431373 0.25098039215686274 0.25098039215686274)
                         \once \override Glissando.thickness = 3
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
@@ -618,19 +618,21 @@
                                 >2.
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -706,19 +708,21 @@
                             >8
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 e'
@@ -793,19 +797,21 @@
                             >8 [
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 e'
@@ -882,19 +888,21 @@
                             \times 3/5 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -972,19 +980,21 @@
                             \times 5/8 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1061,19 +1071,21 @@
                             \times 4/5 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1148,19 +1160,21 @@
                                 >8 ]
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1237,19 +1251,21 @@
                                 >4.
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1327,19 +1343,21 @@
                                 >8
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1415,19 +1433,21 @@
                             >8 [
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 e'
@@ -1503,19 +1523,21 @@
                             \times 4/5 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1593,19 +1615,21 @@
                             \times 5/8 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1683,19 +1707,21 @@
                             \times 3/5 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1770,19 +1796,21 @@
                                 >8 ]
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -1858,19 +1886,21 @@
                             >4.
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 e'
@@ -1947,19 +1977,21 @@
                                 >8
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -2036,19 +2068,21 @@
                                 >8 [
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -2126,19 +2160,21 @@
                             \times 3/5 {
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     e'
@@ -2260,19 +2296,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -2354,19 +2392,21 @@
                             \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #point-stencil
                                 e'
@@ -2447,19 +2487,21 @@
                             \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #point-stencil
                                 e'
@@ -2542,19 +2584,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -2638,19 +2682,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -2733,19 +2779,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -2826,19 +2874,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -2921,19 +2971,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3017,19 +3069,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3111,19 +3165,21 @@
                             \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #point-stencil
                                 e'
@@ -3205,19 +3261,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3301,19 +3359,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3397,19 +3457,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3490,19 +3552,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3584,19 +3648,21 @@
                             \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                             <
                                 \tweak #'text \markup {
-                                    \whiteout
+                                    \pad-around
+                                        #0
                                         \circle
-                                            \fontsize
-                                                #-5
-                                                \raise
-                                                    #-0.75
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        \concat
+                                                            {
+                                                                C
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
                                     }
                                 \tweak #'stencil #point-stencil
                                 e'
@@ -3679,19 +3745,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3774,19 +3842,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -3870,19 +3940,21 @@
                                 \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
                                 <
                                     \tweak #'text \markup {
-                                        \whiteout
+                                        \pad-around
+                                            #0
                                             \circle
-                                                \fontsize
-                                                    #-5
-                                                    \raise
-                                                        #-0.75
-                                                        \concat
-                                                            {
-                                                                C
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            \concat
+                                                                {
+                                                                    C
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
                                         }
                                     \tweak #'stencil #point-stencil
                                     e'
@@ -7321,6 +7393,25 @@
                 \context PianoPedalingStaff = "Pedaling" {
                     %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
                     %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Violin Staff Group" \with {
+                instrumentName = \markup { Violin }
+                shortInstrumentName = \markup { Vn. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                 }
             >>
             \context StringInstrumentStaffGroup = "Viola Staff Group" \with {

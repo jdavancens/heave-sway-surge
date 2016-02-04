@@ -20,7 +20,6 @@ class StringBowingHandler(object):
         'music_maker',
         'bowings',
         'patterns',
-        'color',
         'number_of_staff_lines'
         )
 
@@ -31,17 +30,12 @@ class StringBowingHandler(object):
         music_maker=None,
         bowings=None,
         patterns=None,
-        color=None,
         number_of_staff_lines=None
         ):
 
         self.music_maker = music_maker
         self.bowings = bowings
         self.patterns = patterns
-        if color is None:
-            self.color = (255,0,0)
-        else:
-            self.color = color
         self.number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
@@ -142,10 +136,8 @@ class StringBowingHandler(object):
 
     def _attach_glissando(self, logical_tie):
         pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
-        color = graphics_tools.change_luminance(
-            pressure,
-            self.color
-            )
+        color = (pressure * Fraction(1,2)) + Fraction(1,2)
+        color = graphics_tools.grayscale_to_rgb(pressure)
         color = graphics_tools.scheme_rgb_color(color)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if not staccato:

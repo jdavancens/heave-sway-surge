@@ -20,7 +20,6 @@ class StringFingeringHandler(object):
         'music_maker',
         'fingerings',
         'patterns',
-        'color',
         'number_of_staff_lines'
     )
 
@@ -31,17 +30,12 @@ class StringFingeringHandler(object):
         music_maker=None,
         fingerings=None,
         patterns=None,
-        color=None,
         number_of_staff_lines=None
         ):
         self.music_maker = music_maker
         self.fingerings = fingerings
         self.patterns = patterns
         self.number_of_staff_lines = number_of_staff_lines
-        if color is None:
-            self.color = (0,0,255)
-        else:
-            self.color = color
 
     ### SPECIAL METHODS ###
 
@@ -107,13 +101,11 @@ class StringFingeringHandler(object):
 
     def _handle_height_and_pressure(self, logical_tie):
         pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
-        color = graphics_tools.desaturate_rgb(
-                pressure,
-                self.color
-                )
+        color = (pressure * Fraction(1,2)) + Fraction(1,2)
+        color = graphics_tools.grayscale_to_rgb(pressure)
         color = graphics_tools.scheme_rgb_color(color)
         point_note_head(logical_tie[0])
-        gliss(logical_tie[0], color=color, thickness=2)
+        gliss(logical_tie[0], color=color, thickness=3)
         if len(logical_tie) > 1:
             for leaf in logical_tie[1:]:
                 gliss_skip(leaf)

@@ -1,4 +1,4 @@
-% 2016-02-04 07:34
+% 2016-02-04 13:29
 
 \version "2.19.29"
 \language "english"
@@ -1516,26 +1516,26 @@
                 }
                 \context WoodwindEmbouchureStaff = "Embouchure" {
                     \set Staff.instrumentName = \markup { Emb. }
-                    \set Staff.shortInstrumentName = \markup { E }
+                    \set Staff.shortInstrumentName = \markup { Emb, }
                     \context Voice = "Embouchure" {
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2. \glissando ~
+                        c'2. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a8
+                        c'8
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1556,8 +1556,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1575,8 +1575,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1591,8 +1591,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1607,8 +1607,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1626,8 +1626,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1645,8 +1645,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1661,8 +1661,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1677,8 +1677,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1693,24 +1693,24 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2 \glissando ~
+                        c'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a4.
+                        c'4.
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1725,8 +1725,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1744,8 +1744,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1760,8 +1760,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1776,8 +1776,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1795,8 +1795,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1814,8 +1814,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1833,8 +1833,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1852,8 +1852,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1868,24 +1868,24 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a8 \glissando ~
+                        c'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a2.
+                        c'2.
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1903,8 +1903,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1919,8 +1919,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1935,8 +1935,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1954,8 +1954,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1970,8 +1970,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -1990,8 +1990,8 @@
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2006,8 +2006,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2022,8 +2022,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2038,25 +2038,25 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a4. \glissando ~
+                        c'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a2
+                        c'2
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2074,8 +2074,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2093,8 +2093,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2109,8 +2109,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2128,8 +2128,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2147,8 +2147,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2169,8 +2169,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2192,8 +2192,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2214,8 +2214,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2233,30 +2233,30 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a8. \glissando ~
+                        c'8. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2 ~
+                        c'2 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a8 ~
+                        c'8 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a16
+                        c'16
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2278,8 +2278,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2297,8 +2297,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2314,8 +2314,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2337,8 +2337,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2356,8 +2356,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2373,8 +2373,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2396,8 +2396,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2415,8 +2415,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2437,27 +2437,27 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a16 \glissando ~
+                        c'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2. ~
+                        c'2. ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a16
+                        c'16
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2478,8 +2478,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2501,8 +2501,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2520,8 +2520,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2542,8 +2542,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2565,8 +2565,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2585,8 +2585,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2607,8 +2607,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2629,8 +2629,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2651,30 +2651,30 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a4 \glissando ~
+                        c'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a16 ~
+                        c'16 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2 ~
+                        c'2 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a16
+                        c'16
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2690,8 +2690,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2713,8 +2713,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2732,8 +2732,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2752,8 +2752,8 @@
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2772,8 +2772,8 @@
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2788,8 +2788,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2805,8 +2805,8 @@
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2824,8 +2824,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2840,27 +2840,27 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a4. \glissando ~
+                        c'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a4. ~
+                        c'4. ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a8
+                        c'8
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2878,8 +2878,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2897,8 +2897,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2919,8 +2919,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2938,8 +2938,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2954,8 +2954,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2970,8 +2970,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -2987,8 +2987,8 @@
                         }
                         r8
                         r8
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3010,8 +3010,8 @@
                         }
                         r8.
                         r16
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'2 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3029,30 +3029,30 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.5 0.5 0.5)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.5019607843137255 0.5019607843137255 0.5019607843137255)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
-                        a16 \glissando ~
+                        c'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a2 ~
+                        c'2 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
-                        a8 ~
+                        c'8 ~
                         \once \override NoteColumn #'glissando-skip = ##t
                         \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        a8.
+                        c'8.
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'stencil = #point-stencil
                             \once \override Stem #'stencil = ##f
-                            c'''16
+                            b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3070,8 +3070,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'8. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3092,8 +3092,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3114,8 +3114,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3137,8 +3137,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3154,8 +3154,8 @@
                         }
                         r16
                         r8.
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4.. \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3173,8 +3173,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'4 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3195,8 +3195,8 @@
                             b'16
                         }
                         r4
-                        \once \override Glissando.color = #(rgb-color 0.75 0.25 0.25)
-                        \once \override Glissando.thickness = 3
+                        \once \override Glissando.color = #(rgb-color 0.0 0.0 0.0)
+                        \once \override Glissando.thickness = 2
                         \once \override NoteHead #'stencil = #point-stencil
                         b'16 \glissando ~
                         \once \override NoteColumn #'glissando-skip = ##t
@@ -3214,7 +3214,7 @@
                 }
                 \context Staff = "Voice" {
                     \set Staff.instrumentName = \markup { Voice }
-                    \set Staff.shortInstrumentName = \markup { V }
+                    \set Staff.shortInstrumentName = \markup { Voc }
                     \context Voice = "Voice" {
                         r4.
                         a'4.
@@ -4807,10 +4807,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -4861,10 +4866,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -4917,10 +4927,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -4974,10 +4989,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5028,10 +5048,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5085,10 +5110,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5139,10 +5169,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5194,10 +5229,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -5249,10 +5289,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5303,10 +5348,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5359,10 +5409,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5413,10 +5468,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5470,10 +5530,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5527,10 +5592,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5581,10 +5651,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5637,10 +5712,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5691,10 +5771,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5746,10 +5831,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -5802,10 +5892,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5856,10 +5951,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5913,10 +6013,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -5967,10 +6072,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6024,10 +6134,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6080,10 +6195,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6134,10 +6254,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6191,10 +6316,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6245,10 +6375,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6301,10 +6436,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6358,10 +6498,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6412,10 +6557,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6469,10 +6619,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6523,10 +6678,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6580,10 +6740,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6637,10 +6802,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6691,10 +6861,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6747,10 +6922,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6801,10 +6981,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6858,10 +7043,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6915,10 +7105,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -6969,10 +7164,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7026,10 +7226,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7080,10 +7285,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7135,10 +7345,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -7190,10 +7405,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7244,10 +7464,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7301,10 +7526,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7355,10 +7585,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7412,10 +7647,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7469,10 +7709,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7523,10 +7768,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7580,10 +7830,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7634,10 +7889,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7690,10 +7950,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7747,10 +8012,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7801,10 +8071,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7858,10 +8133,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7912,10 +8192,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -7969,10 +8254,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8025,10 +8315,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8079,10 +8374,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8136,10 +8436,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8190,10 +8495,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8247,10 +8557,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8303,10 +8618,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8357,10 +8677,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8414,10 +8739,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8468,10 +8798,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8524,10 +8859,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8581,10 +8921,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8635,10 +8980,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8692,10 +9042,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8746,10 +9101,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8801,10 +9161,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -8857,10 +9222,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8911,10 +9281,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -8968,10 +9343,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9022,10 +9402,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9078,10 +9463,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9135,10 +9525,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9189,10 +9584,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9246,10 +9646,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9300,10 +9705,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9356,10 +9766,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9413,10 +9828,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9467,10 +9887,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9524,10 +9949,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9578,10 +10008,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9635,10 +10070,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9691,10 +10131,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9745,10 +10190,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9802,10 +10252,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9856,10 +10311,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -9911,10 +10371,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -9967,10 +10432,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10021,10 +10491,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10077,10 +10552,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10131,10 +10611,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10186,10 +10671,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -10241,10 +10731,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10295,10 +10790,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10352,10 +10852,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10406,10 +10911,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10463,10 +10973,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10520,10 +11035,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10574,10 +11094,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10631,10 +11156,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10685,10 +11215,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10741,10 +11276,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10798,10 +11338,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10852,10 +11397,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10909,10 +11459,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -10963,10 +11518,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11019,10 +11579,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11075,10 +11640,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11129,10 +11699,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11186,10 +11761,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11240,10 +11820,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11295,10 +11880,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -11351,10 +11941,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11405,10 +12000,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11461,10 +12061,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11515,10 +12120,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11572,10 +12182,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11629,10 +12244,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11683,10 +12303,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11740,10 +12365,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11794,10 +12424,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11851,10 +12486,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11908,10 +12548,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -11962,10 +12607,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12019,10 +12669,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12073,10 +12728,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12130,10 +12790,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12187,10 +12852,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12241,10 +12911,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12298,10 +12973,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12352,10 +13032,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12408,10 +13093,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12465,10 +13155,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12519,10 +13214,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12576,10 +13276,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12630,10 +13335,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12686,10 +13396,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12743,10 +13458,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12797,10 +13517,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12854,10 +13579,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12908,10 +13638,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -12965,10 +13700,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13022,10 +13762,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13076,10 +13821,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13133,10 +13883,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13187,10 +13942,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13244,10 +14004,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13301,10 +14066,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13355,10 +14125,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13411,10 +14186,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13465,10 +14245,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13522,10 +14307,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13579,10 +14369,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13633,10 +14428,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13690,10 +14490,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13744,10 +14549,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13801,10 +14611,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13858,10 +14673,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13912,10 +14732,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -13968,10 +14793,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14022,10 +14852,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14079,10 +14914,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14136,10 +14976,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14190,10 +15035,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14246,10 +15096,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14300,10 +15155,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14357,10 +15217,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14414,10 +15279,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14468,10 +15338,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14524,10 +15399,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14578,10 +15458,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14635,10 +15520,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14692,10 +15582,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14746,10 +15641,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14803,10 +15703,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14857,10 +15762,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14914,10 +15824,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -14970,10 +15885,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15024,10 +15944,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15081,10 +16006,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15135,10 +16065,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15190,10 +16125,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -15246,10 +16186,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15300,10 +16245,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15357,10 +16307,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15411,10 +16366,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15466,10 +16426,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -15522,10 +16487,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15576,10 +16546,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15633,10 +16608,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15687,10 +16667,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15743,10 +16728,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15800,10 +16790,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15854,10 +16849,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15911,10 +16911,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -15965,10 +16970,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16021,10 +17031,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16078,10 +17093,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16132,10 +17152,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16189,10 +17214,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16243,10 +17273,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16300,10 +17335,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16356,10 +17396,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16410,10 +17455,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16467,10 +17517,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16521,10 +17576,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16576,10 +17636,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -16632,10 +17697,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16686,10 +17756,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16742,10 +17817,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16796,10 +17876,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16852,10 +17937,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16909,10 +17999,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -16963,10 +18058,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17018,10 +18118,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -17072,10 +18177,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -17128,10 +18238,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17184,10 +18299,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17238,10 +18358,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17295,10 +18420,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17349,10 +18479,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17406,10 +18541,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17463,10 +18603,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17517,10 +18662,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17574,10 +18724,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17628,10 +18783,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17685,10 +18845,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17741,10 +18906,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17795,10 +18965,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17852,10 +19027,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17906,10 +19086,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -17961,10 +19146,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -18017,10 +19207,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18071,10 +19266,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18127,10 +19327,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18181,10 +19386,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18236,10 +19446,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -18292,10 +19507,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18346,10 +19566,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18403,10 +19628,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18457,10 +19687,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18513,10 +19748,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18569,10 +19809,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18623,10 +19868,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18680,10 +19930,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18734,10 +19989,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18791,10 +20051,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18848,10 +20113,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18902,10 +20172,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -18959,10 +20234,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19013,10 +20293,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19069,10 +20354,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19126,10 +20416,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19180,10 +20475,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19236,10 +20536,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19290,10 +20595,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19345,10 +20655,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -19400,10 +20715,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19454,10 +20774,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19511,10 +20836,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19565,10 +20895,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19621,10 +20956,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19678,10 +21018,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19732,10 +21077,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19789,10 +21139,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19843,10 +21198,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19899,10 +21259,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -19956,10 +21321,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20010,10 +21380,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20066,10 +21441,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20120,10 +21500,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20175,10 +21560,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -20230,10 +21620,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20284,10 +21679,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20341,10 +21741,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20395,10 +21800,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20451,10 +21861,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20508,10 +21923,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20562,10 +21982,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20619,10 +22044,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20673,10 +22103,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20728,10 +22163,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -20783,10 +22223,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20837,10 +22282,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20893,10 +22343,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -20947,10 +22402,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21004,10 +22464,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21061,10 +22526,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21115,10 +22585,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21171,10 +22646,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21225,10 +22705,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21280,10 +22765,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #ly:text-interface::print
                                 f''
@@ -21336,10 +22826,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21390,10 +22885,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21447,10 +22947,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21501,10 +23006,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21558,10 +23068,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21614,10 +23129,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21668,10 +23188,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21725,10 +23250,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21779,10 +23309,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #ly:text-interface::print
                                     f''
@@ -21844,10 +23379,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -21904,10 +23444,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -21966,10 +23511,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22029,10 +23579,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22089,10 +23644,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22152,10 +23712,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22212,10 +23777,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22273,10 +23843,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -22334,10 +23909,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22394,10 +23974,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22456,10 +24041,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22516,10 +24106,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22579,10 +24174,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22642,10 +24242,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22702,10 +24307,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22764,10 +24374,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22824,10 +24439,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -22885,10 +24505,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -22947,10 +24572,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23007,10 +24637,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23070,10 +24705,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23130,10 +24770,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23193,10 +24838,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23255,10 +24905,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23315,10 +24970,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23378,10 +25038,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23438,10 +25103,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23500,10 +25170,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23563,10 +25238,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23623,10 +25303,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23686,10 +25371,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23746,10 +25436,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23809,10 +25504,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23872,10 +25572,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23932,10 +25637,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -23994,10 +25704,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24054,10 +25769,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24117,10 +25837,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24180,10 +25905,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24240,10 +25970,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24303,10 +26038,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24363,10 +26103,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24424,10 +26169,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -24485,10 +26235,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24545,10 +26300,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24608,10 +26368,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24668,10 +26433,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24731,10 +26501,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24794,10 +26569,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24854,10 +26634,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24917,10 +26702,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -24977,10 +26767,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25039,10 +26834,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25102,10 +26902,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25162,10 +26967,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25225,10 +27035,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25285,10 +27100,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25348,10 +27168,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25410,10 +27235,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25470,10 +27300,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25533,10 +27368,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25593,10 +27433,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25656,10 +27501,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25718,10 +27568,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25778,10 +27633,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25841,10 +27701,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25901,10 +27766,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -25963,10 +27833,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26026,10 +27901,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26086,10 +27966,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26149,10 +28034,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26209,10 +28099,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26270,10 +28165,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -26332,10 +28232,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26392,10 +28297,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26455,10 +28365,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26515,10 +28430,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26577,10 +28497,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26640,10 +28565,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26700,10 +28630,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26763,10 +28698,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26823,10 +28763,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26885,10 +28830,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -26948,10 +28898,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27008,10 +28963,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27071,10 +29031,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27131,10 +29096,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27194,10 +29164,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27256,10 +29231,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27316,10 +29296,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27379,10 +29364,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27439,10 +29429,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27500,10 +29495,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -27562,10 +29562,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27622,10 +29627,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27684,10 +29694,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27744,10 +29759,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27805,10 +29825,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -27866,10 +29891,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27926,10 +29956,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -27989,10 +30024,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28049,10 +30089,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28112,10 +30157,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28175,10 +30225,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28235,10 +30290,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28298,10 +30358,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28358,10 +30423,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28420,10 +30490,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28483,10 +30558,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28543,10 +30623,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28606,10 +30691,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28666,10 +30756,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28728,10 +30823,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28790,10 +30890,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28850,10 +30955,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28913,10 +31023,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -28973,10 +31088,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29034,10 +31154,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -29096,10 +31221,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29156,10 +31286,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29218,10 +31353,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29278,10 +31418,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29341,10 +31486,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29404,10 +31554,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29464,10 +31619,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29527,10 +31687,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29587,10 +31752,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29650,10 +31820,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29713,10 +31888,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29773,10 +31953,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29836,10 +32021,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29896,10 +32086,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -29959,10 +32154,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30022,10 +32222,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30082,10 +32287,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30145,10 +32355,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30205,10 +32420,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30267,10 +32487,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30330,10 +32555,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30390,10 +32620,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30453,10 +32688,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30513,10 +32753,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30575,10 +32820,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30638,10 +32888,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30698,10 +32953,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30761,10 +33021,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30821,10 +33086,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30884,10 +33154,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -30947,10 +33222,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31007,10 +33287,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31070,10 +33355,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31130,10 +33420,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31193,10 +33488,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31256,10 +33556,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31316,10 +33621,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31378,10 +33688,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31438,10 +33753,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31501,10 +33821,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31564,10 +33889,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31624,10 +33954,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31687,10 +34022,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31747,10 +34087,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31810,10 +34155,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31873,10 +34223,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31933,10 +34288,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -31995,10 +34355,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32055,10 +34420,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32118,10 +34488,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32181,10 +34556,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32241,10 +34621,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32303,10 +34688,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32363,10 +34753,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32426,10 +34821,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32489,10 +34889,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32549,10 +34954,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32611,10 +35021,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32671,10 +35086,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32734,10 +35154,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32797,10 +35222,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32857,10 +35287,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32920,10 +35355,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -32980,10 +35420,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33043,10 +35488,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33105,10 +35555,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33165,10 +35620,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33228,10 +35688,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33288,10 +35753,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33349,10 +35819,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -33411,10 +35886,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33471,10 +35951,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33534,10 +36019,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33594,10 +36084,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33655,10 +36150,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -33717,10 +36217,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33777,10 +36282,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33840,10 +36350,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33900,10 +36415,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -33962,10 +36482,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34025,10 +36550,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34085,10 +36615,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34148,10 +36683,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34208,10 +36748,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34270,10 +36815,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34333,10 +36883,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34393,10 +36948,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34456,10 +37016,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34516,10 +37081,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34579,10 +37149,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34641,10 +37216,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34701,10 +37281,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34764,10 +37349,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34824,10 +37414,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -34885,10 +37480,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -34947,10 +37547,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35007,10 +37612,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35069,10 +37679,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35129,10 +37744,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35191,10 +37811,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35254,10 +37879,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35314,10 +37944,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35375,10 +38010,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -35435,10 +38075,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -35497,10 +38142,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35559,10 +38209,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35619,10 +38274,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35682,10 +38342,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35742,10 +38407,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35805,10 +38475,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35868,10 +38543,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35928,10 +38608,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -35991,10 +38676,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36051,10 +38741,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36114,10 +38809,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36176,10 +38876,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36236,10 +38941,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36299,10 +39009,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36359,10 +39074,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36420,10 +39140,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -36482,10 +39207,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36542,10 +39272,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36604,10 +39339,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36664,10 +39404,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36725,10 +39470,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -36787,10 +39537,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36847,10 +39602,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36910,10 +39670,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -36970,10 +39735,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37032,10 +39802,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37094,10 +39869,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37154,10 +39934,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37217,10 +40002,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37277,10 +40067,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37340,10 +40135,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37403,10 +40203,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37463,10 +40268,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37526,10 +40336,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37586,10 +40401,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37648,10 +40468,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37711,10 +40536,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37771,10 +40601,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37833,10 +40668,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37893,10 +40733,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -37954,10 +40799,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -38015,10 +40865,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38075,10 +40930,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38138,10 +40998,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38198,10 +41063,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38260,10 +41130,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38323,10 +41198,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38383,10 +41263,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38446,10 +41331,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38506,10 +41396,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38568,10 +41463,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38631,10 +41531,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38691,10 +41596,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38753,10 +41663,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38813,10 +41728,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38874,10 +41794,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -38935,10 +41860,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -38995,10 +41925,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39058,10 +41993,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39118,10 +42058,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39180,10 +42125,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39243,10 +42193,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39303,10 +42258,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39366,10 +42326,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39426,10 +42391,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39487,10 +42457,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -39548,10 +42523,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39608,10 +42588,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39670,10 +42655,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39730,10 +42720,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39793,10 +42788,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39856,10 +42856,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39916,10 +42921,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -39978,10 +42988,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40038,10 +43053,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40099,10 +43119,15 @@
                                 \tweak #'stencil #point-stencil
                                 d''
                                 \tweak #'text \markup {
-                                    \whiteout
-                                        \raise
-                                            #-0.75
-                                            I
+                                    \pad-around
+                                        #0
+                                        \circle
+                                            \whiteout
+                                                \fontsize
+                                                    #-6
+                                                    \raise
+                                                        #-0.55
+                                                        I
                                     }
                                 \tweak #'stencil #point-stencil
                                 f''
@@ -40161,10 +43186,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40221,10 +43251,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40284,10 +43319,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40344,10 +43384,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40407,10 +43452,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40469,10 +43519,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40529,10 +43584,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40592,10 +43652,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -40653,10 +43718,15 @@
                                     \tweak #'stencil #point-stencil
                                     d''
                                     \tweak #'text \markup {
-                                        \whiteout
-                                            \raise
-                                                #-0.75
-                                                I
+                                        \pad-around
+                                            #0
+                                            \circle
+                                                \whiteout
+                                                    \fontsize
+                                                        #-6
+                                                        \raise
+                                                            #-0.55
+                                                            I
                                         }
                                     \tweak #'stencil #point-stencil
                                     f''
@@ -71255,7 +74325,7 @@
                 }
                 \context Staff = "Voice" {
                     \set Staff.instrumentName = \markup { Voice }
-                    \set Staff.shortInstrumentName = \markup { V }
+                    \set Staff.shortInstrumentName = \markup { Voc }
                 }
                 \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
                     \set Staff.instrumentName = None
@@ -71290,7 +74360,7 @@
                 }
                 \context Staff = "Voice" {
                     \set Staff.instrumentName = \markup { Voice }
-                    \set Staff.shortInstrumentName = \markup { V }
+                    \set Staff.shortInstrumentName = \markup { Voc. }
                 }
                 \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
                     \set Staff.instrumentName = None
@@ -71313,14 +74383,12 @@
             >>
             \context PianoStaffGroup = "Piano A Staff Group" <<
                 \context PianoStaff = "Piano A PianoStaff" <<
+                    \set PianoStaff.instrumentName = \markup { Piano A }
+                    \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                     \context Staff = "Right Hand" {
-                        \set PianoStaff.instrumentName = \markup { Piano A }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
-                        \set PianoStaff.instrumentName = \markup { Piano A }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                     }
                 >>
                 \context PianoPedalingStaff = "Pedaling" {
@@ -71329,20 +74397,37 @@
                 }
             >>
             \context PianoStaffGroup = "Piano B Staff Group" <<
+                %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
+                %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
                 \context PianoStaff = "Piano B PianoStaff" <<
+                    \set PianoStaff.instrumentName = \markup { Piano B }
+                    \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     \context Staff = "Right Hand" {
-                        \set PianoStaff.instrumentName = \markup { Piano B }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
-                        \set PianoStaff.instrumentName = \markup { Piano B }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     }
                 >>
                 \context PianoPedalingStaff = "Pedaling" {
-                    %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
-                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Violin Staff Group" \with {
+                instrumentName = \markup { Violin }
+                shortInstrumentName = \markup { Vn. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                 }
             >>
             \context StringInstrumentStaffGroup = "Viola Staff Group" \with {

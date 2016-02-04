@@ -33,8 +33,12 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     rewrite_meter=True, spell_metrically=True,
     )
 tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
-    avoid_dots=True, flatten_trivial_tuplets=True, simplify_redundant_tuplets=True,
+    avoid_dots=True,
+    rewrite_rest_filled_tuplets=True,
+    flatten_trivial_tuplets=True,
     is_diminution=True,
+    simplify_redundant_tuplets=True,
+    use_note_duration_bracket=False,
 )
 stages = (0,)
 
@@ -100,29 +104,29 @@ fingerings = (
         instrument=violin,
         height_start=Fraction(2, 30),
         height_stop=Fraction(3, 30),
-        pressure_start=Fraction(0, 1),
-        pressure_stop=Fraction(0, 1)
+        pressure_start=Fraction(1, 5),
+        pressure_stop=Fraction(1, 5)
         ),
     actions.StringFingering(
         instrument=violin,
         height_start=Fraction(6, 30),
         height_stop=Fraction(4, 30),
-        pressure_start=Fraction(0, 1),
-        pressure_stop=Fraction(0, 1)
+        pressure_start=Fraction(1, 5),
+        pressure_stop=Fraction(1, 5)
         ),
     actions.StringFingering(
         instrument=violin,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
-        pressure_start=Fraction(0, 1),
-        pressure_stop=Fraction(0, 1)
+        pressure_start=Fraction(1, 5),
+        pressure_stop=Fraction(1, 5)
         ),
     actions.StringFingering(
         instrument=violin,
         height_start=Fraction(5, 30),
         height_stop=Fraction(1, 30),
-        pressure_start=Fraction(0, 1),
-        pressure_stop=Fraction(0, 1)
+        pressure_start=Fraction(1, 5),
+        pressure_stop=Fraction(1, 5)
         )
     )
 

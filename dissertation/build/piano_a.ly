@@ -1,4 +1,4 @@
-% 2016-02-04 10:31
+% 2016-02-04 13:03
 
 \version "2.19.29"
 \language "english"
@@ -84,7 +84,6 @@
             }
             {
                 \time 2/4
-                \tempo 4=81
                 s1 * 1/2
             }
             {
@@ -160,157 +159,6 @@
             {
                 \time 2/4
                 s1 * 1/2
-            }
-            {
-                \time 5/8
-                \mark #37
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/4
-                s1 * 3/4
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                s1 * 5/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 5/8
-                s1 * 5/8
-            }
-            {
-                \time 3/8
-                s1 * 3/8
-            }
-            {
-                \time 2/4
-                s1 * 1/2
-            }
-            {
-                \time 3/8
-                s1 * 3/8
             }
         }
         \context EnsembleStaffGroup = "Ensemble Staff Group" <<
@@ -421,194 +269,10 @@
             >>
             \context PianoStaffGroup = "Piano A Staff Group" <<
                 \context PianoStaff = "Piano A PianoStaff" <<
+                    \set PianoStaff.instrumentName = \markup { Piano A }
+                    \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                     \context Staff = "Right Hand" {
-                        \set PianoStaff.instrumentName = \markup { Piano A }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                         \context Voice = "Right Hand" {
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/16
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 7/16
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 5/16
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
                             a'16
                             a'4 ~
                             a'16 [
@@ -1357,193 +1021,7 @@
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
-                        \set PianoStaff.instrumentName = \markup { Piano A }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
                         \context Voice = "Left Hand" {
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/16
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 7/16
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 3/4
-                            s1 * 5/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 5/16
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 1/2
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 5/8
-                            s1 * 3/8
-                            s1 * 1/2
-                            s1 * 3/8
                             s1 * 3/4
                             s1 * 1/2
                             s1 * 5/8
@@ -1735,190 +1213,6 @@
                     %%% \set PianoStaff.instrumentName = \markup { Piano A } %%%
                     %%% \set PianoStaff.shortInstrumentName = \markup { Pno. A } %%%
                     \context Voice = "Pedaling" {
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/16
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 7/16
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 5/16
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 1/2
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 5/8
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 3/8
                         c'2. \sustainOn
                         c'2
                         c'2 ~
@@ -2167,20 +1461,37 @@
                 }
             >>
             \context PianoStaffGroup = "Piano B Staff Group" <<
+                %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
+                %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
                 \context PianoStaff = "Piano B PianoStaff" <<
+                    \set PianoStaff.instrumentName = \markup { Piano B }
+                    \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     \context Staff = "Right Hand" {
-                        \set PianoStaff.instrumentName = \markup { Piano B }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     }
                     \context Staff = "Left Hand" {
                         \clef "bass"
-                        \set PianoStaff.instrumentName = \markup { Piano B }
-                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
                     }
                 >>
                 \context PianoPedalingStaff = "Pedaling" {
-                    %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
-                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Violin Staff Group" \with {
+                instrumentName = \markup { Violin }
+                shortInstrumentName = \markup { Vn. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
                 }
             >>
             \context StringInstrumentStaffGroup = "Viola Staff Group" \with {

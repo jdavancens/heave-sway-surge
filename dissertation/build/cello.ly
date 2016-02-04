@@ -1,0 +1,1011 @@
+% 2016-02-04 10:52
+
+\version "2.19.29"
+\language "english"
+
+#(ly:set-option 'relative-includes #t)
+
+\include "../stylesheets/stylesheet.ily"
+\include "../stylesheets/color-span-def.ily"
+\include "../stylesheets/scheme.ily"
+\include "../stylesheets/stencils.ily"
+
+\score {
+    \context Score = "Score" \with {
+        currentBarNumber = #1
+        markFormatter = #format-mark-box-alphabet
+    } <<
+        \context TimeSignatureContext = "Time Signatures and Tempi" {
+            {
+                \time 3/4
+                \tempo 4=54
+                \bar ""
+                \mark #1
+                s1 * 3/4
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                \tempo 4=81
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                s1 * 3/4
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                s1 * 3/4
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                \mark #37
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/4
+                s1 * 3/4
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 5/8
+                s1 * 5/8
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+            {
+                \time 2/4
+                s1 * 1/2
+            }
+            {
+                \time 3/8
+                s1 * 3/8
+            }
+        }
+        \context EnsembleStaffGroup = "Ensemble Staff Group" <<
+            \context WoodwindInstrumentStaffGroup = "Oboe Staff Group" \with {
+                instrumentName = \markup { Oboe }
+                shortInstrumentName = \markup { Ob. }
+            } <<
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { E }
+                }
+                \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
+                }
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindFingeringStaffGroup = "Oboe Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
+                    >>
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
+                    >>
+                >>
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+            \context WoodwindInstrumentStaffGroup = "Clarinet Staff Group" \with {
+                instrumentName = \markup { Clarinet In B-Flat }
+                shortInstrumentName = \markup { Cl. }
+            } <<
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { Emb. }
+                }
+                \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
+                }
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindFingeringStaffGroup = "Clarinet Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
+                    >>
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
+                    >>
+                >>
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+            \context WoodwindInstrumentStaffGroup = "Alto Saxophone Staff Group" \with {
+                instrumentName = \markup { Alto Saxophone }
+                shortInstrumentName = \markup { Sax. }
+            } <<
+                \context WoodwindEmbouchureRhythmStaff = "Embouchure Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindEmbouchureStaff = "Embouchure" {
+                    \set Staff.instrumentName = \markup { Emb. }
+                    \set Staff.shortInstrumentName = \markup { Emb. }
+                }
+                \context Staff = "Voice" {
+                    \set Staff.instrumentName = \markup { Voice }
+                    \set Staff.shortInstrumentName = \markup { V }
+                }
+                \context WoodwindLeftHandFingeringRhythmStaff = "Left Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context WoodwindFingeringStaffGroup = "Alto Saxophone Fingering Staff Group" <<
+                    \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { L.H. }
+                        \set Staff.shortInstrumentName = \markup { L.H. }
+                    >>
+                    \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" <<
+                        \set Staff.instrumentName = \markup { R.H. }
+                        \set Staff.shortInstrumentName = \markup { R.H. }
+                    >>
+                >>
+                \context WoodwindRightHandFingeringRhythmStaff = "Right Hand Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+            \context PianoStaffGroup = "Piano A Staff Group" <<
+                \context PianoStaff = "Piano A PianoStaff" <<
+                    \context Staff = "Right Hand" {
+                        \set PianoStaff.instrumentName = \markup { Piano A }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
+                    }
+                    \context Staff = "Left Hand" {
+                        \clef "bass"
+                        \set PianoStaff.instrumentName = \markup { Piano A }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. A }
+                    }
+                >>
+                \context PianoPedalingStaff = "Pedaling" {
+                    %%% \set PianoStaff.instrumentName = \markup { Piano A } %%%
+                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. A } %%%
+                }
+            >>
+            \context PianoStaffGroup = "Piano B Staff Group" <<
+                \context PianoStaff = "Piano B PianoStaff" <<
+                    \context Staff = "Right Hand" {
+                        \set PianoStaff.instrumentName = \markup { Piano B }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
+                    }
+                    \context Staff = "Left Hand" {
+                        \clef "bass"
+                        \set PianoStaff.instrumentName = \markup { Piano B }
+                        \set PianoStaff.shortInstrumentName = \markup { Pno. B }
+                    }
+                >>
+                \context PianoPedalingStaff = "Pedaling" {
+                    %%% \set PianoStaff.instrumentName = \markup { Piano B } %%%
+                    %%% \set PianoStaff.shortInstrumentName = \markup { Pno. B } %%%
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Violin Staff Group" \with {
+                instrumentName = \markup { Violin }
+                shortInstrumentName = \markup { Vn. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Violin String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Viola Staff Group" \with {
+                instrumentName = \markup { Viola }
+                shortInstrumentName = \markup { Va. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Viola String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Cello Staff Group" \with {
+                instrumentName = \markup { Cello }
+                shortInstrumentName = \markup { Vc. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                    \context Voice = "Bowing Rhythm" {
+                        r2.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            r4.
+                            c'8
+                        }
+                        c'8.
+                        c'4
+                        c'16 [
+                        c'8 ]
+                        r2
+                        r2
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/5 {
+                            c'16 [
+                            c'8
+                            c'8. ]
+                            c'4
+                        }
+                    }
+                }
+                \context StringSpaceStaffGroup = "Cello String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                        \context Voice = "Bowing" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''8. \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''4 \glissando
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g''''16 \glissando [
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                f'''16
+                            }
+                            \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                            \once \override Glissando.thickness = 3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            g'''''8 \glissando ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                g'''''16
+                            }
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g''''16 \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    f'''16
+                                }
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g''''8. \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    f'''16
+                                }
+                                \once \override Glissando.color = #(rgb-color 1.0 0.0 0.0)
+                                \once \override Glissando.thickness = 3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                g'''''4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    g'''''16
+                                }
+                            }
+                        }
+                        \context Voice = "Bowing String Number" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                            d
+                                                        }
+                                    }
+                                ef''8
+                            }
+                            \once \override NoteHead #'stencil = #point-stencil
+                            ef''8.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            ef''4
+                            \once \override NoteHead #'stencil = #point-stencil
+                            ef''16 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            ef''8 ]
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/5 {
+                                \once \override NoteHead #'stencil = #ly:text-interface::print
+                                \once \override NoteHead #'text = \markup {
+                                    \whiteout
+                                        \box
+                                            \raise
+                                                #0.5
+                                                \fontsize
+                                                    #-4
+                                                    \column
+                                                        {
+                                                            g
+                                                            d
+                                                        }
+                                    }
+                                ef''16 [
+                                \once \override NoteHead #'stencil = #point-stencil
+                                ef''8
+                                \once \override NoteHead #'stencil = #point-stencil
+                                ef''8. ]
+                                \once \override NoteHead #'stencil = #point-stencil
+                                ef''4
+                            }
+                        }
+                        \context Voice = "Fingering" {
+                            r2.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 3/4 {
+                                r4.
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,16 \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,16 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                            }
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/7 {
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,4. \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                a,4 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,8 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                            }
+                            r2
+                            r2
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 5/8 {
+                                r1
+                            }
+                            r4.
+                            r2
+                            \tweak #'text #tuplet-number::calc-fraction-text
+                            \times 6/7 {
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                d,8. \glissando [
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    d,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,16 \glissando
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    b,,16
+                                }
+                                \once \override Glissando.color = #(rgb-color 0.75 0.75 1.0)
+                                \once \override Glissando.thickness = 2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \afterGrace
+                                f,,8 \glissando ]
+                                {
+                                    \once \override Beam #'stencil = ##f
+                                    \once \override Flag #'stencil = ##f
+                                    \once \override NoteHead #'stencil = #point-stencil
+                                    \once \override Stem #'stencil = ##f
+                                    a,,16
+                                }
+                            }
+                        }
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                    \context Voice = "Fingering Rhythm" {
+                        r2.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            r4.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4.
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                        }
+                        r2
+                        r2
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/8 {
+                            r1
+                        }
+                        r4.
+                        r2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8. [
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 ]
+                        }
+                    }
+                }
+            >>
+            \context StringInstrumentStaffGroup = "Contrabass Staff Group" \with {
+                instrumentName = \markup { Contrabass }
+                shortInstrumentName = \markup { Cb. }
+            } <<
+                \context StringBowingRhythmStaff = "Bowing Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+                \context StringSpaceStaffGroup = "Contrabass String Space Staff Group" <<
+                    \context StringSpaceStaff = "String Space" <<
+                        \set Staff.instrumentName = None
+                        \set Staff.shortInstrumentName = None
+                    >>
+                >>
+                \context StringFingeringRhythmStaff = "Fingering Rhythm" {
+                    \set Staff.instrumentName = None
+                    \set Staff.shortInstrumentName = None
+                }
+            >>
+        >>
+    >>
+}
