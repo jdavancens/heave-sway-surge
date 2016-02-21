@@ -108,7 +108,7 @@ fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-bowing_music_handler = handlers.StringBowingHandler(
+bowing_music_handler = handlers.BowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
         pattern=(0, 1),

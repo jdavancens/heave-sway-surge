@@ -10,7 +10,7 @@
     stage 4 divisions: 21/4, 21/4, 22/4
     stage 5 divisions: 31/4, 33/4
 
-    Then, each stage subdivision is represented as a duration from a different
+    Then, each stage subdivision is reconceived as a duration with a different
     (fractionally related) tempo.
 
     stage 1-1: 33/4     @ q=54 (1:1)
@@ -32,6 +32,8 @@
     stage 5-1: 155/16   @ q=68 (4:5)
     stage 5-2: 33/4     @ q=54 (1:1)
 
+    Each stage is then recursively subdivided using the same uneven bifurcation
+    algorithm described above. The result is a list of time signatures.
 '''
 from abjad import *
 from dissertation import *

@@ -54,6 +54,7 @@ class MusicMaker:
             time_sigs_fractions = [Duration(pair) for pair in self.time_signatures]
             time_sigs_sum = sum(time_sigs_fractions)
             assert divisions_sum == time_sigs_sum
+
     ### SPECIAL METHODS ###
     def __call__(self, current_stage):
         r'''Calls music-maker
@@ -72,6 +73,62 @@ class MusicMaker:
 
 
     ### PRIVATE METHODS ###
+    def _adjust_tuplet_prolation(self, voice):
+        for t in iterate(voice).by_class(Tuplet):
+            u = copy.deepcopy(t)
+            u.toggle_prolation()
+            tmult = t.multiplier
+            umult = u.multiplier
+            if abs(tmult.numerator-tmult.denominator) > abs(umult.numerator-umult.denominator):
+                t.toggle_prolation()
+
+    def _flatten_trivial_tuplets(self, voice):
+        for t in iterate(voice).by_class(Tuplet):
+            if len(t) is 1:
+                if isinstance(t[0], Rest):
+                    d = t.multiplied_duration
+                    r = scoretools.make_rests([d])
+                    mutate([t]).replace(r)
+                elif isinstance(t[0], Skip):
+                    d = t.multiplied_duration
+                    s = scoretools.make_skips((1,1),[d])
+                    mutate([t]).replace(s)
+                else:
+                    d = t.multiplied_duration
+                    n = scoretools.make_notes([0],[d])
+                    mutate([t]).replace(n)
+
+    def _hide_full_measure_rests(self, selection):
+        for i,chunk in enumerate(selection):
+            if len(chunk) is 1:
+                if isinstance(chunk[0], Container):
+                    all_rest = True
+                    for leaf in chunk[0].select_leaves():
+                        if not isinstance(leaf, Rest):
+                            all_rest = False
+                            break
+                    if all_rest:
+                        for leaf in chunk[0].select_leaves():
+                            d = leaf.written_duration
+                            mutate([leaf]).replace(Skip(d))
+                elif isinstance(chunk[0], Rest):
+                    d = chunk[0].written_duration
+                    s = Skip(d)
+                    selection[i] = selectiontools.Selection(s)
+            if len(chunk) > 1:
+                all_rest = True
+                for leaf in chunk:
+                    if not isinstance(leaf, Rest):
+                        all_rest = False
+                        break
+                if all_rest:
+                    skips = []
+                    for leaf in chunk:
+                        d = leaf.written_duration
+                        s = Skip(d)
+                        skips.append(s)
+                    selection[i] = selectiontools.Selection(skips)
+
     def _make_skips(self):
         skips = scoretools.make_skips((1,1), self.time_signatures)
         voice = Voice(skips)
@@ -79,27 +136,13 @@ class MusicMaker:
         return voice
 
     def _make_rhythm(self):
-        #flat style
         rhythm = self.rhythm_maker(self.divisions)
+        self._hide_full_measure_rests(rhythm)
         voice = Voice(rhythm)
+        self._flatten_trivial_tuplets(voice)
+        self._adjust_tuplet_prolation(voice)
         attach(self._instrument, voice)
         return voice
-
-        # # chunk style
-        # rhythm = self.rhythm_maker(self.divisions)
-        # voice = Voice(rhythm)
-        # for chunk in rhythm:
-        #     all_rest = True
-        #     for component in chunk:
-        #         if not isinstance(component, Rest):
-        #             all_rest = False
-        #     if all_rest:
-        #         for rest in chunk:
-        #             duration = rest.written_duration
-        #             rest = Skip(duration)
-        # attach(self._instrument, voice)
-        # return voice
-
 
     ### PUBLIC PROPERTIES ###
 

@@ -327,7 +327,7 @@ pad = 0.5
     }
     \context {
         \Staff
-        \name WoodwindEmbouchureStaff
+        \name EmbouchureStaff
         \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
@@ -452,7 +452,7 @@ pad = 0.5
         \alias StaffGroup
         \type Engraver_group
         \accepts WoodwindEmbouchureRhythmStaff
-        \accepts WoodwindEmbouchureStaff
+        \accepts EmbouchureStaff
         \accepts WoodwindLeftHandFingeringRhythmStaff
         \accepts WoodwindFingeringStaffGroup
         \accepts WoodwindRightHandFingeringRhythmStaff
@@ -496,7 +496,7 @@ pad = 0.5
         \accepts WoodwindLeftHandFingeringStaff
         \accepts WoodwindLeftHandFingeringRhythmStaff
         \accepts WoodwindEmbouchureRhythmStaff
-        \accepts WoodwindEmbouchureStaff
+        \accepts EmbouchureStaff
         \accepts WoodwindFingeringStaffGroup
         \accepts WoodwindInstrumentStaffGroup
         \remove Bar_number_engraver

@@ -9,7 +9,7 @@ from dissertation.tools.actions.StringBowing import StringBowing
 from dissertation.tools.actions.StringFingering import StringFingering
 from dissertation.tools.MusicMaker import MusicMaker
 import os
-from dissertation.tools.handlers.StringBowingHandler import StringBowingHandler
+from dissertation.tools.handlers.BowingHandler import BowingHandler
 from dissertation.tools.handlers.StringFingeringHandler import StringFingeringHandler
 number_of_staff_lines = 30
 sul_pont_ex = Fraction(1,1)
@@ -81,7 +81,7 @@ bowings = (
         staccato = False
         )
     )
-bowing_handler = StringBowingHandler(
+bowing_handler = BowingHandler(
     music_maker=bowing_music_maker,
     bowings=bowings,
     pattern = (0,1,2),

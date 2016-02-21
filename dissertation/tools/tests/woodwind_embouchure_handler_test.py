@@ -5,8 +5,8 @@ Created on Nov 14, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.actions.WoodwindEmbouchure import WoodwindEmbouchure
-from dissertation.tools.handlers.WoodwindEmbouchureHandler import WoodwindEmbouchureHandler
+from dissertation.tools.actions.Embouchure import Embouchure
+from dissertation.tools.handlers.EmbouchureHandler import EmbouchureHandler
 from dissertation.tools.MusicMaker import MusicMaker
 import os
 
@@ -41,7 +41,7 @@ fingering_music_maker = MusicMaker(
     time_signatures=[(4,4)] * 1
     )
 embouchures = (
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name="Oboe",
         air_pressure_start =Fraction(1,3),
         air_pressure_stop=Fraction(2,3),
@@ -52,7 +52,7 @@ embouchures = (
         vowel_start='a',
         vowel_stop='e',
         ),
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name='Oboe',
         air_pressure_start=Fraction(2,3),
         air_pressure_stop=Fraction(1,3),
@@ -63,7 +63,7 @@ embouchures = (
         vowel_start='i',
         vowel_stop='e'
         ),
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name='oboe',
         air_pressure_start=Fraction(0,1),
         air_pressure_stop=Fraction(1,1),
@@ -75,7 +75,7 @@ embouchures = (
         vowel_stop='u',
         )
     )
-fingering_handler = WoodwindEmbouchureHandler(
+fingering_handler = EmbouchureHandler(
     fingering_music_maker=fingering_music_maker,
     embouchures=embouchures,
     pattern=(0, 1, 2),
@@ -89,10 +89,10 @@ time_signature_staff.context_name = "TimeSignatureContext"
 fingering_voices = fingering_handler()
 string_space_staff = Staff()
 string_space_staff.append(fingering_voices[0])
-string_space_staff.context_name = "WoodwindEmbouchureStaff"
+string_space_staff.context_name = "EmbouchureStaff"
 fingering_rhythm_staff = Staff()
 fingering_rhythm_staff.append(fingering_voices[1])
-fingering_rhythm_staff.context_name = "WoodwindEmbouchureRhythmStaff"
+fingering_rhythm_staff.context_name = "EmbouchureRhythmStaff"
 staff_group = StaffGroup()
 staff_group.append(string_space_staff)
 staff_group.append(time_signature_staff)

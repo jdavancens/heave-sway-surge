@@ -5,9 +5,9 @@ Created on Nov 22, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.actions.WoodwindEmbouchure import WoodwindEmbouchure
+from dissertation.tools.actions.Embouchure import Embouchure
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
-from dissertation.tools.handlers.WoodwindEmbouchureHandler import WoodwindEmbouchureHandler
+from dissertation.tools.handlers.EmbouchureHandler import EmbouchureHandler
 from dissertation.tools.handlers.WoodwindFingeringHandler import WoodwindFingeringHandler
 from dissertation.tools.MusicMaker import MusicMaker
 
@@ -58,7 +58,7 @@ rh_fingering_music_maker = MusicMaker(
 #===============================================================================
 
 embouchures = (
-    WoodwindEmbouchure(
+    Embouchure(
             instrument=oboe,
             air_pressure_start=Fraction(0, 1),
             air_pressure_stop=Fraction(1, 6),
@@ -67,7 +67,7 @@ embouchures = (
             staccato=False,
             tongue_articulated=False,
         ),
-    WoodwindEmbouchure(
+    Embouchure(
             instrument=oboe,
             air_pressure_start=Fraction(2, 5),
             air_pressure_stop=Fraction(2, 5),
@@ -76,7 +76,7 @@ embouchures = (
             staccato=False,
             tongue_articulated=False,
         ),
-    WoodwindEmbouchure(
+    Embouchure(
             instrument=oboe,
             air_pressure_start=Fraction(2, 3),
             air_pressure_stop=Fraction(1, 6),
@@ -149,7 +149,7 @@ rh_fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-embouchure_music_handler = WoodwindEmbouchureHandler(
+embouchure_music_handler = EmbouchureHandler(
         music_maker=embouchure_music_maker,
         embouchures=embouchures,
         pattern=(0, 1, 2),

@@ -9,7 +9,7 @@ import datetime
 import os
 from abjad import *
 from dissertation.materials.staff_map import staff_map
-from dissertation.tools.ScoreTemplate import ScoreTemplate
+from dissertation.tools.templates.ScoreTemplate import ScoreTemplate
 from dissertation.tools.SegmentMakerBaseClass import SegmentMakerBaseClass
 
 class SegmentMaker(SegmentMakerBaseClass):
@@ -94,7 +94,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         # set up score structure and lilypond file
         self._make_score()
         self._make_lilypond_file()
-        self._configure_lilypond_file()
 
         # set up time signatures and form labels
         self._populate_time_signature_contexts()
@@ -157,12 +156,6 @@ class SegmentMaker(SegmentMakerBaseClass):
             attach(rehearsal_mark, start_measure)
             scheme = schemetools.Scheme('format-mark-box-alphabet')
             set_(self._score).markFormatter = scheme
-            # string = '[{}{}]'.format(rehearsal_letter, stage_number)
-            # markup = Markup(string)
-            # markup = markup.with_color('blue')
-            # markup = markup.smaller()
-            # start_measure = context[start_measure_index]
-            #attach(markup, start_measure)
 
     def _attach_rehearsal_mark(self):
         r''' Adds rehearsal mark (segment #) to score
@@ -185,47 +178,6 @@ class SegmentMaker(SegmentMakerBaseClass):
             string = inspect_(score).tabulate_well_formedness_violations()
             raise Exception(string)
 
-    def _configure_lilypond_file(self):
-        r''' Adds include statements to Lilypond file. Removes title and composer
-        markup if non-first segment.
-        '''
-        lilypond_file = self._lilypond_file
-        lilypond_file.use_relative_includes = True
-        stylesheet_path = os.path.join(
-            '..',
-            'stylesheets',
-            'stylesheet.ily',
-            )
-        color_span_def_path = os.path.join(
-            '..',
-            'stylesheets',
-            'color-span-def.ily',
-            )
-        scheme_path = os.path.join(
-            '..',
-            'stylesheets',
-            'scheme.ily',
-            )
-        stencils_path = os.path.join(
-            '..',
-            'stylesheets',
-            'stencils.ily',
-            )
-
-        lilypond_file.file_initial_user_includes.append(stylesheet_path)
-        lilypond_file.file_initial_user_includes.append(color_span_def_path)
-        lilypond_file.file_initial_user_includes.append(scheme_path)
-        lilypond_file.file_initial_user_includes.append(stencils_path)
-        if 1 < self._segment_number:
-            path = os.path.join(
-                '..',
-                'stylesheets',
-                'nonfirst-segment.ily',
-                )
-            lilypond_file.file_initial_user_includes.append(path)
-            lilypond_file.header_block.title = None
-            lilypond_file.header_block.composer = None
-
     def _get_rehearsal_letter(self, segment_number):
         if segment_number == 1:
             return ''
@@ -239,30 +191,41 @@ class SegmentMaker(SegmentMakerBaseClass):
         handler and maker. Removes instrument indicators from staff contexts.
         '''
         for stage in range(self.number_of_stages):
-            print("\tStage", stage+1, "of", self.number_of_stages)
-            # match voices to staff
+            stage_string = '\tStage {} of {}'
+            stage_string = stage_string.format(stage+1, self.number_of_stages)
+            print(stage_string)
             for music_handler in self._music_handlers:
-                # make string identifier for handler
                 handler_instrument = music_handler.instrument.instrument_name
                 handler_instrument = handler_instrument.title()
+                if handler_instrument[-1] == 'i':
+                    handler_instrument = handler_instrument[0:-1]+'I'
                 handler_name = music_handler.name.title()
                 handler_string = '\t\tMusic handler: {} {}'
                 handler_string = handler_string.format(
                     handler_instrument, handler_name)
                 print(handler_string)
-                # handle music
                 voices = music_handler(stage)
-                # append music to appropriate staff
+
+                print('\t\t\tMatching voices to staves...')
                 for voice in voices:
                     voice_instrument = inspect_(voice).get_indicator(
                         instrumenttools.Instrument)
                     voice_instrument = voice_instrument.instrument_name
                     voice_instrument = voice_instrument.title()
+                    if voice_instrument[-1] == 'i':
+                        voice_instrument = voice_instrument[0:-1]+'I'
+
+                    # v_string = '\t\t\t\tMatching voice: {}, {}'
+                    # v_string = v_string.format(voice_instrument,voice.name)
+                    # print(v_string)
+                     
                     for staff in iterate(self._score).by_class(Staff):
                         staff_instrument = inspect_(staff).get_annotation('instrument')
-                        # print('staff:', staff_instrument)
-                        # print('voice:', voice_instrument)
-                        # print('')
+
+                        # s_string = '\t\t\t\t\tTrying staff: {}, {}'
+                        # s_string = s_string.format(staff_instrument, staff.name)
+                        # print(s_string)
+
                         if voice.name in staff_map[staff.name] and \
                                 voice_instrument==staff_instrument:
                             detach(instrumenttools.Instrument, voice)
@@ -271,7 +234,6 @@ class SegmentMaker(SegmentMakerBaseClass):
                             else:
                                 voice_in_staff = False
                                 for existing_voice in staff:
-                                    # print(voice.name, existing_voice.name)
                                     if voice.name == existing_voice.name:
                                         existing_voice.extend(voice)
                                         voice_in_staff = True
@@ -282,7 +244,6 @@ class SegmentMaker(SegmentMakerBaseClass):
         # for staff in iterate(self._score).by_class(Staff):
         #     if len(staff) == 0:
         #         self._score.remove(staff)
-        print("Interpreted music handlers")
 
     def _label_instrument_changes(self):
         r'''TODO Adds instrument change markup to score.
@@ -306,7 +267,41 @@ class SegmentMaker(SegmentMakerBaseClass):
         r''' Makes a basic Lilypond file and removes the default blocks. Returns
         the Lilypond file.
         '''
-        lilypond_file = lilypondfiletools.make_basic_lilypond_file(self._score)
+        stylesheet_path = os.path.join(
+            '..',
+            'stylesheets',
+            'stylesheet.ily',
+            )
+        color_span_def_path = os.path.join(
+            '..',
+            'stylesheets',
+            'color-span-def.ily',
+            )
+        scheme_path = os.path.join(
+            '..',
+            'stylesheets',
+            'scheme.ily',
+            )
+        stencils_path = os.path.join(
+            '..',
+            'stylesheets',
+            'stencils.ily',
+            )
+        includes = [stylesheet_path, color_span_def_path, scheme_path, stencils_path]
+        if 1 < self._segment_number:
+            path = os.path.join(
+                '..',
+                'stylesheets',
+                'nonfirst-segment.ily',
+                )
+            includes.append(path)
+        lilypond_file = lilypondfiletools.make_basic_lilypond_file(
+            self._score,
+            includes=includes,
+            use_relative_includes=True
+        )
+        lilypond_file.header_block.title = None
+        lilypond_file.header_block.composer = None
         for item in lilypond_file.items[:]:
             if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
                 lilypond_file.items.remove(item)
@@ -316,7 +311,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         r''' Creates a blank score from a template object and configures bar
         numbers. Returns the blank score.
         '''
-        score_template = ScoreTemplate()
+        score_template = ScoreTemplate(self.instrument_list)
         score = score_template()
         first_bar_number = self.first_bar_number
         if first_bar_number is not None:

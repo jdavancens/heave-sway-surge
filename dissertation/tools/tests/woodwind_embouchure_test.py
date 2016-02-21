@@ -5,10 +5,10 @@ Created on Nov 21, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.actions.WoodwindEmbouchure import WoodwindEmbouchure
+from dissertation.tools.actions.Embouchure import Embouchure
 
 embouchures = (
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name="Oboe",
         air_pressure_start =Fraction(1,3),
         air_pressure_stop=Fraction(2,3),
@@ -19,7 +19,7 @@ embouchures = (
         vowel_start='a',
         vowel_stop='e',
         ),
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name='Oboe',
         air_pressure_start=Fraction(2,3),
         air_pressure_stop=Fraction(1,3),
@@ -30,7 +30,7 @@ embouchures = (
         vowel_start='i',
         vowel_stop='e'
         ),
-    WoodwindEmbouchure(
+    Embouchure(
         instrument_name='oboe',
         air_pressure_start=Fraction(0,1),
         air_pressure_stop=Fraction(1,1),

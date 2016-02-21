@@ -8,7 +8,7 @@ from abjad import *
 from dissertation.tools.actions.StringBowing import StringBowing
 from dissertation.tools.MusicMaker import MusicMaker
 import os
-from dissertation.tools.handlers.StringBowingHandler import StringBowingHandler
+from dissertation.tools.handlers.BowingHandler import BowingHandler
 
 number_of_staff_lines = 30
 
@@ -76,7 +76,7 @@ bowings = (
         staccato = False
         )
     )
-fingering_handler = StringBowingHandler(
+fingering_handler = BowingHandler(
     fingering_music_maker=fingering_music_maker,
     bowings=bowings,
     pattern = (0,1,2),

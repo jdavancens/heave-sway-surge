@@ -14,7 +14,7 @@ class WoodwindFingering(object):
     __slots__ = (
         '_instrument',
         '_hand',
-        '_fingering',
+        '_keys',
         )
 
     ### INTITIALIZER ###
@@ -23,61 +23,61 @@ class WoodwindFingering(object):
         self,
         instrument=None,
         hand=None,
-        fingering=None,
+        keys=None,
         ):
-        assert(isinstance(fingering, dict))
-        assert(3 < len(fingering) < 6)
+        assert(isinstance(keys, dict))
+        assert(3 < len(keys) < 6)
         assert(hand=="left" or hand=="right")
         assert(isinstance(instrument, instrumenttools.Instrument))
         self._instrument = instrument
         self._hand = hand
-        self._fingering = fingering
+        self._keys = keys
         # make tuples
         if hand == "left":
-            assert len(fingering) == 5
-            if isinstance(fingering['thumb'], str):
-                fingering['thumb'] = (fingering['thumb'],)
-            elif fingering['thumb'] is not None:
-                fingering['thumb'] = tuple(sorted(fingering['thumb']))
-            if isinstance(fingering['index'], str):
-                fingering['index'] = (fingering['index'],)
-            elif fingering['index'] is not None:
-                fingering['index'] = tuple(sorted(fingering['index']))
-            if isinstance(fingering['middle'], str):
-                fingering['middle'] = (fingering['middle'],)
-            elif fingering['middle'] is not None:
-                fingering['middle'] = tuple(sorted(fingering['middle']))
-            if isinstance(fingering['ring'], str):
-                fingering['ring'] = (fingering['ring'],)
-            elif fingering['ring'] is not None:
-                fingering['ring'] = tuple(sorted(fingering['ring']))
-            if isinstance(fingering['pinky'], str):
-                fingering['pinky'] = (fingering['pinky'],)
-            elif fingering['pinky'] is not None:
-                fingering['pinky'] = tuple(sorted(fingering['pinky']))
+            assert len(keys) == 5
+            if isinstance(keys['thumb'], str):
+                keys['thumb'] = (keys['thumb'],)
+            elif keys['thumb'] is not None:
+                keys['thumb'] = tuple(sorted(keys['thumb']))
+            if isinstance(keys['index'], str):
+                keys['index'] = (keys['index'],)
+            elif keys['index'] is not None:
+                keys['index'] = tuple(sorted(keys['index']))
+            if isinstance(keys['middle'], str):
+                keys['middle'] = (keys['middle'],)
+            elif keys['middle'] is not None:
+                keys['middle'] = tuple(sorted(keys['middle']))
+            if isinstance(keys['ring'], str):
+                keys['ring'] = (keys['ring'],)
+            elif keys['ring'] is not None:
+                keys['ring'] = tuple(sorted(keys['ring']))
+            if isinstance(keys['pinky'], str):
+                keys['pinky'] = (keys['pinky'],)
+            elif keys['pinky'] is not None:
+                keys['pinky'] = tuple(sorted(keys['pinky']))
         if hand == "right":
-            assert len(fingering) == 4
-            if isinstance(fingering['index'], str):
-                fingering['index'] = (fingering['index'],)
-            elif fingering['index'] is not None:
-                fingering['index'] = tuple(sorted(fingering['index']))
-            if isinstance(fingering['middle'], str):
-                fingering['middle'] = (fingering['middle'],)
-            elif fingering['middle'] is not None:
-                fingering['middle'] = tuple(sorted(fingering['middle']))
-            if isinstance(fingering['ring'], str):
-                fingering['ring'] = (fingering['ring'],)
-            elif fingering['ring'] is not None:
-                fingering['ring'] = tuple(sorted(fingering['ring']))
-            if isinstance(fingering['pinky'], str):
-                fingering['pinky'] = (fingering['pinky'],)
-            elif fingering['pinky'] is not None:
-                fingering['pinky'] = tuple(sorted(fingering['pinky']))
+            assert len(keys) == 4
+            if isinstance(keys['index'], str):
+                keys['index'] = (keys['index'],)
+            elif keys['index'] is not None:
+                keys['index'] = tuple(sorted(keys['index']))
+            if isinstance(keys['middle'], str):
+                keys['middle'] = (keys['middle'],)
+            elif keys['middle'] is not None:
+                keys['middle'] = tuple(sorted(keys['middle']))
+            if isinstance(keys['ring'], str):
+                keys['ring'] = (keys['ring'],)
+            elif keys['ring'] is not None:
+                keys['ring'] = tuple(sorted(keys['ring']))
+            if isinstance(keys['pinky'], str):
+                keys['pinky'] = (keys['pinky'],)
+            elif keys['pinky'] is not None:
+                keys['pinky'] = tuple(sorted(keys['pinky']))
 
     ### SPECIAL METHODS ###
 
     def __eq__(self, other):
-        if (self._fingering == other.fingering and
+        if (self._keys == other.keys and
             self._hand == other.hand and
             self._instrument == other.instrument):
             return True
@@ -88,18 +88,18 @@ class WoodwindFingering(object):
         s = ""
         if self._hand == "left":
             s = "{} {} {} {} {}"
-            thumb = str(self._fingering['thumb'])
-            index = str(self._fingering['index'])
-            middle = str(self._fingering['middle'])
-            ring = str(self._fingering['ring'])
-            pinky = str(self._fingering['pinky'])
+            thumb = str(self._keys['thumb'])
+            index = str(self._keys['index'])
+            middle = str(self._keys['middle'])
+            ring = str(self._keys['ring'])
+            pinky = str(self._keys['pinky'])
             s = thumb+' '+index+' '+middle+' '+ring+' '+pinky
         elif self._hand == "right":
             s= "{} {} {} {}"
-            index = str(self._fingering['index'])
-            middle = str(self._fingering['middle'])
-            ring = str(self._fingering['ring'])
-            pinky = str(self._fingering['pinky'])
+            index = str(self._keys['index'])
+            middle = str(self._keys['middle'])
+            ring = str(self._keys['ring'])
+            pinky = str(self._keys['pinky'])
             s = index+' '+middle+' '+ring+' '+pinky
         return s
 
@@ -107,32 +107,32 @@ class WoodwindFingering(object):
     def as_binary_list(self):
         binary_list = []
         if self.hand == 'left':
-            if self.fingering['thumb'] is not None:
+            if self.keys['thumb'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['index'] is not None:
+            if self.keys['index'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['middle'] is not None:
+            if self.keys['middle'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['ring'] is not None:
+            if self.keys['ring'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['pinky'] is not None:
+            if self.keys['pinky'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
         else:
-            if self.fingering['index'] is not None:
+            if self.keys['index'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['middle'] is not None:
+            if self.keys['middle'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['ring'] is not None:
+            if self.keys['ring'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
-            if self.fingering['pinky'] is not None:
+            if self.keys['pinky'] is not None:
                 binary_list.append(1)
             else: binary_list.append(0)
         return binary_list
@@ -217,8 +217,8 @@ class WoodwindFingering(object):
         }
 
     @property
-    def fingering(self):
-        return self._fingering
+    def keys(self):
+        return self._keys
 
     @property
     def hand(self):

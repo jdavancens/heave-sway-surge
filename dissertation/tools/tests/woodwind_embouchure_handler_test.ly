@@ -178,7 +178,7 @@
                     }
                 }
             }
-            \new WoodwindEmbouchureStaff {
+            \new EmbouchureStaff {
                 \context WoodwindPressureVoice = "Oboe Pressure Voice" {
                     {
                         \time 4/4

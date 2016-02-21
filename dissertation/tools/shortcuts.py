@@ -43,16 +43,8 @@ def gliss(leaf, color, thickness=0.5):
 def gliss_skip(leaf):
     override(leaf).note_column.glissando_skip = True
 
-def bar_note_head(leaf):
-    command = indicatortools.LilyPondCommand('barNoteHead')
-    attach(command, leaf)
-
 def point_note_head(leaf):
     override(leaf).note_head.stencil =  schemetools.Scheme('point-stencil')
-
-def square_note_head(leaf):
-    command = indicatortools.LilyPondCommand('squareNoteHead')
-    attach(command, leaf)
 
 def text_spanner_start(selection, current_text_tuple, next_text, direction):
     text_padding = 1

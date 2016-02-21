@@ -8,13 +8,18 @@ are staff names and the values are valid voice names
 
 '''
 staff_map = {
-    'Voice': ('Voice',),
     'Embouchure' : ('Embouchure',),
     'Embouchure Rhythm' : ('Embouchure Rhythm',),
+    'Fretting' : ('Fretting', 'Fretting Lifeline'),
+    'Fretting Rhythm' : ('Fretting Rhythm',),
     'Left Hand Fingering' : ('Left Hand Fingering', 'Left Hand Fingering Lifeline'),
     'Left Hand Fingering Rhythm' : ('Left Hand Fingering Rhythm',),
+    'Picking' : ('Picking',),
+    'Picking Rhythm' : ('Picking Rhythm',),
     'Right Hand Fingering' : ('Right Hand Fingering', 'Right Hand Fingering Lifeline'),
     'Right Hand Fingering Rhythm' : ('Right Hand Fingering Rhythm',),
+    'Slide Position Rhythm' : ('Slide Position Rhythm',),
+    'Slide Position' : ('Slide Position',),
     'Left Hand' : ('Left Hand',),
     'Right Hand' : ('Right Hand',),
     'Pedaling' : ('Pedaling',),

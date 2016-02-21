@@ -39,12 +39,10 @@ barNoteHead = \once \override NoteHead.stencil = \barStencil
      (if (equal? dir RIGHT)
          (cdr cell)
          (car cell)))
-
    (define (index-set-cell! x dir val)
      (case dir
        ((-1) (set-car! x val))
        ((1) (set-cdr! x val))))
-
    (let* ((common (ly:grob-system grob))
           (span-points '(0 . 0))
           (thickness (* (ly:grob-property grob 'thickness 1.0)
@@ -57,7 +55,6 @@ barNoteHead = \once \override NoteHead.stencil = \barStencil
           ;; use a local copy of colors list, since
           ;; stencil creation mutates list
           (colors rest))
-
      (for-each
       (lambda (dir)
         (if (and (= dir RIGHT)
@@ -65,7 +62,6 @@ barNoteHead = \once \override NoteHead.stencil = \barStencil
             (set-cdr! span-points width)
             (let* ((bound (ly:spanner-bound grob dir))
                    (bound-ext (ly:grob-extent bound bound X)))
-
               (index-set-cell! span-points dir
                                (ly:grob-relative-coordinate bound common X))
               (if (and (not (ly:item-break-dir bound))
@@ -76,13 +72,11 @@ barNoteHead = \once \override NoteHead.stencil = \barStencil
         (index-set-cell! span-points dir (- (index-cell span-points dir)
                                             (* dir thickness 0.5))))
       (list LEFT RIGHT))
-
      (set! span-points
            (coord-translate span-points
                             (- (ly:grob-relative-coordinate grob common X))))
      (set! line-stencil
            (make-line-stencil thickness (car span-points) 0 (cdr span-points) 0))
-
      (if (pair? line-positions)
          (for-each (lambda (position)
                      (let ((color (if (pair? colors)

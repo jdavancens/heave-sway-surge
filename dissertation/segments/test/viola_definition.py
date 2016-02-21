@@ -7,7 +7,7 @@ Created on Nov 22, 2015
 from abjad import *
 from dissertation.tools.actions.StringBowing import StringBowing
 from dissertation.tools.actions.StringFingering import StringFingering
-from dissertation.tools.handlers.StringBowingHandler import StringBowingHandler
+from dissertation.tools.handlers.BowingHandler import BowingHandler
 from dissertation.tools.handlers.StringFingeringHandler import StringFingeringHandler
 from dissertation.tools.MusicMaker import MusicMaker
 
@@ -111,7 +111,7 @@ fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-bowing_music_handler = StringBowingHandler(
+bowing_music_handler = BowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
         pattern=(0, 1),

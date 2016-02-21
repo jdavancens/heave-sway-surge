@@ -46,6 +46,7 @@ class WoodwindFingeringHandler(object):
 
         # voice is active during current stage
         voice = self.music_maker(current_stage)
+        self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = None
         rhythm_voice = copy.deepcopy(voice)
         if current_stage in self.music_maker.stages:
@@ -59,69 +60,87 @@ class WoodwindFingeringHandler(object):
         return voices
 
     ### PRIVATE METHODS ###
+    def _annotate_logical_tie(self, logical_tie, fingering):
+        annotation = indicatortools.Annotation('fingering',fingering)
+        attach(annotation, logical_tie[0])
 
-    def _handle_fingerings(self, voice, current_stage):
-        stages = self.music_maker.stages
-        current_stage_index = stages.index(current_stage)
-        pattern_index = current_stage_index % len(self.patterns)
+    def _annotate_from_previous_logical_tie(self, current, previous):
+        if isinstance(current[0], (Note,Chord)) and isinstance(previous[0],(Note,Chord)):
+            previous_fingering = inspect_(previous[0]).get_annotation('fingering')
+            previous_fingering = indicatortools.Annotation(
+                'previous_fingering',
+                previous_fingering
+            )
+            attach(previous_fingering, current[0])
+
+    def _annotate_logical_ties(self, voice, current_stage):
+        current_stage_index = self.music_maker.stages.index(current_stage)
+        pattern_index = self.music_maker.stages.index(current_stage)
         pattern = self.patterns[pattern_index]
         cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
+        logical_ties = list(iterate(voice).by_logical_tie())
+        for logical_tie in list(iterate(voice).by_logical_tie()):
+            if isinstance(logical_tie[0], (Note, Chord)):
+                i = cursor.next()[0]
+                fingering = self.fingerings[i]
+                self._annotate_logical_tie(logical_tie, fingering)
+        for i in range(1, len(logical_ties)):
+            if isinstance(logical_ties[i][0], (Note, Chord)):
+                self._annotate_from_previous_logical_tie(
+                    logical_ties[i],
+                    logical_ties[i-1]
+                )
+
+    def _handle_fingerings(self, voice, current_stage):
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
-        last_chord = None
         for logical_tie in logical_ties:
-            fingering = self.fingerings[cursor.next()[0]]
+            fingering = inspect_(logical_tie[0]).get_annotation('fingering')
+            previous_fingering = inspect_(logical_tie[0]).get_annotation('previous_fingering')
             if self.hand == 'left':
                 pitches = [4, 7, 11, 14, 17]
-                t = fingering.fingering['thumb']
-                i = fingering.fingering['index']
-                m = fingering.fingering['middle']
-                r = fingering.fingering['ring']
-                p = fingering.fingering['pinky']
-                fingers = [p, r, m, i, t]
+                fingers = ['thumb', 'index', 'middle', 'ring', 'pinky']
+                fingers.reverse()
             else:
                 pitches = [5, 9, 12, 16]
-                i = fingering.fingering['index']
-                m = fingering.fingering['middle']
-                r = fingering.fingering['ring']
-                p = fingering.fingering['pinky']
-                fingers = [p, r, m, i]
+                fingers = ['index', 'middle', 'ring', 'pinky']
+                fingers.reverse()
             for note in logical_tie:
                 chord = Chord(pitches, note.written_duration)
                 mutate(note).replace(chord)
-                # hide noteheads for inactive keys and if continuation from last fingering
+                # hide noteheads for inactive keys or if continuation from last fingering
                 for i, note_head in enumerate(chord.note_heads):
-                    if fingers[i] is None:
+                    current = fingering.keys[fingers[i]]
+                    if previous_fingering is not None:
+                        previous = previous_fingering.keys[fingers[i]]
+                    else:
+                        previous = None
+                    if current is None or current == previous:
                         note_head.tweak.stencil = schemetools.Scheme('point-stencil')
                     else:
-                        markup = self._make_note_head_markup(fingers[i])
+                        markup = self._make_note_head_markup(current)
                         note_head.tweak.stencil = 'ly:text-interface::print'
                         note_head.tweak.text = markup
-                    # if last_chord is not None:
-                    #     if not last_chord.note_heads[i].tweak.transparent:
-                    #         note_head.tweak.stencil = schemetools.Scheme('point-stencil')
-                last_chord = chord
+
+    def _insert_gliss_anchor(self, logical_tie):
+        grace_chord = Chord(logical_tie[-1].written_pitches, Duration(1,16))
+        for note_head in grace_chord.note_heads:
+            note_head.tweak.stencil = schemetools.Scheme('point-stencil')
+        grace_container = scoretools.GraceContainer([grace_chord], kind='after')
+        attach(grace_container, logical_tie[-1])
 
     def _make_lifeline_voice(self, voice, current_stage):
         # copy voice to lifeline voice
         lifeline_voice = copy.deepcopy(voice)
         logical_ties = list(iterate(lifeline_voice).by_logical_tie(pitched=True))
-        # put a hidden grace note chord at the very end
-        last_tie = logical_ties[-1]
-        last_leaf = last_tie.leaves[-1]
-        grace_chord = Chord(last_leaf.written_pitches, Duration(1,16))
-        for note_head in grace_chord.note_heads:
-            note_head.tweak.transparent = True
-        grace_container = scoretools.GraceContainer([grace_chord], kind='after')
-        attach(grace_container, last_leaf)
         # add lifelines (glissandi) to note heads
-        stages = self.music_maker.stages
-        current_stage_index = stages.index(current_stage)
+        current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
         pattern = self.patterns[pattern_index]
         cycle = datastructuretools.CyclicTuple(pattern)
         cursor = datastructuretools.Cursor(cycle)
         for logical_tie in logical_ties:
+            self._insert_gliss_anchor(logical_tie)
             for chord in logical_tie:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = schemetools.Scheme('point-stencil')
@@ -130,7 +149,7 @@ class WoodwindFingeringHandler(object):
             if glissando_map is not None :
                 attach(glissando_map, logical_tie[0])
                 color = scheme_rgb_color((0,0,0))
-                gliss(logical_tie[0], color=color,thickness=3)
+                gliss(logical_tie[0], color=color,thickness=4)
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
                        gliss_skip(chord)
@@ -200,10 +219,11 @@ class WoodwindFingeringHandler(object):
                 markup = Markup(key_name)
         else:
             markup = Markup(key_name)
-        markup = markup.raise_(-0.55)
-        markup = markup.fontsize(-6)
+        markup = markup.raise_(-0.5)
+        markup = markup.fontsize(-1)
+        markup = markup.bold()
         markup = markup.whiteout()
-        markup = markup.circle()
+        # markup = markup.circle()
         markup = markup.pad_around(0)
         return markup
 
@@ -221,10 +241,10 @@ class WoodwindFingeringHandler(object):
         markups = []
         for key in key_combination:
             if key.lower() in ('t', 'thumb', 'down'):
-                box = Markup.filled_box((-0.5, 0.5), (-0.5, 0.5), 0.)
+                box = Markup.filled_box((-0.66, 0.66), (-0.66, 0.66), 0.)
                 markups.append(box)
             elif key.lower() is 'half':
-                dot = Markup.filled_box((-0.2, 0.2), (-0.2, 0.2), 0.)
+                dot = Markup.filled_box((-0.25, 0.25), (-0.25, 0.25), 0.)
                 dot_in_box = dot.box().whiteout()
                 markups.append(dot_in_box)
             else:
