@@ -63,12 +63,12 @@ class PickingHandler(object):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = self.music_maker.stages.index(current_stage)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor.next()[0]
+                i = cursor()[0]
                 picking = self.pickings[i]
                 self._annotate_logical_tie(logical_tie, picking)
 

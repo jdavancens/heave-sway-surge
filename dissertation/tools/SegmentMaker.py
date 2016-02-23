@@ -206,7 +206,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                 print(handler_string)
                 voices = music_handler(stage)
 
-                print('\t\t\tMatching voices to staves...')
+                #print('\t\t\tMatching voices to staves...')
                 for voice in voices:
                     voice_instrument = inspect_(voice).get_indicator(
                         instrumenttools.Instrument)
@@ -218,7 +218,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                     # v_string = '\t\t\t\tMatching voice: {}, {}'
                     # v_string = v_string.format(voice_instrument,voice.name)
                     # print(v_string)
-                     
+
                     for staff in iterate(self._score).by_class(Staff):
                         staff_instrument = inspect_(staff).get_annotation('instrument')
 
@@ -264,9 +264,15 @@ class SegmentMaker(SegmentMakerBaseClass):
         return markup
 
     def _make_lilypond_file(self):
-        r''' Makes a basic Lilypond file and removes the default blocks. Returns
-        the Lilypond file.
+        r''' Makes a basic Lilypond file, removes the default blocks, and adds
+        includes. Returns the Lilypond file.
         '''
+        lilypond_file = lilypondfiletools.make_basic_lilypond_file(self._score)
+        lilypond_file.use_relative_includes = True
+        for item in lilypond_file.items[:]:
+            if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
+                lilypond_file.items.remove(item)
+
         stylesheet_path = os.path.join(
             '..',
             'stylesheets',
@@ -288,6 +294,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             'stencils.ily',
             )
         includes = [stylesheet_path, color_span_def_path, scheme_path, stencils_path]
+
         if 1 < self._segment_number:
             path = os.path.join(
                 '..',
@@ -295,16 +302,15 @@ class SegmentMaker(SegmentMakerBaseClass):
                 'nonfirst-segment.ily',
                 )
             includes.append(path)
-        lilypond_file = lilypondfiletools.make_basic_lilypond_file(
-            self._score,
-            includes=includes,
-            use_relative_includes=True
-        )
+
+        for include in includes:
+            lilypond_file.file_initial_user_includes.append(include)
+
         lilypond_file.header_block.title = None
         lilypond_file.header_block.composer = None
-        for item in lilypond_file.items[:]:
-            if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
-                lilypond_file.items.remove(item)
+
+
+
         self._lilypond_file = lilypond_file
 
     def _make_score(self):

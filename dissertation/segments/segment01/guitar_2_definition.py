@@ -16,7 +16,7 @@ guitar = instrumenttools.Guitar(
     short_instrument_name = 'Gtr. II'
 )
 stages = (0,)
-divisions = sequencetools.flatten_sequence(time_signatures[0])
+divisions = sequencetools.flatten_sequence(time_signatures)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================

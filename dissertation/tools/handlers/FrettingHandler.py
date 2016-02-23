@@ -66,12 +66,12 @@ class FrettingHandler(object):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = self.music_maker.stages.index(current_stage)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor.next()[0]
+                i = cursor()[0]
                 fret_combination = self.fret_combinations[i]
                 self._annotate_logical_tie(logical_tie, fret_combination)
         for i in range(1, len(logical_ties)):
@@ -152,14 +152,14 @@ class FrettingHandler(object):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         for logical_tie in logical_ties:
             self._insert_gliss_anchor(logical_tie)
             for chord in logical_tie:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = schemetools.Scheme('point-stencil')
-            fret_combination = self.fret_combinations[cursor.next()[0]]
+            fret_combination = self.fret_combinations[cursor()[0]]
             glissando_map = self._make_glissando_map(fret_combination, lifeline_voice.context_name)
             if glissando_map is not None :
                 attach(glissando_map, logical_tie[0])
@@ -168,7 +168,7 @@ class FrettingHandler(object):
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
                        gliss_skip(chord)
-        label(lifeline_voice).remove_markup()
+        detach(Markup, lifeline_voice)
         return lifeline_voice
 
     def _name_voices(self, voice, rhythm_voice, lifeline_voice):

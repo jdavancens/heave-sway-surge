@@ -72,13 +72,13 @@ class SlidePositionHandler(object):
         current_stage_index = stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
 
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
-                i = cursor.next()[0]
+                i = cursor()[0]
                 slide = self.slides[i]
                 self._annotate_logical_tie(logical_tie, slide)
         for i in range(len(logical_ties)-1):

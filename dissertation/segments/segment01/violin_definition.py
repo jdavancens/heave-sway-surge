@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 '''
 Created on Oct 31, 2015
@@ -8,11 +7,11 @@ Created on Oct 31, 2015
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment01 import *
-cello = instrumenttools.Cello()
+viola = instrumenttools.Viola()
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
-divisions = sequencetools.flatten_sequence(time_signatures)
+divisions = sequencetools.flatten_sequence(time_signatures)[0:36]
 tuplet_ratios_bowing = (
     #1-1
     [], [], [],
@@ -24,10 +23,10 @@ tuplet_ratios_bowing = (
     [], [], [], [],
     [], [],
     [], [], [],
-    [3,2], [],
-    [2,3], [1], [],
+    [3,2,1,1], [],
+    [2,1], [1], [],
     [1], [],
-    [1], [1,1,1,1], [2,2,3], [],
+    [1], [1,1,1], [2,1,1], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -165,7 +164,6 @@ tuplet_ratios_fingering = (
     [], [], [], [],
     [], [], [],
 )
-
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     rewrite_meter=True, spell_metrically=True,
@@ -184,7 +182,7 @@ stages = (0,)
 #===============================================================================
 bowing_music_maker = MusicMaker(
     stages=stages,
-    instrument=cello,
+    instrument=viola,
     name='Bowing',
     time_signatures=divisions,
     divisions=divisions,
@@ -196,7 +194,7 @@ bowing_music_maker = MusicMaker(
     )
 fingering_music_maker = MusicMaker(
     stages=stages,
-    instrument=cello,
+    instrument=viola,
     name='Fingering',
     time_signatures=divisions,
     divisions=divisions,
@@ -213,7 +211,7 @@ fingering_music_maker = MusicMaker(
 
 bowings = (
     StringBowing(
-            instrument=cello,
+            instrument=viola,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
             pressure_start=Fraction(1, 1),
@@ -224,7 +222,7 @@ bowings = (
             staccato=False,
         ),
     StringBowing(
-            instrument=cello,
+            instrument=viola,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
             pressure_start=Fraction(1, 1),
@@ -238,28 +236,28 @@ bowings = (
 
 fingerings = (
     StringFingering(
-        instrument=cello,
+        instrument=viola,
         height_start=Fraction(2, 30),
         height_stop=Fraction(3, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=cello,
+        instrument=viola,
         height_start=Fraction(6, 30),
         height_stop=Fraction(4, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=cello,
+        instrument=viola,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=cello,
+        instrument=viola,
         height_start=Fraction(5, 30),
         height_stop=Fraction(1, 30),
         pressure_start=Fraction(1, 5),
@@ -273,13 +271,13 @@ fingerings = (
 bowing_music_handler = BowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
-        patterns=[[0,1]],
+        patterns=((0, 1),),
         number_of_staff_lines=30,
         )
 fingering_music_handler = StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
-        patterns=[[0, 2, 1, 3, 2, 1, 3, 0, 1]],
+        patterns=((0, 2, 1, 3, 2, 1, 3, 0, 1),),
         number_of_staff_lines=30,
         )
 music_handlers = [

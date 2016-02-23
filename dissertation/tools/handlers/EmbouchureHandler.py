@@ -108,12 +108,12 @@ class EmbouchureHandler(object):
         current_stage_index = stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
-                embouchure = self.embouchures[cursor.next()[0]]
+                embouchure = self.embouchures[cursor()[0]]
                 self._annotate_logical_tie(logical_tie, embouchure)
         for i in range(len(logical_ties)-1):
             if isinstance(logical_ties[i][0], Note):

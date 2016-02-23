@@ -77,12 +77,12 @@ class WoodwindFingeringHandler(object):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = self.music_maker.stages.index(current_stage)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor.next()[0]
+                i = cursor()[0]
                 fingering = self.fingerings[i]
                 self._annotate_logical_tie(logical_tie, fingering)
         for i in range(1, len(logical_ties)):
@@ -137,14 +137,14 @@ class WoodwindFingeringHandler(object):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = current_stage_index % len(self.patterns)
         pattern = self.patterns[pattern_index]
-        cycle = datastructuretools.CyclicTuple(pattern)
-        cursor = datastructuretools.Cursor(cycle)
+        server = datastructuretools.StatalServer(pattern)
+        cursor = server()
         for logical_tie in logical_ties:
             self._insert_gliss_anchor(logical_tie)
             for chord in logical_tie:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = schemetools.Scheme('point-stencil')
-            fingering = self.fingerings[cursor.next()[0]]
+            fingering = self.fingerings[cursor()[0]]
             glissando_map = self._make_glissando_map(fingering, lifeline_voice.context_name)
             if glissando_map is not None :
                 attach(glissando_map, logical_tie[0])
@@ -153,7 +153,7 @@ class WoodwindFingeringHandler(object):
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
                        gliss_skip(chord)
-        label(lifeline_voice).remove_markup()
+        detach(Markup, lifeline_voice)
         return lifeline_voice
 
     def _make_glissando_map(self, fingering, context_name):
@@ -241,10 +241,10 @@ class WoodwindFingeringHandler(object):
         markups = []
         for key in key_combination:
             if key.lower() in ('t', 'thumb', 'down'):
-                box = Markup.filled_box((-0.66, 0.66), (-0.66, 0.66), 0.)
+                box = Markup.musicglyph('noteheads.s2laFunk').raise_(0.5)
                 markups.append(box)
             elif key.lower() is 'half':
-                dot = Markup.filled_box((-0.25, 0.25), (-0.25, 0.25), 0.)
+                ox = Markup.musicglyph('dots.dot').raise_(0.5)
                 dot_in_box = dot.box().whiteout()
                 markups.append(dot_in_box)
             else:
