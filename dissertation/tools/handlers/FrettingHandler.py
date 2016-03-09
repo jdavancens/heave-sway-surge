@@ -46,14 +46,10 @@ class FrettingHandler(object):
         voice = self.music_maker(current_stage)
         self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        if current_stage in self.music_maker.stages:
-            self._handle_fret_combinations(voice, current_stage)
-            lifeline_voice = self._make_lifeline_voice(voice, current_stage)
-            self._name_voices(voice, rhythm_voice, lifeline_voice)
-            voices = [voice, lifeline_voice, rhythm_voice]
-        else:
-            voices = [voice, rhythm_voice]
-            self._name_voices(voice, rhythm_voice, None)
+        self._handle_fret_combinations(voice, current_stage)
+        lifeline_voice = self._make_lifeline_voice(voice, current_stage)
+        self._name_voices(voice, rhythm_voice, lifeline_voice)
+        voices = [voice, lifeline_voice, rhythm_voice]
         return voices
 
     ### PRIVATE METHODS ###

@@ -12,6 +12,7 @@ from dissertation.segments.segment01 import saxophone_definition
 from dissertation.segments.segment01 import trombone_definition
 from dissertation.segments.segment01 import guitar_1_definition
 from dissertation.segments.segment01 import guitar_2_definition
+from dissertation.segments.segment01 import violin_definition
 from dissertation.segments.segment01 import viola_definition
 from dissertation.segments.segment01 import cello_definition
 from dissertation.segments.segment01 import bass_definition
@@ -34,6 +35,7 @@ def make_segment(number_of_stages=None):
             'trombone',
             'guitar i',
             'guitar ii',
+            'violin',
             'viola',
             'cello',
             'contrabass',
@@ -45,6 +47,7 @@ def make_segment(number_of_stages=None):
     trombone_handlers = trombone_definition.get_music_handlers()
     guitar_1_handlers = guitar_1_definition.get_music_handlers()
     guitar_2_handlers = guitar_2_definition.get_music_handlers()
+    violin_handlers = violin_definition.get_music_handlers()
     viola_handlers = viola_definition.get_music_handlers()
     cello_handlers = cello_definition.get_music_handlers()
     bass_handlers = bass_definition.get_music_handlers()
@@ -55,6 +58,7 @@ def make_segment(number_of_stages=None):
         trombone_handlers,
         guitar_1_handlers,
         guitar_2_handlers,
+        violin_handlers,
         viola_handlers,
         cello_handlers,
         bass_handlers

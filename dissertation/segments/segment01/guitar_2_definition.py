@@ -15,7 +15,7 @@ guitar = instrumenttools.Guitar(
     instrument_name='Guitar II',
     short_instrument_name = 'Gtr. II'
 )
-stages = (0,)
+stages = (0,1,2,3,4)
 divisions = sequencetools.flatten_sequence(time_signatures)
 #===============================================================================
 #  RHYTHM-MAKERS
@@ -45,7 +45,7 @@ picking_music_maker = MusicMaker(
     stages=stages,
     instrument=guitar,
     name='Picking',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=talea_maker_picking
 )
@@ -53,7 +53,7 @@ fretting_music_maker = MusicMaker(
     stages=stages,
     instrument=guitar,
     name='Fretting',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=note_maker_fretting
 )
@@ -127,12 +127,12 @@ fret_combinations = (
 fretting_music_handler = FrettingHandler(
     music_maker=fretting_music_maker,
     fret_combinations=fret_combinations,
-    patterns=[[0,1, 0, 0,1,2, 0,1, 0,1,2],[1],[1],[1]]
+    patterns=[[0,1, 0, 0,1,2, 0,1, 0,1,2],[1],[1],[1], [0]]
 )
 picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
     pickings=pickings,
-    patterns=[[0,1,0,2], [0,1], [2], [0,2,1,2]]
+    patterns=[[0,1,0,2], [0,1], [2], [0,2,1,2], [1]]
 )
 music_handlers = [
     fretting_music_handler,

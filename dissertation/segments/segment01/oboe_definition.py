@@ -6,46 +6,46 @@ Created on Oct 31, 2015
 '''
 from abjad import *
 from dissertation import *
-from dissertation.materials.segment01 import *
+from dissertation.materials.segment01 import time_signatures
 oboe = instrumenttools.Oboe()
 #===============================================================================
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 divisions = sequencetools.flatten_sequence(time_signatures)
-stages = (0,)
+stages = (0,1,2,3,4)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
 tuplet_ratios_embouchure = (
-    # 1-1g
+    # 1-1
     [], [], [],
     [], [],
     [], [], [], [],
     [], [], [],
     [], [], [], [],
     # 1-2
-    [], [1], [1], [1],
-    [], [1],
-    [], [1], [1],
-    [], [1],
-    [], [1], [1],
-    [], [1],
-    [], [1], [1], [1],
+    [], [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [1], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
+    [], [1], [1],
     #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
+    [], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
     #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
+    [], [1], [1], [1],
+    [], [1], [1],
     #3-1
     [], [], [],
     [], [],
@@ -100,18 +100,18 @@ tuplet_ratios_lh = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [], [1,1], [1,1], [1,1],
-    [], [1,1],
-    [], [1,1], [1,1],
-    [], [1,1],
-    [], [1,1], [1,1],
-    [], [1,1],
-    [], [1,1], [1,1], [1,1],
-    #2-1
     [], [], [], [],
     [], [],
-    [], [], [], [],
     [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
+    #2-1
+    [], [2,1], [5,3], [2,1],
+    [], [2,1], [2,1],
+    [], [2,1], [2,1], [5,3],
+    [], [2,1],
     #2-2
     [], [], [],
     [], [],
@@ -176,18 +176,18 @@ tuplet_ratios_rh = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [], [1,2,1], [1,5,1], [1,5,1],
-    [], [1,3,1],
-    [], [1,4,1], [1,5,1],
-    [], [1,3,1],
-    [], [1,5,1], [1,5,1],
-    [], [1,3,1],
-    [], [1,4,1], [1,5,1], [1,3,1],
-    #2-1
     [], [], [], [],
     [], [],
-    [], [], [], [],
     [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
+    #2-1
+    [], [1,5,1], [1,7,1], [1,5,1],
+    [], [1,5,1], [1,11,1],
+    [], [1,5,1], [1,11,1], [1,7,1],
+    [], [1,11,1],
     #2-2
     [], [], [],
     [], [],
@@ -265,8 +265,8 @@ embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=oboe,
     name='Embouchure',
+    time_signatures=time_signatures,
     divisions=divisions,
-    time_signatures=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_embouchure],
         duration_spelling_specifier=duration_spelling_specifier,
@@ -277,7 +277,7 @@ lh_fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=oboe,
     name='Left Hand Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_lh],
@@ -289,7 +289,7 @@ rh_fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=oboe,
     name='Right Hand Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_rh],
@@ -305,11 +305,11 @@ embouchures = (
             instrument=oboe,
             air_pressure_start=Fraction(1, 10),
             air_pressure_stop=Fraction(1, 2),
-            lip_pressure_start=Fraction(1, 2),
-            lip_pressure_stop=Fraction(1, 2),
+            lip_pressure_start=Fraction(1, 1),
+            lip_pressure_stop=Fraction(1, 1),
             staccato=False,
             tongue_articulated=False,
-    ),
+        ),
     Embouchure(
             instrument=oboe,
             air_pressure_start=Fraction(1, 2),
@@ -317,43 +317,43 @@ embouchures = (
             lip_pressure_start=Fraction(1, 1),
             lip_pressure_stop=Fraction(1, 1),
             staccato=False,
-            tongue_articulated=True,
-    ),
+            tongue_articulated=False,
+        ),
     Embouchure(
             instrument=oboe,
-            air_pressure_start=Fraction(1, 2),
-            air_pressure_stop=Fraction(1, 10),
+            air_pressure_start=Fraction(1, 1),
+            air_pressure_stop=Fraction(1, 3),
             lip_pressure_start=Fraction(1, 1),
             lip_pressure_stop=Fraction(1, 1),
             staccato=False,
             tongue_articulated=True,
-    ),
-)
+        ),
+    )
 
 lh_fingerings = (
     WoodwindFingering(
         instrument=oboe,
         hand='left',
         keys={
-            'thumb':None,
+            'thumb':'down',
             'index':'down',
             'middle':'down',
-            'ring':None,
+            'ring':'down',
             'pinky':None
-        }
-    ),
+            }
+        ),
     WoodwindFingering(
         instrument=oboe,
         hand='left',
         keys={
-            'thumb':'I',
-            'index':None,
+            'thumb':'down',
+            'index':'down',
             'middle':'down',
             'ring':'down',
-            'pinky':None
-        }
-    ),
-)
+            'pinky':'cis'
+            }
+        ),
+    )
 
 rh_fingerings = (
     WoodwindFingering(
@@ -362,20 +362,20 @@ rh_fingerings = (
         keys={
             'index':'down',
             'middle':'down',
-            'ring':'down',
+            'ring':None,
             'pinky':None
-        }
-    ),
+            }
+        ),
     WoodwindFingering(
         instrument=oboe,
         hand='right',
         keys={
-            'index':None,
+            'index':'down',
             'middle':'down',
             'ring':'down',
             'pinky':None
-        }
-    ),
+            }
+        ),
     WoodwindFingering(
         instrument=oboe,
         hand='right',
@@ -384,9 +384,10 @@ rh_fingerings = (
             'middle':None,
             'ring':None,
             'pinky':None
-        }
-    ),
-)
+            }
+        ),
+    )
+
 
 #===============================================================================
 # MUSIC-HANDLERS
@@ -394,20 +395,20 @@ rh_fingerings = (
 embouchure_music_handler = EmbouchureHandler(
     music_maker=embouchure_music_maker,
     embouchures=embouchures,
-    patterns=[[0,1, 0, 0,1,2, 0,1, 0,1,2], [1], [1], [1]],
+    patterns=[[0,1, 0, 0,1,2, 0,1, 0,1,2], [1], [1], [1], [1]],
     number_of_staff_lines=10,
 )
 lh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=lh_fingering_music_maker,
     hand='left',
     fingerings=lh_fingerings,
-    patterns=[[0,1], [1], [0,1], [0,1]]
+    patterns=[[0,1], [1], [0,1], [0,1], [1]]
 )
 rh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=rh_fingering_music_maker,
     hand='right',
     fingerings=rh_fingerings,
-    patterns=[[0,1,0,2], [0,1], [2], [0,2,1,2]]
+    patterns=[[0,1,0,2], [0,1], [2], [0,2,1,2], [0,1]]
 )
 music_handlers= [
     embouchure_music_handler,

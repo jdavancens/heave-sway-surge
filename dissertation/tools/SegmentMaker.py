@@ -345,8 +345,9 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         measures = self._make_skip_filled_measures()
         #attach Tempi
-        for tempo in self.tempo_map[0:self.number_of_stages]:
-            attach(tempo[1], measures[tempo[0]][0])
+        for tempo in self.tempo_map:
+            if tempo[0] < len(measures):
+                attach(tempo[1], measures[tempo[0]][0])
         leaves = iterate(measures).by_class(scoretools.Leaf)
         leaves = list(leaves)
         first_leaf = leaves[0]

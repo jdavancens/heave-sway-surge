@@ -46,14 +46,16 @@ class MusicMaker:
             self.stages = (stages,)
         else:
             self._stages = stages
-        self.time_signatures = sequencetools.flatten_sequence(time_signatures)
-        # check that divisions and time signatures are the same duration
+        self.time_signatures = time_signatures
+        #### check that divisions and time signatures are the same duration
         if self.divisions is not None:
             divisions_fractions = [Duration(pair) for pair in divisions]
             divisions_sum = sum(divisions_fractions)
-            time_sigs_fractions = [Duration(pair) for pair in self.time_signatures]
+            ts = sequencetools.flatten_sequence(time_signatures)
+            time_sigs_fractions = [Duration(pair) for pair in ts]
             time_sigs_sum = sum(time_sigs_fractions)
             assert divisions_sum == time_sigs_sum
+
 
     ### SPECIAL METHODS ###
     def __call__(self, current_stage):
@@ -63,12 +65,13 @@ class MusicMaker:
         '''
         if current_stage in self._stages:
             if self.rhythm_maker is None:
-                voice = self._make_skips()
+                voice = self._make_skips(current_stage)
             else:
-                voice = self._make_rhythm()
+                voice = self._make_rhythm(current_stage)
         else:
-            voice = self._make_skips()
+            voice = self._make_skips(current_stage)
         assert isinstance(voice, Voice)
+
         return voice
 
 
@@ -97,6 +100,13 @@ class MusicMaker:
                     d = t.multiplied_duration
                     n = scoretools.make_notes([0],[d])
                     mutate([t]).replace(n)
+
+    def _get_stage_measure_index(self, current_stage):
+        index = 0
+        for stage in self.time_signatures[0:current_stage]:
+            for measure in sequencetools.flatten_sequence(stage):
+                index += 1
+        return index
 
     def _hide_full_measure_rests(self, selection):
         for i,chunk in enumerate(selection):
@@ -129,14 +139,20 @@ class MusicMaker:
                         skips.append(s)
                     selection[i] = selectiontools.Selection(skips)
 
-    def _make_skips(self):
-        skips = scoretools.make_skips((1,1), self.time_signatures)
+    def _make_skips(self, current_stage):
+        measures = self.time_signatures[current_stage]
+        measures = sequencetools.flatten_sequence(measures)
+        skips = scoretools.make_skips((1,1), measures)
         voice = Voice(skips)
         attach(self._instrument, voice)
         return voice
 
-    def _make_rhythm(self):
-        rhythm = self.rhythm_maker(self.divisions)
+    def _make_rhythm(self,current_stage):
+        start_index = self._get_stage_measure_index(current_stage)
+        measures = self.time_signatures[current_stage]
+        length = len(sequencetools.flatten_sequence(measures))
+        divisions = self.divisions[start_index:start_index+length]
+        rhythm = self.rhythm_maker(divisions)
         self._hide_full_measure_rests(rhythm)
         voice = Voice(rhythm)
         self._flatten_trivial_tuplets(voice)

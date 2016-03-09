@@ -13,6 +13,7 @@ instrument_categories = {
         'guitar ii'
     ],
     'bowed strings':[
+        'violin',
         'viola',
         'cello',
         'contrabass'

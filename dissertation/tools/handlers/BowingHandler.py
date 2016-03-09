@@ -43,17 +43,14 @@ class BowingHandler(object):
     def __call__ (self, current_stage):
         voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        if current_stage in self.music_maker.stages:
-            string_number_voice = None
-            self._annotate_logical_ties(voice, current_stage)
-            string_number_voice = copy.deepcopy(voice)
-            self._handle_bowing_voice(voice)
-            self._handle_string_number_voice(string_number_voice)
-            self._handle_rhythm_voice(rhythm_voice)
-            self._name_voices(voice, rhythm_voice, string_number_voice)
-            return [voice, rhythm_voice, string_number_voice]
-        else:
-            return[voice, rhythm_voice]
+        string_number_voice = None
+        self._annotate_logical_ties(voice, current_stage)
+        string_number_voice = copy.deepcopy(voice)
+        self._handle_bowing_voice(voice)
+        self._handle_string_number_voice(string_number_voice)
+        self._handle_rhythm_voice(rhythm_voice)
+        self._name_voices(voice, rhythm_voice, string_number_voice)
+        return [voice, rhythm_voice, string_number_voice]
 
     ### PRIVATE METHODS ###
 
@@ -136,12 +133,14 @@ class BowingHandler(object):
 
     def _attach_glissando(self, logical_tie):
         pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
-        color = (pressure * Fraction(1,2)) + Fraction(1,2)
-        color = graphics_tools.grayscale_to_rgb(pressure)
-        color = graphics_tools.scheme_rgb_color(color)
+        rgb0 = (0, 0, 1)
+        rgb1 = (1, 0, 0)
+        rgb = graphics_tools.interpolate_rgb(pressure, rgb0, rgb1)
+        color = graphics_tools.scheme_rgb_color(rgb)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if not staccato:
-            gliss(logical_tie[0], color=color, thickness=3)
+            thickness = round( 10 * float(pressure) )
+            gliss(logical_tie[0], color=color, thickness=thickness)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)
@@ -210,8 +209,6 @@ class BowingHandler(object):
         else:
             for leaf in logical_tie:
                 point_note_head(leaf)
-
-
 
 
     def _hide_note_heads(self, logical_tie):

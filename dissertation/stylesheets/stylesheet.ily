@@ -300,7 +300,7 @@ color = #blue
         \override TimeSignature.font-size = 3
         \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
-        \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #16
+        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #16
     }
     % TROMBONE SLIDE POSITION STAFF
     \context {
@@ -421,8 +421,8 @@ color = #blue
         \accepts PickingStaff
         \accepts FrettingStaff
         \consists Output_property_engraver
-        \consists Span_bar_engraver
-        \consists Span_bar_stub_engraver
+        %{\consists Span_bar_engraver
+        \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
         systemStartDelimiter = #'SystemStartBracket
@@ -442,14 +442,14 @@ color = #blue
         \accepts EmbouchureStaff
         \accepts TromboneSlidePositionStaff
         \consists Output_property_engraver
-        \consists Span_bar_engraver
-        \consists Span_bar_stub_engraver
+        %{\consists Span_bar_engraver
+        \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
+        \override StaffGrouper.staff-staff-spacing.minimum-distance = #8
         \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
         \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
     }
@@ -464,14 +464,14 @@ color = #blue
         \accepts WoodwindLeftHandFingeringStaff
         \accepts WoodwindRightHandFingeringStaff
         \consists Output_property_engraver
-        \consists Span_bar_engraver
-        \consists Span_bar_stub_engraver
+        %{\consists Span_bar_engraver
+        \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
+        \override StaffGrouper.staff-staff-spacing.minimum-distance = #4
         \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
         \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
     }
@@ -495,7 +495,7 @@ color = #blue
         \remove System_start_delimiter_engraver
         \remove Text_engraver
         \remove Time_signature_engraver
-        \override BarLine.layer = #99
+        %{\override BarLine.layer = #99
         \override BarLine.hair-thickness = #1
         \override BarLine.space-alist = #'(
             (time-signature extra-space . 0.0)
@@ -506,7 +506,7 @@ color = #blue
             (first-note fixed-space . 0.0)
             (next-note semi-fixed-space . 0.0)
             (right-edge extra-space . 0.0)
-        )
+        )%}
         \override Beam.breakable = ##t
         \override Beam.damping = #+inf.0
         \override Beam.beam-thickness = #0.75
@@ -521,7 +521,7 @@ color = #blue
         \override SpacingSpanner.strict-grace-spacing = ##t
         \override SpacingSpanner.strict-note-spacing = ##t
         \override SpacingSpanner.uniform-stretching = ##t
-        \override SpanBar.layer = #100
+        %{\override SpanBar.layer = #100
         \override SpanBar.hair-thickness = #0.8
         \override SpanBar.space-alist = #'(
             (time-signature extra-space . 0.0)
@@ -532,7 +532,7 @@ color = #blue
             (first-note fixed-space . 0.0)
             (next-note semi-fixed-space . 0.0)
             (right-edge extra-space . 0.0)
-        )
+        )%}
         \override StaffSymbol.layer = #-400
         \override StemTremolo.beam-width = 0.5
         \override StemTremolo.flag-count = 2
@@ -546,7 +546,7 @@ color = #blue
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         autoBeaming = ##t
-        defaultBarType = #"|"
+        %{defaultBarType = #"|"%}
         proportionalNotationDuration = #(ly:make-moment 1 32)
         tupletFullLength = ##t
 

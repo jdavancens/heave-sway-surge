@@ -68,4 +68,11 @@ instruments = TypedOrderedDict([
             short_instrument_name='Va.'
             )
         ),
+    (
+        'violin',
+        instrumenttools.Viola(
+            instrument_name='Violin',
+            short_instrument_name='Vn.'
+            )
+        ),
     ])

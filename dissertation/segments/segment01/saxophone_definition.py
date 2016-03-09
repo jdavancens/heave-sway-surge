@@ -12,7 +12,7 @@ saxophone = instrumenttools.AltoSaxophone()
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 divisions = sequencetools.flatten_sequence(time_signatures)
-stages = (0,)
+stages = (0,1,2,3,4)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
@@ -24,28 +24,28 @@ tuplet_ratios_embouchure = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [1], [1], [], [1],
-    [1], [1],
-    [1], [1], [],
-    [1], [1],
-    [1], [1], [],
-    [1], [1],
-    [1], [1], [], [1],
+    [], [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [1], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
+    [], [1], [1],
     #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
+    [], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
     #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [1], [1],
+    [], [1],
+    [], [1], [1], [1],
+    [], [1], [1], [1],
+    [], [1], [1],
     #3-1
     [], [], [],
     [], [],
@@ -100,18 +100,18 @@ tuplet_ratios_lh = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [1,2], [1,2], [], [1,2],
-    [1,2], [1,2],
-    [1,2], [1,2], [],
-    [1,2], [1,2],
-    [1,2], [1,2], [],
-    [1,2], [1,2],
-    [1,2], [1,2], [], [1,2],
-    #2-1
     [], [], [], [],
     [], [],
-    [], [], [], [],
     [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
+    #2-1
+    [], [], [], [1,1],
+    [1,1], [1,1], [],
+    [1,1], [1,1], [], [1,1],
+    [1,1], [1,1],
     #2-2
     [], [], [],
     [], [],
@@ -176,18 +176,18 @@ tuplet_ratios_rh = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [1,1,1,1], [1,1,1,1], [], [1,1,1,1],
-    [1,1,1,1], [1,1,1,1],
-    [1,1,1,1], [1,1,1,1], [],
-    [1,1,1,1], [1,1,1,1],
-    [1,1,1,1], [1,1,1,1], [],
-    [1,1,1,1], [1,1,1,1],
-    [1,1,1,1], [1,1,1,1], [], [1,1,1,1],
-    #2-1
     [], [], [], [],
     [], [],
-    [], [], [], [],
     [], [], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
+    #2-1
+    [], [], [], [1,1,1,1],
+    [2,1,2], [1,1,1,1], [],
+    [2,1,1,2], [1,1,1,1], [], [2,1,2],
+    [1,1,1], [3,1,3],
     #2-2
     [], [], [],
     [], [],
@@ -266,7 +266,7 @@ embouchure_music_maker = MusicMaker(
     instrument=saxophone,
     name='Embouchure',
     divisions=divisions,
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_embouchure],
         duration_spelling_specifier=duration_spelling_specifier,
@@ -277,7 +277,7 @@ lh_fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Left Hand Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_lh],
@@ -289,7 +289,7 @@ rh_fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Right Hand Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_rh],
@@ -404,13 +404,13 @@ lh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=lh_fingering_music_maker,
     hand='left',
     fingerings=lh_fingerings,
-    patterns=((0, 1, 2),)
+    patterns=([0,1], [1], [0,1], [0,1], [1])
     )
 rh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=rh_fingering_music_maker,
     hand='right',
     fingerings=rh_fingerings,
-    patterns=((0, 1),)
+    patterns=([0,1], [1], [0,1], [0,1], [1])
     )
 music_handlers = [
     embouchure_music_handler,

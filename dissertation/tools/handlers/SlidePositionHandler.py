@@ -42,11 +42,10 @@ class SlidePositionHandler(object):
     def __call__ (self, current_stage):
         voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        if current_stage in self.music_maker.stages:
-            self._annotate_logical_ties(voice, current_stage)
-            self._name_voices(voice, rhythm_voice)
-            self._handle_fingering_voice(voice)
-            self._handle_rhythm_voice(rhythm_voice)
+        self._annotate_logical_ties(voice, current_stage)
+        self._name_voices(voice, rhythm_voice)
+        self._handle_fingering_voice(voice)
+        self._handle_rhythm_voice(rhythm_voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###

@@ -17,6 +17,7 @@ class BowedStringStaffGroupTemplate():
         string_space_staff = Staff(
             [],
             context_name='StringSpaceStaff',
+            is_simultaneous=True,
             name='String Space'
         )
         fingering_rhythm_staff = Staff(

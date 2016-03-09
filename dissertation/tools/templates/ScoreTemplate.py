@@ -28,6 +28,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
             'trombone',
             'guitar',
             'guitar',
+            'violin'
             'viola',
             'cello',
             'contrabass',

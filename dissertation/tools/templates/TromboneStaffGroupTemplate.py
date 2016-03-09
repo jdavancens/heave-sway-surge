@@ -20,6 +20,7 @@ class TromboneStaffGroupTemplate(abctools.AbjadValueObject):
         embouchure_staff = Staff(
             [],
             context_name='EmbouchureStaff',
+            is_simultaneous=True,
             name='Embouchure',
             )
         set_(embouchure_staff).instrument_name = Markup('Emb.')

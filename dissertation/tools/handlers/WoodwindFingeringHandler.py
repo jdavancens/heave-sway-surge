@@ -49,14 +49,10 @@ class WoodwindFingeringHandler(object):
         self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = None
         rhythm_voice = copy.deepcopy(voice)
-        if current_stage in self.music_maker.stages:
-            self._handle_fingerings(voice, current_stage)
-            lifeline_voice = self._make_lifeline_voice(voice, current_stage)
-            self._name_voices(voice, rhythm_voice, lifeline_voice)
-            voices = [voice, lifeline_voice, rhythm_voice]
-        else:
-            voices = [voice, rhythm_voice]
-            self._name_voices(voice, rhythm_voice, None)
+        self._handle_fingerings(voice, current_stage)
+        lifeline_voice = self._make_lifeline_voice(voice, current_stage)
+        self._name_voices(voice, rhythm_voice, lifeline_voice)
+        voices = [voice, lifeline_voice, rhythm_voice]
         return voices
 
     ### PRIVATE METHODS ###
@@ -244,7 +240,7 @@ class WoodwindFingeringHandler(object):
                 box = Markup.musicglyph('noteheads.s2laFunk').raise_(0.5)
                 markups.append(box)
             elif key.lower() is 'half':
-                ox = Markup.musicglyph('dots.dot').raise_(0.5)
+                dot = Markup.musicglyph('dots.dot').raise_(0.5)
                 dot_in_box = dot.box().whiteout()
                 markups.append(dot_in_box)
             else:

@@ -24,10 +24,10 @@ tuplet_ratios_bowing = (
     [], [], [], [],
     [], [],
     [], [], [],
-    [3,2], [],
-    [2,3], [1], [],
-    [1], [],
-    [1], [1,1,1,1], [2,2,3], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -100,10 +100,10 @@ tuplet_ratios_fingering = (
     [], [], [], [],
     [], [],
     [], [], [],
-    [1,1], [],
-    [1], [1,1], [],
-    [1,1], [],
-    [1], [1,1], [3,2], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -177,7 +177,7 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     simplify_tuplets=True,
     use_note_duration_bracket=False,
 )
-stages = (0,)
+stages = (0,1,2,3,4)
 
 #===============================================================================
 # MUSIC-MAKERS
@@ -186,7 +186,7 @@ bowing_music_maker = MusicMaker(
     stages=stages,
     instrument=cello,
     name='Bowing',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_bowing],
@@ -198,7 +198,7 @@ fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=cello,
     name='Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_fingering],

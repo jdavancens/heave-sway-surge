@@ -54,10 +54,9 @@ class EmbouchureHandler(object):
         voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
         self._name_voices(voice, rhythm_voice)
-        if current_stage in self.music_maker.stages:
-            self._annotate_logical_ties(voice, current_stage)
-            self._handle_embouchure_voice(voice)
-            self._handle_rhythm_voice(rhythm_voice)
+        self._annotate_logical_ties(voice, current_stage)
+        self._handle_embouchure_voice(voice)
+        self._handle_rhythm_voice(rhythm_voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
@@ -113,7 +112,8 @@ class EmbouchureHandler(object):
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in logical_ties:
             if isinstance(logical_tie[0], Note):
-                embouchure = self.embouchures[cursor()[0]]
+                index = cursor()[0]
+                embouchure = self.embouchures[index]
                 self._annotate_logical_tie(logical_tie, embouchure)
         for i in range(len(logical_ties)-1):
             if isinstance(logical_ties[i][0], Note):
@@ -142,9 +142,10 @@ class EmbouchureHandler(object):
 
     def _handle_lip_pressure(self, logical_tie):
         lip_pressure = inspect_(logical_tie[0]).get_annotation('lip_pressure_start')
-        color = (lip_pressure * Fraction(1,2)) + Fraction(1,2)
-        color = graphics_tools.grayscale_to_rgb(lip_pressure)
-        color = graphics_tools.scheme_rgb_color(color)
+        rgb0 = (0, 0, 1)
+        rgb1 = (1, 0, 0)
+        rgb = graphics_tools.interpolate_rgb(lip_pressure, rgb0, rgb1)
+        color = graphics_tools.scheme_rgb_color(rgb)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if staccato:
             bar_note_head(logical_tie[0])
@@ -153,7 +154,8 @@ class EmbouchureHandler(object):
                     point_note_head(leaf)
         else:
             point_note_head(logical_tie[0])
-            gliss(logical_tie[0], color=color, thickness=2)
+            thickness = round( 10 * float(lip_pressure) )
+            gliss(logical_tie[0], color=color, thickness=thickness)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)

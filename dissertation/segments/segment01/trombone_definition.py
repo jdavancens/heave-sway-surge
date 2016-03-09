@@ -12,7 +12,7 @@ trombone = instrumenttools.TenorTrombone()
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 divisions = sequencetools.flatten_sequence(time_signatures)
-stages = (0,)
+stages = (0,1,2,3,4)
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
@@ -24,13 +24,13 @@ tuplet_ratios_embouchure = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [1,1,1,1,1], [], [], [1,1,1,1,1],
+    [], [], [], [],
     [], [],
     [], [], [],
     [], [],
     [], [], [],
     [], [],
-    [], [], [], [1,1,1,1,1],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -99,13 +99,13 @@ tuplet_ratios_slide = (
     [], [], [],
     [], [], [], [],
     # 1-2
-    [1,1,1], [], [], [1,1,1],
+    [], [], [], [],
     [], [],
     [], [], [],
     [], [],
     [], [], [],
     [], [],
-    [], [], [], [1,1,1,1],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -188,8 +188,8 @@ embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=trombone,
     name='Embouchure',
+    time_signatures=time_signatures,
     divisions=divisions,
-    time_signatures=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_embouchure],
         duration_spelling_specifier=duration_spelling_specifier,
@@ -200,7 +200,7 @@ slide_position_music_maker = MusicMaker(
     stages=stages,
     instrument=trombone,
     name='Slide Position',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_slide],
@@ -249,14 +249,14 @@ slides = (
 embouchure_music_handler = EmbouchureHandler(
     music_maker=embouchure_music_maker,
     embouchures=embouchures,
-    patterns=[[0,1, 1, 1,1,1, 1,1, 1,1,1]],
+    patterns=[[0,1, 1, 1,1,1, 1,1, 1,1,1],[1],[1],[1],[1]],
     number_of_staff_lines=10,
     )
 
 slide_position_music_handler = SlidePositionHandler(
     music_maker=slide_position_music_maker,
     slides=slides,
-    patterns=((0, 1),),
+    patterns=([0, 1],[1],[1],[1],[1]),
     number_of_staff_lines=10
     )
 

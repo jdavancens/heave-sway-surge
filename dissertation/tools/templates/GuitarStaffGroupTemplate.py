@@ -15,6 +15,7 @@ class GuitarStaffGroupTemplate():
         fretting_staff = Staff(
             [],
             context_name='FrettingStaff',
+            is_simultaneous=True,            
             name='Fretting'
         )
         set_(fretting_staff).instrument_name = Markup('Fretting')

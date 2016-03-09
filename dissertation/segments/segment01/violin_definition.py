@@ -7,11 +7,11 @@ Created on Oct 31, 2015
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment01 import *
-viola = instrumenttools.Viola()
+violin = instrumenttools.Violin()
 #===============================================================================
 #  RHYTHM-MAKERS
 #===============================================================================
-divisions = sequencetools.flatten_sequence(time_signatures)[0:36]
+divisions = sequencetools.flatten_sequence(time_signatures)
 tuplet_ratios_bowing = (
     #1-1
     [], [], [],
@@ -23,10 +23,10 @@ tuplet_ratios_bowing = (
     [], [], [], [],
     [], [],
     [], [], [],
-    [3,2,1,1], [],
-    [2,1], [1], [],
-    [1], [],
-    [1], [1,1,1], [2,1,1], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -99,10 +99,10 @@ tuplet_ratios_fingering = (
     [], [], [], [],
     [], [],
     [], [], [],
-    [1,1], [],
-    [1], [1,1], [],
-    [1,1], [],
-    [1], [1,1], [3,2], [],
+    [], [],
+    [], [], [],
+    [], [],
+    [], [], [], [],
     #2-1
     [], [], [], [],
     [], [],
@@ -175,16 +175,16 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     simplify_tuplets=True,
     use_note_duration_bracket=False,
 )
-stages = (0,)
+stages = (0,1,2,3,4)
 
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
 bowing_music_maker = MusicMaker(
     stages=stages,
-    instrument=viola,
+    instrument=violin,
     name='Bowing',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_bowing],
@@ -194,9 +194,9 @@ bowing_music_maker = MusicMaker(
     )
 fingering_music_maker = MusicMaker(
     stages=stages,
-    instrument=viola,
+    instrument=violin,
     name='Fingering',
-    time_signatures=divisions,
+    time_signatures=time_signatures,
     divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_fingering],
@@ -211,7 +211,7 @@ fingering_music_maker = MusicMaker(
 
 bowings = (
     StringBowing(
-            instrument=viola,
+            instrument=violin,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
             pressure_start=Fraction(1, 1),
@@ -222,7 +222,7 @@ bowings = (
             staccato=False,
         ),
     StringBowing(
-            instrument=viola,
+            instrument=violin,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
             pressure_start=Fraction(1, 1),
@@ -236,28 +236,28 @@ bowings = (
 
 fingerings = (
     StringFingering(
-        instrument=viola,
+        instrument=violin,
         height_start=Fraction(2, 30),
         height_stop=Fraction(3, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=viola,
+        instrument=violin,
         height_start=Fraction(6, 30),
         height_stop=Fraction(4, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=viola,
+        instrument=violin,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
         ),
     StringFingering(
-        instrument=viola,
+        instrument=violin,
         height_start=Fraction(5, 30),
         height_stop=Fraction(1, 30),
         pressure_start=Fraction(1, 5),

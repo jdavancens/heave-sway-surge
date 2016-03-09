@@ -47,9 +47,8 @@ class PickingHandler(object):
         self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = copy.deepcopy(voice)
         self._name_voices(voice, rhythm_voice)
-        if current_stage in self.music_maker.stages:
-            self._handle_position_and_string_ids(voice)
-            self._handle_direction_and_force_and_tremolo(rhythm_voice)
+        self._handle_position_and_string_ids(voice)
+        self._handle_direction_and_force_and_tremolo(rhythm_voice)
         return [voice, rhythm_voice]
 
 
