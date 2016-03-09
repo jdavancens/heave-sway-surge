@@ -113,15 +113,15 @@ tuplet_ratios_lh = (
     [], [2,1], [2,1], [5,3],
     [], [2,1],
     #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
+    [], [2,1], [3,2],
+    [], [5,3],
+    [], [3,2], [3,2], [5,3],
     #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [5,3], [3,2],
+    [], [3,2],
+    [], [5,3], [2,1], [3,2],
+    [], [5,3], [2,1], [3,2],
+    [], [5,3], [2,1],
     #3-1
     [], [], [],
     [], [],
@@ -189,15 +189,15 @@ tuplet_ratios_rh = (
     [], [1,5,1], [1,11,1], [1,7,1],
     [], [1,11,1],
     #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
+    [], [1,5,1], [1,9,1],
+    [], [1,7,1],
+    [], [1,9,1], [1,7,1], [1,7,1],
     #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
+    [], [1,7,1], [1,9,1],
+    [], [1,9,1],
+    [], [1,7,1], [1,5,1], [1,9,1],
+    [], [1,7,1], [1,5,1], [1,9,1],
+    [], [1,7,1], [1,5,1],
     #3-1
     [], [], [],
     [], [],
@@ -305,8 +305,8 @@ embouchures = (
             instrument=oboe,
             air_pressure_start=Fraction(1, 10),
             air_pressure_stop=Fraction(1, 2),
-            lip_pressure_start=Fraction(1, 1),
-            lip_pressure_stop=Fraction(1, 1),
+            lip_pressure_start=Fraction(1, 10),
+            lip_pressure_stop=Fraction(1, 7),
             staccato=False,
             tongue_articulated=False,
         ),
@@ -314,8 +314,8 @@ embouchures = (
             instrument=oboe,
             air_pressure_start=Fraction(1, 2),
             air_pressure_stop=Fraction(1, 2),
-            lip_pressure_start=Fraction(1, 1),
-            lip_pressure_stop=Fraction(1, 1),
+            lip_pressure_start=Fraction(1, 2),
+            lip_pressure_stop=Fraction(1, 4),
             staccato=False,
             tongue_articulated=False,
         ),
@@ -323,8 +323,8 @@ embouchures = (
             instrument=oboe,
             air_pressure_start=Fraction(1, 1),
             air_pressure_stop=Fraction(1, 3),
-            lip_pressure_start=Fraction(1, 1),
-            lip_pressure_stop=Fraction(1, 1),
+            lip_pressure_start=Fraction(1, 4),
+            lip_pressure_stop=Fraction(1, 3),
             staccato=False,
             tongue_articulated=True,
         ),
@@ -337,8 +337,8 @@ lh_fingerings = (
         keys={
             'thumb':'down',
             'index':'down',
-            'middle':'down',
-            'ring':'down',
+            'middle':None,
+            'ring':None,
             'pinky':None
             }
         ),
@@ -346,11 +346,11 @@ lh_fingerings = (
         instrument=oboe,
         hand='left',
         keys={
-            'thumb':'down',
-            'index':'down',
+            'thumb':'I',
+            'index':None,
             'middle':'down',
             'ring':'down',
-            'pinky':'cis'
+            'pinky':None
             }
         ),
     )
@@ -360,17 +360,17 @@ rh_fingerings = (
         instrument=oboe,
         hand='right',
         keys={
-            'index':'down',
-            'middle':'down',
+            'index':None,
+            'middle':None,
             'ring':None,
-            'pinky':None
+            'pinky':'ees'
             }
         ),
     WoodwindFingering(
         instrument=oboe,
         hand='right',
         keys={
-            'index':'down',
+            'index':None,
             'middle':'down',
             'ring':'down',
             'pinky':None
@@ -395,7 +395,7 @@ rh_fingerings = (
 embouchure_music_handler = EmbouchureHandler(
     music_maker=embouchure_music_maker,
     embouchures=embouchures,
-    patterns=[[0,1, 0, 0,1,2, 0,1, 0,1,2], [1], [1], [1], [1]],
+    patterns=[[], [0,1, 0, 0,1,2, 0,1, 0,1,2], [1], [1], [1]],
     number_of_staff_lines=10,
 )
 lh_fingering_music_handler = WoodwindFingeringHandler(

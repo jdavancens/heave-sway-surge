@@ -1,10 +1,8 @@
 \version "2.19.29"
 \include "stencils.ily"
-#(set-default-paper-size "11x17" 'portrait)
-#(set-global-staff-size 9)
-longSpace = #48
-medSpace = #6
-shortSpace = #2
+#(set-default-paper-size "super-b" 'portrait)
+#(set-global-staff-size 8)
+staffgroup-space = #24
 color = #blue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
@@ -393,6 +391,7 @@ color = #blue
         \override NoteHead.stem-attachment = #'(-0.75 . 0)
         \override StaffSymbol.line-count = #4
         \override StaffSymbol.staff-space = 2
+        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #4
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
     % BOWED STRING INSTRUMENT STAFF GROUP
@@ -408,8 +407,8 @@ color = #blue
         \remove Instrument_name_engraver
         \remove System_start_delimiter_engraver
         \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
-        \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
+        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
+        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % GUITAR STAFF GROUP
     \context {
@@ -428,9 +427,9 @@ color = #blue
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
-        \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
+        \override StaffGrouper.staff-staff-spacing.minimum-distance = #12
+        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
+        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % TROMBONE STAFF GROUP
     \context {
@@ -450,8 +449,8 @@ color = #blue
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
         \override StaffGrouper.staff-staff-spacing.minimum-distance = #8
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
-        \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
+        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
+        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % WOODWIND INSTRUMENT STAFF GROUP
     \context {
@@ -471,9 +470,9 @@ color = #blue
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #4
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = #16
-        \override StaffGrouper.staffgroup-staff-spacing.stretchability = #100
+        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
+        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
+        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
     % SCORE
@@ -546,8 +545,8 @@ color = #blue
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         autoBeaming = ##t
-        %{defaultBarType = #"|"%}
-        proportionalNotationDuration = #(ly:make-moment 1 32)
+        defaultBarType = #""
+        proportionalNotationDuration = #(ly:make-moment 1 48)
         tupletFullLength = ##t
 
     }

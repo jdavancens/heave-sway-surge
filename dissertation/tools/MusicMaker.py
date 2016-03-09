@@ -151,8 +151,9 @@ class MusicMaker:
         start_index = self._get_stage_measure_index(current_stage)
         measures = self.time_signatures[current_stage]
         length = len(sequencetools.flatten_sequence(measures))
-        divisions = self.divisions[start_index:start_index+length]
-        rhythm = self.rhythm_maker(divisions)
+        end_index = start_index + length
+        rhythm = self.rhythm_maker(self.divisions)
+        rhythm = rhythm[start_index:end_index]
         self._hide_full_measure_rests(rhythm)
         voice = Voice(rhythm)
         self._flatten_trivial_tuplets(voice)

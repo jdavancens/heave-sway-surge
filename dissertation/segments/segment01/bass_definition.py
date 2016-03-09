@@ -272,13 +272,13 @@ fingerings = (
 bowing_music_handler = BowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
-        patterns=[[0, 1]],
+        patterns=([],[0, 1],[],[],[]),
         number_of_staff_lines=30,
         )
 fingering_music_handler = StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
-        patterns=[[0, 2, 1, 3, 2, 1, 3, 0, 1]],
+        patterns=([],[0, 2, 1, 3, 2, 1, 3, 0, 1],[],[],[]),
         number_of_staff_lines=30,
         )
 music_handlers = [

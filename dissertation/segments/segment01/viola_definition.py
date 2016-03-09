@@ -41,7 +41,7 @@ tuplet_ratios_bowing = (
     [], [],
     [], [], [], [],
     [], [], [], [],
-    [], [], [],
+    [], [1], [1,3,2],
     #3-1
     [], [], [],
     [], [],
@@ -117,7 +117,7 @@ tuplet_ratios_fingering = (
     [], [],
     [], [], [], [],
     [], [], [], [],
-    [], [], [],
+    [], [1], [1,1],
     #3-1
     [], [], [],
     [], [],
@@ -214,22 +214,22 @@ bowings = (
             instrument=viola,
             height_start=Fraction(29, 30),
             height_stop=Fraction(29, 30),
-            pressure_start=Fraction(1, 1),
-            pressure_stop=Fraction(1, 1),
+            pressure_start=Fraction(1, 3),
+            pressure_stop=Fraction(1, 2),
             contact_point_start=Fraction(1, 4),
             contact_point_stop=Fraction(3, 4),
-            string_ids=('g', 'd'),
+            string_ids=('a'),
             staccato=False,
         ),
     StringBowing(
             instrument=viola,
             height_start=Fraction(25, 30),
             height_stop=Fraction(21, 30),
-            pressure_start=Fraction(1, 1),
-            pressure_stop=Fraction(1, 1),
+            pressure_start=Fraction(1, 2),
+            pressure_stop=Fraction(2, 3),
             contact_point_start=Fraction(1, 1),
             contact_point_stop=Fraction(0, 1),
-            string_ids=('g', 'd'),
+            string_ids=('a'),
             staccato=False,
         ),
     )
@@ -241,29 +241,29 @@ fingerings = (
         height_stop=Fraction(3, 30),
         pressure_start=Fraction(1, 5),
         pressure_stop=Fraction(1, 5)
-        ),
+    ),
     StringFingering(
         instrument=viola,
-        height_start=Fraction(6, 30),
-        height_stop=Fraction(4, 30),
-        pressure_start=Fraction(1, 5),
-        pressure_stop=Fraction(1, 5)
-        ),
+        height_start=Fraction(4, 30),
+        height_stop=Fraction(6, 30),
+        pressure_start=Fraction(2, 5),
+        pressure_stop=Fraction(2, 5)
+    ),
     StringFingering(
         instrument=viola,
         height_start=Fraction(7, 30),
         height_stop=Fraction(11, 30),
-        pressure_start=Fraction(1, 5),
-        pressure_stop=Fraction(1, 5)
-        ),
+        pressure_start=Fraction(3, 5),
+        pressure_stop=Fraction(3, 5)
+    ),
     StringFingering(
         instrument=viola,
-        height_start=Fraction(5, 30),
-        height_stop=Fraction(1, 30),
-        pressure_start=Fraction(1, 5),
-        pressure_stop=Fraction(1, 5)
-        )
+        height_start=Fraction(10, 30),
+        height_stop=Fraction(17, 30),
+        pressure_start=Fraction(4, 5),
+        pressure_stop=Fraction(4, 5)
     )
+)
 
 #===============================================================================
 # MUSIC-HANDLERS
@@ -271,13 +271,13 @@ fingerings = (
 bowing_music_handler = BowingHandler(
         music_maker=bowing_music_maker,
         bowings=bowings,
-        patterns=((0, 1),),
+        patterns=([],[0],[],[],[]),
         number_of_staff_lines=30,
         )
 fingering_music_handler = StringFingeringHandler(
         music_maker=fingering_music_maker,
         fingerings=fingerings,
-        patterns=((0, 2, 1, 3, 2, 1, 3, 0, 1),),
+        patterns=([],[1,2,3],[],[],[]),
         number_of_staff_lines=30,
         )
 music_handlers = [

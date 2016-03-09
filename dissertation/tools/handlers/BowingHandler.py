@@ -43,14 +43,11 @@ class BowingHandler(object):
     def __call__ (self, current_stage):
         voice = self.music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        string_number_voice = None
         self._annotate_logical_ties(voice, current_stage)
-        string_number_voice = copy.deepcopy(voice)
         self._handle_bowing_voice(voice)
-        self._handle_string_number_voice(string_number_voice)
         self._handle_rhythm_voice(rhythm_voice)
-        self._name_voices(voice, rhythm_voice, string_number_voice)
-        return [voice, rhythm_voice, string_number_voice]
+        self._name_voices(voice, rhythm_voice)
+        return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
 
@@ -139,7 +136,7 @@ class BowingHandler(object):
         color = graphics_tools.scheme_rgb_color(rgb)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if not staccato:
-            thickness = round( 10 * float(pressure) )
+            thickness = round( 7 * float(pressure) ) + 1
             gliss(logical_tie[0], color=color, thickness=thickness)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
@@ -151,7 +148,8 @@ class BowingHandler(object):
             self._insert_gliss_anchor(logical_tie)
             self._attach_glissando(logical_tie)
             self._hide_note_heads(logical_tie)
-            # self._handle_string_ids(logical_tie)
+            self._handle_string_ids(logical_tie)
+
     def _handle_contact_points(self, logical_tie):
         start = inspect_(logical_tie[0]).get_annotation('contact_point_start')
         left_markup = Markup.fraction(start.numerator, start.denominator)
@@ -178,38 +176,28 @@ class BowingHandler(object):
             #self._hide_note_heads(logical_tie)
             pass
 
-    def _handle_string_number_voice(self, string_number_voice):
-        for logical_tie in iterate(string_number_voice).by_logical_tie(pitched=True):
-            self._map_note_heads(logical_tie)
-            self._handle_string_ids(logical_tie)
-
     def _handle_string_ids(self, logical_tie):
         r'''Looks at the current logical tie and the previous. If different,
-        changes the note-head of the first element of the logical tie to textual
-        representation of string id number
+        adds above-staff markup to first note
         '''
-        for leaf in logical_tie:
-            new_pitch = self._map_fraction_to_treble_staff_position(
-                Fraction(2,3),
-                self.number_of_staff_lines,
-            )
-            leaf.written_pitch = new_pitch
 
         string_ids = inspect_(logical_tie[0]).get_annotation('string_ids')
         if isinstance(string_ids, str):
-            string_ids = datastructuretools.TypedTuple(string_ids)
-        else:
-            string_ids = datastructuretools.TypedTuple(string_ids)
+            string_ids = [string_ids]
         last_string_ids = inspect_(logical_tie[0]).get_annotation('previous_string_ids')
         if string_ids != last_string_ids:
-            self._text_to_note_head(logical_tie[0],string_ids, enclosure='box')
-            if len(logical_tie) > 1:
-                for leaf in logical_tie[1:]:
-                    point_note_head(leaf)
-        else:
-            for leaf in logical_tie:
-                point_note_head(leaf)
-
+            column = []
+            for string_id in string_ids:
+                string_id = str(string_id)
+                string_id = string_id.upper()
+                markup = Markup(string_id)
+                markup = markup.bold()
+                column.append(markup)
+            markup = Markup.column(column, direction=Up)
+            markup = markup.fontsize(0)
+            markup = markup.raise_(0.5)
+            markup = markup.box()
+            attach(markup, logical_tie[0])
 
     def _hide_note_heads(self, logical_tie):
         for leaf in logical_tie:
@@ -254,11 +242,10 @@ class BowingHandler(object):
         for leaf in logical_tie:
             leaf.written_pitch = named_pitch
 
-    def _name_voices(self, voice, rhythm_voice, string_number_voice):
+    def _name_voices(self, voice, rhythm_voice):
         instrument = self.music_maker.instrument
         voice.name = self.music_maker.name
         rhythm_voice.name = self.music_maker.name + ' Rhythm'
-        string_number_voice.name = self.music_maker.name + ' String Number'
 
     def _text_to_note_head(
         self,

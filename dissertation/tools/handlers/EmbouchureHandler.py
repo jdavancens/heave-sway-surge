@@ -154,7 +154,7 @@ class EmbouchureHandler(object):
                     point_note_head(leaf)
         else:
             point_note_head(logical_tie[0])
-            thickness = round( 10 * float(lip_pressure) )
+            thickness = round( 7 * float(lip_pressure) ) + 1
             gliss(logical_tie[0], color=color, thickness=thickness)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
