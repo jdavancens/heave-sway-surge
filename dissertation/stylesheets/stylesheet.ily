@@ -404,8 +404,9 @@ color = #blue
         \accepts StringSpaceStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
-        \remove Instrument_name_engraver
+        \consists Instrument_name_engraver
         \remove System_start_delimiter_engraver
+        \override InstrumentName.padding = #1
         \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
         \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
         %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
@@ -545,7 +546,7 @@ color = #blue
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         autoBeaming = ##t
-        defaultBarType = #""
+        defaultBarType = #"|"
         proportionalNotationDuration = #(ly:make-moment 1 48)
         tupletFullLength = ##t
 

@@ -2,6 +2,7 @@
 from dissertation.tools import actions
 from dissertation.tools import handlers
 from dissertation.tools import illustrationtools
+from dissertation.tools import ratiotools
 from dissertation.tools import rhythmtools
 from dissertation.tools import woodwindtools
 from dissertation.tools.actions.Embouchure import Embouchure
@@ -21,5 +22,6 @@ from dissertation.tools.handlers.SlidePositionHandler import SlidePositionHandle
 from dissertation.tools.handlers.StringFingeringHandler import StringFingeringHandler
 from dissertation.tools.handlers.WoodwindFingeringHandler import WoodwindFingeringHandler
 from dissertation.tools.MusicMaker import MusicMaker
-from dissertation.tools.templates.ScoreTemplate import ScoreTemplate
+from dissertation.tools.RatioMaker import RatioMaker
 from dissertation.tools.SegmentMaker import SegmentMaker
+from dissertation.tools.templates.ScoreTemplate import ScoreTemplate

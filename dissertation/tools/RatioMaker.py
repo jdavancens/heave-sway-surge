@@ -1,48 +1,31 @@
 # -*- coding: utf-8 -*-
-'''
-Created March 5, 2016
+'''Makes a ratio from a list of time signatures to use as input to a rhythm
+maker.
 
-ratio_list = {
-    'instruments':{
-            'instrument':{
-                'parameter': [1,2,3],
-        }
-    }
-}
-
-@author: josephdavancens
 '''
-class RatioMaker(object):
+from abjad import *
+
+class RatioMaker:
+    __slots__ = ('_ratios')
     def __init__(
         self,
-        instrument_list,
-        stage_list,
         time_signatures,
-        ):
-        ratio_list = {'instruments':None}
-        for instrument in instrument_list:
-            for parameter in instrument_parameters[instrument]:
-                ratios = []
-                for stage in stage_list:
-                    section_list = self._make_section_list(stage)
-                    for section in section_list:
-                        measure_list = self._make_section_list(section_list)
-                        for measure in measure_list:
-                            subdivision_list = self._make_subdivision_list(measure)
-                            for subdivision in subdivision_list:
-                                ratio = self._make_ratio(subdivision)
-                                ratios.append(ratio)
-                ratio_list[instrument][parameter] = ratios
-        return ratio_list
+        rest_indices,
+        prolater=None,
+        subdivider=None
+    ):
+        if rest_indices == 'all':
+            ratios = [[-1] for ts in time_signatures]
+        else:
+            ratios = []
+            for i, time_signature in enumerate(time_signatures):
+                if i not in rest_indices:
+                    prolation = prolater(time_signature)
+                    ratio = subdivider(prolation)
+                    ratios.append(ratio.items)
+                else:
+                    ratios.append([-1])
+        self._ratios = ratios
 
-    def _make_measure_list(section):
-        pass
-
-    def _make_ratio(subdivision, prolation_pattern, ratio_pattern):
-        pass
-
-    def _make_section_list(stage):
-        pass
-
-    def _make_subdivision_list(measure):
-        pass
+    def __call__(self):
+        return self._ratios

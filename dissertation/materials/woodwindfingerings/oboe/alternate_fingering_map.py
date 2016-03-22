@@ -23,7 +23,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -34,7 +34,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -46,7 +46,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -57,7 +57,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -69,7 +69,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -80,7 +80,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -92,7 +92,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -103,7 +103,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'a',
                 'middle':None,
                 'ring':None,
@@ -115,7 +115,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -126,7 +126,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -138,7 +138,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'b',
@@ -149,7 +149,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -161,7 +161,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':None,
@@ -172,7 +172,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -184,7 +184,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':None,
@@ -195,7 +195,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -207,7 +207,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':'down',
@@ -218,7 +218,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -230,7 +230,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'down',
                 'middle':'down',
@@ -241,7 +241,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -253,7 +253,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'down',
                 'middle':'down',
@@ -264,7 +264,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -276,7 +276,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'down',
                 'middle':'down',
@@ -287,7 +287,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'gis',
                 'middle':None,
                 'ring':None,
@@ -299,7 +299,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'II',
                 'index':'down',
                 'middle':'down',
@@ -310,7 +310,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -322,7 +322,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'II',
                 'index':'down',
                 'middle':None,
@@ -333,7 +333,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -345,7 +345,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'II',
                 'index':'down',
                 'middle':None,
@@ -356,7 +356,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -368,7 +368,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':'down',
@@ -379,7 +379,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -391,7 +391,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'II',
                 'index':None,
                 'middle':None,
@@ -402,7 +402,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -414,7 +414,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':'down',
@@ -425,7 +425,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -437,7 +437,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'half',
                 'middle':'down',
@@ -448,7 +448,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -460,7 +460,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'half',
                 'middle':'down',
@@ -471,7 +471,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -483,7 +483,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'half',
                 'middle':'down',
@@ -494,7 +494,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'gis',
                 'middle':None,
                 'ring':None,
@@ -506,7 +506,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':None,
@@ -517,7 +517,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -529,7 +529,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':'half',
                 'middle':'down',
@@ -540,7 +540,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -553,7 +553,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            fingering={
+            keys={
                 'thumb':'I',
                 'index':None,
                 'middle':None,
@@ -564,7 +564,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            fingering={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',

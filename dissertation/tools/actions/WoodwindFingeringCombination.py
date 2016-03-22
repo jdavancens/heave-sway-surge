@@ -63,7 +63,7 @@ class WoodwindFingeringCombination(object):
         c = list()
         r = list()
         l = list()
-        for k, v in self._left.fingering.items():
+        for k, v in self._left.keys.items():
             val = v
             if v is None or isinstance(v, str):
                 val = (v,)
@@ -100,7 +100,7 @@ class WoodwindFingeringCombination(object):
                     if x is not None:
                         l.append(x)
 
-        for k, v in self._right.fingering.items():
+        for k, v in self._right.keys.items():
             val = v
             if v is None or isinstance(v, str):
                 val = (v,)

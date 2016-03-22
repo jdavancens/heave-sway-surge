@@ -1,4 +1,4 @@
-% 2016-03-09 09:49
+% 2016-03-14 10:19
 
 \version "2.19.29"
 \language "english"
@@ -372,9 +372,32 @@
                     s2
                     s2
                     s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -382,9 +405,10 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
+                    r8
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -392,20 +416,215 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
                     s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2
+                    s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r4
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    r4
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8. [
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8. ]
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -415,10 +634,8 @@
                     }
                     s2.
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'8
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -428,61 +645,7 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -493,32 +656,7 @@
                     s2.
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -528,7 +666,49 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r8
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r8
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -540,7 +720,7 @@
                     s8
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -548,11 +728,9 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'8
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -560,30 +738,7 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
+                    r4
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
                     c'4.
@@ -594,11 +749,78 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s4.
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'8
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        r4
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -609,7 +831,7 @@
                     s2
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -619,7 +841,31 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -628,10 +874,18 @@
                         c'16
                     }
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'8
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -715,15 +969,30 @@
                     s2
                     s2
                     s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'4. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
-                    \once \override Glissando.thickness = 5.0
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2 \glissando
+                    c'8. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -731,24 +1000,124 @@
                         \once \override Stem #'stencil = ##f
                         b'16
                     }
+                    r8
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    c'8. \glissando
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'''4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            f'16
+                        }
                     }
                     s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r4
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'''4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            f'16
+                        }
+                    }
+                    s2
+                    s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4. \glissando
+                    c'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -756,15 +1125,16 @@
                         \once \override Stem #'stencil = ##f
                         b'16
                     }
-                    s2.
+                    r4
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
                     \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -776,7 +1146,7 @@
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'''4. \glissando
+                    c'''4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -784,64 +1154,52 @@
                         \once \override Stem #'stencil = ##f
                         f'16
                     }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        c'2 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
                     s2
-                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
-                    \once \override Glissando.thickness = 5.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
-                    s2
-                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
-                    \once \override Glissando.thickness = 5.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
+                    r4
                     \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'''2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'''8
+                    c'''8. \glissando [
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -849,12 +1207,11 @@
                         \once \override Stem #'stencil = ##f
                         f'16
                     }
-                    s2.
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2 \glissando
+                    c'8. \glissando ]
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -866,26 +1223,8 @@
                     \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
                     \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -897,7 +1236,74 @@
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2 \glissando
+                    c'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    s2.
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                    \once \override Glissando.thickness = 5.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
+                    \once \override Glissando.thickness = 3.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'''4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        f'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                    \once \override Glissando.thickness = 5.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -911,7 +1317,7 @@
                     \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2 \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -922,11 +1328,8 @@
                     \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'''2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'''8
+                    c'''4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -934,47 +1337,89 @@
                         \once \override Stem #'stencil = ##f
                         f'16
                     }
-                    s4.
+                    r4
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    s4.
-                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
-                    \once \override Glissando.thickness = 5.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
                     c'4. \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                        \once \override Glissando.thickness = 5.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    s4.
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
                     \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        r4
+                        \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'''4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            f'16
+                        }
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                    \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -983,30 +1428,59 @@
                         b'16
                     }
                     s2
-                    \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
-                    \once \override Glissando.thickness = 3.0
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                    \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'''2 \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
                         \once \override NoteHead #'stencil = #point-stencil
                         \once \override Stem #'stencil = ##f
-                        f'16
+                        b'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.25 0.0 0.75)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'''4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            f'16
+                        }
+                        r4
                     }
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'4. \glissando
+                    c'8. \glissando
                     \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
                     \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                    \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    c'8. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -1018,20 +1492,12 @@
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
                     c'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
+                    \once \override Glissando.color = #(rgb-color 0.5 0.0 0.5)
+                    \once \override Glissando.thickness = 5.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4. \glissando
+                    b'4. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -10933,7 +11399,7 @@
                     s4.
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -10943,7 +11409,7 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -10953,7 +11419,192 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'8
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r8
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s4.
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r4
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2.
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -10964,19 +11615,192 @@
                     s4.
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2.
+                    c'4.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
                         \once \override NoteHead #'stencil = #point-stencil
                         \once \override Stem #'stencil = ##f
                         c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r4
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2
+                    s8
+                    r8
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8.
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8.
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    s2
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    r4
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
                     s2
                     s8
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'8 [
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -10984,50 +11808,6 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
                     c'8
@@ -11040,18 +11820,166 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2.
+                    c'8 ]
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
                         \once \override NoteHead #'stencil = #point-stencil
                         \once \override Stem #'stencil = ##f
                         c'16
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        r4
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \times 2/3 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    r8
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
                     s2
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2.
+                    c'8 [
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11059,10 +11987,6 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    s2
-                    s8
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
                     c'8
@@ -11075,131 +11999,7 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    s8
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
+                    c'8 ]
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11266,16 +12066,45 @@
                     \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando
+                    c'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'4. \glissando
+                    b'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2 \glissando
+                    b'8 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'8 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                    \once \override Glissando.thickness = 3.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        d'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11284,11 +12113,91 @@
                         b'16
                     }
                     s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8. \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    s4.
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2. \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11296,13 +12205,12 @@
                         \once \override Stem #'stencil = ##f
                         b'16
                     }
-                    s2
-                    s8
+                    r4
                     \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'4. \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11310,15 +12218,35 @@
                         \once \override Stem #'stencil = ##f
                         d'16
                     }
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    s2.
+                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2. \glissando
+                    c'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2 \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11327,31 +12255,11 @@
                         b'16
                     }
                     s4.
-                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    s4.
                     \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11363,7 +12271,24 @@
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2. \glissando
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r4
+                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11372,39 +12297,49 @@
                         b'16
                     }
                     s2
-                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        b'2 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
                     s2
                     s8
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'8
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                    \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        d'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11412,15 +12347,19 @@
                         \once \override Stem #'stencil = ##f
                         b'16
                     }
-                    s2
+                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'8. \glissando
                     \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11432,45 +12371,58 @@
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'4. \glissando
+                    b'8. \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
                         \once \override NoteHead #'stencil = #point-stencil
                         \once \override Stem #'stencil = ##f
                         b'16
+                    }
+                    s2
+                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    c'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'8 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r4
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
                     s2
                     s8
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    s2
-                    \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'4. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'8
                     \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
                     \once \override Glissando.thickness = 3.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2 \glissando
+                    b'8 \glissando [
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11478,12 +12430,166 @@
                         \once \override Stem #'stencil = ##f
                         d'16
                     }
-                    s2
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'8 \glissando
                     \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'4. \glissando
+                    b'8 \glissando ]
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        r4
+                        \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8 \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8 \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    \times 2/3 {
+                        \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                        \once \override Glissando.thickness = 3.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'4 \glissando
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                    }
+                    s2
+                    \once \override Glissando.color = #(rgb-color 0.333 0.0 0.667)
+                    \once \override Glissando.thickness = 3.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'8 \glissando [
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        d'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'8 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -11494,28 +12600,8 @@
                     \once \override Glissando.color = #(rgb-color 0.111 0.0 0.889)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'8
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    s2
-                    \once \override Glissando.color = #(rgb-color 0.125 0.0 0.875)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
+                    c'8 \glissando ]
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19654,9 +20740,32 @@
                     s8
                     s4.
                     s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19664,9 +20773,10 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
+                    r8
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'8.
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19674,9 +20784,116 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \times 2/3 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'8 [
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19684,21 +20901,53 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
                     c'8
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'8 ]
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r2
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        c'16
+                    }
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19707,9 +20956,46 @@
                         c'16
                     }
                     s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r2
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2.
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19719,7 +21005,7 @@
                     }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'2
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19727,120 +21013,236 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        r2
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s2
-                    s8
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
                     s2
                     s8
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \times 4/5 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4.
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        r4
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
                     s2
-                    s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        r16
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'16 [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8. ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                    }
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    c'4.
+                    c'4
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -19848,104 +21250,100 @@
                         \once \override Stem #'stencil = ##f
                         c'16
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    r4
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        c'16 [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
+                        \afterGrace
                         c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
                     }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    s4.
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 ~
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        c'8
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'4.
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        c'8 [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                     }
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    c'2
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        c'16
-                    }
+                    s2
                     s4.
                 }
             }
@@ -20004,23 +21402,160 @@
                     s8
                     s4.
                     s2
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'4. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'4. \glissando
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                    }
                     \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
                     \once \override Glissando.thickness = 6.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'2. \glissando
+                    b'8. \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    r8
+                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                    \once \override Glissando.thickness = 6.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'8. \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8. \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'8. \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                        r4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
+                    s4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'2 \glissando
+                    }
+                    \times 2/3 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r4
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                    \once \override Glissando.thickness = 6.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    b'8 \glissando [
+                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                    \once \override Glissando.thickness = 6.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    b'8 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -20031,11 +21566,48 @@
                     \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    f'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
+                    \afterGrace
+                    f'8 \glissando ]
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        d'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r2
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                    \once \override Glissando.thickness = 6.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    f'8
+                    b'4 \glissando
+                    {
+                        \once \override Beam #'stencil = ##f
+                        \once \override Flag #'stencil = ##f
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override Stem #'stencil = ##f
+                        b'16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                    \once \override Glissando.thickness = 2.0
+                    \once \override NoteHead #'stencil = #point-stencil
+                    \afterGrace
+                    f'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -20044,144 +21616,303 @@
                         d'16
                     }
                     s4.
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
                     }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
-                    }
-                    s2.
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
-                    }
-                    s2
-                    s8
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r2
                     }
                     \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
                     \once \override Glissando.thickness = 2.0
                     \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando
+                    c'4 \glissando
                     \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
                     \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2. \glissando
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'8
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
                         \once \override NoteHead #'stencil = #point-stencil
                         \once \override Stem #'stencil = ##f
                         b'16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        r2
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'2 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
                     s2
                     s8
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
                     }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    f'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \times 4/5 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4. \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
                     }
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        r4
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
                     }
                     s2
-                    s8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        r16
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'16 \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8. \glissando ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r4
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        b'4 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'8 \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'8 \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
+                    }
                     \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
                     \once \override Glissando.thickness = 6.0
                     \once \override NoteHead #'stencil = #point-stencil
                     \afterGrace
-                    b'4. \glissando
+                    b'4 \glissando
                     {
                         \once \override Beam #'stencil = ##f
                         \once \override Flag #'stencil = ##f
@@ -20189,109 +21920,100 @@
                         \once \override Stem #'stencil = ##f
                         b'16
                     }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    f'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    r4
+                    s2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        c'16 \glissando [
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        b'16 \glissando
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
+                        \afterGrace
+                        b'16 \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r8
                     }
-                    s4.
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'8
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.1 0.0 0.9)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    c'2 \glissando
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        b'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
+                        \afterGrace
+                        f'4 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
                     }
-                    s4.
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'2 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \once \override NoteHead #'stencil = #point-stencil
-                    b'8
-                    \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
-                    \once \override Glissando.thickness = 6.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    b'4. \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        b'16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
-                    \once \override Glissando.thickness = 2.0
-                    \once \override NoteHead #'stencil = #point-stencil
-                    \afterGrace
-                    f'2 \glissando
-                    {
-                        \once \override Beam #'stencil = ##f
-                        \once \override Flag #'stencil = ##f
+                        \afterGrace
+                        b'8 \glissando
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        r8
+                        \once \override Glissando.color = #(rgb-color 0.667 0.0 0.333)
+                        \once \override Glissando.thickness = 6.0
                         \once \override NoteHead #'stencil = #point-stencil
-                        \once \override Stem #'stencil = ##f
-                        d'16
+                        \afterGrace
+                        b'8 \glissando [
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            b'16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0.2 0.0 0.8)
+                        \once \override Glissando.thickness = 2.0
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        f'8 \glissando ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            d'16
+                        }
                     }
+                    s2
                     s4.
                 }
             >>
