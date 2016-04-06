@@ -48,6 +48,14 @@ class WoodwindFingeringCombination(object):
 
     ### SPECIAL METHODS ###
 
+    def __eq__(self, other):
+        if self.instrument == other.instrument and \
+            self.left == other.left and \
+            self.right == other.right:
+            return True
+        else:
+            return False
+
     def __repr__(self):
         inst_name = self._instrument.instrument_name.capitalize()
         pitches = str(self._predicted_pitches)
@@ -185,3 +193,15 @@ class WoodwindFingeringCombination(object):
         chord = Chord(self._predicted_pitches, duration)
         attach(markup, chord)
         return chord
+
+    ### STATIC METHODS ###
+
+
+
+    def open(instrument):
+        wfg = WoodwindFingeringCombination(
+            instrument=instrument,
+            left=WoodwindFingering.open(instrument=instrument, hand='left'),
+            right=WoodwindFingering.open(instrument=instrument, hand='right')
+        )
+        return wfg

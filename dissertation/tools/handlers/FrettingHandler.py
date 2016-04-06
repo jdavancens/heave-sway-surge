@@ -7,7 +7,7 @@ Created on Feb 15, 2016
 
 from abjad import *
 from dissertation.tools.shortcuts import *
-from dissertation.tools import graphics_tools
+from dissertation.tools import graphicstools
 import copy
 
 class FrettingHandler(object):

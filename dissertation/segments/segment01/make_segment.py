@@ -39,7 +39,8 @@ def make_segment(number_of_stages=None):
             'viola',
             'cello',
             'contrabass',
-            ]
+            ],
+        page_size='11x17'
         )
     oboe_handlers = oboe_definition.get_music_handlers()
     clarinet_handlers = clarinet_definition.get_music_handlers()

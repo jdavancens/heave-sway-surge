@@ -1,3 +1,9 @@
 # -*- coding: utf-8 -*-
-from dissertation.tools.woodwindtools.illustrate_fingerings import illustrate_fingerings
-from dissertation.tools.woodwindtools.illustrate_fingering_combinations import illustrate_fingering_combinations
+from abjad.tools import systemtools
+
+systemtools.ImportManager.import_structured_package(
+	__path__[0],
+	globals(),
+	)
+
+_documentation_section = 'core'

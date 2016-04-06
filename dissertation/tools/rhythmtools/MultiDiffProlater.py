@@ -9,19 +9,20 @@ class MultiDiffProlater:
         self._unit = unit
 
     def __call__(self, time_signature):
-        a = time_signature.numerator
-        b = time_signature.denominator
+        num = time_signature.numerator
+        denom = time_signature.denominator
         if self._unit is None:
-            m = 1
-        elif b <= self._unit:
-            u = b
+            mult = 1
+        elif denom <= self._unit:
+            unit = denom
+            mult = unit / denom
         else:
-            u = self._unit
-        m = u / b
-        p = a * m * self._next_multiplier() + self._next_difference()
-        if p < 1:
-            p = 1
-        return p
+            unit = self._unit
+            mult = unit / denom
+        prolation = num * mult * self._next_multiplier() + self._next_difference()
+        if prolation < 1:
+            prolation = 1
+        return prolation
 
     def _next_multipler(self):
         self._i = (self._i + 1) % len(self._multipler_cycle)

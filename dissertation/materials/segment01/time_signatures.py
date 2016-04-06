@@ -37,6 +37,7 @@
 '''
 from abjad import *
 from dissertation import *
+from dissertation.tools.rhythmtools.bifurcate_duration import bifurcate_duration
 stages = (
     (Duration(33, 4), Duration(93, 8),),
     (Duration(55, 8), Duration(21, 4), Duration(63, 8),),
@@ -50,7 +51,7 @@ divisions = []
 for stage in stages:
     subdivisions = []
     for duration in stage:
-        subdivisions.append(rhythmtools.bifurcate_duration(duration))
+        subdivisions.append(bifurcate_duration(duration))
     divisions.append(tuple(subdivisions))
 measnum = 1
 
@@ -75,8 +76,8 @@ for i, divisions in enumerate(divisions):
     for subdivision in divisions:
         stage_division = []
         for duration in subdivision:
-            if duration.denominator < 4:
-                m = int(4 / duration.denominator)
+            if duration.denominator < 8: # make all denominators 8 or higher
+                m = int(8 / duration.denominator)
                 duration = mathtools.NonreducedFraction(duration.numerator*m, duration.denominator*m)
             time_signature = TimeSignature(duration)
             stage_division.append(time_signature)
