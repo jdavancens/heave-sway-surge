@@ -1,9 +1,8 @@
 \version "2.19.29"
 \include "stencils.ily"
-#(set-default-paper-size "super-b" 'portrait)
+#(set-default-paper-size "11x17" 'portrait)
 #(set-global-staff-size 8)
 staffgroup-space = #24
-color = #blue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
@@ -31,28 +30,28 @@ color = #blue
     print-page-number = ##t
     ragged-bottom = ##t
     ragged-last-bottom = ##t
-    ragged-right = ##f
+    ragged-right = ##t
     indent = 0.5\in
     left-margin = 1\in
     right-margin = 0.5\in
     top-margin = 0.5\in
-    system-separator-markup = \slashSeparator
+    %{system-separator-markup = \slashSeparator%}
     markup-system-spacing = #'(
-        (basic-distance . 0)
-        (minimum-distance . 0)
-        (padding . 0)
+        (basic-distance . 12)
+        (minimum-distance . 12)
+        (padding . 12)
         (stretchability . 0)
     )
     system-system-spacing = #'(
-        (basic-distance . longSpace)
-        (minimum-distance . longSpace)
-        (padding . longSpace)
+        (basic-distance . 12)
+        (minimum-distance . 12)
+        (padding . 12)
         (stretchability . 0)
     )
     top-system-spacing = #'(
-        (basic-distance . longSpace)
-        (minimum-distance . longSpace)
-        (padding . longSpace)
+        (basic-distance . 12)
+        (minimum-distance . 12)
+        (padding . 12)
         (stretchability . 0)
     )
 
@@ -82,23 +81,6 @@ color = #blue
         \Voice
         \remove Forbid_line_break_engraver
         \omit InstrumentName
-        \override Glissando.breakable = ##t
-        \override Glissando.after-line-breaking = ##t
-        \override Glissando.thickness = #7
-        \override Glissando.layer = #-50
-        \override Glissando.gap = #0
-        \override Glissando.bound-details =
-            #'(
-                (right
-                    (attch-dir . -0.5)
-                    (end-on-accidental . #t)
-                    (padding . -1)
-                )
-                (left
-                    (attach-dir . 1)
-                    (padding . 0.5)
-                )
-            )
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%STAVES
     % EMBOUCHURE STAFF
@@ -115,24 +97,45 @@ color = #blue
         \consists Staff_symbol_engraver
         \accepts Voice
         \omit Accidental
-        \hide Rest
         \omit Beam
         \omit Clef
         \omit Dots
         \omit Flag
         \omit MetronomeMark
+        \hide NoteHead
+        \hide Rest
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
 
+        \override Glissando.breakable = ##t
+        \override Glissando.after-line-breaking = ##t
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-50
+        \override Glissando.gap = #0
+        \override Glissando.bound-details =
+            #'(
+                (right
+                    (attch-dir . -1)
+                    (end-on-accidental . #t)
+                    (padding . 0)
+                )
+                (left
+                    (attach-dir . 1)
+                    (padding . 0)
+                )
+            )
+
+        \override NoteHead.stem-attachment = #'(0 . 0)
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #10
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
             white white white white black
             )
+        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #16%}
     }
     % FRETTING STAFF
     \context {
@@ -211,12 +214,35 @@ color = #blue
         \consists Pitch_squash_engraver
         \accepts Voice
         \omit Clef
-        \hide NoteHead
+        %{\hide NoteHead%}
         \omit InstrumentName
         \omit TimeSignature
         \override StaffSymbol.line-count = #1
         \override StaffSymbol.transparent = ##t
         squashedPosition = #0
+        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #12%}
+    }
+    % SEPARATOR STAFF
+    \context {
+        \Staff
+        \name SeparatorStaff
+        \alias Staff
+        \type Engraver_group
+        \consists Output_property_engraver
+        \consists Font_size_engraver
+        \consists Separating_line_group_engraver
+        \consists Rest_collision_engraver
+        \consists Axis_group_engraver
+        \consists Staff_symbol_engraver
+        \consists Pitch_squash_engraver
+        \accepts voice
+        \omit Clef
+        \omit InstrumentName
+        \omit TimeSignature
+        \override StaffSymbol.line-count = #1
+        squashedPosition = #0
+        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #1%}
+
     }
     % STRING SPACE STAFF
     \context {
@@ -351,17 +377,38 @@ color = #blue
         \omit Dots
         \omit Flag
         \hide Rest
+        \hide StaffSymbol
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
 
+        \override Glissando.breakable = ##t
+        \override Glissando.after-line-breaking = ##t
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-50
+        \override Glissando.gap = #0
+        \override Glissando.bound-details =
+            #'(
+                (right
+                    (attch-dir . -1)
+                    (end-on-accidental . #t)
+                    (padding . -1)
+                )
+                (left
+                    (attach-dir . 1)
+                    (padding . 0)
+                )
+            )
+
         \override InstrumentName.padding = #1
-        \override NoteHead.stem-attachment = #'(0.75 . 0)
+        \override NoteHead.stem-attachment = #'(0 . 0)
         \override StaffSymbol.line-count = 5
-        \override StaffSymbol.staff-space = 2
+        \override StaffSymbol.staff-space = 3
         \override StaffSymbol.layer = #-100
+
+        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #1%}
     }
     % WOODWIND RIGHT HAND FINGERING STAFF
     \context {
@@ -382,16 +429,44 @@ color = #blue
         \omit Dots
         \omit Flag
         \hide Rest
+        \hide StaffSymbol
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+
+        \override Glissando.breakable = ##t
+        \override Glissando.after-line-breaking = ##t
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-50
+        \override Glissando.gap = #0
+        \override Glissando.bound-details =
+            #'(
+                (right
+                    (attch-dir . -1)
+                    (end-on-accidental . #t)
+                    (padding . 0)
+                )
+                (left
+                    (attach-dir . 1)
+                    (padding . 0)
+                )
+            )
+
         \override InstrumentName.padding = #1
-        \override NoteHead.stem-attachment = #'(-0.75 . 0)
+        \override NoteHead.stem-attachment = #'(0 . 0)
         \override StaffSymbol.line-count = #4
-        \override StaffSymbol.staff-space = 2
-        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #4
+        \override StaffSymbol.staff-space = 3
+        %{\override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #0
+        \override VerticalAxisGroup.default-staff-staff-spacing.minimum-distance = #0
+        \override VerticalAxisGroup.default-staff-staff-spacing.padding = #0
+        \override VerticalAxisGroup.default-staff-staff-spacing.stretchability = #0
+        \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #0
+        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #0
+        \override VerticalAxisGroup.staff-staff-spacing.padding = #0
+        \override VerticalAxisGroup.staff-staff-spacing.stretchability = #0
+        \override VerticalAxisGroup.Y-extent = #'(0 . 0)%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
     % BOWED STRING INSTRUMENT STAFF GROUP
@@ -401,6 +476,7 @@ color = #blue
         \alias StaffGroup
         \type Engraver_group
         \accepts RhythmStaff
+        \accepts SeparatorStaff
         \accepts StringSpaceStaff
         \consists Output_property_engraver
         \consists Vertical_align_engraver
@@ -420,6 +496,7 @@ color = #blue
         \accepts RhythmStaff
         \accepts PickingStaff
         \accepts FrettingStaff
+        \accepts SeparatorStaff
         \consists Output_property_engraver
         %{\consists Span_bar_engraver
         \consists Span_bar_stub_engraver%}
@@ -440,6 +517,7 @@ color = #blue
         \type Engraver_group
         \accepts RhythmStaff
         \accepts EmbouchureStaff
+        \accepts SeparatorStaff
         \accepts TromboneSlidePositionStaff
         \consists Output_property_engraver
         %{\consists Span_bar_engraver
@@ -461,6 +539,7 @@ color = #blue
         \type Engraver_group
         \accepts RhythmStaff
         \accepts EmbouchureStaff
+        \accepts SeparatorStaff
         \accepts WoodwindLeftHandFingeringStaff
         \accepts WoodwindRightHandFingeringStaff
         \consists Output_property_engraver
@@ -468,11 +547,14 @@ color = #blue
         \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
-        systemStartDelimiter = #'SystemStartBracket
+        systemStartDelimiter = #'SystemStartBar
         \override InstrumentName.padding = #12
-        \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
+        \override SystemStartBar.padding = #1
+        %{\override StaffGrouper.staff-staff-spacing.basic-distance = #0
+        \override StaffGrouper.staff-staff-spacing.minimum-distance = #0
+        \override StaffGrouper.staff-staff-spacing.padding = #0
+        \override StaffGrouper.staff-staff-spacing.stretchability = #0
+        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space%}
         %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
@@ -481,6 +563,7 @@ color = #blue
         \Score
         \accepts BowedStringInstrumentStaffGroup
         \accepts GuitarStaffGroup
+        \accepts SeparatorStaff
         \accepts TromboneStaffGroup
         \accepts WoodwindInstrumentStaffGroup
 
@@ -511,7 +594,7 @@ color = #blue
         \override Beam.damping = #+inf.0
         \override Beam.beam-thickness = #0.75
         \override Beam.length-fraction = #1.25
-        \override DynamicLineSpanner.Y-extent = #'(-4 . 4)
+        %{\override DynamicLineSpanner.Y-extent = #'(-4 . 4)%}
         \override GraceSpacing.spacing-increment = #0
         \override GraceSpacing.shortest-duration-space = #0
         \override Flag.stencil = #flat-flag
@@ -546,9 +629,8 @@ color = #blue
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         autoBeaming = ##t
-        defaultBarType = #"|"
+        defaultBarType = #""
         proportionalNotationDuration = #(ly:make-moment 1 48)
         tupletFullLength = ##t
-
     }
 }

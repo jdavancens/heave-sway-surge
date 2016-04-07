@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from dissertation.tools.rhythmtools.bifurcate_duration import bifurcate_duration
-from dissertation.tools.rhythmtools.ConstantProlater import ConstantProlater
-from dissertation.tools.rhythmtools.DifferenceProlater import DifferenceProlater
-from dissertation.tools.rhythmtools.EvenSubdivider import EvenSubdivider
-from dissertation.tools.rhythmtools.MultiDiffProlater import MultiDiffProlater
-from dissertation.tools.rhythmtools.MultiplyProlater import MultiplyProlater
-from dissertation.tools.rhythmtools.RandomTreeSubdivider import RandomTreeSubdivider
-from dissertation.tools.rhythmtools.TrivialProlater import TrivialProlater
+from abjad.tools import systemtools
+
+systemtools.ImportManager.import_structured_package(
+	__path__[0],
+	globals(),
+	)
+
+_documentation_section = 'core'

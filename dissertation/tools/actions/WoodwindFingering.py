@@ -225,5 +225,64 @@ class WoodwindFingering(object):
         return self._hand
 
     @property
+    def is_open(self):
+        for key_tuple in self.keys.values():
+            if key_tuple is not None:
+                return False
+        return True
+
+
+    @property
     def instrument(self):
         return self._instrument
+
+    ### PUBLIC METHODS ###
+
+    def to_json(self):
+        json_list = [
+            self.instrument.instrument_name.lower(),
+            self.hand,
+            self.keys,
+        ]
+        return json_list
+
+    ### STATIC METHOD ###
+    @staticmethod
+    def from_json(json_list):
+        from dissertation.materials.instruments import instruments
+        instrument = instruments[json_list[0]]
+        hand = json_list[1]
+        keys = json_list[2]
+        fingering = WoodwindFingering(
+            instrument=instrument,
+            hand=hand,
+            keys=keys
+        )
+        return fingering
+
+    @staticmethod
+    def open(instrument, hand):
+        if hand == 'left':
+            wf = WoodwindFingering(
+                instrument=instrument,
+                hand=hand,
+                keys={
+                    'thumb':None,
+                    'index':None,
+                    'middle':None,
+                    'ring':None,
+                    'pinky':None
+                }
+            )
+        else:
+            wf = WoodwindFingering(
+                instrument=instrument,
+                hand=hand,
+                keys={
+                    'index':None,
+                    'middle':None,
+                    'ring':None,
+                    'pinky':None
+                }
+            )
+        return wf

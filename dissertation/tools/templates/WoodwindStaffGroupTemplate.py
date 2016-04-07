@@ -19,6 +19,14 @@ class WoodwindStaffGroupTemplate(abctools.AbjadValueObject):
         name = self.instrument.instrument_name.title()
         short_name = self.instrument.short_instrument_name.title()
 
+
+        separator = Staff(
+            [],
+            context_name='SeparatorStaff',
+            is_simultaneous=True,
+            name='Separator'
+        )
+
         embouchure_staff = Staff(
             [],
             context_name='EmbouchureStaff',
@@ -70,6 +78,7 @@ class WoodwindStaffGroupTemplate(abctools.AbjadValueObject):
             embouchure_staff,
             lh_fingering_rhythm_staff,
             lh_fingering_staff,
+            separator,
             rh_fingering_staff,
             rh_fingering_rhythm_staff
         ]

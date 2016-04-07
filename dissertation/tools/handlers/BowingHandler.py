@@ -8,7 +8,7 @@ Created on Nov 20, 2015
 from abjad import *
 from dissertation.tools.shortcuts import *
 import copy
-from dissertation.tools import graphics_tools
+import dissertation.tools.graphicstools
 
 class BowingHandler(object):
     '''A bow action handler for string instruments

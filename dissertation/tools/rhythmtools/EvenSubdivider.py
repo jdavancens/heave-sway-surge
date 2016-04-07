@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
-
 from abjad.tools.mathtools.Ratio import Ratio
-from fractions import Fraction
+from dissertation.tools.rhythmtools.Subdivider import Subdivider
+class EvenSubdivider(Subdivider):
+    '''Even subidivider.
 
-class EvenSubdivider:
+        ::
+            >>> e = EvenSubdivider(3)
+            >>> e(5)
+
+    '''
     __slots__ = (
         '_n',
         '_second_level_subdivider',
@@ -14,16 +19,26 @@ class EvenSubdivider:
     def __init__(
         self,
         n,
-        second_level_subdivider=None
+        second_level_subdivider=None,
+        sustain_mask=None,
+        silence_mask=None,
     ):
         self._n = n
         self._second_level_subdivider = second_level_subdivider
-
+        Subdivider.__init__(
+            self,
+            second_level_subdivider=second_level_subdivider,
+            sustain_mask=sustain_mask,
+            silence_mask=silence_mask,
+        )
     ### SPECIAL METHODS ###
 
     def __call__(self, duration):
         pattern = self._bjorklund(duration, self._n)
         ratio = self._binary_to_ratio(pattern)
+        ratio = Subdivider._apply_second_level_subdivider(self, ratio)
+        ratio = Subdivider._apply_sustain_mask(self, ratio)
+        ratio = Subdivider._apply_silence_mask(self,ratio)
         return Ratio(ratio)
 
     ### PRIVATE METHODS ###
@@ -64,8 +79,6 @@ class EvenSubdivider:
         i = pattern.index(1)
         pattern = pattern[i:] + pattern[0:i]
         return pattern
-
-
 
     def _binary_to_ratio(self,pattern):
         indices = []
