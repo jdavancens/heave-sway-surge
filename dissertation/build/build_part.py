@@ -2,7 +2,7 @@
 
 from abjad import *
 from dissertation import *
-from dissertation.segments.segment01.make_part import make_part
+from dissertation.segments.segment_1.make_part import make_part
 import datetime
 import os
 import sys

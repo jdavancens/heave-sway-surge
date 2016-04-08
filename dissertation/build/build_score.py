@@ -2,7 +2,7 @@
 
 from abjad import *
 from dissertation import *
-from dissertation.segments.segment01.make_segment import make_segment
+from dissertation.segments.segment_1.make_segment import make_segment
 import datetime, os, sys
 
 if __name__ == '__main__':

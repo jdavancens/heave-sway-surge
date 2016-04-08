@@ -6,7 +6,7 @@ Created on Nov 22, 2015
 '''
 from abjad import *
 from dissertation import *
-from dissertation.materials.segment01 import *
+from dissertation.materials.segment_1 import *
 
 measures_per_stage = [8]
 time_signatures = [(2, 8), (3, 8), (2, 4), (5, 8), (3, 4), (2, 8), (3, 8), (2, 4)]

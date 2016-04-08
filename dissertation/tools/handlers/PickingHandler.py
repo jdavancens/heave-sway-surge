@@ -61,13 +61,12 @@ class PickingHandler(object):
     def _annotate_logical_ties(self, voice, current_stage):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = self.music_maker.stages.index(current_stage)
-        pattern = self.patterns[pattern_index]
-        server = datastructuretools.StatalServer(pattern)
-        cursor = server()
+        pattern = datastructuretools.CyclicTuple(self.patterns[pattern_index])
+        cursor = datastructuretools.Cursor(pattern)
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor()[0]
+                i = cursor.next()
                 picking = self.pickings[i]
                 self._annotate_logical_tie(logical_tie, picking)
 
@@ -84,7 +83,7 @@ class PickingHandler(object):
                 value=schemetools.SchemeSymbol('zigzag')
                 )
             attach(zigzag, logical_tie[0])
-            color = graphics_tools.scheme_rgb_color((0,0,0))
+            color = graphicstools.scheme_rgb_color((0,0,0))
             gliss(logical_tie[0], color=color, thickness=1)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:

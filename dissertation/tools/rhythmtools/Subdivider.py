@@ -21,6 +21,7 @@ class Subdivider:
         self._silence_mask = silence_mask
         self._second_level_subdivider = second_level_subdivider
 
+
     ### PRIVATE METHODS ###
 
     def _apply_second_level_subdivider(self, R):
@@ -53,11 +54,11 @@ class Subdivider:
         from abjad.tools.sequencetools.sum_consecutive_elements_by_sign import \
             sum_consecutive_elements_by_sign
 
-        indices = self._silence_mask.indices
-        period = self._silence_mask.period
+        indices = self._silence_mask.pattern.indices
+        period = self._silence_mask.pattern.period
         R2 = []
         for i,r in enumerate(R):
-            if self._silence_mask.matches_index(i, len(R)):
+            if self._silence_mask.pattern.matches_index(i, len(R)):
                 R2.append(r * -1)
             else:
                 R2.append(r)

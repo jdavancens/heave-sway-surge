@@ -60,13 +60,12 @@ class FrettingHandler(object):
     def _annotate_logical_ties(self, voice, current_stage):
         current_stage_index = self.music_maker.stages.index(current_stage)
         pattern_index = self.music_maker.stages.index(current_stage)
-        pattern = self.patterns[pattern_index]
-        server = datastructuretools.StatalServer(pattern)
-        cursor = server()
+        pattern = datastructuretools.CyclicTuple(self.patterns[pattern_index])
+        cursor = datastructuretools.Cursor(pattern)
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor()[0]
+                i = cursor.next()
                 fret_combination = self.fret_combinations[i]
                 self._annotate_logical_tie(logical_tie, fret_combination)
         for i in range(1, len(logical_ties)):

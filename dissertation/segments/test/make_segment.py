@@ -5,15 +5,15 @@ Created on Nov 11, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.segments.test import oboe_definition
-from dissertation.segments.test import clarinet_definition
-from dissertation.segments.test import saxophone_definition
-from dissertation.segments.test import piano_a_definition
-from dissertation.segments.test import piano_b_definition
-from dissertation.segments.test import violin_definition
-from dissertation.segments.test import viola_definition
-from dissertation.segments.test import cello_definition
-from dissertation.segments.test import bass_definition
+from dissertation.segments.test import oboe
+from dissertation.segments.test import clarinet
+from dissertation.segments.test import saxophone
+from dissertation.segments.test import piano_a
+from dissertation.segments.test import piano_b
+from dissertation.segments.test import violin
+from dissertation.segments.test import viola
+from dissertation.segments.test import cello
+from dissertation.segments.test import bass
 from dissertation.tools.SegmentMaker import SegmentMaker
 import pprint
 
@@ -28,15 +28,15 @@ def make_segment():
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         )
-    music_handlers = oboe_definition.get_music_handlers()
-    music_handlers.extend(clarinet_definition.get_music_handlers())
-    music_handlers.extend(saxophone_definition.get_music_handlers())
-    music_handlers.extend(piano_a_definition.get_music_handlers())
-    music_handlers.extend(piano_b_definition.get_music_handlers())
-    music_handlers.extend(violin_definition.get_music_handlers())
-    music_handlers.extend(viola_definition.get_music_handlers())
-    music_handlers.extend(cello_definition.get_music_handlers())
-    music_handlers.extend(bass_definition.get_music_handlers())
+    music_handlers = oboe.get_music_handlers()
+    music_handlers.extend(clarinet.get_music_handlers())
+    music_handlers.extend(saxophone.get_music_handlers())
+    music_handlers.extend(piano_a.get_music_handlers())
+    music_handlers.extend(piano_b.get_music_handlers())
+    music_handlers.extend(violin.get_music_handlers())
+    music_handlers.extend(viola.get_music_handlers())
+    music_handlers.extend(cello.get_music_handlers())
+    music_handlers.extend(bass.get_music_handlers())
     segment_maker.add_music_handlers(music_handlers)
     segment = segment_maker()
     return segment

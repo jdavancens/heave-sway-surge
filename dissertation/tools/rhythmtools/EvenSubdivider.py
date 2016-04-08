@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
+
 from abjad.tools.mathtools.Ratio import Ratio
 from dissertation.tools.rhythmtools.Subdivider import Subdivider
+
 class EvenSubdivider(Subdivider):
-    '''Even subidivider.
+    '''Even subdivider.
 
         ::
             >>> e = EvenSubdivider(3)
             >>> e(5)
+            Ratio((2, 2, 1))
 
     '''
-    __slots__ = (
-        '_n',
-        '_second_level_subdivider',
-    )
+    __slots__ = ('_n',)
 
     ### INITIALIZER ###
 
@@ -24,7 +24,6 @@ class EvenSubdivider(Subdivider):
         silence_mask=None,
     ):
         self._n = n
-        self._second_level_subdivider = second_level_subdivider
         Subdivider.__init__(
             self,
             second_level_subdivider=second_level_subdivider,

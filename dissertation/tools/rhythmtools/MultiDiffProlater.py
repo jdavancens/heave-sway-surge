@@ -4,6 +4,7 @@ class MultiDiffProlater:
 
     def __init__(self, multiplier_cycle, difference_cycle, unit=None):
         self._i = -1
+        self._j = -1
         self._difference_cycle = difference_cycle
         self._multiplier_cycle = multiplier_cycle
         self._unit = unit
@@ -24,9 +25,9 @@ class MultiDiffProlater:
             prolation = 1
         return prolation
 
-    def _next_multipler(self):
-        self._i = (self._i + 1) % len(self._multipler_cycle)
-        return self._multipler_cycle[self._i]
+    def _next_multiplier(self):
+        self._i = (self._i + 1) % len(self._multiplier_cycle)
+        return self._multiplier_cycle[self._i]
 
     def _next_difference(self):
         self._j = (self._j + 1) % len(self._difference_cycle)
