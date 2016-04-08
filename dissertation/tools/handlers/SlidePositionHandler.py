@@ -5,22 +5,23 @@ Created on Nov 20, 2015
 @author: josephdavancens
 '''
 from abjad import *
-from dissertation.tools.shortcuts import *
+from dissertation.tools.shortcuts import shortcuts
+from math import floor
 import copy
 from dissertation.tools import graphicstools
 
 class SlidePositionHandler(object):
-    r'''
-    classdocs
+    r''' A slide position handler for trombone
+
+        Slide position -> staff position
     '''
 
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
-        'slides',
-        'patterns',
-        'number_of_staff_lines'
+        '_music_maker',
+        '_slide_position_envelopes',
+        '_number_of_staff_lines'
     )
 
     ### INTIALIZER ###
@@ -28,132 +29,99 @@ class SlidePositionHandler(object):
     def __init__ (
         self,
         music_maker=None,
-        slides=None,
-        patterns=None,
+        slide_position_envelopes=None,
         number_of_staff_lines=None
         ):
-        self.music_maker = music_maker
-        self.slides = slides
-        self.patterns = patterns
-        self.number_of_staff_lines = number_of_staff_lines
+        self._music_maker = music_maker
+        self._slide_position_envelopes = slide_position_envelopes
+        self._number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHODS ###
 
     def __call__ (self, current_stage):
-        voice = self.music_maker(current_stage)
-        rhythm_voice = copy.deepcopy(voice)
+        voice = self._music_maker(current_stage)
         self._annotate_logical_ties(voice, current_stage)
+        rhythm_voice = copy.deepcopy(voice)
+        self._to_proportional_notation(voice)
+        self._attach_grace_notes(voice)
+        self._set_y_offsets(voice)
+        self._add_glissandi(voice)
         self._name_voices(voice, rhythm_voice)
-        self._handle_fingering_voice(voice)
-        self._handle_rhythm_voice(rhythm_voice)
         return [voice, rhythm_voice]
 
     ### PRIVATE METHODS ###
 
-    def _annotate_logical_tie(self, logical_tie, slide):
+    def _add_glissandi(self, voice):
+        shortcuts.add_gliss(voice)
+
+    def _annotate_logical_tie(
+        self,
+        logical_tie,
+        slide_position_start,
+        slide_position_stop
+        ):
         slide_position_start = indicatortools.Annotation(
-            'slide_position_start', slide.slide_position[0])
+            'slide_position_start', slide.slide_position_start[0])
         slide_position_stop = indicatortools.Annotation(
-            'slide_position_stop', slide.slide_position[1])
+            'slide_position_stop', slide.slide_position_stop[1])
         attach(slide_position_start, logical_tie[0])
         attach(slide_position_stop, logical_tie[0])
 
-    def _annotate_from_next_logical_tie(self, current, next):
-        if isinstance(current[0], Note) and isinstance(next[0], Note):
-            next_slide_position_start = inspect_(next[0]).get_annotation('slide_position_start')
-            next_slide_position_start = indicatortools.Annotation(
-                'next_slide_position_start',
-                next_slide_position_start)
-            attach(next_slide_position_start, current[0])
 
     def _annotate_logical_ties(self, voice, current_stage):
-        stages = self.music_maker.stages
-        current_stage_index = stages.index(current_stage)
-        pattern_index = current_stage_index % len(self.patterns)
-        pattern = self.patterns[pattern_index]
-        server = datastructuretools.StatalServer(pattern)
-        cursor = server()
-
-        logical_ties = list(iterate(voice).by_logical_tie())
-        for logical_tie in logical_ties:
-            if isinstance(logical_tie[0], Note):
-                i = cursor()[0]
-                slide = self.slides[i]
-                self._annotate_logical_tie(logical_tie, slide)
-        for i in range(len(logical_ties)-1):
-            if isinstance(logical_ties[i][0], Note):
-                self._annotate_from_next_logical_tie(
-                    logical_ties[i],
-                    logical_ties[i+1])
-
-    def _attach_glissando(self, logical_tie):
-        color = graphics_tools.scheme_rgb_color((0,0,0))
-        point_note_head(logical_tie[0])
-        gliss(logical_tie[0], color=color, thickness=3)
-        if len(logical_tie) > 1:
-            for leaf in logical_tie[1:]:
-                gliss_skip(leaf)
-                point_note_head(leaf)
-
-    def _handle_fingering_voice(self, voice):
+        total_duration = float(inspect_(voice).get_timespan().stop_offset)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            self._map_note_heads(logical_tie)
-            self._insert_gliss_anchor(logical_tie)
-            self._attach_glissando(logical_tie)
+            start_moment = inspect_(logical_tie[0]).get_vertical_moment(voice)
+            start_moment = float(start_moment.offset)
+            duration = float(logical_tie.get_duration()) / total_duration
+            x0 = start_moment / total_duration
+            x1 = x0 + duration
+            s0 = self._slide_position_envelopes[current_stage](x0)
+            s1 = self._slide_position_envelopes[current_stage](x1)
+            self._annotate_logical_tie(logical_tie, s0, s1)
+        logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
+        for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
+            self._annotate_from_previous_logical_tie(previous, current)
 
-    def _handle_rhythm_voice(self, rhythm_voice):
-        for leaf in rhythm_voice.select_leaves(
-                allow_discontiguous_leaves=True,
-                leaf_classes=Note
-                ):
-            point_note_head(leaf)
-
-    def _insert_gliss_anchor(self, logical_tie):
-        slide_position_stop = inspect_(logical_tie[0]).get_annotation('slide_position_stop')
-        next_slide_position_start = inspect_(logical_tie[0]).get_annotation('next_slide_position_start')
-        staff_position = self._map_fraction_to_treble_staff_position(
-            slide_position_stop,
-            number_of_staff_lines=self.number_of_staff_lines
+    def _annotate_from_previous_logical_tie(self, previous, current):
+        if isinstance(previous[0], Note) and isinstance(current[0], Note):
+            previous_slide_position_stop = \
+                inspect_(previous[0]).get_annotation('slide_position_stop')
+            previous_slide_position_stop = indicatortools.Annotation(
+                'previous_slide_position_stop',
+                previous_slide_position_stop
                 )
-        named_pitch = pitchtools.NamedPitch.from_staff_position(
-            staff_position)
-        if slide_position_stop != next_slide_position_start:
-            hidden_grace_after(logical_tie[-1], named_pitch)
+            attach(previous_slide_position_stop, current[0])
 
-    def _map_fraction_to_treble_staff_position(
-        self,
-        fraction,
-        number_of_staff_lines
-        ):
-        if 0 <= number_of_staff_lines < 3:
-            staff_position = 6
-        else:
-            staff_position = fraction * ((2 * number_of_staff_lines) - 4)
-            staff_position = round(staff_position) + 8 - number_of_staff_lines
-        return staff_position
-
-    def _map_note_heads(self, logical_tie):
-        slide_position_start = inspect_(logical_tie[0]).get_annotation('slide_position_start')
-        staff_position = self._map_fraction_to_treble_staff_position(
-            slide_position_start,
-            number_of_staff_lines=self.number_of_staff_lines
-            )
-        named_pitch = pitchtools.NamedPitch.from_staff_position(
-            staff_position)
-        for leaf in logical_tie:
-            leaf.written_pitch = named_pitch
+    def _attach_grace_notes(self, voice):
+        for note in iterate(voice).by_class(Note):
+            shortcuts.grace_after(note)
 
     def _name_voices(self, voice, rhythm_voice):
-        instrument = self.music_maker.instrument
-        voice.name = self.music_maker.name
-        rhythm_voice.name = self.music_maker.name + " Rhythm"
+        instrument = self._music_maker.instrument
+        voice.name = self._music_maker.name
+        rhythm_voice.name = self._music_maker.name + " Rhythm"
+
+    def _set_y_offsets(self, voice):
+        n = 5
+        for note in iterate(voice).by_class(Note):
+            y0 = inspect_(note).get_annotation('air_pressure_start')
+            y1 = inspect_(note).get_annotation('air_pressure_stop')
+            y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
+            y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
+            grace = inspect_(note).get_grace_container()[0]
+            override(note).note_head.Y_offset = y0_offset
+            override(grace).note_head.Y_offset = y1_offset
+
+    def _to_proportional_notation(self, voice):
+        shortcuts.to_proportional_notation(voice)
 
     ### PUBLIC PROPERTIES ###
 
     @property
     def instrument(self):
-        return self.music_maker.instrument
+        return self._music_maker.instrument
 
     @property
     def name(self):
-        return self.music_maker.name
+        return self._music_maker.name

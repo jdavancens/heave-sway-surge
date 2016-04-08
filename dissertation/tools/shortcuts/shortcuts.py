@@ -72,8 +72,8 @@ def hide(leaf):
     )
     attach(hide_dots, leaf)
 
-def map_fraction_to_y_offset(x,number_of_staff_lines):
-    y_offset = (x - 0.5) * (number_of_staff_lines * 2 - 2)
+def map_fraction_to_y_offset(x, number_of_staff_lines):
+    y_offset = (x - 0.5) * (number_of_staff_lines - 2)
     return y_offset
 
 def point_note_head(leaf):

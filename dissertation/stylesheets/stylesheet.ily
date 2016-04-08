@@ -130,9 +130,10 @@ staffgroup-space = #24
 
         \override NoteHead.stem-attachment = #'(0 . 0)
         \override InstrumentName.padding = #1
-        \override StaffSymbol.line-count = #10
+        \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
+            white white grey white white
             white white white white black
             )
         %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #16%}

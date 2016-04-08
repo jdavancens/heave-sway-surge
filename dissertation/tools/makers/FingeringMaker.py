@@ -12,7 +12,7 @@ class FingeringMaker(object):
         "_previous_fingering",
     )
 
-    def __init__(self, instrument, fingering_sets, all_fingerings):
+    def __init__(self, instrument, fingering_sets):
         self._instrument = instrument
         self._fingering_sets = fingering_sets
         self._previous_fingering = None

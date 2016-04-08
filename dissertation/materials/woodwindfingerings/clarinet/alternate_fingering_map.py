@@ -24,7 +24,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -34,7 +34,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -45,7 +45,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -55,7 +55,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -66,7 +66,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -76,7 +76,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -87,7 +87,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -97,7 +97,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -108,7 +108,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -118,7 +118,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':None,
                 'ring':'b',
@@ -129,7 +129,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -139,7 +139,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'four',
                 'middle':None,
                 'ring':'b',
@@ -150,7 +150,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -160,7 +160,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'four',
                 'middle':None,
                 'ring':'down',
@@ -171,7 +171,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':None,
                 'middle':None,
@@ -181,7 +181,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
@@ -192,7 +192,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'thumb',
                 'index':'gis',
                 'middle':None,
@@ -202,7 +202,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
@@ -213,7 +213,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':None,
                 'index':'a',
                 'middle':None,
@@ -223,7 +223,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -234,7 +234,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':None,
                 'index':'a',
                 'middle':None,
@@ -244,7 +244,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'two',
                 'middle':None,
                 'ring':None,
@@ -255,7 +255,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -265,7 +265,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -276,7 +276,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -286,7 +286,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -297,7 +297,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -307,7 +307,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -318,7 +318,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -328,7 +328,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -339,7 +339,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -349,7 +349,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':None,
                 'ring':'b',
@@ -360,7 +360,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -370,7 +370,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -381,7 +381,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -391,7 +391,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -402,7 +402,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
@@ -412,7 +412,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -423,7 +423,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
@@ -433,7 +433,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -444,7 +444,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':None,
@@ -454,7 +454,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':('three', 'four'),
                 'middle':None,
                 'ring':None,
@@ -465,7 +465,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':None,
@@ -475,7 +475,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'two',
                 'middle':None,
                 'ring':None,
@@ -486,7 +486,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
@@ -496,7 +496,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':None,
                 'ring':'down',
@@ -507,7 +507,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':'R',
                 'index':'down',
                 'middle':'down',
@@ -517,7 +517,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -528,7 +528,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -538,7 +538,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -549,7 +549,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -559,7 +559,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -570,7 +570,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':None,
@@ -580,7 +580,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -591,7 +591,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
@@ -601,7 +601,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -612,7 +612,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':None,
                 'middle':'down',
@@ -622,7 +622,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -633,7 +633,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'gis',
                 'middle':'down',
@@ -643,7 +643,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -654,7 +654,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':'down',
@@ -664,7 +664,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -675,7 +675,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            fingering= {
+            keys = {
                 'thumb':('R', 'thumb'),
                 'index':'down',
                 'middle':None,
@@ -685,7 +685,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            fingering = {
+            keys = {
                 'index':'down',
                 'middle':None,
                 'ring':None,

@@ -7,7 +7,7 @@ Created on Nov 22, 2015
 from abjad import *
 from dissertation.tools.actions.Embouchure import Embouchure
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
-from dissertation.tools.handlers.EmbouchureHandler import EmbouchureHandler
+from dissertation.tools.handlers.ReedEmbouchureHandler import ReedEmbouchureHandler
 from dissertation.tools.handlers.WoodwindFingeringHandler import WoodwindFingeringHandler
 from dissertation.tools.MusicMaker import MusicMaker
 
@@ -161,7 +161,7 @@ rh_fingerings = (
 # MUSIC-HANDLERS
 #===============================================================================
 
-embouchure_music_handler = EmbouchureHandler(
+embouchure_music_handler = ReedEmbouchureHandler(
         music_maker=embouchure_music_maker,
         embouchures=embouchures,
         pattern=(0, 1, 2, 0, 1, 0),

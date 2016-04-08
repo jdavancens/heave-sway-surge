@@ -132,8 +132,8 @@ class BowingHandler(object):
         pressure = inspect_(logical_tie[0]).get_annotation('pressure_start')
         rgb0 = (0, 0, 1)
         rgb1 = (1, 0, 0)
-        rgb = graphics_tools.interpolate_rgb(pressure, rgb0, rgb1)
-        color = graphics_tools.scheme_rgb_color(rgb)
+        rgb = graphicstools.interpolate_rgb(pressure, rgb0, rgb1)
+        color = graphicstools.scheme_rgb_color(rgb)
         staccato = inspect_(logical_tie[0]).get_annotation('staccato')
         if not staccato:
             thickness = round( 7 * float(pressure) ) + 1

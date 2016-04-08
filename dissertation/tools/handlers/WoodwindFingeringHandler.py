@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# TODO: separate fingering choic
-
 '''
 Created on Nov 20, 2015
 
@@ -10,7 +8,7 @@ Created on Nov 20, 2015
 
 from abjad import *
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
-from dissertation.tools import shortcuts
+from dissertation.tools.shortcuts import shortcuts
 from dissertation.tools import graphicstools
 import copy
 
@@ -93,7 +91,8 @@ class WoodwindFingeringHandler(object):
         lh_logical_ties = list(iterate(lh_voice).by_logical_tie())
         for i, logical_tie in enumerate(lh_logical_ties):
             if isinstance(logical_tie.head, (Note, Chord)):
-                self._annotate_logical_tie(logical_tie, self._lh_fingerings[i])
+                fingering = self._lh_fingerings[current_stage]
+                self._annotate_logical_tie(logical_tie, self._lh_fingerings[current_stage][i])
             else:
                 fingering = self._make_open_fingering('left')
                 self._annotate_logical_tie(logical_tie, fingering)
@@ -106,7 +105,7 @@ class WoodwindFingeringHandler(object):
         rh_logical_ties = list(iterate(rh_voice).by_logical_tie())
         for i, logical_tie in enumerate(rh_logical_ties):
             if isinstance(logical_tie.head, (Note, Chord)):
-                self._annotate_logical_tie(logical_tie, self._rh_fingerings[i])
+                self._annotate_logical_tie(logical_tie, self._rh_fingerings[current_stage][i])
             else:
                 fingering = self._make_open_fingering('right')
                 self._annotate_logical_tie(logical_tie, fingering)
@@ -275,7 +274,7 @@ class WoodwindFingeringHandler(object):
                 self._make_glissando_map(fingering, lifeline_voice.context_name)
             if glissando_map is not None :
                 attach(glissando_map, logical_tie.head)
-                color = graphics_tools.scheme_rgb_color((0,0,0))
+                color = graphicstools.scheme_rgb_color((0,0,0))
                 shortcuts.gliss(logical_tie.head, color=color,thickness=2)
                 if len(logical_tie)>1:
                    for chord in logical_tie[1:]:
