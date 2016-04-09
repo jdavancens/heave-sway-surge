@@ -9,15 +9,14 @@ Created on Oct 31, 2015
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
-from dissertation.materials.segment_1.clarinet import *
 from dissertation.materials.segment_1.clarinet.air_pressure_envelopes import air_pressure_envelopes
 from dissertation.materials.segment_1.clarinet.lip_pressure_envelopes import lip_pressure_envelopes
 from dissertation.materials.segment_1.clarinet.ratio_makers_embouchure import ratio_makers_embouchure
 from dissertation.materials.segment_1.clarinet.ratio_makers_lh import ratio_makers_lh
 from dissertation.materials.segment_1.clarinet.ratio_makers_rh import ratio_makers_rh
 from dissertation.materials.segment_1.clarinet.rhythm_makers import tuplet_maker
-from dissertation.materials.segment_1.clarinet.rhythm_makers import duration_spelling_specifier
-from dissertation.materials.segment_1.clarinet.rhythm_makers import tuplet_spelling_specifier
+from dissertation.materials.segment_1.oboe.rhythm_makers import duration_spelling_specifier
+from dissertation.materials.segment_1.oboe.rhythm_makers import tuplet_spelling_specifier
 clarinet = instrumenttools.ClarinetInBFlat()
 import json
 import os

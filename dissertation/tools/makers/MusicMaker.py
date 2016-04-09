@@ -71,7 +71,7 @@ class MusicMaker:
         else:
             voice = self._make_skips(current_stage)
         assert isinstance(voice, Voice)
-
+        f(voice)
         return voice
 
 

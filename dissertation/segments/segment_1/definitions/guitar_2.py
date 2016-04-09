@@ -57,14 +57,16 @@ fretting_music_maker = MusicMaker(
 # MUSIC-HANDLERS
 #===============================================================================
 
-fretting_music_handler = FrettingHandler(
-    music_maker=fretting_music_maker,
-    fret_combinations=fret_combinations,
-)
-
 picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
     pickings=pickings,
+    patterns=picking_patterns
+)
+
+fretting_music_handler = FrettingHandler(
+    music_maker=fretting_music_maker,
+    fret_combinations=fret_combinations,
+    patterns=fretting_patterns
 )
 
 music_handlers = [
