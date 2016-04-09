@@ -10,8 +10,8 @@ from dissertation.segments.segment_1.definitions import oboe
 from dissertation.segments.segment_1.definitions import clarinet
 from dissertation.segments.segment_1.definitions import saxophone
 from dissertation.segments.segment_1.definitions import trombone
-# from dissertation.segments.segment_1.definitions import guitar_1
-# from dissertation.segments.segment_1.definitions import guitar_2
+from dissertation.segments.segment_1.definitions import guitar_1
+from dissertation.segments.segment_1.definitions import guitar_2
 # from dissertation.segments.segment_1.definitions import violin
 # from dissertation.segments.segment_1.definitions import viola
 # from dissertation.segments.segment_1.definitions import cello
@@ -37,8 +37,8 @@ def make_part(part_name, number_of_stages=None):
     clarinet_handlers = clarinet.get_music_handlers()
     saxophone_handlers = saxophone.get_music_handlers()
     trombone_handlers = trombone.get_music_handlers()
-    # guitar_1_handlers = guitar_1.get_music_handlers()
-    # guitar_2_handlers = guitar_2.get_music_handlers()
+    guitar_1_handlers = guitar_1.get_music_handlers()
+    guitar_2_handlers = guitar_2.get_music_handlers()
     # violin_handlers = violin.get_music_handlers()
     # viola_handlers = viola.get_music_handlers()
     # cello_handlers = cello.get_music_handlers()
@@ -48,8 +48,8 @@ def make_part(part_name, number_of_stages=None):
         clarinet_handlers,
         saxophone_handlers,
         trombone_handlers,
-        # guitar_1_handlers,
-        # guitar_2_handlers,
+        guitar_1_handlers,
+        guitar_2_handlers,
         # violin_handlers,
         # viola_handlers,
         # cello_handlers,

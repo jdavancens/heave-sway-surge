@@ -66,7 +66,7 @@ class PickingHandler(object):
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor.next()
+                i = cursor.next()[0]
                 picking = self.pickings[i]
                 self._annotate_logical_tie(logical_tie, picking)
 
