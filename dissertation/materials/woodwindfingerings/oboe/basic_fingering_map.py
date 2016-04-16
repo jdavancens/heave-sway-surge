@@ -24,7 +24,7 @@ basic_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='left',
-            keys= {
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -34,7 +34,7 @@ basic_fingering_map = {
         WoodwindFingering(
             instrument=oboe,
             hand='right',
-            keys = {
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',

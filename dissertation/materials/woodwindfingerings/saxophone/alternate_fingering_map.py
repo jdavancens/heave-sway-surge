@@ -24,7 +24,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -34,7 +34,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'fis',
@@ -45,7 +45,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':('down','bes'),
                 'middle':None,
@@ -55,7 +55,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -66,7 +66,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':None,
@@ -76,7 +76,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'c',
                 'middle':None,
                 'ring':None,
@@ -87,7 +87,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -97,7 +97,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -108,7 +108,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':('down', 'd'),
                 'middle':'down',
@@ -118,7 +118,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -129,7 +129,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':None,
                 'middle':None,
@@ -139,7 +139,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'e',
                 'middle':None,
                 'ring':None,
@@ -150,7 +150,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':None,
                 'index':'f',
                 'middle':None,
@@ -160,7 +160,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'e',
                 'middle':None,
                 'ring':None,
@@ -171,7 +171,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':'T',
                 'index':'down',
                 'middle':'down',
@@ -181,7 +181,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'fis',
@@ -192,7 +192,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':'T',
                 'index':'down',
                 'middle':None,
@@ -202,7 +202,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -213,7 +213,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':'T',
                 'index':'down',
                 'middle':None,
@@ -223,7 +223,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'c',
                 'middle':None,
                 'ring':None,
@@ -234,7 +234,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':'T',
                 'index':None,
                 'middle':None,
@@ -244,7 +244,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -255,7 +255,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='left',
-            fingering= {
+            keys={
                 'thumb':'T',
                 'index':None,
                 'middle':None,
@@ -265,7 +265,7 @@ alternate_fingering_map = {
         WoodwindFingering(
             instrument=saxophone,
             hand='right',
-            fingering = {
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',

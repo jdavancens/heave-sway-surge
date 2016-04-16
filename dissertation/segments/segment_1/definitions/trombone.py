@@ -22,7 +22,6 @@ trombone = instrumenttools.TenorTrombone()
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 
-divisions = sequencetools.flatten_sequence(time_signatures)
 stages = (0,1,2,3,4)
 
 #===============================================================================
@@ -49,7 +48,6 @@ embouchure_music_maker = MusicMaker(
     instrument=trombone,
     name='Embouchure',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=tuplet_ratios_embouchure,
         duration_spelling_specifier=duration_spelling_specifier,
@@ -62,7 +60,6 @@ slide_position_music_maker = MusicMaker(
     instrument=trombone,
     name='Slide Position',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=tuplet_ratios_slide_position,
         duration_spelling_specifier=duration_spelling_specifier,

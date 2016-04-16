@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from abjad import rhythmmakertools
+from .ratios_embouchure import tuplet_ratios_embouchure
+from .ratios_lh import tuplet_ratios_lh
+from .ratios_rh import tuplet_ratios_rh
 
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 
@@ -18,4 +21,88 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     is_diminution=True,
     simplify_redundant_tuplets=True,
     use_note_duration_bracket=False,
+)
+
+rhythm_makers_embouchure = (
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure[0],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure[1],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure[2],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure[3],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_embouchure[4],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+)
+
+rhythm_makers_lh = (
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh[0],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh[1],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh[2],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh[3],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_lh[4],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+)
+
+rhythm_makers_rh = (
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh[0],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh[1],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh[2],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh[3],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
+    tuplet_maker(
+        tuplet_ratios=tuplet_ratios_rh[4],
+        duration_spelling_specifier=duration_spelling_specifier,
+        tuplet_spelling_specifier=tuplet_spelling_specifier,
+    ),
 )

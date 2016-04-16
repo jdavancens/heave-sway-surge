@@ -12,159 +12,7 @@ from dissertation.materials.segment_1 import *
 #  RHYTHM-MAKERS
 #===============================================================================
 bass = instrumenttools.Contrabass()
-divisions = sequencetools.flatten_sequence(time_signatures)
-tuplet_ratios_bowing = (
-    #1-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    [], [], [], [],
-    #1-2
-    [], [], [], [],
-    [], [],
-    [], [], [],
-    [], [],
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #2-1
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
-    #3-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #3-2
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #3-3
-    [], [], [], [],
-    [], [], [],
-    [], [], [],
-    [], [],
-    #3-4
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #4-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #4-2
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #4-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #5-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    [], [],
-    [], [], [],
-    #5-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
-)
-tuplet_ratios_fingering = (
-    #1-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    [], [], [], [],
-    #1-2
-    [], [], [], [],
-    [], [],
-    [], [], [],
-    [], [],
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #2-1
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #2-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #2-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
-    #3-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #3-2
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #3-3
-    [], [], [], [],
-    [], [], [],
-    [], [], [],
-    [], [],
-    #3-4
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #4-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #4-2
-    [], [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    #4-3
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    #5-1
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [],
-    [], [],
-    [], [], [],
-    #5-2
-    [], [], [],
-    [], [],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [],
-)
+
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     rewrite_meter=True, spell_metrically=True,
@@ -186,7 +34,6 @@ bowing_music_maker = MusicMaker(
     instrument=bass,
     name='Bowing',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_bowing],
         duration_spelling_specifier=duration_spelling_specifier,
@@ -198,7 +45,6 @@ fingering_music_maker = MusicMaker(
     instrument=bass,
     name='Fingering',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=[[-1] if x==[] else x for x in tuplet_ratios_fingering],
         duration_spelling_specifier=duration_spelling_specifier,

@@ -2,8 +2,9 @@
 import math
 class SineInterpolater(object):
 
-    def __init__(self, freq):
+    def __init__(self, freq, amp=1):
         self._freq = freq
+        self._amp = amp
 
     def __call__(self, x, y0, y1):
         # do linear interpolation
@@ -15,6 +16,6 @@ class SineInterpolater(object):
             d = d_min
         else:
             d = d_max
-        sine = math.sin(self._freq * x) * d * 0.5
+        sine = math.sin(self._freq * x) * self._amp * d * 0.5
 
         return y + sine

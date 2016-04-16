@@ -207,9 +207,10 @@ class SegmentMaker(SegmentMakerBaseClass):
                 handler_string = handler_string.format(
                     handler_instrument, handler_name)
                 print(handler_string)
+                # call the music handler
                 voices = music_handler(stage)
 
-                #print('\t\t\tMatching voices to staves...')
+                print('\t\t\tMatching voices to staves...')
                 for voice in voices:
                     voice_instrument = inspect_(voice).get_indicator(
                         instrumenttools.Instrument)
@@ -353,9 +354,11 @@ class SegmentMaker(SegmentMakerBaseClass):
         attach(dummy_first_bar_command, first_leaf)
         time_signature_context = self._score[0]
         time_signature_context.extend(measures)
+
         for staff in iterate(self._score).by_class(Staff):
             if staff.name is 'Separator':
-                staff.extend(self._make_skip_filled_measures())
+                measures = self._make_skip_filled_measures()
+                staff.extend(measures)
 
     def _raise_approximate_duration_in_seconds(self):
         r''' Calculates the duration, in seconds, of the segment and raises an

@@ -18,7 +18,7 @@ class ReedEmbouchureHandler(object):
     '''An embouchure handler for wind instruments
 
         Air pressure -> staff position, line spanner
-        Lip pressure -> line spanner color gradient
+        Lip pressure -> ?
 
 
     Returns voices for a particular stage in a segment
@@ -98,17 +98,20 @@ class ReedEmbouchureHandler(object):
         attach(lip_pressure_stop, logical_tie[0])
 
     def _annotate_logical_ties(self, voice, current_stage):
-        total_duration = float(inspect_(voice).get_timespan().stop_offset)
+        start_offset = float(inspect_(voice).get_timespan().start_offset)
+        stop_offset = float(inspect_(voice).get_timespan().stop_offset)
+        total_duration = stop_offset - start_offset
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             start_moment = inspect_(logical_tie[0]).get_vertical_moment(voice)
-            start_moment = float(start_moment.offset)
+            start_offset = float(start_moment.offset)
             duration = float(logical_tie.get_duration()) / total_duration
-            x0 = start_moment / total_duration
+            x0 = start_offset / total_duration
             x1 = x0 + duration
             a0 = self._air_pressure_envelopes[current_stage](x0)
             a1 = self._air_pressure_envelopes[current_stage](x1)
             l0 = self._lip_pressure_envelopes[current_stage](x0)
             l1 = self._lip_pressure_envelopes[current_stage](x1)
+            # print("{} {} {} {} {} {}".format(x0,x1,a0,a1,l0,l1))
             self._annotate_logical_tie(logical_tie, a0, a1, l0, l1)
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
@@ -133,23 +136,22 @@ class ReedEmbouchureHandler(object):
             attach(previous_lip_pressure_stop, current[0])
 
     def _attach_grace_notes(self, voice):
-        for note in iterate(voice).by_class(Note):
-            shortcuts.grace_after(note)
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            shortcuts.grace_after(logical_tie.tail)
 
     def _name_voices(self, voice, rhythm_voice):
-        instrument = self._music_maker.instrument
         voice.name = self._music_maker.name
         rhythm_voice.name = self._music_maker.name + " Rhythm"
 
     def _set_y_offsets(self, voice):
         n = self._number_of_staff_lines
-        for note in iterate(voice).by_class(Note):
-            y0 = inspect_(note).get_annotation('air_pressure_start')
-            y1 = inspect_(note).get_annotation('air_pressure_stop')
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            y0 = inspect_(logical_tie.head).get_annotation('air_pressure_start')
+            y1 = inspect_(logical_tie.head).get_annotation('air_pressure_stop')
             y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
             y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-            grace = inspect_(note).get_grace_container()[0]
-            override(note).note_head.Y_offset = y0_offset
+            grace = inspect_(logical_tie.tail).get_grace_container()[0]
+            override(logical_tie.head).note_head.Y_offset = y0_offset
             override(grace).note_head.Y_offset = y1_offset
 
     def _to_proportional_notation(self, voice):

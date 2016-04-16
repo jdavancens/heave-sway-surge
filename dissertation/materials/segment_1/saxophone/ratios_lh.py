@@ -107,3 +107,8 @@ ratio_makers_lh = (
         rest_indices='all',
     ),
 )
+
+tuplet_ratios_lh = []
+for ratio_maker in ratio_makers_lh:
+    ratios = ratio_maker()
+    tuplet_ratios_lh.extend(ratios)
