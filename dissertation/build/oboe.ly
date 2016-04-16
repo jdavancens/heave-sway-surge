@@ -1,4 +1,4 @@
-% 2016-04-07 19:08
+% 2016-04-15 20:54
 
 \version "2.19.29"
 \language "english"
@@ -468,211 +468,188 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'16 [
-                    c'16 ]
-                    r16
-                    c'16 -\accent [
-                    c'8 -\accent ]
-                    \times 2/3 {
-                        c'8 [
-                        c'8. -\accent ]
-                        r8
-                        c'8. [
-                        c'8 ]
-                    }
-                    c'16 [
-                    c'16 ]
-                    r16
-                    c'16 -\accent [
-                    c'8 -\accent ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \times 2/3 {
-                        c'8 -\accent [
-                        c'8 -\accent ]
-                        r8
-                        c'8 -\accent [
-                        c'16 -\accent ]
-                    }
-                    c'8 -\accent [
-                    c'8. -\accent ]
-                    r8
-                    c'8. -\accent [
-                    c'8 -\accent ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \times 2/3 {
-                        c'8 [
-                        c'8 -\accent ]
-                        r8
-                        c'8 -\accent [
-                        c'16 ]
-                    }
-                    c'8 -\accent [
-                    c'8. ]
-                    r8
-                    c'8. -\accent [
-                    c'8 -\accent ]
-                    \times 2/3 {
-                        c'8 -\accent [
-                        c'8. -\accent ]
-                        r8
-                        c'8. -\accent [
-                        c'8 -\accent ]
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'8 [
-                    c'8. -\accent ]
-                    r8
-                    c'8. [
-                    c'8 ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    c'8 [
-                    c'16
-                    c'8. -\accent ]
+                    c'4.
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 10/11 {
-                        c'8 -\accent [
-                        c'16
-                        c'8. ]
-                        r8
-                        c'8 [
-                        c'16 -\accent ]
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    c'8 -\accent [
-                    c'16 -\accent
-                    c'8. -\accent ]
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 10/11 {
-                        c'8 [
-                        c'16
-                        c'8. -\accent ]
-                        r8
-                        c'8 -\accent [
-                        c'16 -\accent ]
-                    }
-                    c'8 -\accent [
-                    c'16 -\accent
-                    c'8. -\accent ]
-                    r8
-                    c'8
-                    \times 8/9 {
-                        c'8 -\accent [
-                        c'16 -\accent
-                        c'8. ]
-                        r8
-                        c'16 -\accent
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \times 2/3 {
-                        c'4
-                        c'8
-                        c'4.
-                    }
-                    \times 2/3 {
-                        c'8 -\accent [
-                        c'16 -\accent
+                    \times 8/7 {
                         c'8. -\accent
-                        c'8 -\accent ]
-                        r8
-                        c'16 -\accent [
-                        c'8. -\accent
-                        c'16 ]
+                        c'4 -\accent
                     }
+                    c'4. -\accent
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
-                    r4.
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 10/9 {
-                        c'8 -\accent [
-                        c'16 -\accent
-                        c'8. -\accent
-                        c'8 -\accent ]
-                        r16
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 16/15 {
-                        c'16 [
-                        c'32
-                        c'16.
-                        c'16 ]
-                        r16
-                        c'32 -\accent [
-                        c'16.
-                        c'32 -\accent ]
-                    }
+                    r2
                     \tweak #'text #tuplet-number::calc-fraction-text
                     \times 6/5 {
-                        c'16 [
-                        c'32 -\accent
-                        c'16. -\accent
-                        c'16 -\accent ]
-                        r16
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 10/13 {
                         c'8 -\accent [
-                        c'16 -\accent
-                        c'8. -\accent
-                        c'8 -\accent ]
-                        r8
-                        c'16 [
-                        c'8 -\accent ]
-                    }
-                    \times 2/3 {
-                        c'4
-                        c'4
-                        c'4
-                    }
-                    \times 4/5 {
-                        c'8. -\accent [
                         c'8. -\accent ]
-                        c'4
                     }
-                    c'8 -\accent [
-                    c'8 -\accent
-                    c'8 -\accent ]
+                    c'2.
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \times 2/3 {
-                        c'4
-                        c'4
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8. ]
+                    }
+                    c'2. -\accent
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 8/7 {
+                        c'8. -\accent
                         c'4 -\accent
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
+                    c'2.
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'16
+                        r16
+                        c'16 -\accent [
+                        c'16 -\accent ]
+                        r8
+                        c'16 -\accent
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'16 -\accent
+                        r16
+                        c'16 -\accent [
+                        c'16 ]
+                        r8
+                        c'16 -\accent [
+                        c'16 -\accent
+                        c'16 -\accent ]
+                        r8.
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2.
+                    c'16
+                    r16
+                    c'16 -\accent [
+                    c'16 -\accent ]
+                    r8
+                    c'16 -\accent [
+                    c'16 -\accent ]
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'16
+                        r16
+                        c'16 -\accent [
+                        c'16 -\accent ]
+                        r8
+                        c'16 -\accent [
+                        c'16 -\accent ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'16 -\accent
+                        r16
+                        c'16 -\accent [
+                        c'16 -\accent ]
+                        r8
+                        c'16 -\accent [
+                        c'16 -\accent
+                        c'16 ]
+                    }
+                    \times 8/9 {
+                        c'16 -\accent
+                        r16
+                        c'16 -\accent [
+                        c'16 -\accent ]
+                        r8
+                        c'16 -\accent [
+                        c'16 -\accent
+                        c'16 -\accent ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 8/7 {
+                        c'8 [
+                        c'16 -\accent
+                        c'8.
+                        c'16 -\accent ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'8 -\accent [
+                        c'16 -\accent
+                        c'8.
+                        c'16 -\accent
+                        c'16 -\accent ]
+                        c'4
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'8 [
+                        c'16 -\accent
+                        c'8. -\accent
+                        c'16 -\accent
+                        c'16 -\accent ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    c'8 -\accent [
+                    c'16 -\accent
+                    c'8. -\accent
+                    c'16 -\accent
+                    c'16 -\accent ]
+                    \times 2/3 {
+                        c'8 -\accent [
+                        c'16 -\accent
+                        c'8. -\accent
+                        c'16 -\accent
+                        c'16 -\accent
+                        c'16 -\accent ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'8 -\accent [
+                        c'16
+                        c'8.
+                        c'16 -\accent
+                        c'16 -\accent
+                        c'16 -\accent ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    c'2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8. -\accent
+                        c'4 -\accent
+                    }
+                    c'2 ~
+                    c'8
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \times 4/5 {
+                        c'4
+                        c'4.
+                    }
+                    c'4.
                 }
             }
             \context EmbouchureStaff = "Embouchure" \with {
@@ -829,156 +806,62 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-2.46754853466
+                        \once \override NoteHead #'Y-offset = #-1.28927688853
                         \afterGrace
-                        b'4 * 1/4
+                        b'4 * 3/2
                         {
-                            \once \override NoteHead #'Y-offset = #2.70282055754
+                            \once \override NoteHead #'Y-offset = #-0.313920301132
                             b'16
                         }
-                        \once \override NoteHead #'Y-offset = #2.70282055754
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.78400591921
-                            b'16
-                        }
-                        r16
-                        \once \override NoteHead #'Y-offset = #3.00082632938
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.794025390015
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.794025390015
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.413951473877
-                            b'16
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #0.413951473877
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #4.04156964424
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.04156964424
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 8/7 {
+                            \once \override NoteHead #'Y-offset = #-0.313920301132
                             \afterGrace
                             b'4 * 3/4
                             {
-                                \once \override NoteHead #'Y-offset = #3.33553586572
+                                \once \override NoteHead #'Y-offset = #-0.156707877651
                                 b'16
                             }
-                            r8
-                            \once \override NoteHead #'Y-offset = #-0.0677598612455
+                            \once \override NoteHead #'Y-offset = #-0.156707877651
                             \afterGrace
-                            b'4 * 3/4
+                            b'4 * 1
                             {
-                                \once \override NoteHead #'Y-offset = #0.151807744685
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #0.151807744685
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #2.98093251666
+                                \once \override NoteHead #'Y-offset = #-0.444422469804
                                 b'16
                             }
                         }
-                        \once \override NoteHead #'Y-offset = #2.98093251666
+                        \once \override NoteHead #'Y-offset = #-0.444422469804
                         \afterGrace
-                        b'4 * 1/4
+                        b'4 * 3/2
                         {
-                            \once \override NoteHead #'Y-offset = #0.10147268296
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.10147268296
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #2.63311183063
-                            b'16
-                        }
-                        r16
-                        \once \override NoteHead #'Y-offset = #-0.1732986803
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.88981738782
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.88981738782
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.858646797494
+                            \once \override NoteHead #'Y-offset = #-1.4880413323
                             b'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #1.31969866527
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-1.19390903491
                             \afterGrace
                             b'4 * 1/2
                             {
-                                \once \override NoteHead #'Y-offset = #1.38724696545
+                                \once \override NoteHead #'Y-offset = #-1.1528396972
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #1.38724696545
+                            \once \override NoteHead #'Y-offset = #-1.1528396972
                             \afterGrace
-                            b'4 * 1/2
+                            b'4 * 3/4
                             {
-                                \once \override NoteHead #'Y-offset = #1.63399424212
-                                b'16
-                            }
-                            r8
-                            \once \override NoteHead #'Y-offset = #1.93281545647
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #1.88100244944
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.88100244944
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #1.73671525017
+                                \once \override NoteHead #'Y-offset = #-0.936681980826
                                 b'16
                             }
                         }
-                        \once \override NoteHead #'Y-offset = #1.73671525017
+                        \once \override NoteHead #'Y-offset = #-0.936681980826
                         \afterGrace
-                        b'4 * 1/2
+                        b'4 * 3
                         {
-                            \once \override NoteHead #'Y-offset = #1.45494944357
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.45494944357
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.82153925656
-                            b'16
-                        }
-                        r8
-                        \once \override NoteHead #'Y-offset = #2.23628403514
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #2.61361598824
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.61361598824
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #3.42644938804
+                            \once \override NoteHead #'Y-offset = #0.817607022253
                             b'16
                         }
                         \once \override Dots.transparent = ##t
@@ -987,316 +870,314 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #2.74174571029
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-1.02179443032
                             \afterGrace
                             b'4 * 1/2
                             {
-                                \once \override NoteHead #'Y-offset = #1.40937532971
+                                \once \override NoteHead #'Y-offset = #-1.60149318787
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #1.40937532971
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #0.779731062831
-                                b'16
-                            }
-                            r8
-                            \once \override NoteHead #'Y-offset = #2.31215564388
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #-0.076325875498
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #-0.076325875498
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #1.8689453023
-                                b'16
-                            }
-                        }
-                        \once \override NoteHead #'Y-offset = #1.8689453023
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.23313106354
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.23313106354
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.378350211728
-                            b'16
-                        }
-                        r8
-                        \once \override NoteHead #'Y-offset = #-0.308202226505
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.0558228577
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.0558228577
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.18785009463
-                            b'16
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #-1.18785009463
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #-1.00327633502
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #-1.00327633502
+                            \once \override NoteHead #'Y-offset = #-1.60149318787
                             \afterGrace
                             b'4 * 3/4
                             {
-                                \once \override NoteHead #'Y-offset = #-1.09501720314
+                                \once \override NoteHead #'Y-offset = #-2.91517146084
                                 b'16
                             }
-                            r8
-                            \once \override NoteHead #'Y-offset = #-1.20788091243
+                        }
+                        \once \override NoteHead #'Y-offset = #-2.91517146084
+                        \afterGrace
+                        b'4 * 3
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.17938520554
+                            b'16
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 8/7 {
+                            \once \override NoteHead #'Y-offset = #-3.17938520554
                             \afterGrace
                             b'4 * 3/4
                             {
-                                \once \override NoteHead #'Y-offset = #-1.28371019015
+                                \once \override NoteHead #'Y-offset = #-3.14338802615
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #-1.28371019015
+                            \once \override NoteHead #'Y-offset = #-3.14338802615
                             \afterGrace
-                            b'4 * 1/2
+                            b'4 * 1
                             {
-                                \once \override NoteHead #'Y-offset = #-1.29919283669
+                                \once \override NoteHead #'Y-offset = #-2.69123884776
                                 b'16
                             }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #-3.68144965974
+                        \once \override NoteHead #'Y-offset = #-3.7317867851
                         \afterGrace
-                        b'4 * 1/2
+                        b'4 * 3
                         {
-                            \once \override NoteHead #'Y-offset = #-3.69015095879
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.69015095879
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.51479662388
-                            b'16
-                        }
-                        r8
-                        \once \override NoteHead #'Y-offset = #-2.81502579314
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.66570360476
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.66570360476
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.12135389905
+                            \once \override NoteHead #'Y-offset = #1.03033013637
                             b'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
-                        \once \override NoteHead #'Y-offset = #-0.670370676512
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.49509119558
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.49509119558
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #0.265005958871
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.265005958871
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #0.494467355936
-                            b'16
-                        }
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 10/11 {
-                            \once \override NoteHead #'Y-offset = #0.494467355936
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #1.17265302409
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.17265302409
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-1.57352080898
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #-2.47603958545
+                                \once \override NoteHead #'Y-offset = #-2.56145877938
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #-2.47603958545
+                            r16
+                            \once \override NoteHead #'Y-offset = #-2.43547703407
                             \afterGrace
-                            b'4 * 3/4
+                            b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #-0.54616819695
+                                \once \override NoteHead #'Y-offset = #-1.43991295675
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-1.43991295675
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-1.44557429483
                                 b'16
                             }
                             r8
-                            \once \override NoteHead #'Y-offset = #0.178542776482
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #2.1856920817
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #2.1856920817
+                            \once \override NoteHead #'Y-offset = #-2.47821688099
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #3.39759011567
+                                \once \override NoteHead #'Y-offset = #-1.00964412596
                                 b'16
                             }
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-1.00964412596
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-0.721557858283
+                                b'16
+                            }
+                            r16
+                            \once \override NoteHead #'Y-offset = #-1.69587042542
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-1.68835916
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-1.68835916
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-0.323442377958
+                                b'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-0.0344384898085
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-0.0445229740786
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-0.0445229740786
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.04776262279
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #1.04776262279
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.96481525081
+                                b'16
+                            }
+                            r8.
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
-                        \once \override NoteHead #'Y-offset = #2.90304262308
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #4.66958999636
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.66958999636
+                        \once \override NoteHead #'Y-offset = #-5.08636457389
                         \afterGrace
                         b'4 * 1/4
                         {
-                            \once \override NoteHead #'Y-offset = #5.38629749275
+                            \once \override NoteHead #'Y-offset = #-4.83107293756
                             b'16
                         }
-                        \once \override NoteHead #'Y-offset = #5.38629749275
+                        r16
+                        \once \override NoteHead #'Y-offset = #-5.55255579587
                         \afterGrace
-                        b'4 * 3/4
+                        b'4 * 1/4
                         {
-                            \once \override NoteHead #'Y-offset = #6.41504286647
+                            \once \override NoteHead #'Y-offset = #-5.64499680484
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-5.64499680484
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-6.00714110602
                             b'16
                         }
                         r8
+                        \once \override NoteHead #'Y-offset = #-6.32244832136
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-5.86827984674
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-5.86827984674
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-5.60759059085
+                            b'16
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 10/11 {
-                            \once \override NoteHead #'Y-offset = #1.10084241415
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #0.846014705426
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #0.846014705426
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #-1.61919967195
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #2.9561905989
+                                \once \override NoteHead #'Y-offset = #-0.995354336943
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #2.9561905989
+                            r16
+                            \once \override NoteHead #'Y-offset = #-1.70902319422
                             \afterGrace
-                            b'4 * 3/4
+                            b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #2.32306406372
+                                \once \override NoteHead #'Y-offset = #-1.49799568973
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-1.49799568973
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-0.351767417403
                                 b'16
                             }
                             r8
-                            \once \override NoteHead #'Y-offset = #2.35119126721
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #1.64929052794
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.64929052794
+                            \once \override NoteHead #'Y-offset = #-0.598830449988
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #1.06213021779
+                                \once \override NoteHead #'Y-offset = #-0.171566063302
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-0.171566063302
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.439778665004
                                 b'16
                             }
                         }
-                        \once \override NoteHead #'Y-offset = #1.06213021779
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.13352713572
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.13352713572
-                        \afterGrace
-                        b'4 * 1/4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.02849062681
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.02849062681
-                        \afterGrace
-                        b'4 * 3/4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.19621322422
-                            b'16
-                        }
-                        r8
-                        \once \override NoteHead #'Y-offset = #1.25458277305
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.49186580517
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #0.439778665004
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.463506177623
+                                b'16
+                            }
+                            r16
+                            \once \override NoteHead #'Y-offset = #0.364716085766
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.595312584079
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #0.595312584079
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.901759397656
+                                b'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #1.0373584291
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.15446549615
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #1.15446549615
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.27322619233
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #1.27322619233
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-1.47707800938
+                                b'16
+                            }
                         }
                         \times 8/9 {
-                            \once \override NoteHead #'Y-offset = #-1.49186580517
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #-2.12725685303
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #-2.12725685303
+                            \once \override NoteHead #'Y-offset = #-1.47707800938
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #-1.77172201987
+                                \once \override NoteHead #'Y-offset = #-1.7270147109
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #-1.77172201987
+                            r16
+                            \once \override NoteHead #'Y-offset = #-2.07509260142
                             \afterGrace
-                            b'4 * 3/4
+                            b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #-3.11960970246
+                                \once \override NoteHead #'Y-offset = #-2.15185879118
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.15185879118
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.05577906379
                                 b'16
                             }
                             r8
-                            \once \override NoteHead #'Y-offset = #-2.77061620541
+                            \once \override NoteHead #'Y-offset = #-2.69257616424
                             \afterGrace
                             b'4 * 1/4
                             {
-                                \once \override NoteHead #'Y-offset = #-2.47067951195
+                                \once \override NoteHead #'Y-offset = #-2.51143884425
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.51143884425
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.13090082591
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.13090082591
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.38387270286
                                 b'16
                             }
                         }
@@ -1306,352 +1187,310 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #-1.50111469528
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 8/7 {
+                            \once \override NoteHead #'Y-offset = #0.673165185963
+                            \afterGrace
+                            b'4 * 1/2
+                            {
+                                \once \override NoteHead #'Y-offset = #1.09402371957
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #1.09402371957
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #2.22045751737
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #2.22045751737
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #3.76870281308
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #3.76870281308
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #3.12728560639
+                                b'16
+                            }
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #3.12728560639
+                            \afterGrace
+                            b'4 * 1/2
+                            {
+                                \once \override NoteHead #'Y-offset = #2.67686259441
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #2.67686259441
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.74331306019
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #1.74331306019
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.347312882189
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #0.347312882189
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.906608554122
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #0.906608554122
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #0.296563700604
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #0.296563700604
                             \afterGrace
                             b'4 * 1
                             {
-                                \once \override NoteHead #'Y-offset = #1.54168987719
+                                \once \override NoteHead #'Y-offset = #-1.73051586724
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #1.54168987719
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #-5.14451172333
                             \afterGrace
                             b'4 * 1/2
                             {
-                                \once \override NoteHead #'Y-offset = #2.95257325794
+                                \once \override NoteHead #'Y-offset = #-4.99689143714
                                 b'16
                             }
-                            \once \override NoteHead #'Y-offset = #2.95257325794
+                            \once \override NoteHead #'Y-offset = #-4.99689143714
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-4.88786068431
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-4.88786068431
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-4.68744553471
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-4.68744553471
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-4.48030187677
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-4.48030187677
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-4.22788948962
+                                b'16
+                            }
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \once \override NoteHead #'Y-offset = #-3.96983843601
+                        \afterGrace
+                        b'4 * 1/2
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.81341016105
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-3.81341016105
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.50641723504
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-3.50641723504
+                        \afterGrace
+                        b'4 * 3/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.59914693697
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-3.59914693697
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.35386356932
+                            b'16
+                        }
+                        \once \override NoteHead #'Y-offset = #-3.35386356932
+                        \afterGrace
+                        b'4 * 1/4
+                        {
+                            \once \override NoteHead #'Y-offset = #-3.16989958873
+                            b'16
+                        }
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #-3.16989958873
+                            \afterGrace
+                            b'4 * 1/2
+                            {
+                                \once \override NoteHead #'Y-offset = #-3.21012069945
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-3.21012069945
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-3.23022218155
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-3.23022218155
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.9522335011
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.9522335011
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.87643413469
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.87643413469
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.84863612152
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.84863612152
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.83915938884
+                                b'16
+                            }
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #-2.83915938884
+                            \afterGrace
+                            b'4 * 1/2
+                            {
+                                \once \override NoteHead #'Y-offset = #-2.6651827474
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-2.6651827474
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #5.019458581
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #5.019458581
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #2.50350685224
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #2.50350685224
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #2.3165227647
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #2.3165227647
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #2.35410662606
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #2.35410662606
+                            \afterGrace
+                            b'4 * 1/4
+                            {
+                                \once \override NoteHead #'Y-offset = #1.30474793913
+                                b'16
+                            }
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override NoteHead #'Y-offset = #-0.361218624966
+                        \afterGrace
+                        b'4 * 2
+                        {
+                            \once \override NoteHead #'Y-offset = #-2.12929511605
+                            b'16
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-2.12929511605
+                            \afterGrace
+                            b'4 * 3/4
+                            {
+                                \once \override NoteHead #'Y-offset = #-1.0991713709
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-1.0991713709
+                            \afterGrace
+                            b'4 * 1
+                            {
+                                \once \override NoteHead #'Y-offset = #-0.221692032744
+                                b'16
+                            }
+                        }
+                        \once \override NoteHead #'Y-offset = #-0.221692032744
+                        \afterGrace
+                        b'4 * 5/2
+                        {
+                            \once \override NoteHead #'Y-offset = #-4.2958240295
+                            b'16
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \times 4/5 {
+                            \once \override NoteHead #'Y-offset = #-2.15998796095
+                            \afterGrace
+                            b'4 * 1
+                            {
+                                \once \override NoteHead #'Y-offset = #-1.04811704435
+                                b'16
+                            }
+                            \once \override NoteHead #'Y-offset = #-1.04811704435
                             \afterGrace
                             b'4 * 3/2
                             {
-                                \once \override NoteHead #'Y-offset = #6.18712469948
+                                \once \override NoteHead #'Y-offset = #1.41741645276
                                 b'16
                             }
                         }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #6.18712469948
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #5.27867285696
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.27867285696
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #5.95255987282
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.95255987282
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #5.5568705079
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.5568705079
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #4.83069242108
-                                b'16
-                            }
-                            r8
-                            \once \override NoteHead #'Y-offset = #2.81115627249
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.89483975882
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.89483975882
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.06917890447
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.06917890447
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #2.2646260188
-                                b'16
-                            }
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 10/9 {
-                            \once \override NoteHead #'Y-offset = #1.44401168185
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #1.92005980136
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.92005980136
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #1.69349620935
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.69349620935
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #2.60626734557
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #2.60626734557
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #2.77739770213
-                                b'16
-                            }
-                            r16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 16/15 {
-                            \once \override NoteHead #'Y-offset = #2.86954443091
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.97162162477
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.97162162477
-                            \afterGrace
-                            b'4 * 1/8
-                            {
-                                \once \override NoteHead #'Y-offset = #3.32988141034
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #3.32988141034
-                            \afterGrace
-                            b'4 * 3/8
-                            {
-                                \once \override NoteHead #'Y-offset = #5.13981155146
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.13981155146
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #3.82497771124
-                                b'16
-                            }
-                            r16
-                            \once \override NoteHead #'Y-offset = #5.31736409748
-                            \afterGrace
-                            b'4 * 1/8
-                            {
-                                \once \override NoteHead #'Y-offset = #4.1429321088
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.1429321088
-                            \afterGrace
-                            b'4 * 3/8
-                            {
-                                \once \override NoteHead #'Y-offset = #5.50524901094
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.50524901094
-                            \afterGrace
-                            b'4 * 1/8
-                            {
-                                \once \override NoteHead #'Y-offset = #4.56916076382
-                                b'16
-                            }
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 6/5 {
-                            \once \override NoteHead #'Y-offset = #4.56916076382
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #5.87001444331
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.87001444331
-                            \afterGrace
-                            b'4 * 1/8
-                            {
-                                \once \override NoteHead #'Y-offset = #5.42012534624
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.42012534624
-                            \afterGrace
-                            b'4 * 3/8
-                            {
-                                \once \override NoteHead #'Y-offset = #6.01477259985
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #6.01477259985
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #5.66098516634
-                                b'16
-                            }
-                            r16
-                        }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 10/13 {
-                            \once \override NoteHead #'Y-offset = #6.06830863016
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #6.37741884418
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #6.37741884418
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #6.36265668739
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #6.36265668739
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #5.46565995243
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #5.46565995243
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #5.33702655394
-                                b'16
-                            }
-                            r8
-                            \once \override NoteHead #'Y-offset = #5.51320007321
-                            \afterGrace
-                            b'4 * 1/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.03699780885
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.03699780885
-                            \afterGrace
-                            b'4 * 1/2
-                            {
-                                \once \override NoteHead #'Y-offset = #5.19640819716
-                                b'16
-                            }
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #5.19640819716
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #2.89808126054
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #2.89808126054
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #1.17661165383
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #1.17661165383
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #3.38615426305
-                                b'16
-                            }
-                        }
-                        \times 4/5 {
-                            \once \override NoteHead #'Y-offset = #3.38615426305
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.44263206892
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.44263206892
-                            \afterGrace
-                            b'4 * 3/4
-                            {
-                                \once \override NoteHead #'Y-offset = #4.37136709214
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #4.37136709214
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #1.69642317592
-                                b'16
-                            }
-                        }
-                        \once \override NoteHead #'Y-offset = #1.69642317592
+                        \once \override NoteHead #'Y-offset = #1.41741645276
                         \afterGrace
-                        b'4 * 1/2
+                        b'4 * 3/2
                         {
-                            \once \override NoteHead #'Y-offset = #2.0460783653
+                            \once \override NoteHead #'Y-offset = #6.5
                             b'16
                         }
-                        \once \override NoteHead #'Y-offset = #2.0460783653
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.7636269599
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.7636269599
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #3.76855943509
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #3.73554905981
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #0.736752577964
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #0.736752577964
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #3.46836318851
-                                b'16
-                            }
-                            \once \override NoteHead #'Y-offset = #3.46836318851
-                            \afterGrace
-                            b'4 * 1
-                            {
-                                \once \override NoteHead #'Y-offset = #4.73779883762
-                                b'16
-                            }
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
                     }
                 }
             >>
@@ -1827,88 +1666,84 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
-                    c'16 [
-                    c'8.
-                    c'8 ]
-                    c'8
-                    c'4 ~
-                    c'16 [
+                    c'8. [
                     c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'4
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
-                    c'8
-                    c'4
-                    c'8
+                    \times 4/5 {
+                        c'4
+                        c'4
+                        c'8
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
-                    c'8
-                    c'4 ~
-                    c'16 [
-                    c'8. ]
-                    c'8
-                    c'4 ~
-                    c'16 [
-                    c'8. ]
-                    c'8
-                    c'4
-                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'4
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4
+                        c'4
+                        c'8 [
+                        c'8 ]
+                    }
+                    \times 2/3 {
+                        c'2
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'8 [
-                    c'8 ]
                     c'4
-                    c'8 [
-                    c'8 ]
                     c'4
                     c'8
+                    c'4
+                    c'4
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'8 [
-                    c'8 ]
-                    c'4
                     c'8
+                    c'4
+                    c'4
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8 [
                     c'8
-                    c'8 ]
-                    c'8 [
-                    c'8 ]
                     c'4
                     c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'16 [
+                        c'8
+                        c'8 ]
+                    }
+                    c'8
+                    c'4
+                    c'4
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
-                    c'8 [
-                    c'8 ]
-                    c'4
+                    c'2
+                    c'4.
+                    c'2 ~
                     c'8
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
+                    c'2
+                    c'4.
                 }
             }
             \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" \with {
@@ -2512,11 +2347,19 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -2524,7 +2367,9 @@
                                 ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
-                        d''
+                        f''
+                    >4.
+                    <
                         \tweak #'text \markup {
                             \pad-around
                                 #0
@@ -2534,11 +2379,54 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                I
+                                                B
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >2
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
                     >4.
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >2
                     <
                         \tweak #'text \markup {
                             \pad-around
@@ -2578,250 +2466,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >2
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
                     >4.
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >2.
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >2.
                     <
                         \tweak #'text \markup {
                             \concat
@@ -2874,6 +2519,141 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
+                    >2.
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >2
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                B
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >4.
+                    <
+                        \tweak #'text \markup {
+                            \concat
+                                {
+                                    \pad-around
+                                        #0
+                                        \whiteout
+                                            \bold
+                                                \fontsize
+                                                    #-1
+                                                    \raise
+                                                        #-0.5
+                                                        \concat
+                                                            {
+                                                                G
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
+                                    \pad-around
+                                        #0
+                                        \whiteout
+                                            \bold
+                                                \fontsize
+                                                    #-1
+                                                    \raise
+                                                        #-0.5
+                                                        B
+                                }
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >2.
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
                     >2
                     <
                         \tweak #'stencil #point-stencil
@@ -2907,16 +2687,16 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         d''
@@ -2929,10 +2709,7 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
+                                                I
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
@@ -2949,280 +2726,6 @@
                         \tweak #'stencil #point-stencil
                         f''
                     >2
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >16 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4 ~
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >16 [
                     <
                         \tweak #'text \markup {
                             \concat
@@ -3278,6 +2781,34 @@
                                 ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >8. [
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                B
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
                             \draw-circle
@@ -3288,6 +2819,97 @@
                         \tweak #'stencil #ly:text-interface::print
                         f''
                     >8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    F
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4
+                    }
                     <
                         \tweak #'stencil #point-stencil
                         e'
@@ -3300,539 +2922,475 @@
                         \tweak #'stencil #point-stencil
                         f''
                     >2.
+                    \times 4/5 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >8
+                    }
                     <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            b'
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
                                                     {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
+                                                        I
+                                                        I
                                                     }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        b'
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4 ~
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >16 [
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8. ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        b'
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4 ~
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >16 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8. ]
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            b'
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    B
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >8 [
+                        <
+                            \tweak #'text \markup {
+                                \concat
+                                    {
+                                        \pad-around
+                                            #0
+                                            \whiteout
+                                                \bold
+                                                    \fontsize
+                                                        #-1
+                                                        \raise
+                                                            #-0.5
+                                                            \concat
+                                                                {
+                                                                    G
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
+                                        \pad-around
+                                            #0
+                                            \whiteout
+                                                \bold
+                                                    \fontsize
+                                                        #-1
+                                                        \raise
+                                                            #-0.5
+                                                            B
+                                    }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >8 ]
+                    }
+                    \times 2/3 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >2
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4
+                    }
                     <
                         \tweak #'stencil #point-stencil
                         e'
@@ -3909,8 +3467,20 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 [
+                    >4
                     <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        b'
+                        d''
                         \tweak #'text \markup {
                             \pad-around
                                 #0
@@ -3920,19 +3490,74 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                F
+                                                {
+                                                    I
+                                                    I
+                                                }
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >4
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e'
                         \tweak #'stencil #point-stencil
                         g'
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
                                 #0
                                 ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         d''
@@ -3949,187 +3574,48 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 ]
+                    >4
                     <
                         \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                F
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         g'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         d''
                         \tweak #'stencil #point-stencil
                         f''
                     >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        b'
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
                     <
                         \tweak #'stencil #point-stencil
                         e'
@@ -4152,7 +3638,13 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                F
+                                                \concat
+                                                    {
+                                                        G
+                                                        \raise
+                                                            #0.5
+                                                            \sharp
+                                                    }
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e'
@@ -4161,6 +3653,224 @@
                                 #1
                                 #0
                                 ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >8
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >4
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                B
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >4
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4.
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                \concat
+                                                    {
+                                                        G
+                                                        \raise
+                                                            #0.5
+                                                            \sharp
+                                                    }
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >8
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                I
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >4
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
                         g'
@@ -4189,11 +3899,124 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                I
+                                                {
+                                                    I
+                                                    I
+                                                }
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 [
+                    >8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    B
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >16 [
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >8
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            G
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f''
+                        >8 ]
+                    }
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -4211,9 +4034,68 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         g'
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         b'
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                I
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >8
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         d''
                         \tweak #'text \markup {
                             \draw-circle
@@ -4223,7 +4105,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 ]
+                    >4
                     <
                         \tweak #'text \markup {
                             \pad-around
@@ -4271,425 +4153,6 @@
                         \tweak #'stencil #ly:text-interface::print
                         f''
                     >4
-                    <
-                        \tweak #'text \markup {
-                            \concat
-                                {
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        \concat
-                                                            {
-                                                                G
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        B
-                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \concat
-                                {
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        \concat
-                                                            {
-                                                                G
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        B
-                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 [
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        b'
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
                     <
                         \tweak #'stencil #point-stencil
                         e'
@@ -4714,8 +4177,8 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         g'
@@ -4751,7 +4214,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 [
+                    >2
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -4773,39 +4236,6 @@
                         b'
                         \tweak #'stencil #point-stencil
                         d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -4813,263 +4243,6 @@
                                 ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        b'
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        b'
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
                         f''
                     >4.
                     <
@@ -5089,7 +4262,9 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         g'
+                        \tweak #'stencil #point-stencil
                         b'
+                        \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
                             \pad-around
@@ -5107,7 +4282,57 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 [
+                    >2 ~
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                {
+                                                    I
+                                                    I
+                                                }
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f''
+                    >8
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4.
                     <
                         \tweak #'text \markup {
                             \pad-around
@@ -5128,7 +4353,13 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e'
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         g'
                         \tweak #'text \markup {
                             \draw-circle
@@ -5154,7 +4385,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8 ]
+                    >2
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -5183,103 +4414,6 @@
                         \tweak #'stencil #ly:text-interface::print
                         d''
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        d''
-                        \tweak #'text \markup {
                             \draw-circle
                                 #1
                                 #0.1
@@ -5287,45 +4421,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f''
-                    >8 ]
+                    >4.
                 }
                 \context Voice = "Left Hand Fingering Lifeline" {
                     \afterGrace
@@ -6626,7 +5722,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
+                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -6648,29 +5744,24 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         f''
@@ -6709,20 +5800,8 @@
                         e'
                         \tweak #'stencil #point-stencil
                         g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
                         \tweak #'stencil #point-stencil
                         b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
@@ -6750,23 +5829,11 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
                     \afterGrace
                     <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'stencil #point-stencil
@@ -6825,71 +5892,6 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4. \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
                     \afterGrace
                     <
@@ -6922,6 +5924,77 @@
                                 #0
                                 ##t
                             }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \concat
+                                {
+                                    \pad-around
+                                        #0
+                                        \whiteout
+                                            \bold
+                                                \fontsize
+                                                    #-1
+                                                    \raise
+                                                        #-0.5
+                                                        \concat
+                                                            {
+                                                                G
+                                                                \raise
+                                                                    #0.5
+                                                                    \sharp
+                                                            }
+                                    \pad-around
+                                        #0
+                                        \whiteout
+                                            \bold
+                                                \fontsize
+                                                    #-1
+                                                    \raise
+                                                        #-0.5
+                                                        B
+                                }
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
@@ -7003,7 +6076,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -7015,16 +6088,10 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                F
+                                                B
                             }
                         \tweak #'stencil #point-stencil
                         e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'text \markup {
@@ -7044,75 +6111,14 @@
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         f''
                     >4. \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2. \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -7169,6 +6175,42 @@
                                 #0
                                 ##t
                             }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >2. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'stencil #point-stencil
@@ -7227,7 +6269,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
+                    \set Voice.glissandoMap = #'((4 . 4))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -7249,16 +6291,16 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         b'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         d''
@@ -7271,10 +6313,7 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
+                                                I
                             }
                         \tweak #'stencil #point-stencil
                         f''
@@ -7306,371 +6345,6 @@
                         \tweak #'stencil #point-stencil
                         f''
                     >2
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >16 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8. \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >16 [
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -7753,662 +6427,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8. \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >2.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >16 [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8. \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando ~
-                    \once \override NoteColumn #'glissando-skip = ##t
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >16 [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8. \glissando ]
+                    >8. \glissando [
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8455,7 +6474,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando
+                    >8. \glissando ]
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8470,40 +6489,146 @@
                             f''
                         >16
                     }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    F
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                    }
                     \afterGrace
                     <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'stencil #point-stencil
                         b'
                         \tweak #'stencil #point-stencil
                         d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         f''
-                    >4 \glissando
+                    >2.
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8518,40 +6643,211 @@
                             f''
                         >16
                     }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                    \times 4/5 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    I
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                    }
                     \afterGrace
                     <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'stencil #point-stencil
                         b'
                         \tweak #'stencil #point-stencil
                         d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando
+                    >2.
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8565,6 +6861,474 @@
                             \tweak #'stencil #point-stencil
                             f''
                         >16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    B
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >8 \glissando [
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \concat
+                                    {
+                                        \pad-around
+                                            #0
+                                            \whiteout
+                                                \bold
+                                                    \fontsize
+                                                        #-1
+                                                        \raise
+                                                            #-0.5
+                                                            \concat
+                                                                {
+                                                                    G
+                                                                    \raise
+                                                                        #0.5
+                                                                        \sharp
+                                                                }
+                                        \pad-around
+                                            #0
+                                            \whiteout
+                                                \bold
+                                                    \fontsize
+                                                        #-1
+                                                        \raise
+                                                            #-0.5
+                                                            B
+                                    }
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >8 \glissando ]
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                    }
+                    \times 2/3 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >2 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
                     }
                     \afterGrace
                     <
@@ -8676,7 +7440,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando [
+                    >4 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8693,19 +7457,14 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
                     \afterGrace
                     <
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         e'
@@ -8713,12 +7472,6 @@
                         g'
                         \tweak #'stencil #point-stencil
                         b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
@@ -8730,11 +7483,62 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                I
+                                                {
+                                                    I
+                                                    I
+                                                }
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando ]
+                    >4 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -8786,48 +7590,6 @@
                             }
                         \tweak #'stencil #point-stencil
                         d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
                         \tweak #'text \markup {
                             \pad-around
                                 #0
@@ -8837,204 +7599,11 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
+                                                I
                             }
                         \tweak #'stencil #point-stencil
                         f''
                     >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4.
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -9091,6 +7660,55 @@
                             }
                         \tweak #'stencil #point-stencil
                         d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4.
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
+                    \afterGrace
+                    <
                         \tweak #'text \markup {
                             \pad-around
                                 #0
@@ -9100,11 +7718,49 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                I
+                                                \concat
+                                                    {
+                                                        G
+                                                        \raise
+                                                            #0.5
+                                                            \sharp
+                                                    }
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando [
+                    >8 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -9142,6 +7798,12 @@
                         g'
                         \tweak #'stencil #point-stencil
                         b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
@@ -9152,7 +7814,575 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando ]
+                    >4 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                B
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4.
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                \concat
+                                                    {
+                                                        G
+                                                        \raise
+                                                            #0.5
+                                                            \sharp
+                                                    }
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((4 . 4))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                I
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                {
+                                                    I
+                                                    I
+                                                }
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    B
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16 \glissando [
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    {
+                                                        I
+                                                        I
+                                                    }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            G
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >8 \glissando ]
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                e'
+                                \tweak #'stencil #point-stencil
+                                g'
+                                \tweak #'stencil #point-stencil
+                                b'
+                                \tweak #'stencil #point-stencil
+                                d''
+                                \tweak #'stencil #point-stencil
+                                f''
+                            >16
+                        }
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((4 . 4))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                I
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >8 \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            e'
+                            \tweak #'stencil #point-stencil
+                            g'
+                            \tweak #'stencil #point-stencil
+                            b'
+                            \tweak #'stencil #point-stencil
+                            d''
+                            \tweak #'stencil #point-stencil
+                            f''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >4 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -9218,640 +8448,6 @@
                         \tweak #'stencil #point-stencil
                         f''
                     >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \concat
-                                {
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        \concat
-                                                            {
-                                                                G
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        B
-                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \concat
-                                {
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        \concat
-                                                            {
-                                                                G
-                                                                \raise
-                                                                    #0.5
-                                                                    \sharp
-                                                            }
-                                    \pad-around
-                                        #0
-                                        \whiteout
-                                            \bold
-                                                \fontsize
-                                                    #-1
-                                                    \raise
-                                                        #-0.5
-                                                        B
-                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                F
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -9895,285 +8491,6 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
                     \afterGrace
                     <
@@ -10193,13 +8510,39 @@
                             }
                         \tweak #'stencil #point-stencil
                         g'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
                         \tweak #'stencil #point-stencil
                         b'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
                         \tweak #'stencil #point-stencil
                         d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                {
+                                                    I
+                                                    I
+                                                }
+                            }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando ]
+                    >2 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -10216,7 +8559,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
+                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -10235,36 +8578,19 @@
                             }
                         \tweak #'stencil #point-stencil
                         g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         d''
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando [
+                    >4. \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -10282,6 +8608,45 @@
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        g'
+                        \tweak #'stencil #point-stencil
+                        b'
+                        \tweak #'stencil #point-stencil
+                        d''
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                {
+                                                    I
+                                                    I
+                                                }
+                            }
+                        \tweak #'stencil #point-stencil
+                        f''
+                    >2 \glissando ~
+                    \once \override NoteColumn #'glissando-skip = ##t
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -10320,108 +8685,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                B
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando
+                    >8
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -10465,62 +8729,6 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2))
                     \afterGrace
                     <
@@ -10543,6 +8751,12 @@
                             }
                         \tweak #'stencil #point-stencil
                         e'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
                         \tweak #'stencil #point-stencil
                         g'
                         \tweak #'text \markup {
@@ -10569,134 +8783,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                I
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando [
+                    >2 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -10732,12 +8819,6 @@
                             }
                         \tweak #'stencil #point-stencil
                         g'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
                         \tweak #'stencil #point-stencil
                         b'
                         \tweak #'text \markup {
@@ -10756,63 +8837,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         f''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            e'
-                            \tweak #'stencil #point-stencil
-                            g'
-                            \tweak #'stencil #point-stencil
-                            b'
-                            \tweak #'stencil #point-stencil
-                            d''
-                            \tweak #'stencil #point-stencil
-                            f''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3) (4 . 4))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        g'
-                        \tweak #'stencil #point-stencil
-                        b'
-                        \tweak #'stencil #point-stencil
-                        d''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                {
-                                                    I
-                                                    I
-                                                }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f''
-                    >8 \glissando ]
+                    >4. \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -11619,11 +9644,19 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -11631,6 +9664,31 @@
                                 ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >4.
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                C
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
                             \draw-circle
@@ -11640,7 +9698,33 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
+                    >2
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
                     >4.
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2
                     <
                         \tweak #'text \markup {
                             \pad-around
@@ -11671,78 +9755,6 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4.
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -11754,26 +9766,13 @@
                     >4.
                     <
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
                             \draw-circle
                                 #1
                                 #0.1
                                 ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
-                        a'
+                        f'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -11781,8 +9780,16 @@
                                 ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
-                        c''
+                        a'
                         \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         e''
                     >2.
                     <
@@ -11807,149 +9814,6 @@
                     >8
                     <
                         \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >2.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >2
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4.
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2.
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2
-                    <
-                        \tweak #'text \markup {
                             \pad-around
                                 #0
                                 \whiteout
@@ -11973,42 +9837,8 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         c''
@@ -12020,7 +9850,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
-                    >16
+                    >4.
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -12038,15 +9868,158 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         a'
+                        \tweak #'stencil #point-stencil
+                        c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >2.
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >2
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
                         c''
                         \tweak #'stencil #point-stencil
+                        e''
+                    >4.
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >2.
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >8. [
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                C
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         e''
                     >8. ]
                     \tweak #'text #tuplet-number::calc-fraction-text
@@ -12060,28 +10033,6 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >4
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
                             \tweak #'text \markup {
                                 \draw-circle
                                     #1
@@ -12098,13 +10049,7 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
+                            \tweak #'stencil #point-stencil
                             e''
                         >8
                         <
@@ -12131,209 +10076,6 @@
                                     ##t
                                 }
                             \tweak #'stencil #ly:text-interface::print
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >4.
-                    }
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2.
-                    \times 2/3 {
-                        <
-                            \tweak #'text \markup {
-                                \pad-around
-                                    #0
-                                    \whiteout
-                                        \bold
-                                            \fontsize
-                                                #-1
-                                                \raise
-                                                    #-0.5
-                                                    C
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            a'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >4
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            a'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >8
-                        <
-                            \tweak #'text \markup {
-                                \pad-around
-                                    #0
-                                    \whiteout
-                                        \bold
-                                            \fontsize
-                                                #-1
-                                                \raise
-                                                    #-0.5
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >4.
-                    }
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2.
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            a'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >4
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            e''
-                        >8
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #ly:text-interface::print
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
                                 \pad-around
@@ -12354,7 +10096,603 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
-                        >4.
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >8
+                    }
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2.
+                    \times 2/3 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >2
+                    }
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            C
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >8
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            C
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >8
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8
+                    }
+                    \times 4/5 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >8
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                    }
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8
+                    \times 2/3 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >2
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            G
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
                     }
                     \tweak #'text #tuplet-number::calc-fraction-text
                     \times 5/6 {
@@ -12393,10 +10731,15 @@
                         >4
                         <
                             \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             f'
@@ -12416,9 +10759,15 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             c''
-                            \tweak #'stencil #point-stencil
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
                             e''
-                        >8
+                        >4.
                         <
                             \tweak #'text \markup {
                                 \draw-circle
@@ -12452,9 +10801,115 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
-                        >4.
+                        >8
                     }
-                    \times 2/3 {
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >2
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
+                            e''
+                        >4
+                    }
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >4.
+                    \times 4/5 {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4
                         <
                             \tweak #'text \markup {
                                 \pad-around
@@ -12493,7 +10948,105 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
-                        >4
+                        >4.
+                    }
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8 [
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                C
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >8.
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        e''
+                    >16 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
                         <
                             \tweak #'text \markup {
                                 \draw-circle
@@ -12511,7 +11064,13 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             a'
-                            \tweak #'stencil #point-stencil
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #ly:text-interface::print
                             c''
                             \tweak #'text \markup {
                                 \draw-circle
@@ -12521,19 +11080,36 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
-                        >8
+                        >2
                         <
                             \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             f'
-                            \tweak #'stencil #point-stencil
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
                             a'
-                            \tweak #'stencil #point-stencil
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #ly:text-interface::print
                             c''
                             \tweak #'text \markup {
                                 \draw-circle
@@ -12543,7 +11119,7 @@
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
-                        >4.
+                        >4
                     }
                     <
                         \tweak #'stencil #point-stencil
@@ -12556,360 +11132,6 @@
                         e''
                     >2
                     <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8
-                    <
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
@@ -12937,386 +11159,56 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4.
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
                                 #0
                                 ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
                         e''
                     >2
                     <
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         f'
                         \tweak #'stencil #point-stencil
                         a'
                         \tweak #'stencil #point-stencil
                         c''
-                        \tweak #'stencil #point-stencil
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
                         e''
-                    >4
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 [
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 ]
+                    >4.
                     <
                         \tweak #'text \markup {
-                            \pad-around
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #ly:text-interface::print
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
                                 #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
-                    >4
+                    >2 ~
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -13326,153 +11218,19 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
+                        \tweak #'stencil #point-stencil
                         a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
+                        \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
                     >8
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 ]
                     <
                         \tweak #'stencil #point-stencil
                         f'
@@ -13508,106 +11266,6 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >4
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 [
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        e''
-                    >8 ]
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #ly:text-interface::print
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
                                 #0.1
                                 ##f
                             }
@@ -13621,7 +11279,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
-                    >4
+                    >2
                     <
                         \tweak #'text \markup {
                             \draw-circle
@@ -13655,7 +11313,7 @@
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
-                    >8
+                    >4.
                 }
                 \context Voice = "Right Hand Fingering Lifeline" {
                     \afterGrace
@@ -14764,7 +12422,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((3 . 3))
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -14778,24 +12436,24 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         a'
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -14838,14 +12496,14 @@
                             }
                         \tweak #'stencil #point-stencil
                         a'
+                        \tweak #'stencil #point-stencil
+                        c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
                                 #0
                                 ##t
                             }
-                        \tweak #'stencil #point-stencil
-                        c''
                         \tweak #'stencil #point-stencil
                         e''
                     >2 \glissando
@@ -14861,14 +12519,11 @@
                             e''
                         >16
                     }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
                     \afterGrace
                     <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         f'
                         \tweak #'text \markup {
@@ -14879,23 +12534,11 @@
                             }
                         \tweak #'stencil #point-stencil
                         a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
                         \tweak #'stencil #point-stencil
                         e''
-                    >4.
+                    >4. \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -14933,56 +12576,6 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4. \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
                     \afterGrace
                     <
@@ -15015,6 +12608,56 @@
                             }
                         \tweak #'stencil #point-stencil
                         c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >4. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
                         \tweak #'stencil #point-stencil
                         e''
                     >2. \glissando
@@ -15078,33 +12721,9 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
+                    \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
                     \afterGrace
                     <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
                         \tweak #'text \markup {
                             \pad-around
                                 #0
@@ -15114,36 +12733,7 @@
                                             #-1
                                             \raise
                                                 #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4. \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
+                                                C
                             }
                         \tweak #'stencil #point-stencil
                         f'
@@ -15158,20 +12748,20 @@
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0.1
-                                ##f
+                                #0
+                                ##t
                             }
                         \tweak #'stencil #point-stencil
                         e''
-                    >2.
+                    >4. \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -15205,12 +12795,44 @@
                             }
                         \tweak #'stencil #point-stencil
                         a'
+                        \tweak #'stencil #point-stencil
+                        c''
                         \tweak #'text \markup {
                             \draw-circle
                                 #1
-                                #0
-                                ##t
+                                #0.1
+                                ##f
                             }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
                         \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
@@ -15245,107 +12867,6 @@
                         \tweak #'stencil #point-stencil
                         e''
                     >4.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -15395,7 +12916,30 @@
                             }
                         \tweak #'stencil #point-stencil
                         e''
-                    >16 \glissando
+                    >2. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -15410,7 +12954,7 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
                     \afterGrace
                     <
                         \tweak #'text \markup {
@@ -15437,6 +12981,61 @@
                             }
                         \tweak #'stencil #point-stencil
                         c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8. \glissando [
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                C
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
                         \tweak #'stencil #point-stencil
                         e''
                     >8. \glissando ]
@@ -15456,7 +13055,7 @@
                     \times 5/6 {
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                        \set Voice.glissandoMap = #'((3 . 3))
                         \afterGrace
                         <
                             \tweak #'text \markup {
@@ -15467,8 +13066,122 @@
                                 }
                             \tweak #'stencil #point-stencil
                             f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            G
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
@@ -15479,7 +13192,7 @@
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >4 \glissando
+                        >4
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -15542,9 +13255,34 @@
                                 e''
                             >16
                         }
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2.
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \times 2/3 {
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                        \set Voice.glissandoMap = #'((3 . 3))
                         \afterGrace
                         <
                             \tweak #'text \markup {
@@ -15558,8 +13296,63 @@
                             \tweak #'text \markup {
                                 \draw-circle
                                     #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
                                     #0
                                     ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
                                 }
                             \tweak #'stencil #point-stencil
                             a'
@@ -15571,15 +13364,9 @@
                                 }
                             \tweak #'stencil #point-stencil
                             c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
                             \tweak #'stencil #point-stencil
                             e''
-                        >4. \glissando
+                        >2 \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -15616,7 +13403,436 @@
                             e''
                         >16
                     }
-                    \times 2/3 {
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            C
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            C
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                    }
+                    \times 4/5 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
                         \set Voice.glissandoMap = #'((0 . 0))
@@ -15672,6 +13888,104 @@
                                 e''
                             >16
                         }
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \times 2/3 {
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((3 . 3))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >2 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
                         \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
@@ -15702,14 +14016,25 @@
                             \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
-                                \draw-circle
-                                    #1
+                                \pad-around
                                     #0
-                                    ##t
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    \concat
+                                                        {
+                                                            G
+                                                            \raise
+                                                                #0.5
+                                                                \sharp
+                                                        }
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >8 \glissando
+                        >4 \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -15722,6 +14047,9 @@
                                 e''
                             >16
                         }
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
                         \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
@@ -15750,9 +14078,117 @@
                             a'
                             \tweak #'stencil #point-stencil
                             c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4 \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \once \override Glissando.color = #(rgb-color 0 0 0)
+                        \once \override Glissando.thickness = 2
+                        \set Voice.glissandoMap = #'((0 . 0))
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             e''
                         >4. \glissando
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
+                        \afterGrace
+                        <
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >8
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -15776,7 +14212,7 @@
                         c''
                         \tweak #'stencil #point-stencil
                         e''
-                    >2.
+                    >4.
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -15828,7 +14264,7 @@
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >4 \glissando
+                        >2 \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -15843,97 +14279,7 @@
                         }
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                        \afterGrace
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0
-                                    ##t
-                                }
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >8 \glissando
-                        {
-                            <
-                                \tweak #'stencil #point-stencil
-                                f'
-                                \tweak #'stencil #point-stencil
-                                a'
-                                \tweak #'stencil #point-stencil
-                                c''
-                                \tweak #'stencil #point-stencil
-                                e''
-                            >16
-                        }
-                        \once \override Glissando.color = #(rgb-color 0 0 0)
-                        \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                        \afterGrace
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'text \markup {
-                                \pad-around
-                                    #0
-                                    \whiteout
-                                        \bold
-                                            \fontsize
-                                                #-1
-                                                \raise
-                                                    #-0.5
-                                                    \concat
-                                                        {
-                                                            G
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
-                                }
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >4. \glissando
-                        {
-                            <
-                                \tweak #'stencil #point-stencil
-                                f'
-                                \tweak #'stencil #point-stencil
-                                a'
-                                \tweak #'stencil #point-stencil
-                                c''
-                                \tweak #'stencil #point-stencil
-                                e''
-                            >16
-                        }
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
-                        \once \override Glissando.color = #(rgb-color 0 0 0)
-                        \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
+                        \set Voice.glissandoMap = #'((0 . 0))
                         \afterGrace
                         <
                             \tweak #'text \markup {
@@ -15945,25 +14291,31 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    \concat
-                                                        {
-                                                            C
-                                                            \raise
-                                                                #0.5
-                                                                \sharp
-                                                        }
+                                                    C
                                 }
                             \tweak #'stencil #point-stencil
                             f'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
                                 \draw-circle
                                     #1
-                                    #0
-                                    ##t
+                                    #0.1
+                                    ##f
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -15980,99 +14332,54 @@
                                 e''
                             >16
                         }
-                        \once \override Glissando.color = #(rgb-color 0 0 0)
-                        \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((3 . 3))
-                        \afterGrace
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >8 \glissando
-                        {
-                            <
-                                \tweak #'stencil #point-stencil
-                                f'
-                                \tweak #'stencil #point-stencil
-                                a'
-                                \tweak #'stencil #point-stencil
-                                c''
-                                \tweak #'stencil #point-stencil
-                                e''
-                            >16
-                        }
-                        \afterGrace
-                        <
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'text \markup {
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                                }
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >4.
-                        {
-                            <
-                                \tweak #'stencil #point-stencil
-                                f'
-                                \tweak #'stencil #point-stencil
-                                a'
-                                \tweak #'stencil #point-stencil
-                                c''
-                                \tweak #'stencil #point-stencil
-                                e''
-                            >16
-                        }
                     }
-                    \times 2/3 {
+                    \afterGrace
+                    <
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >4.
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \times 4/5 {
+                        \afterGrace
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >4
+                        {
+                            <
+                                \tweak #'stencil #point-stencil
+                                f'
+                                \tweak #'stencil #point-stencil
+                                a'
+                                \tweak #'stencil #point-stencil
+                                c''
+                                \tweak #'stencil #point-stencil
+                                e''
+                            >16
+                        }
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
                         \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
@@ -16115,7 +14422,7 @@
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >4 \glissando
+                        >4. \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -16128,6 +14435,152 @@
                                 e''
                             >16
                         }
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8 \glissando [
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((0 . 0))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \pad-around
+                                #0
+                                \whiteout
+                                    \bold
+                                        \fontsize
+                                            #-1
+                                            \raise
+                                                #-0.5
+                                                C
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((3 . 3))
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >16 \glissando ]
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
                         \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
@@ -16149,6 +14602,12 @@
                                 }
                             \tweak #'stencil #point-stencil
                             a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0
+                                    ##t
+                                }
                             \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
@@ -16159,7 +14618,7 @@
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >8 \glissando
+                        >2 \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -16174,9 +14633,22 @@
                         }
                         \once \override Glissando.color = #(rgb-color 0 0 0)
                         \once \override Glissando.thickness = 2
-                        \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
+                        \set Voice.glissandoMap = #'((0 . 0))
                         \afterGrace
                         <
+                            \tweak #'text \markup {
+                                \pad-around
+                                    #0
+                                    \whiteout
+                                        \bold
+                                            \fontsize
+                                                #-1
+                                                \raise
+                                                    #-0.5
+                                                    C
+                                }
+                            \tweak #'stencil #point-stencil
+                            f'
                             \tweak #'text \markup {
                                 \draw-circle
                                     #1
@@ -16184,9 +14656,13 @@
                                     ##f
                                 }
                             \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
                             a'
+                            \tweak #'text \markup {
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                                }
                             \tweak #'stencil #point-stencil
                             c''
                             \tweak #'text \markup {
@@ -16197,7 +14673,7 @@
                                 }
                             \tweak #'stencil #point-stencil
                             e''
-                        >4. \glissando
+                        >4 \glissando
                         {
                             <
                                 \tweak #'stencil #point-stencil
@@ -16234,84 +14710,6 @@
                             e''
                         >16
                     }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
@@ -16342,67 +14740,6 @@
                         \tweak #'stencil #point-stencil
                         c''
                         \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
                             \draw-circle
                                 #1
                                 #0
@@ -16410,143 +14747,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         e''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando
+                    >2 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -16584,7 +14785,68 @@
                             }
                         \tweak #'stencil #point-stencil
                         e''
-                    >8 \glissando ]
+                    >4. \glissando
+                    {
+                        <
+                            \tweak #'stencil #point-stencil
+                            f'
+                            \tweak #'stencil #point-stencil
+                            a'
+                            \tweak #'stencil #point-stencil
+                            c''
+                            \tweak #'stencil #point-stencil
+                            e''
+                        >16
+                    }
+                    \once \override Glissando.color = #(rgb-color 0 0 0)
+                    \once \override Glissando.thickness = 2
+                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >2 \glissando ~
+                    \once \override NoteColumn #'glissando-skip = ##t
+                    \afterGrace
+                    <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
+                        \tweak #'stencil #point-stencil
+                        f'
+                        \tweak #'stencil #point-stencil
+                        a'
+                        \tweak #'stencil #point-stencil
+                        c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0
+                                ##t
+                            }
+                        \tweak #'stencil #point-stencil
+                        e''
+                    >8
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -16622,105 +14884,6 @@
                     }
                     \once \override Glissando.color = #(rgb-color 0 0 0)
                     \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
                     \set Voice.glissandoMap = #'((0 . 0))
                     \afterGrace
                     <
@@ -16761,57 +14924,7 @@
                             }
                         \tweak #'stencil #point-stencil
                         e''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando ]
+                    >2 \glissando
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -16826,1091 +14939,39 @@
                     }
                     \afterGrace
                     <
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
                         \tweak #'stencil #point-stencil
                         f'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
                         \tweak #'stencil #point-stencil
                         a'
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
                         \tweak #'stencil #point-stencil
                         c''
+                        \tweak #'text \markup {
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                            }
                         \tweak #'stencil #point-stencil
                         e''
                     >4.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        G
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >2
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4.
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((1 . 1) (2 . 2))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando [
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0) (1 . 1) (2 . 2) (3 . 3))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                \concat
-                                                    {
-                                                        C
-                                                        \raise
-                                                            #0.5
-                                                            \sharp
-                                                    }
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0
-                                ##t
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8 \glissando ]
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \once \override Glissando.color = #(rgb-color 0 0 0)
-                    \once \override Glissando.thickness = 2
-                    \set Voice.glissandoMap = #'((0 . 0))
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \pad-around
-                                #0
-                                \whiteout
-                                    \bold
-                                        \fontsize
-                                            #-1
-                                            \raise
-                                                #-0.5
-                                                C
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >4 \glissando
-                    {
-                        <
-                            \tweak #'stencil #point-stencil
-                            f'
-                            \tweak #'stencil #point-stencil
-                            a'
-                            \tweak #'stencil #point-stencil
-                            c''
-                            \tweak #'stencil #point-stencil
-                            e''
-                        >16
-                    }
-                    \afterGrace
-                    <
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        f'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        a'
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        c''
-                        \tweak #'text \markup {
-                            \draw-circle
-                                #1
-                                #0.1
-                                ##f
-                            }
-                        \tweak #'stencil #point-stencil
-                        e''
-                    >8
                     {
                         <
                             \tweak #'stencil #point-stencil
@@ -18097,42 +15158,42 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
-                    c'8 [
-                    c'16
+                    c'8. [
                     c'8. ]
                     \tweak #'text #tuplet-number::calc-fraction-text
                     \times 5/6 {
+                        c'8
+                        c'4
                         c'4
                         c'8
-                        c'4.
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
                     \times 2/3 {
                         c'4
-                        c'8
-                        c'4.
+                        c'2
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
                     \tweak #'text #tuplet-number::calc-fraction-text
                     \times 5/6 {
+                        c'8
+                        c'4
                         c'4
                         c'8
-                        c'4.
                     }
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
+                    \times 5/4 {
+                        c'8
                         c'4
                         c'8
-                        c'4.
                     }
-                    \times 2/3 {
-                        c'4
+                    \times 4/5 {
                         c'8
-                        c'4.
+                        c'4
+                        c'4
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
@@ -18140,52 +15201,51 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'4
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
+                    \times 2/3 {
+                        c'2
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4
+                        c'4.
+                        c'8
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'2
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'4
+                    \times 4/5 {
+                        c'4
+                        c'4.
+                    }
                     c'8 [
-                    c'8 ]
-                    c'4
-                    c'8
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
+                    c'8.
+                    c'16 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'2
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
-                    c'4
-                    c'8 [
-                    c'8 ]
-                    c'4
+                    c'2
+                    c'4.
+                    c'2 ~
                     c'8
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'4
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8
+                    c'2
+                    c'4.
                 }
             }
         >>

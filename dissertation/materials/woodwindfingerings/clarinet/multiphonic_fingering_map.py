@@ -39,7 +39,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -49,7 +49,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -64,7 +64,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -74,7 +74,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -89,7 +89,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -99,7 +99,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -114,7 +114,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -124,7 +124,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -139,7 +139,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -149,7 +149,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -164,7 +164,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -174,7 +174,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -189,7 +189,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -199,7 +199,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -214,7 +214,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -224,7 +224,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -239,7 +239,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -249,7 +249,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -264,7 +264,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -274,7 +274,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':None,
@@ -289,7 +289,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -299,7 +299,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -314,7 +314,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -324,7 +324,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -339,7 +339,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':None,
                 'index':'down',
                 'middle':'down',
@@ -349,7 +349,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -364,7 +364,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -374,7 +374,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -389,7 +389,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -399,7 +399,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -414,7 +414,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -424,7 +424,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'two',
                 'middle':None,
                 'ring':None,
@@ -439,7 +439,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -449,7 +449,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'two',
                 'middle':'down',
                 'ring':'down',
@@ -464,7 +464,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':None,
@@ -474,7 +474,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'two',
                 'middle':'down',
                 'ring':'down',
@@ -490,7 +490,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -500,7 +500,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -515,7 +515,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -525,7 +525,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':None,
@@ -540,7 +540,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -551,7 +551,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -567,7 +567,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -578,7 +578,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -594,7 +594,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -605,7 +605,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -621,7 +621,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -632,7 +632,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -648,7 +648,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -659,7 +659,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -675,7 +675,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -686,7 +686,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -702,7 +702,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -713,7 +713,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -729,7 +729,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -740,7 +740,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -756,7 +756,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':('down','gis'),
                 'middle':'down',
@@ -767,7 +767,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -783,7 +783,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -794,7 +794,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -810,7 +810,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':('down','gis'),
                 'middle':'down',
@@ -821,7 +821,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -837,7 +837,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -848,7 +848,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'b',
@@ -864,7 +864,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','a'),
                 'middle':'down',
@@ -875,7 +875,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -891,7 +891,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -902,7 +902,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'two',
                 'middle':None,
                 'ring':None,
@@ -918,7 +918,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb', 'R'),
                 'index':'gis',
                 'middle':'down',
@@ -929,7 +929,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -945,7 +945,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -956,7 +956,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -972,7 +972,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -983,7 +983,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -999,7 +999,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb', 'R'),
                 'index':('down','gis'),
                 'middle':'down',
@@ -1010,7 +1010,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'four',
                 'middle':'down',
                 'ring':'down',
@@ -1026,7 +1026,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb', 'R'),
                 'index':('down','gis'),
                 'middle':'down',
@@ -1037,7 +1037,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -1054,7 +1054,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb', 'R'),
                 'index':'down',
                 'middle':'down',
@@ -1065,7 +1065,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -1082,7 +1082,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -1093,7 +1093,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1109,7 +1109,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1120,7 +1120,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1136,7 +1136,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1147,7 +1147,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -1163,7 +1163,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1174,7 +1174,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -1190,7 +1190,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -1201,7 +1201,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':('down','four'),
                 'middle':'down',
                 'ring':'down',
@@ -1217,7 +1217,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1228,7 +1228,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1244,7 +1244,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1255,7 +1255,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -1271,7 +1271,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1282,7 +1282,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1298,7 +1298,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1309,7 +1309,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -1325,7 +1325,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -1336,7 +1336,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1352,7 +1352,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':None,
@@ -1363,7 +1363,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -1379,7 +1379,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1390,7 +1390,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':None,
                 'ring':None,
@@ -1406,7 +1406,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -1417,7 +1417,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':('down','four'),
                 'middle':'down',
                 'ring':'down',
@@ -1433,7 +1433,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1444,7 +1444,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1460,7 +1460,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1471,7 +1471,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1487,7 +1487,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':None,
@@ -1498,7 +1498,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1514,7 +1514,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':None,
@@ -1525,7 +1525,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'four',
                 'middle':'down',
                 'ring':'down',
@@ -1541,7 +1541,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1552,7 +1552,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':('three','four'),
                 'middle':'down',
                 'ring':'down',
@@ -1568,7 +1568,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -1579,7 +1579,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1595,7 +1595,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1606,7 +1606,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1622,7 +1622,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1633,7 +1633,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1649,7 +1649,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -1660,7 +1660,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1676,7 +1676,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -1687,7 +1687,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1703,7 +1703,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':None,
                 'middle':'down',
@@ -1714,7 +1714,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1730,7 +1730,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -1741,7 +1741,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1757,7 +1757,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'R',
                 'index':'down',
                 'middle':'down',
@@ -1768,7 +1768,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1784,7 +1784,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1795,7 +1795,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -1811,7 +1811,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'R',
                 'index':'down',
                 'middle':'down',
@@ -1822,7 +1822,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1838,7 +1838,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'gis',
                 'middle':'down',
@@ -1849,7 +1849,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1865,7 +1865,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -1876,7 +1876,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -1892,7 +1892,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'gis',
                 'middle':'down',
@@ -1903,7 +1903,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -1919,7 +1919,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -1930,7 +1930,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -1948,7 +1948,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -1959,7 +1959,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -1975,7 +1975,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -1986,7 +1986,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -2002,7 +2002,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -2013,7 +2013,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -2029,7 +2029,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -2040,7 +2040,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -2056,7 +2056,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -2067,7 +2067,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -2083,7 +2083,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':None,
@@ -2094,7 +2094,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -2112,7 +2112,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','gis'),
                 'middle':'down',
@@ -2123,7 +2123,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2139,7 +2139,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':('down','a'),
                 'middle':'down',
@@ -2150,7 +2150,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2166,7 +2166,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':('down','gis'),
                 'middle':'down',
@@ -2177,7 +2177,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2193,7 +2193,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'thumb',
                 'index':'down',
                 'middle':'down',
@@ -2204,7 +2204,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':('down', 'two'),
                 'middle':'down',
                 'ring':'down',
@@ -2220,7 +2220,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -2231,7 +2231,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':'down',
@@ -2247,7 +2247,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -2258,7 +2258,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -2274,7 +2274,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -2285,7 +2285,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':None,
                 'middle':'down',
                 'ring':'down',
@@ -2301,7 +2301,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':None,
@@ -2312,7 +2312,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2329,7 +2329,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -2340,7 +2340,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':None,
@@ -2356,7 +2356,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'gis',
                 'middle':'down',
@@ -2367,7 +2367,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2383,7 +2383,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':'R',
                 'index':'down',
                 'middle':'down',
@@ -2394,7 +2394,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':None,
                 'ring':None,
@@ -2410,7 +2410,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'gis',
                 'middle':'down',
@@ -2421,7 +2421,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'down',
@@ -2437,7 +2437,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':'down',
                 'middle':'down',
@@ -2448,7 +2448,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':('one','two'),
                 'middle':'down',
                 'ring':'down',
@@ -2464,7 +2464,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='left',
-            keys ={
+            keys={
                 'thumb':('thumb','R'),
                 'index':None,
                 'middle':'down',
@@ -2475,7 +2475,7 @@ multiphonic_fingering_map = {
         WoodwindFingering(
             instrument=clarinet,
             hand='right',
-            keys ={
+            keys={
                 'index':'down',
                 'middle':'down',
                 'ring':'b',

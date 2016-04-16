@@ -26,4 +26,7 @@ talea_maker_picking = rhythmmakertools.TaleaRhythmMaker(
     duration_spelling_specifier=duration_spelling_specifier
 )
 
-note_maker_fretting = rhythmmakertools.NoteRhythmMaker()
+note_maker_fretting = rhythmmakertools.NoteRhythmMaker(
+    beam_specifier=beam_specifier,
+    duration_spelling_specifier=duration_spelling_specifier,
+)

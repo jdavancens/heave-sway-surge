@@ -23,7 +23,6 @@ class WoodwindStaffGroupTemplate(abctools.AbjadValueObject):
         separator = Staff(
             [],
             context_name='SeparatorStaff',
-            is_simultaneous=True,
             name='Separator'
         )
 
@@ -33,6 +32,7 @@ class WoodwindStaffGroupTemplate(abctools.AbjadValueObject):
             is_simultaneous=True,
             name='Embouchure',
             )
+
         set_(embouchure_staff).instrument_name = Markup('Emb.')
         set_(embouchure_staff).short_instrument_name = Markup('Emb.')
 

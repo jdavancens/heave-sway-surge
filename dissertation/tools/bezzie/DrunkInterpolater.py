@@ -2,8 +2,10 @@
 import random
 class DrunkInterpolater(object):
 
-    def __init__(self):
+    def __init__(self, seed, amp=1):
         self.last_direction = None
+        random.seed(seed)
+        self._amp = amp
 
     def __call__(self, x, y0, y1):
         if self.last_direction is None:
@@ -18,5 +20,5 @@ class DrunkInterpolater(object):
             d = d_min
         else:
             d = d_max
-        dev = random.random() * d
+        dev = random.random() * d * self._amp
         return y + (direction * dev)

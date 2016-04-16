@@ -20,10 +20,10 @@ class FrettingHandler(object):
     ### CLASS ATTRIBUTES ###
 
     __slots__=(
-        'music_maker',
-        'fret_combinations',
+        '_music_maker',
+        '_fret_combinations',
         '_number_of_strings',
-        'patterns',
+        '_patterns',
     )
 
     ### INITIALIZER ###
@@ -35,18 +35,18 @@ class FrettingHandler(object):
         number_of_strings=6,
         patterns=None,
     ):
-        self.music_maker = music_maker
-        self.fret_combinations = fret_combinations
+        self._music_maker = music_maker
+        self._fret_combinations = fret_combinations
         self._number_of_strings = number_of_strings
-        self.patterns = patterns
+        self._patterns = patterns
 
     ### SPECIAL METHODS ###
 
     def __call__(self, current_stage):
-        voice = self.music_maker(current_stage)
+        voice = self._music_maker(current_stage)
         self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        self._handle_fret_combinations(voice, current_stage)
+        self._handle__fret_combinations(voice, current_stage)
         self._name_voices(voice, rhythm_voice)
         voices = [voice, rhythm_voice]
         return voices
@@ -58,15 +58,15 @@ class FrettingHandler(object):
         attach(annotation, logical_tie[0])
 
     def _annotate_logical_ties(self, voice, current_stage):
-        current_stage_index = self.music_maker.stages.index(current_stage)
-        pattern_index = self.music_maker.stages.index(current_stage)
-        pattern = datastructuretools.CyclicTuple(self.patterns[pattern_index])
+        current_stage_index = self._music_maker.stages.index(current_stage)
+        pattern_index = self._music_maker.stages.index(current_stage)
+        pattern = datastructuretools.CyclicTuple(self._patterns[pattern_index])
         cursor = datastructuretools.Cursor(pattern)
         logical_ties = list(iterate(voice).by_logical_tie())
         for logical_tie in list(iterate(voice).by_logical_tie()):
             if isinstance(logical_tie[0], (Note, Chord)):
                 i = cursor.next()[0]
-                fret_combination = self.fret_combinations[i]
+                fret_combination = self._fret_combinations[i]
                 self._annotate_logical_tie(logical_tie, fret_combination)
         for i in range(1, len(logical_ties)):
             if isinstance(logical_ties[i][0], (Note, Chord)):
@@ -84,7 +84,7 @@ class FrettingHandler(object):
             )
             attach(previous_fret_combination, current[0])
 
-    def _handle_fret_combinations(self, voice, current_stage):
+    def _handle__fret_combinations(self, voice, current_stage):
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
         for logical_tie in logical_ties:
             fret_combination = \
@@ -146,14 +146,14 @@ class FrettingHandler(object):
             return glissando_map
 
     def _name_voices(self, voice, rhythm_voice):
-        voice.name = self.music_maker.name
-        rhythm_voice.name = self.music_maker.name + ' Rhythm'
+        voice.name = self._music_maker.name
+        rhythm_voice.name = self._music_maker.name + ' Rhythm'
 
     ### PUBLIC PROPERTIES ###
     @property
     def instrument(self):
-        return self.music_maker.instrument
+        return self._music_maker.instrument
 
     @property
     def name(self):
-        return self.music_maker.name
+        return self._music_maker.name

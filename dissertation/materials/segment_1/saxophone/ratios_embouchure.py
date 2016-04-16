@@ -26,7 +26,6 @@ ratio_makers_embouchure = (
                 pattern=patterntools.select_every([2], period=5)
             )
             ),
-
     ),
     #2-2
     RatioMaker(
@@ -126,3 +125,8 @@ ratio_makers_embouchure = (
         rest_indices='all',
     ),
 )
+
+tuplet_ratios_embouchure = []
+for ratio_maker in ratio_makers_embouchure:
+    ratios = ratio_maker()
+    tuplet_ratios_embouchure.append(ratios)

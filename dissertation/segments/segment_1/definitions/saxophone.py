@@ -9,14 +9,7 @@ Created on Oct 31, 2015
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
-from dissertation.materials.segment_1.saxophone.air_pressure_envelopes import air_pressure_envelopes
-from dissertation.materials.segment_1.saxophone.lip_pressure_envelopes import lip_pressure_envelopes
-from dissertation.materials.segment_1.saxophone.ratio_makers_embouchure import ratio_makers_embouchure
-from dissertation.materials.segment_1.saxophone.ratio_makers_lh import ratio_makers_lh
-from dissertation.materials.segment_1.saxophone.ratio_makers_rh import ratio_makers_rh
-from dissertation.materials.segment_1.saxophone.rhythm_makers import tuplet_maker
-from dissertation.materials.segment_1.oboe.rhythm_makers import duration_spelling_specifier
-from dissertation.materials.segment_1.oboe.rhythm_makers import tuplet_spelling_specifier
+from dissertation.materials.segment_1.saxophone import *
 saxophone = instrumenttools.AltoSaxophone()
 import json
 import os
@@ -25,7 +18,6 @@ import os
 #  HIGH LEVEL PARAMETERS
 #===============================================================================
 
-divisions = sequencetools.flatten_sequence(time_signatures)
 stages = (0,1,2,3,4)
 
 #===============================================================================
@@ -54,7 +46,6 @@ embouchure_music_maker = MusicMaker(
     instrument=saxophone,
     name='Embouchure',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=tuplet_ratios_embouchure,
         duration_spelling_specifier=duration_spelling_specifier,
@@ -66,7 +57,6 @@ lh_music_maker = MusicMaker(
     instrument=saxophone,
     name='Left Hand Fingering',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=tuplet_ratios_lh,
         duration_spelling_specifier=duration_spelling_specifier,
@@ -78,7 +68,6 @@ rh_music_maker = MusicMaker(
     instrument=saxophone,
     name='Right Hand Fingering',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=tuplet_maker(
         tuplet_ratios=tuplet_ratios_rh,
         duration_spelling_specifier=duration_spelling_specifier,

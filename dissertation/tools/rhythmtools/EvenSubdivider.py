@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from abjad import datastructuretools
 from abjad.tools.mathtools.Ratio import Ratio
 from dissertation.tools.rhythmtools.Subdivider import Subdivider
 
@@ -7,23 +7,29 @@ class EvenSubdivider(Subdivider):
     '''Even subdivider.
 
         ::
-            >>> e = EvenSubdivider(3)
+            >>> e = EvenSubdivider([3, 2])
             >>> e(5)
             Ratio((2, 2, 1))
+            >>> e(5)
+            Ratio(3,2)
+
 
     '''
-    __slots__ = ('_n',)
+    __slots__ = ('_n_cycle',)
 
     ### INITIALIZER ###
 
     def __init__(
         self,
-        n,
+        n_cycle,
         second_level_subdivider=None,
         sustain_mask=None,
         silence_mask=None,
     ):
-        self._n = n
+        if isinstance(n_cycle, int):
+            n_cycle = [n_cycle]
+        n_cyclic_tuple = datastructuretools.CyclicTuple(n_cycle)
+        self._n_cycle = datastructuretools.Cursor(n_cyclic_tuple)
         Subdivider.__init__(
             self,
             second_level_subdivider=second_level_subdivider,
@@ -33,7 +39,8 @@ class EvenSubdivider(Subdivider):
     ### SPECIAL METHODS ###
 
     def __call__(self, duration):
-        pattern = self._bjorklund(duration, self._n)
+        n = self._n_cycle.next()[0]
+        pattern = self._bjorklund(duration, n)
         ratio = self._binary_to_ratio(pattern)
         ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._apply_sustain_mask(self, ratio)

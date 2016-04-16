@@ -2,7 +2,6 @@
 \include "stencils.ily"
 #(set-default-paper-size "11x17" 'portrait)
 #(set-global-staff-size 8)
-staffgroup-space = #24
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
@@ -30,31 +29,12 @@ staffgroup-space = #24
     print-page-number = ##t
     ragged-bottom = ##t
     ragged-last-bottom = ##t
-    ragged-right = ##t
+    ragged-right = ##f
     indent = 0.5\in
     left-margin = 1\in
     right-margin = 0.5\in
     top-margin = 0.5\in
-    %{system-separator-markup = \slashSeparator%}
-    markup-system-spacing = #'(
-        (basic-distance . 12)
-        (minimum-distance . 12)
-        (padding . 12)
-        (stretchability . 0)
-    )
-    system-system-spacing = #'(
-        (basic-distance . 12)
-        (minimum-distance . 12)
-        (padding . 12)
-        (stretchability . 0)
-    )
-    top-system-spacing = #'(
-        (basic-distance . 12)
-        (minimum-distance . 12)
-        (padding . 12)
-        (stretchability . 0)
-    )
-
+    system-separator-markup = \slashSeparator
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
 \header {
@@ -68,7 +48,7 @@ staffgroup-space = #24
         \center-align {
             %\override #'(font-name . "Times")
             \fontsize #5 {
-               \line {Viscera}
+               \line {Out}
             }
         }
     }
@@ -125,6 +105,7 @@ staffgroup-space = #24
                 (left
                     (attach-dir . 1)
                     (padding . 0)
+                    (start-at-dot . #f)
                 )
             )
 
@@ -136,7 +117,6 @@ staffgroup-space = #24
             white white grey white white
             white white white white black
             )
-        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #16%}
     }
     % FRETTING STAFF
     \context {
@@ -215,19 +195,24 @@ staffgroup-space = #24
         \consists Pitch_squash_engraver
         \accepts Voice
         \omit Clef
-        %{\hide NoteHead%}
+        \hide NoteHead
         \omit InstrumentName
         \omit TimeSignature
         \override StaffSymbol.line-count = #1
         \override StaffSymbol.transparent = ##t
         squashedPosition = #0
-        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #12%}
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 15)
+            (padding . 8)
+            (stretchability . 0)
+        )
+        \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
     }
     % SEPARATOR STAFF
     \context {
         \Staff
         \name SeparatorStaff
-        \alias Staff
         \type Engraver_group
         \consists Output_property_engraver
         \consists Font_size_engraver
@@ -236,13 +221,12 @@ staffgroup-space = #24
         \consists Axis_group_engraver
         \consists Staff_symbol_engraver
         \consists Pitch_squash_engraver
-        \accepts voice
         \omit Clef
+        \hide NoteHead
         \omit InstrumentName
         \omit TimeSignature
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
-        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #1%}
 
     }
     % STRING SPACE STAFF
@@ -325,7 +309,6 @@ staffgroup-space = #24
         \override TimeSignature.font-size = 3
         \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
-        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #16
     }
     % TROMBONE SLIDE POSITION STAFF
     \context {
@@ -399,7 +382,8 @@ staffgroup-space = #24
                 )
                 (left
                     (attach-dir . 1)
-                    (padding . 0)
+                    (padding . -1)
+                    (start-at-dot . #f)
                 )
             )
 
@@ -408,8 +392,6 @@ staffgroup-space = #24
         \override StaffSymbol.line-count = 5
         \override StaffSymbol.staff-space = 3
         \override StaffSymbol.layer = #-100
-
-        %{\override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #1%}
     }
     % WOODWIND RIGHT HAND FINGERING STAFF
     \context {
@@ -459,15 +441,6 @@ staffgroup-space = #24
         \override NoteHead.stem-attachment = #'(0 . 0)
         \override StaffSymbol.line-count = #4
         \override StaffSymbol.staff-space = 3
-        %{\override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #0
-        \override VerticalAxisGroup.default-staff-staff-spacing.minimum-distance = #0
-        \override VerticalAxisGroup.default-staff-staff-spacing.padding = #0
-        \override VerticalAxisGroup.default-staff-staff-spacing.stretchability = #0
-        \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #0
-        \override VerticalAxisGroup.staff-staff-spacing.minimum-distance = #0
-        \override VerticalAxisGroup.staff-staff-spacing.padding = #0
-        \override VerticalAxisGroup.staff-staff-spacing.stretchability = #0
-        \override VerticalAxisGroup.Y-extent = #'(0 . 0)%}
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
     % BOWED STRING INSTRUMENT STAFF GROUP
@@ -484,9 +457,6 @@ staffgroup-space = #24
         \consists Instrument_name_engraver
         \remove System_start_delimiter_engraver
         \override InstrumentName.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #2
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
-        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % GUITAR STAFF GROUP
     \context {
@@ -506,9 +476,6 @@ staffgroup-space = #24
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #12
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
-        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % TROMBONE STAFF GROUP
     \context {
@@ -528,9 +495,6 @@ staffgroup-space = #24
         systemStartDelimiter = #'SystemStartBracket
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #8
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space
-        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
     }
     % WOODWIND INSTRUMENT STAFF GROUP
     \context {
@@ -548,15 +512,9 @@ staffgroup-space = #24
         \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
-        systemStartDelimiter = #'SystemStartBar
+        systemStartDelimiter = #'SystemStartSquare
         \override InstrumentName.padding = #12
-        \override SystemStartBar.padding = #1
-        %{\override StaffGrouper.staff-staff-spacing.basic-distance = #0
-        \override StaffGrouper.staff-staff-spacing.minimum-distance = #0
-        \override StaffGrouper.staff-staff-spacing.padding = #0
-        \override StaffGrouper.staff-staff-spacing.stretchability = #0
-        \override StaffGrouper.staffgroup-staff-spacing.minimum-distance = \staffgroup-space%}
-        %{\override StaffGrouper.staffgroup-staff-spacing.stretchability = #100%}
+        \override SystemStartSquare.padding = #1
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCORE
     % SCORE
@@ -605,7 +563,7 @@ staffgroup-space = #24
         \override SpacingSpanner.strict-grace-spacing = ##t
         \override SpacingSpanner.strict-note-spacing = ##t
         \override SpacingSpanner.uniform-stretching = ##t
-        %{\override SpanBar.layer = #100
+        \override SpanBar.layer = #100
         \override SpanBar.hair-thickness = #0.8
         \override SpanBar.space-alist = #'(
             (time-signature extra-space . 0.0)
@@ -616,7 +574,7 @@ staffgroup-space = #24
             (first-note fixed-space . 0.0)
             (next-note semi-fixed-space . 0.0)
             (right-edge extra-space . 0.0)
-        )%}
+        )
         \override StaffSymbol.layer = #-400
         \override StemTremolo.beam-width = 0.5
         \override StemTremolo.flag-count = 2

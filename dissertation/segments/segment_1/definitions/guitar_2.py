@@ -8,15 +8,7 @@ Created on Feb 15, 2016
 from abjad import *
 from dissertation import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
-from dissertation.materials.segment_1.guitar_2.fret_combinations import fret_combinations
-from dissertation.materials.segment_1.guitar_2.fret_combinations import fretting_patterns
-from dissertation.materials.segment_1.guitar_2.pickings import pickings
-from dissertation.materials.segment_1.guitar_2.pickings import picking_patterns
-from dissertation.materials.segment_1.guitar_2.rhythm_makers import beam_specifier
-from dissertation.materials.segment_1.guitar_2.rhythm_makers import duration_spelling_specifier
-from dissertation.materials.segment_1.guitar_2.rhythm_makers import note_maker_fretting
-from dissertation.materials.segment_1.guitar_2.rhythm_makers import talea_maker_picking
-from dissertation.materials.segment_1.guitar_2.rhythm_makers import talea_picking
+from dissertation.materials.segment_1.guitar_2 import *
 
 #===============================================================================
 #  GLOBAL VARIABLES
@@ -29,8 +21,6 @@ guitar = instrumenttools.Guitar(
 
 stages = (0,1,2,3,4)
 
-divisions = sequencetools.flatten_sequence(time_signatures)
-
 #===============================================================================
 # MUSIC-MAKERS
 #===============================================================================
@@ -40,7 +30,6 @@ picking_music_maker = MusicMaker(
     instrument=guitar,
     name='Picking',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=talea_maker_picking
 )
 
@@ -49,7 +38,6 @@ fretting_music_maker = MusicMaker(
     instrument=guitar,
     name='Fretting',
     time_signatures=time_signatures,
-    divisions=divisions,
     rhythm_maker=note_maker_fretting
 )
 
@@ -59,8 +47,11 @@ fretting_music_maker = MusicMaker(
 
 picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
-    pickings=pickings,
-    patterns=picking_patterns
+    picking_position_envelopes=picking_position_envelopes,
+    picking_force_envelopes=picking_force_envelopes,
+    direction_patterns=direction_patterns,
+    string_indices_patterns=string_indices_patterns,
+    tremolo_patterns=tremolo_patterns,
 )
 
 fretting_music_handler = FrettingHandler(

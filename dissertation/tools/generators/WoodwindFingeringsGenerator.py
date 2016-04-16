@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from abjad import *
+from dissertation.materials.instruments import instruments
 from dissertation.tools.makers.MusicMaker import MusicMaker
 from dissertation.tools.makers.FingeringMaker import FingeringMaker
 import json
@@ -14,28 +15,13 @@ class WoodwindFingeringsGenerator(object):
     def __init__(
         self,
         instrument_string,
-        number_of_stages,
         time_signatures,
         fingering_sets,
-        ratio_makers_lh,
-        ratio_makers_rh,
-        duration_spelling_specifier,
-        tuplet_spelling_specifier,
-        segment_index
+        rhythm_makers_lh,
+        rhythm_makers_rh,
+        number_of_stages,
+        segment_number
         ):
-
-        # make rhythmic ratios
-
-        tuplet_ratios_lh = []
-        for ratio_maker in ratio_makers_lh:
-            ratios = ratio_maker()
-            tuplet_ratios_lh.extend(ratios)
-
-        tuplet_ratios_rh = []
-        for ratio_maker in ratio_makers_rh:
-            ratios = ratio_maker()
-            tuplet_ratios_rh.extend(ratios)
-
 
         # make rhythms
 
@@ -46,27 +32,18 @@ class WoodwindFingeringsGenerator(object):
             instrument=instrument,
             name='Left Hand Fingering',
             time_signatures=time_signatures,
-            divisions=sequencetools.flatten_sequence(time_signatures),
-            rhythm_maker=tuplet_maker(
-                tuplet_ratios=tuplet_ratios_lh,
-                duration_spelling_specifier=duration_spelling_specifier,
-                tuplet_spelling_specifier=tuplet_spelling_specifier,
-            )
+            rhythm_makers=rhythm_makers_lh
         )
         rh_music_maker = MusicMaker(
             stages=range(number_of_stages),
             instrument=instrument,
             name='Right Hand Fingering',
             time_signatures=time_signatures,
-            divisions=sequencetools.flatten_sequence(time_signatures),
-            rhythm_maker=tuplet_maker(
-                tuplet_ratios=tuplet_ratios_rh,
-                duration_spelling_specifier=duration_spelling_specifier,
-                tuplet_spelling_specifier=tuplet_spelling_specifier,
-            )
+            rhythm_makers=rhythm_makers_rh
         )
         lh_fingering_list = []
         rh_fingering_list = []
+
         for stage_index in range(number_of_stages):
             lh_voice = (lh_music_maker(stage_index))
             rh_voice = (rh_music_maker(stage_index))
@@ -103,7 +80,7 @@ class WoodwindFingeringsGenerator(object):
         fingerings_json_path = os.path.join(
             '..',
             'materials',
-            segment_string,
+            'segment_' + str(segment_number),
             stringtools.to_snake_case(instrument_string),
             'fingerings.json'
         )

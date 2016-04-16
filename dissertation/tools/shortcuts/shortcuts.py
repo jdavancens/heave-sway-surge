@@ -190,6 +190,52 @@ def text_spanner_start(selection, current_text_tuple, next_text, direction):
     attach(start_command, first_leaf)
     attach(stop_command, last_leaf)
 
+def text_to_note_head(
+    note,
+    text_or_tuple,
+    orientation='x',
+    size=-4,
+    enclosure=None,
+    bold=False,
+    uppercase=False,
+    ):
+    # make a list even if one string
+    if isinstance(text_or_tuple, str):
+        text_list = [text_or_tuple]
+    else:
+        text_list = text_or_tuple
+    # handle vertical and horizontal orientations
+    if orientation == 'y':
+        if len(text_list)<2:
+            markup_string = text_list[0]
+        else:
+            markup_string = ','.join(text_list)
+        markup = Markup(markup_string)
+        if uppercase:
+            markup = markup.upper()
+        if bold:
+            markup = markup.bold()
+    else:
+        column = []
+        for text in text_list:
+            if uppercase:
+                text = text.upper()
+            markup = Markup(text)
+            if bold:
+                markup = markup.bold()
+            column.append(Markup(text))
+        markup = Markup.column(column, direction=None)
+
+    markup = markup.fontsize(size)
+    markup = markup.raise_(0.5)
+    if enclosure == 'box':
+        markup = markup.box()
+    elif enclosure == 'circle':
+        markup = markup.circle()
+    markup = markup.whiteout()
+    override(note).note_head.stencil = 'ly:text-interface::print'
+    override(note).note_head.text = markup
+
 def to_proportional_notation(music):
     for logical_tie in iterate(music).by_logical_tie():
         if isinstance(logical_tie.head, (Note, Chord)):

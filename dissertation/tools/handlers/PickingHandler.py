@@ -6,26 +6,32 @@ Created on Feb 15, 2016
 '''
 
 from abjad import *
-from dissertation.tools.shortcuts import *
-from dissertation.tools import graphicstools
+from dissertation.tools.shortcuts import shortcuts
+from math import floor
 import copy
+from dissertation.tools import graphicstools
 
 class PickingHandler(object):
-    '''
-        position –> staff height
-        direction –> rhythm voice note head
-        string –> voice note head
-        force –> rhythm voice note head color
-        tremolo –> glissando
+    '''A guitar picking handler.
 
+        Picking position -> staff position
+        Picking force -> color
+        String ID -> note head (voice)
+        Direction -> articulation (rhythm voice)
+
+    Returns voices for a particular stage in a segment.
     '''
 
     ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        'music_maker',
-        'pickings',
-        'patterns',
+        '_music_maker',
+        '_picking_force_envelopes',
+        '_picking_position_envelopes',
+        '_string_indices_patterns',
+        '_direction_patterns',
+        '_tremolo_patterns',
+        '_number_of_staff_lines'
         )
 
     ### INITIALIZER ###
@@ -33,45 +39,74 @@ class PickingHandler(object):
     def __init__(
         self,
         music_maker=None,
-        pickings=None,
-        patterns=None,
+        picking_force_envelopes=None,
+        picking_position_envelopes=None,
+        string_indices_patterns=None,
+        direction_patterns=None,
+        tremolo_patterns=None,
+        number_of_staff_lines=15
         ):
-        self.music_maker = music_maker
-        self.pickings = pickings
-        self.patterns = patterns
+        self._music_maker = music_maker
+        self._picking_force_envelopes = picking_force_envelopes
+        self._picking_position_envelopes = picking_position_envelopes
+        self._string_indices_patterns = string_indices_patterns
+        self._direction_patterns = direction_patterns
+        self._tremolo_patterns = tremolo_patterns
+        self._number_of_staff_lines = number_of_staff_lines
 
     ### SPECIAL METHDS ###
 
     def __call__(self, current_stage):
-        voice = self.music_maker(current_stage)
-        self._annotate_logical_ties(voice, current_stage)
+        voice = self._music_maker(current_stage)
         rhythm_voice = copy.deepcopy(voice)
+        # self._to_proportional_notation(voice)
+        self._handle_voice(voice, current_stage)
+        self._handle_rhythm_voice(rhythm_voice, current_stage)
         self._name_voices(voice, rhythm_voice)
-        self._handle_position_and_string_ids(voice)
-        self._handle_direction_and_force_and_tremolo(rhythm_voice)
         return [voice, rhythm_voice]
-
 
     ### PRIVATE METHODS ###
 
-    def _annotate_logical_tie(self, logical_tie, picking):
-        force = indicatortools.Annotation('picking', picking)
+    def _annotate_logical_tie(
+        self,
+        logical_tie,
+        position_start,
+        position_stop,
+        force,
+        ):
+        position_start = indicatortools.Annotation('position_start', position_start)
+        position_stop = indicatortools.Annotation('position_stop', position_stop)
+        force = indicatortools.Annotation('force', force)
+        attach(position_start, logical_tie[0])
+        attach(position_stop, logical_tie[0])
         attach(force, logical_tie[0])
 
-    def _annotate_logical_ties(self, voice, current_stage):
-        current_stage_index = self.music_maker.stages.index(current_stage)
-        pattern_index = self.music_maker.stages.index(current_stage)
-        pattern = datastructuretools.CyclicTuple(self.patterns[pattern_index])
-        cursor = datastructuretools.Cursor(pattern)
-        logical_ties = list(iterate(voice).by_logical_tie())
-        for logical_tie in list(iterate(voice).by_logical_tie()):
-            if isinstance(logical_tie[0], (Note, Chord)):
-                i = cursor.next()[0]
-                picking = self.pickings[i]
-                self._annotate_logical_tie(logical_tie, picking)
+    def _attach_grace_notes(self, voice):
+        for note in iterate(voice).by_class(Note):
+            shortcuts.grace_after(note)
 
-    def _attach_glissando(self, logical_tie):
-        tremolo = inspect_(logical_tie[0]).get_annotation('picking').tremolo
+    def _handle_direction(self, logical_tie, direction):
+        if direction.lower() == 'up':
+            d = indicatortools.Articulation('upbow',direction=Down)
+        elif direction.lower() == 'down':
+            d = indicatortools.Articulation('downbow',direction=Down)
+        attach(d, logical_tie[0])
+
+    def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        dir_pattern = self._direction_patterns[current_stage]
+        dir_pattern = datastructuretools.CyclicTuple(dir_pattern)
+        dir_cursor = datastructuretools.Cursor(dir_pattern)
+        for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
+            direction = dir_cursor.next()[0]
+            self._handle_direction(logical_tie, direction)
+
+    def _handle_string_indices(self, logical_tie, string_indices):
+        shortcuts.text_to_note_head(logical_tie[0], string_indices, enclosure='box')
+        if len(logical_tie) > 1:
+            for leaf in logical_tie[1:]:
+                shortcuts.point_note_head(leaf)
+
+    def _handle_tremolo(self, logical_tie, tremolo):
         if tremolo:
             zigzag = lilypondnametools.LilyPondGrobOverride(
                 context_name=None,
@@ -84,132 +119,61 @@ class PickingHandler(object):
                 )
             attach(zigzag, logical_tie[0])
             color = graphicstools.scheme_rgb_color((0,0,0))
-            gliss(logical_tie[0], color=color, thickness=1)
+            shortcuts.gliss(logical_tie[0], color=color, thickness=1)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
                     gliss_skip(leaf)
 
-    def _handle_direction_notehead(self, logical_tie):
-        direction = inspect_(logical_tie[0]).get_annotation('picking').direction
-        if direction.lower() == 'up':
-            d = indicatortools.Articulation('upbow',direction=Down)
-        elif direction.lower() == 'down':
-            d = indicatortools.Articulation('downbow',direction=Down)
-        attach(d, logical_tie[0])
-        # override(logical_tie[0]).note_head.stencil = 'ly:text-interface::print'
-        # override(logical_tie[0]).note_head.text = Markup('V')
-
-    def _handle_position_and_string_ids(self, voice):
+    def _handle_voice(self, voice, current_stage):
+        start_offset = float(inspect_(voice).get_timespan().start_offset)
+        stop_offset = float(inspect_(voice).get_timespan().stop_offset)
+        duration = stop_offset - start_offset
+        str_i_pattern = self._string_indices_patterns[current_stage]
+        str_i_pattern = datastructuretools.CyclicTuple(str_i_pattern)
+        str_i_cursor = datastructuretools.Cursor(str_i_pattern)
+        trem_pattern = self._tremolo_patterns[current_stage]
+        trem_pattern = datastructuretools.CyclicTuple(trem_pattern)
+        trem_cursor = datastructuretools.Cursor(trem_pattern)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            self._map_note_heads(logical_tie)
-            self._handle_string_ids(logical_tie)
-
-    def _handle_direction_and_force_and_tremolo(self, rhythm_voice):
-        for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
-            self._handle_direction_notehead(logical_tie)
-            self._insert_gliss_anchor(logical_tie)
-            self._attach_glissando(logical_tie)
-
-    def _handle_string_ids(self, logical_tie):
-        r'''Looks at the current logical tie and the previous. If different,
-        changes the note-head of the first element of the logical tie to textual
-        representation of string id number
-        '''
-        string_ids = inspect_(logical_tie[0]).get_annotation('picking').string_ids
-        if isinstance(string_ids, str):
-            string_ids = datastructuretools.TypedTuple(string_ids)
-        else:
-            string_ids = datastructuretools.TypedTuple(string_ids)
-        self._text_to_note_head(logical_tie[0],string_ids, enclosure='box')
-        if len(logical_tie) > 1:
-            for leaf in logical_tie[1:]:
-                point_note_head(leaf)
-
-    def _insert_gliss_anchor(self, logical_tie):
-        tremolo = inspect_(logical_tie[0]).get_annotation('picking').tremolo
-        if tremolo:
-            hidden_grace_after(logical_tie[-1], 0)
-
-    def _map_fraction_to_treble_staff_position(
-        self,
-        fraction,
-        number_of_staff_lines
-        ):
-        if 0 <= number_of_staff_lines < 3:
-            staff_position = 6
-        else:
-            staff_position = fraction * ((2 * number_of_staff_lines) - 4)
-            staff_position = round(staff_position) + 8 - number_of_staff_lines
-        return staff_position
-
-    def _map_note_heads(self, logical_tie):
-        position = inspect_(logical_tie[0]).get_annotation('picking').position
-        staff_position = self._map_fraction_to_treble_staff_position(
-            position,
-            number_of_staff_lines=10
-            )
-        named_pitch = pitchtools.NamedPitch.from_staff_position(
-            staff_position)
-        for leaf in logical_tie:
-            leaf.written_pitch = named_pitch
+            start_moment = inspect_(logical_tie[0]).get_vertical_moment(voice)
+            start_moment = float(start_moment.offset)
+            duration = float(logical_tie.get_duration()) / total_duration
+            x = start_moment / total_duration
+            position0 = self._picking_position_envelopes[current_stage](x)
+            position1 = self._picking_position_envelopes[current_stage](x+duration)
+            force = self._picking_force_envelopes[current_stage](x)
+            string_indices = str_i_cursor.next()[0]
+            tremolo = trem_cursor.next()[0]
+            self._annotate_logical_tie(logical_tie, position0, position1, force)
+            self._handle_string_indices(logical_tie, string_indices)
+            self._handle_tremolo(logical_tie, tremolo)
+        self._attach_grace_notes(voice)
+        self._set_y_offsets(voice)
 
     def _name_voices(self, voice, rhythm_voice):
-        voice.name = self.music_maker.name
-        rhythm_voice.name = self.music_maker.name + " Rhythm"
+        voice.name = self._music_maker.name
+        rhythm_voice.name = self._music_maker.name + " Rhythm"
 
-    def _text_to_note_head(
-        self,
-        note,
-        text_or_tuple,
-        orientation='x',
-        size=-4,
-        enclosure=None,
-        bold=False,
-        uppercase=False,
-        ):
-        # make a list even if one string
-        if isinstance(text_or_tuple, str):
-            text_list = [text_or_tuple]
-        else:
-            text_list = text_or_tuple
-        # handle vertical and horizontal orientations
-        if orientation == 'y':
-            if len(text_list)<2:
-                markup_string = text_list[0]
-            else:
-                markup_string = ','.join(text_list)
-            markup = Markup(markup_string)
-            if uppercase:
-                markup = markup.upper()
-            if bold:
-                markup = markup.bold()
-        else:
-            column = []
-            for text in text_list:
-                if uppercase:
-                    text = text.upper()
-                markup = Markup(text)
-                if bold:
-                    markup = markup.bold()
-                column.append(Markup(text))
-            markup = Markup.column(column, direction=None)
+    def _set_y_offsets(self, voice):
+        n = self._number_of_staff_lines
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            y0 = inspect_(logical_tie[0]).get_annotation('position_start')
+            y1 = inspect_(logical_tie[0]).get_annotation('position_stop')
+            y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
+            y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
+            grace = inspect_(logical_tie[0]).get_grace_container()[0]
+            override(logical_tie[0]).note_head.Y_offset = y0_offset
+            override(grace).note_head.Y_offset = y1_offset
 
-        markup = markup.fontsize(size)
-        markup = markup.raise_(0.5)
-        if enclosure == 'box':
-            markup = markup.box()
-        elif enclosure == 'circle':
-            markup = markup.circle()
-        markup = markup.whiteout()
-        override(note).note_head.stencil = 'ly:text-interface::print'
-        override(note).note_head.text = markup
+    def _to_proportional_notation(self, voice):
+        shortcuts.to_proportional_notation(voice)
 
     ### PUBLIC PROPERTIES ###
 
     @property
     def instrument(self):
-        return self.music_maker.instrument
+        return self._music_maker.instrument
 
     @property
     def name(self):
-        return self.music_maker.name
+        return self._music_maker.name

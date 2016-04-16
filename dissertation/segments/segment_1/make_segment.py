@@ -8,10 +8,10 @@ from abjad import *
 from dissertation import *
 from dissertation.segments.segment_1.definitions import oboe
 from dissertation.segments.segment_1.definitions import clarinet
-from dissertation.segments.segment_1.definitions import saxophone
-from dissertation.segments.segment_1.definitions import trombone
-from dissertation.segments.segment_1.definitions import guitar_1
-from dissertation.segments.segment_1.definitions import guitar_2
+# from dissertation.segments.segment_1.definitions import saxophone
+# from dissertation.segments.segment_1.definitions import trombone
+# from dissertation.segments.segment_1.definitions import guitar_1
+# from dissertation.segments.segment_1.definitions import guitar_2
 # from dissertation.segments.segment_1.definitions import violin
 # from dissertation.segments.segment_1.definitions import viola
 # from dissertation.segments.segment_1.definitions import cello
@@ -31,10 +31,10 @@ def make_segment(number_of_stages=None):
         instrument_list=[
             'oboe',
             'clarinet in b-flat',
-            'alto saxophone',
-            'trombone',
-            'guitar i',
-            'guitar ii',
+            # 'alto saxophone',
+            # 'trombone',
+            # 'guitar i',
+            # 'guitar ii',
             # 'violin',
             # 'viola',
             # 'cello',
@@ -44,10 +44,10 @@ def make_segment(number_of_stages=None):
         )
     oboe_handlers = oboe.get_music_handlers()
     clarinet_handlers = clarinet.get_music_handlers()
-    saxophone_handlers = saxophone.get_music_handlers()
-    trombone_handlers = trombone.get_music_handlers()
-    guitar_1_handlers = guitar_1.get_music_handlers()
-    guitar_2_handlers = guitar_2.get_music_handlers()
+    # saxophone_handlers = saxophone.get_music_handlers()
+    # trombone_handlers = trombone.get_music_handlers()
+    # guitar_1_handlers = guitar_1.get_music_handlers()
+    # guitar_2_handlers = guitar_2.get_music_handlers()
     # violin_handlers = violin.get_music_handlers()
     # viola_handlers = viola.get_music_handlers()
     # cello_handlers = cello.get_music_handlers()
@@ -55,10 +55,10 @@ def make_segment(number_of_stages=None):
     music_handlers = [
         oboe_handlers,
         clarinet_handlers,
-        saxophone_handlers,
-        trombone_handlers,
-        guitar_1_handlers,
-        guitar_2_handlers,
+        # saxophone_handlers,
+        # trombone_handlers,
+        # guitar_1_handlers,
+        # guitar_2_handlers,
         # violin_handlers,
         # viola_handlers,
         # cello_handlers,
