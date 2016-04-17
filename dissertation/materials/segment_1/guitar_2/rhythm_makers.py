@@ -3,7 +3,7 @@
 from abjad import *
 
 talea_picking = rhythmmakertools.Talea(
-    counts=[1,5,7,3,3,7,5,1],
+    counts=[1, 5, 7, 3, 3, 7, 5, 1],
     denominator=16
 )
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from abjad import rhythmmakertools
-from .ratios_embouchure import ratios_embouchure
-from .ratios_lh import ratios_lh
-from .ratios_rh import ratios_rh
+from .ratios_embouchure import tuplet_ratios_embouchure
+from .ratios_lh import tuplet_ratios_lh
+from .ratios_rh import tuplet_ratios_rh
 
 tuplet_maker = rhythmmakertools.TupletRhythmMaker
 
@@ -25,55 +25,55 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
 
 rhythm_makers_embouchure = (
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[0],
+        tuplet_ratios=tuplet_ratios_embouchure[0],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[1],
+        tuplet_ratios=tuplet_ratios_embouchure[1],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[2],
+        tuplet_ratios=tuplet_ratios_embouchure[2],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[3],
+        tuplet_ratios=tuplet_ratios_embouchure[3],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[4],
+        tuplet_ratios=tuplet_ratios_embouchure[4],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
 )
 
-rhythm_makers_embouchure = (
+rhythm_makers_lh = (
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[0],
+        tuplet_ratios=tuplet_ratios_lh[0],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[1],
+        tuplet_ratios=tuplet_ratios_lh[1],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[2],
+        tuplet_ratios=tuplet_ratios_lh[2],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[3],
+        tuplet_ratios=tuplet_ratios_lh[3],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_embouchure[4],
+        tuplet_ratios=tuplet_ratios_lh[4],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
@@ -81,27 +81,27 @@ rhythm_makers_embouchure = (
 
 rhythm_makers_rh = (
     tuplet_maker(
-        tuplet_ratios=ratios_rh[0],
+        tuplet_ratios=tuplet_ratios_rh[0],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_rh[1],
+        tuplet_ratios=tuplet_ratios_rh[1],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_rh[2],
+        tuplet_ratios=tuplet_ratios_rh[2],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_rh[3],
+        tuplet_ratios=tuplet_ratios_rh[3],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),
     tuplet_maker(
-        tuplet_ratios=ratios_rh[4],
+        tuplet_ratios=tuplet_ratios_rh[4],
         duration_spelling_specifier=duration_spelling_specifier,
         tuplet_spelling_specifier=tuplet_spelling_specifier,
     ),

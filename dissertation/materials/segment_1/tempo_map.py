@@ -7,28 +7,28 @@ from abjad import *
 from .time_signatures import time_signatures
 tempi = (
     (
-        Tempo(Duration(1,4), 54),
-        Tempo(Duration(1,4), 81)
+        Tempo(Duration(1, 4), 54),
+        Tempo(Duration(1, 4), 81)
     ),
     (
-        Tempo(Duration(1,4), 68),
-        Tempo(Duration(1,4), 54),
-        Tempo(Duration(1,4), 81),
+        Tempo(Duration(1, 4), 68),
+        Tempo(Duration(1, 4), 54),
+        Tempo(Duration(1, 4), 81),
     ),
     (
-        Tempo(Duration(1,4), 68),
-        Tempo(Duration(1,4), 47),
-        Tempo(Duration(1,4), 81),
-        Tempo(Duration(1,4), 72),
+        Tempo(Duration(1, 4), 68),
+        Tempo(Duration(1, 4), 47),
+        Tempo(Duration(1, 4), 81),
+        Tempo(Duration(1, 4), 72),
     ),
     (
-        Tempo(Duration(1,4), 54),
-        Tempo(Duration(1,4), 68),
-        Tempo(Duration(1,4), 81),
+        Tempo(Duration(1, 4), 54),
+        Tempo(Duration(1, 4), 68),
+        Tempo(Duration(1, 4), 81),
     ),
     (
-        Tempo(Duration(1,4), 68),
-        Tempo(Duration(1,4), 54),
+        Tempo(Duration(1, 4), 68),
+        Tempo(Duration(1, 4), 54),
     ),
 )
 assert(len(tempi) == len(time_signatures))

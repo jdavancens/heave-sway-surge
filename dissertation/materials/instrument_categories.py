@@ -1,22 +1,22 @@
 # -*- coding: utf-8-*-
 instrument_categories = {
-    'woodwinds':[
+    'woodwinds': [
         'oboe',
         'clarinet',
         'clarinet in b-flat',
         'saxophone',
         'alto saxophone'
     ],
-    'trombone':[
+    'trombone': [
         'trombone'
     ],
-    'plucked strings':[
+    'plucked strings': [
         'guitar 1',
         'guitar i',
         'guitar 2',
         'guitar ii'
     ],
-    'bowed strings':[
+    'bowed strings': [
         'violin',
         'viola',
         'cello',

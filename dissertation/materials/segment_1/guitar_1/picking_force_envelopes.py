@@ -4,9 +4,9 @@ from dissertation import *
 
 path_stage_1 = Path(
     # 2-1
-    BezierCurve((0 , 0.1), (2 , 1.0), (4 , 0.4)),
-    BezierCurve((4 , 0.6), (5 , 0.6), (7 , 0.8)),
-    BezierCurve((7 , 0.8), (9 , 0.4), (11, 0.4)),
+    BezierCurve((0, 0.1), (2, 1.0), (4, 0.4)),
+    BezierCurve((4, 0.6), (5, 0.6), (7, 0.8)),
+    BezierCurve((7, 0.8), (9, 0.4), (11, 0.4)),
     BezierCurve((11, 0.1),            (13, 0.4)),
     # 2-2
     BezierCurve((13, 0.6), (15, 0.0), (16, 0.8)),
@@ -22,9 +22,9 @@ path_stage_1 = Path(
 
 path_stage_2 = Path(
     # 2-1
-    BezierCurve((0 , 0.1), (2 , 1.0), (4 , 0.4)),
-    BezierCurve((4 , 0.6), (5 , 0.6), (7 , 0.8)),
-    BezierCurve((7 , 0.8), (9 , 0.4), (11, 0.4)),
+    BezierCurve((0, 0.1), (2, 1.0), (4, 0.4)),
+    BezierCurve((4, 0.6), (5, 0.6), (7, 0.8)),
+    BezierCurve((7, 0.8), (9, 0.4), (11, 0.4)),
     BezierCurve((11, 0.1),            (13, 0.4)),
     # 2-2
     BezierCurve((13, 0.6), (15, 0.0), (16, 0.8)),
@@ -40,9 +40,9 @@ path_stage_2 = Path(
 
 path_stage_3 = Path(
     # 2-1
-    BezierCurve((0 , 0.1), (2 , 1.0), (4 , 0.4)),
-    BezierCurve((4 , 0.6), (5 , 0.6), (7 , 0.8)),
-    BezierCurve((7 , 0.8), (9 , 0.4), (11, 0.4)),
+    BezierCurve((0, 0.1), (2, 1.0), (4, 0.4)),
+    BezierCurve((4, 0.6), (5, 0.6), (7, 0.8)),
+    BezierCurve((7, 0.8), (9, 0.4), (11, 0.4)),
     BezierCurve((11, 0.1),            (13, 0.4)),
     # 2-2
     BezierCurve((13, 0.6), (15, 0.0), (16, 0.8)),
@@ -58,9 +58,9 @@ path_stage_3 = Path(
 
 path_stage_4 = Path(
     # 2-1
-    BezierCurve((0 , 0.1), (2 , 1.0), (4 , 0.4)),
-    BezierCurve((4 , 0.6), (5 , 0.6), (7 , 0.8)),
-    BezierCurve((7 , 0.8), (9 , 0.4), (11, 0.4)),
+    BezierCurve((0, 0.1), (2, 1.0), (4, 0.4)),
+    BezierCurve((4, 0.6), (5, 0.6), (7, 0.8)),
+    BezierCurve((7, 0.8), (9, 0.4), (11, 0.4)),
     BezierCurve((11, 0.1),            (13, 0.4)),
     # 2-2
     BezierCurve((13, 0.6), (15, 0.0), (16, 0.8)),
@@ -76,9 +76,9 @@ path_stage_4 = Path(
 
 path_stage_5 = Path(
     # 2-1
-    BezierCurve((0 , 0.1), (2 , 1.0), (4 , 0.4)),
-    BezierCurve((4 , 0.6), (5 , 0.6), (7 , 0.8)),
-    BezierCurve((7 , 0.8), (9 , 0.4), (11, 0.4)),
+    BezierCurve((0, 0.1), (2, 1.0), (4, 0.4)),
+    BezierCurve((4, 0.6), (5, 0.6), (7, 0.8)),
+    BezierCurve((7, 0.8), (9, 0.4), (11, 0.4)),
     BezierCurve((11, 0.1),            (13, 0.4)),
     # 2-2
     BezierCurve((13, 0.6), (15, 0.0), (16, 0.8)),

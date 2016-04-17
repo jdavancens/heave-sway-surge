@@ -29,5 +29,5 @@ tremolo_patterns = (
     [False],
     [True, False, False, False, False],
     [True, False, False],
-    [False,],
+    [False],
 )

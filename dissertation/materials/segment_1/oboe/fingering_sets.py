@@ -4,6 +4,7 @@ from abjad import *
 from dissertation.materials.woodwindfingerings.oboe.all_fingerings \
     import all_fingerings
 
+
 def pitch_filter(pitches):
     pitches = [pitchtools.NamedPitch(pitch) for pitch in pitches]
     filtered_fingerings = []
