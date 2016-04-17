@@ -3,7 +3,9 @@
 from abjad import *
 from dissertation import *
 from dissertation.segments.segment_1.make_segment import make_segment
-import datetime, os, sys
+import datetime
+import os
+import sys
 
 if __name__ == '__main__':
     with systemtools.Timer() as big_timer:

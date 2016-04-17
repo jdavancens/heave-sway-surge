@@ -7,6 +7,7 @@ Created on Feb 15, 2016
 
 from abjad import *
 
+
 class FretPlacement(object):
 
     ### CLASS ATTRIBUTES ###
@@ -20,13 +21,13 @@ class FretPlacement(object):
 
     ### INITIALIZER ###
 
-    def __init__ (
+    def __init__(
         self,
         instrument=instrumenttools.Guitar(),
         string=None,
         fret=None,
         harmonic=False
-        ):
+    ):
         assert isinstance(instrument, instrumenttools.Instrument)
         self._instrument = instrument
         assert isinstance(string, int)

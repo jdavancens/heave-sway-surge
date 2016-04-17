@@ -10,80 +10,53 @@ from abjad import *
 from dissertation import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
 from dissertation.materials.segment_1.saxophone import *
-saxophone = instrumenttools.AltoSaxophone()
 import json
 import os
 
-#===============================================================================
+# ==============================================================================
 #  HIGH LEVEL PARAMETERS
-#===============================================================================
+# ==============================================================================
 
-stages = (0,1,2,3,4)
+saxophone = instrumenttools.AltoSaxophone()
+stages = (0, 1, 2, 3, 4)
 
-#===============================================================================
-#  RATIO-MAKERS
-#===============================================================================
-
-tuplet_ratios_embouchure = []
-for ratio_maker in ratio_makers_embouchure:
-    ratios = ratio_maker()
-    tuplet_ratios_embouchure.extend(ratios)
-tuplet_ratios_lh = []
-for ratio_maker in ratio_makers_lh:
-    ratios = ratio_maker()
-    tuplet_ratios_lh.extend(ratios)
-tuplet_ratios_rh = []
-for ratio_maker in ratio_makers_rh:
-    ratios = ratio_maker()
-    tuplet_ratios_rh.extend(ratios)
-
-#===============================================================================
+# ==============================================================================
 # MUSIC-MAKERS
-#===============================================================================
+# ==============================================================================
 
 embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Embouchure',
     time_signatures=time_signatures,
-    rhythm_maker=tuplet_maker(
-        tuplet_ratios=tuplet_ratios_embouchure,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tuplet_spelling_specifier=tuplet_spelling_specifier,
-    )
+    rhythm_makers=rhythm_makers_embouchure
 )
+
 lh_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Left Hand Fingering',
     time_signatures=time_signatures,
-    rhythm_maker=tuplet_maker(
-        tuplet_ratios=tuplet_ratios_lh,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tuplet_spelling_specifier=tuplet_spelling_specifier,
-    )
+    rhythm_makers=rhythm_makers_lh
 )
+
 rh_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Right Hand Fingering',
     time_signatures=time_signatures,
-    rhythm_maker=tuplet_maker(
-        tuplet_ratios=tuplet_ratios_rh,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tuplet_spelling_specifier=tuplet_spelling_specifier,
-    )
+    rhythm_makers=rhythm_makers_rh
 )
 
-#===============================================================================
+# ==============================================================================
 # FINGERINGS
-#===============================================================================
+# ==============================================================================
 
 fingerings_json_path_rel = '../materials/segment_1/saxophone/fingerings.json'
 fingerings_json_path = os.path.abspath(fingerings_json_path_rel)
 try:
-    with open(fingerings_json_path, 'r')  as f:
-         fingerings_json = json.load(f)
+    with open(fingerings_json_path, 'r') as f:
+        fingerings_json = json.load(f)
     fingering_data = json.loads(fingerings_json)
     # convert back to woodwindfingerings
 
@@ -104,9 +77,9 @@ try:
 except IOError:
     lh_fingerings, rh_fingerings = None, None
 
-#===============================================================================
+# ==============================================================================
 # MUSIC-HANDLERS
-#===============================================================================
+# ==============================================================================
 
 embouchure_music_handler = ReedEmbouchureHandler(
     music_maker=embouchure_music_maker,
@@ -120,10 +93,11 @@ fingering_music_handler = WoodwindFingeringHandler(
     rh_fingerings=rh_fingerings
 )
 
-music_handlers= [
+music_handlers = [
     embouchure_music_handler,
     fingering_music_handler,
 ]
+
 
 def get_music_handlers():
     return music_handlers

@@ -15,7 +15,7 @@ if __name__ == '__main__':
     materials_path = 'dissertation.materials'
     segment_string = 'segment_' + str(segment_number)
 
-    segment_path = '.'.join([materials_path, segment_string,])
+    segment_path = '.'.join([materials_path, segment_string])
     instrument_path = '.'.join([segment_path, instrument_string])
 
     segment_module = importlib.import_module(segment_path)

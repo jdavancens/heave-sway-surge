@@ -10,20 +10,20 @@ from dissertation import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
 from dissertation.materials.segment_1.guitar_2 import *
 
-#===============================================================================
+# ==============================================================================
 #  GLOBAL VARIABLES
-#===============================================================================
+# ==============================================================================
 
 guitar = instrumenttools.Guitar(
     instrument_name='Guitar II',
-    short_instrument_name = 'Gtr. II'
+    short_instrument_name='Gtr. II'
 )
 
-stages = (0,1,2,3,4)
+stages = (0, 1, 2, 3, 4)
 
-#===============================================================================
+# ==============================================================================
 # MUSIC-MAKERS
-#===============================================================================
+# ==============================================================================
 
 picking_music_maker = MusicMaker(
     stages=stages,
@@ -41,9 +41,9 @@ fretting_music_maker = MusicMaker(
     rhythm_maker=note_maker_fretting
 )
 
-#===============================================================================
+# ==============================================================================
 # MUSIC-HANDLERS
-#===============================================================================
+# ==============================================================================
 
 picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
@@ -64,6 +64,7 @@ music_handlers = [
     fretting_music_handler,
     picking_music_handler
 ]
+
 
 def get_music_handlers():
     return music_handlers

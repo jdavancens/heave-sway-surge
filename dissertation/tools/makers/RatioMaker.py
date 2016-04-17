@@ -4,14 +4,18 @@ maker.
 
 '''
 from abjad import *
+from dissertation.tools.rhythmtools.TrivialProlater import TrivialProlater
+
 
 class RatioMaker:
+
     __slots__ = ('_ratios')
+
     def __init__(
         self,
         time_signatures,
         rest_indices,
-        prolater=None,
+        prolater=TrivialProlater(),
         subdivider=None
     ):
         if rest_indices == 'all':

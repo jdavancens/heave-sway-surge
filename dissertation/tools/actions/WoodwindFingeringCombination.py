@@ -8,6 +8,7 @@ Created on Dec 1, 2015
 from abjad import *
 from dissertation.tools.actions.WoodwindFingering import WoodwindFingering
 
+
 class WoodwindFingeringCombination(object):
 
     ### CLASS ATTRIBUTES ###
@@ -27,14 +28,14 @@ class WoodwindFingeringCombination(object):
         left=None,
         right=None,
         predicted_pitches=None,
-        ):
+    ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         assert(isinstance(left, WoodwindFingering))
         assert(isinstance(right, WoodwindFingering))
         assert(
-            predicted_pitches == None or \
-            isinstance(predicted_pitches, list) or \
-            isinstance(predicted_pitches, tuple) or \
+            predicted_pitches == None or
+            isinstance(predicted_pitches, list) or
+            isinstance(predicted_pitches, tuple) or
             isinstance(predicted_pitches, pitchtools.PitchSet)
             )
         assert(left.hand == 'left')
@@ -49,9 +50,9 @@ class WoodwindFingeringCombination(object):
     ### SPECIAL METHODS ###
 
     def __eq__(self, other):
-        if self.instrument == other.instrument and \
-            self.left == other.left and \
-            self.right == other.right:
+        if (self.instrument == other.instrument and
+            self.left == other.left and
+            self.right == other.right):
             return True
         else:
             return False
@@ -140,7 +141,7 @@ class WoodwindFingeringCombination(object):
                 for x in val:
                     if x is not None:
                         r.append(x)
-        return {'center_column':c, 'right_hand':r, 'left_hand':l}
+        return {'center_column': c, 'right_hand': r, 'left_hand': l}
 
     ### PUBLIC PROPERTIES ###
 
@@ -162,7 +163,13 @@ class WoodwindFingeringCombination(object):
 
     ### PUBLIC METHODS ###
 
-    def markup(self, duration=Duration(1,1), sounding=True, size=0.75, graphical=False):
+    def markup(
+        self,
+        duration=Duration(1, 1),
+        sounding=True,
+        size=0.75,
+        graphical=False
+    ):
         r''' Creates a chord object with predicted pitches, attaches a Lilypond
             woodwind fingering diagram and returns it.
         '''
@@ -188,15 +195,14 @@ class WoodwindFingeringCombination(object):
             'override', schemetools.SchemePair('size', size))
         thickness = markuptools.MarkupCommand(
             'override', schemetools.SchemePair('thickness', 0.4))
-        markup = markuptools.Markup(contents=
-            [not_graphical, size, thickness, fingering_command], direction=Down)
+        markup = markuptools.Markup(
+            contents=[not_graphical, size, thickness, fingering_command],
+            direction=Down)
         chord = Chord(self._predicted_pitches, duration)
         attach(markup, chord)
         return chord
 
     ### STATIC METHODS ###
-
-
 
     def open(instrument):
         wfg = WoodwindFingeringCombination(

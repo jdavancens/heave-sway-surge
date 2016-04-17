@@ -7,11 +7,12 @@ Created on Nov 20, 2015
 
 from abjad import *
 
+
 class StringBowing(object):
     '''A bow parameter change
     '''
 
-    ## CLASS ATTRIBUTES ###
+    ### CLASS ATTRIBUTES ###
 
     __slots__ = (
         '_instrument',
@@ -38,7 +39,7 @@ class StringBowing(object):
         height_stop=None,
         string_ids=None,
         staccato=False,
-        ):
+    ):
         assert isinstance(instrument, instrumenttools.Instrument)
         self.pressure_start = pressure_start
         self.pressure_stop = pressure_stop

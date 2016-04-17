@@ -12,22 +12,23 @@ from dissertation.tools.shortcuts import shortcuts
 from dissertation.tools import graphicstools
 import copy
 
+
 class WoodwindFingeringHandler(object):
     '''A fingering handler for woodwind instruments.
         Maps key index to staff position
         Key indication as note head (open, closed), articulation (side keys)
     '''
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES
 
-    __slots__=(
+    __slots__ = (
         '_lh_music_maker',
         '_rh_music_maker',
         '_lh_fingerings',
         '_rh_fingerings',
     )
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(
         self,
@@ -35,13 +36,13 @@ class WoodwindFingeringHandler(object):
         rh_music_maker=None,
         lh_fingerings=None,
         rh_fingerings=None,
-        ):
+    ):
         self._lh_music_maker = lh_music_maker
         self._rh_music_maker = rh_music_maker
         self._lh_fingerings = lh_fingerings
         self._rh_fingerings = rh_fingerings
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __call__(self, current_stage):
         # run the rhythm makers, instantiate voices
@@ -63,21 +64,19 @@ class WoodwindFingeringHandler(object):
         rh_lifeline_voice = self._make_lifeline_voice(rh_voice)
         # name voices
         self._name_voices(lh_voice, lh_rhythm_voice, lh_lifeline_voice,
-            rh_voice, rh_rhythm_voice, rh_lifeline_voice
-        )
+                          rh_voice, rh_rhythm_voice, rh_lifeline_voice)
         return [lh_voice, lh_rhythm_voice, lh_lifeline_voice,
-            rh_voice, rh_rhythm_voice, rh_lifeline_voice]
+                rh_voice, rh_rhythm_voice, rh_lifeline_voice]
 
+    # PRIVATE METHODS
 
-    ### PRIVATE METHODS ###
-
-    def _annotate_logical_tie(self, logical_tie, fingering):
-        annotation = indicatortools.Annotation('fingering',fingering)
-        attach(annotation, logical_tie.head)
+    def _annotate_logical_tie(self, lt, fingering):
+        annotation = indicatortools.Annotation('fingering', fingering)
+        attach(annotation, lt.head)
 
     def _annotate_from_previous_logical_tie(self, current, previous):
-        if isinstance(current.head, (Note,Chord)) and \
-            isinstance(previous.head,(Note,Chord)):
+        if (isinstance(current.head, (Note, Chord)) and
+            isinstance(previous.head, (Note, Chord))):
             previous_fingering = \
                 inspect_(previous.head).get_annotation('fingering')
             previous_fingering = indicatortools.Annotation(
@@ -89,13 +88,16 @@ class WoodwindFingeringHandler(object):
     def _annotate_logical_ties(self, lh_voice, rh_voice, current_stage):
         # annotate left hand voice
         lh_logical_ties = list(iterate(lh_voice).by_logical_tie())
-        for i, logical_tie in enumerate(lh_logical_ties):
-            if isinstance(logical_tie.head, (Note, Chord)):
+        for i, lt in enumerate(lh_logical_ties):
+            if isinstance(lt.head, (Note, Chord)):
                 fingering = self._lh_fingerings[current_stage]
-                self._annotate_logical_tie(logical_tie, self._lh_fingerings[current_stage][i])
+                self._annotate_logical_tie(
+                    lt,
+                    self._lh_fingerings[current_stage][i]
+                )
             else:
                 fingering = self._make_open_fingering('left')
-                self._annotate_logical_tie(logical_tie, fingering)
+                self._annotate_logical_tie(lt, fingering)
         for i in range(1, len(lh_logical_ties)):
             if isinstance(lh_logical_ties[i].head, (Note, Chord)):
                 self._annotate_from_previous_logical_tie(
@@ -103,23 +105,26 @@ class WoodwindFingeringHandler(object):
 
         # annotate right hand voice
         rh_logical_ties = list(iterate(rh_voice).by_logical_tie())
-        for i, logical_tie in enumerate(rh_logical_ties):
-            if isinstance(logical_tie.head, (Note, Chord)):
-                self._annotate_logical_tie(logical_tie, self._rh_fingerings[current_stage][i])
+        for i, lt in enumerate(rh_logical_ties):
+            if isinstance(lt.head, (Note, Chord)):
+                self._annotate_logical_tie(
+                    lt,
+                    self._rh_fingerings[current_stage][i]
+                )
             else:
                 fingering = self._make_open_fingering('right')
-                self._annotate_logical_tie(logical_tie, fingering)
+                self._annotate_logical_tie(lt, fingering)
         for i in range(1, len(rh_logical_ties)):
             if isinstance(rh_logical_ties[i].head, (Note, Chord)):
                 self._annotate_from_previous_logical_tie(
                     rh_logical_ties[i], rh_logical_ties[i-1])
 
     def _handle_fingerings(self, voice, current_stage):
-        for logical_tie in iterate(voice).by_logical_tie():
+        for lt in iterate(voice).by_logical_tie():
             # get fingerings
-            fingering = inspect_(logical_tie.head).get_annotation('fingering')
+            fingering = inspect_(lt.head).get_annotation('fingering')
             previous_fingering = \
-                inspect_(logical_tie.head).get_annotation('previous_fingering')
+                inspect_(lt.head).get_annotation('previous_fingering')
             if previous_fingering is None:
                 previous_fingering = self._make_open_fingering(fingering.hand)
             # make list of staff positions, list of finger names
@@ -132,14 +137,14 @@ class WoodwindFingeringHandler(object):
                 finger_names = ['index', 'middle', 'ring', 'pinky']
                 finger_names.reverse()
             # make fingering tablature
-            for note in logical_tie:
+            for note in lt:
                 # construct tab chord
                 chord = Chord(staff_positions, note.written_duration)
                 # reattach annotations
                 attach(indicatortools.Annotation(
-                    'fingering',fingering), chord)
+                    'fingering', fingering), chord)
                 attach(indicatortools.Annotation(
-                    'previous_fingering',previous_fingering), chord)
+                    'previous_fingering', previous_fingering), chord)
                 mutate(note).replace(chord)
                 # handle note heads
                 for i, note_head in enumerate(chord.note_heads):
@@ -150,31 +155,37 @@ class WoodwindFingeringHandler(object):
                     else:
                         previous = None
 
-                    if current: # down
-                        if previous == current: # continuation
+                    if current:  # down
+                        if previous == current:  # continuation
                             point = schemetools.Scheme('point-stencil')
                             note_head.tweak.stencil = point
-                        else: # not a continuation
+                        else:  # not a continuation
                             markup = self._make_note_head_markup(current)
                             if markup is not None:
-                                note_head.tweak.stencil = 'ly:text-interface::print'
+                                note_head.tweak.stencil = \
+                                    'ly:text-interface::print'
                                 note_head.tweak.text = markup
-                    else: # up
-                        if previous_fingering.is_open and fingering.is_open: # continued open fingering
+                    else:  # up
+                        if previous_fingering.is_open and fingering.is_open:
+                            # continued open fingering
                             point = schemetools.Scheme('point-stencil')
                             note_head.tweak.stencil = point
-                        else: # new open fingering
+                        else:  # new open fingering
                             markup = self._make_note_head_markup(current)
                             if markup is not None:
-                                note_head.tweak.stencil = 'ly:text-interface::print'
+                                note_head.tweak.stencil = \
+                                    'ly:text-interface::print'
                                 note_head.tweak.text = markup
 
-    def _insert_gliss_anchor(self, logical_tie):
-        grace_chord = Chord(logical_tie[-1].written_pitches, Duration(1,16))
+    def _insert_gliss_anchor(self, lt):
+        grace_chord = Chord(lt[-1].written_pitches, Duration(1, 16))
         for note_head in grace_chord.note_heads:
             note_head.tweak.stencil = schemetools.Scheme('point-stencil')
-        grace_container = scoretools.GraceContainer([grace_chord], kind='after')
-        attach(grace_container, logical_tie[-1])
+        grace_container = scoretools.GraceContainer(
+            [grace_chord],
+            kind='after'
+        )
+        attach(grace_container, lt[-1])
 
     def _make_circle(self, size, closed):
         if closed:
@@ -191,7 +202,7 @@ class WoodwindFingeringHandler(object):
             if finger == 1:
                 mapping = schemetools.SchemePair(i, i)
                 glissando_map_list.append(mapping)
-        if binary_list == [0,0,0,0] or binary_list == [0,0,0,0,0]:
+        if binary_list == [0, 0, 0, 0] or binary_list == [0, 0, 0, 0, 0]:
             return None
         else:
             glissando_map_vector = schemetools.SchemeVector(glissando_map_list)
@@ -203,9 +214,11 @@ class WoodwindFingeringHandler(object):
             return glissando_map
 
     def _make_key_name_markup(self, key_name):
-        pitch = ['a','b','c','d','e','f','g','cis','fis','gis','ees','bes']
+        pitch = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'cis', 'fis', 'gis', 'ees',
+                 'bes']
         alt_pitch = ['low-bes', 'high-fis', 'low-c', 'front-f']
-        other = ['R', 'one', 'two', 'three', 'four', 'I', 'II', "III", 'banana']
+        other = ['R', 'one', 'two', 'three', 'four', 'I', 'II', "III",
+                 'banana']
         if key_name in ('thumb', 'T', 'thumb', 'half', 'down'):
             return None
         if key_name.lower() in pitch:
@@ -217,22 +230,24 @@ class WoodwindFingeringHandler(object):
                     acc = Markup.flat().raise_(0.5)
                 else:
                     acc = Markup.sharp().raise_(0.5)
-                markup = Markup.concat([p,acc])
+                markup = Markup.concat([p, acc])
             else:
                 markup = Markup(key_name.upper())
 
         elif key_name.lower() in alt_pitch:
             alt, pitch = key_name.split('-')
             alt = Markup(alt)
+            p = pitch[0]
+            p = Markup(p.upper())
             if len(pitch) > 1:
-                p = pitch[0]
-                p = Markup(p.upper())
                 acc = pitch[1:]
                 if acc == 'es':
                     acc = Markup.flat().raise_(0.5)
                 else:
                     acc = Markup.sharp().raise_(0.5)
-            pitch = Markup.concat([p,acc])
+                pitch = Markup.concat([p, acc])
+            else:
+                pitch = p
             markup = Markup.concat([alt, pitch])
 
         elif key_name.lower() in other:
@@ -263,22 +278,25 @@ class WoodwindFingeringHandler(object):
         # copy voice (at this point tab position chords) to lifeline voice
         lifeline_voice = copy.deepcopy(voice)
         # add lifelines (glissandi) to note heads
-        for logical_tie in iterate(lifeline_voice).by_logical_tie(pitched=True):
-            self._insert_gliss_anchor(logical_tie)
-            for chord in logical_tie:
+        for lt in iterate(lifeline_voice).by_logical_tie(pitched=True):
+            self._insert_gliss_anchor(lt)
+            for chord in lt:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = \
                         schemetools.Scheme('point-stencil')
-            fingering = inspect_(logical_tie.head).get_annotation('fingering')
+            fingering = inspect_(lt.head).get_annotation('fingering')
             glissando_map = \
-                self._make_glissando_map(fingering, lifeline_voice.context_name)
-            if glissando_map is not None :
-                attach(glissando_map, logical_tie.head)
-                color = graphicstools.scheme_rgb_color((0,0,0))
-                shortcuts.gliss(logical_tie.head, color=color,thickness=2)
-                if len(logical_tie)>1:
-                   for chord in logical_tie[1:]:
-                       shortcuts.gliss_skip(chord)
+                self._make_glissando_map(
+                    fingering,
+                    lifeline_voice.context_name
+                )
+            if glissando_map is not None:
+                attach(glissando_map, lt.head)
+                color = graphicstools.scheme_rgb_color((0, 0, 0))
+                shortcuts.gliss(lt.head, color=color, thickness=2)
+                if len(lt) > 1:
+                    for chord in lt[1:]:
+                        shortcuts.gliss_skip(chord)
         detach(Markup, lifeline_voice)
         return lifeline_voice
 
@@ -321,7 +339,7 @@ class WoodwindFingeringHandler(object):
             return markups[0]
 
     def _name_voices(self, lh_voice, lh_rhythm_voice, lh_lifeline_voice,
-        rh_voice, rh_rhythm_voice, rh_lifeline_voice):
+                     rh_voice, rh_rhythm_voice, rh_lifeline_voice):
         lh_voice.name = self._lh_music_maker.name
         lh_rhythm_voice.name = self._lh_music_maker.name + ' Rhythm'
         if lh_lifeline_voice is not None:
@@ -335,15 +353,14 @@ class WoodwindFingeringHandler(object):
                 "Fingering Lifeline"
                 )
 
-
     def _to_proportional_notation(self, voice):
         shortcuts.to_proportional_notation(voice)
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES
     @property
     def instrument(self):
         return self._lh_music_maker.instrument
 
     @property
-    def name(self): # TODO: remove hand indication
+    def name(self):  # TODO: remove hand indication
         return self._lh_music_maker.name

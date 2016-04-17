@@ -7,6 +7,7 @@ Created on Nov 20, 2015
 
 from abjad import *
 
+
 class StringFingering(object):
 
     ### CLASS ATTRIBUTES ###
@@ -28,7 +29,7 @@ class StringFingering(object):
         pressure_stop=None,
         height_start=None,
         height_stop=None,
-        ):
+    ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         self._instrument = instrument
         self.pressure_start = pressure_start

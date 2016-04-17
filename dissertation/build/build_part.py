@@ -6,6 +6,7 @@ from dissertation.segments.segment_1.make_part import make_part
 import datetime
 import os
 import sys
+
 if __name__ == '__main__':
     # get inputs parameters
     if len(sys.argv) == 1:

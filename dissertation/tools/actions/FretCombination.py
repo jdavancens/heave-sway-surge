@@ -5,6 +5,8 @@ Created on Feb 15, 2016
 @author: josephdavancens
 '''
 from abjad import *
+
+
 class FretCombination(object):
     __slots__ = (
         '_instrument',
@@ -14,12 +16,12 @@ class FretCombination(object):
 
     ### INITIALIZER ###
 
-    def __init__ (
+    def __init__(
         self,
         instrument=None,
         fret_placements=None,
         number_of_strings=6
-        ):
+    ):
         assert isinstance(instrument, instrumenttools.Instrument)
         self._instrument = instrument
         assert len(fret_placements) <= number_of_strings

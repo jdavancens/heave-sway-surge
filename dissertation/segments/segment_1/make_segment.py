@@ -8,7 +8,7 @@ from abjad import *
 from dissertation import *
 from dissertation.segments.segment_1.definitions import oboe
 from dissertation.segments.segment_1.definitions import clarinet
-# from dissertation.segments.segment_1.definitions import saxophone
+from dissertation.segments.segment_1.definitions import saxophone
 # from dissertation.segments.segment_1.definitions import trombone
 # from dissertation.segments.segment_1.definitions import guitar_1
 # from dissertation.segments.segment_1.definitions import guitar_2
@@ -18,6 +18,7 @@ from dissertation.segments.segment_1.definitions import clarinet
 # from dissertation.segments.segment_1.definitions import bass
 from dissertation.materials.segment_1.time_signatures import *
 from dissertation.materials.segment_1.tempo_map import tempo_map
+
 
 def make_segment(number_of_stages=None):
     segment_maker = SegmentMaker(
@@ -31,7 +32,7 @@ def make_segment(number_of_stages=None):
         instrument_list=[
             'oboe',
             'clarinet in b-flat',
-            # 'alto saxophone',
+            'alto saxophone',
             # 'trombone',
             # 'guitar i',
             # 'guitar ii',
@@ -44,7 +45,7 @@ def make_segment(number_of_stages=None):
         )
     oboe_handlers = oboe.get_music_handlers()
     clarinet_handlers = clarinet.get_music_handlers()
-    # saxophone_handlers = saxophone.get_music_handlers()
+    saxophone_handlers = saxophone.get_music_handlers()
     # trombone_handlers = trombone.get_music_handlers()
     # guitar_1_handlers = guitar_1.get_music_handlers()
     # guitar_2_handlers = guitar_2.get_music_handlers()
@@ -55,7 +56,7 @@ def make_segment(number_of_stages=None):
     music_handlers = [
         oboe_handlers,
         clarinet_handlers,
-        # saxophone_handlers,
+        saxophone_handlers,
         # trombone_handlers,
         # guitar_1_handlers,
         # guitar_2_handlers,
