@@ -42,6 +42,7 @@ nosetests.xml
 # Etc.
 .DS_Store
 .cache
+clean_pycs.sh
 
 # Abjad IDE
 *backup
