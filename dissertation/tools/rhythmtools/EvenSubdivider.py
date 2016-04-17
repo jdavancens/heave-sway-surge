@@ -3,6 +3,7 @@ from abjad import datastructuretools
 from abjad.tools.mathtools.Ratio import Ratio
 from dissertation.tools.rhythmtools.Subdivider import Subdivider
 
+
 class EvenSubdivider(Subdivider):
     '''Even subdivider.
 
@@ -11,17 +12,23 @@ class EvenSubdivider(Subdivider):
             >>> e(5)
             Ratio((2, 2, 1))
             >>> e(5)
-            Ratio(3,2)
-
-
+            Ratio((2, 3))
+            >>> e = EvenSubdivider([3], rotation_cycle=[0,1,2])
+            >>> e(5)
+            Ratio((2, 2, 1))
+            >>> e(5)
+            Ratio((2, 1, 2))
+            >>> e(5)
+            Ratio((1, 2, 2))
     '''
     __slots__ = ('_n_cycle',)
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(
         self,
         n_cycle,
+        rotation_cycle=0,
         second_level_subdivider=None,
         sustain_mask=None,
         silence_mask=None,
@@ -32,11 +39,12 @@ class EvenSubdivider(Subdivider):
         self._n_cycle = datastructuretools.Cursor(n_cyclic_tuple)
         Subdivider.__init__(
             self,
+            rotation_cycle=rotation_cycle,
             second_level_subdivider=second_level_subdivider,
             sustain_mask=sustain_mask,
             silence_mask=silence_mask,
         )
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __call__(self, duration):
         n = self._n_cycle.next()[0]
@@ -44,10 +52,11 @@ class EvenSubdivider(Subdivider):
         ratio = self._binary_to_ratio(pattern)
         ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._apply_sustain_mask(self, ratio)
-        ratio = Subdivider._apply_silence_mask(self,ratio)
+        ratio = Subdivider._apply_silence_mask(self, ratio)
+        ratio = Subdivider._rotate(self, ratio)
         return Ratio(ratio)
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS
 
     def _bjorklund(self, steps, pulses):
         '''from https://github.com/brianhouse/bjorklund
@@ -80,15 +89,14 @@ class EvenSubdivider(Subdivider):
                 if remainders[level] != 0:
                     build(level - 2)
 
-
         build(level)
         i = pattern.index(1)
         pattern = pattern[i:] + pattern[0:i]
         return pattern
 
-    def _binary_to_ratio(self,pattern):
+    def _binary_to_ratio(self, pattern):
         indices = []
-        for i,x in enumerate(pattern):
+        for i, x in enumerate(pattern):
             if x == 1:
                 indices.append(i)
         ratio = []

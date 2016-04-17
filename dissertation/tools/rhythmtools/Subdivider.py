@@ -2,27 +2,31 @@
 '''Abstract base class for subdivision makers
 '''
 
+from abjad import *
+
+
 class Subdivider:
     __slots__ = (
+        '_rotation_cycle',
         '_silence_mask',
         '_sustain_mask',
         '_second_level_subdivider'
     )
 
-    ### INITIALIZER ###
-
-    def __init__ (
+    def __init__(
         self,
+        rotation_cycle=0,
         sustain_mask=None,
         silence_mask=None,
         second_level_subdivider=None,
     ):
+        if isinstance(rotation_cycle, int):
+            rotation_cycle = [rotation_cycle]
+        rot_tuple = datastructuretools.CyclicTuple(rotation_cycle)
+        self._rotation_cycle = datastructuretools.Cursor(rot_tuple)
         self._sustain_mask = sustain_mask
         self._silence_mask = silence_mask
         self._second_level_subdivider = second_level_subdivider
-
-
-    ### PRIVATE METHODS ###
 
     def _apply_second_level_subdivider(self, R):
         if self._second_level_subdivider is None:
@@ -35,10 +39,10 @@ class Subdivider:
         F = [Fraction(r, l) for r in R]
         R_2 = []
         new_R = []
-        for r,f in zip(R,F):
+        for r, f in zip(R, F):
             R_2 = self._second_level_subdivider(r)
             l = sum(R_2)
-            R_2 = [Fraction(r,l) * f for r in R_2]
+            R_2 = [Fraction(r, l) * f for r in R_2]
             gcd = 1
             for r in R_2:
                 if r.denominator > gcd:
@@ -51,22 +55,20 @@ class Subdivider:
         if self._silence_mask is None:
             return R
 
-        from abjad.tools.sequencetools.sum_consecutive_elements_by_sign import \
-            sum_consecutive_elements_by_sign
+        from abjad.tools.sequencetools.sum_consecutive_elements_by_sign \
+            import sum_consecutive_elements_by_sign
 
         indices = self._silence_mask.pattern.indices
         period = self._silence_mask.pattern.period
         R2 = []
-        for i,r in enumerate(R):
+        for i, r in enumerate(R):
             if self._silence_mask.pattern.matches_index(i, len(R)):
                 R2.append(r * -1)
             else:
                 R2.append(r)
         return self._fuse_rests(R2)
 
-
     def _apply_sustain_mask(self, R):
-        # TODO: test
         '''Sustain mask indices specify which non-rest values are to be joined with a
         previous non-rest value.
         '''
@@ -82,33 +84,40 @@ class Subdivider:
         previous_is_rest = True
         for i in range(l):
             current_duration = R[i]
-            current_is_tied = self._sustain_mask.pattern.matches_index(i,l)
+            current_is_tied = self._sustain_mask.pattern.matches_index(i, l)
             current_is_rest = current_duration < 0
             if previous_is_rest:
                 if current_is_rest:
                     R2.append(current_duration)
                     previous_is_rest = True
-                else: # current note/tied
+                else:  # current note/tied
                     current_run = current_duration
                     previous_is_rest = False
-            else: #previous is note/tied
+            else:  # previous is note/tied
                 if current_is_rest:
                     R2.append(current_run)
                     current_run = 0
                     previous_is_rest = True
-                else: #current is note/tied
+                else:  # current is note/tied
                     if current_is_tied:
                         current_run += current_duration
                         previous_is_rest = False
-                    else: #current is note
+                    else:  # current is note
                         R2.append(current_run)
                         current_run = current_duration
                         previous_is_rest = False
-        if current_run > 0: R2.append(current_run)
+        if current_run > 0:
+            R2.append(current_run)
         return self._fuse_rests(R2)
 
     def _fuse_rests(self, R):
-        from abjad.tools.sequencetools.sum_consecutive_elements_by_sign import \
-            sum_consecutive_elements_by_sign
+        from abjad.tools.sequencetools.sum_consecutive_elements_by_sign \
+            import sum_consecutive_elements_by_sign
         R = sum_consecutive_elements_by_sign(R, sign=[-1])
         return R
+
+    def _rotate(self, R):
+        n = self._rotation_cycle.next()[0] % len(R)
+        A = R[0:n]
+        B = R[n:]
+        return B+A

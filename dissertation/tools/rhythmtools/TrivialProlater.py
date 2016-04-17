@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+
+
 class TrivialProlater:
+
     __slots__ = ('_unit')
+
     def __init__(self, unit=None):
         self._unit = unit
 
