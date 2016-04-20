@@ -6,6 +6,7 @@ Created on Nov 13, 2015
 '''
 from abjad import *
 
+
 def add_gliss(music):
     container = Container(music[:])
     command = indicatortools.LilyPondCommand('addGliss', format_slot='before')
@@ -13,14 +14,16 @@ def add_gliss(music):
     # music = Voice([container])
     music = container
 
+
 def hidden_grace_after(leaf, pitch):
-    grace_note = Note(pitch, Duration(1,16))
+    grace_note = Note(pitch, Duration(1, 16))
     point_note_head(grace_note)
     override(grace_note).stem.stencil = False
     override(grace_note).beam.stencil = False
     override(grace_note).flag.stencil = False
     grace_container = scoretools.GraceContainer([grace_note], kind='after')
     attach(grace_container, leaf)
+
 
 def gliss(leaf, color, thickness=0.5):
     if color is not None:
@@ -44,16 +47,22 @@ def gliss(leaf, color, thickness=0.5):
             )
         attach(color_override, leaf)
         attach(thickness_override, leaf)
-    glissando = indicatortools.LilyPondCommand('glissando', format_slot='right')
+    glissando = indicatortools.LilyPondCommand(
+        'glissando',
+        format_slot='right'
+    )
     attach(glissando, leaf)
 
+
 def grace_after(leaf):
-    grace_note = Note(11, Duration(1,16))
+    grace_note = Note(11, Duration(1, 16))
     grace_container = scoretools.GraceContainer([grace_note], kind='after')
     attach(grace_container, leaf)
 
+
 def gliss_skip(leaf):
     override(leaf).note_column.glissando_skip = True
+
 
 def hide(leaf):
     if isinstance(leaf, Rest):
@@ -72,16 +81,19 @@ def hide(leaf):
     )
     attach(hide_dots, leaf)
 
+
 def map_fraction_to_y_offset(x, number_of_staff_lines):
     y_offset = (x - 0.5) * (number_of_staff_lines - 2)
     return y_offset
 
+
 def point_note_head(leaf):
     if isinstance(leaf, Note):
-        override(leaf).note_head.stencil =  schemetools.Scheme('point-stencil')
+        override(leaf).note_head.stencil = schemetools.Scheme('point-stencil')
     elif isinstance(leaf, Chord):
         for note_head in leaf.note_heads:
             note_head.tweak.stencil = schemetools.Scheme('point-stencil')
+
 
 def text_spanner_start(selection, current_text_tuple, next_text, direction):
     text_padding = 1
@@ -89,8 +101,12 @@ def text_spanner_start(selection, current_text_tuple, next_text, direction):
     first_leaf = selection[0]
     last_leaf = selection[-1]
 
-    start_command = indicatortools.LilyPondCommand("startTextSpan", format_slot='right')
-    stop_command = indicatortools.LilyPondCommand("stopTextSpan", format_slot='right')
+    start_command = indicatortools.LilyPondCommand(
+        "startTextSpan", format_slot='right'
+    )
+    stop_command = indicatortools.LilyPondCommand(
+        "stopTextSpan", format_slot='right'
+    )
     column = []
     for text in current_text_tuple:
         markup = Markup(text)
@@ -190,6 +206,7 @@ def text_spanner_start(selection, current_text_tuple, next_text, direction):
     attach(start_command, first_leaf)
     attach(stop_command, last_leaf)
 
+
 def text_to_note_head(
     note,
     text_or_tuple,
@@ -198,7 +215,7 @@ def text_to_note_head(
     enclosure=None,
     bold=False,
     uppercase=False,
-    ):
+):
     # make a list even if one string
     if isinstance(text_or_tuple, str):
         text_list = [text_or_tuple]
@@ -206,7 +223,7 @@ def text_to_note_head(
         text_list = text_or_tuple
     # handle vertical and horizontal orientations
     if orientation == 'y':
-        if len(text_list)<2:
+        if len(text_list) < 2:
             markup_string = text_list[0]
         else:
             markup_string = ','.join(text_list)
@@ -236,13 +253,14 @@ def text_to_note_head(
     override(note).note_head.stencil = 'ly:text-interface::print'
     override(note).note_head.text = markup
 
+
 def to_proportional_notation(music):
     for logical_tie in iterate(music).by_logical_tie():
         if isinstance(logical_tie.head, (Note, Chord)):
             multiplier = Multiplier(logical_tie.written_duration) * 4
-            note = Note(11, (1,4))
+            note = Note(11, (1, 4))
             attach(multiplier, note)
             # copy annotations
-            for indicator_expression in logical_tie.head._indicator_expressions:
-                attach(indicator_expression.indicator, note)
+            for expr in logical_tie.head._indicator_expressions:
+                attach(expr.indicator, note)
             mutate(logical_tie).replace(note)

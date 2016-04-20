@@ -22,35 +22,35 @@ ratio_makers_embouchure_stage_2 = (
     # 2-1
     RatioMaker(
         time_signatures=time_signatures[1][0],
-        rest_indices=(0, 1, 5, 8, 12),
+        rest_indices=(0, 4, 7, 11),
         subdivider=EvenSubdivider([1])
     ),
     # 2-2
     RatioMaker(
         time_signatures=time_signatures[1][1],
-        rest_indices=(1, 4, 6),
+        rest_indices=(0, 3, 5),
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[1, 0, -1],
+            difference_cycle=[-1, 0, 1],
             unit=8
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            silence_mask=rhythmmakertools.SilenceMask(pattern_5b)
+            silence_mask=rhythmmakertools.SustainMask(pattern_7a)
         )
     ),
     # 2-3
     RatioMaker(
-        time_signatures=time_signatures[1][1],
-        rest_indices=(1, 4, 6, 10, 14),
+        time_signatures=time_signatures[1][2],
+        rest_indices=(0, 3, 5, 9, 13),
         prolater=MultiDiffProlater(
-            multiplier_cycle=[2],
-            difference_cycle=[-1, 1, 0],
+            multiplier_cycle=[1],
+            difference_cycle=[-1, 0, 1],
             unit=8
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6b)
+            silence_mask=rhythmmakertools.SustainMask(pattern_5b)
         )
     )
 )
@@ -62,32 +62,41 @@ ratio_makers_embouchure_stage_3 = (
         rest_indices=(3, 4, 6, 7, 8),
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[-2, -1, 0, 1, 2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([3, 1, 2, 5])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SilenceMask(pattern_6b)
+        )
     ),
     # 3-2
     RatioMaker(
         time_signatures=time_signatures[2][1],
         rest_indices=(3, 7, 8, 9, 10),
         prolater=MultiDiffProlater(
-            multiplier_cycle=[3],
-            difference_cycle=[-2, -1, 0, 1, 2],
+            multiplier_cycle=[2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([1, 2, 3, 4])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SustainMask(pattern_7b)
+        )
     ),
     # 3-3
     RatioMaker(
         time_signatures=time_signatures[2][2],
         rest_indices=(1, 3, 5, 7, 9, 10, 11),
         prolater=MultiDiffProlater(
-            multiplier_cycle=[2, 3],
-            difference_cycle=[-2, -1, 0, 1, 2],
+            multiplier_cycle=[2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([3, 1, 4, 2])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SilenceMask(pattern_5b)
+        )
     ),
     # 3-4
     RatioMaker(
@@ -102,33 +111,42 @@ ratio_makers_embouchure_stage_4 = (
         time_signatures=time_signatures[3][0],
         rest_indices=[],
         prolater=MultiDiffProlater(
-            multiplier_cycle=[2, 3],
-            difference_cycle=[1, 2, 3],
+            multiplier_cycle=[2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([5, 4, 3])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SustainMask(pattern_5c)
+        )
     ),
     # 4-2
     RatioMaker(
         time_signatures=time_signatures[3][1],
         rest_indices=(0, 1, 2, 3, 4, 5, 6, 11, 12),
         prolater=MultiDiffProlater(
-            multiplier_cycle=[1, 2, 3],
-            difference_cycle=[-1, 0, 1, 2],
+            multiplier_cycle=[2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([3, 4, 2])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SilenceMask(pattern_5c)
+        )
     ),
     # 4-3
     RatioMaker(
         time_signatures=time_signatures[3][2],
         rest_indices=(0, 1, 4, 5),
         prolater=MultiDiffProlater(
-            multiplier_cycle=[2, 3, 1],
-            difference_cycle=[-1, 0, 1, 2],
+            multiplier_cycle=[2],
+            difference_cycle=[-1, 0, 1],
             unit=16
         ),
-        subdivider=EvenSubdivider([4, 3, 4, 2])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SustainMask(pattern_5b)
+        )
     )
 )
 
@@ -139,10 +157,13 @@ ratio_makers_embouchure_stage_5 = (
         rest_indices=(2, 4, 8, 13, 16),
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[-2, -1, 0, 1, 2],
-            unit=16
+            difference_cycle=[-1, 0, 1],
+            unit=8
         ),
-        subdivider=EvenSubdivider([3, 4, 5, 2])
+        subdivider=UnitSubdivider(
+            rotation_cycle=[0, 1, 2],
+            silence_mask=rhythmmakertools.SilenceMask(pattern_7a)
+        )
     ),
     # 5-2
     RatioMaker(

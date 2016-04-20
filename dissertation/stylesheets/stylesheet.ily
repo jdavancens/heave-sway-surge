@@ -1,7 +1,7 @@
 \version "2.19.29"
 \include "stencils.ily"
 #(set-default-paper-size "11x17" 'portrait)
-#(set-global-staff-size 8)
+#(set-global-staff-size 10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
@@ -39,16 +39,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
 \header {
     composer = \markup {
-        %\override #'(font-name . "Times")
-        \fontsize #3 "Joseph Davancens"
+        \override #'(font-name . "Didot")
+        \fontsize #4 "Joseph Davancens"
         \hspace #20
     }
     tagline = \markup { "" }
     title = \markup \column {
         \center-align {
-            %\override #'(font-name . "Times")
-            \fontsize #5 {
-               \line {Out}
+            \override #'(font-name . "Didot Bold")
+            \fontsize #7 {
+               \line {Surge :: Dart :: Drift}
             }
         }
     }
@@ -335,10 +335,30 @@
         \omit TupletBracket
         \omit TupletNumber
 
+        \override Glissando.breakable = ##t
+        \override Glissando.after-line-breaking = ##t
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-50
+        \override Glissando.gap = #0
+        \override Glissando.bound-details =
+            #'(
+                (right
+                    (attch-dir . -1)
+                    (end-on-accidental . #t)
+                    (padding . 0)
+                )
+                (left
+                    (attach-dir . 1)
+                    (padding . 0)
+                    (start-at-dot . #f)
+                )
+            )
+
         \override InstrumentName.padding = #1
-        \override StaffSymbol.line-count = #10
+        \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
+            white white grey white white
             white white white white black
             )
     }
@@ -554,6 +574,7 @@
         \override Beam.beam-thickness = #0.75
         \override Beam.length-fraction = #1.25
         %{\override DynamicLineSpanner.Y-extent = #'(-4 . 4)%}
+        \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 64)
         \override GraceSpacing.spacing-increment = #0
         \override GraceSpacing.shortest-duration-space = #0
         \override Flag.stencil = #flat-flag

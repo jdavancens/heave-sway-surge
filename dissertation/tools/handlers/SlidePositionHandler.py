@@ -10,13 +10,14 @@ from math import floor
 import copy
 from dissertation.tools import graphicstools
 
+
 class SlidePositionHandler(object):
     r''' A slide position handler for trombone
 
         Slide position -> staff position
     '''
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES #
 
     __slots__ = (
         '_music_maker',
@@ -24,32 +25,31 @@ class SlidePositionHandler(object):
         '_number_of_staff_lines'
     )
 
-    ### INTIALIZER ###
+    # INTIALIZER #
 
-    def __init__ (
+    def __init__(
         self,
         music_maker=None,
         slide_position_envelopes=None,
-        number_of_staff_lines=None
-        ):
+        number_of_staff_lines=15
+    ):
         self._music_maker = music_maker
         self._slide_position_envelopes = slide_position_envelopes
         self._number_of_staff_lines = number_of_staff_lines
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS #
 
-    def __call__ (self, current_stage):
+    def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
         self._annotate_logical_ties(voice, current_stage)
         rhythm_voice = copy.deepcopy(voice)
-        self._to_proportional_notation(voice)
         self._attach_grace_notes(voice)
         self._set_y_offsets(voice)
         self._add_glissandi(voice)
         self._name_voices(voice, rhythm_voice)
         return [voice, rhythm_voice]
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS #
 
     def _add_glissandi(self, voice):
         shortcuts.add_gliss(voice)
@@ -59,14 +59,13 @@ class SlidePositionHandler(object):
         logical_tie,
         slide_position_start,
         slide_position_stop
-        ):
+    ):
         slide_position_start = indicatortools.Annotation(
-            'slide_position_start', slide.slide_position_start[0])
+            'slide_position_start', slide_position_start)
         slide_position_stop = indicatortools.Annotation(
-            'slide_position_stop', slide.slide_position_stop[1])
+            'slide_position_stop', slide_position_stop)
         attach(slide_position_start, logical_tie[0])
         attach(slide_position_stop, logical_tie[0])
-
 
     def _annotate_logical_ties(self, voice, current_stage):
         total_duration = float(inspect_(voice).get_timespan().stop_offset)
@@ -94,8 +93,8 @@ class SlidePositionHandler(object):
             attach(previous_slide_position_stop, current[0])
 
     def _attach_grace_notes(self, voice):
-        for note in iterate(voice).by_class(Note):
-            shortcuts.grace_after(note)
+        for lt in iterate(voice).by_logical_tie(pitched=True):
+            shortcuts.grace_after(lt.head)
 
     def _name_voices(self, voice, rhythm_voice):
         instrument = self._music_maker.instrument
@@ -103,20 +102,20 @@ class SlidePositionHandler(object):
         rhythm_voice.name = self._music_maker.name + " Rhythm"
 
     def _set_y_offsets(self, voice):
-        n = 5
-        for note in iterate(voice).by_class(Note):
-            y0 = inspect_(note).get_annotation('air_pressure_start')
-            y1 = inspect_(note).get_annotation('air_pressure_stop')
+        n = self._number_of_staff_lines
+        for tie in iterate(voice).by_logical_tie(pitched=True):
+            y0 = inspect_(tie.head).get_annotation('slide_position_start')
+            y1 = inspect_(tie.head).get_annotation('slide_position_stop')
             y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
             y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-            grace = inspect_(note).get_grace_container()[0]
-            override(note).note_head.Y_offset = y0_offset
+            grace = inspect_(tie.head).get_grace_container()[0]
             override(grace).note_head.Y_offset = y1_offset
+            shortcuts.point_note_head(grace)
+            for note in tie:
+                override(note).note_head.Y_offset = y0_offset
+                shortcuts.point_note_head(note)
 
-    def _to_proportional_notation(self, voice):
-        shortcuts.to_proportional_notation(voice)
-
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES #
 
     @property
     def instrument(self):

@@ -8,7 +8,7 @@ from abjad import patterntools
 
     4a    x . . .
     4b    x x . x
-    4c    X . x x
+    4c    x . x x
 
     5a    x . . . .
     5b    x . . x .

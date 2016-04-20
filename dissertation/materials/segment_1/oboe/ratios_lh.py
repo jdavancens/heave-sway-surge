@@ -31,26 +31,26 @@ ratio_makers_lh_stage_2 = (
         rest_indices=(0, 3, 5),
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
-            rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5a)
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_7a)
         )
     ),
     # 2-3
     RatioMaker(
-        time_signatures=time_signatures[1][1],
+        time_signatures=time_signatures[1][2],
         rest_indices=(0, 3, 5),
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[0, -1, 1],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
-            rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6a)
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_5b)
         )
     )
 )
@@ -60,22 +60,43 @@ ratio_makers_lh_stage_3 = (
     RatioMaker(
         time_signatures=time_signatures[2][0],
         rest_indices=(3, 4, 6, 7, 8),
-        prolater=MultiplyProlater(multiplier_cycle=(1, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[1],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_6b)
+        )
     ),
     # 3-2
     RatioMaker(
         time_signatures=time_signatures[2][1],
         rest_indices=(3, 7, 8, 9, 10),
-        prolater=MultiplyProlater(multiplier_cycle=(1, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[2],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_7b)
+        )
     ),
     # 3-3
     RatioMaker(
         time_signatures=time_signatures[2][2],
         rest_indices=(1, 3, 5, 7, 9, 10, 11),
-        prolater=MultiplyProlater(multiplier_cycle=(1, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[2],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_5b)
+        )
     ),
     # 3-4
     RatioMaker(
@@ -89,22 +110,43 @@ ratio_makers_lh_stage_4 = (
     RatioMaker(
         time_signatures=time_signatures[3][0],
         rest_indices=[],
-        prolater=MultiplyProlater(multiplier_cycle=(2, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[2],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_5c)
+        )
     ),
     # 4-2
     RatioMaker(
         time_signatures=time_signatures[3][1],
         rest_indices=(0, 1, 2, 3, 4, 5, 6, 11, 12),
-        prolater=MultiplyProlater(multiplier_cycle=(1, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[2],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_5c)
+        )
     ),
     # 4-3
     RatioMaker(
         time_signatures=time_signatures[3][2],
         rest_indices=(0, 1, 4, 5),
-        prolater=MultiplyProlater(multiplier_cycle=(1, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[2],
+            difference_cycle=[0, 1, -1],
+            unit=16
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_5b)
+        )
     )
 )
 ratio_makers_lh_stage_5 = (
@@ -112,8 +154,15 @@ ratio_makers_lh_stage_5 = (
     RatioMaker(
         time_signatures=time_signatures[4][0],
         rest_indices=(2, 4, 8, 13, 16),
-        prolater=MultiplyProlater(multiplier_cycle=(2, ), unit=16),
-        subdivider=RandomTreeSubdivider(probability=0.75)
+        prolater=MultiDiffProlater(
+            multiplier_cycle=[1],
+            difference_cycle=[0, 1, -1],
+            unit=8
+        ),
+        subdivider=UnitSubdivider(
+            rotation_cycle=[1, 2, 0],
+            sustain_mask=rhythmmakertools.SustainMask(pattern_7a)
+        )
     ),
     # 5-2
     RatioMaker(

@@ -14,6 +14,7 @@ from math import floor
 import copy
 from dissertation.tools import graphicstools
 
+
 class BrassEmbouchureHandler(object):
     '''An embouchure handler for brass instruments
 
@@ -24,7 +25,7 @@ class BrassEmbouchureHandler(object):
     Returns voices for a particular stage in a segment
     '''
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES #
 
     __slots__ = (
         '_music_maker',
@@ -33,7 +34,7 @@ class BrassEmbouchureHandler(object):
         '_number_of_staff_lines',
     )
 
-    ### INTIALIZER ###
+    # INTIALIZER #
 
     def __init__(
         self,
@@ -41,14 +42,14 @@ class BrassEmbouchureHandler(object):
         air_pressure_envelopes=None,
         lip_pressure_envelopes=None,
         number_of_staff_lines=15,
-        ):
+    ):
 
         self._music_maker = music_maker
         self._air_pressure_envelopes = air_pressure_envelopes
         self._lip_pressure_envelopes = lip_pressure_envelopes
         self._number_of_staff_lines = number_of_staff_lines
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS #
 
     def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
@@ -62,16 +63,18 @@ class BrassEmbouchureHandler(object):
         self._name_voices(voice, rhythm_voice)
         return [voice, rhythm_voice]
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS #
     def _add_glissandi(self, voice):
         shortcuts.add_gliss(voice)
 
     def _add_tonguing_marks(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
-            previous = \
-                inspect_(logical_tie.head).get_annotation('previous_air_pressure_stop')
-            current = \
-                inspect_(logical_tie.head).get_annotation('air_pressure_stop')
+            previous = inspect_(logical_tie.head).get_annotation(
+                'previous_air_pressure_stop'
+            )
+            current = inspect_(logical_tie.head).get_annotation(
+                'air_pressure_stop'
+            )
             if previous is not None and abs(previous - current) < 0.1:
                 accent = indicatortools.Articulation('lheel')
                 attach(accent, logical_tie.head)
@@ -83,7 +86,7 @@ class BrassEmbouchureHandler(object):
         air_pressure_stop,
         lip_pressure_start,
         lip_pressure_stop
-        ):
+    ):
         air_pressure_start = indicatortools.Annotation(
             'air_pressure_start', air_pressure_start)
         air_pressure_stop = indicatortools.Annotation(
@@ -155,7 +158,7 @@ class BrassEmbouchureHandler(object):
     def _to_proportional_notation(self, voice):
         shortcuts.to_proportional_notation(voice)
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES #
 
     @property
     def instrument(self):

@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from abjad import *
-
-talea_picking = rhythmmakertools.Talea(
-    counts=[1, 5, 7, 3, 3, 7, 5, 1],
-    denominator=16
-)
+from dissertation.materials.segment_1.guitar_taleas import *
 
 beam_specifier = rhythmmakertools.BeamSpecifier(
     beam_each_division=True,
@@ -20,10 +16,44 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     spell_metrically='unassignable',
 )
 
-talea_maker_picking = rhythmmakertools.TaleaRhythmMaker(
-    talea=talea_picking,
+note_maker_fretting = rhythmmakertools.NoteRhythmMaker(
     beam_specifier=beam_specifier,
-    duration_spelling_specifier=duration_spelling_specifier
+    duration_spelling_specifier=duration_spelling_specifier,
 )
 
-note_maker_fretting = rhythmmakertools.NoteRhythmMaker()
+rhythm_makers_picking = (
+    # Stage 1
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+        division_masks=[
+            rhythmmakertools.SilenceMask(
+                patterntools.select_every([0], period=2),
+            )
+        ]
+    )
+    # Stage 2
+    rhythmmakertools.TaleaRhythmMaker(
+        talea=taleas_picking_guitar_2['2']
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    )
+    # Stage 3
+    rhythmmakertools.TaleaRhythmMaker(
+        talea=taleas_picking_guitar_2['3']
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    )
+    # Stage 4
+    rhythmmakertools.TaleaRhythmMaker(
+        talea=taleas_picking_guitar_2['4']
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    )
+    # Stage 5
+    rhythmmakertools.TaleaRhythmMaker(
+        talea=taleas_picking_guitar_2['5']
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    )
+)

@@ -14,6 +14,7 @@ from math import floor
 import copy
 from dissertation.tools import graphicstools
 
+
 class ReedEmbouchureHandler(object):
     '''An embouchure handler for wind instruments
 
@@ -24,7 +25,7 @@ class ReedEmbouchureHandler(object):
     Returns voices for a particular stage in a segment
     '''
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES
 
     __slots__ = (
         '_music_maker',
@@ -33,7 +34,7 @@ class ReedEmbouchureHandler(object):
         '_number_of_staff_lines',
     )
 
-    ### INTIALIZER ###
+    # INTIALIZER
 
     def __init__(
         self,
@@ -41,14 +42,14 @@ class ReedEmbouchureHandler(object):
         air_pressure_envelopes=None,
         lip_pressure_envelopes=None,
         number_of_staff_lines=15,
-        ):
+    ):
 
         self._music_maker = music_maker
         self._air_pressure_envelopes = air_pressure_envelopes
         self._lip_pressure_envelopes = lip_pressure_envelopes
         self._number_of_staff_lines = number_of_staff_lines
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
@@ -62,14 +63,16 @@ class ReedEmbouchureHandler(object):
         self._name_voices(voice, rhythm_voice)
         return [voice, rhythm_voice]
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS
     def _add_glissandi(self, voice):
         shortcuts.add_gliss(voice)
 
     def _add_tonguing_marks(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
             previous = \
-                inspect_(logical_tie.head).get_annotation('previous_air_pressure_stop')
+                inspect_(logical_tie.head).get_annotation(
+                    'previous_air_pressure_stop'
+                )
             current = \
                 inspect_(logical_tie.head).get_annotation('air_pressure_stop')
             if previous is not None and abs(previous - current) < 0.1:
@@ -83,7 +86,7 @@ class ReedEmbouchureHandler(object):
         air_pressure_stop,
         lip_pressure_start,
         lip_pressure_stop
-        ):
+    ):
         air_pressure_start = indicatortools.Annotation(
             'air_pressure_start', air_pressure_start)
         air_pressure_stop = indicatortools.Annotation(
@@ -111,7 +114,6 @@ class ReedEmbouchureHandler(object):
             a1 = self._air_pressure_envelopes[current_stage](x1)
             l0 = self._lip_pressure_envelopes[current_stage](x0)
             l1 = self._lip_pressure_envelopes[current_stage](x1)
-            # print("{} {} {} {} {} {}".format(x0,x1,a0,a1,l0,l1))
             self._annotate_logical_tie(logical_tie, a0, a1, l0, l1)
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
@@ -146,7 +148,9 @@ class ReedEmbouchureHandler(object):
     def _set_y_offsets(self, voice):
         n = self._number_of_staff_lines
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            y0 = inspect_(logical_tie.head).get_annotation('air_pressure_start')
+            y0 = inspect_(logical_tie.head).get_annotation(
+                'air_pressure_start'
+            )
             y1 = inspect_(logical_tie.head).get_annotation('air_pressure_stop')
             y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
             y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
@@ -157,7 +161,7 @@ class ReedEmbouchureHandler(object):
     def _to_proportional_notation(self, voice):
         shortcuts.to_proportional_notation(voice)
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES
 
     @property
     def instrument(self):

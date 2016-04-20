@@ -97,6 +97,13 @@ instruments = TypedOrderedDict([
             )
         ),
     (
+        'tenor trombone',
+        instrumenttools.TenorTrombone(
+            instrument_name='Tenor Trombone',
+            short_instrument_name='Tbn.'
+            )
+        ),
+    (
         'viola',
         instrumenttools.Viola(
             instrument_name='Viola',

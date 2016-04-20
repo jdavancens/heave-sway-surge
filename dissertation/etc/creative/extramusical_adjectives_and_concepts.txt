@@ -8,3 +8,7 @@ floating, suspending, drifting
 emergence, destruction, manifestation,
 
 tectonics, fluid dynamics, swarming, aerodynamics,
+
+networks, webs, flows
+
+encoding, encrypting
