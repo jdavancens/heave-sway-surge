@@ -30,7 +30,7 @@ picking_music_maker = MusicMaker(
     instrument=guitar,
     name='Picking',
     time_signatures=time_signatures,
-    rhythm_makers=picking_rhythm_makers
+    rhythm_makers=rhythm_makers_picking
 )
 
 fretting_music_maker = MusicMaker(
@@ -38,7 +38,7 @@ fretting_music_maker = MusicMaker(
     instrument=guitar,
     name='Fretting',
     time_signatures=time_signatures,
-    rhythm_makers=fretting_rhythm_makers
+    rhythm_makers=rhythm_makers_fretting
 )
 
 # ==============================================================================

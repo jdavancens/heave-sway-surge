@@ -9,6 +9,7 @@ from abjad import *
 from abjad.tools import sequencetools
 from dissertation.tools import shortcuts
 
+
 class MusicMaker:
     r''' MusicMaker calls a specified rhythm maker with a list of time
     signatures for each specified stage. If no rhythm maker is supplied, or the
@@ -16,7 +17,7 @@ class MusicMaker:
 
     Returns a voice with rhythms on middle-c, skips or both.
     '''
-    ## CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES #
     __slots__ = (
         '_instrument',
         '_name',
@@ -25,7 +26,7 @@ class MusicMaker:
         '_time_signatures'
         )
 
-    ### INTITIALIZER ###
+    # INTITIALIZER #
     def __init__(
         self,
         instrument=None,
@@ -33,7 +34,7 @@ class MusicMaker:
         rhythm_makers=None,
         stages=None,
         time_signatures=None
-        ):
+    ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         assert(time_signatures is not None)
         self._instrument = instrument
@@ -45,7 +46,8 @@ class MusicMaker:
             self._stages = stages
         self._time_signatures = time_signatures
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS #
+
     def __call__(self, current_stage):
         r'''Calls music-maker
 
@@ -61,15 +63,17 @@ class MusicMaker:
         assert isinstance(voice, Voice)
         return voice
 
+    # PRIVATE METHODS #
 
-    ### PRIVATE METHODS ###
     def _adjust_tuplet_prolation(self, voice):
         for t in iterate(voice).by_class(Tuplet):
             u = copy.deepcopy(t)
             u.toggle_prolation()
             tmult = t.multiplier
             umult = u.multiplier
-            if abs(tmult.numerator-tmult.denominator) > abs(umult.numerator-umult.denominator):
+            tmult_diff = abs(tmult.numerator-tmult.denominator)
+            umult_diff = abs(umult.numerator-umult.denominator)
+            if tmult_diff > umult_diff:
                 t.toggle_prolation()
 
     def _flatten_trivial_tuplets(self, voice):
@@ -81,7 +85,7 @@ class MusicMaker:
                     mutate([t]).replace(r)
                 else:
                     d = t.multiplied_duration
-                    n = scoretools.make_notes([0],[d])
+                    n = scoretools.make_notes([0], [d])
                     mutate([t]).replace(n)
 
     def _get_stage_measure_index(self, current_stage):
@@ -92,7 +96,7 @@ class MusicMaker:
         return index
 
     def _hide_full_measure_rests(self, selection):
-        for i,chunk in enumerate(selection):
+        for i, chunk in enumerate(selection):
             if len(chunk) is 1:
                 if isinstance(chunk[0], Container):
                     all_rest = True
@@ -119,7 +123,7 @@ class MusicMaker:
     def _make_skips(self, current_stage):
         time_signatures = self._time_signatures[current_stage]
         time_signatures = sequencetools.flatten_sequence(time_signatures)
-        skips = scoretools.make_skips((1,1), time_signatures)
+        skips = scoretools.make_skips((1, 1), time_signatures)
         voice = Voice(skips)
         attach(self._instrument, voice)
         return voice
@@ -136,7 +140,7 @@ class MusicMaker:
         attach(self._instrument, voice)
         return voice
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES #
 
     @property
     def instrument(self):
@@ -156,8 +160,7 @@ class MusicMaker:
             self._stages = expr
         elif mathtools.is_positive_integer(expr):
             self._stages = (expr, expr)
-        elif (mathtools.all_are_positive_integers(expr)
-            and len(expr) == 2):
+        elif (mathtools.all_are_positive_integers(expr) and len(expr) == 2):
             self._stages = tuple(expr)
         else:
             message = 'positive integer or pair of positive integers: {!r}.'

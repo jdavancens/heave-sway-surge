@@ -1,4 +1,4 @@
-# Joseph Davancens' Dissertation Composition
+# SURGE :: DART :: DRIFT
 
 For ten musicians:
 * Oboe

@@ -10,13 +10,15 @@ import os
 from abjad import *
 from dissertation.materials.staff_map import staff_map
 from dissertation.tools.templates.ScoreTemplate import ScoreTemplate
-from dissertation.tools.makers.SegmentMakerBaseClass import SegmentMakerBaseClass
+from dissertation.tools.makers.SegmentMakerBaseClass \
+    import SegmentMakerBaseClass
+
 
 class SegmentMaker(SegmentMakerBaseClass):
     '''Segment-maker
     Fills a score template with music created in a segment_xx definition
     '''
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES
     __slots__ = (
         '_cached_score_template_start_clefs',
         '_cached_score_template_start_instruments',
@@ -40,7 +42,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         'tempo_map',
         )
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(
         self,
@@ -58,7 +60,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         segment_number=None,
         tempo_map=None,
         time_signatures=None,
-        ):
+    ):
         superclass = super(SegmentMaker, self)
         superclass.__init__()
         self.final_barline = final_barline
@@ -74,7 +76,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._music_handlers = list()
         if number_of_stages is None:
             self.number_of_stages = len(measures_per_stage)
-        elif number_of_stages > len(measures_per_stage) or number_of_stages < 1:
+        elif number_of_stages > len(measures_per_stage) or \
+                number_of_stages < 1:
             self.number_of_stages = len(measures_per_stage)
         else:
             self.number_of_stages = number_of_stages
@@ -86,7 +89,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         self.tempo_map = tempo_map
         self.time_signatures = time_signatures
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __call__(self):
         '''Calls segment maker. Creates a blank score, interprets music handlers,
@@ -111,15 +114,15 @@ class SegmentMaker(SegmentMakerBaseClass):
             print(time)
 
         self._attach_rehearsal_mark()
-        #self._add_final_barline()
-        #self._add_final_markup()
+        # self._add_final_barline()
+        # self._add_final_markup()
         self._check_well_formedness()
-        #self._raise_approximate_duration_in_seconds()
+        # self._raise_approximate_duration_in_seconds()
 
         print("...Done")
         return self.lilypond_file
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS
 
     def _add_final_barline(self):
         r''' Adds final barline to score.
@@ -154,7 +157,9 @@ class SegmentMaker(SegmentMakerBaseClass):
             result = self._stage_number_to_measure_indices(stage_number)
             start_measure_index, stop_measure_index = result
             rehearsal_letter = self._get_rehearsal_letter(self._segment_number)
-            rehearsal_mark = indicatortools.RehearsalMark(number=start_measure_index+1)
+            rehearsal_mark = indicatortools.RehearsalMark(
+                number=start_measure_index+1
+            )
             start_measure = context[start_measure_index]
             attach(rehearsal_mark, start_measure)
             scheme = schemetools.Scheme('format-mark-box-alphabet')
@@ -208,6 +213,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                     handler_instrument, handler_name)
                 print(handler_string)
                 # call the music handler
+                print('\t\t\tMaking music...')
                 voices = music_handler(stage)
 
                 print('\t\t\tMatching voices to staves...')

@@ -16,43 +16,72 @@ duration_spelling_specifier = rhythmmakertools.DurationSpellingSpecifier(
     spell_metrically='unassignable',
 )
 
-note_maker_fretting = rhythmmakertools.NoteRhythmMaker(
-    beam_specifier=beam_specifier,
-    duration_spelling_specifier=duration_spelling_specifier,
+tie_specifier = rhythmmakertools.TieSpecifier(
+    tie_across_divisions=patterntools.Pattern(indices=[1], period=2)
 )
+
+sustain_mask = rhythmmakertools.silence_every([2, 4], period=5)
 
 rhythm_makers_picking = (
     # Stage 1
     rhythmmakertools.NoteRhythmMaker(
         beam_specifier=beam_specifier,
         duration_spelling_specifier=duration_spelling_specifier,
-        division_masks=[
-            rhythmmakertools.SilenceMask(
-                patterntools.select_every([0], period=2),
-            )
-        ]
-    )
+        tie_specifier=tie_specifier
+    ),
     # Stage 2
     rhythmmakertools.TaleaRhythmMaker(
-        talea=taleas_picking_guitar_2['2']
+        talea=taleas_picking['2'],
         beam_specifier=beam_specifier,
         duration_spelling_specifier=duration_spelling_specifier,
-    )
+        logical_tie_masks=[sustain_mask]
+    ),
     # Stage 3
     rhythmmakertools.TaleaRhythmMaker(
-        talea=taleas_picking_guitar_2['3']
+        talea=taleas_picking['3'],
         beam_specifier=beam_specifier,
         duration_spelling_specifier=duration_spelling_specifier,
-    )
+        logical_tie_masks=[sustain_mask]
+    ),
     # Stage 4
     rhythmmakertools.TaleaRhythmMaker(
-        talea=taleas_picking_guitar_2['4']
+        talea=taleas_picking['4'],
         beam_specifier=beam_specifier,
         duration_spelling_specifier=duration_spelling_specifier,
-    )
+        logical_tie_masks=[sustain_mask]
+    ),
     # Stage 5
     rhythmmakertools.TaleaRhythmMaker(
-        talea=taleas_picking_guitar_2['5']
+        talea=taleas_picking['5'],
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+        logical_tie_masks=[sustain_mask]
+    )
+)
+
+rhythm_makers_fretting = (
+    # Stage 1
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    ),
+    # Stage 2
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    ),
+    # Stage 3
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    ),
+    # Stage 4
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+    ),
+    # Stage 5
+    rhythmmakertools.NoteRhythmMaker(
         beam_specifier=beam_specifier,
         duration_spelling_specifier=duration_spelling_specifier,
     )

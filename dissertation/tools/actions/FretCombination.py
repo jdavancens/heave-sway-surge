@@ -14,7 +14,7 @@ class FretCombination(object):
         '_number_of_strings'
     )
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(
         self,
@@ -28,7 +28,18 @@ class FretCombination(object):
         self._fret_placements = fret_placements
         self._number_of_strings = number_of_strings
 
-    ### PUBLIC PROPERTIES ###
+    # PRIVATE METHODS
+
+    def __eq__(self, other):
+        if other is not None:
+            if (self.fret_placements == other.fret_placements):
+                return True
+            else:
+                return False
+        else:
+            return False
+
+    # PUBLIC PROPERTIES
 
     def as_binary_list(self):
         binary_list = [0] * self.number_of_strings

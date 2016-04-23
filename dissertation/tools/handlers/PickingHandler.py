@@ -11,6 +11,7 @@ from math import floor
 import copy
 from dissertation.tools import graphicstools
 
+
 class PickingHandler(object):
     '''A guitar picking handler.
 
@@ -22,7 +23,7 @@ class PickingHandler(object):
     Returns voices for a particular stage in a segment.
     '''
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES #
 
     __slots__ = (
         '_music_maker',
@@ -34,7 +35,7 @@ class PickingHandler(object):
         '_number_of_staff_lines'
         )
 
-    ### INITIALIZER ###
+    # INITIALIZER #
 
     def __init__(
         self,
@@ -45,7 +46,7 @@ class PickingHandler(object):
         direction_patterns=None,
         tremolo_patterns=None,
         number_of_staff_lines=15
-        ):
+    ):
         self._music_maker = music_maker
         self._picking_force_envelopes = picking_force_envelopes
         self._picking_position_envelopes = picking_position_envelopes
@@ -54,7 +55,7 @@ class PickingHandler(object):
         self._tremolo_patterns = tremolo_patterns
         self._number_of_staff_lines = number_of_staff_lines
 
-    ### SPECIAL METHDS ###
+    # SPECIAL METHDS #
 
     def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
@@ -65,7 +66,7 @@ class PickingHandler(object):
         self._name_voices(voice, rhythm_voice)
         return [voice, rhythm_voice]
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS #
 
     def _annotate_logical_tie(
         self,
@@ -73,24 +74,30 @@ class PickingHandler(object):
         position_start,
         position_stop,
         force,
-        ):
-        position_start = indicatortools.Annotation('position_start', position_start)
-        position_stop = indicatortools.Annotation('position_stop', position_stop)
+    ):
+        position_start = indicatortools.Annotation(
+            'position_start',
+            position_start
+        )
+        position_stop = indicatortools.Annotation(
+            'position_stop',
+            position_stop
+        )
         force = indicatortools.Annotation('force', force)
-        attach(position_start, logical_tie[0])
-        attach(position_stop, logical_tie[0])
-        attach(force, logical_tie[0])
+        attach(position_start, logical_tie.head)
+        attach(position_stop, logical_tie.head)
+        attach(force, logical_tie.head)
 
     def _attach_grace_notes(self, voice):
-        for note in iterate(voice).by_class(Note):
-            shortcuts.grace_after(note)
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            shortcuts.hidden_grace_after(logical_tie.tail, 0)
 
     def _handle_direction(self, logical_tie, direction):
         if direction.lower() == 'up':
-            d = indicatortools.Articulation('upbow',direction=Down)
+            d = indicatortools.Articulation('upbow', direction=Down)
         elif direction.lower() == 'down':
-            d = indicatortools.Articulation('downbow',direction=Down)
-        attach(d, logical_tie[0])
+            d = indicatortools.Articulation('downbow', direction=Down)
+        attach(d, logical_tie.head)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         dir_pattern = self._direction_patterns[current_stage]
@@ -101,7 +108,11 @@ class PickingHandler(object):
             self._handle_direction(logical_tie, direction)
 
     def _handle_string_indices(self, logical_tie, string_indices):
-        shortcuts.text_to_note_head(logical_tie[0], string_indices, enclosure='box')
+        shortcuts.text_to_note_head(
+            logical_tie.head,
+            string_indices,
+            enclosure='box'
+        )
         if len(logical_tie) > 1:
             for leaf in logical_tie[1:]:
                 shortcuts.point_note_head(leaf)
@@ -117,17 +128,17 @@ class PickingHandler(object):
                     ),
                 value=schemetools.SchemeSymbol('zigzag')
                 )
-            attach(zigzag, logical_tie[0])
-            color = graphicstools.scheme_rgb_color((0,0,0))
-            shortcuts.gliss(logical_tie[0], color=color, thickness=1)
+            attach(zigzag, logical_tie.head)
+            color = graphicstools.scheme_rgb_color((0, 0, 0))
+            shortcuts.gliss(logical_tie.head, color=color, thickness=1)
             if len(logical_tie) > 1:
                 for leaf in logical_tie[1:]:
-                    gliss_skip(leaf)
+                    shortcuts.gliss_skip(leaf)
 
     def _handle_voice(self, voice, current_stage):
         start_offset = float(inspect_(voice).get_timespan().start_offset)
         stop_offset = float(inspect_(voice).get_timespan().stop_offset)
-        duration = stop_offset - start_offset
+        total_duration = stop_offset - start_offset
         str_i_pattern = self._string_indices_patterns[current_stage]
         str_i_pattern = datastructuretools.CyclicTuple(str_i_pattern)
         str_i_cursor = datastructuretools.Cursor(str_i_pattern)
@@ -135,16 +146,23 @@ class PickingHandler(object):
         trem_pattern = datastructuretools.CyclicTuple(trem_pattern)
         trem_cursor = datastructuretools.Cursor(trem_pattern)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            start_moment = inspect_(logical_tie[0]).get_vertical_moment(voice)
+            start_moment = \
+                inspect_(logical_tie.head).get_vertical_moment(voice)
             start_moment = float(start_moment.offset)
             duration = float(logical_tie.get_duration()) / total_duration
             x = start_moment / total_duration
             position0 = self._picking_position_envelopes[current_stage](x)
-            position1 = self._picking_position_envelopes[current_stage](x+duration)
+            position1 = \
+                self._picking_position_envelopes[current_stage](x+duration)
             force = self._picking_force_envelopes[current_stage](x)
             string_indices = str_i_cursor.next()[0]
             tremolo = trem_cursor.next()[0]
-            self._annotate_logical_tie(logical_tie, position0, position1, force)
+            self._annotate_logical_tie(
+                logical_tie,
+                position0,
+                position1,
+                force
+            )
             self._handle_string_indices(logical_tie, string_indices)
             self._handle_tremolo(logical_tie, tremolo)
         self._attach_grace_notes(voice)
@@ -157,18 +175,18 @@ class PickingHandler(object):
     def _set_y_offsets(self, voice):
         n = self._number_of_staff_lines
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            y0 = inspect_(logical_tie[0]).get_annotation('position_start')
-            y1 = inspect_(logical_tie[0]).get_annotation('position_stop')
+            y0 = inspect_(logical_tie.head).get_annotation('position_start')
+            y1 = inspect_(logical_tie.head).get_annotation('position_stop')
             y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
             y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-            grace = inspect_(logical_tie[0]).get_grace_container()[0]
-            override(logical_tie[0]).note_head.Y_offset = y0_offset
+            grace = inspect_(logical_tie.tail).get_grace_container()[0]
+            override(logical_tie.head).note_head.Y_offset = y0_offset
             override(grace).note_head.Y_offset = y1_offset
 
     def _to_proportional_notation(self, voice):
         shortcuts.to_proportional_notation(voice)
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES #
 
     @property
     def instrument(self):

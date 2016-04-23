@@ -35,6 +35,18 @@
     right-margin = 0.5\in
     top-margin = 0.5\in
     system-separator-markup = \slashSeparator
+
+    system-system-spacing =
+        #'((basic-distance . 50)
+           (minimum-distance . 0)
+           (padding . -10)
+           (stretchability . 0))
+
+    top-system-spacing =
+        #'((basic-distance . 15)
+           (minimum-distance . 0)
+           (padding . -10)
+           (stretchability . 0))
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
 \header {
@@ -179,6 +191,12 @@
             black white white white white
             white white white white black
             )
+
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 25)
+               (padding . -10)
+               (stretchability . 0))
     }
     % RHYTHM STAFF
     \context {
@@ -612,5 +630,7 @@
         defaultBarType = #""
         proportionalNotationDuration = #(ly:make-moment 1 48)
         tupletFullLength = ##t
+
+
     }
 }
