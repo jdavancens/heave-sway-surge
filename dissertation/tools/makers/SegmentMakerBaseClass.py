@@ -12,22 +12,20 @@ class SegmentMakerBaseClass(abctools.AbjadObject):
 
     '''
 
-    ### CLASS VARIABLES ###
+    # CLASS VARIABLES
 
     __slots__ = (
         '_lilypond_file',
         )
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
-    def __init__(self,):
+    def __init__(self):
         self._lilypond_file = None
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
-    def __call__(
-        self,
-        ):
+    def __call__(self,):
         r'''Calls segment-maker.
 
         Returns LilyPond file.
@@ -56,7 +54,7 @@ class SegmentMakerBaseClass(abctools.AbjadObject):
         lilypond_file, metadata = self(**kwargs)
         return lilypond_file
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES
 
     @property
     def lilypond_file(self):

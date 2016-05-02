@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
 
+
 class ControlPoint(object):
     '''A point in n dimensions.
     ::
         >>> p0 = ControlPoint(1, 2)
         >>> p0
-        ControlPoint(1, 2)
+        ControlPoint(1.0, 2.0)
         >>> p0[0]
-        1
+        1.0
         >>> p0[1]
-        2
+        2.0
         >>> len(p0)
         2
         >>> p1 = ControlPoint([1, 2])
         >>> p1
-        ControlPoint(1, 2)
+        ControlPoint(1.0, 2.0)
         >>> p0 == p1
         True
         >>> p2 = ControlPoint(3, 4)
@@ -30,25 +31,36 @@ class ControlPoint(object):
         True
         >>> p2 >= p1
         True
+        >>> p3 = ControlPoint(p0)
+        >>> p3
+        ControlPoint(1.0, 2.0)
 
     '''
-    __slots__=('_coordinates')
+    __slots__ = ('_coordinates')
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(self, *coordinates):
-        assert len(coordinates) > 0, \
-            "ControlPoint must have at coordinates in at least one dimension."
         if len(coordinates) == 1:
             if isinstance(coordinates[0], (list, tuple)):
-                self._coordinates = coordinates[0]
+                floats = []
+                for c in coordinates[0]:
+                    floats.append(float(c))
+                self._coordinates = tuple(floats)
             elif isinstance(coordinates[0], ControlPoint):
-                self._coordinates = coordinates[0]._coordinates
-
+                floats = []
+                for c in coordinates[0]:
+                    floats.append(c)
+                self._coordinates = tuple(floats)
+            else:
+                self._coordinates = coordinates[0]
         else:
-            self._coordinates = coordinates
+            floats = []
+            for c in coordinates:
+                floats.append(float(c))
+            self._coordinates = tuple(floats)
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __eq__(self, other):
         if len(self) != len(other):

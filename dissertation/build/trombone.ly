@@ -1,14 +1,17 @@
-% 2016-04-19 15:42
+% 2016-04-29 14:56
 
 \version "2.19.29"
 \language "english"
 
 #(ly:set-option 'relative-includes #t)
 
-\include "../stylesheets/stylesheet.ily"
+\include "../stylesheets/stylesheet_part.ily"
 \include "../stylesheets/path-gliss.ily"
 \include "../stylesheets/scheme.ily"
 \include "../stylesheets/stencils.ily"
+
+#(set-default-paper-size "letter" 'portrait)
+#(set-global-staff-size 8)
 
 \score {
     \context Score = "Score" \with {
@@ -1054,264 +1057,443 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
-                    c'4
-                    c'4
-                    c'8
-                    c'8 -\accent [
-                    c'8
-                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'32 [
+                        c'16
+                        c'32
+                        c'16 ]
+                        r8.
+                        c'8.
+                    }
+                    c'32
+                    r8
+                    c'16 [
+                    c'32
+                    c'32
+                    c'16
+                    c'32 ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r16
-                    c'4
-                    c'4 -\accent
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/11 {
+                        c'32
+                        r8
+                        c'8 [
+                        c'16
+                        c'32
+                        c'32 ]
+                        r8.
+                        c'32 [
+                        c'16 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'32 [
+                        c'16
+                        c'32
+                        c'16 ]
+                        r8.
+                        c'8.
+                    }
+                    c'16 [
+                    c'32
+                    c'16 ]
+                    r8.
+                    c'8. [
+                    c'16
+                    c'32
+                    c'16
+                    c'32
+                    c'32 ]
+                    \times 8/9 {
+                        c'16
+                        r8
+                        c'8 [
+                        c'32
+                        c'16
+                        c'32 ]
+                        r16
+                        c'32 [
+                        c'32 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8
+                        r8
+                        c'16
+                    }
+                    r8
+                    c'8 [
                     c'8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    c'4 -\accent
-                    c'4
-                    c'8 -\accent
-                    c'4
-                    c'4 -\accent
-                    c'4
-                    c'8 [
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'8 [
-                    c'8 -\accent
-                    c'8 -\accent ]
-                    c'8 [
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    c'8 [
-                    c'8 -\accent
                     c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'16 [
+                        c'8 ]
+                        r16
+                        c'16
+                        r8
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'8 -\accent [
-                    c'8 -\accent
-                    c'8 -\accent ]
-                    c'4
-                    c'4 -\accent
-                    c'4 -\accent
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8
+                        r8
+                        c'16
+                    }
+                    r8.
+                    c'8. [
+                    c'8.
+                    c'8. ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'16 [
+                        c'8 ]
+                        r16
+                        c'16
+                        r8
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/11 {
+                        c'4
+                        r4
+                        c'8.
+                    }
                     r8
                     c'8 [
-                    c'8 -\accent
-                    c'8 -\accent ]
-                    c'4
-                    c'4 -\accent
-                    c'4
-                    c'8 -\accent [
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'4
-                    c'4
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'8 -\accent [
                     c'8
-                    c'8 -\accent ]
-                    c'4
-                    c'4
-                    c'4
-                    c'8 [
-                    c'8 -\accent ]
-                    c'4
+                    c'8 ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
-                    c'4 -\accent
-                    c'4
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/13 {
+                        c'8. [
+                        c'8 ]
+                        r8.
+                        c'8.
+                        r8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8 ]
+                        r16
+                    }
+                    c'8.
+                    r8.
+                    c'8. [
+                    c'8. ]
+                    \times 8/9 {
+                        r8
+                        c'8 [
+                        c'16
+                        c'8
+                        c'8 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4
+                        c'4
+                        r4
+                    }
                     c'8
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'4
-                    c'4
-                    c'4 -\accent
-                    c'8 -\accent [
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'4 -\accent
-                    c'4 -\accent
-                    c'8 -\accent
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
                     r8
                     c'8 [
-                    c'8 -\accent
                     c'8 ]
-                    c'8 -\accent [
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/13 {
+                        r8.
+                        c'8 [
+                        c'8.
+                        c'8.
+                        c'8 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 8/7 {
+                        c'8 [
+                        c'8 ]
+                        r8.
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    c'8.
+                    r8
+                    c'8. [
                     c'8 ]
-                    c'4
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        r8
+                        c'8 [
+                        c'16 ]
+                    }
                     c'8 [
-                    c'8 -\accent
-                    c'8 ]
+                    c'8
+                    c'16
+                    c'16 ]
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8.
+                        r8
+                        c'8
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        r16
+                        c'16 [
+                        c'16
+                        c'16
+                        c'16 ]
+                    }
+                    c'4
+                    c'4
+                    r4
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8 [
+                        c'16 ]
+                        r8
+                        c'8
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/11 {
+                        r4
+                        c'4
+                        c'8.
+                    }
                     c'8 [
-                    c'8 -\accent
+                    c'8
+                    c'16
+                    c'16 ]
+                    r8
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/13 {
+                        c'4 ~
+                        c'16
+                        r4
+                        c'4
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/11 {
+                        c'4
+                        c'16 [
+                        c'16.
+                        c'32
+                        c'32
+                        c'32
+                        c'8. ]
+                    }
+                    c'16 [
+                    c'16
                     c'8 ]
+                    r8
+                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/13 {
+                        c'32 [
+                        c'32
+                        c'16
+                        c'16. ]
+                        c'4 ~
+                        c'16
+                        c'4
+                        c'32
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'8 [
+                        c'16
+                        c'16
+                        c'8 ]
+                        r8.
+                    }
+                    c'16. [
+                    c'32
+                    c'16 ]
                     c'4
-                    c'4
-                    c'4
+                    c'8.
+                    \times 8/9 {
+                        c'16 [
+                        c'8 ]
+                        r8.
+                        c'8 [
+                        c'16 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8
+                        c'16 ]
+                    }
+                    c'8 [
+                    c'32
+                    c'32
+                    c'32 ]
+                    r8
+                    c'16.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'16
+                        r8
+                        c'16 [
+                        c'16
+                        c'8 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 8/7 {
+                        c'8 [
+                        c'8
+                        c'16
+                        c'16
+                        c'16 ]
+                    }
+                    c'8 [
+                    c'16 ]
+                    r8
+                    c'16
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 12/13 {
+                        c'16 [
+                        c'16
+                        c'16 ]
+                        r8
+                        c'8. [
+                        c'8.
+                        c'8 ]
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'8 -\accent [
-                    c'8 -\accent
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    c'4 -\accent
-                    c'4 -\accent
-                    c'8 -\accent [
-                    c'8 -\accent ]
-                    c'4 -\accent
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'4 -\accent
-                    c'4 -\accent
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8
+                        c'16 ]
+                    }
+                    c'8. [
+                    c'16
+                    c'16
+                    c'16 ]
+                    r8.
+                    c'8.
+                    \times 8/9 {
+                        c'16 [
+                        c'16 ]
+                        r8
+                        c'16 [
+                        c'8
+                        c'8 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8
+                        c'16 ]
+                    }
+                    c'8. [
+                    c'16
+                    c'16 ]
+                    r8.
+                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/9 {
+                        c'8 [
+                        c'8
+                        c'8
+                        c'8. ]
+                    }
+                    c'16 [
+                    c'8
+                    c'16 ]
                     r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4..
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
+                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 10/11 {
+                        c'8 [
+                        c'8 ]
+                        r8
+                        c'16 [
+                        c'8
+                        c'8 ]
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
@@ -1462,6 +1644,7 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
+                    \bar "|"
                 }
             }
             \context EmbouchureStaff = "Embouchure" \with {
@@ -1469,7 +1652,6 @@
                 shortInstrumentName = \markup { Emb. }
             } <<
                 \context Voice = "Embouchure" {
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -1610,7 +1792,6 @@
                         \once \override Rest.transparent = ##t
                         r2
                     }
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -1762,47 +1943,126 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
-                        \once \override NoteHead #'Y-offset = #0.644070283929
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #0.958459860123
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #3.21685694296
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32 [
+                            \once \override NoteHead #'Y-offset = #2.30136595594
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-0.106645070226
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-1.40096576354
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-2.65299066369
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                            \once \override NoteHead #'Y-offset = #2.35474775094
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8.
                         }
-                        \once \override NoteHead #'Y-offset = #0.958459860123
+                        \once \override NoteHead #'Y-offset = #-0.79055199005
+                        \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        b'4 * 1
+                        c'32
                         {
-                            \once \override NoteHead #'Y-offset = #-1.29469865247
-                            b'16
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-1.74662343737
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
-                        \once \override NoteHead #'Y-offset = #-1.29469865247
+                        r8
+                        \once \override NoteHead #'Y-offset = #-3.3565172232
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    1 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #-3.07040717406
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32
+                        \once \override NoteHead #'Y-offset = #-2.93507645812
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32
+                        \once \override NoteHead #'Y-offset = #-2.91888650907
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #-3.40989546849
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
                         \afterGrace
-                        b'4 * 1/2
+                        c'32 ]
                         {
-                            \once \override NoteHead #'Y-offset = #-3.35840648498
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.35840648498
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.96004575773
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.96004575773
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #3.67407289824
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.67407289824
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.78325233974
-                            b'16
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-3.9
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -1810,302 +2070,374 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r16
-                        \once \override NoteHead #'Y-offset = #1.15719597525
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #4.33974161808
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.33974161808
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #4.39108773336
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.39108773336
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.76084943818
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/11 {
+                            \once \override NoteHead #'Y-offset = #1.95484243723
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'32
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.88176681229
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #0.231580581934
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #0.0919431112237
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #3.43229033829
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #4.27331964256
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'32 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #4.18481489875
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                            \once \override NoteHead #'Y-offset = #3.30357577165
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32 [
+                            \once \override NoteHead #'Y-offset = #4.26602284729
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #5.2
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
-                        \once \override NoteHead #'Y-offset = #5.70935539424
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.87598400047
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #2.65371719585
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32 [
+                            \once \override NoteHead #'Y-offset = #3.10002222451
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #4.09833419035
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32
+                            \once \override NoteHead #'Y-offset = #4.58075144586
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #5.35243033801
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                            \once \override NoteHead #'Y-offset = #5.07042078251
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8.
                         }
-                        \once \override NoteHead #'Y-offset = #2.87598400047
+                        \once \override NoteHead #'Y-offset = #2.59036809822
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #2.5221299345
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'32
+                        \once \override NoteHead #'Y-offset = #2.64888624493
+                        \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        b'4 * 1
+                        c'16 ]
                         {
-                            \once \override NoteHead #'Y-offset = #4.22669617146
-                            b'16
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #3.13177098517
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
-                        \once \override NoteHead #'Y-offset = #4.22669617146
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #5.3729550733
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #5.3729550733
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #3.39788842861
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.39788842861
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.99749349684
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.99749349684
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.95276658316
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.95276658316
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.36182568867
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.36182568867
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.86502164493
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.86502164493
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.84610385147
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override NoteHead #'Y-offset = #-1.626458921
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.06316008586
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.06316008586
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.34865201407
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.34865201407
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.08305751532
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.08305751532
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.596106689371
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.596106689371
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.01231866618
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.01231866618
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.27881065837
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.27881065837
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.45650855618
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.45650855618
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.52962659106
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.52962659106
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.101327867599
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override NoteHead #'Y-offset = #0.372890735586
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.07464342793
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.07464342793
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.402574227583
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.402574227583
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.304991446718
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.304991446718
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.35681072738
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.35681072738
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.41908536417
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.41908536417
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.01505355053
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override NoteHead #'Y-offset = #-1.51249583258
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.414815134704
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.414815134704
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.47858562707
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.47858562707
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.247718934004
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.247718934004
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.15043686774
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.15043686774
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.13081301159
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.13081301159
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #0.765262432422
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.765262432422
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.978306268474
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.978306268474
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.05691971544
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.05691971544
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.9444380469
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override NoteHead #'Y-offset = #2.45805828941
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.63649815373
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.63649815373
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.54879863045
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.54879863045
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.73774099753
-                            b'16
+                        r8.
+                        \once \override NoteHead #'Y-offset = #4.89763953411
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #5.1778342939
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #4.71386115052
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'32
+                        \once \override NoteHead #'Y-offset = #4.43025705299
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #3.84734552519
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32
+                        \once \override NoteHead #'Y-offset = #3.57908883288
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32 ]
+                        \times 8/9 {
+                            \once \override NoteHead #'Y-offset = #3.34271470373
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #3.02529431559
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #2.81727929004
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #2.9623937286
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #2.99785925527
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16
+                            \once \override NoteHead #'Y-offset = #3.01424299453
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'32 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.98493012157
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r16
+                            \once \override NoteHead #'Y-offset = #2.84170901135
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32 [
+                            \once \override NoteHead #'Y-offset = #2.73099341626
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'32 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.6
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -2113,182 +2445,145 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #2.25666103283
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.84916973583
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #0.378580823489
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.59718081039
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-1.25836599832
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-2.80211192834
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
-                        \once \override NoteHead #'Y-offset = #2.84916973583
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.10705360175
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.10705360175
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.447562778944
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.447562778944
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #3.58894064364
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.58894064364
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #4.92825461627
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.92825461627
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #3.01286780679
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.01286780679
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #4.35358307263
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.35358307263
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #4.09317163231
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.09317163231
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.08317837231
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override NoteHead #'Y-offset = #0.354515248165
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #0.0816099044268
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.0816099044268
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.88884807085
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.88884807085
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.66497601511
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.66497601511
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.20446277179
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.20446277179
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.89013272143
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.89013272143
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.93069103421
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override NoteHead #'Y-offset = #1.64725027945
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #4.12280661186
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.12280661186
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.32375196378
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.32375196378
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.31100848124
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.31100848124
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.30829556609
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.30829556609
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.43559174161
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.43559174161
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #1.8519265043
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override NoteHead #'Y-offset = #1.66587621795
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.36838361027
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.36838361027
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.02032854287
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.02032854287
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #2.2923878177
-                            b'16
+                        r8
+                        \once \override NoteHead #'Y-offset = #-0.700931837125
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #1.89800948289
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #1.88909851409
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.14402988914
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-0.742268078872
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.990495966127
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r16
+                            \once \override NoteHead #'Y-offset = #-0.835712034797
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.749219410553
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -2296,68 +2591,122 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-3.37167731218
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.60887975428
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #1.71448537126
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.23799288068
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-0.756773845629
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.712316293745
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
-                        \once \override NoteHead #'Y-offset = #-3.60887975428
+                        r8.
+                        \once \override NoteHead #'Y-offset = #0.964388368964
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #0.480030834217
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8.
+                        \once \override NoteHead #'Y-offset = #0.499185442477
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
                         \afterGrace
-                        b'4 * 1/2
+                        c'8. ]
                         {
-                            \once \override NoteHead #'Y-offset = #-2.37462565904
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.37462565904
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.07276395674
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.07276395674
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.78110654351
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.78110654351
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-4.05130963683
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-4.05130963683
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.15550498259
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.15550498259
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.299679867024
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.299679867024
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #0.0176585606013
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.0176585606013
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.43168561957
-                            b'16
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #1.3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -2365,140 +2714,1080 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #1.99595012662
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.29322186578
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-1.74040662124
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-1.14951202635
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.151506486851
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r16
+                            \once \override NoteHead #'Y-offset = #0.581848953902
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.752774036924
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
                         }
-                        \once \override NoteHead #'Y-offset = #1.29322186578
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #1.56303352332
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/11 {
+                            \once \override NoteHead #'Y-offset = #0.282598295339
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.44061677935
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r4
+                            \once \override NoteHead #'Y-offset = #0.524452318883
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8.
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.362262950843
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
-                        \once \override NoteHead #'Y-offset = #1.56303352332
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #3.03093481756
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.03093481756
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.28610962651
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.28610962651
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #2.04399445528
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.04399445528
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.33423104289
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-1.87352792481
+                        \once \override NoteHead #'Y-offset = #-1.04360803625
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #-1.13372187702
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #-1.02312273426
+                        \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        b'4 * 1/2
+                        c'8 ]
                         {
-                            \once \override NoteHead #'Y-offset = #-2.13754694956
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.13754694956
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.90675342216
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.90675342216
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.50787342361
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.50787342361
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.09702180318
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.09702180318
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.12324405475
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.12324405475
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.45505217614
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.45505217614
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.7345135279
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.7345135279
-                        \afterGrace
-                        b'4 * 1/2
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.87863181116
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.87863181116
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.36343463867
-                            b'16
-                        }
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override NoteHead #'Y-offset = #0.221585677446
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.668272676483
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.668272676483
-                        \afterGrace
-                        b'4 * 1
-                        {
-                            \once \override NoteHead #'Y-offset = #0.0344400326673
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.0344400326673
-                        \afterGrace
-                        b'4 * 1
-                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
                             \once \override NoteHead #'Y-offset = #-1.3
-                            b'16
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/13 {
+                            \once \override NoteHead #'Y-offset = #1.27705764677
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #0.866426032073
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.70804868224
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                            \once \override NoteHead #'Y-offset = #3.12253547982
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8.
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.74208167789
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-1.23362647941
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #1.04412589014
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.76707941429
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r16
+                        }
+                        \once \override NoteHead #'Y-offset = #0.864639326783
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    1 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8.
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-2.78258434401
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8.
+                        \once \override NoteHead #'Y-offset = #-0.929569145264
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #2.93910497223
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    1 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8. ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #1.44734897972
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \times 8/9 {
+                            r8
+                            \once \override NoteHead #'Y-offset = #0.402659084399
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #0.9763851132
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #1.73771605142
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #3.25356636683
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #3.9
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #2.9650488322
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        1 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'4
+                            \once \override NoteHead #'Y-offset = #4.69004291238
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.789319270194
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r4
+                        }
+                        \once \override NoteHead #'Y-offset = #2.63547032828
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #1.93403064415
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override NoteHead #'Y-offset = #0.334675952114
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #0.27291382399
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    1 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #0.0
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/13 {
+                            r8.
+                            \once \override NoteHead #'Y-offset = #1.32424901886
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #2.74814431138
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-3.18173154302
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.39173588357
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 8/7 {
+                            \once \override NoteHead #'Y-offset = #3.89303900154
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #1.84741672407
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.02926621895
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \once \override NoteHead #'Y-offset = #1.83050582235
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8.
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #1.37799301152
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override NoteHead #'Y-offset = #2.36362013941
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #2.09810535137
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #2.6
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            r8
+                            \once \override NoteHead #'Y-offset = #-1.01165920063
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-3.56655499218
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-4.51309553462
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #-3.42420957198
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #-0.295961200522
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #0.493432559362
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #0.295923093394
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-1.32828020729
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8.
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.928981732799
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #0.595087741186
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            r16
+                            \once \override NoteHead #'Y-offset = #3.10998631928
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #2.63104941404
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #0.527927797372
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-2.05414061083
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-2.16802163976
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4
+                        \once \override NoteHead #'Y-offset = #1.836077043
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-3.36171483879
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r4
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-2.08179511427
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-1.77533844459
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.60506908351
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-1.45716924416
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.69612813012
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/11 {
+                            r4
+                            \once \override NoteHead #'Y-offset = #-2.39393174069
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-1.47287580159
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8.
+                        }
+                        \once \override NoteHead #'Y-offset = #-1.69821430131
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #-1.88277390884
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #-1.72589659769
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #-1.57213671956
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-1.4323964454
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/13 {
+                            \once \override NoteHead #'Y-offset = #0.606839651144
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'4 ~
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.540785569604
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r4
+                            \once \override NoteHead #'Y-offset = #-0.518292905446
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.3
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                     }
                     \addGliss
@@ -2515,90 +3804,1114 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/11 {
+                            \once \override NoteHead #'Y-offset = #-5.2
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-1.99382920062
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-1.96646203789
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16.
+                            \once \override NoteHead #'Y-offset = #-0.94068640521
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-0.49864439236
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-0.347120905519
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-0.614029965571
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8. ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-1.67397732073
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #-0.202181889784
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #0.774125135048
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-0.316628537693
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override NoteHead #'Y-offset = #0.184853449055
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/13 {
+                            \once \override NoteHead #'Y-offset = #1.3
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32 [
+                            \once \override NoteHead #'Y-offset = #-5.02521848087
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-4.80472958353
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-4.26943162832
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16. ]
+                            \once \override NoteHead #'Y-offset = #-3.46708362844
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'4 ~
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-4.04156511362
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-3.00512945945
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'32
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #-2.40969337518
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #0.39127455828
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #1.15032013155
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #1.34498195981
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.0107137396261
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                        }
+                        \once \override NoteHead #'Y-offset = #-2.67227683599
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16. [
+                        \once \override NoteHead #'Y-offset = #-1.17478907399
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32
+                        \once \override NoteHead #'Y-offset = #-0.494911989988
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 ]
+                        \once \override NoteHead #'Y-offset = #0.770696015954
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'4
+                        \once \override NoteHead #'Y-offset = #2.35122080028
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8.
+                        \times 8/9 {
+                            \once \override NoteHead #'Y-offset = #1.66019393829
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #1.53329105891
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.7109704655
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8.
+                            \once \override NoteHead #'Y-offset = #2.37317739512
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #2.56965980874
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.6
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-2.29423532002
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #2.39302255308
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.563468070326
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-2.9840132707
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #-2.14829745812
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'32
+                        \once \override NoteHead #'Y-offset = #-1.31475433045
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'32
+                        \once \override NoteHead #'Y-offset = #-0.368861719327
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'32 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #0.540850574122
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override NoteHead #'Y-offset = #1.41786233708
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.960058427691
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-2.37311715844
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-3.45588591369
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-3.25484521987
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-3.06047638725
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 8/7 {
+                            \once \override NoteHead #'Y-offset = #-3.9
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #0.427306159325
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #0.352744211776
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16
+                            \once \override NoteHead #'Y-offset = #0.169365807081
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #0.262701668386
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #0.823029829177
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 [
+                        \once \override NoteHead #'Y-offset = #2.32259702145
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #2.38486548145
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8
+                        \once \override NoteHead #'Y-offset = #0.883474124362
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 12/13 {
+                            \once \override NoteHead #'Y-offset = #0.575548721931
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #0.867008228997
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #1.63138277706
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.5998561534
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #3.51962473255
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #2.60221288738
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #3.46642746558
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #3.9
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-1.72326398377
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #1.29299404449
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #2.35263244358
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #0.6888414215
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #-3.84714739798
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #-4.07270333033
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #-3.41994265636
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-2.20326273596
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8.
+                        \once \override NoteHead #'Y-offset = #0.66138761879
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.75 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8.
+                        \times 8/9 {
+                            \once \override NoteHead #'Y-offset = #-0.564341081718
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-1.18308155813
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \afterGrace
+                            c'16 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.53844401555
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #-1.10981969544
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-0.476875776207
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #0.770154958855
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #1.3
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #1.76704690434
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #1.98964269429
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #3.49141830537
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #2.01483181364
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #3.35445574928
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #4.7153906905
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
+                        r8.
+                        \once \override NoteHead #'Y-offset = #4.13529651254
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.25 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/9 {
+                            \once \override NoteHead #'Y-offset = #5.2
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-3.12767147199
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-3.03272979992
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-3.5800581942
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8. ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-0.171998812597
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #0.903893331181
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #-0.551671020001
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'16 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-2.13305175128
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4..
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
+                        \once \override NoteHead #'Y-offset = #-2.2423966538
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 1 0 360 arc
+                                    closepath
+                                    0.5 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #1
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 10/11 {
+                            \once \override NoteHead #'Y-offset = #1.18870705225
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.75 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #3.15375186241
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.06935181601
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                            r8
+                            \once \override NoteHead #'Y-offset = #1.30258368872
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.25 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #1.67753862524
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #3.16338551704
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 1 0 360 arc
+                                        closepath
+                                        0.5 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #1
+                                        #0.1
+                                        ##f
+                                }
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #3.9
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
@@ -2618,7 +4931,6 @@
                         \once \override Rest.transparent = ##t
                         r4.
                     }
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -2752,6 +5064,7 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
+                        \bar "|"
                     }
                 }
             >>
@@ -2760,7 +5073,6 @@
                 shortInstrumentName = \markup { Slide Pos. }
             } <<
                 \context Voice = "Slide Position" {
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -2901,7 +5213,6 @@
                         \once \override Rest.transparent = ##t
                         r2
                     }
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3053,68 +5364,25 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
-                        \once \override NoteHead #'Y-offset = #-0.155395185324
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.665472154206
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-0.0158085592976
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.0108574333986
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.00642575999389
+                            c'8
                         }
-                        \once \override NoteHead #'Y-offset = #-0.665472154206
-                        \once \override NoteHead #'stencil = #point-stencil
+                        \once \override NoteHead #'Y-offset = #-0.00432112715103
                         \afterGrace
-                        c'8
+                        c'4.
                         {
-                            \once \override NoteHead #'Y-offset = #0.586571386369
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-8.28997843999e-06
                             \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.586571386369
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #1.63493967252
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.63493967252
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #1.10039502304
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.10039502304
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #1.29199617743
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.29199617743
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #3.52831795839
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.52831795839
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #1.62620563332
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3122,119 +5390,53 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r16
-                        \once \override NoteHead #'Y-offset = #-0.881076818237
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'2 ~
-                        {
-                            \once \override NoteHead #'Y-offset = #2.90716562641
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-0.00358275682927
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.00678796236089
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.0236417580431
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.0415315861246
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
-                        \once \override NoteHead #'Y-offset = #-0.881076818237
-                        \once \override NoteHead #'stencil = #point-stencil
-                        c'8
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
-                        \once \override NoteHead #'Y-offset = #5.0834803988
-                        \once \override NoteHead #'stencil = #point-stencil
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #-0.153320395093
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.185412721402
+                            c'4.
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.294331706136
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.347161701256
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.398984519613
+                            c'4.
+                        }
+                        \once \override NoteHead #'Y-offset = #-0.469270193308
                         \afterGrace
                         c'2
                         {
-                            \once \override NoteHead #'Y-offset = #3.38051738466
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-0.541867396959
                             \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.38051738466
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #4.28537128863
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.28537128863
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #3.45769424569
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.45769424569
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #1.7046951597
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.7046951597
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #0.789130028679
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.789130028679
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #0.760777661403
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.760777661403
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.2795930175
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.2795930175
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.18303665793
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.18303665793
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.17902872723
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.17902872723
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.23121621452
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.23121621452
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.08826015433
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3242,59 +5444,40 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-0.413038776923
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #1.15108359172
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-0.535597999797
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-0.524350294423
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.502798072251
+                            c'8. ]
                         }
-                        \once \override NoteHead #'Y-offset = #1.15108359172
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #2.45030567156
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #-0.47610213225
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.418128681
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.396477142421
+                            c'4
                         }
-                        \once \override NoteHead #'Y-offset = #2.45030567156
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #2.1786877384
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.1786877384
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'2
-                        {
-                            \once \override NoteHead #'Y-offset = #3.89306105662
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.89306105662
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.13992343504
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.13992343504
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.20881076586
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-0.350858646957
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #-0.310969908645
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.284190612256
+                            \afterGrace
+                            c'8. ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.24445111019
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3302,68 +5485,31 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #1.49531931577
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4.
-                        {
-                            \once \override NoteHead #'Y-offset = #2.9643390603
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.9643390603
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #4.64988727098
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.64988727098
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.8911680467
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.8911680467
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.73799709051
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.73799709051
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.62408253519
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.62408253519
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.74361166855
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.74361166855
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.66871470855
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \once \override NoteHead #'Y-offset = #-0.093574977683
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #-0.0612469306859
+                        c'8. ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.0217745521654
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #0.0158836552419
+                            c'8
+                            \once \override NoteHead #'Y-offset = #0.0382811488578
+                            c'8. ]
+                            \once \override NoteHead #'Y-offset = #0.066433951269
+                            c'4
+                            \once \override NoteHead #'Y-offset = #0.0912179659361
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.0972191837524
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3371,80 +5517,64 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-2.66138891924
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4.
-                        {
-                            \once \override NoteHead #'Y-offset = #3.49781676698
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \once \override NoteHead #'Y-offset = #0.0361681873955
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #-0.0127185574976
+                        c'8. ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.0726187009002
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.130552018458
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.213532869541
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-0.255873164309
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.319124162805
+                            c'8 ]
                         }
-                        \once \override NoteHead #'Y-offset = #3.49781676698
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'2.
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.83202029524
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.83202029524
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.21695367711
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-3.21695367711
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4.
-                        {
-                            \once \override NoteHead #'Y-offset = #-4.04044214993
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #-0.365344225669
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.442884508727
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.568610727823
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.611871676933
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #5.19924389
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #5.19288894413
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #5.19288894413
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #4.85915772025
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.85915772025
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #4.67202645944
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.67202645944
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #4.98772397843
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.801805275414
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.874252803711
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.954843634628
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-0.986312783112
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-1.02036941504
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-1.0334459755
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3452,332 +5582,103 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #3.637916275
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.90207732584
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-0.943847929447
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.820246080437
+                            c'8
                         }
-                        \once \override NoteHead #'Y-offset = #1.90207732584
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #0.791949452707
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-0.770864080301
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.596913526129
+                            c'4.
                         }
-                        \once \override NoteHead #'Y-offset = #0.791949452707
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #0.632019536645
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.632019536645
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #0.408144901076
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.408144901076
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4.
-                        {
-                            \once \override NoteHead #'Y-offset = #3.35704162341
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.35704162341
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #3.5197053719
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.5197053719
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #4.88597810279
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.88597810279
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #4.95010842061
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.95010842061
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #3.19326143459
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.19326143459
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #3.1856533127
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 4/5 {
+                            \once \override NoteHead #'Y-offset = #-0.344444676508
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.119166335323
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.0555702638806
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #2.21025785766
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'2 ~
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.82565287387
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #0.407820053198
+                            c'8
+                            \once \override NoteHead #'Y-offset = #0.551712618558
+                            c'4.
                         }
-                        \once \override NoteHead #'Y-offset = #2.21025785766
-                        \once \override NoteHead #'stencil = #point-stencil
-                        c'8
-                        \once \override NoteHead #'Y-offset = #-3.82565287387
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.425322380641
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.425322380641
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #3.77150754496
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.77150754496
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #2.21867844433
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.21867844433
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.469884011882
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 4/5 {
+                            \once \override NoteHead #'Y-offset = #0.905303435392
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #1.02457807321
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #1.04273170353
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #3.49998684788
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #2.9315073628
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #0.93603037228
+                            c'4
+                            \once \override NoteHead #'Y-offset = #0.730248956861
+                            c'4.
                         }
-                        \once \override NoteHead #'Y-offset = #2.9315073628
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #2.99001046351
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.99001046351
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.0357011825787
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.0357011825787
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.0694196226905
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.0694196226905
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.153086932492
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.153086932492
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.38042718799
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.38042718799
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.47360787832
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.47360787832
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.0234410247606
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.0234410247606
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.26976725452
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 4/5 {
+                            \once \override NoteHead #'Y-offset = #0.28661364425
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.0427737215917
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.254603682868
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #0.915677785137
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'2 ~
-                        {
-                            \once \override NoteHead #'Y-offset = #3.8164624259
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #0.915677785137
-                        \once \override NoteHead #'stencil = #point-stencil
-                        c'8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override NoteHead #'Y-offset = #1.06703672886
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #1.40944521808
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.40944521808
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #2.90907825049
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.90907825049
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #3.99795771962
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.99795771962
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #3.63872060904
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.63872060904
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #2.35665926568
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.35665926568
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #3.4372233613
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.4372233613
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #4.0321897579
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #4.0321897579
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #3.78436019769
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.78436019769
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #3.15668795728
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #-0.600590220781
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-0.902525194863
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.970415572998
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3785,59 +5686,40 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #0.23268922823
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.40384274025
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-1.26716912312
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-1.27564911745
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-1.26733899347
+                            c'8. ]
                         }
-                        \once \override NoteHead #'Y-offset = #-1.40384274025
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.45094058975
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #-1.23365736201
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-1.11456114892
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-1.07546462597
+                            c'4
                         }
-                        \once \override NoteHead #'Y-offset = #-1.45094058975
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.266261972935
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-0.266261972935
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.98144065682
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-2.98144065682
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-1.63309775756
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-1.63309775756
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-2.22399503252
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-1.022930531
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #-0.959687520045
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-0.906467923499
+                            \afterGrace
+                            c'8. ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.808152150596
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -3845,116 +5727,96 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override NoteHead #'Y-offset = #-0.789258162754
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #-0.915135749694
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \once \override NoteHead #'Y-offset = #-0.0643552428224
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #0.255093065145
+                        c'8. ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #0.608292172572
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #0.928694959932
+                            c'8
+                            \once \override NoteHead #'Y-offset = #1.1463485305
+                            c'8. ]
+                            \once \override NoteHead #'Y-offset = #1.47077591749
+                            c'4
+                            \once \override NoteHead #'Y-offset = #1.88097706704
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #2.06833987813
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
-                        \once \override NoteHead #'Y-offset = #-0.915135749694
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8
-                        {
-                            \once \override NoteHead #'Y-offset = #0.880346207088
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8
+                        \once \override NoteHead #'Y-offset = #2.59983363515
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #2.56122830053
+                        c'8. ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #2.4381232439
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #2.27198520734
+                            c'4
+                            \once \override NoteHead #'Y-offset = #1.97793016243
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #1.80621892239
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #1.526562898
+                            c'8 ]
                         }
-                        \once \override NoteHead #'Y-offset = #0.880346207088
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #3.0370702911
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.0370702911
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.60960303191
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.60960303191
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #2.001453526
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.001453526
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #3.35096559453
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #3.35096559453
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 [
-                        {
-                            \once \override NoteHead #'Y-offset = #2.44666126999
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #2.44666126999
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'8 ]
-                        {
-                            \once \override NoteHead #'Y-offset = #1.77744832179
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #1.77744832179
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #1.62528918535
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #1.33007072924
+                            c'4
+                            \once \override NoteHead #'Y-offset = #1.0168615416
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #0.55116361571
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #0.401823962811
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \once \override NoteHead #'Y-offset = #-5.96567274999
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-5.6737679632
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-5.6737679632
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-4.37768616084
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
-                        }
-                        \once \override NoteHead #'Y-offset = #-4.37768616084
-                        \once \override NoteHead #'stencil = #point-stencil
-                        \afterGrace
-                        c'4
-                        {
-                            \once \override NoteHead #'Y-offset = #-3.9
-                            \once \override NoteHead #'stencil = #point-stencil
-                            b'16
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-0.202187279311
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.418173245166
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-0.661358506867
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-0.763685360354
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-0.893851625899
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-0.965735802391
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
                         }
                     }
                     \addGliss
@@ -3971,90 +5833,206 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-6.2525603947
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-6.24481920854
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-6.26008222435
+                            c'4
+                        }
+                        \once \override NoteHead #'Y-offset = #-6.28882658587
+                        c'2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/7 {
+                            \once \override NoteHead #'Y-offset = #-6.3765200558
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-6.40610696936
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-6.42117010962
+                            c'4
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/4 {
+                            \once \override NoteHead #'Y-offset = #-6.40364541492
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-6.37396988636
+                            c'4.
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-6.18863658013
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-6.0602677258
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-5.9871973538
+                            c'4.
+                        }
+                        \once \override NoteHead #'Y-offset = #-5.74623429644
+                        \afterGrace
+                        c'2
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #-5.39304781372
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-5.27580614545
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-5.29200644331
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-5.33883350112
+                            c'8. ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 7/6 {
+                            \once \override NoteHead #'Y-offset = #-5.41014673675
+                            c'16. [
+                            \once \override NoteHead #'Y-offset = #-5.47983592849
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-5.58734124198
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-5.64543492582
+                            c'32
+                            \once \override NoteHead #'Y-offset = #-5.67517818143
+                            c'16 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-5.73549662447
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #-5.85212055733
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-5.9276560302
+                            c'8. ]
+                        }
+                        \times 2/3 {
+                            \once \override NoteHead #'Y-offset = #-6.03362241737
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-6.14223561791
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-6.25877955346
+                            c'8
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-6.28322150866
+                            c'8. [
+                            \once \override NoteHead #'Y-offset = #-6.30652153429
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-6.30596318906
+                            c'8 ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-6.29158360215
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-6.20815143199
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-5.98045066767
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-5.90173112402
+                            \afterGrace
+                            c'8 ]
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-5.7185812125
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4..
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r4.
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r2
-                        \once \override Dots.transparent = ##t
-                        \once \override Rest.transparent = ##t
-                        r8
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 3/4 {
+                            \once \override NoteHead #'Y-offset = #-4.69879532149
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-4.54011419068
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-4.31971161512
+                            c'8. ]
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 6/5 {
+                            \once \override NoteHead #'Y-offset = #-4.13223331085
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-3.98225210201
+                            c'8. ]
+                            \once \override NoteHead #'Y-offset = #-3.87826468423
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-3.99000601091
+                            c'16
+                        }
+                        \times 4/5 {
+                            \once \override NoteHead #'Y-offset = #-4.06066540758
+                            c'8.
+                            \once \override NoteHead #'Y-offset = #-4.24514704508
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-4.55942612899
+                            c'16 [
+                            \once \override NoteHead #'Y-offset = #-4.64610459012
+                            c'8 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #-4.8246295117
+                        c'8. [
+                        \once \override NoteHead #'Y-offset = #-5.16249242164
+                        c'8. ]
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-5.47897613401
+                            c'8 [
+                            \once \override NoteHead #'Y-offset = #-5.63651920119
+                            c'16
+                            \once \override NoteHead #'Y-offset = #-5.70908581494
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-5.84038754384
+                            c'8. ]
+                            \once \override NoteHead #'Y-offset = #-5.99988647567
+                            c'4
+                        }
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-6.13823551789
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-6.18039617258
+                            c'4
+                            \once \override NoteHead #'Y-offset = #-6.09183028004
+                            c'8
+                        }
+                        \once \override NoteHead #'Y-offset = #-6.00934888107
+                        c'2
+                        \tweak #'text #tuplet-number::calc-fraction-text
+                        \times 5/6 {
+                            \once \override NoteHead #'Y-offset = #-5.21477015161
+                            c'8
+                            \once \override NoteHead #'Y-offset = #-4.96493243336
+                            c'4.
+                            \once \override NoteHead #'Y-offset = #-4.08451921708
+                            \afterGrace
+                            c'4
+                            {
+                                \once \override Beam #'stencil = ##f
+                                \once \override Flag #'stencil = ##f
+                                \once \override NoteHead #'Y-offset = #-3.4518382448
+                                \once \override NoteHead #'stencil = #point-stencil
+                                \once \override Stem #'stencil = ##f
+                                c'16
+                            }
+                        }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
@@ -4074,7 +6052,6 @@
                         \once \override Rest.transparent = ##t
                         r4.
                     }
-                    \addGliss
                     {
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -4208,6 +6185,7 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
+                        \bar "|"
                     }
                 }
             >>
@@ -4500,263 +6478,360 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8
-                    c'8 ]
-                    c'4
-                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4.
+                        c'4
+                        c'8
+                    }
+                    c'4.
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r16
-                    c'2 ~
-                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'8
+                        c'4.
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'8
+                        c'4.
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'4
+                        c'4
+                        c'4.
+                    }
                     c'2
-                    c'8
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8 ]
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8 ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'8 [
-                    c'8
-                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8 [
+                        c'8.
+                        c'8. ]
+                    }
+                    \times 2/3 {
+                        c'4.
+                        c'8
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8. [
+                        c'8
+                        c'8. ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    c'8. [
+                    c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8. [
+                        c'8
+                        c'8. ]
+                        c'4
+                        c'8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    c'8. [
+                    c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8.
+                        c'4
+                        c'8 [
+                        c'8.
+                        c'8 ]
+                    }
+                    \times 2/3 {
+                        c'4
+                        c'4.
+                        c'8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8.
+                        c'4
+                        c'8 [
+                        c'8.
+                        c'8 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'4.
+                        c'8
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'4
+                        c'4.
+                    }
+                    \times 4/5 {
+                        c'4.
+                        c'4
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'8
+                        c'4.
+                    }
+                    \times 4/5 {
+                        c'4.
+                        c'4
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'4
+                        c'4.
+                    }
+                    \times 4/5 {
+                        c'4.
+                        c'4
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'4.
+                        c'8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8 [
+                        c'8.
+                        c'8. ]
+                    }
+                    \times 2/3 {
+                        c'4.
+                        c'8
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8. [
+                        c'8
+                        c'8. ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    c'8. [
+                    c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8. [
+                        c'8
+                        c'8. ]
+                        c'4
+                        c'8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    c'8. [
+                    c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8.
+                        c'4
+                        c'8 [
+                        c'8.
+                        c'8 ]
+                    }
+                    \times 2/3 {
+                        c'4
+                        c'4.
+                        c'8
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8.
+                        c'4
+                        c'8 [
+                        c'8.
+                        c'8 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r4.
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'4.
+                        c'4
+                        c'4
+                    }
                     c'2
-                    c'4
-                    c'8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'4
+                        c'4.
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'8
+                        c'4.
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4
+                        c'8
+                        c'4.
+                    }
+                    c'2
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8 [
+                        c'8.
+                        c'8. ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 7/6 {
+                        c'16. [
+                        c'8
+                        c'16
+                        c'32
+                        c'16 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8. [
+                        c'8
+                        c'8. ]
+                    }
+                    \times 2/3 {
+                        c'4
+                        c'4.
+                        c'8
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8. [
+                        c'8.
+                        c'8 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8.
+                        c'4
+                        c'16 [
+                        c'8 ]
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r8
-                    c'4.
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8
-                    c'8
-                    c'8 ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'4.
-                    c'2.
-                    c'8
-                    c'4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'8
-                    c'4
-                    c'4
-                    c'8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'4
-                    c'8
-                    c'8 [
-                    c'8 ]
-                    c'4.
-                    c'8
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8 ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'2 ~
-                    c'8
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8 ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'8 [
-                    c'8
-                    c'8
-                    c'8
-                    c'8
-                    c'8 ]
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'2 ~
-                    c'8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'8 [
-                    c'8
-                    c'8 ]
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    c'8 [
-                    c'8
-                    c'8 ]
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'8 [
-                    c'8
-                    c'8 ]
-                    c'4
-                    c'4
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    c'8 [
-                    c'8
-                    c'8 ]
-                    c'4
-                    c'4
-                    c'4
-                    c'8 [
-                    c'8 ]
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    c'4
-                    c'4
-                    c'4
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4..
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r8
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 3/4 {
+                        c'8 [
+                        c'8.
+                        c'8. ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/5 {
+                        c'8 [
+                        c'8. ]
+                        c'4
+                        c'16
+                    }
+                    \times 4/5 {
+                        c'8.
+                        c'4
+                        c'16 [
+                        c'8 ]
+                    }
+                    c'8. [
+                    c'8. ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'8 [
+                        c'16
+                        c'8
+                        c'8. ]
+                        c'4
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'4.
+                        c'4
+                        c'8
+                    }
+                    c'2
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/6 {
+                        c'8
+                        c'4.
+                        c'4
+                    }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
@@ -4907,6 +6982,7 @@
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r4.
+                    \bar "|"
                 }
             }
         >>

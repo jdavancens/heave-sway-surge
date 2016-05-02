@@ -1,26 +1,36 @@
 # -*- coding: utf-8 -*-
 from BezierCurve import BezierCurve
 from LinearInterpolater import LinearInterpolater
+
+
 class Path(object):
     ''' A sequence of linked BezierCurves B0, B1, ..., Bn. The final x-value of Bi
     must be equal to the first x-value of Bi+1.
         ::
             >>> b0 = BezierCurve((0,0), (50, 100), (100, 0))
-            >>> b1 = BezierCurve((100, 0), (200, -100), (300, 0))
+            >>> b1 = BezierCurve((100, 0), (150, -100), (200, 0))
             >>> p = Path(b0, b1)
-            >>> p.size
-            2
             >>> len(p)
-            300
-            >>> x = 225
+            2
+            >>> p.length
+            200.0
+            >>> x = 125
             >>> x in p
             True
-            >>> p(x)
-            -46.875
+            >>> p(0)
+            0.0
+            >>> p(0.25)
+            50.0
+            >>> p(0.5)
+            0.0
+            >>> p(0.75)
+            -50.0
+            >>> p(1)
+            0.0
     '''
-    __slots__ = ('_interpolater','_curves')
+    __slots__ = ('_interpolater', '_curves')
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
     def __init__(self, *curves):
         self._interpolater = LinearInterpolater()
@@ -30,19 +40,16 @@ class Path(object):
             for i in range(1, len(curves)):
                 assert isinstance(curves[i-1], BezierCurve)
                 assert isinstance(curves[i], BezierCurve)
-                # assert curves[i] == curves[i-1], \
-                #     'Curves must be linked'
                 self._curves = tuple(curves)
         else:
             self._curves = tuple(curves)
 
     def __call__(self, x):
-        x *= len(self)
-        for curve in self._curves:
+        for curve in self:
             if x in curve:
                 return curve(x, self._interpolater)
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __contains__(self, x):
         for curve in self._curves:
@@ -50,16 +57,27 @@ class Path(object):
                 return True
         return False
 
+    def __getitem__(self, key):
+        return self._curves[key]
+
     def __len__(self):
-        return sum( [len(curve) for curve in self._curves] )
-
-    ### PUBLIC PROPERTIES ###
-
-    @property
-    def size(self):
         return len(self._curves)
 
-    ### PUBLIC METHODS ###
+    def __repr__(self):
+        C = []
+        for c in self._curves:
+            c = '\n\t'.join(str(x) for x in c)
+            C.append(c)
+        C = ', '.join(C)
+        return 'Path(\n\t' + C + '\n)'
+
+    # PUBLIC PROPERTIES
+
+    @property
+    def length(self):
+        return sum([curve.length for curve in self])
+
+    # PUBLIC METHODS
 
     def set_interpolater(self, interpolater):
         self._interpolater = interpolater

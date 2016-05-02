@@ -41,7 +41,7 @@ slide_position_music_maker = MusicMaker(
 # MUSIC-HANDLERS
 # ==============================================================================
 
-embouchure_music_handler = ReedEmbouchureHandler(
+embouchure_music_handler = EmbouchureHandler(
     music_maker=embouchure_music_maker,
     air_pressure_envelopes=air_pressure_envelopes,
     lip_pressure_envelopes=lip_pressure_envelopes,

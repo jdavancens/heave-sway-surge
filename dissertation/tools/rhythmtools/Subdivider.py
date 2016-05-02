@@ -10,7 +10,8 @@ class Subdivider:
         '_rotation_cycle',
         '_silence_mask',
         '_sustain_mask',
-        '_second_level_subdivider'
+        '_second_level_subdivider',
+        '_second_level_subdivision_pattern'
     )
 
     def __init__(
@@ -19,6 +20,7 @@ class Subdivider:
         sustain_mask=None,
         silence_mask=None,
         second_level_subdivider=None,
+        second_level_subdivision_pattern=None
     ):
         if isinstance(rotation_cycle, int):
             rotation_cycle = [rotation_cycle]
@@ -27,45 +29,62 @@ class Subdivider:
         self._sustain_mask = sustain_mask
         self._silence_mask = silence_mask
         self._second_level_subdivider = second_level_subdivider
+        if second_level_subdivision_pattern is None:
+            self._second_level_subdivision_pattern = patterntools.select_every(
+                indices=[0],
+                period=1,
+                inverted=True
+            )
+        elif isinstance(second_level_subdivision_pattern, (list, tuple)):
+            self._second_level_subdivision_pattern = \
+                patterntools.Pattern.from_vector(
+                    second_level_subdivision_pattern
+                )
+        else:
+            self._second_level_subdivision_pattern = \
+                second_level_subdivision_pattern
 
-    def _apply_second_level_subdivider(self, R):
+    def _apply_second_level_subdivider(self, ratio):
         if self._second_level_subdivider is None:
-            return R
+            return ratio
 
         from fractions import Fraction
         from abjad.tools.mathtools.Ratio import Ratio
-
-        l = sum(R)
-        F = [Fraction(r, l) for r in R]
-        R_2 = []
-        new_R = []
-        for r, f in zip(R, F):
-            R_2 = self._second_level_subdivider(r)
-            l = sum(R_2)
-            R_2 = [Fraction(r, l) * f for r in R_2]
-            gcd = 1
-            for r in R_2:
-                if r.denominator > gcd:
-                    gcd = r.denominator
-            R_2 = [int(r*gcd) for r in R_2]
-            new_R.extend(R_2)
-        return new_R
+        length = len(ratio)
+        sum_ = sum([abs(x) for x in Ratio(ratio)])
+        fractions = [Fraction(n, sum_) for n in Ratio(ratio)]
+        subratio = []
+        new_ratio = []
+        i = 0
+        pattern = self._second_level_subdivision_pattern
+        for n, f in zip(ratio, fractions):
+            if n < 0:
+                new_ratio.append(f)
+            else:
+                if pattern.matches_index(i, length):
+                    subratio = self._second_level_subdivider(n)
+                else:
+                    subratio = mathtools.Ratio([n])
+                subsum = sum([abs(x) for x in subratio])
+                subratio = [Fraction(x, subsum) * f for x in subratio]
+                new_ratio.extend(subratio)
+            i += 1
+        lcm = self._lcm(new_ratio)
+        new_ratio = [int(x * lcm) for x in new_ratio]
+        return new_ratio
 
     def _apply_silence_mask(self, R):
         if self._silence_mask is None:
             return R
 
-        from abjad.tools.sequencetools.sum_consecutive_elements_by_sign \
-            import sum_consecutive_elements_by_sign
-
-        indices = self._silence_mask.pattern.indices
-        period = self._silence_mask.pattern.period
         R2 = []
         for i, r in enumerate(R):
             if self._silence_mask.pattern.matches_index(i, len(R)):
                 R2.append(r * -1)
             else:
                 R2.append(r)
+
+        R2_fused = self._fuse_rests(R2)
         return self._fuse_rests(R2)
 
     def _apply_sustain_mask(self, R):
@@ -116,8 +135,16 @@ class Subdivider:
         R = sum_consecutive_elements_by_sign(R, sign=[-1])
         return R
 
+    def _lcm(self, fractions):
+        denominators = [Fraction(x).denominator for x in fractions]
+        lcm = mathtools.least_common_multiple(*denominators)
+        return lcm
+
     def _rotate(self, R):
-        n = self._rotation_cycle.next()[0] % len(R)
-        A = R[0:n]
-        B = R[n:]
-        return B+A
+        if len(R) < 1:
+            return R
+        else:
+            n = self._rotation_cycle.next()[0] % len(R)
+            A = R[0:n]
+            B = R[n:]
+            return B+A

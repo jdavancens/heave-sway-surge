@@ -9,20 +9,44 @@ from abjad import *
 
 def add_gliss(music):
     container = Container(music[:])
-    command = indicatortools.LilyPondCommand('addGliss', format_slot='before')
-    attach(command, container)
-    # music = Voice([container])
-    music = container
+    for leaf in iterate(container).by_leaf():
+        if isinstance(leaf, scoretools.Note):
+            command = indicatortools.LilyPondCommand(
+                'addGliss',
+                format_slot='before'
+                )
+            attach(command, container)
+            music = container
+            return
 
 
-def hidden_grace_after(leaf, pitch):
-    grace_note = Note(pitch, Duration(1, 16))
+def convert_rests_to_skips(music):
+    for leaf in iterate(music).by_leaf():
+        if isinstance(leaf, scoretools.Rest):
+            duration = leaf.written_duration
+            mutate(leaf).replace(scoretools.Skip(duration))
+
+
+def hidden_grace_after(leaf):
+    grace_note = Note(0, Duration(1, 16))
     point_note_head(grace_note)
     override(grace_note).stem.stencil = False
     override(grace_note).beam.stencil = False
     override(grace_note).flag.stencil = False
     grace_container = scoretools.GraceContainer([grace_note], kind='after')
     attach(grace_container, leaf)
+
+
+def get_consecutive_note_groups(music):
+    import itertools
+    leaves = list(iterate(music).by_leaf())
+    groups = []
+    pairs = itertools.groupby(leaves, lambda _: _.__class__)
+    for class_, group in pairs:
+        group = list(group)
+        if isinstance(group[0], scoretools.Note):
+            groups.append(group)
+    return groups
 
 
 def gliss(leaf, color, thickness=0.5):
@@ -54,12 +78,6 @@ def gliss(leaf, color, thickness=0.5):
     attach(glissando, leaf)
 
 
-def grace_after(leaf):
-    grace_note = Note(11, Duration(1, 16))
-    grace_container = scoretools.GraceContainer([grace_note], kind='after')
-    attach(grace_container, leaf)
-
-
 def gliss_skip(leaf):
     override(leaf).note_column.glissando_skip = True
 
@@ -82,9 +100,40 @@ def hide(leaf):
     attach(hide_dots, leaf)
 
 
+def make_circle_markup(size, grey=0):
+    arc = markuptools.PostscriptOperator('arc', 0, 0, size, 0, 360)
+    postscript = markuptools.Postscript([arc])
+    postscript = postscript.closepath()
+    postscript = postscript.setgray(grey)
+    postscript = postscript.fill()
+    circle = postscript.as_markup()
+    return circle
+
+
+def make_circle_outline_markup(size):
+    circle_outline = markuptools.MarkupCommand(
+        'draw-circle', size, 0.1, False)
+    return Markup(circle_outline)
+
+
+def make_half_circle_markup(size, grey=0):
+    arc = markuptools.PostscriptOperator(
+        'arc', 0, 0, 1, 0, 180)
+    postscript = markuptools.Postscript([arc])
+    postscript = postscript.closepath()
+    postscript = postscript.setgray(0)
+    postscript = postscript.fill()
+    half_circle = postscript.as_markup()
+    return half_circle
+
+
 def map_fraction_to_y_offset(x, number_of_staff_lines):
     y_offset = (x - 0.5) * (number_of_staff_lines - 2)
     return y_offset
+
+
+def quantize(x, steps):
+    return round(float(x) * steps) / steps
 
 
 def point_note_head(leaf):
@@ -95,116 +144,12 @@ def point_note_head(leaf):
             note_head.tweak.stencil = schemetools.Scheme('point-stencil')
 
 
-def text_spanner_start(selection, current_text_tuple, next_text, direction):
-    text_padding = 1
-    staff_padding = 4
-    first_leaf = selection[0]
-    last_leaf = selection[-1]
-
-    start_command = indicatortools.LilyPondCommand(
-        "startTextSpan", format_slot='right'
-    )
-    stop_command = indicatortools.LilyPondCommand(
-        "stopTextSpan", format_slot='right'
-    )
-    column = []
-    for text in current_text_tuple:
-        markup = Markup(text)
-        column.append(markup)
-    left_markup = Markup(column).bold()
-    spanner_bound_padding = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=('bound-padding'),
-        value=10
-        )
-    spanner_left_text = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=(
-            'bound-details',
-            'left',
-            'text'
-            ),
-        value=left_markup
-        )
-    spanner_left_alignment = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=(
-            'bound_details',
-            'left',
-            'Y'
-            ),
-        value=-10
-        )
-    spanner_right_alignment = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=(
-            'bound_details',
-            'right',
-            'Y'
-            ),
-        value=10
-        )
-    spanner_left_padding = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=(
-            'bound-details',
-            'left',
-            'padding'
-            ),
-        value=0
-        )
-    spanner_right_padding = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=(
-            'bound-details',
-            'right',
-            'padding'
-            ),
-        value=text_padding
-        )
-    spanner_direction = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=('direction'),
-        value=direction
-        )
-    spanner_line = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=('style'),
-        value=schemetools.SchemeSymbol('line')
-        )
-    spanner_no_line = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=('style'),
-        value=schemetools.SchemeSymbol('none')
-        )
-    spanner_staff_padding = lilypondnametools.LilyPondGrobOverride(
-        grob_name='TextSpanner',
-        is_once=True,
-        property_path=('staff-padding'),
-        value=staff_padding
-        )
-
-    if current_text_tuple != next_text:
-        attach(spanner_left_text, first_leaf)
-
-    attach(spanner_left_alignment, first_leaf)
-    attach(spanner_right_alignment, first_leaf)
-    attach(spanner_left_padding, first_leaf)
-    attach(spanner_right_padding, first_leaf)
-    attach(spanner_direction, first_leaf)
-    attach(spanner_line, first_leaf)
-    attach(spanner_staff_padding, first_leaf)
-    attach(start_command, first_leaf)
-    attach(stop_command, last_leaf)
+def sum_time_signatures(time_signatures):
+    time_signatures = sequencetools.flatten_sequence(time_signatures)
+    sum_ = Duration((0, 1))
+    for time_signature in time_signatures:
+        sum_ += time_signature.duration
+    return sum_
 
 
 def text_to_note_head(
@@ -220,7 +165,7 @@ def text_to_note_head(
     if isinstance(text_or_tuple, str):
         text_list = [text_or_tuple]
     else:
-        text_list = text_or_tuple
+        text_list = [str(x) for x in text_or_tuple]
     # handle vertical and horizontal orientations
     if orientation == 'y':
         if len(text_list) < 2:
@@ -252,6 +197,29 @@ def text_to_note_head(
     markup = markup.whiteout()
     override(note).note_head.stencil = 'ly:text-interface::print'
     override(note).note_head.text = markup
+
+
+def time_signatures_to_normalized_offsets(time_signatures):
+    time_signatures = sequencetools.flatten_sequence(time_signatures)
+    sum_ = float(sum_time_signatures(time_signatures))
+    running_total = float(Offset(0, 1))
+    offsets = [running_total]
+    for time_signature in time_signatures[:-1]:
+        offset = float(time_signature.duration)
+        running_total += offset / sum_
+        offsets.append(running_total)
+    return offsets
+
+
+def time_signatures_to_offsets(time_signatures):
+    time_signatures = sequencetools.flatten_sequence(time_signatures)
+    running_total = 0
+    offsets = [running_total]
+    for time_signature in time_signatures[:-1]:
+        offset = float(time_signature.duration)
+        running_total += offset
+        offsets.append(running_total)
+    return offsets
 
 
 def to_proportional_notation(music):

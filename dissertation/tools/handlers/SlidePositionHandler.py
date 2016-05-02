@@ -68,12 +68,14 @@ class SlidePositionHandler(object):
         attach(slide_position_stop, logical_tie[0])
 
     def _annotate_logical_ties(self, voice, current_stage):
-        total_duration = float(inspect_(voice).get_timespan().stop_offset)
+        start_offset = float(inspect_(voice).get_timespan().start_offset)
+        stop_offset = float(inspect_(voice).get_timespan().stop_offset)
+        total_duration = stop_offset - start_offset
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             start_moment = inspect_(logical_tie[0]).get_vertical_moment(voice)
-            start_moment = float(start_moment.offset)
+            start_offset = float(start_moment.offset)
             duration = float(logical_tie.get_duration()) / total_duration
-            x0 = start_moment / total_duration
+            x0 = start_offset / total_duration
             x1 = x0 + duration
             s0 = self._slide_position_envelopes[current_stage](x0)
             s1 = self._slide_position_envelopes[current_stage](x1)
@@ -93,8 +95,9 @@ class SlidePositionHandler(object):
             attach(previous_slide_position_stop, current[0])
 
     def _attach_grace_notes(self, voice):
-        for lt in iterate(voice).by_logical_tie(pitched=True):
-            shortcuts.grace_after(lt.head)
+        groups = shortcuts.get_consecutive_note_groups(voice)
+        for group in groups:
+            shortcuts.hidden_grace_after(group[-1])
 
     def _name_voices(self, voice, rhythm_voice):
         instrument = self._music_maker.instrument
@@ -103,17 +106,23 @@ class SlidePositionHandler(object):
 
     def _set_y_offsets(self, voice):
         n = self._number_of_staff_lines
-        for tie in iterate(voice).by_logical_tie(pitched=True):
-            y0 = inspect_(tie.head).get_annotation('slide_position_start')
-            y1 = inspect_(tie.head).get_annotation('slide_position_stop')
+        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
+            y0 = inspect_(logical_tie.head).get_annotation(
+                'slide_position_start'
+                )
+            y1 = inspect_(logical_tie.head).get_annotation(
+                'slide_position_stop'
+                )
             y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
             y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-            grace = inspect_(tie.head).get_grace_container()[0]
-            override(grace).note_head.Y_offset = y1_offset
-            shortcuts.point_note_head(grace)
-            for note in tie:
-                override(note).note_head.Y_offset = y0_offset
-                shortcuts.point_note_head(note)
+            override(logical_tie.head).note_head.Y_offset = y0_offset
+            try:
+                grace = inspect_(logical_tie.tail).get_grace_container()
+            except:
+                grace = None
+            if grace is not None:
+                grace = inspect_(logical_tie.tail).get_grace_container()[0]
+                override(grace).note_head.Y_offset = y1_offset
 
     # PUBLIC PROPERTIES #
 

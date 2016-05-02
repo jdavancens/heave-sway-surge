@@ -30,6 +30,7 @@ class EvenSubdivider(Subdivider):
         n_cycle,
         rotation_cycle=0,
         second_level_subdivider=None,
+        second_level_subdivision_pattern=None,
         sustain_mask=None,
         silence_mask=None,
     ):
@@ -41,6 +42,7 @@ class EvenSubdivider(Subdivider):
             self,
             rotation_cycle=rotation_cycle,
             second_level_subdivider=second_level_subdivider,
+            second_level_subdivision_pattern=second_level_subdivision_pattern,
             sustain_mask=sustain_mask,
             silence_mask=silence_mask,
         )
@@ -50,9 +52,9 @@ class EvenSubdivider(Subdivider):
         n = self._n_cycle.next()[0]
         pattern = self._bjorklund(duration, n)
         ratio = self._binary_to_ratio(pattern)
-        ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._apply_sustain_mask(self, ratio)
         ratio = Subdivider._apply_silence_mask(self, ratio)
+        ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._rotate(self, ratio)
         return Ratio(ratio)
 

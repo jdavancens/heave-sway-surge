@@ -1,7 +1,5 @@
 \version "2.19.29"
 \include "stencils.ily"
-#(set-default-paper-size "11x17" 'portrait)
-#(set-global-staff-size 10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
@@ -27,24 +25,25 @@
     oddHeaderMarkup = \markup \fill-line { " " }
     print-first-page-number = ##f
     print-page-number = ##t
-    ragged-bottom = ##t
-    ragged-last-bottom = ##t
-    ragged-right = ##f
-    indent = 0.5\in
+    max-systems-per-page = 1
+    page-breaking = #ly:optimal-breaking
+    ragged-bottom = ##f
+    ragged-last-bottom = ##f
+    ragged-right = ##t
+    indent = 0.25\in
     left-margin = 1\in
     right-margin = 0.5\in
     top-margin = 0.5\in
-    system-separator-markup = \slashSeparator
 
     system-system-spacing =
-        #'((basic-distance . 50)
-           (minimum-distance . 0)
+        #'((basic-distance . 32)
+           (minimum-distance . 28)
            (padding . -10)
            (stretchability . 0))
 
     top-system-spacing =
-        #'((basic-distance . 15)
-           (minimum-distance . 0)
+        #'((basic-distance . 24)
+           (minimum-distance . 18)
            (padding . -10)
            (stretchability . 0))
 }
@@ -94,7 +93,7 @@
         \omit Dots
         \omit Flag
         \omit MetronomeMark
-        \hide NoteHead
+        %{\hide NoteHead%}
         \hide Rest
         \omit Stem
         \omit Tie
@@ -102,7 +101,6 @@
         \omit TupletBracket
         \omit TupletNumber
 
-        \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
         \override Glissando.thickness = #3
         \override Glissando.layer = #-50
@@ -126,9 +124,14 @@
         \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
-            white white grey white white
+            white white (x11-color 'grey80) white white
             white white white white black
             )
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 20)
+               (minimum-distance . 18)
+               (padding . -10)
+               (stretchability . 0))
     }
     % FRETTING STAFF
     \context {
@@ -186,15 +189,16 @@
         \omit TupletBracket
         \omit TupletNumber
         \override InstrumentName.padding = #1
-        \override StaffSymbol.line-count = #10
+        \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
+            white white white white white
             white white white white black
             )
 
         \override VerticalAxisGroup #'staff-staff-spacing =
-            #'((basic-distance . 0)
-               (minimum-distance . 25)
+            #'((basic-distance . 18)
+               (minimum-distance . 12)
                (padding . -10)
                (stretchability . 0))
     }
@@ -220,9 +224,9 @@
         \override StaffSymbol.transparent = ##t
         squashedPosition = #0
         \override VerticalAxisGroup.default-staff-staff-spacing = #'(
-            (basic-distance . 0)
-            (minimum-distance . 15)
-            (padding . 8)
+            (basic-distance . 2)
+            (minimum-distance . 1)
+            (padding . -10)
             (stretchability . 0)
         )
         \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
@@ -246,6 +250,14 @@
         \override StaffSymbol.line-count = #1
         squashedPosition = #0
 
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 8)
+               (minimum-distance . 6)
+               (padding . -10)
+               (stretchability . 0))
+        \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
+
+
     }
     % STRING SPACE STAFF
     \context {
@@ -266,22 +278,46 @@
         \omit Clef
         \omit Dots
         \omit Flag
+        \omit InstrumentName
         \hide Rest
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
+
+        \override Glissando.after-line-breaking = ##t
+        \override Glissando.thickness = #3
+        \override Glissando.layer = #-50
+        \override Glissando.gap = #0
+        \override Glissando.bound-details =
+            #'(
+                (right
+                    (attch-dir . -1)
+                    (end-on-accidental . #t)
+                    (padding . 0)
+                )
+                (left
+                    (attach-dir . 1)
+                    (padding . 0)
+                    (start-at-dot . #f)
+                )
+            )
         \override InstrumentName.padding = #1
-        \override StaffSymbol.line-count = #30
+        \override StaffSymbol.line-count = #31
         \override StaffSymbol.stencil = #(color-staff-lines
             black white white white white
             white white grey white white
             white white white white white
+            (x11-color 'grey80) white white white white
             white white white white white
-            white white white white white
-            white white white white black
+            white white white white white black
             )
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 20)
+               (minimum-distance . 18)
+               (padding . -10)
+               (stretchability . 0))
     }
     % TIME SIGNATURE STAFF
     \context {
@@ -327,6 +363,11 @@
         \override TimeSignature.font-size = 3
         \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 12)
+               (minimum-distance . 12)
+               (padding . -10)
+               (stretchability . 0))
     }
     % TROMBONE SLIDE POSITION STAFF
     \context {
@@ -346,6 +387,7 @@
         \omit Clef
         \omit Dots
         \omit Flag
+        \hide NoteHead
         \hide Rest
         \omit Stem
         \omit Tie
@@ -353,7 +395,6 @@
         \omit TupletBracket
         \omit TupletNumber
 
-        \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
         \override Glissando.thickness = #3
         \override Glissando.layer = #-50
@@ -375,10 +416,19 @@
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
-            black white white white white
-            white white grey white white
-            white white white white black
+            black white
+            (x11-color 'grey80) white
+            (x11-color 'grey80) white
+            (x11-color 'grey80) white
+            (x11-color 'grey80) white
+            (x11-color 'grey80) white
+            (x11-color 'grey80) white black
             )
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 10)
+               (minimum-distance . 10)
+               (padding . -10)
+               (stretchability . 0))
     }
     % WOODWIND LEFT HAND FINGERING STAFF
     \context {
@@ -399,29 +449,27 @@
         \omit Dots
         \omit Flag
         \hide Rest
-        \hide StaffSymbol
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
 
-        \override Glissando.breakable = ##t
+
         \override Glissando.after-line-breaking = ##t
-        \override Glissando.thickness = #3
-        \override Glissando.layer = #-50
+        \override Glissando.thickness = #4
+        \override Glissando.layer = #-100
         \override Glissando.gap = #0
         \override Glissando.bound-details =
             #'(
                 (right
                     (attch-dir . -1)
                     (end-on-accidental . #t)
-                    (padding . -1)
+                    (padding . 0)
                 )
                 (left
                     (attach-dir . 1)
-                    (padding . -1)
-                    (start-at-dot . #f)
+                    (padding . 0.5)
                 )
             )
 
@@ -429,7 +477,21 @@
         \override NoteHead.stem-attachment = #'(0 . 0)
         \override StaffSymbol.line-count = 5
         \override StaffSymbol.staff-space = 3
-        \override StaffSymbol.layer = #-100
+        \override StaffSymbol.layer = #-200
+        \override StaffSymbol.stencil = #(color-staff-lines
+            white
+            (x11-color 'grey80)
+            (x11-color 'grey80)
+            (x11-color 'grey80)
+            white
+            )
+
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 20)
+               (minimum-distance . 18)
+               (padding . -10)
+               (stretchability . 0))
+         %{\override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)%}
     }
     % WOODWIND RIGHT HAND FINGERING STAFF
     \context {
@@ -450,17 +512,15 @@
         \omit Dots
         \omit Flag
         \hide Rest
-        \hide StaffSymbol
         \omit Stem
         \omit Tie
         \omit TimeSignature
         \omit TupletBracket
         \omit TupletNumber
 
-        \override Glissando.breakable = ##t
         \override Glissando.after-line-breaking = ##t
-        \override Glissando.thickness = #3
-        \override Glissando.layer = #-50
+        \override Glissando.thickness = #4
+        \override Glissando.layer = #-100
         \override Glissando.gap = #0
         \override Glissando.bound-details =
             #'(
@@ -471,7 +531,7 @@
                 )
                 (left
                     (attach-dir . 1)
-                    (padding . 0)
+                    (padding . 0.5)
                 )
             )
 
@@ -479,6 +539,19 @@
         \override NoteHead.stem-attachment = #'(0 . 0)
         \override StaffSymbol.line-count = #4
         \override StaffSymbol.staff-space = 3
+        \override StaffSymbol.stencil = #(color-staff-lines
+            (x11-color 'grey80)
+            (x11-color 'grey80)
+            (x11-color 'grey80)
+            white
+            )
+        \override StaffSymbol.layer = -200
+
+        \override VerticalAxisGroup #'staff-staff-spacing =
+            #'((basic-distance . 10)
+               (minimum-distance . 4)
+               (padding . -10)
+               (stretchability . 0))
     }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSTRUMENT STAFF GROUPS
     % BOWED STRING INSTRUMENT STAFF GROUP
@@ -511,7 +584,7 @@
         \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
-        systemStartDelimiter = #'SystemStartBracket
+        systemStartDelimiter = #'SystemStartSquare
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
     }
@@ -530,7 +603,7 @@
         \consists Span_bar_stub_engraver%}
         \consists Vertical_align_engraver
         \consists Instrument_name_engraver
-        systemStartDelimiter = #'SystemStartBracket
+        systemStartDelimiter = #'SystemStartSquare
         \override InstrumentName.padding = #12
         \override SystemStartBracket.padding = #1
     }
@@ -563,9 +636,7 @@
         \accepts SeparatorStaff
         \accepts TromboneStaffGroup
         \accepts WoodwindInstrumentStaffGroup
-
         \accepts TimeSignatureContext
-
         \consists Span_bar_engraver
         \consists Span_bar_stub_engraver
         \remove Bar_number_engraver
@@ -575,7 +646,7 @@
         \remove System_start_delimiter_engraver
         \remove Text_engraver
         \remove Time_signature_engraver
-        %{\override BarLine.layer = #99
+        \override BarLine.layer = #1000
         \override BarLine.hair-thickness = #1
         \override BarLine.space-alist = #'(
             (time-signature extra-space . 0.0)
@@ -586,24 +657,25 @@
             (first-note fixed-space . 0.0)
             (next-note semi-fixed-space . 0.0)
             (right-edge extra-space . 0.0)
-        )%}
+        )
         \override Beam.breakable = ##t
         \override Beam.damping = #+inf.0
         \override Beam.beam-thickness = #0.75
         \override Beam.length-fraction = #1.25
-        %{\override DynamicLineSpanner.Y-extent = #'(-4 . 4)%}
-        \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 64)
+        \override Glissando.breakable = ##t
+        \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 128)
         \override GraceSpacing.spacing-increment = #0
         \override GraceSpacing.shortest-duration-space = #0
         \override Flag.stencil = #flat-flag
-        \override InstrumentName #'padding = #2
+        \override InstrumentName.self-alignment-X = #1
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteColumn.ignore-collision = ##t
+        \override RestCollision.minimum-distance = #0
         \override SpacingSpanner.strict-grace-spacing = ##t
         \override SpacingSpanner.strict-note-spacing = ##t
         \override SpacingSpanner.uniform-stretching = ##t
         \override SpanBar.layer = #100
-        \override SpanBar.hair-thickness = #0.8
+        \override SpanBar.hair-thickness = #1
         \override SpanBar.space-alist = #'(
             (time-signature extra-space . 0.0)
             (custos minimum-space . 0.0)
@@ -618,7 +690,11 @@
         \override StemTremolo.beam-width = 0.5
         \override StemTremolo.flag-count = 2
         \override StemTremolo.slope = 0
-        \override Stem.stemlet-length = #0.75
+        \override Stem.details.beamed-lengths = #'(6)
+        \override Stem.details.lengths = #'(6)
+        \override Stem.stemlet-length = #1.5
+        \override SystemStartSquare.thickness = 2
+        \override TextSpanner.breakable = ##t
         \override TrillSpanner.bound-details.right.padding = 2
         \override TupletBracket.breakable = ##t
         \override TupletBracket.full-length-to-extent = ##t
@@ -626,11 +702,14 @@
         \override TupletBracket.staff-padding = 0
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
-        autoBeaming = ##t
-        defaultBarType = #""
-        proportionalNotationDuration = #(ly:make-moment 1 48)
+        autoBeaming = ##f
+        defaultBarType = #"|"
+        proportionalNotationDuration = #(ly:make-moment 1 52)
         tupletFullLength = ##t
-
-
+        \override StaffGrouper #'staffgroup-staff-spacing =
+            #'((basic-distance . 18)
+               (minimum-distance . 12)
+               (padding . -10)
+               (stretchability . 0))
     }
 }

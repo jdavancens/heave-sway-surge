@@ -12,10 +12,10 @@ from dissertation.segments.segment_1.definitions import saxophone
 from dissertation.segments.segment_1.definitions import trombone
 from dissertation.segments.segment_1.definitions import guitar_1
 from dissertation.segments.segment_1.definitions import guitar_2
-# from dissertation.segments.segment_1.definitions import violin
-# from dissertation.segments.segment_1.definitions import viola
-# from dissertation.segments.segment_1.definitions import cello
-# from dissertation.segments.segment_1.definitions import bass
+from dissertation.segments.segment_1.definitions import violin
+from dissertation.segments.segment_1.definitions import viola
+from dissertation.segments.segment_1.definitions import cello
+from dissertation.segments.segment_1.definitions import bass
 from dissertation.materials.instruments import instruments
 from dissertation.materials.segment_1.time_signatures import time_signatures
 from dissertation.materials.segment_1.time_signatures import measures_per_stage
@@ -32,7 +32,10 @@ def make_part(part_name, number_of_stages=None):
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
         instrument_list=[part_name],
-        page_size='letter'
+        page_size=('letter', 'portrait'),
+        staff_size=8,
+        final_barline=True,
+        part=True
         )
 
     oboe_handlers = oboe.get_music_handlers()
@@ -41,10 +44,10 @@ def make_part(part_name, number_of_stages=None):
     trombone_handlers = trombone.get_music_handlers()
     guitar_1_handlers = guitar_1.get_music_handlers()
     guitar_2_handlers = guitar_2.get_music_handlers()
-    # violin_handlers = violin.get_music_handlers()
-    # viola_handlers = viola.get_music_handlers()
-    # cello_handlers = cello.get_music_handlers()
-    # bass_handlers = bass.get_music_handlers()
+    violin_handlers = violin.get_music_handlers()
+    viola_handlers = viola.get_music_handlers()
+    cello_handlers = cello.get_music_handlers()
+    bass_handlers = bass.get_music_handlers()
     music_handlers = [
         oboe_handlers,
         clarinet_handlers,
@@ -52,10 +55,10 @@ def make_part(part_name, number_of_stages=None):
         trombone_handlers,
         guitar_1_handlers,
         guitar_2_handlers,
-        # violin_handlers,
-        # viola_handlers,
-        # cello_handlers,
-        # bass_handlers
+        violin_handlers,
+        viola_handlers,
+        cello_handlers,
+        bass_handlers
     ]
     music_handlers = sequencetools.flatten_sequence(music_handlers)
     for music_handler in music_handlers:

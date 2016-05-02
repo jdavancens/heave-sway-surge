@@ -4,6 +4,7 @@ from dissertation.tools.actions.WoodwindFingeringCombination import \
     WoodwindFingeringCombination
 import random
 
+
 class FingeringMaker(object):
 
     __slots__ = (
@@ -26,30 +27,28 @@ class FingeringMaker(object):
             return random.choice(fingering_set)
 
         if left and not right:
-            candidates = [f for f in fingering_set if \
-                f.right == previous.right and \
-                f.left != previous.left
-            ]
+            candidates = [f for f in fingering_set if
+                          f.right == previous.right and
+                          f.left != previous.left
+                          ]
             if candidates > 0:
                 new_fingering = random.choice(candidates)
             else:
                 new_fingering = random.choice(fingering_set)
 
         elif right and not left:
-            candidates = [f for f in fingering_set if \
-                f.left == previous.left and \
-                f.right != previous.right
-            ]
+            candidates = [f for f in fingering_set if
+                          f.left == previous.left and
+                          f.right != previous.right]
             if candidates > 0:
                 new_fingering = random.choice(candidates)
             else:
                 new_fingering = random.choice(fingering_set)
 
         elif left and right:
-            candidates = [f for f in fingering_set if \
-                f.left != previous.left and \
-                f.right != previous.right
-            ]
+            candidates = [f for f in fingering_set if
+                          f.left != previous.left and
+                          f.right != previous.right]
             if candidates > 0:
                 new_fingering = random.choice(candidates)
             else:

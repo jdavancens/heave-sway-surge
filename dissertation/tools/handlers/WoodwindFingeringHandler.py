@@ -53,9 +53,6 @@ class WoodwindFingeringHandler(object):
         rh_rhythm_voice = copy.deepcopy(rh_voice)
         # annotate logical ties with fingerings
         self._annotate_logical_ties(lh_voice, rh_voice, current_stage)
-        # convert to proportional notation
-        # self._to_proportional_notation(lh_voice)
-        # self._to_proportional_notation(rh_voice)
         # typeset fingerings
         self._handle_fingerings(lh_voice, current_stage)
         self._handle_fingerings(rh_voice, current_stage)
@@ -75,8 +72,9 @@ class WoodwindFingeringHandler(object):
         attach(annotation, lt.head)
 
     def _annotate_from_previous_logical_tie(self, current, previous):
-        if (isinstance(current.head, (Note, Chord)) and
-            isinstance(previous.head, (Note, Chord))):
+        current_is_note = isinstance(current.head, (Note, Chord))
+        previous_is_note = isinstance(previous.head, (Note, Chord))
+        if current_is_note and previous_is_note:
             previous_fingering = \
                 inspect_(previous.head).get_annotation('fingering')
             previous_fingering = indicatortools.Annotation(
@@ -171,7 +169,13 @@ class WoodwindFingeringHandler(object):
                             point = schemetools.Scheme('point-stencil')
                             note_head.tweak.stencil = point
                         else:  # new open fingering
-                            markup = self._make_note_head_markup(current)
+                            if finger_names[i] in ('pinky', 'thumb'):
+                                markup = shortcuts.make_circle_markup(
+                                    1,
+                                    grey=1
+                                    )
+                            else:
+                                markup = self._make_note_head_markup(current)
                             if markup is not None:
                                 note_head.tweak.stencil = \
                                     'ly:text-interface::print'
@@ -186,13 +190,6 @@ class WoodwindFingeringHandler(object):
             kind='after'
         )
         attach(grace_container, lt[-1])
-
-    def _make_circle(self, size, closed):
-        if closed:
-            circle = markuptools.MarkupCommand('draw-circle', 1, 0, True)
-        else:
-            circle = markuptools.MarkupCommand('draw-circle', 1, 0.1, False)
-        return Markup(circle)
 
     def _make_glissando_map(self, fingering, context_name):
         binary_list = fingering.as_binary_list()
@@ -233,7 +230,6 @@ class WoodwindFingeringHandler(object):
                 markup = Markup.concat([p, acc])
             else:
                 markup = Markup(key_name.upper())
-
         elif key_name.lower() in alt_pitch:
             alt, pitch = key_name.split('-')
             alt = Markup(alt)
@@ -249,17 +245,16 @@ class WoodwindFingeringHandler(object):
             else:
                 pitch = p
             markup = Markup.concat([alt, pitch])
-
         elif key_name.lower() in other:
-            if key_name is 'one':
+            if key_name.lower() is 'one':
                 markup = Markup('I')
-            elif key_name is 'two':
+            elif key_name.lower() is 'two':
                 markup = Markup('II')
-            elif key_name is 'three':
+            elif key_name.lower() is 'three':
                 markup = Markup('III')
-            elif key_name is 'four':
+            elif key_name.lower() is 'four':
                 markup = Markup('IV')
-            elif key_name is 'banana':
+            elif key_name.lower() == 'banana':
                 markup = Markup('bn')
             else:
                 markup = Markup(key_name)
@@ -279,7 +274,8 @@ class WoodwindFingeringHandler(object):
         lifeline_voice = copy.deepcopy(voice)
         # add lifelines (glissandi) to note heads
         for lt in iterate(lifeline_voice).by_logical_tie(pitched=True):
-            self._insert_gliss_anchor(lt)
+            # TODO: only add gliss anchor if next tie is rest
+            # self._insert_gliss_anchor(lt)
             for chord in lt:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = \
@@ -293,7 +289,7 @@ class WoodwindFingeringHandler(object):
             if glissando_map is not None:
                 attach(glissando_map, lt.head)
                 color = graphicstools.scheme_rgb_color((0, 0, 0))
-                shortcuts.gliss(lt.head, color=color, thickness=2)
+                shortcuts.gliss(lt.head, color=color, thickness=4)
                 if len(lt) > 1:
                     for chord in lt[1:]:
                         shortcuts.gliss_skip(chord)
@@ -318,25 +314,38 @@ class WoodwindFingeringHandler(object):
         '''
         markups = []
         if key_combination is None:
-            markups.append(self._make_circle(1, False))
+            white_circle = shortcuts.make_circle_markup(1, grey=1)
+            circle_outline = shortcuts.make_circle_outline_markup(1)
+            circle = Markup.combine(white_circle, circle_outline)
+            markups.append(circle)
         else:
             for key in key_combination:
                 if key.lower() in ('t', 'thumb', 'down'):
-                    circle = self._make_circle(1, True)
+                    black_circle = shortcuts.make_circle_markup(1)
+                    circle_outline = shortcuts.make_circle_outline_markup(1)
+                    circle = Markup.combine(black_circle, circle_outline)
                     markups.append(circle)
-                elif key.lower() is 'half':
-                    circle = self._make_circle(1, False)
-                    dot = self._make_circle(0.25, True)
-                    dot_in_circle = Markup.combine([circle, dot])
-                    markups.append(dot_in_circle)
+                elif key.lower() in ('half',):
+                    white_circle = shortcuts.make_circle_markup(1, grey=1)
+                    circle_outline = shortcuts.make_circle_outline_markup(1)
+                    half_circle = shortcuts.make_half_circle_markup(1)
+                    circle = Markup.combine(white_circle, circle_outline)
+                    circle = Markup.combine(circle, half_circle)
+                    markups.append(circle)
                 else:
                     markup = self._make_key_name_markup(key)
                     markups.append(markup)
         if len(markups) > 1:
             markups.reverse()
-            return Markup().concat(markups)
+            markups_new = []
+            for markup in markups[:-1]:
+                hspace = Markup.hspace(1)
+                markups.append(markup)
+                markups.append(hspace)
+            markups_new.append(markups[-1])
+            return Markup().concat(markups_new).halign(-1)
         else:
-            return markups[0]
+            return markups[0].halign(-1)
 
     def _name_voices(self, lh_voice, lh_rhythm_voice, lh_lifeline_voice,
                      rh_voice, rh_rhythm_voice, rh_lifeline_voice):

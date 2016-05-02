@@ -1,49 +1,44 @@
 # -*- coding: utf-8 -*-
 
 from dissertation import *
+from dissertation.tools.shortcuts import *
+from dissertation.materials.segment_1.time_signatures import time_signatures
+from abjad import *
+
+offsets_2 = shortcuts.time_signatures_to_offsets(time_signatures[1])
+total_duration_2 = float(shortcuts.sum_time_signatures(time_signatures[1]))
+offsets_3 = shortcuts.time_signatures_to_offsets(time_signatures[2])
+total_duration_3 = float(shortcuts.sum_time_signatures(time_signatures[2]))
+offsets_4 = shortcuts.time_signatures_to_offsets(time_signatures[3])
+total_duration_4 = float(shortcuts.sum_time_signatures(time_signatures[3]))
+offsets_5 = shortcuts.time_signatures_to_offsets(time_signatures[4])
+total_duration_5 = float(shortcuts.sum_time_signatures(time_signatures[4]))
 
 path_stage_2 = Path(
-    # 2-1
-    BezierCurve((0, 0.1), (5, 0.6), (13, 0.2)),
-    # 2-2
-    BezierCurve((13, 0.2), (18, 0.8), (22, 0.4)),
-    # 2-3
-    BezierCurve((22, 0.3), (30, 0.4), (38, 0.7))
-)
+    BezierCurve((offsets_2[0], 0), (offsets_2[20], 1),(total_duration_2, 0.66))
+    )
 
 path_stage_3 = Path(
-    # 3-1
-    BezierCurve((0, 0.), (5, 0.), (9, 0.4)),
-    # 3-2
-    BezierCurve((9, 0.7), (15, 0.3), (22, 0.6)),
-    # 3-3
-    BezierCurve((22, 0.1), (29, 0.), (36, 0.9)),
-    # 3-4
-    BezierCurve((36, 0.), (47, 0.))
-)
+    BezierCurve((offsets_3[0], 0.25), (total_duration_3, 0.75))
+    )
 
 path_stage_4 = Path(
-    # 4-1
-    BezierCurve((0, 1.), (5, 0.), (9, 0.8)),
-    # 4-2
-    BezierCurve((9, 0.4), (17, 0.7), (22, 0.7)),
-    # 4-3
-    BezierCurve((22, 0.3), (26, 0.8), (30, 0.6))
-)
+    BezierCurve((offsets_4[0], 0.33), (total_duration_4, 0.87))
+    )
 
 path_stage_5 = Path(
-    # 5-1
-    BezierCurve((0, 0.4), (8, 1.2), (17, 0.1)),
-    # 5-2
-    BezierCurve((17, 0.),  (33, 0.))
-)
-path_stage_2.set_interpolater(SineInterpolater(freq=50, amp=0.7))
-path_stage_3.set_interpolater(SineInterpolater(freq=30, amp=1.5))
-path_stage_4.set_interpolater(SineInterpolater(freq=90, amp=1.5))
-path_stage_5.set_interpolater(SineInterpolater(freq=60, amp=0.6))
+    BezierCurve((offsets_5[0], 1), (total_duration_5, 0.25))
+    )
+
+path_stage_2.set_interpolater(SineInterpolater(freq=200, amp=2))
+path_stage_3.set_interpolater(SineInterpolater(freq=200, amp=2))
+path_stage_4.set_interpolater(SineInterpolater(freq=200, amp=2))
+path_stage_5.set_interpolater(SineInterpolater(freq=200, amp=2))
+
 lip_pressure_envelopes = (
     None,
     path_stage_2,
     path_stage_3,
     path_stage_4,
-    path_stage_5)
+    path_stage_5
+    )

@@ -23,7 +23,7 @@ class RatioMaker:
         else:
             ratios = []
             for i, time_signature in enumerate(time_signatures):
-                if i not in rest_indices:
+                if rest_indices is None or i not in rest_indices:
                     prolation = prolater(time_signature)
                     ratio = subdivider(prolation)
                     ratios.append(ratio.numbers)

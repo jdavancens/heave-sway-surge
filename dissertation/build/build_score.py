@@ -2,7 +2,7 @@
 
 from abjad import *
 from dissertation import *
-from dissertation.segments.segment_1.make_segment import make_segment
+from dissertation.segments.segment_1.make_score import make_score
 import datetime
 import os
 import sys
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             os.remove(score_pdf_path)
 
         print("Making segment ...")
-        segment = make_segment(number_of_stages)
+        segment = make_score(number_of_stages)
         with systemtools.Timer() as timer:
             print("Making Lilypond file ... ")
             persist(segment).as_ly(score_ly_path)

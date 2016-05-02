@@ -78,7 +78,7 @@ class WoodwindStaffGroupTemplate(abctools.AbjadValueObject):
             embouchure_staff,
             lh_fingering_rhythm_staff,
             lh_fingering_staff,
-            separator,
+            # separator,
             rh_fingering_staff,
             rh_fingering_rhythm_staff
         ]

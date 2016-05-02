@@ -47,6 +47,7 @@ class UnitSubdivider(Subdivider):
         multiplier=1,
         rotation_cycle=0,
         second_level_subdivider=None,
+        second_level_subdivision_pattern=None,
         sustain_mask=None,
         silence_mask=None,
     ):
@@ -55,6 +56,7 @@ class UnitSubdivider(Subdivider):
             self,
             rotation_cycle=rotation_cycle,
             second_level_subdivider=second_level_subdivider,
+            second_level_subdivision_pattern=second_level_subdivision_pattern,
             sustain_mask=sustain_mask,
             silence_mask=silence_mask,
         )
@@ -64,8 +66,8 @@ class UnitSubdivider(Subdivider):
     def __call__(self, duration):
         n = int(round(duration * self._multiplier))
         ratio = [1 for i in range(n)]
-        ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._apply_sustain_mask(self, ratio)
         ratio = Subdivider._apply_silence_mask(self, ratio)
+        ratio = Subdivider._apply_second_level_subdivider(self, ratio)
         ratio = Subdivider._rotate(self, ratio)
         return Ratio(ratio)

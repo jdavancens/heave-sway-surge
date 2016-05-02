@@ -49,7 +49,6 @@ picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
     picking_position_envelopes=picking_position_envelopes,
     picking_force_envelopes=picking_force_envelopes,
-    direction_patterns=direction_patterns,
     string_indices_patterns=string_indices_patterns,
     tremolo_patterns=tremolo_patterns,
 )

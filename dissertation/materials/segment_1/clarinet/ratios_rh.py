@@ -4,17 +4,18 @@ from abjad import *
 from dissertation import *
 from dissertation.materials.segment_1.patterns import *
 from dissertation.materials.segment_1.time_signatures import time_signatures
+from .rest_indices import rest_indices
 
 ratio_makers_rh_stage_1 = (
     # 1-1
     RatioMaker(
         time_signatures=time_signatures[0][0],
-        rest_indices='all',
+        rest_indices=rest_indices[0][0],
     ),
     # 1-2
     RatioMaker(
         time_signatures=time_signatures[0][1],
-        rest_indices='all',
+        rest_indices=rest_indices[0][1],
     )
 )
 
@@ -22,16 +23,16 @@ ratio_makers_rh_stage_2 = (
     # 2-1
     RatioMaker(
         time_signatures=time_signatures[1][0],
-        rest_indices=(0, 4, 7, 11),
+        rest_indices=rest_indices[1][0],
         subdivider=EvenSubdivider(1)
     ),
     # 2-2
     RatioMaker(
         time_signatures=time_signatures[1][1],
-        rest_indices=(0, 3, 5),
+        rest_indices=rest_indices[1][1],
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -42,10 +43,10 @@ ratio_makers_rh_stage_2 = (
     # 2-3
     RatioMaker(
         time_signatures=time_signatures[1][2],
-        rest_indices=(0, 3, 5),
+        rest_indices=rest_indices[1][2],
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -60,10 +61,10 @@ ratio_makers_rh_stage_3 = (
     # 3-1
     RatioMaker(
         time_signatures=time_signatures[2][0],
-        rest_indices=(3, 4, 6, 7, 8),
+        rest_indices=rest_indices[2][0],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -74,10 +75,10 @@ ratio_makers_rh_stage_3 = (
     # 3-2
     RatioMaker(
         time_signatures=time_signatures[2][1],
-        rest_indices=(3, 7, 8, 9, 10),
+        rest_indices=rest_indices[2][1],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -88,10 +89,10 @@ ratio_makers_rh_stage_3 = (
     # 3-3
     RatioMaker(
         time_signatures=time_signatures[2][2],
-        rest_indices=(1, 3, 5, 7, 9, 10, 11),
+        rest_indices=rest_indices[2][2],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -110,38 +111,38 @@ ratio_makers_rh_stage_4 = (
     # 4-1
     RatioMaker(
         time_signatures=time_signatures[3][0],
-        rest_indices=[],
+        rest_indices=rest_indices[3][0],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_7c)
+            sustain_mask=rhythmmakertools.SustainMask(pattern_7b)
         )
     ),
     # 4-2
     RatioMaker(
         time_signatures=time_signatures[3][1],
-        rest_indices=(0, 1, 2, 3, 4, 5, 6, 11, 12),
+        rest_indices=rest_indices[3][1],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_4c)
+            sustain_mask=rhythmmakertools.SustainMask(pattern_4b)
         )
     ),
     # 4-3
     RatioMaker(
         time_signatures=time_signatures[3][2],
-        rest_indices=(0, 1, 4, 5),
+        rest_indices=rest_indices[3][2],
         prolater=MultiDiffProlater(
             multiplier_cycle=[2],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -155,10 +156,10 @@ ratio_makers_rh_stage_5 = (
     # 5-1
     RatioMaker(
         time_signatures=time_signatures[4][0],
-        rest_indices=(2, 4, 8, 13, 16),
+        rest_indices=rest_indices[4][0],
         prolater=MultiDiffProlater(
             multiplier_cycle=[1],
-            difference_cycle=[1, -1, 0],
+            difference_cycle=[0, 1, -1],
             unit=8
         ),
         subdivider=UnitSubdivider(
@@ -169,7 +170,7 @@ ratio_makers_rh_stage_5 = (
     # 5-2
     RatioMaker(
         time_signatures=time_signatures[4][1],
-        rest_indices='all',
+        rest_indices=rest_indices[4][1],
     )
 )
 

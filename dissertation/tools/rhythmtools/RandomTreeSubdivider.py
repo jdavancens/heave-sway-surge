@@ -19,6 +19,7 @@ class RandomTreeSubdivider(Subdivider):
         probability,
         minimum_duration=1,
         second_level_subdivider=None,
+        second_level_subdivision_pattern=None,
         sustain_mask=None,
         silence_mask=None
     ):
@@ -27,6 +28,7 @@ class RandomTreeSubdivider(Subdivider):
         Subdivider.__init__(
             self,
             second_level_subdivider=second_level_subdivider,
+            second_level_subdivision_pattern=second_level_subdivision_pattern,
             sustain_mask=sustain_mask,
             silence_mask=silence_mask,
         )

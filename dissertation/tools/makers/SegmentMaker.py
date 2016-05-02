@@ -27,10 +27,12 @@ class SegmentMaker(SegmentMakerBaseClass):
         '_is_last_segment',
         '_music_handlers',
         '_page_size',
+        '_part',
         '_score',
         '_segment_number',
         '_show_stage_annotations',
         '_stages',
+        '_staff_size',
         'final_barline',
         'instrument_list',
         'measures_per_stage',
@@ -56,10 +58,12 @@ class SegmentMaker(SegmentMakerBaseClass):
         first_bar_number=None,
         number_of_stages=None,
         measures_per_stage=None,
-        page_size='11x17',
+        page_size=('11x17', 'portrait'),
         segment_number=None,
         tempo_map=None,
         time_signatures=None,
+        staff_size=7,
+        part=False
     ):
         superclass = super(SegmentMaker, self)
         superclass.__init__()
@@ -88,6 +92,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._segment_number = segment_number
         self.tempo_map = tempo_map
         self.time_signatures = time_signatures
+        self._staff_size = staff_size
+        self._part = part
 
     # SPECIAL METHODS
 
@@ -114,7 +120,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             print(time)
 
         self._attach_rehearsal_mark()
-        # self._add_final_barline()
+        self._add_final_barline()
         # self._add_final_markup()
         self._check_well_formedness()
         # self._raise_approximate_duration_in_seconds()
@@ -232,14 +238,19 @@ class SegmentMaker(SegmentMakerBaseClass):
                     for staff in iterate(self._score).by_class(Staff):
                         if staff.name is 'Separator':
                             continue
-                        staff_instrument = inspect_(staff).get_annotation('instrument')
+                        staff_instrument = inspect_(staff).get_annotation(
+                            'instrument'
+                            )
 
                         # s_string = '\t\t\t\t\tTrying staff: {}, {}'
-                        # s_string = s_string.format(staff_instrument, staff.name)
+                        # s_string = s_string.format(
+                        #     staff_instrument,
+                        #     staff.name
+                        #     )
                         # print(s_string)
 
                         if voice.name in staff_map[staff.name] and \
-                                voice_instrument==staff_instrument:
+                                voice_instrument == staff_instrument:
                             detach(instrumenttools.Instrument, voice)
                             if len(staff) == 0:
                                 staff.append(voice)
@@ -279,11 +290,18 @@ class SegmentMaker(SegmentMakerBaseClass):
         r''' Makes a basic Lilypond file, removes the default blocks, and adds
         includes. Returns the Lilypond file.
         '''
-        stylesheet_path = os.path.join(
-            '..',
-            'stylesheets',
-            'stylesheet.ily',
-            )
+        if self._part:
+            stylesheet_path = os.path.join(
+                '..',
+                'stylesheets',
+                'stylesheet_part.ily',
+                )
+        else:
+            stylesheet_path = os.path.join(
+                '..',
+                'stylesheets',
+                'stylesheet.ily',
+                )
         path_gliss_path = os.path.join(
             '..',
             'stylesheets',
@@ -299,7 +317,10 @@ class SegmentMaker(SegmentMakerBaseClass):
             'stylesheets',
             'stencils.ily',
             )
-        includes = [stylesheet_path, path_gliss_path, scheme_path, stencils_path]
+        includes = [stylesheet_path,
+                    path_gliss_path,
+                    scheme_path,
+                    stencils_path]
         if 1 < self._segment_number:
             path = os.path.join(
                 '..',
@@ -310,7 +331,9 @@ class SegmentMaker(SegmentMakerBaseClass):
         lilypond_file = lilypondfiletools.make_basic_lilypond_file(
             self._score,
             includes=includes,
-            use_relative_includes=True
+            use_relative_includes=True,
+            default_paper_size=self._page_size,
+            global_staff_size=self._staff_size
         )
         for item in lilypond_file.items[:]:
             if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
@@ -349,7 +372,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         attaches tempo indicators.
         '''
         measures = self._make_skip_filled_measures()
-        #attach Tempi
+        # attach Tempi
         for tempo in self.tempo_map:
             if tempo[0] < len(measures):
                 attach(tempo[1], measures[tempo[0]][0])
@@ -422,7 +445,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         start_measure_index = measure_indices[stage_number-1]
         stop_measure_index = measure_indices[stage_number] - 1
         return start_measure_index, stop_measure_index
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES
 
     @property
     def final_markup(self):
@@ -444,14 +467,15 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         return self._final_markup_extra_offset
 
-
     @property
     def measure_count(self):
         r'''Gets measure count.
 
         Returns nonnegative integer.
         '''
-        time_signatures = sequencetools.flatten_sequence(self.time_signatures[0:number_of_stages])
+        time_signatures = sequencetools.flatten_sequence(
+            self.time_signatures[0:number_of_stages]
+            )
         return len(time_signatures)
 
     @property
@@ -499,7 +523,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         return self._transpose_score
 
-    ### PUBLIC METHODS ###
+    # PUBLIC METHODS
 
     def add_music_handlers(self, music_handlers):
         ''' Adds music handlers.

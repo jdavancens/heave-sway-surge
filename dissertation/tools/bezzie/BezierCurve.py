@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from ControlPoint import ControlPoint
 from LinearInterpolater import LinearInterpolater
+
+
 class BezierCurve(object):
     '''An arbitrary degree two-dimensional Bezier curve.
 
@@ -8,25 +10,43 @@ class BezierCurve(object):
 
             >>> b = BezierCurve((0, 0), (50, 100), (100, 0))
             >>> b
-            BezierCurve((0, 0), (50, 100), (100, 0))
+            BezierCurve((0.0, 0.0), (50.0, 100.0), (100.0, 0.0))
             >>> len(b)
-            100
+            3
+            >>> b.length
+            100.0
             >>> x = 25
             >>> x in b
             True
             >>> b(x)
             37.5
+
+            >>> b = BezierCurve((0, 0), (0.5, 1))
+            >>> b
+            BezierCurve((0.0, 0.0), (0.5, 1.0))
+            >>> len(b)
+            2
+            >>> b.length
+            0.5
+            >>> x = 0.25
+            >>> x in b
+            True
+            >>> y = 2
+            >>> y in b
+            False
+            >>> b(0.25)
+            0.5
     '''
     __slots__ = ('_control_points')
 
-    ### INITIALIZER ###
+    # INITIALIZER
 
-    def __init__(self, *control_points) :
+    def __init__(self, *control_points):
         self._control_points = []
         for point in control_points:
             self._control_points.append(ControlPoint(point))
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS
 
     def __call__(self, x, interpolater=LinearInterpolater()):
         from ControlPoint import ControlPoint
@@ -44,7 +64,10 @@ class BezierCurve(object):
             return False
 
     def __len__(self):
-        return self._control_points[-1][0] - self._control_points[0][0]
+        return len(self.control_points)
+
+    def __getitem__(self, key):
+        return self._control_points[key]
 
     def __repr__(self):
         P = []
@@ -55,7 +78,7 @@ class BezierCurve(object):
         P = ', '.join(P)
         return 'BezierCurve(' + P + ')'
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS
 
     def _evaluate(self, control_points, t, interpolater):
         if len(control_points) > 1:
@@ -73,7 +96,19 @@ class BezierCurve(object):
         else:
             return control_points
 
-    ### PUBLIC PROPERTIES ###
+    # PUBLIC PROPERTIES
 
+    @property
+    def control_points(self):
+        return self._control_points
+
+    @property
     def degree(self):
         return len(self._control_points) - 1
+
+    @property
+    def length(self):
+        first = self[0]
+        last = self[-1]
+        length = last[0] - first[0]
+        return length
