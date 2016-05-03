@@ -148,11 +148,12 @@ class PickingHandler(object):
             self._handle_string_indices(logical_tie)
 
     def _handle_string_indices(self, logical_tie):
+        numerals = ['I', 'II', 'III', 'IV', 'V', 'VI']
         note = logical_tie.head
         string_indices = inspect_(note).get_annotation(
             'string_indices'
         )
-        string_indices = [str(x) for x in string_indices]
+        string_indices = [numerals[i] for i in sorted(string_indices)]
         if len(string_indices) < 2:
             markup_string = string_indices[0]
         else:

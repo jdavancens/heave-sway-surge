@@ -1,5 +1,6 @@
 \version "2.19.29"
 \include "stencils.ily"
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
     evenFooterMarkup = \markup \fill-line {
@@ -51,15 +52,23 @@
 \header {
     composer = \markup {
         \override #'(font-name . "Didot")
-        \fontsize #4 "Joseph Davancens"
+        \fontsize #6 "Joseph Davancens"
         \hspace #20
     }
     tagline = \markup { "" }
     title = \markup \column {
         \center-align {
             \override #'(font-name . "Didot Bold")
-            \fontsize #7 {
+            \fontsize #9 {
                \line {Surge :: Dart :: Drift}
+            }
+        }
+    }
+    subtitle = \markup \column {
+        \center-align {
+            \override #'(font-name . "Didot Bold")
+            \fontsize #7 {
+               \line {Part I: Observer Observed}
             }
         }
     }
@@ -123,9 +132,9 @@
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
-            black white white white white
-            white white (x11-color 'grey80) white white
-            white white white white black
+            (x11-color 'grey33) white white white white
+            white white (x11-color 'grey67) white white
+            white white white white (x11-color 'grey33)
             )
         \override VerticalAxisGroup #'staff-staff-spacing =
             #'((basic-distance . 20)
@@ -160,6 +169,7 @@
 
         \override InstrumentName.padding = #1
         \override NoteHead.stem-attachment = #'(0.75 . 0)
+        \override StaffSymbol.color = #(x11-color 'grey33)
         \override StaffSymbol.line-count = 6
         \override StaffSymbol.staff-space = 2
         \override StaffSymbol.layer = #-100
@@ -191,9 +201,9 @@
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
-            black white white white white
+            (x11-color 'grey33) white white white white
             white white white white white
-            white white white white black
+            white white white white (x11-color 'grey33)
             )
 
         \override VerticalAxisGroup #'staff-staff-spacing =
@@ -306,12 +316,12 @@
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #31
         \override StaffSymbol.stencil = #(color-staff-lines
-            black white white white white
-            white white grey white white
+            (x11-color 'grey33) white white white white
+            white white (x11-color 'grey50) white white
             white white white white white
-            (x11-color 'grey80) white white white white
+            (x11-color 'grey67) white white white white
             white white white white white
-            white white white white white black
+            white white white white white (x11-color 'grey33)
             )
         \override VerticalAxisGroup #'staff-staff-spacing =
             #'((basic-distance . 20)
@@ -416,13 +426,13 @@
         \override InstrumentName.padding = #1
         \override StaffSymbol.line-count = #15
         \override StaffSymbol.stencil = #(color-staff-lines
-            black white
-            (x11-color 'grey80) white
-            (x11-color 'grey80) white
-            (x11-color 'grey80) white
-            (x11-color 'grey80) white
-            (x11-color 'grey80) white
-            (x11-color 'grey80) white black
+            (x11-color 'grey33) white
+            (x11-color 'grey67) white
+            (x11-color 'grey67) white
+            (x11-color 'grey67) white
+            (x11-color 'grey67) white
+            (x11-color 'grey67) white
+            (x11-color 'grey67) white (x11-color 'grey33)
             )
         \override VerticalAxisGroup #'staff-staff-spacing =
             #'((basic-distance . 10)
@@ -480,9 +490,9 @@
         \override StaffSymbol.layer = #-200
         \override StaffSymbol.stencil = #(color-staff-lines
             white
-            (x11-color 'grey80)
-            (x11-color 'grey80)
-            (x11-color 'grey80)
+            (x11-color 'grey67)
+            (x11-color 'grey67)
+            (x11-color 'grey67)
             white
             )
 
@@ -540,9 +550,9 @@
         \override StaffSymbol.line-count = #4
         \override StaffSymbol.staff-space = 3
         \override StaffSymbol.stencil = #(color-staff-lines
-            (x11-color 'grey80)
-            (x11-color 'grey80)
-            (x11-color 'grey80)
+            (x11-color 'grey67)
+            (x11-color 'grey67)
+            (x11-color 'grey67)
             white
             )
         \override StaffSymbol.layer = -200
@@ -646,8 +656,9 @@
         \remove System_start_delimiter_engraver
         \remove Text_engraver
         \remove Time_signature_engraver
+        \override BarLine.color = #(x11-color 'grey33)
         \override BarLine.layer = #1000
-        \override BarLine.hair-thickness = #1
+        \override BarLine.hair-thickness = #0.5
         \override BarLine.space-alist = #'(
             (time-signature extra-space . 0.0)
             (custos minimum-space . 0.0)
@@ -674,8 +685,9 @@
         \override SpacingSpanner.strict-grace-spacing = ##t
         \override SpacingSpanner.strict-note-spacing = ##t
         \override SpacingSpanner.uniform-stretching = ##t
-        \override SpanBar.layer = #100
-        \override SpanBar.hair-thickness = #1
+        \override SpanBar.color = #(x11-color 'grey33)
+        \override SpanBar.layer = #1001
+        \override SpanBar.hair-thickness = #0.75
         \override SpanBar.space-alist = #'(
             (time-signature extra-space . 0.0)
             (custos minimum-space . 0.0)
@@ -707,8 +719,8 @@
         proportionalNotationDuration = #(ly:make-moment 1 52)
         tupletFullLength = ##t
         \override StaffGrouper #'staffgroup-staff-spacing =
-            #'((basic-distance . 18)
-               (minimum-distance . 12)
+            #'((basic-distance . 22)
+               (minimum-distance . 16)
                (padding . -10)
                (stretchability . 0))
     }

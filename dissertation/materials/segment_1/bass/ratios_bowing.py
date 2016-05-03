@@ -96,7 +96,7 @@ ratio_makers_bowing_stage_4 = (
             [4, 5],
             rotation_cycle=[0, 1, 2],
             second_level_subdivider=UnitSubdivider(
-                multiplier=3,
+                multiplier=2,
                 rotation_cycle=[0, 1, 2],
                 sustain_mask=rhythmmakertools.sustain_every(
                     indices=[3],
@@ -122,7 +122,7 @@ ratio_makers_bowing_stage_4 = (
             [4, 5],
             rotation_cycle=[0, 1, 2],
             second_level_subdivider=UnitSubdivider(
-                multiplier=3,
+                multiplier=2,
                 rotation_cycle=[0, 1, 2],
                 sustain_mask=rhythmmakertools.sustain_every(
                     indices=[3],
@@ -148,7 +148,7 @@ ratio_makers_bowing_stage_4 = (
             [4, 5],
             rotation_cycle=[0, 1, 2],
             second_level_subdivider=UnitSubdivider(
-                multiplier=3,
+                multiplier=2,
                 rotation_cycle=[0, 1, 2],
                 sustain_mask=rhythmmakertools.sustain_every(
                     indices=[3],

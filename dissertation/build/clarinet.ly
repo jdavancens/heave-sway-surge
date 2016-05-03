@@ -1,4 +1,4 @@
-% 2016-04-29 14:53
+% 2016-05-02 21:15
 
 \version "2.19.29"
 \language "english"
@@ -34337,11 +34337,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -34720,11 +34716,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -35373,11 +35365,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -36031,11 +36019,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -36313,11 +36297,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -36606,11 +36586,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -36747,11 +36723,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -36983,11 +36955,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -37531,11 +37499,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -38191,11 +38155,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -38419,11 +38379,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -38992,11 +38948,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -40086,11 +40038,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -40158,12 +40106,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            f
-                                                            o
-                                                            u
-                                                            r
-                                                        }
+                                                        IV
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -41508,11 +41451,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -41909,11 +41848,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -42292,11 +42227,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -42578,11 +42509,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -42716,11 +42643,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -43389,11 +43312,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -44082,11 +44001,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -44321,11 +44236,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -44543,11 +44454,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -44985,11 +44892,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -45228,11 +45131,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -45505,11 +45404,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -45629,11 +45524,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -45967,11 +45858,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -46278,11 +46165,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -46513,11 +46396,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -46594,11 +46473,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -47225,11 +47100,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -47510,11 +47381,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -47587,11 +47454,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -47668,11 +47531,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -47766,11 +47625,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -47868,11 +47723,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -48015,11 +47866,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #ly:text-interface::print
                         e''
@@ -48304,11 +48151,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -48452,11 +48295,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #ly:text-interface::print
                             e''
@@ -49326,11 +49165,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -49719,11 +49554,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -50393,11 +50224,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -51081,11 +50908,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -51375,11 +51198,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -51677,11 +51496,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -51824,11 +51639,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -52072,11 +51883,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -52647,11 +52454,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -53331,11 +53134,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -53568,11 +53367,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -54165,11 +53960,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -55307,11 +55098,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -55382,12 +55169,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            f
-                                                            o
-                                                            u
-                                                            r
-                                                        }
+                                                        IV
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -56789,11 +56571,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -57196,11 +56974,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -57600,11 +57374,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -57904,11 +57674,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -58045,11 +57811,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -58739,11 +58501,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -59468,11 +59226,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -59719,11 +59473,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -59953,11 +59703,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -60416,11 +60162,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -60671,11 +60413,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -60969,11 +60707,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -61105,11 +60839,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -61455,11 +61185,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -61778,11 +61504,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -62031,11 +61753,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -62118,11 +61836,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -62782,11 +62496,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -63088,11 +62798,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -63171,11 +62877,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -63255,11 +62957,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -63359,11 +63057,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -63470,11 +63164,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -63626,11 +63316,7 @@
                                                 #-1
                                                 \raise
                                                     #-0.5
-                                                    {
-                                                        t
-                                                        w
-                                                        o
-                                                    }
+                                                    II
                             }
                         \tweak #'stencil #point-stencil
                         e''
@@ -63922,11 +63608,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''
@@ -64079,11 +63761,7 @@
                                                     #-1
                                                     \raise
                                                         #-0.5
-                                                        {
-                                                            t
-                                                            w
-                                                            o
-                                                        }
+                                                        II
                                 }
                             \tweak #'stencil #point-stencil
                             e''

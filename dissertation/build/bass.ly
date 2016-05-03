@@ -1,4 +1,4 @@
-% 2016-04-29 14:59
+% 2016-05-02 21:23
 
 \version "2.19.29"
 \language "english"
@@ -1515,9 +1515,8 @@
                                                 IV
                                         }
                             }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 32/27 {
-                        c'16. [
+                    \times 8/9 {
+                        c'8 [
                             _ \markup {
                                 \raise
                                     #0.5
@@ -1529,292 +1528,10 @@
                                                     I
                                             }
                                 }
-                        c'64
-                        c'64
                         c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'64
-                        c'16.
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'64
                         c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'64
-                        c'32
-                        c'64
-                        c'64 ]
-                    }
-                    \times 2/3 {
-                        c'16 [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
                         c'16
-                        c'16
-                        c'8.
-                        c'8. ]
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
-                        c'16 [
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'8.
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'16
-                        c'8.
-                        c'16 ]
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2.
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 16/13 {
-                        c'8 ~ [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'64
-                        c'32
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'64
-                        c'64
-                        c'64
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'8 ~
-                        c'64
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'64
-                        c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'64
-                        c'8 ~
-                        c'64 ]
-                    }
-                    \times 2/3 {
-                        c'16 [
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'8.
                         c'8
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'8. ]
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
-                        c'16 [
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'8.
-                        c'16
-                        c'16
-                        c'16
-                        c'8.
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'16 ]
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r2
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 32/27 {
-                        c'16. [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'64
-                        c'64
                             _ \markup {
                                 \raise
                                     #0.5
@@ -1827,7 +1544,7 @@
                                             }
                                 }
                         c'32
-                        c'64
+                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -1839,102 +1556,8 @@
                                                     III
                                             }
                                 }
-                        c'64
-                        c'16.
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'32
-                        c'64
-                        c'64
-                        c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'64 ]
-                    }
-                    \times 2/3 {
-                        c'16 [
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'8.
-                        c'8. ]
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 7/9 {
-                        c'32 [
-                        c'16
-                        c'32
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'32
-                        c'16.
-                        c'32
-                        c'16
-                        c'32
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
                         c'32
                         c'32
-                        c'16.
                         c'32 ]
                             _ \markup {
                                 \raise
@@ -1944,58 +1567,17 @@
                                         \column
                                             {
                                                 \bold
-                                                    II
-                                            }
-                                }
-                    }
-                    \once \override Dots.transparent = ##t
-                    \once \override Rest.transparent = ##t
-                    r4.
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 32/27 {
-                        c'16. [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'32
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'64
-                        c'64
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
                                                     IV
                                             }
                                 }
-                        c'64
-                        c'16.
-                        c'64
-                        c'64
-                        c'32
+                    }
+                    c'16 [
+                    c'16
+                    c'8
+                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'16 [
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2007,12 +1589,10 @@
                                                     I
                                             }
                                 }
-                        c'64
-                        c'64
-                        c'32. ]
-                    }
-                    \times 2/3 {
-                        c'16 [
+                        c'8
+                        c'16
+                        c'16
+                        c'8
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2024,28 +1604,92 @@
                                                     II
                                             }
                                 }
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'8.
-                        c'8. ]
+                        c'16 ]
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
+                    \times 12/13 {
+                        c'8. [
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    III
+                                            }
+                                }
+                        c'16
+                        c'32
+                        c'32
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    IV
+                                            }
+                                }
+                        c'8.
+                        c'32
+                        c'32
+                        c'16
+                        c'8. ]
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    I
+                                            }
+                                }
+                    }
+                    c'16 [
+                    c'16
+                    c'8
+                    c'8
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                II
+                                        }
+                            }
+                    c'16
+                    c'16
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                III
+                                        }
+                            }
+                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
                         c'16 [
+                        c'8
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2058,10 +1702,15 @@
                                             }
                                 }
                         c'16
-                        c'8.
                         c'16
-                        c'16
-                        c'16
+                        c'8
+                        c'16 ]
+                    }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    \times 8/9 {
+                        c'8 [
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2073,13 +1722,10 @@
                                                     I
                                             }
                                 }
-                        c'8.
-                        c'16 ]
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 8/7 {
-                        c'16. [
-                        c'64
+                        c'32
+                        c'32
+                        c'16
+                        c'8
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2092,7 +1738,7 @@
                                             }
                                 }
                         c'32
-                        c'64
+                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2104,9 +1750,9 @@
                                                     III
                                             }
                                 }
-                        c'64
-                        c'64
-                        c'16.
+                        c'32
+                        c'32
+                        c'32 ]
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2118,13 +1764,14 @@
                                                     IV
                                             }
                                 }
-                        c'64
-                        c'64
-                        c'64 ]
                     }
-                    \times 2/3 {
-                        c'16 [
-                        c'16
+                    c'16 [
+                    c'16
+                    c'8
+                    c'8 ]
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 7/6 {
+                        c'32 [
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2137,8 +1784,8 @@
                                             }
                                 }
                         c'16
-                        c'8.
                         c'16
+                        c'32
                         c'16
                             _ \markup {
                                 \raise
@@ -2151,8 +1798,8 @@
                                                     II
                                             }
                                 }
-                        c'16 ]
-                        c'4.
+                        c'32
+                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2164,11 +1811,147 @@
                                                     III
                                             }
                                 }
-                        c'8.
+                        c'32 ]
                     }
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
-                    r2
+                    r4.
+                    \times 8/9 {
+                        c'8 [
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    III
+                                            }
+                                }
+                        c'16
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    IV
+                                            }
+                                }
+                        c'32
+                        c'32
+                        c'8
+                        c'32
+                        c'32
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    I
+                                            }
+                                }
+                        c'16
+                        c'16 ]
+                    }
+                    c'16 [
+                    c'16
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                II
+                                        }
+                            }
+                    c'8
+                    c'8 ]
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                III
+                                        }
+                            }
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2.
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 5/4 {
+                        c'16 [
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    III
+                                            }
+                                }
+                        c'8
+                        c'16
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    IV
+                                            }
+                                }
+                        c'16
+                        c'8
+                        c'16 ]
+                    }
+                    \tweak #'text #tuplet-number::calc-fraction-text
+                    \times 6/7 {
+                        c'8 [
+                        c'32
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    I
+                                            }
+                                }
+                        c'16
+                        c'32
+                        c'8
+                        c'32
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    II
+                                            }
+                                }
+                        c'32 ]
+                    }
                     c'16 [
                         _ \markup {
                             \raise
@@ -2182,6 +1965,26 @@
                                         }
                             }
                     c'16
+                    c'8
+                    c'16
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                IV
+                                        }
+                            }
+                    c'16 ]
+                    c'4
+                    c'8
+                    \once \override Dots.transparent = ##t
+                    \once \override Rest.transparent = ##t
+                    r2
+                    c'16. [
                         _ \markup {
                             \raise
                                 #0.5
@@ -2194,7 +1997,18 @@
                                         }
                             }
                     c'8.
-                    c'16 ]
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                I
+                                        }
+                            }
+                    c'16. ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2
@@ -2202,22 +2016,8 @@
                     \once \override Rest.transparent = ##t
                     r8
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 40/33 {
-                        c'8 ~ [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'64
-                        c'64
-                        c'64
+                    \times 10/11 {
+                        c'8. [
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2230,8 +2030,6 @@
                                             }
                                 }
                         c'32
-                        c'64
-                        c'64
                         c'32
                             _ \markup {
                                 \raise
@@ -2244,8 +2042,8 @@
                                                     II
                                             }
                                 }
-                        c'64
-                        c'8 ~
+                        c'16
+                        c'32
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2257,10 +2055,9 @@
                                                     III
                                             }
                                 }
-                        c'64
-                        c'64
                         c'32
-                        c'64
+                        c'8.
+                        c'32
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2272,152 +2069,29 @@
                                                     IV
                                             }
                                 }
-                        c'64
-                        c'64 ]
+                        c'16
+                        c'32 ]
                     }
-                    \times 2/3 {
-                        c'16 [
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'8.
-                        c'16
-                        c'16
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'8. ]
-                    }
+                    c'16 [
+                    c'16
+                    c'8
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                I
+                                        }
+                            }
+                    c'16
+                    c'16
+                    c'8 ]
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 5/6 {
+                    \times 5/4 {
                         c'16 [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'16
-                        c'8.
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'16
-                        c'16
-                        c'8.
-                        c'16 ]
-                    }
-                    \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 8/7 {
-                        c'32. [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'64
-                        c'64
-                        c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                        c'64
-                        c'32.
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    III
-                                            }
-                                }
-                        c'64
-                        c'32
-                        c'64
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    IV
-                                            }
-                                }
-                        c'64
-                        c'64
-                        c'32. ]
-                    }
-                    \times 2/3 {
-                        c'16 [
-                        c'16
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'16
-                        c'8.
-                        c'16
-                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2443,10 +2117,8 @@
                                             }
                                 }
                         c'16
-                        c'8. ]
-                    }
-                    \times 8/9 {
-                        c'16 [
+                        c'8
+                        c'16 ]
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2458,14 +2130,14 @@
                                                     IV
                                             }
                                 }
-                        c'16
-                        c'8.
-                        c'8.
-                        c'16 ]
                     }
                     \tweak #'text #tuplet-number::calc-fraction-text
-                    \times 32/27 {
-                        c'16. [
+                    \times 6/7 {
+                        c'16 [
+                        c'32
+                        c'32
+                        c'16
+                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2478,9 +2150,9 @@
                                             }
                                 }
                         c'32
-                        c'64
-                        c'64
-                        c'64
+                        c'16
+                        c'32
+                        c'16 ]
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2492,8 +2164,70 @@
                                                     II
                                             }
                                 }
-                        c'64
-                        c'16.
+                    }
+                    c'16 [
+                    c'16
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                III
+                                        }
+                            }
+                    c'8
+                    c'16
+                    c'16
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                IV
+                                        }
+                            }
+                    c'8
+                    c'8 ]
+                    \times 2/3 {
+                        c'8
+                        c'4
+                        c'4
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    I
+                                            }
+                                }
+                        c'8
+                    }
+                    \times 8/9 {
+                        c'8 [
+                        c'16
+                        c'32
+                            _ \markup {
+                                \raise
+                                    #0.5
+                                    \fontsize
+                                        #0
+                                        \column
+                                            {
+                                                \bold
+                                                    II
+                                            }
+                                }
+                        c'32
+                        c'8
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2505,9 +2239,9 @@
                                                     III
                                             }
                                 }
-                        c'64
-                        c'64
                         c'32
+                        c'32
+                        c'16
                             _ \markup {
                                 \raise
                                     #0.5
@@ -2519,40 +2253,24 @@
                                                     IV
                                             }
                                 }
-                        c'64
-                        c'64
                         c'32
-                        c'64 ]
+                        c'32 ]
                     }
-                    \times 2/3 {
-                        c'16 [
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    I
-                                            }
-                                }
-                        c'16
-                        c'16
-                        c'8.
-                        c'8. ]
-                            _ \markup {
-                                \raise
-                                    #0.5
-                                    \fontsize
-                                        #0
-                                        \column
-                                            {
-                                                \bold
-                                                    II
-                                            }
-                                }
-                    }
+                    c'16 [
+                    c'16
+                    c'8
+                        _ \markup {
+                            \raise
+                                #0.5
+                                \fontsize
+                                    #0
+                                    \column
+                                        {
+                                            \bold
+                                                I
+                                        }
+                            }
+                    c'8 ]
                     \once \override Dots.transparent = ##t
                     \once \override Rest.transparent = ##t
                     r2.
@@ -3339,8 +3057,7 @@
                     }
                     \addGliss
                     {
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 32/27 {
+                        \times 8/9 {
                             \once \override NoteHead #'Y-offset = #7.25
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3357,38 +3074,29 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16. [
+                            c'8 [
                             \once \override NoteHead #'Y-offset = #7.49031915288
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.46081948043
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.40503134597
+                            c'32
+                            \once \override NoteHead #'Y-offset = #7.43546870862
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #7.27884998734
+                            \once \override NoteHead #'Y-offset = #7.33760691604
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.25044577571
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #7.27043301007
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
+                            c'8
                             \once \override NoteHead #'Y-offset = #8.15798986346
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.21318842022
+                            c'32
+                            \once \override NoteHead #'Y-offset = #8.20799200931
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #7.76850747294
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #8.0612511977
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.87583119452
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.65837673704
+                            \once \override NoteHead #'Y-offset = #7.4526566057
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3405,60 +3113,52 @@
                                         ##f
                                 }
                             c'32
-                            \once \override NoteHead #'Y-offset = #7.30389903441
+                            \once \override NoteHead #'Y-offset = #7.26324929297
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #7.25003138803
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
+                            c'32 ]
                         }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #7.31372249514
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #7.86011345128
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.61457206952
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.2 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.96668530907
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #7.25954983833
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8. ]
-                        }
+                        \once \override NoteHead #'Y-offset = #7.31372249514
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #8.24948407046
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.2 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #8.96668530907
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #7.25954983833
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.4 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 ]
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
+                        \times 5/4 {
                             \once \override NoteHead #'Y-offset = #9.5614755113
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3476,10 +3176,7 @@
                                         ##f
                                 }
                             c'16 [
-                            \once \override NoteHead #'Y-offset = #9.44925830064
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.08834378229
+                            \once \override NoteHead #'Y-offset = #8.83471907983
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3495,8 +3192,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #9.96397563563
+                            c'8
+                            \once \override NoteHead #'Y-offset = #9.12289800985
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #10.3740408895
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3513,10 +3213,7 @@
                                         ##f
                                 }
                             c'16
-                            \once \override NoteHead #'Y-offset = #10.3740408895
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.8608685505
+                            \once \override NoteHead #'Y-offset = #7.93415603056
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3532,11 +3229,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #7.34129283115
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #11.2372468492
+                            c'8
+                            \once \override NoteHead #'Y-offset = #10.9490580712
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3570,7 +3264,7 @@
                         \once \override Rest.transparent = ##t
                         r2
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 16/13 {
+                        \times 12/13 {
                             \once \override NoteHead #'Y-offset = #11.1349197143
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3587,14 +3281,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8 ~ [
-                            \once \override NoteColumn #'glissando-skip = ##t
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'8. [
                             \once \override NoteHead #'Y-offset = #8.89437159786
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32
-                            \once \override NoteHead #'Y-offset = #8.2140657728
+                            c'16
+                            \once \override NoteHead #'Y-offset = #8.75825035076
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3610,11 +3301,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.75825035076
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #9.78575337632
+                            c'32
+                            \once \override NoteHead #'Y-offset = #10.4216696349
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3630,10 +3318,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #11.0994589346
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'32
                             \once \override NoteHead #'Y-offset = #12.4515153055
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3650,10 +3335,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8 ~
-                            \once \override NoteColumn #'glissando-skip = ##t
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'8.
                             \once \override NoteHead #'Y-offset = #9.11557774377
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3670,14 +3352,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.92356583946
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #9.26118673839
+                            c'32
+                            \once \override NoteHead #'Y-offset = #9.02819399641
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #11.1647317561
+                            \once \override NoteHead #'Y-offset = #10.0597239952
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3693,10 +3372,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #12.3668575783
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #13.4424653499
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3713,165 +3389,145 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8 ~
-                            \once \override NoteColumn #'glissando-skip = ##t
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #9.68143575302
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.8 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #10.569352274
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #12.7082154089
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.327146681
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #10.8172499922
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.8 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8
-                            \once \override NoteHead #'Y-offset = #11.8810136114
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.6840242231
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.499876524
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.7671400375
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #12.2269021629
-                            \once \override NoteHead #'stencil = #point-stencil
                             c'8. ]
                         }
+                        \once \override NoteHead #'Y-offset = #9.68143575302
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.8 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #11.5866986317
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #14.327146681
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.4 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #10.8172499922
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.8 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #13.6840242231
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #14.3078689528
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #12.2269021629
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 ]
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
+                        \times 5/4 {
                             \once \override NoteHead #'Y-offset = #13.0053486696
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16 [
-                            \once \override NoteHead #'Y-offset = #14.4139999797
+                            \once \override NoteHead #'Y-offset = #14.4540311741
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.022691087
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #12.961357613
-                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #12.3158269404
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 0.75 0 360 arc
+                                        closepath
+                                        0.8 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #0.75
+                                        #0.1
+                                        ##f
+                                }
                             c'16
                             \once \override NoteHead #'Y-offset = #14.255215754
-                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override NoteHead #'stencil = #ly:text-interface::print
+                            \once \override NoteHead #'text = \markup {
+                                \combine
+                                    \postscript
+                                        #"
+                                        0 0 0.75 0 360 arc
+                                        closepath
+                                        0.6 setgray
+                                        fill
+                                        "
+                                    \draw-circle
+                                        #0.75
+                                        #0.1
+                                        ##f
+                                }
                             c'16
-                            \once \override NoteHead #'Y-offset = #14.3626095647
+                            \once \override NoteHead #'Y-offset = #13.9345161823
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.3882670011
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #14.1469604231
+                            c'8
+                            \once \override NoteHead #'Y-offset = #13.678937762
                             \once \override NoteHead #'stencil = #point-stencil
                             \afterGrace
                             c'16 ]
@@ -3887,8 +3543,7 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 32/27 {
+                        \times 8/9 {
                             \once \override NoteHead #'Y-offset = #14.5
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -3905,32 +3560,26 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16. [
+                            c'8 [
                             \once \override NoteHead #'Y-offset = #14.4830888234
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.4427240856
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.3745292777
+                            c'32
+                            \once \override NoteHead #'Y-offset = #14.4121419167
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #14.1645355566
+                            \once \override NoteHead #'Y-offset = #14.2797588401
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.0393338852
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #13.9177386338
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
+                            c'8
                             \once \override NoteHead #'Y-offset = #13.9230814385
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.0639197709
-                            \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #14.3505832129
+                            \once \override NoteHead #'Y-offset = #14.1390432242
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
+                            \once \override NoteHead #'Y-offset = #14.4833085245
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -3946,67 +3595,56 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.4521137151
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.4986631345
+                            c'32
+                            \once \override NoteHead #'Y-offset = #14.475997067
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #14.3776086284
+                            \once \override NoteHead #'Y-offset = #14.3004699907
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.2061405189
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
+                            c'32 ]
                         }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #13.9737055243
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.8 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #13.3453449179
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #12.8442660095
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #12.7612565507
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #14.4036550384
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8. ]
-                        }
+                        \once \override NoteHead #'Y-offset = #13.9737055243
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.8 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #13.0575660231
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #12.7612565507
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #14.4036550384
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 ]
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 7/9 {
+                        \times 7/6 {
                             \once \override NoteHead #'Y-offset = #12.8566353679
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4024,19 +3662,13 @@
                                         ##f
                                 }
                             c'32 [
-                            \once \override NoteHead #'Y-offset = #12.3076777291
+                            \once \override NoteHead #'Y-offset = #12.082980526
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16
-                            \once \override NoteHead #'Y-offset = #11.7373913193
+                            \once \override NoteHead #'Y-offset = #11.9864578073
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32
-                            \once \override NoteHead #'Y-offset = #11.8373384081
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'32
-                            \once \override NoteHead #'Y-offset = #12.1937534493
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
-                            \once \override NoteHead #'Y-offset = #13.9522760392
+                            c'16
+                            \once \override NoteHead #'Y-offset = #13.6753140824
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4056,19 +3688,13 @@
                             \once \override NoteHead #'Y-offset = #14.3611476749
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16
-                            \once \override NoteHead #'Y-offset = #14.320467269
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'32
                             \once \override NoteHead #'Y-offset = #13.8388439143
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #13.1309943879
+                            \once \override NoteHead #'Y-offset = #12.7299703778
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32
-                            \once \override NoteHead #'Y-offset = #12.3218985424
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
-                            \once \override NoteHead #'Y-offset = #10.7429272336
+                            c'16
+                            \once \override NoteHead #'Y-offset = #10.8267485181
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4098,8 +3724,7 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4.
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 32/27 {
+                        \times 8/9 {
                             \once \override NoteHead #'Y-offset = #10.734506472
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4116,7 +3741,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16. [
+                            c'8 [
                             \once \override NoteHead #'Y-offset = #14.4874575363
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4133,10 +3758,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'32
-                            \once \override NoteHead #'Y-offset = #14.0630852035
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #13.4383905658
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4153,16 +3775,13 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #12.6129192056
+                            c'32
+                            \once \override NoteHead #'Y-offset = #12.1516474533
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #11.6745462212
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'32
                             \once \override NoteHead #'Y-offset = #10.7259075221
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
+                            c'8
                             \once \override NoteHead #'Y-offset = #9.55135039786
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4179,56 +3798,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #10.3457615194
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #11.2906912236
-                            \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #13.1895242484
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #13.918463886
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #14.3739049627
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'32. ]
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #13.6869109819
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #11.5051322543
+                            \once \override NoteHead #'Y-offset = #10.8059115347
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4244,28 +3815,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #9.09822787935
+                            c'32
+                            \once \override NoteHead #'Y-offset = #12.2771822634
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16
-                            \once \override NoteHead #'Y-offset = #7.78207199272
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.8 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #12.9204873543
+                            \once \override NoteHead #'Y-offset = #14.3739049627
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4281,22 +3835,76 @@
                                         #0.1
                                         ##f
                                 }
-                            \afterGrace
-                            c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'Y-offset = #11.7481590909
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
+                            c'16 ]
+                        }
+                        \once \override NoteHead #'Y-offset = #13.6869109819
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #10.2424677044
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
                             }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #7.78207199272
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.8 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #12.9204873543
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.4 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #11.7481590909
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r2.
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
+                        \times 5/4 {
                             \once \override NoteHead #'Y-offset = #6.01304169072
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4314,7 +3922,10 @@
                                         ##f
                                 }
                             c'16 [
-                            \once \override NoteHead #'Y-offset = #5.09005688443
+                            \once \override NoteHead #'Y-offset = #6.13641968765
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #13.2788524859
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4322,41 +3933,7 @@
                                         #"
                                         0 0 0.75 0 360 arc
                                         closepath
-                                        0.8 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #7.92009494446
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #11.8936327298
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
+                                        0.2 setgray
                                         fill
                                         "
                                     \draw-circle
@@ -4382,13 +3959,10 @@
                                         ##f
                                 }
                             c'16
-                            \once \override NoteHead #'Y-offset = #5.12565274465
+                            \once \override NoteHead #'Y-offset = #4.99013923854
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #5.76314965565
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #12.4851892617
+                            c'8
+                            \once \override NoteHead #'Y-offset = #12.7880877831
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4407,7 +3981,7 @@
                             c'16 ]
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 8/7 {
+                        \times 6/7 {
                             \once \override NoteHead #'Y-offset = #9.72963583265
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4424,7 +3998,7 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16. [
+                            c'8 [
                             \once \override NoteHead #'Y-offset = #4.96182425347
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4441,14 +4015,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #5.30619506611
-                            \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #6.93002340194
+                            \once \override NoteHead #'Y-offset = #5.60940248405
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.02479126382
+                            c'16
+                            \once \override NoteHead #'Y-offset = #8.59242808917
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4464,144 +4035,130 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #9.15296556525
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'32
                             \once \override NoteHead #'Y-offset = #10.1927356651
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
+                            c'8
                             \once \override NoteHead #'Y-offset = #10.3548938755
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #9.36139844998
+                            c'32
+                            \once \override NoteHead #'Y-offset = #8.82000301257
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.26762287589
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
+                            c'32 ]
                         }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #7.18733547982
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #5.31130847737
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #5.04475664265
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #6.43947388275
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #10.7179003289
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.2 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #9.4741170371
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.4 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #7.36443431884
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 ]
-                            \once \override NoteHead #'Y-offset = #5.53734141826
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.6 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'4.
-                            \once \override NoteHead #'Y-offset = #9.03308495828
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.2 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            \afterGrace
-                            c'8.
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'Y-offset = #4.94217463197
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
+                        \once \override NoteHead #'Y-offset = #7.18733547982
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #4.94949519398
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
                             }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #6.43947388275
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.4 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #10.7179003289
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.2 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #8.45875636014
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.4 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16 ]
+                        \once \override NoteHead #'Y-offset = #5.53734141826
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.6 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'4
+                        \once \override NoteHead #'Y-offset = #9.03308495828
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.2 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        \afterGrace
+                        c'8
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #4.94217463197
+                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
+                            c'16
                         }
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
@@ -4622,11 +4179,8 @@
                                     #0.1
                                     ##f
                             }
-                        c'16 [
-                        \once \override NoteHead #'Y-offset = #7.2924364922
-                        \once \override NoteHead #'stencil = #point-stencil
-                        c'16
-                        \once \override NoteHead #'Y-offset = #5.79560981356
+                        c'16. [
+                        \once \override NoteHead #'Y-offset = #6.57082689681
                         \once \override NoteHead #'stencil = #ly:text-interface::print
                         \once \override NoteHead #'text = \markup {
                             \combine
@@ -4643,24 +4197,10 @@
                                     ##f
                             }
                         c'8.
-                        \once \override NoteHead #'Y-offset = #6.51053950285
-                        \once \override NoteHead #'stencil = #ly:text-interface::print
-                        \once \override NoteHead #'text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 0.75 0 360 arc
-                                    closepath
-                                    0.2 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #0.75
-                                    #0.1
-                                    ##f
-                            }
+                        \once \override NoteHead #'Y-offset = #6.02319139982
+                        \once \override NoteHead #'stencil = #point-stencil
                         \afterGrace
-                        c'16 ]
+                        c'16. ]
                         {
                             \once \override Beam #'stencil = ##f
                             \once \override Flag #'stencil = ##f
@@ -4676,7 +4216,7 @@
                         \once \override Rest.transparent = ##t
                         r8
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 40/33 {
+                        \times 10/11 {
                             \once \override NoteHead #'Y-offset = #4.93
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4693,100 +4233,62 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8 ~ [
-                            \once \override NoteColumn #'glissando-skip = ##t
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'8. [
                             \once \override NoteHead #'Y-offset = #4.94193326176
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #5.06240049654
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #5.30663944563
+                            c'32
+                            \once \override NoteHead #'Y-offset = #5.17095947532
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #5.94123053406
+                            \once \override NoteHead #'Y-offset = #5.62732592851
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #6.15424285272
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #6.19343042154
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #5.72055807406
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #5.3468894022
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8 ~
-                            \once \override NoteColumn #'glissando-skip = ##t
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #6.99336236835
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #6.50144627845
+                            \once \override NoteHead #'Y-offset = #5.89258301389
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #5.28353369046
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #4.95684674113
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #5.01625831989
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
-                        }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #5.48214377322
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #7.27767107683
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.18841070705
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #6.9694637278
+                            \once \override NoteHead #'Y-offset = #5.3468894022
                             \once \override NoteHead #'stencil = #point-stencil
                             c'8.
-                            \once \override NoteHead #'Y-offset = #7.60204572598
+                            \once \override NoteHead #'Y-offset = #6.99336236835
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #6.18914006771
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16
-                            \once \override NoteHead #'Y-offset = #9.18188793536
+                            \once \override NoteHead #'Y-offset = #4.93405993666
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #8.01001054854
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #5.55917221185
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8. ]
+                            c'32 ]
                         }
+                        \once \override NoteHead #'Y-offset = #5.48214377322
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #7.98114767491
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #6.9694637278
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #7.60204572598
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #8.93708504842
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #5.55917221185
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8 ]
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 5/6 {
+                        \times 5/4 {
                             \once \override NoteHead #'Y-offset = #10.0626464099
                             \once \override NoteHead #'stencil = #point-stencil
                             c'16 [
-                            \once \override NoteHead #'Y-offset = #8.50713700323
+                            \once \override NoteHead #'Y-offset = #6.52608512377
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #5.1237434243
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #9.79026914304
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #5.49998638215
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #6.29726177913
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #11.2316042293
+                            c'8
+                            \once \override NoteHead #'Y-offset = #11.1185301028
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4802,8 +4304,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #5.85443167801
+                            c'16
+                            \once \override NoteHead #'Y-offset = #5.49998638215
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4819,10 +4321,16 @@
                                         #0.1
                                         ##f
                                 }
+                            c'16
+                            \once \override NoteHead #'Y-offset = #8.82740631519
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
+                            \once \override NoteHead #'Y-offset = #4.93659494022
+                            \once \override NoteHead #'stencil = #point-stencil
                             c'16 ]
                         }
                         \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 8/7 {
+                        \times 6/7 {
                             \once \override NoteHead #'Y-offset = #11.4263486356
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4839,14 +4347,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'32. [
+                            c'16 [
                             \once \override NoteHead #'Y-offset = #12.4922105005
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #10.8790331566
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #8.77360886932
+                            c'32
+                            \once \override NoteHead #'Y-offset = #9.85431123711
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4863,15 +4368,12 @@
                                         ##f
                                 }
                             c'32
-                            \once \override NoteHead #'Y-offset = #5.33039329662
+                            \once \override NoteHead #'Y-offset = #6.73900257738
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #4.94663316862
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #5.72072035534
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32.
+                            c'16
                             \once \override NoteHead #'Y-offset = #12.0384012059
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -4888,17 +4390,11 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
-                            \once \override NoteHead #'Y-offset = #13.6549822944
-                            \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #13.5225553766
+                            \once \override NoteHead #'Y-offset = #14.078876528
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #11.7895895352
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #9.45617389801
+                            c'16
+                            \once \override NoteHead #'Y-offset = #10.6612139371
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -4914,114 +4410,103 @@
                                         #0.1
                                         ##f
                                 }
-                            c'64
+                            c'32
                             \once \override NoteHead #'Y-offset = #7.16683975782
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32. ]
+                            c'16 ]
                         }
+                        \once \override NoteHead #'Y-offset = #5.92166669749
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #13.243608499
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #12.3072758011
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #10.3420445964
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.2 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #14.4028362651
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'16
+                        \once \override NoteHead #'Y-offset = #9.02046218356
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0.2 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8
+                        \once \override NoteHead #'Y-offset = #13.8815477351
+                        \once \override NoteHead #'stencil = #ly:text-interface::print
+                        \once \override NoteHead #'text = \markup {
+                            \combine
+                                \postscript
+                                    #"
+                                    0 0 0.75 0 360 arc
+                                    closepath
+                                    0 setgray
+                                    fill
+                                    "
+                                \draw-circle
+                                    #0.75
+                                    #0.1
+                                    ##f
+                            }
+                        c'8 ]
                         \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #5.92166669749
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #10.8523846011
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.443044367
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #12.3072758011
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #10.3420445964
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.2 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.2131370039
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.2448017012
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8
-                            \once \override NoteHead #'Y-offset = #7.17633468783
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0.2 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #10.0498631085
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.8815477351
-                            \once \override NoteHead #'stencil = #ly:text-interface::print
-                            \once \override NoteHead #'text = \markup {
-                                \combine
-                                    \postscript
-                                        #"
-                                        0 0 0.75 0 360 arc
-                                        closepath
-                                        0 setgray
-                                        fill
-                                        "
-                                    \draw-circle
-                                        #0.75
-                                        #0.1
-                                        ##f
-                                }
-                            c'8. ]
-                        }
-                        \times 8/9 {
                             \once \override NoteHead #'Y-offset = #8.13949519398
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -5038,8 +4523,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #11.2393011029
+                            c'8
+                            \once \override NoteHead #'Y-offset = #13.5302115466
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -5055,14 +4540,8 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16
-                            \once \override NoteHead #'Y-offset = #14.4994204692
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #12.2496076354
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #10.2505760517
+                            c'4
+                            \once \override NoteHead #'Y-offset = #10.2248826147
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
                                 \combine
@@ -5078,10 +4557,12 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16 ]
+                            c'4
+                            \once \override NoteHead #'Y-offset = #10.3879587176
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'8
                         }
-                        \tweak #'text #tuplet-number::calc-fraction-text
-                        \times 32/27 {
+                        \times 8/9 {
                             \once \override NoteHead #'Y-offset = #13.065395332
                             \once \override NoteHead #'stencil = #ly:text-interface::print
                             \once \override NoteHead #'text = \markup {
@@ -5098,72 +4579,55 @@
                                         #0.1
                                         ##f
                                 }
-                            c'16. [
+                            c'8 [
                             \once \override NoteHead #'Y-offset = #12.0566138639
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'32
-                            \once \override NoteHead #'Y-offset = #11.1366856966
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'16
                             \once \override NoteHead #'Y-offset = #11.3655267845
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #11.9982326942
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #12.849850239
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #13.6837337145
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16.
-                            \once \override NoteHead #'Y-offset = #12.5653367889
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #12.1999470322
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #12.1619436042
+                            c'32
+                            \once \override NoteHead #'Y-offset = #12.4110597366
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #12.9759690967
+                            \once \override NoteHead #'Y-offset = #13.6837337145
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
-                            \once \override NoteHead #'Y-offset = #13.5848115092
+                            c'8
+                            \once \override NoteHead #'Y-offset = #12.5653367889
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64
+                            c'32
+                            \once \override NoteHead #'Y-offset = #12.1376567073
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'32
+                            \once \override NoteHead #'Y-offset = #12.4512342382
+                            \once \override NoteHead #'stencil = #point-stencil
+                            c'16
                             \once \override NoteHead #'Y-offset = #14.1140179136
                             \once \override NoteHead #'stencil = #point-stencil
                             c'32
-                            \once \override NoteHead #'Y-offset = #14.4872619958
+                            \once \override NoteHead #'Y-offset = #14.4951319737
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'64 ]
+                            c'32 ]
                         }
-                        \times 2/3 {
-                            \once \override NoteHead #'Y-offset = #14.2920590721
+                        \once \override NoteHead #'Y-offset = #14.2920590721
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16 [
+                        \once \override NoteHead #'Y-offset = #13.1838651334
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'16
+                        \once \override NoteHead #'Y-offset = #13.7102290897
+                        \once \override NoteHead #'stencil = #point-stencil
+                        c'8
+                        \once \override NoteHead #'Y-offset = #14.1739282961
+                        \once \override NoteHead #'stencil = #point-stencil
+                        \afterGrace
+                        c'8 ]
+                        {
+                            \once \override Beam #'stencil = ##f
+                            \once \override Flag #'stencil = ##f
+                            \once \override NoteHead #'Y-offset = #14.5
                             \once \override NoteHead #'stencil = #point-stencil
-                            c'16 [
-                            \once \override NoteHead #'Y-offset = #13.463463879
-                            \once \override NoteHead #'stencil = #point-stencil
+                            \once \override Stem #'stencil = ##f
                             c'16
-                            \once \override NoteHead #'Y-offset = #13.1467105411
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'16
-                            \once \override NoteHead #'Y-offset = #13.7102290897
-                            \once \override NoteHead #'stencil = #point-stencil
-                            c'8.
-                            \once \override NoteHead #'Y-offset = #14.1739282961
-                            \once \override NoteHead #'stencil = #point-stencil
-                            \afterGrace
-                            c'8. ]
-                            {
-                                \once \override Beam #'stencil = ##f
-                                \once \override Flag #'stencil = ##f
-                                \once \override NoteHead #'Y-offset = #14.5
-                                \once \override NoteHead #'stencil = #point-stencil
-                                \once \override Stem #'stencil = ##f
-                                c'16
-                            }
                         }
                     }
                     {

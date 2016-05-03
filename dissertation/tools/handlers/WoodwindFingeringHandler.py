@@ -246,13 +246,13 @@ class WoodwindFingeringHandler(object):
                 pitch = p
             markup = Markup.concat([alt, pitch])
         elif key_name.lower() in other:
-            if key_name.lower() is 'one':
+            if key_name.lower() == 'one':
                 markup = Markup('I')
-            elif key_name.lower() is 'two':
+            elif key_name.lower() == 'two':
                 markup = Markup('II')
-            elif key_name.lower() is 'three':
+            elif key_name.lower() == 'three':
                 markup = Markup('III')
-            elif key_name.lower() is 'four':
+            elif key_name.lower() == 'four':
                 markup = Markup('IV')
             elif key_name.lower() == 'banana':
                 markup = Markup('bn')
