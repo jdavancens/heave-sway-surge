@@ -8,6 +8,7 @@ import os
 import sys
 
 if __name__ == '__main__':
+    ruler = False
     # get inputs parameters
     if len(sys.argv) == 1:
         part_name = input("Enter part name: ")
@@ -24,11 +25,22 @@ if __name__ == '__main__':
         part_name_snake_case = stringtools.to_snake_case(part_name)
         number_of_stages = int(sys.argv[2])
 
+    if len(sys.argv) == 4:
+        part_name = sys.argv[1]
+        part_name_snake_case = stringtools.to_snake_case(part_name)
+        number_of_stages = int(sys.argv[2])
+        ruler = sys.argv[3]
+        if ruler == 'r':
+            ruler = True
+
     # make file paths
+    if ruler:
+        part_name_snake_case += "_ruled"
     this_file = os.path.abspath(__file__)
     build_path = os.path.dirname(this_file)
     part_ly_path = os.path.join(build_path, part_name_snake_case+'.ly')
     part_pdf_path = os.path.join(build_path, part_name_snake_case+'.pdf')
+
 
     # remove old files
     if os.access(part_ly_path, os.F_OK):
@@ -38,7 +50,7 @@ if __name__ == '__main__':
 
     # make the segment
     print("Making segment ...")
-    part = make_part(part_name, number_of_stages)
+    part = make_part(part_name, number_of_stages, ruler)
     print("Made segment")
 
     # make lilypond file
