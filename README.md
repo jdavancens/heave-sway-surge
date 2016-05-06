@@ -5,7 +5,7 @@ For ten musicians:
 * Clarinet in b-flat
 * Alto saxophone
 * Trombone
-* Two electric guitars
+* Two guitars
 * Violin
 * Viola
 * Cello

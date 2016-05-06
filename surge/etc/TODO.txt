@@ -1,0 +1,44 @@
+############################################################################BUGS
+
+* fix 2nd tempo marking
+* rounded corners on lines
+
+########################################################################FEATURES
+* Complete and verify woodwind fingering maps
+
+* tests for each instrument
+
+* redefine handlers to allow multiple patterns for different parameters
+
+* overwrite functions and masks
+    rhythm overwrites: recursive subdivision
+    dynamics mask
+    silence mask
+    articulation mask
+    sustain mask
+
+* cleanup functions
+    discrete crescendos (p,mp,mf,f = p<f for fast runs n>2)
+    staccati (change logical_tie[1:] to rest)
+    redundant piano dynamics
+
+* Core functionality error handling assertions, unit tests
+
+* Woodwind fingerings
+    combine all woodwind fingerings (standard, alt, qt, multiphonic) and
+        illustrate
+    better way to handle woodwind fingering combinations
+    include alt key indicators in tablature
+
+* String fingering utility
+    string fraction for 12-tet pitches
+    show pitch for harmonic node
+
+##########################################################################FUTURE
+* sphinx documentation
+
+* Piano-four-hands option
+
+* Midi output handler
+
+* Abjad to Music XML exporter
