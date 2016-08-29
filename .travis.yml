@@ -15,9 +15,9 @@ install:
     - pip install -e .
 
 script:
-    - ajv doctest ./dissertation -x
-    - py.test -rf ./dissertation -x
-    - python ./dissertation/test/illustrate_segments.py
+    - ajv doctest ./surge -x
+    - py.test -rf ./surge -x
+    - python ./surge/test/illustrate_segments.py
 
 notifications:
     email: false
