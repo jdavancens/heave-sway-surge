@@ -15,9 +15,9 @@ def pitch_filter(pitches):
     return filtered_fingerings
 
 fingering_sets = (
-    pitch_filter(["A4"]),
-    pitch_filter(["A5"]),
-    pitch_filter(["E4", "A5"]),
-    pitch_filter(["A4", "E5", "C5"]),
-    pitch_filter(["A4"]),
+    pitch_filter(["F#5"]),
+    pitch_filter(["F#6"]),
+    pitch_filter(["C#6", "F#6"]),
+    pitch_filter(["F#5", "C#6", "A6"]),
+    pitch_filter(["F#5"]),
 )

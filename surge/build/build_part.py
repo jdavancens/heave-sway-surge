@@ -40,6 +40,7 @@ if __name__ == '__main__':
     build_path = os.path.dirname(this_file)
     part_ly_path = os.path.join(build_path, part_name_snake_case+'.ly')
     part_pdf_path = os.path.join(build_path, part_name_snake_case+'.pdf')
+    part_midi_path = os.path.join(build_path, part_name_snake_case+'.mid')
 
 
     # remove old files
@@ -57,6 +58,7 @@ if __name__ == '__main__':
     with systemtools.Timer() as timer:
         print("Making Lilypond file ... ")
         persist(part).as_ly(part_ly_path)
+        persist(part).as_midi(part_midi_path)
         seconds = int(timer.elapsed_time)
         time = str(datetime.timedelta(seconds=seconds))
         print(time)
