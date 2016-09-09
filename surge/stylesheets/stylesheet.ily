@@ -3,7 +3,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PAPER BLOCK
 \paper {
-    evenFooterMarkup = \markup \fill-line {
+    %{evenFooterMarkup = \markup \fill-line {
         " "
         \concat {
             \bold \fontsize #3
@@ -19,13 +19,13 @@
         \concat {
             \bold \fontsize #3
             \on-the-fly #print-page-number-check-first
-            \fromproperty #'page:page-number-string
+            \fromproperty #'page:page-number-siltring
         }
         " "
-    }
+    }%}
     oddHeaderMarkup = \markup \fill-line { " " }
     print-first-page-number = ##f
-    print-page-number = ##t
+    %{print-page-number = ##t%}
     max-systems-per-page = 1
     page-breaking = #ly:optimal-breaking
     ragged-bottom = ##f
@@ -50,7 +50,7 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
 \header {
-    composer = \markup {
+    %{composer = \markup {
         \override #'(font-name . "Didot")
         \fontsize #6 "Joseph Davancens"
         \hspace #20
@@ -63,15 +63,15 @@
                \line {Surge :: Dart :: Drift}
             }
         }
-    }
-    subtitle = \markup \column {
+    }%}
+    %{subtitle = \markup \column {
         \center-align {
             \override #'(font-name . "Didot Bold")
             \fontsize #7 {
                \line {Part I: Observer Observed}
             }
         }
-    }
+    }%}
 }
 \layout {
     \accidentalStyle modern
@@ -373,6 +373,7 @@
         \override TimeSignature.font-size = 3
         \override TimeSignature.space-alist.clef = #'(extra-space . 0.5)
         \override TimeSignature.style = #'numbered
+        \hide TimeSignature
         \override VerticalAxisGroup #'staff-staff-spacing =
             #'((basic-distance . 12)
                (minimum-distance . 12)
@@ -715,7 +716,7 @@
         \override TupletNumber.font-size = 0
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         autoBeaming = ##f
-        defaultBarType = #"|"
+        defaultBarType = #""
         proportionalNotationDuration = #(ly:make-moment 1 52)
         tupletFullLength = ##t
         \override StaffGrouper #'staffgroup-staff-spacing =
@@ -723,5 +724,6 @@
                (minimum-distance . 16)
                (padding . -10)
                (stretchability . 0))
+        \hide Rest
     }
 }

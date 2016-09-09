@@ -41,6 +41,13 @@ instruments = TypedOrderedDict([
             )
         ),
     (
+        'bass clarinet',
+        instrumenttools.BassClarinet(
+            instrument_name='Bass Clarinet',
+            short_instrument_name='B Cl.'
+            )
+        ),
+    (
         'bass',
         instrumenttools.Contrabass(
             instrument_name='Contrabass',

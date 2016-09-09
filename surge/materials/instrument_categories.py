@@ -4,6 +4,7 @@ instrument_categories = {
         'oboe',
         'clarinet',
         'clarinet in b-flat',
+        'bass clarinet',
         'saxophone',
         'alto saxophone'
     ],
