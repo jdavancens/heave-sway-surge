@@ -92,7 +92,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
             template = BowedStringStaffGroupTemplate(instrument)
             staff_group = template()
         else:
-            raise Exception("Sorry,"+instrument_name+" does not belong to a valid instrument category.")
+            raise Exception("Sorry, "+instrument_name+" does not belong to a valid instrument category.")
         set_(staff_group).instrument_name = Markup(name)
         set_(staff_group).short_instrument_name = Markup(short_name)
         return staff_group

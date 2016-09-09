@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.segments.segment_1.make_score &mdash; Surge::Dart::Drift 2.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Surge::Dart::Drift 2.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Surge::Dart::Drift
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">Surge::Dart::Drift</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      
+    <li>surge.segments.segment_1.make_score</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for surge.segments.segment_1.make_score</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Created on Dec 4, 2015</span>
+
+<span class="sd">@author: josephdavancens</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">abjad</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">surge</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">oboe</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">clarinet</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">saxophone</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">trombone</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">guitar_1</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">guitar_2</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">violin</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">viola</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">cello</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_1.definitions</span> <span class="kn">import</span> <span class="n">bass</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_1.time_signatures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_1.tempo_map</span> <span class="kn">import</span> <span class="n">tempo_map</span>
+
+
+<div class="viewcode-block" id="make_score"><a class="viewcode-back" href="../../../../surge.segments.segment_1.html#surge.segments.segment_1.make_score.make_score">[docs]</a><span class="k">def</span> <span class="nf">make_score</span><span class="p">(</span><span class="n">number_of_stages</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">segment_maker</span> <span class="o">=</span> <span class="n">SegmentMaker</span><span class="p">(</span>
+        <span class="n">number_of_stages</span><span class="o">=</span><span class="n">number_of_stages</span><span class="p">,</span>
+        <span class="n">segment_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">tempo_map</span><span class="o">=</span><span class="n">tempo_map</span><span class="p">,</span>
+        <span class="n">time_signatures</span><span class="o">=</span><span class="n">time_signatures</span><span class="p">,</span>
+        <span class="n">first_bar_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">measures_per_stage</span><span class="o">=</span><span class="n">measures_per_stage</span><span class="p">,</span>
+        <span class="n">show_stage_annotations</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">instrument_list</span><span class="o">=</span><span class="p">[</span>
+            <span class="s1">&#39;oboe&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;clarinet in b-flat&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;alto saxophone&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;trombone&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;guitar i&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;guitar ii&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;violin&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;viola&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;cello&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;contrabass&#39;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="n">page_size</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;11x17&#39;</span><span class="p">,</span> <span class="s1">&#39;portrait&#39;</span><span class="p">),</span>
+        <span class="n">staff_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+        <span class="n">final_barline</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">part</span><span class="o">=</span><span class="bp">False</span>
+        <span class="p">)</span>
+    <span class="n">oboe_handlers</span> <span class="o">=</span> <span class="n">oboe</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">clarinet_handlers</span> <span class="o">=</span> <span class="n">clarinet</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">saxophone_handlers</span> <span class="o">=</span> <span class="n">saxophone</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">trombone_handlers</span> <span class="o">=</span> <span class="n">trombone</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">guitar_1_handlers</span> <span class="o">=</span> <span class="n">guitar_1</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">guitar_2_handlers</span> <span class="o">=</span> <span class="n">guitar_2</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">violin_handlers</span> <span class="o">=</span> <span class="n">violin</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">viola_handlers</span> <span class="o">=</span> <span class="n">viola</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">cello_handlers</span> <span class="o">=</span> <span class="n">cello</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">bass_handlers</span> <span class="o">=</span> <span class="n">bass</span><span class="o">.</span><span class="n">get_music_handlers</span><span class="p">()</span>
+    <span class="n">music_handlers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">oboe_handlers</span><span class="p">,</span>
+        <span class="n">clarinet_handlers</span><span class="p">,</span>
+        <span class="n">saxophone_handlers</span><span class="p">,</span>
+        <span class="n">trombone_handlers</span><span class="p">,</span>
+        <span class="n">guitar_1_handlers</span><span class="p">,</span>
+        <span class="n">guitar_2_handlers</span><span class="p">,</span>
+        <span class="n">violin_handlers</span><span class="p">,</span>
+        <span class="n">viola_handlers</span><span class="p">,</span>
+        <span class="n">cello_handlers</span><span class="p">,</span>
+        <span class="n">bass_handlers</span>
+    <span class="p">]</span>
+    <span class="n">music_handlers</span> <span class="o">=</span> <span class="n">sequencetools</span><span class="o">.</span><span class="n">flatten_sequence</span><span class="p">(</span><span class="n">music_handlers</span><span class="p">)</span>
+    <span class="n">segment_maker</span><span class="o">.</span><span class="n">add_music_handlers</span><span class="p">(</span><span class="n">music_handlers</span><span class="p">)</span>
+    <span class="n">segment</span> <span class="o">=</span> <span class="n">segment_maker</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">segment</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

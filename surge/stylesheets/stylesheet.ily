@@ -19,7 +19,7 @@
         \concat {
             \bold \fontsize #3
             \on-the-fly #print-page-number-check-first
-            \fromproperty #'page:page-number-string
+            \fromproperty #'page:page-number-siltring
         }
         " "
     }

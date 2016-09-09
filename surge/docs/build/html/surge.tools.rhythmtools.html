@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.rhythmtools package &mdash; Surge::Dart::Drift 2.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Surge::Dart::Drift 2.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Surge::Dart::Drift
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Surge::Dart::Drift</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>surge.tools.rhythmtools package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/surge.tools.rhythmtools.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="surge-tools-rhythmtools-package">
+<h1>surge.tools.rhythmtools package<a class="headerlink" href="#surge-tools-rhythmtools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.BinaryPatternSubdivider">
+<span id="surge-tools-rhythmtools-binarypatternsubdivider-module"></span><h2>surge.tools.rhythmtools.BinaryPatternSubdivider module<a class="headerlink" href="#module-surge.tools.rhythmtools.BinaryPatternSubdivider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.BinaryPatternSubdivider.BinaryPatternSubdivider">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.BinaryPatternSubdivider.</code><code class="descname">BinaryPatternSubdivider</code><span class="sig-paren">(</span><em>binary_pattern</em>, <em>rotation_cycle=0</em>, <em>second_level_subdivider=None</em>, <em>second_level_subdivision_pattern=None</em>, <em>sustain_mask=None</em>, <em>silence_mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/BinaryPatternSubdivider.html#BinaryPatternSubdivider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.BinaryPatternSubdivider.BinaryPatternSubdivider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#surge.tools.rhythmtools.Subdivider.Subdivider" title="surge.tools.rhythmtools.Subdivider.Subdivider"><code class="xref py py-class docutils literal"><span class="pre">surge.tools.rhythmtools.Subdivider.Subdivider</span></code></a></p>
+<p>Binary pattern subdivider.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BinaryPatternSubdivider</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">Ratio((2, 1, 2, 1))</span>
+</pre></div>
+</div>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BinaryPatternSubdivider</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">Ratio((2, 1, 2, 1, 1))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.ConstantProlater">
+<span id="surge-tools-rhythmtools-constantprolater-module"></span><h2>surge.tools.rhythmtools.ConstantProlater module<a class="headerlink" href="#module-surge.tools.rhythmtools.ConstantProlater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.ConstantProlater.ConstantProlater">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.ConstantProlater.</code><code class="descname">ConstantProlater</code><span class="sig-paren">(</span><em>prolation_cycle</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/ConstantProlater.html#ConstantProlater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.ConstantProlater.ConstantProlater" title="Permalink to this definition">¶</a></dt>
+<dd><p>A constant prolater.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">ConstantProlater</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="go">5</span>
+<span class="go">6</span>
+<span class="go">7</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.DifferenceProlater">
+<span id="surge-tools-rhythmtools-differenceprolater-module"></span><h2>surge.tools.rhythmtools.DifferenceProlater module<a class="headerlink" href="#module-surge.tools.rhythmtools.DifferenceProlater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.DifferenceProlater.DifferenceProlater">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.DifferenceProlater.</code><code class="descname">DifferenceProlater</code><span class="sig-paren">(</span><em>difference_cycle</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/DifferenceProlater.html#DifferenceProlater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.DifferenceProlater.DifferenceProlater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Difference prolater</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferenceProlater</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.EvenSubdivider">
+<span id="surge-tools-rhythmtools-evensubdivider-module"></span><h2>surge.tools.rhythmtools.EvenSubdivider module<a class="headerlink" href="#module-surge.tools.rhythmtools.EvenSubdivider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.EvenSubdivider.EvenSubdivider">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.EvenSubdivider.</code><code class="descname">EvenSubdivider</code><span class="sig-paren">(</span><em>n_cycle</em>, <em>rotation_cycle=0</em>, <em>second_level_subdivider=None</em>, <em>second_level_subdivision_pattern=None</em>, <em>sustain_mask=None</em>, <em>silence_mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/EvenSubdivider.html#EvenSubdivider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.EvenSubdivider.EvenSubdivider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#surge.tools.rhythmtools.Subdivider.Subdivider" title="surge.tools.rhythmtools.Subdivider.Subdivider"><code class="xref py py-class docutils literal"><span class="pre">surge.tools.rhythmtools.Subdivider.Subdivider</span></code></a></p>
+<p>Even subdivider.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">EvenSubdivider</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((2, 2, 1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((2, 3))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">EvenSubdivider</span><span class="p">([</span><span class="mi">3</span><span class="p">],</span> <span class="n">rotation_cycle</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((2, 2, 1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((2, 1, 2))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((1, 2, 2))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.MultiDiffProlater">
+<span id="surge-tools-rhythmtools-multidiffprolater-module"></span><h2>surge.tools.rhythmtools.MultiDiffProlater module<a class="headerlink" href="#module-surge.tools.rhythmtools.MultiDiffProlater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.MultiDiffProlater.MultiDiffProlater">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.MultiDiffProlater.</code><code class="descname">MultiDiffProlater</code><span class="sig-paren">(</span><em>multiplier_cycle</em>, <em>difference_cycle</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/MultiDiffProlater.html#MultiDiffProlater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.MultiDiffProlater.MultiDiffProlater" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.MultiplyProlater">
+<span id="surge-tools-rhythmtools-multiplyprolater-module"></span><h2>surge.tools.rhythmtools.MultiplyProlater module<a class="headerlink" href="#module-surge.tools.rhythmtools.MultiplyProlater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.MultiplyProlater.MultiplyProlater">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.MultiplyProlater.</code><code class="descname">MultiplyProlater</code><span class="sig-paren">(</span><em>multiplier_cycle</em>, <em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/MultiplyProlater.html#MultiplyProlater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.MultiplyProlater.MultiplyProlater" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.RandomTreeSubdivider">
+<span id="surge-tools-rhythmtools-randomtreesubdivider-module"></span><h2>surge.tools.rhythmtools.RandomTreeSubdivider module<a class="headerlink" href="#module-surge.tools.rhythmtools.RandomTreeSubdivider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.RandomTreeSubdivider.RandomTreeSubdivider">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.RandomTreeSubdivider.</code><code class="descname">RandomTreeSubdivider</code><span class="sig-paren">(</span><em>probability</em>, <em>minimum_duration=1</em>, <em>second_level_subdivider=None</em>, <em>second_level_subdivision_pattern=None</em>, <em>sustain_mask=None</em>, <em>silence_mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/RandomTreeSubdivider.html#RandomTreeSubdivider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.RandomTreeSubdivider.RandomTreeSubdivider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#surge.tools.rhythmtools.Subdivider.Subdivider" title="surge.tools.rhythmtools.Subdivider.Subdivider"><code class="xref py py-class docutils literal"><span class="pre">surge.tools.rhythmtools.Subdivider.Subdivider</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.Subdivider">
+<span id="surge-tools-rhythmtools-subdivider-module"></span><h2>surge.tools.rhythmtools.Subdivider module<a class="headerlink" href="#module-surge.tools.rhythmtools.Subdivider" title="Permalink to this headline">¶</a></h2>
+<p>Abstract base class for subdivision makers</p>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.Subdivider.Subdivider">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.Subdivider.</code><code class="descname">Subdivider</code><span class="sig-paren">(</span><em>rotation_cycle=0</em>, <em>sustain_mask=None</em>, <em>silence_mask=None</em>, <em>second_level_subdivider=None</em>, <em>second_level_subdivision_pattern=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/Subdivider.html#Subdivider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.Subdivider.Subdivider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.TrivialProlater">
+<span id="surge-tools-rhythmtools-trivialprolater-module"></span><h2>surge.tools.rhythmtools.TrivialProlater module<a class="headerlink" href="#module-surge.tools.rhythmtools.TrivialProlater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.TrivialProlater.TrivialProlater">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.TrivialProlater.</code><code class="descname">TrivialProlater</code><span class="sig-paren">(</span><em>unit=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/TrivialProlater.html#TrivialProlater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.TrivialProlater.TrivialProlater" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.UnitSubdivider">
+<span id="surge-tools-rhythmtools-unitsubdivider-module"></span><h2>surge.tools.rhythmtools.UnitSubdivider module<a class="headerlink" href="#module-surge.tools.rhythmtools.UnitSubdivider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.rhythmtools.UnitSubdivider.UnitSubdivider">
+<em class="property">class </em><code class="descclassname">surge.tools.rhythmtools.UnitSubdivider.</code><code class="descname">UnitSubdivider</code><span class="sig-paren">(</span><em>multiplier=1</em>, <em>rotation_cycle=0</em>, <em>second_level_subdivider=None</em>, <em>second_level_subdivision_pattern=None</em>, <em>sustain_mask=None</em>, <em>silence_mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/UnitSubdivider.html#UnitSubdivider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.UnitSubdivider.UnitSubdivider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#surge.tools.rhythmtools.Subdivider.Subdivider" title="surge.tools.rhythmtools.Subdivider.Subdivider"><code class="xref py py-class docutils literal"><span class="pre">surge.tools.rhythmtools.Subdivider.Subdivider</span></code></a></p>
+<p>Even subdivider.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">UnitSubdivider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">Ratio((1, 1, 1))</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">UnitSubdivider</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">Ratio((1, 1, 1, 1, 1, 1))</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">UnitSubdivider</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Ratio((1, 1, 1))</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">UnitSubdivider</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">Ratio((1, 1, 1, 1, 1))</span>
+</pre></div>
+</div>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">abjad</span> <span class="k">import</span> <span class="n">patterntools</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">abjad</span> <span class="k">import</span> <span class="n">rhythmmakertools</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">patterntools</span><span class="o">.</span><span class="n">Pattern</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">period</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sustain_mask</span> <span class="o">=</span> <span class="n">rhythmmakertools</span><span class="o">.</span><span class="n">SustainMask</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">UnitSubdivider</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">rotation_cycle</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">sustain_mask</span><span class="o">=</span><span class="n">sustain_mask</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((1, 2, 2))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">Ratio((2, 2, 1))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools.bifurcate_duration">
+<span id="surge-tools-rhythmtools-bifurcate-duration-module"></span><h2>surge.tools.rhythmtools.bifurcate_duration module<a class="headerlink" href="#module-surge.tools.rhythmtools.bifurcate_duration" title="Permalink to this headline">¶</a></h2>
+<p>Recursively subdivides a duration into two parts.</p>
+<dl class="function">
+<dt id="surge.tools.rhythmtools.bifurcate_duration.bifurcate_duration">
+<code class="descclassname">surge.tools.rhythmtools.bifurcate_duration.</code><code class="descname">bifurcate_duration</code><span class="sig-paren">(</span><em>duration</em>, <em>minimum_denominator=8</em>, <em>allowable_leafs=(Duration(3</em>, <em>8)</em>, <em>Duration(5</em>, <em>16)</em>, <em>Duration(1</em>, <em>2)</em>, <em>Duration(7</em>, <em>16)</em>, <em>Duration(5</em>, <em>8)</em>, <em>Duration(3</em>, <em>4))</em>, <em>minimum_duration=Duration(3</em>, <em>8)</em>, <em>even='disallowed'</em>, <em>bigger='left'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/rhythmtools/bifurcate_duration.html#bifurcate_duration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.rhythmtools.bifurcate_duration.bifurcate_duration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.rhythmtools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-surge.tools.rhythmtools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
