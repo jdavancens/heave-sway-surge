@@ -8,25 +8,26 @@ from abjad import *
 from surge import *
 import os
 
-def make_blank(font_size, paper_size, instrument_list):
+def make_blank(font_size, paper_size, n_quarters, instrument_list):
 
+    # make score object from template
     template = ScoreTemplate(instrument_list)
     score = template()
 
-    # add skip measure to Time Signature context
+    # add one skip measure to Time Signature context
     measures = scoretools.make_spacer_skip_measures(
-        [TimeSignature((4,4))]
+        [TimeSignature((n_quarters, 4))]
     )
     score[0].extend(measures)
 
-    # addd skip measure to each staff in score
+    # add one skip measure to each staff in score
     for staff in iterate(score).by_class(Staff):
         measures = scoretools.make_spacer_skip_measures(
-            [TimeSignature((4,4))]
+            [TimeSignature((n_quarters, 4))]
         )
         staff.append(Voice(measures))
 
-    # make a Lilypond file
+    # make a Lilypond file, using the blank stylesheet
     stylesheet_path = os.path.join(
         '..',
         'stylesheets',
