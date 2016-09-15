@@ -147,7 +147,7 @@ class WoodwindFingering(object):
                 binary_list.append(0)
         return binary_list
 
-    def key_markup(key):
+    def key_markup(self, key):
         d = {
             'R': Markup('R'),
             'I': Markup('I'),
@@ -176,7 +176,7 @@ class WoodwindFingering(object):
             'down': None,
             'half': None,
         }
-        return d[key].fontsize(-4)._raise(-0.5).whiteout()
+        return d[key].fontsize(-4).raise_(-0.5).whiteout()
 
     def key_options(self, instrument, hand, finger):
         d = {
@@ -226,6 +226,7 @@ class WoodwindFingering(object):
                 }
             }
         }
+        return d[instrument][hand][finger]
 
     @property
     def keys(self):

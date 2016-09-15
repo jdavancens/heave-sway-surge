@@ -8,7 +8,8 @@ import os
 import importlib
 
 class WoodwindFingeringsGenerator(object):
-    '''Woodwind fingering generator
+    '''Woodwind fingering generator. Generates fingerings for existing rhythmic
+    patterns.
     '''
     ### SPECIAL METHODS ###
 

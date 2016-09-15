@@ -204,6 +204,7 @@ class WoodwindFingeringCombination(object):
 
     ### STATIC METHODS ###
 
+    @staticmethod
     def open(instrument):
         wfg = WoodwindFingeringCombination(
             instrument=instrument,

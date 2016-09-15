@@ -37,6 +37,20 @@ class FretPlacement(object):
         assert isinstance(harmonic, bool)
         self._harmonic = harmonic
 
+    ### SPECIAL METHODS ###
+
+    def __eq__(self, other):
+        if other is None:
+            return False
+        if (self.instrument   == other.instrument
+            and self.string   == other.string
+            and self.fret     == other.fret
+            and self.harmonic == other.harmonic
+            ):
+            return True
+        else:
+            return False
+
     ### PUBLIC PROPERTIES ###
 
     @property
