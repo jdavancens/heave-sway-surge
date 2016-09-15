@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class HumpInterpolater(object):
+    
     def __call__(self, x, y0, y1):
         from math import sqrt
         if y0 <= y1:

@@ -8,7 +8,7 @@ from abjad import *
 from surge import *
 import os
 
-def make_blank(font_size, paper_size, n_quarters, instrument_list):
+def make_blank(font_size, paper_size, n_quarters, n_measures, instrument_list):
 
     # make score object from template
     template = ScoreTemplate(instrument_list)
@@ -16,14 +16,14 @@ def make_blank(font_size, paper_size, n_quarters, instrument_list):
 
     # add one skip measure to Time Signature context
     measures = scoretools.make_spacer_skip_measures(
-        [TimeSignature((n_quarters, 4))]
+        [TimeSignature((n_quarters, 4))] * n_measures
     )
     score[0].extend(measures)
 
     # add one skip measure to each staff in score
     for staff in iterate(score).by_class(Staff):
         measures = scoretools.make_spacer_skip_measures(
-            [TimeSignature((n_quarters, 4))]
+            [TimeSignature((n_quarters, 4))] * n_measures
         )
         staff.append(Voice(measures))
 

@@ -9,7 +9,8 @@ import sys
 
 
 '''
-Inputs: font size, paper size, number of quarter notes, instruments
+Inputs: font size, paper size, number of quarter notes, number of measures,
+instruments
 '''
 
 if __name__ == '__main__':
@@ -19,7 +20,8 @@ if __name__ == '__main__':
         font_size = int(sys.argv[1])
         paper_size = sys.argv[2]
         n_quarters = int(sys.argv[3])
-        instrument_list = [inst.lower() for inst in sys.argv[4:]]
+        n_measures = int(sys.argv[4])
+        instrument_list = [inst.lower() for inst in sys.argv[5:]]
 
         # construct paths
         this_file = os.path.abspath(__file__)
@@ -34,7 +36,7 @@ if __name__ == '__main__':
             os.remove(score_pdf_path)
 
         print("Making segment ...")
-        segment = make_blank(font_size, paper_size, n_quarters, instrument_list)
+        segment = make_blank(font_size, paper_size, n_quarters, n_measures, instrument_list)
 
         # make lilypond file
         with systemtools.Timer() as timer:
