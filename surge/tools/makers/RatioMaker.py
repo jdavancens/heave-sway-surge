@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-'''Makes a ratio from a list of time signatures to use as input to a rhythm
-maker.
 
-'''
 from abjad import *
 from surge.tools.rhythmtools.TrivialProlater import TrivialProlater
 
 
 class RatioMaker:
+    '''Makes a ratio from a list of time signatures to use as input to a rhythm
+    maker.
+    '''
 
     __slots__ = ('_ratios')
 

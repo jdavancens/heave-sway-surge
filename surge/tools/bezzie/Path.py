@@ -6,6 +6,10 @@ from LinearInterpolater import LinearInterpolater
 class Path(object):
     ''' A sequence of linked BezierCurves B0, B1, ..., Bn. The final x-value of Bi
     must be equal to the first x-value of Bi+1.
+
+
+    Initializes from one or more `BezierCurve`s.
+    
         ::
             >>> b0 = BezierCurve((0,0), (50, 100), (100, 0))
             >>> b1 = BezierCurve((100, 0), (150, -100), (200, 0))
@@ -75,9 +79,16 @@ class Path(object):
 
     @property
     def length(self):
+        '''The combined lengths of the curves.
+
+        Returns float.
+        '''
         return sum([curve.length for curve in self])
 
     # PUBLIC METHODS
 
     def set_interpolater(self, interpolater):
+        '''Sets the interpolation function to be used.
+
+        '''
         self._interpolater = interpolater

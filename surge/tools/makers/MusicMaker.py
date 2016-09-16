@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Oct 31, 2015
 
-@author: josephdavancens
-'''
 import copy
 from abjad import *
 from abjad.tools import sequencetools
@@ -144,18 +140,32 @@ class MusicMaker:
 
     @property
     def instrument(self):
+        '''The target instrument.
+
+        Returns an Abjad `Instrument`.
+        '''
         return self._instrument
 
     @property
     def name(self):
+        '''The name of the `MusicMaker`.
+
+        Returns a string.
+        '''
         return self._name
 
     @property
     def stages(self):
+        '''A tuple containing the active (non-rest) stages.
+
+        Returns a tuple.
+        '''
         return self._stages
 
     @stages.setter
     def stages(self, expr):
+        '''Sets the active (non-rest) stages.
+        '''
         if expr is None:
             self._stages = expr
         elif mathtools.is_positive_integer(expr):
@@ -169,8 +179,12 @@ class MusicMaker:
 
     @property
     def start_stage(self):
+        '''The first active stage.
+        '''
         return self._stages[0]
 
     @property
     def stop_stage(self):
+        '''The last active stage.
+        '''
         return self._stages[-1]

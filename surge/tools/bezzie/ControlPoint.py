@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-'''
-Created on Apr 4, 2016
-
-@author: josephdavancens
-'''
-
 
 class ControlPoint(object):
     '''A point in n dimensions.

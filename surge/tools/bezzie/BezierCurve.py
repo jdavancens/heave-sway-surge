@@ -4,7 +4,10 @@ from LinearInterpolater import LinearInterpolater
 
 
 class BezierCurve(object):
-    '''An arbitrary degree two-dimensional Bezier curve.
+    '''An arbitrary degree two-dimensional Bezier curve. The number of
+    `ControlPoint` objects supplied determines the degree of the curve.
+
+    Intializes from one or more `ControlPoint`s.
 
         ::
 
@@ -100,14 +103,27 @@ class BezierCurve(object):
 
     @property
     def control_points(self):
+        '''The control points that determine the shape of the curve.
+
+        Returns a list.
+        '''
         return self._control_points
 
     @property
     def degree(self):
+        '''The degree of the curve.
+
+        Returns an integer.
+        '''
         return len(self._control_points) - 1
 
     @property
     def length(self):
+        '''Calculates the distance between the x values of the first and last
+        `ControlPoint`s.
+
+        Returns a float.
+        '''
         first = self[0]
         last = self[-1]
         length = last[0] - first[0]
