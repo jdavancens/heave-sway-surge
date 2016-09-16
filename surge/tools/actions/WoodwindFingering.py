@@ -9,6 +9,12 @@ from abjad import *
 
 
 class WoodwindFingering(object):
+    '''A woodwind instrument key configuration for either
+    the left or right hand.
+
+    Initializes from an `Instrument`, a string specifiying left or right hand,
+    and a dictionary of key states.
+    '''
 
     ### CLASS ATTRIBUTES ###
 
@@ -147,7 +153,82 @@ class WoodwindFingering(object):
                 binary_list.append(0)
         return binary_list
 
-    def key_markup(self, key):
+    @property
+    def keys(self):
+        '''The key configuration.
+
+        Returns a dictionary.
+        '''
+        return self._keys
+
+    @property
+    def hand(self):
+        '''The hand.
+
+        Returns a string.
+        '''
+        return self._hand
+
+    @property
+    def is_open(self):
+        '''Indicator of whether any keys are down.
+
+        Retruns boolean.
+        '''
+        for key_tuple in self.keys.values():
+            if key_tuple is not None:
+                return False
+        return True
+
+    @property
+    def instrument(self):
+        '''The target instrument.
+
+        Returns `Instrument`.
+        '''
+        return self._instrument
+
+    ### PUBLIC METHODS ###
+
+    def to_json(self):
+        '''Creates a representation of the woodwind fingering suitable for
+        JSON storage.
+
+        Returns a list.
+        '''
+        json_list = [
+            self.instrument.instrument_name.lower(),
+            self.hand,
+            self.keys,
+        ]
+        return json_list
+
+    ### STATIC METHODS ###
+
+    @staticmethod
+    def from_json(json_list):
+        '''Creates a woowdwind fingering from JSON respresentation.
+
+        Returns `WoodwindFingering`.
+        '''
+        from surge.materials.instruments import instruments
+        instrument = instruments[json_list[0]]
+        hand = json_list[1]
+        keys = json_list[2]
+        fingering = WoodwindFingering(
+            instrument=instrument,
+            hand=hand,
+            keys=keys
+        )
+        return fingering
+
+    @staticmethod
+    def key_markup(key):
+        '''Creates an Abjad `Markup` object given a standard LilyPond woodwind
+        key name string and adds a little formatting.
+
+        Returns `Markup`.
+        '''
         d = {
             'R': Markup('R'),
             'I': Markup('I'),
@@ -178,7 +259,13 @@ class WoodwindFingering(object):
         }
         return d[key].fontsize(-4).raise_(-0.5).whiteout()
 
-    def key_options(self, instrument, hand, finger):
+    @staticmethod
+    def key_options(instrument, hand, finger):
+        '''Given an instrument, hand a finger (all as strings), lists all the
+        possible valid LilyPond woodwind key shorthand strings.
+
+        Returns a tuple.
+        '''
         d = {
             'oboe': {
                 'left': {
@@ -228,52 +315,12 @@ class WoodwindFingering(object):
         }
         return d[instrument][hand][finger]
 
-    @property
-    def keys(self):
-        return self._keys
-
-    @property
-    def hand(self):
-        return self._hand
-
-    @property
-    def is_open(self):
-        for key_tuple in self.keys.values():
-            if key_tuple is not None:
-                return False
-        return True
-
-    @property
-    def instrument(self):
-        return self._instrument
-
-    ### PUBLIC METHODS ###
-
-    def to_json(self):
-        json_list = [
-            self.instrument.instrument_name.lower(),
-            self.hand,
-            self.keys,
-        ]
-        return json_list
-
-    ### STATIC METHODS ###
-
-    @staticmethod
-    def from_json(json_list):
-        from surge.materials.instruments import instruments
-        instrument = instruments[json_list[0]]
-        hand = json_list[1]
-        keys = json_list[2]
-        fingering = WoodwindFingering(
-            instrument=instrument,
-            hand=hand,
-            keys=keys
-        )
-        return fingering
-
     @staticmethod
     def open(instrument, hand):
+        '''Creates a woodwind fingering with no keys depressed.
+
+        Returns `WoodwindFingering`.
+        '''
         if hand == 'left':
             wf = WoodwindFingering(
                 instrument=instrument,

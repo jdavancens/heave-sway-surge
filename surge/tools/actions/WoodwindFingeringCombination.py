@@ -10,6 +10,12 @@ from surge.tools.actions.WoodwindFingering import WoodwindFingering
 
 
 class WoodwindFingeringCombination(object):
+    ''' A complete woodwind instrument key configuration.
+
+    Initializes from an `Instrument`, a left-hand `WoodwindFingering` and a
+    right hand `WoodwindFingering`, and an optional set of predicted pitches
+    resulting from this fingering.
+    '''
 
     ### CLASS ATTRIBUTES ###
 
@@ -147,18 +153,35 @@ class WoodwindFingeringCombination(object):
 
     @property
     def instrument(self):
+        '''The target instrument.
+
+        Returns an `Instrument`.
+        '''
         return self._instrument
 
     @property
     def left(self):
+        '''The left-hand fingering.
+
+        Returns a `WoodwindFingering`.
+        '''
         return self._left
 
     @property
     def right(self):
+        '''The right-hand fingering.
+
+        Returns a `WoodwindFingering`.
+        '''
         return self._right
 
     @property
     def predicted_pitches(self):
+        '''The pitch or pitches that are predicted to result from this fingering
+        combination.
+
+        Returns a list of Abjad `Pitch` objects or an Abjad `PitchSet`.
+        '''
         return self._predicted_pitches
 
     ### PUBLIC METHODS ###
@@ -206,6 +229,10 @@ class WoodwindFingeringCombination(object):
 
     @staticmethod
     def open(instrument):
+        '''Creates an open fingering.
+
+        Returns a `WoodwindFingeringCombination`.
+        '''
         wfg = WoodwindFingeringCombination(
             instrument=instrument,
             left=WoodwindFingering.open(instrument=instrument, hand='left'),

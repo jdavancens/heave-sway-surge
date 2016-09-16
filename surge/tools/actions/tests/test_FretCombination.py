@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-'''
-Created on Sep 14, 2016
-
-@author: josephdavancens
-'''
-
 import unittest
 from surge.tools.actions.FretPlacement import FretPlacement
 from surge.tools.actions.FretCombination import FretCombination
@@ -57,7 +51,7 @@ class TestFretCombination(unittest.TestCase):
             number_of_strings=6
             )
 
-    def test_equal(self):
+    def test___eq__(self):
         self.assertEqual(self.combo, self.combo_same)
 
     def test_not_equal(self):
@@ -65,6 +59,15 @@ class TestFretCombination(unittest.TestCase):
 
     def test_as_binary_list(self):
         self.assertEqual(self.combo.as_binary_list(), [0, 0, 0, 0, 0, 1])
+
+    def test_instrument(self):
+        self.assertIsInstance(self.combo.instrument, (Guitar, None))
+
+    def test_fret_placements(self):
+        self.assertIsInstance(self.combo.fret_placements, (list, None))
+
+    def test_number_of_srtings(self):
+        self.assertIsInstance(self.combo.number_of_strings, int)
 
 if __name__ == '__main__':
     unittest.main()

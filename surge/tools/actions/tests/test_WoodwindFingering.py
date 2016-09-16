@@ -66,6 +66,34 @@ class TestWoodwindFingering(unittest.TestCase):
             [1, 1, 1, 1, 0]
         )
 
+    def test_keys(self):
+        self.assertIsInstance(self.fingering.keys, dict)
+
+    def test_hand(self):
+        self.assertEqual(self.fingering.hand, 'left')
+
+    def test_open_1(self):
+        self.assertFalse(self.fingering.is_open)
+
+    def test_open_2(self):
+        f = WoodwindFingering(
+            instrument=instruments['clarinet'],
+            hand="right",
+            keys={
+                'index': None,
+                'middle': None,
+                'ring': None,
+                'pinky': None,
+            }
+        )
+        self.assertTrue(f.is_open)
+
+    def test_key_options(self):
+        self.assertIsInstance(
+            WoodwindFingering.key_options('oboe', 'left', 'thumb'), tuple)
+
+    def test_key_markup(self):
+        self.assertIsInstance(WoodwindFingering.key_markup('R'), Markup)
 
     def test_to_json(self):
         self.assertEqual(
@@ -94,6 +122,7 @@ class TestWoodwindFingering(unittest.TestCase):
     def test_open(self):
         open_fingering = WoodwindFingering.open(instruments['clarinet'], 'left')
         self.assertIsInstance(open_fingering, WoodwindFingering)
+        self.assertTrue(open_fingering.is_open)
 
 if __name__ == '__main__':
     unittest.main()

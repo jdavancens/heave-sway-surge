@@ -11,6 +11,7 @@ from surge.materials.instruments import instruments
 from surge.tools.actions.WoodwindFingering import WoodwindFingering
 from surge.tools.actions.WoodwindFingeringCombination import \
     WoodwindFingeringCombination
+from abjad.tools.instrumenttools.Instrument import Instrument
 from abjad.tools.markuptools.Markup import Markup
 from abjad.tools.pitchtools.NamedPitch import NamedPitch
 from abjad.tools.pitchtools.PitchSet import PitchSet
@@ -112,6 +113,15 @@ class TestWoodwindFingeringCombination(unittest.TestCase):
             predicted_pitches=None
         )
         self.assertNotEqual(self.wfc, other)
+
+    def test_instrument(self):
+        self.assertIsInstance(self.wfc.instrument, Instrument)
+
+    def test_left(self):
+        self.assertIsInstance(self.wfc.left, WoodwindFingering)
+
+    def test_right(self):
+        self.assertIsInstance(self.wfc.right, WoodwindFingering)
 
     def test_markup(self):
         chord = self.wfc.markup()

@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-'''
-Created on Sep 14, 2016
-
-@author: josephdavancens
-'''
-
 import unittest
 from surge.tools.actions.FretPlacement import FretPlacement
 from abjad.tools.instrumenttools.Guitar import Guitar
@@ -42,6 +36,15 @@ class TestFretPlacement(unittest.TestCase):
 
     def test_not_equal(self):
         self.assertNotEqual(self.fret_placement, self.fret_placement_different)
+
+    def test_instrument(self):
+        self.assertIsInstance(self.fret_placement.instrument, (Guitar, None))
+
+    def test_fret(self):
+        self.assertIsInstance(self.fret_placement.fret, (int, None))
+
+    def test_harmonic(self):
+        self.assertIsInstance(self.fret_placement.harmonic, bool)
 
 
 if __name__ == '__main__':
