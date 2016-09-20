@@ -2,11 +2,16 @@
 
 from abjad import *
 from surge.tools.rhythmtools.TrivialProlater import TrivialProlater
-
+from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
 
 class RatioMaker:
     '''Makes a ratio from a list of time signatures to use as input to a rhythm
     maker.
+
+    Initializes from a list of `TimeSignatures`, a list of rest indices, a
+    `Prolater`, and a `Subdivider`.
+
+    Calling the `RatioMaker` returns list of ratios.
     '''
 
     __slots__ = ('_ratios')
@@ -16,10 +21,10 @@ class RatioMaker:
         time_signatures,
         rest_indices,
         prolater=TrivialProlater(),
-        subdivider=None
+        subdivider=UnitSubdivider()
     ):
         if rest_indices == 'all':
-            ratios = [[-1] for ts in time_signatures]
+            ratios = [(-1,) for ts in time_signatures]
         else:
             ratios = []
             for i, time_signature in enumerate(time_signatures):
@@ -28,7 +33,7 @@ class RatioMaker:
                     ratio = subdivider(prolation)
                     ratios.append(ratio.numbers)
                 else:
-                    ratios.append([-1])
+                    ratios.append((-1,))
         self._ratios = ratios
 
     def __call__(self):

@@ -5,7 +5,12 @@ from surge.tools.rhythmtools.Subdivider import Subdivider
 
 
 class EvenSubdivider(Subdivider):
-    '''Even subdivider.
+    '''Even subdivider. Tries to create a maximally even subdivision.
+
+    Initializes from a list of integers, a `Subdivider`, a subdivision pattern,
+    a `SustainMask` and a `SilenceMast`.
+
+    When called, subdivides a `Duration` and returns a `Ratio`
 
         ::
             >>> e = EvenSubdivider([3, 2])
