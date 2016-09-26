@@ -12,19 +12,19 @@ class EvenSubdivider(Subdivider):
 
     When called, subdivides a `Duration` and returns a `Ratio`
 
-        ::
-            >>> e = EvenSubdivider([3, 2])
-            >>> e(5)
-            Ratio((2, 2, 1))
-            >>> e(5)
-            Ratio((2, 3))
-            >>> e = EvenSubdivider([3], rotation_cycle=[0,1,2])
-            >>> e(5)
-            Ratio((2, 2, 1))
-            >>> e(5)
-            Ratio((2, 1, 2))
-            >>> e(5)
-            Ratio((1, 2, 2))
+    ::
+        >>> e = EvenSubdivider([3, 2])
+        >>> e(5)
+        Ratio((2, 2, 1))
+        >>> e(5)
+        Ratio((2, 3))
+        >>> e = EvenSubdivider([3], rotation_cycle=[0,1,2])
+        >>> e(5)
+        Ratio((2, 2, 1))
+        >>> e(5)
+        Ratio((2, 1, 2))
+        >>> e(5)
+        Ratio((1, 2, 2))
     '''
     __slots__ = ('_n_cycle',)
 

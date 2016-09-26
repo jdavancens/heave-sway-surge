@@ -15,6 +15,9 @@ class SlidePositionHandler(object):
     r''' A slide position handler for trombone
 
         Slide position -> staff position
+        Vibrato -> Glissando spanner style
+        Vibrato width
+        Vibrato rate
     '''
 
     # CLASS ATTRIBUTES #
@@ -22,6 +25,7 @@ class SlidePositionHandler(object):
     __slots__ = (
         '_music_maker',
         '_slide_position_envelopes',
+        '_slide_position_envelopes_release',
         '_number_of_staff_lines'
     )
 
@@ -31,10 +35,15 @@ class SlidePositionHandler(object):
         self,
         music_maker=None,
         slide_position_envelopes=None,
+        slide_position_envelepes_release=None,
         number_of_staff_lines=15
     ):
         self._music_maker = music_maker
         self._slide_position_envelopes = slide_position_envelopes
+        if slide_position_envelopes_release is None:
+            self._slide_position_envelopes_release = slide_position_envelopes
+        else:
+            self._slide_position_enveleopes_release = slide_position_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
 
     # SPECIAL METHODS #
@@ -78,7 +87,7 @@ class SlidePositionHandler(object):
             x0 = start_offset / total_duration
             x1 = x0 + duration
             s0 = self._slide_position_envelopes[current_stage](x0)
-            s1 = self._slide_position_envelopes[current_stage](x1)
+            s1 = self._slide_position_envelopes_release[current_stage](x1)
             self._annotate_logical_tie(logical_tie, s0, s1)
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):

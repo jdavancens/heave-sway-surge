@@ -16,6 +16,7 @@ class FrettingHandler(object):
         fret —> note head
         string —> staff position
         harmonic –> note head
+        
     '''
 
     # CLASS ATTRIBUTES #

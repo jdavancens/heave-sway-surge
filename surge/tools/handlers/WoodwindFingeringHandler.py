@@ -17,6 +17,8 @@ class WoodwindFingeringHandler(object):
     '''A fingering handler for woodwind instruments.
         Maps key index to staff position
         Key indication as note head (open, closed), articulation (side keys)
+        Trill (piano tremolo style - between notes)
+        Single key trill -> Glissando spanner style - dashed
     '''
 
     # CLASS ATTRIBUTES

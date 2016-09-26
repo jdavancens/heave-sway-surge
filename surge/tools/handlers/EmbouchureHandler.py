@@ -17,8 +17,10 @@ class EmbouchureHandler(object):
     '''An embouchure handler for brass instruments
 
         Air pressure -> staff position, line spanner
+        Air pressure tremolo -> Glissando spanner style (rate)
         Lip pressure -> circle notehead grey value
-
+        Vowel patterns
+        Consonant patterns
 
     Returns voices for a particular stage in a segment
     '''
@@ -28,7 +30,9 @@ class EmbouchureHandler(object):
     __slots__ = (
         '_music_maker',
         '_air_pressure_envelopes',
+        '_air_pressure_envelopes_release',
         '_lip_pressure_envelopes',
+        '_lip_pressure_envelopes_release',
         '_number_of_staff_lines',
     )
 
@@ -38,13 +42,23 @@ class EmbouchureHandler(object):
         self,
         music_maker=None,
         air_pressure_envelopes=None,
+        air_pressure_envelopes_release=None,
         lip_pressure_envelopes=None,
+        lip_pressure_envelopes_release=None,
         number_of_staff_lines=15
     ):
 
         self._music_maker = music_maker
         self._air_pressure_envelopes = air_pressure_envelopes
+        if air_pressure_envelopes_release is None:
+            self._air_pressure_envelopes_release = air_pressure_envelopes
+        else:
+            self._air_pressure_envelopes_release = air_pressure_envelpes_release
         self._lip_pressure_envelopes = lip_pressure_envelopes
+        if lip_pressure_envelopes_release is None:
+            self._lip_pressure_envelopes_release = lip_pressure_envelopes
+        else:
+            self._lip_pressure_envelopes_release = lip_pressure_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
 
     # SPECIAL METHODS #
@@ -147,9 +161,9 @@ class EmbouchureHandler(object):
             x0 = float(start_moment.offset)
             x1 = x0 + float(logical_tie.get_duration())
             a0 = self._air_pressure_envelopes[current_stage](x0)
-            a1 = self._air_pressure_envelopes[current_stage](x1)
+            a1 = self._air_pressure_envelopes_release[current_stage](x1)
             l0 = 1 - self._lip_pressure_envelopes[current_stage](x0)
-            l1 = 1 - self._lip_pressure_envelopes[current_stage](x1)
+            l1 = 1 - self._lip_pressure_envelopes_release[current_stage](x1)
             self._annotate_logical_tie(logical_tie, a0, a1, l0, l1)
         logical_ties = list(iterate(voice).by_logical_tie())
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):

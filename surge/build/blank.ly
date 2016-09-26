@@ -1,4 +1,4 @@
-% 2016-09-09 15:31
+% 2016-09-20 14:24
 
 \version "2.19.29"
 \language "english"
@@ -14,74 +14,77 @@
     \context Score = "Score" <<
         \context TimeSignatureContext = "Time Signatures and Tempi" {
             {
-                \time 13/4
-                s1 * 13/4
+                \time 4/4
+                s1 * 1
+            }
+            {
+                s1 * 1
+            }
+            {
+                s1 * 1
+            }
+            {
+                s1 * 1
             }
         }
-        \context WoodwindInstrumentStaffGroup = "Alto Saxophone Staff Group" \with {
-            instrumentName = \markup { Alto Saxophone }
-            shortInstrumentName = \markup { Alto Sax. }
+        \context BowedStringInstrumentStaffGroup = "Violin Staff Group" \with {
+            instrumentName = \markup { Violin }
+            shortInstrumentName = \markup { Vn. }
         } <<
-            \context RhythmStaff = "Embouchure Rhythm" \with {
+            \context RhythmStaff = "Bowing Rhythm" \with {
                 \override Stem #'direction = #UP
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
-            \context EmbouchureStaff = "Embouchure" \with {
-                instrumentName = \markup { Emb. }
-                shortInstrumentName = \markup { Emb. }
+            \context StringSpaceStaff = "String Space" \with {
+                instrumentName = \markup { Vn. }
             } <<
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             >>
-            \context RhythmStaff = "Left Hand Fingering Rhythm" \with {
-                \override Stem #'direction = #UP
-            } {
-                \new Voice {
-                    {
-                        \time 13/4
-                        s1 * 13/4
-                    }
-                }
-            }
-            \context WoodwindLeftHandFingeringStaff = "Left Hand Fingering" \with {
-                instrumentName = \markup { L.H. }
-                shortInstrumentName = \markup { L.H. }
-            } <<
-                \new Voice {
-                    {
-                        \time 13/4
-                        s1 * 13/4
-                    }
-                }
-            >>
-            \context WoodwindRightHandFingeringStaff = "Right Hand Fingering" \with {
-                instrumentName = \markup { R.H. }
-                shortInstrumentName = \markup { R.H. }
-            } <<
-                \new Voice {
-                    {
-                        \time 13/4
-                        s1 * 13/4
-                    }
-                }
-            >>
-            \context RhythmStaff = "Right Hand Fingering Rhythm" \with {
+            \context RhythmStaff = "Fingering Rhythm" \with {
                 \override Stem #'direction = #DOWN
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -95,8 +98,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -105,8 +117,17 @@
             } <<
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             >>
@@ -115,8 +136,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -130,8 +160,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -140,8 +179,17 @@
             } <<
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             >>
@@ -150,8 +198,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -165,8 +222,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }
@@ -175,8 +241,17 @@
             } <<
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             >>
@@ -185,8 +260,17 @@
             } {
                 \new Voice {
                     {
-                        \time 13/4
-                        s1 * 13/4
+                        \time 4/4
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
+                    }
+                    {
+                        s1 * 1
                     }
                 }
             }

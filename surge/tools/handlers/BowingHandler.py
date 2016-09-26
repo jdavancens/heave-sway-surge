@@ -13,7 +13,14 @@ import surge.tools.graphicstools
 
 class BowingHandler(object):
     '''A bow action handler for string instruments
-        Pressure, height, string id
+
+    Bow Height.
+    Bow sweep width
+    Bow sweep rate
+    Bow pressure (including over-pressure)
+    Jete/rebound.
+    Tremolo
+    Tremolo rate.
     '''
 
     # CLASS ATTRIBUTES
@@ -21,9 +28,12 @@ class BowingHandler(object):
     __slots__ = (
         '_music_maker',
         '_height_envelopes',
+        '_heignt_envelopes_release',
         '_number_of_staff_lines',
         '_pressure_envelopes',
+        '_pressure_envelopes_release',
         '_string_indices_patterns',
+        '_tremolo_patterns',
         )
 
     # INITIALIZER
@@ -32,16 +42,27 @@ class BowingHandler(object):
         self,
         music_maker=None,
         height_envelopes=None,
+        height_envelopes_release=None,
         pressure_envelopes=None,
+        pressure_envelopes_release=None,
         string_indices_patterns=None,
-        number_of_staff_lines=31
+        tremolo_patterns=None,
+        number_of_staff_lines=31,
     ):
-
         self._music_maker = music_maker
         self._height_envelopes = height_envelopes
+        if height_envelopes_release is None:
+            self._height_envelopes_release = height_envelopes
+        else:
+            self._height_envelopes_release = height_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
         self._pressure_envelopes = pressure_envelopes
+        if press_envelopes_release is None:
+            self._pressure_envelopes_release = pressure_envelopes
+        else:
+            self._pressure_envelopes_release = pressure_envelopes_release
         self._string_indices_patterns = string_indices_patterns
+        self._tremolo_patterns = tremolo_patterns
 
     # SPECIAL METHODS
 
@@ -100,6 +121,12 @@ class BowingHandler(object):
             markup = markup.raise_(0.5)
             attach(markup, logical_tie.head)
 
+    def _add_tremolo(self, logical_tie):
+        tremolo = inspect_(logical_tie.head).get_annotation('tremolo')
+        if tremolo:
+            stem_tremolo = indicatortools.StemTremolo(32)
+            attach(stem_tremolo, logical_tie.head)
+
     def _annotate_from_previous_logical_tie(self, previous, current):
         if isinstance(previous[0], Note) and isinstance(current[0], Note):
             previous_pressure_start = \
@@ -126,6 +153,7 @@ class BowingHandler(object):
         pressure_start,
         pressure_stop,
         string_ids,
+        tremolo,
     ):
         height_start = indicatortools.Annotation('height_start', height_start)
         height_stop = indicatortools.Annotation('height_stop', height_stop)
@@ -138,11 +166,13 @@ class BowingHandler(object):
             pressure_stop
             )
         string_ids = indicatortools.Annotation('string_ids', string_ids)
+        tremolo = indicatortools.Annotation('tremolo', tremolo)
         attach(height_start, logical_tie.head)
         attach(height_stop, logical_tie.head)
         attach(pressure_start, logical_tie.head)
         attach(pressure_stop, logical_tie.head)
         attach(string_ids, logical_tie.head)
+        attach(tremolo, logical_tie.head)
 
     def _annotate_logical_ties(self, voice, current_stage):
         start_offset = float(inspect_(voice).get_timespan().start_offset)
@@ -151,23 +181,28 @@ class BowingHandler(object):
         str_i_pattern = self._string_indices_patterns[current_stage]
         str_i_pattern = datastructuretools.CyclicTuple(str_i_pattern)
         str_i_cursor = datastructuretools.Cursor(str_i_pattern)
+        trem_pattern = self._tremolo_patterns[current_stage]
+        trem_pattern = datastructuretools.CyclicTuple(trem_pattern)
+        trem_cursor = datastructuretools.Cursor(trem_pattern)
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             note = logical_tie.head
             start_moment = inspect_(note).get_vertical_moment(voice)
             x0 = float(start_moment.offset)
             x1 = x0 + float(logical_tie.get_duration())
             height_start = self._height_envelopes[current_stage](x0)
-            height_stop = self._height_envelopes[current_stage](x1)
+            height_stop = self._height_envelopes_release[current_stage](x1)
             pressure_start = 1 - self._pressure_envelopes[current_stage](x0)
-            pressure_stop = 1 - self._pressure_envelopes[current_stage](x1)
+            pressure_stop = 1 - self._pressure_envelopes_release[current_stage](x1)
             string_ids = str_i_cursor.next()[0]
+            tremolo = trem_cursor.next()[0]
             self._annotate_logical_tie(
                 logical_tie,
                 height_start,
                 height_stop,
                 pressure_start,
                 pressure_stop,
-                string_ids
+                string_ids,
+                tremolo
                 )
         logical_ties = list(iterate(voice).by_logical_tie())
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
@@ -181,6 +216,7 @@ class BowingHandler(object):
     def _handle_rhythm_voice(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
             self._add_string_ids(logical_tie)
+            self._add_tremolo(logical_tie)
 
     def _handle_voice(self, voice):
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):

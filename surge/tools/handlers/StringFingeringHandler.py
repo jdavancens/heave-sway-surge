@@ -12,8 +12,15 @@ from surge.tools import graphicstools
 
 
 class StringFingeringHandler(object):
-    r'''
-    classdocs
+    r''' Non-fretted string instrument fingering handler.
+    Height on string.
+    Vibrato width.
+    Vibrato rate.
+    Trill width.
+    Trill rate.
+    Finger pressure.
+    Pressure tremolo rate.
+
     '''
 
     # CLASS ATTRIBUTES
@@ -21,7 +28,9 @@ class StringFingeringHandler(object):
     __slots__ = (
         '_music_maker',
         '_height_envelopes',
+        '_height_envelopes_release',
         '_pressure_envelopes',
+        '_pressure_envelopes_release',
         '_number_of_staff_lines'
     )
 
@@ -31,12 +40,22 @@ class StringFingeringHandler(object):
         self,
         music_maker=None,
         height_envelopes=None,
+        height_envelopes_release=None,
         pressure_envelopes=None,
+        pressure_envelopes_release=None,
         number_of_staff_lines=31
     ):
         self._music_maker = music_maker
         self._height_envelopes = height_envelopes
+        if height_envelopes_release is None:
+            self._height_envelopes_release = height_envelopes
+        else:
+            self._height_envelopes_release = height_envelopes_release
         self._pressure_envelopes = pressure_envelopes
+        if pressure_envelopes_release is None:
+            self._pressure_envelopes_release = pressure_envelopes
+        else:
+            self._pressure_envelopes_release = pressure_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
 
     def __call__(self, current_stage):
@@ -109,9 +128,9 @@ class StringFingeringHandler(object):
             x0 = float(start_moment.offset)
             x1 = x0 + float(logical_tie.get_duration())
             h0 = self._height_envelopes[current_stage](x0)
-            h1 = self._height_envelopes[current_stage](x1)
+            h1 = self._height_envelopes_release[current_stage](x1)
             p0 = 1 - self._pressure_envelopes[current_stage](x0)
-            p1 = 1 - self._pressure_envelopes[current_stage](x1)
+            p1 = 1 - self._pressure_envelopes_release[current_stage](x1)
             self._annotate_logical_tie(logical_tie, h0, h1, p0, p1)
         logical_ties = list(iterate(voice).by_logical_tie(pitched=True))
 

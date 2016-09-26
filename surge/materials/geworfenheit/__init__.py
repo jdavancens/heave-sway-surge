@@ -6,4 +6,4 @@ systemtools.ImportManager.import_material_packages(
     globals(),
 )
 
-number_of_stages = 5
+number_of_stages = 1

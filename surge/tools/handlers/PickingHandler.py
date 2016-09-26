@@ -29,6 +29,7 @@ class PickingHandler(object):
         '_music_maker',
         '_picking_force_envelopes',
         '_picking_position_envelopes',
+        '_picking_position_envelopes_release',
         '_string_indices_patterns',
         '_tremolo_patterns',
         '_number_of_staff_lines'
@@ -41,6 +42,7 @@ class PickingHandler(object):
         music_maker=None,
         picking_force_envelopes=None,
         picking_position_envelopes=None,
+        picking_position_envelopes_release=None,
         string_indices_patterns=None,
         tremolo_patterns=None,
         number_of_staff_lines=15
@@ -48,6 +50,10 @@ class PickingHandler(object):
         self._music_maker = music_maker
         self._picking_force_envelopes = picking_force_envelopes
         self._picking_position_envelopes = picking_position_envelopes
+        if picking_position_envelopes_release is None:
+            self._picking_position_envelopes_release = picking_position_envelopes
+        else:
+            self._picking_position_envelopes_release = picking_position_envelopes_release
         self._string_indices_patterns = string_indices_patterns
         self._tremolo_patterns = tremolo_patterns
         self._number_of_staff_lines = number_of_staff_lines
@@ -125,7 +131,7 @@ class PickingHandler(object):
             x0 = float(start_moment.offset)
             x1 = x0 + float(logical_tie.get_duration())
             p0 = self._picking_position_envelopes[current_stage](x0)
-            p1 = self._picking_position_envelopes[current_stage](x1)
+            p1 = self._picking_position_envelopes_release[current_stage](x1)
             force = 1 - self._picking_force_envelopes[current_stage](x0)
             string_indices = str_i_cursor.next()[0]
             tremolo = trem_cursor.next()[0]
