@@ -35,7 +35,7 @@ class SlidePositionHandler(object):
         self,
         music_maker=None,
         slide_position_envelopes=None,
-        slide_position_envelepes_release=None,
+        slide_position_envelopes_release=None,
         number_of_staff_lines=15
     ):
         self._music_maker = music_maker
@@ -43,7 +43,7 @@ class SlidePositionHandler(object):
         if slide_position_envelopes_release is None:
             self._slide_position_envelopes_release = slide_position_envelopes
         else:
-            self._slide_position_enveleopes_release = slide_position_envelopes_release
+            self._slide_position_envelopes_release = slide_position_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
 
     # SPECIAL METHODS #

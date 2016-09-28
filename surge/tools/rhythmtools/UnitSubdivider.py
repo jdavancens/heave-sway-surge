@@ -53,6 +53,8 @@ class UnitSubdivider(Subdivider):
         rotation_cycle=0,
         sustain_mask=None,
         silence_mask=None,
+        second_level_subdivider=None,
+        second_level_subdivision_pattern=None,
     ):
         self._multiplier = multiplier
         Subdivider.__init__(
@@ -60,6 +62,8 @@ class UnitSubdivider(Subdivider):
             rotation_cycle=rotation_cycle,
             sustain_mask=sustain_mask,
             silence_mask=silence_mask,
+            second_level_subdivider=second_level_subdivider,
+            second_level_subdivision_pattern=second_level_subdivision_pattern,
         )
 
     # SPECIAL METHODS

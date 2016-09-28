@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 '''
 Created on Nov 20, 2015
 
@@ -16,11 +15,14 @@ from surge.tools import graphicstools
 class EmbouchureHandler(object):
     '''An embouchure handler for brass instruments
 
-        Air pressure -> staff position, line spanner
-        Air pressure tremolo -> Glissando spanner style (rate)
+        Air pressure -> staff position, glissando spanner
+        Air pressure tremolo -> glissando spanner style (rate)
         Lip pressure -> circle notehead grey value
-        Vowel patterns
-        Consonant patterns
+        Vowels -> markup
+        Consonant patterns -> markup
+        Air pressure tremolo -> glissando spanner style, shape
+        Staccato -> hide line spanner
+        Inhale -> Indicator
 
     Returns voices for a particular stage in a segment
     '''
@@ -34,6 +36,11 @@ class EmbouchureHandler(object):
         '_lip_pressure_envelopes',
         '_lip_pressure_envelopes_release',
         '_number_of_staff_lines',
+        # '_consonant_patterns',
+        # '_vowel_patterns',
+        # '_vibrato_patterns',
+        # '_staccato_patterns',
+        # '_direction_patterns',
     )
 
     # INTIALIZER #
@@ -164,6 +171,16 @@ class EmbouchureHandler(object):
             a1 = self._air_pressure_envelopes_release[current_stage](x1)
             l0 = 1 - self._lip_pressure_envelopes[current_stage](x0)
             l1 = 1 - self._lip_pressure_envelopes_release[current_stage](x1)
+            # consonants_cursor = self._create_cursor(
+            #         self._consonant_patterns[current_stage])
+            # voewls_cursor = self._create_cursor(
+            #         self._vowel_pattterns[current_stage])
+            # vibrato_cursor = self._create_cursor(
+            #         self._vibrato_patterns[current_stage])
+            # trills_cursor = self._create_cursor(
+            #         self._trill_patterns[current_stage])
+            # directions_cursor = self._create_cursor(
+            #         self._direction_patterns[current_stage])
             self._annotate_logical_tie(logical_tie, a0, a1, l0, l1)
         logical_ties = list(iterate(voice).by_logical_tie())
         for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
@@ -173,6 +190,10 @@ class EmbouchureHandler(object):
         groups = shortcuts.get_consecutive_note_groups(voice)
         for group in groups:
             shortcuts.hidden_grace_after(group[-1])
+
+    def _create_cursor(self, pattern):
+        cyclic_tuple = datastructuretools.CyclicTuple(pattern)
+        return datastructuretools.Cursor(cyclic_tuple)
 
     def _handle_voice(self, voice):
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):

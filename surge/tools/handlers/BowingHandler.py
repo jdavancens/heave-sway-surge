@@ -14,7 +14,7 @@ import surge.tools.graphicstools
 class BowingHandler(object):
     '''A bow action handler for string instruments
 
-    Bow Height.
+    Bow height.
     Bow sweep width
     Bow sweep rate
     Bow pressure (including over-pressure)
@@ -28,7 +28,7 @@ class BowingHandler(object):
     __slots__ = (
         '_music_maker',
         '_height_envelopes',
-        '_heignt_envelopes_release',
+        '_height_envelopes_release',
         '_number_of_staff_lines',
         '_pressure_envelopes',
         '_pressure_envelopes_release',
@@ -57,12 +57,18 @@ class BowingHandler(object):
             self._height_envelopes_release = height_envelopes_release
         self._number_of_staff_lines = number_of_staff_lines
         self._pressure_envelopes = pressure_envelopes
-        if press_envelopes_release is None:
+        if pressure_envelopes_release is None:
             self._pressure_envelopes_release = pressure_envelopes
         else:
             self._pressure_envelopes_release = pressure_envelopes_release
-        self._string_indices_patterns = string_indices_patterns
-        self._tremolo_patterns = tremolo_patterns
+        if string_indices_patterns is None:
+            self._string_indices_patterns = [[None]] * max(music_maker.stages)
+        else:
+            self._string_indices_patterns = string_indices_patterns
+        if tremolo_patterns is None:
+            self._tremolo_patterns = [[None]] * max(music_maker.stages)
+        else:
+            self._tremolo_patterns = tremolo_patterns
 
     # SPECIAL METHODS
 
@@ -178,12 +184,10 @@ class BowingHandler(object):
         start_offset = float(inspect_(voice).get_timespan().start_offset)
         stop_offset = float(inspect_(voice).get_timespan().stop_offset)
         total_duration = stop_offset - start_offset
-        str_i_pattern = self._string_indices_patterns[current_stage]
-        str_i_pattern = datastructuretools.CyclicTuple(str_i_pattern)
-        str_i_cursor = datastructuretools.Cursor(str_i_pattern)
-        trem_pattern = self._tremolo_patterns[current_stage]
-        trem_pattern = datastructuretools.CyclicTuple(trem_pattern)
-        trem_cursor = datastructuretools.Cursor(trem_pattern)
+        str_i_cursor = self._create_cursor(
+                self._string_indices_patterns[current_stage])
+        trem_cursor = self._create_cursor(
+                self._tremolo_patterns[current_stage])
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             note = logical_tie.head
             start_moment = inspect_(note).get_vertical_moment(voice)
@@ -212,6 +216,10 @@ class BowingHandler(object):
         groups = shortcuts.get_consecutive_note_groups(voice)
         for group in groups:
             shortcuts.hidden_grace_after(group[-1])
+
+    def _create_cursor(self, pattern):
+        cyclic_tuple = datastructuretools.CyclicTuple(pattern)
+        return datastructuretools.Cursor(cyclic_tuple)
 
     def _handle_rhythm_voice(self, rhythm_voice):
         for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
