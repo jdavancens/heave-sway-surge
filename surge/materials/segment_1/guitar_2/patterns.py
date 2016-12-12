@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-fretting_patterns = (
+fret_combination_patterns = (
     [0],
     [1],
     [0, 1, 2, 1, 3],
@@ -8,7 +8,7 @@ fretting_patterns = (
     [2]
 )
 
-string_indices_patterns = (
+string_index_patterns = (
     [(4, 5), (1,), (3, 4), (0,)],
     [(0, 1), (0, 1, 2)],
     [(5,), (4,), (3,), (4,)],

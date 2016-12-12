@@ -40,7 +40,7 @@ bowing_music_handler = BowingHandler(
     music_maker=bowing_music_maker,
     height_envelopes=bow_height_envelopes,
     pressure_envelopes=bow_pressure_envelopes,
-    string_indices_patterns=string_indices_patterns
+    string_index_patterns=string_index_patterns
     )
 
 fingering_music_handler = StringFingeringHandler(

@@ -59,7 +59,6 @@ try:
         fingerings_json = json.load(f)
     fingering_data = json.loads(fingerings_json)
     # convert back to woodwindfingerings
-
     lh_fingerings = []
     for stage in fingering_data[0]:
         stage_fingerings = []
@@ -87,16 +86,22 @@ embouchure_music_handler = EmbouchureHandler(
     lip_pressure_envelopes=lip_pressure_envelopes
 )
 
-fingering_music_handler = WoodwindFingeringHandler(
-    lh_music_maker=lh_music_maker,
-    rh_music_maker=rh_music_maker,
-    lh_fingerings=lh_fingerings,
-    rh_fingerings=rh_fingerings
+lh_fingering_music_handler = WoodwindFingeringHandler(
+    music_maker=lh_music_maker,
+    fingerings=lh_fingerings,
+    hand='left'
+)
+
+rh_fingering_music_handler = WoodwindFingeringHandler(
+    music_maker=rh_music_maker,
+    fingerings=rh_fingerings,
+    hand='right'
 )
 
 music_handlers = [
     embouchure_music_handler,
-    fingering_music_handler,
+    lh_fingering_music_handler,
+    rh_fingering_music_handler
 ]
 
 

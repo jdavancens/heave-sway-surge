@@ -38,3 +38,5 @@ for stage, stage_tempo in zip(time_signatures, tempi):
     for stage_division, tempo in zip(stage, stage_tempo):
         tempo_map.append((current_bar, tempo))
         current_bar = current_bar + len(stage_division)
+
+print(tempo_map)

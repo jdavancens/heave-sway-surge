@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-string_indices_patterns = [
+string_index_patterns = [
     (),
     (),
     (['IV']),

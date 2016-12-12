@@ -49,14 +49,14 @@ picking_music_handler = PickingHandler(
     music_maker=picking_music_maker,
     picking_position_envelopes=picking_position_envelopes,
     picking_force_envelopes=picking_force_envelopes,
-    string_indices_patterns=string_indices_patterns,
+    string_index_patterns=string_index_patterns,
     tremolo_patterns=tremolo_patterns,
 )
 
-fretting_music_handler = FrettingHandler(
+fretting_music_handler = GuitarFrettingHandler(
     music_maker=fretting_music_maker,
     fret_combinations=fret_combinations,
-    patterns=fretting_patterns
+    fret_combination_patterns=fret_combination_patterns
 )
 
 music_handlers = [

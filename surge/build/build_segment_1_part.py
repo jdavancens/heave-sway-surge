@@ -42,7 +42,6 @@ if __name__ == '__main__':
     part_pdf_path = os.path.join(build_path, part_name_snake_case+'.pdf')
     part_midi_path = os.path.join(build_path, part_name_snake_case+'.mid')
 
-
     # remove old files
     if os.access(part_ly_path, os.F_OK):
         os.remove(part_ly_path)

@@ -6,19 +6,13 @@ Created on Dec 4, 2015
 '''
 from abjad import *
 from surge import *
-from surge.segments.segment_2.definitions import oboe
-from surge.segments.segment_2.definitions import clarinet
-from surge.segments.segment_2.definitions import saxophone
-from surge.segments.segment_2.definitions import trombone
-from surge.segments.segment_2.definitions import guitar_1
-from surge.segments.segment_2.definitions import guitar_2
-from surge.segments.segment_2.definitions import violin
-from surge.segments.segment_2.definitions import viola
-from surge.segments.segment_2.definitions import cello
-from surge.segments.segment_2.definitions import bass
-from surge.materials.segment_2.time_signatures import *
-from surge.materials.segment_2.tempo_map import tempo_map
 
+# from surge.segments.geworfenheit.definitions import saxophone
+# from surge.segments.geworfenheit.definitions import viola
+from surge.segments.geworfenheit.definitions import cello
+# from surge.segments.geworfenheit.definitions import bass
+from surge.materials.geworfenheit.time_signatures import *
+from surge.materials.geworfenheit.tempo_map import tempo_map
 
 def make_score(number_of_stages=None):
     segment_maker = SegmentMaker(
@@ -29,45 +23,19 @@ def make_score(number_of_stages=None):
         first_bar_number=1,
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
-        instrument_list=[
-            'oboe',
-            'clarinet in b-flat',
-            'alto saxophone',
-            'trombone',
-            'guitar i',
-            'guitar ii',
-            'violin',
-            'viola',
-            'cello',
-            'contrabass',
-            ],
+        instrument_list=['cello'],
         page_size=('11x17', 'portrait'),
         staff_size=7,
         final_barline=True,
         part=False
         )
-    oboe_handlers = oboe.get_music_handlers()
-    clarinet_handlers = clarinet.get_music_handlers()
-    saxophone_handlers = saxophone.get_music_handlers()
-    trombone_handlers = trombone.get_music_handlers()
-    guitar_1_handlers = guitar_1.get_music_handlers()
-    guitar_2_handlers = guitar_2.get_music_handlers()
-    violin_handlers = violin.get_music_handlers()
-    viola_handlers = viola.get_music_handlers()
+
+    # saxophone_handlers = saxophone.get_music_handlers()
+    # viola_handlers = viola.get_music_handlers()
     cello_handlers = cello.get_music_handlers()
-    bass_handlers = bass.get_music_handlers()
-    music_handlers = [
-        oboe_handlers,
-        clarinet_handlers,
-        saxophone_handlers,
-        trombone_handlers,
-        guitar_1_handlers,
-        guitar_2_handlers,
-        violin_handlers,
-        viola_handlers,
-        cello_handlers,
-        bass_handlers
-    ]
+    # bass_handlers = bass.get_music_handlers()
+
+    music_handlers = [cello_handlers]
     music_handlers = sequencetools.flatten_sequence(music_handlers)
     segment_maker.add_music_handlers(music_handlers)
     segment = segment_maker()

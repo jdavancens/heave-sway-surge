@@ -1,42 +1,40 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Nov 20, 2015
 
 @author: josephdavancens
-'''
+"""
 
 from abjad import *
-from surge.tools.shortcuts import *
+from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
 import copy
-import surge.tools.graphicstools
 
 
-class BowingHandler(object):
-    '''A bow action handler for string instruments
+class BowingHandler(EnvelopeHandler):
+    """A bow action handler for string instruments
 
-    Bow height.
-    Bow sweep width
-    Bow sweep rate
-    Bow pressure (including over-pressure)
-    Jete/rebound.
-    Tremolo
-    Tremolo rate.
-    '''
+    Bow height -> Notehead Y-offset.
+    Bow sweep width -> Glissando zig-zag style line width
+    Bow sweep rate -> Glissando zig-zag style angle
+    Bow pressure (including over-pressure) -> Notehead color
+    Jete/rebound -> Markup
+    Tremolo -> Stem tremolo
+    Tremolo rate. -> Stem tremolo flags
+    """
 
-    # CLASS ATTRIBUTES
+    ### CLASS ATTRIBUTES ###
 
     __slots__ = (
-        '_music_maker',
         '_height_envelopes',
         '_height_envelopes_release',
-        '_number_of_staff_lines',
         '_pressure_envelopes',
-        '_pressure_envelopes_release',
-        '_string_indices_patterns',
+        '_string_index_patterns',
         '_tremolo_patterns',
+        '_jete_patterns',
+        '_sweep_patterns',
         )
 
-    # INITIALIZER
+    ### INITIALIZER ###
 
     def __init__(
         self,
@@ -44,224 +42,83 @@ class BowingHandler(object):
         height_envelopes=None,
         height_envelopes_release=None,
         pressure_envelopes=None,
-        pressure_envelopes_release=None,
-        string_indices_patterns=None,
+        string_index_patterns=None,
         tremolo_patterns=None,
-        number_of_staff_lines=31,
+        jete_patterns=None,
+        sweep_patterns=None,
+        number_of_staff_lines=31
     ):
-        self._music_maker = music_maker
+        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
+
         self._height_envelopes = height_envelopes
         if height_envelopes_release is None:
             self._height_envelopes_release = height_envelopes
         else:
             self._height_envelopes_release = height_envelopes_release
-        self._number_of_staff_lines = number_of_staff_lines
+
         self._pressure_envelopes = pressure_envelopes
-        if pressure_envelopes_release is None:
-            self._pressure_envelopes_release = pressure_envelopes
-        else:
-            self._pressure_envelopes_release = pressure_envelopes_release
-        if string_indices_patterns is None:
-            self._string_indices_patterns = [[None]] * max(music_maker.stages)
-        else:
-            self._string_indices_patterns = string_indices_patterns
-        if tremolo_patterns is None:
-            self._tremolo_patterns = [[None]] * max(music_maker.stages)
-        else:
-            self._tremolo_patterns = tremolo_patterns
 
-    # SPECIAL METHODS
+        self._string_index_patterns = \
+            self._create_cursors(string_index_patterns)
+        self._tremolo_patterns = self._create_cursors(tremolo_patterns)
+        self._jete_patterns = self._create_cursors(jete_patterns)
+        self._sweep_patterns = self._create_cursors(sweep_patterns)
 
-    def __call__(self, current_stage):
-        voice = self._music_maker(current_stage)
-        self._annotate_logical_ties(voice, current_stage)
-        rhythm_voice = copy.deepcopy(voice)
-        self._attach_grace_notes(voice)
-        self._handle_voice(voice)
-        self._handle_rhythm_voice(rhythm_voice)
-        self._add_glissandi(voice)
-        self._name_voices(voice, rhythm_voice)
-        return [voice, rhythm_voice]
+    ### PRIVATE METHODS ###
 
-    # PRIVATE METHODS
+    def _add_jete(self, note):
+        markup = self._make_text_markup("...",  enclosure='circle')
+        attach(markup, note)
 
-    def _add_glissandi(self, voice):
-        shortcuts.add_gliss(voice)
+    def _attach_pressure_notehead(self, pressure, tie):
+        steps = 4
+        pressure = self._quantize(pressure, steps)
+        size = 1
+        fill = self._make_circle_markup(size, pressure)
+        outline = self._make_circle_outline_markup(size)
+        circle = markuptools.Markup.combine(fill, outline)
+        self._markup_to_notehead(tie.head, circle)
 
-    def _add_pressure_notehead(self, logical_tie):
-        note = logical_tie.head
-        previous = inspect_(note).get_annotation('previous_pressure_start')
-        current = inspect_(note).get_annotation('pressure_start')
-        if previous is not None:
-            previous = shortcuts.quantize(previous, 5)
-        current = shortcuts.quantize(current, 5)
-        if previous != current:
-            circle_fill = shortcuts.make_circle_markup(1, current)
-            circle_outline = shortcuts.make_circle_outline_markup(1)
-            circle = Markup.combine(circle_fill, circle_outline)
-            override(note).note_head.stencil = 'ly:text-interface::print'
-            override(note).note_head.text = circle
-        else:
-            shortcuts.point_note_head(note)
+    def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        if self._height_envelopes[current_stage] is None:
+            return
+        previous_string_index = None
+        for tie, offset_start, offset_end in self._iterate_logical_ties(rhythm_voice):
+            if tie.is_pitched:
+                jete = self._cursor_next(self._jete_patterns, current_stage)
+                tremolo = self._cursor_next(self._tremolo_patterns, current_stage)
+                string_index = self._cursor_next(self._string_index_patterns, current_stage)
+                if jete:
+                    self._add_jete(tie.head)
+                if tremolo:
+                    self._add_stem_tremolo(tie)
+                if string_index != previous_string_index:
+                    attach(string_index, tie.head)
+                previous_string_index = string_index
+            else:
+                previous_string_index = None
 
-    def _add_string_ids(self, logical_tie):
-        r'''Looks at the current logical tie and the previous. If different,
-        adds above-staff markup to first note
-        '''
-        string_ids = inspect_(logical_tie.head).get_annotation('string_ids')
-        if isinstance(string_ids, str):
-            string_ids = [string_ids]
-        last_string_ids = inspect_(logical_tie.head).get_annotation(
-            'previous_string_ids'
-            )
-        if string_ids != last_string_ids:
-            column = []
-            for string_id in string_ids:
-                string_id = str(string_id)
-                string_id = string_id.upper()
-                markup = Markup(string_id)
-                markup = markup.bold()
-                column.append(markup)
-            markup = Markup.column(column, direction=Down)
-            markup = markup.fontsize(0)
-            markup = markup.raise_(0.5)
-            attach(markup, logical_tie.head)
+    def _handle_voice(self, voice, current_stage):
+        if self._height_envelopes[current_stage] is None:
+            return
+        for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+            if tie.is_pitched:
+                height_start = self._height_envelopes[current_stage](offset_start)
+                height_end = self._height_envelopes_release[current_stage](offset_end)
+                pressure = self._pressure_envelopes[current_stage](offset_start)
+                sweep = self._cursor_next(self._sweep_patterns, current_stage)
 
-    def _add_tremolo(self, logical_tie):
-        tremolo = inspect_(logical_tie.head).get_annotation('tremolo')
-        if tremolo:
-            stem_tremolo = indicatortools.StemTremolo(32)
-            attach(stem_tremolo, logical_tie.head)
+                style = 'zigzag' if sweep else None
+                self._attach_glissando(tie.head, style=style)
+                self._hidden_grace_after(tie.tail)
+                grace = inspect_(tie.tail).get_grace_container()[0]
 
-    def _annotate_from_previous_logical_tie(self, previous, current):
-        if isinstance(previous[0], Note) and isinstance(current[0], Note):
-            previous_pressure_start = \
-                inspect_(previous[0]).get_annotation('pressure_start')
-            previous_pressure_start = indicatortools.Annotation(
-                'previous_pressure_start',
-                previous_pressure_start
-                )
-            attach(previous_pressure_start, current[0])
+                self._set_y_offset(tie.head, height_start)
+                self._set_y_offset(grace, height_end)
 
-            previous_string_ids = \
-                inspect_(previous[0]).get_annotation('string_ids')
-            previous_string_ids = indicatortools.Annotation(
-                'previous_string_ids',
-                previous_string_ids
-                )
-            attach(previous_string_ids, current[0])
+                self._attach_pressure_notehead(pressure, tie)
 
-    def _annotate_logical_tie(
-        self,
-        logical_tie,
-        height_start,
-        height_stop,
-        pressure_start,
-        pressure_stop,
-        string_ids,
-        tremolo,
-    ):
-        height_start = indicatortools.Annotation('height_start', height_start)
-        height_stop = indicatortools.Annotation('height_stop', height_stop)
-        pressure_start = indicatortools.Annotation(
-            'pressure_start',
-            pressure_start
-            )
-        pressure_stop = indicatortools.Annotation(
-            'pressure_stop',
-            pressure_stop
-            )
-        string_ids = indicatortools.Annotation('string_ids', string_ids)
-        tremolo = indicatortools.Annotation('tremolo', tremolo)
-        attach(height_start, logical_tie.head)
-        attach(height_stop, logical_tie.head)
-        attach(pressure_start, logical_tie.head)
-        attach(pressure_stop, logical_tie.head)
-        attach(string_ids, logical_tie.head)
-        attach(tremolo, logical_tie.head)
-
-    def _annotate_logical_ties(self, voice, current_stage):
-        start_offset = float(inspect_(voice).get_timespan().start_offset)
-        stop_offset = float(inspect_(voice).get_timespan().stop_offset)
-        total_duration = stop_offset - start_offset
-        str_i_cursor = self._create_cursor(
-                self._string_indices_patterns[current_stage])
-        trem_cursor = self._create_cursor(
-                self._tremolo_patterns[current_stage])
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            note = logical_tie.head
-            start_moment = inspect_(note).get_vertical_moment(voice)
-            x0 = float(start_moment.offset)
-            x1 = x0 + float(logical_tie.get_duration())
-            height_start = self._height_envelopes[current_stage](x0)
-            height_stop = self._height_envelopes_release[current_stage](x1)
-            pressure_start = 1 - self._pressure_envelopes[current_stage](x0)
-            pressure_stop = 1 - self._pressure_envelopes_release[current_stage](x1)
-            string_ids = str_i_cursor.next()[0]
-            tremolo = trem_cursor.next()[0]
-            self._annotate_logical_tie(
-                logical_tie,
-                height_start,
-                height_stop,
-                pressure_start,
-                pressure_stop,
-                string_ids,
-                tremolo
-                )
-        logical_ties = list(iterate(voice).by_logical_tie())
-        for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
-            self._annotate_from_previous_logical_tie(previous, current)
-
-    def _attach_grace_notes(self, voice):
-        groups = shortcuts.get_consecutive_note_groups(voice)
-        for group in groups:
-            shortcuts.hidden_grace_after(group[-1])
-
-    def _create_cursor(self, pattern):
-        cyclic_tuple = datastructuretools.CyclicTuple(pattern)
-        return datastructuretools.Cursor(cyclic_tuple)
-
-    def _handle_rhythm_voice(self, rhythm_voice):
-        for logical_tie in iterate(rhythm_voice).by_logical_tie(pitched=True):
-            self._add_string_ids(logical_tie)
-            self._add_tremolo(logical_tie)
-
-    def _handle_voice(self, voice):
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            self._add_pressure_notehead(logical_tie)
-            self._hide_and_skip_tied_notes(logical_tie)
-            self._set_y_offset(logical_tie)
-
-    def _hide_and_skip_tied_notes(self, logical_tie):
-        for note in logical_tie[1:]:
-            shortcuts.point_note_head(note)
-            shortcuts.gliss_skip(note)
-
-    def _name_voices(self, voice, rhythm_voice):
-        voice.name = self._music_maker.name
-        rhythm_voice.name = self._music_maker.name + ' Rhythm'
-
-    def _set_y_offset(self, logical_tie):
-        n = self._number_of_staff_lines
-        y0 = inspect_(logical_tie.head).get_annotation('height_start')
-        y1 = inspect_(logical_tie.head).get_annotation('height_stop')
-        y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
-        y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-        override(logical_tie.head).note_head.Y_offset = y0_offset
-        try:
-            grace = inspect_(logical_tie.tail).get_grace_container()
-        except:
-            grace = None
-        if grace is not None:
-            grace = inspect_(logical_tie.tail).get_grace_container()[0]
-            override(grace).note_head.Y_offset = y1_offset
-
-    # PUBLIC PROPERTIES
-
-    @property
-    def instrument(self):
-        return self._music_maker.instrument
-
-    @property
-    def name(self):
-        return self._music_maker.name
+                if not tie.is_trivial:
+                    for note in tie[1:]:
+                        self._add_gliss_skip(note)
+                        self._hide_note_head(note)
