@@ -7,16 +7,16 @@ Created on Dec 17, 2016
 
 from abjad import *
 from surge import *
-from surge.materials.template.time_signatures import time_signatures
-from surge.materials.template.guitar_2 import *
+from surge.materials.the_shade.time_signatures import time_signatures
+from surge.materials.the_shade.guitar_1 import *
 
 # ==============================================================================
 #  GLOBAL VARIABLES
 # ==============================================================================
 
 guitar = instrumenttools.Guitar(
-    instrument_name='Guitar II',
-    short_instrument_name='Gtr. II'
+    instrument_name='Guitar I',
+    short_instrument_name='Gtr. I'
 )
 
 stages = (0, 1, 2, 3, 4)

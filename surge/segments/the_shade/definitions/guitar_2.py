@@ -7,8 +7,8 @@ Created on Dec 17, 2016
 
 from abjad import *
 from surge import *
-from surge.materials.template.time_signatures import time_signatures
-from surge.materials.template.guitar_2 import *
+from surge.materials.the_shade.time_signatures import time_signatures
+from surge.materials.the_shade.guitar_2 import *
 
 # ==============================================================================
 #  GLOBAL VARIABLES
