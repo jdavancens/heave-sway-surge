@@ -131,7 +131,7 @@ embouchure_music_handler = EmbouchureHandler(
     direction_patterns=direction_patterns,
     staccato_patterns=staccato_patterns,
     vibrato_patterns=vibrato_patterns,
-    vowel_patterns=vowel_patterns
+    vowel_patterns=vowel_patterns,
 )
 left_music_handler = WoodwindFingeringHandler(
     music_maker=left_music_maker,

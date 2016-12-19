@@ -7,4 +7,6 @@ from surge import *
 
 n_stages = 1
 measures_per_stage = (10,)
-time_signatures = [[TimeSignature((4,4))] * n for n in measures_per_stage]
+time_signatures = [
+    [TimeSignature((4,4))] * n for n in measures_per_stage
+]

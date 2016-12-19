@@ -49,30 +49,6 @@
            (stretchability . 0))
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%HEADER INFO: TITLE, COMPOSER
-\header {
-    composer = \markup {
-        \override #'(font-name . "Didot")
-        \fontsize #6 "Joseph Davancens"
-        \hspace #20
-    }
-    tagline = \markup { "" }
-    title = \markup \column {
-        \center-align {
-            \override #'(font-name . "Didot Bold")
-            \fontsize #9 {
-               \line {Surge :: Dart :: Drift}
-            }
-        }
-    }
-    subtitle = \markup \column {
-        \center-align {
-            \override #'(font-name . "Didot Bold")
-            \fontsize #7 {
-               \line {Part I: Observer Observed}
-            }
-        }
-    }
-}
 \layout {
     \accidentalStyle modern
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%VOICES

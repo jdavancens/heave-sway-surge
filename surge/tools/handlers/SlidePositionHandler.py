@@ -53,7 +53,8 @@ class SlidePositionHandler(EnvelopeHandler):
 
     def _handle_voice(self, voice, current_stage):
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
-            if self._slide_position_envelopes[current_stage] is None:
+            if (self._slide_position_envelopes is None or
+                self._slide_position_envelopes[current_stage] is None):
                 return
             position_start = self._slide_position_envelopes[current_stage](offset_start)
             position_end = self._slide_position_envelopes_release[current_stage](offset_end)

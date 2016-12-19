@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
 
-string_index_patterns = [
-]
+from abjad import *
+
+string_index_patterns = ((['III']),)
+tremolo_patterns = ((True,),)

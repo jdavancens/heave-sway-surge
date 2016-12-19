@@ -21,6 +21,7 @@ string_index_patterns = [['I', 'II', 'III', 'IV']]
 tremolo_patterns = [[True, False, True, False]]
 jete_patterns = [[True, False, False, False]]
 sweep_patterns = [[False, True, False, False]]
+position_patterns = [[Fraction(2,3), Fraction(1,2)]]
 
 finger_height_envelopes = [Path(BezierCurve((0, 0), (0.5, 0.25)))]
 finger_height_envelopes_release = [Path(BezierCurve((0, 0.25), (0.5, 0)))]
@@ -55,6 +56,7 @@ bowing_music_handler = BowingHandler(
     tremolo_patterns=tremolo_patterns,
     jete_patterns=jete_patterns,
     sweep_patterns=sweep_patterns,
+    position_patterns=position_patterns,
 )
 
 fingering_music_handler = StringFingeringHandler(

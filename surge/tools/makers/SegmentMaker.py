@@ -37,7 +37,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         'final_barline',
         'instrument_list',
         'measures_per_stage',
-        'name',
+        'segment_name',
+        'title',
         'number_of_stages',
         'raise_approximate_duration',
         'first_bar_number',
@@ -49,6 +50,8 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     def __init__(
         self,
+        title,
+        segment_name,
         final_barline=False,
         final_markup=None,
         final_markup_extra_offset=None,
@@ -69,6 +72,8 @@ class SegmentMaker(SegmentMakerBaseClass):
     ):
         superclass = super(SegmentMaker, self)
         superclass.__init__()
+        self.title = title
+        self.segment_name = segment_name
         self.final_barline = final_barline
         if final_markup is not None:
             assert isinstance(final_markup, markuptools.Markup)
@@ -182,7 +187,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         if letter_number == 0:
             return
         rehearsal_mark = indicatortools.RehearsalMark(number=letter_number)
-        voice = self._score['Time Signature Context']
+        voice = self._score['Time Signatures and Tempi']
         first_leaf = inspect_(voice).get_leaf(0)
         attach(rehearsal_mark, first_leaf)
 
@@ -234,24 +239,12 @@ class SegmentMaker(SegmentMakerBaseClass):
                     if voice_instrument[-1] == 'i':
                         voice_instrument = voice_instrument[0:-1]+'I'
 
-                    # v_string = '\t\t\t\tMatching voice: {}, {}'
-                    # v_string = v_string.format(voice_instrument,voice.name)
-                    # print(v_string)
-
                     for staff in iterate(self._score).by_class(Staff):
                         if staff.name is 'Separator':
                             continue
                         staff_instrument = inspect_(staff).get_annotation(
                             'instrument'
                             )
-
-                        # s_string = '\t\t\t\t\tTrying staff: {}, {}'
-                        # s_string = s_string.format(
-                        #     staff_instrument,
-                        #     staff.name
-                        #     )
-                        # print(s_string)
-
                         if voice.name in staff_map[staff.name] and \
                                 voice_instrument == staff_instrument:
                             detach(instrumenttools.Instrument, voice)
@@ -265,11 +258,6 @@ class SegmentMaker(SegmentMakerBaseClass):
                                         voice_in_staff = True
                                 if not voice_in_staff:
                                     staff.append(voice)
-
-        # # remove empty staves
-        # for staff in iterate(self._score).by_class(Staff):
-        #     if len(staff) == 0:
-        #         self._score.remove(staff)
 
     def _label_instrument_changes(self):
         r'''TODO Adds instrument change markup to score.
@@ -339,8 +327,12 @@ class SegmentMaker(SegmentMakerBaseClass):
             global_staff_size=self._staff_size
         )
         for item in lilypond_file.items[:]:
-            if getattr(item, 'name', None) in ('header', 'layout', 'paper'):
+            if getattr(item, 'name', None) in ('layout', 'paper'):
                 lilypond_file.items.remove(item)
+
+        lilypond_file.header_block.composer = "Joseph Davancens"
+        lilypond_file.header_block.title = self.title
+        lilypond_file.header_block.subtitle = self.segment_name
 
         self._lilypond_file = lilypond_file
 

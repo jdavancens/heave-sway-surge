@@ -19,7 +19,8 @@ class MusicMaker:
         '_name',
         '_stages',
         '_rhythm_makers',
-        '_time_signatures'
+        '_time_signatures',
+        '_rhythms'
         )
 
     # INTITIALIZER #
@@ -29,13 +30,15 @@ class MusicMaker:
         name=None,
         rhythm_makers=None,
         stages=None,
-        time_signatures=None
+        time_signatures=None,
+        rhythms=None
     ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         assert(time_signatures is not None)
         self._instrument = instrument
         self._name = name
         self._rhythm_makers = rhythm_makers
+        self._rhythms=rhythms
         if isinstance(stages, int):
             self.stages = (stages,)
         else:
@@ -50,8 +53,11 @@ class MusicMaker:
         Returns a voice.
         '''
         if current_stage in self._stages:
-            if self._rhythm_makers[current_stage] is None:
-                voice = self._make_skips(current_stage)
+            if self._rhythm_makers is None or self._rhythm_makers[current_stage] is None:
+                if self._rhythms is not None:
+                    voice = self._import_rhythm(self._rhythms[current_stage])
+                else:
+                    voice = self._make_skips(current_stage)
             else:
                 voice = self._make_rhythm(current_stage)
         else:
@@ -115,6 +121,12 @@ class MusicMaker:
                     rests = []
                     for leaf in chunk:
                         shortcuts.hide(leaf)
+
+    def _import_rhythm(self, rhythm):
+        self._flatten_trivial_tuplets(rhythm)
+        self._adjust_tuplet_prolation(rhythm)
+        attach(self._instrument, rhythm)
+        return rhythm
 
     def _make_skips(self, current_stage):
         time_signatures = self._time_signatures[current_stage]

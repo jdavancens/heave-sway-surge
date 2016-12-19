@@ -95,6 +95,8 @@ class WoodwindFingeringHandler(TablatureHandler):
                         schemetools.Scheme('point-stencil')
 
     def _handle_lifeline_voice(self, voice, current_stage):
+        if self._fingerings is None:
+            return
         i = 0
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
             for chord in logical_tie:
@@ -135,7 +137,8 @@ class WoodwindFingeringHandler(TablatureHandler):
             self._hidden_grace_after(last, grace_note=Chord(last))
 
     def _handle_voice(self, voice, current_stage):
-
+        if self._fingerings is None:
+            return
         # get logical ties and construct fingering tablature
         i = 0
         previous_fingering = None

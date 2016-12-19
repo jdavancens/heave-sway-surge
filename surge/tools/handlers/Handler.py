@@ -153,6 +153,7 @@ class Handler(object):
             yield tie, offset_start, offset_end
 
     def _make_circle_markup(self, size, grey=0):
+        grey = 1 - grey
         arc = markuptools.PostscriptOperator('arc', 0, 0, size, 0, 360)
         postscript = markuptools.Postscript([arc])
         postscript = postscript.closepath()
@@ -167,6 +168,7 @@ class Handler(object):
         return Markup(circle_outline)
 
     def _make_half_circle_markup(self, size, grey=0):
+        grey = 1 - grey
         arc = markuptools.PostscriptOperator(
             'arc', 0, 0, 1, 0, 180)
         postscript = markuptools.Postscript([arc])
@@ -188,7 +190,7 @@ class Handler(object):
             else:
                 sep = ' '
             text_or_tuple = sep.join(text_or_tuple)
-            markup = Markup(text_or_tuple)
+            markup = Markup(text_or_tuple, direction=direction)
         elif orientation is 'y':
             markup = Markup.column(text_or_tuple, direction=direction)
         if enclosure is 'box':
@@ -237,6 +239,9 @@ class Handler(object):
         else:
             return cursors[current_stage].next()[0]
 
+    @staticmethod
+    def _reset_cursor(cursor):
+        return datastructuretools.Cursor(cursor.source)
 
     ### PUBLIC PROPERTIES ###
 

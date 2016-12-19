@@ -32,6 +32,7 @@ class BowingHandler(EnvelopeHandler):
         '_tremolo_patterns',
         '_jete_patterns',
         '_sweep_patterns',
+        '_direction_patterns',
         )
 
     ### INITIALIZER ###
@@ -46,6 +47,7 @@ class BowingHandler(EnvelopeHandler):
         tremolo_patterns=None,
         jete_patterns=None,
         sweep_patterns=None,
+        direction_patterns=None,
         number_of_staff_lines=31
     ):
         EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
@@ -63,12 +65,23 @@ class BowingHandler(EnvelopeHandler):
         self._tremolo_patterns = self._create_cursors(tremolo_patterns)
         self._jete_patterns = self._create_cursors(jete_patterns)
         self._sweep_patterns = self._create_cursors(sweep_patterns)
+        self._direction_patterns = self._create_cursors(direction_patterns)
 
     ### PRIVATE METHODS ###
 
     def _add_jete(self, note):
-        markup = self._make_text_markup("...",  enclosure='circle')
+        markup = self._make_text_markup("...", direction=Up)
         attach(markup, note)
+
+    def _attach_direction(self, direction, tie):
+        if direction is not None:
+            markup = self._make_text_markup(direction, direction=Up, enclosure='box')
+            attach(markup, tie.head)
+
+    def _attach_string_index(self, string_index, tie):
+        if string_index is not None:
+            markup = self._make_text_markup(string_index, direction=Down, enclosure='circle')
+            attach(markup, tie.head)
 
     def _attach_pressure_notehead(self, pressure, tie):
         steps = 4
@@ -80,26 +93,30 @@ class BowingHandler(EnvelopeHandler):
         self._markup_to_notehead(tie.head, circle)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        if self._height_envelopes[current_stage] is None:
+        if (self._height_envelopes is None or
+            self._height_envelopes[current_stage] is None):
             return
         previous_string_index = None
         for tie, offset_start, offset_end in self._iterate_logical_ties(rhythm_voice):
             if tie.is_pitched:
-                jete = self._cursor_next(self._jete_patterns, current_stage)
+
                 tremolo = self._cursor_next(self._tremolo_patterns, current_stage)
                 string_index = self._cursor_next(self._string_index_patterns, current_stage)
-                if jete:
-                    self._add_jete(tie.head)
+                direction = self._cursor_next(self._direction_patterns, current_stage)
+
                 if tremolo:
                     self._add_stem_tremolo(tie)
                 if string_index != previous_string_index:
-                    attach(string_index, tie.head)
+                    self._attach_string_index(string_index, tie)
+                if direction:
+                    self._attach_direction(direction, tie)
                 previous_string_index = string_index
             else:
                 previous_string_index = None
 
     def _handle_voice(self, voice, current_stage):
-        if self._height_envelopes[current_stage] is None:
+        if (self._height_envelopes is None or
+            self._height_envelopes[current_stage] is None):
             return
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
             if tie.is_pitched:
@@ -107,11 +124,15 @@ class BowingHandler(EnvelopeHandler):
                 height_end = self._height_envelopes_release[current_stage](offset_end)
                 pressure = self._pressure_envelopes[current_stage](offset_start)
                 sweep = self._cursor_next(self._sweep_patterns, current_stage)
+                jete = self._cursor_next(self._jete_patterns, current_stage)
 
                 style = 'zigzag' if sweep else None
                 self._attach_glissando(tie.head, style=style)
                 self._hidden_grace_after(tie.tail)
                 grace = inspect_(tie.tail).get_grace_container()[0]
+
+                if jete:
+                    self._add_jete(tie.head)
 
                 self._set_y_offset(tie.head, height_start)
                 self._set_y_offset(grace, height_end)

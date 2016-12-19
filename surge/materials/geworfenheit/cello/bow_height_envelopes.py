@@ -4,21 +4,21 @@ from surge import *
 from abjad import *
 
 palindrome = [6, 4, 3, 2, 1, 1, 2, 3, 4, 6]
-points = []
-offset = Offset(0, 1)
+curves = []
+x1 = 0.
 
-
-for _ in range(4):
-    for i, x in enumerate(palindrome):
+for _ in range(5):
+    for i, duration in enumerate(palindrome):
         if i % 2 == 0:
-            y = 1
+            y1 = 1
+            y2 = 0.75
         else:
-            y = 0.75
-        points.append((offset, y))
-        offset += Fraction(x, 16)
+            y1 = 0.75
+            y2 = 1
+        x2 = x1 + float(Fraction(duration, 16))
+        curve = BezierCurve(ControlPoint(x1, y1), ControlPoint(x2, y2))
+        curves.append(curve)
+        x1 = x2
 
-points.append( (Offset(10, 1), 1) )
-
-path = Path(BezierCurve(*points))
-
+path = Path(*curves)
 bow_height_envelopes = (path,)

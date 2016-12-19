@@ -15,8 +15,8 @@ if __name__ == '__main__':
             number_of_stages = 1
         this_file = os.path.abspath(__file__)
         build_path = os.path.dirname(this_file)
-        score_ly_path = os.path.join(build_path, 'score.ly')
-        score_pdf_path = os.path.join(build_path, 'score.pdf')
+        score_ly_path = os.path.join(build_path, 'geworfenheit_score.ly')
+        score_pdf_path = os.path.join(build_path, 'geworfenheit_score.pdf')
         if os.access(score_ly_path, os.F_OK):
             os.remove(score_ly_path)
         if os.access(score_pdf_path, os.F_OK):
