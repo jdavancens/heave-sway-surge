@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
 '''
-Created on Sep 1, 2016
+Created on Dec 12, 2016
 
 @author: josephdavancens
 '''
 from abjad import *
 from surge import *
-from surge.materials.segment_2.time_signatures import time_signatures
-from surge.materials.segment_2.time_signatures import stages
-from surge.materials.segment_2.bass import *
+from surge.materials.geworfenheit.time_signatures import time_signatures
+from surge.materials.geworfenheit.bass import *
+
+# ==============================================================================
+#  HIGH LEVEL PARAMETERS
+# ==============================================================================
 
 bass = instrumenttools.Contrabass()
+stages = (0,)
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -40,7 +44,8 @@ bowing_music_handler = BowingHandler(
     music_maker=bowing_music_maker,
     height_envelopes=bow_height_envelopes,
     pressure_envelopes=bow_pressure_envelopes,
-    string_indices_patterns=string_indices_patterns
+    string_index_patterns=string_index_patterns,
+    tremolo_patterns=tremolo_patterns
     )
 
 fingering_music_handler = StringFingeringHandler(
@@ -53,7 +58,6 @@ music_handlers = [
     bowing_music_handler,
     fingering_music_handler
     ]
-
 
 def get_music_handlers():
     return music_handlers

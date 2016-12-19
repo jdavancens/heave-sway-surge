@@ -5,5 +5,8 @@
 from abjad import *
 from surge import *
 
-measures_per_stage = (12,)
-time_signatures = tuple([[TimeSignature((4,4))] * n for n in measures_per_stage])
+n_stages = 1
+measures_per_stage = (10,)
+time_signatures = [
+    [TimeSignature((4,4))] * n for n in measures_per_stage
+]

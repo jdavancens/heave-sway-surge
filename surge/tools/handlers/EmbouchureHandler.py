@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Nov 20, 2015
 
 @author: josephdavancens
-'''
+"""
 
 from abjad import *
-from surge.tools.shortcuts import shortcuts
-from math import floor
+from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
 import copy
-from surge.tools import graphicstools
 
 
-class EmbouchureHandler(object):
-    '''An embouchure handler for brass instruments
+class EmbouchureHandler(EnvelopeHandler):
+    """An embouchure handler for brass instruments
 
         Air pressure -> staff position, glissando spanner
         Air pressure tremolo -> glissando spanner style (rate)
@@ -25,25 +23,25 @@ class EmbouchureHandler(object):
         Inhale -> Indicator
 
     Returns voices for a particular stage in a segment
-    '''
+    """
 
-    # CLASS ATTRIBUTES #
+    ### CLASS ATTRIBUTES ###
 
     __slots__ = (
         '_music_maker',
         '_air_pressure_envelopes',
         '_air_pressure_envelopes_release',
         '_lip_pressure_envelopes',
-        '_lip_pressure_envelopes_release',
         '_number_of_staff_lines',
-        # '_consonant_patterns',
-        # '_vowel_patterns',
-        # '_vibrato_patterns',
-        # '_staccato_patterns',
-        # '_direction_patterns',
+        '_consonant_patterns',
+        '_fluttertongue_patterns',
+        '_direction_patterns',
+        '_staccato_patterns',
+        '_vibrato_patterns',
+        '_vowel_patterns',
     )
 
-    # INTIALIZER #
+    ### INTIALIZER ###
 
     def __init__(
         self,
@@ -51,180 +49,107 @@ class EmbouchureHandler(object):
         air_pressure_envelopes=None,
         air_pressure_envelopes_release=None,
         lip_pressure_envelopes=None,
-        lip_pressure_envelopes_release=None,
+        consonant_patterns=None,
+        fluttertongue_patterns=None,
+        direction_patterns=None,
+        staccato_patterns=None,
+        vibrato_patterns=None,
+        vowel_patterns=None,
         number_of_staff_lines=15
     ):
-
-        self._music_maker = music_maker
+        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
         self._air_pressure_envelopes = air_pressure_envelopes
-        if air_pressure_envelopes_release is None:
-            self._air_pressure_envelopes_release = air_pressure_envelopes
-        else:
-            self._air_pressure_envelopes_release = air_pressure_envelpes_release
+        self._air_pressure_envelopes_release = air_pressure_envelopes_release
         self._lip_pressure_envelopes = lip_pressure_envelopes
-        if lip_pressure_envelopes_release is None:
-            self._lip_pressure_envelopes_release = lip_pressure_envelopes
+        self._consonant_patterns = self._create_cursors(consonant_patterns)
+        self._direction_patterns = self._create_cursors(direction_patterns)
+        self._fluttertongue_patterns = self._create_cursors(fluttertongue_patterns)
+        self._staccato_patterns = self._create_cursors(staccato_patterns)
+        self._vibrato_patterns = self._create_cursors(vibrato_patterns)
+        self._vowel_patterns = self._create_cursors(vowel_patterns)
+
+    ### PRIVATE METHODS ###
+
+    def _attach_direction(self, direction, last_direction, tie):
+        if direction is None:
+            return
+        if direction == 'in':
+            articulation = indicatortools.Articulation('rtoe', direction=Up)
+        elif direction == 'out':
+            articulation = indicatortools.Articulation('ltoe', direction=Up)
+        attach(articulation, tie.head)
+
+    def _attach_fluttertongue(self, fluttertongue, tie):
+        if fluttertongue:
+            self._add_stem_tremolo(tie)
+
+    def _attach_phoneme(self, consonant, vowel, tie):
+        consonant = '' if consonant is None else consonant
+        vowel = '' if vowel is None else vowel
+        composite = consonant + vowel
+        if composite != '':
+            markup = self._make_text_markup(consonant+vowel)
+            attach(markup, tie.head)
+
+    def _attach_pressure_notehead(self, tie, pressure, size=1, outline=True):
+        fill = self._make_circle_markup(size, pressure)
+        if outline:
+            outline = self._make_circle_outline_markup(size)
+            circle = markuptools.Markup.combine(fill, outline)
+            self._markup_to_notehead(tie.head, circle)
         else:
-            self._lip_pressure_envelopes_release = lip_pressure_envelopes_release
-        self._number_of_staff_lines = number_of_staff_lines
+            self._markup_to_notehead(tie.head, fill)
 
-    # SPECIAL METHODS #
+    def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        for tie, offset_start, offset_end in self._iterate_logical_ties(rhythm_voice):
+            last_direction = None
+            if tie.is_pitched:
+                # get current parameters
+                consonant = self._cursor_next(self._consonant_patterns, current_stage)
+                direction = self._cursor_next(self._direction_patterns, current_stage)
+                fluttertongue = self._cursor_next(self._fluttertongue_patterns, current_stage)
+                vowel = self._cursor_next(self._vowel_patterns, current_stage)
 
-    def __call__(self, current_stage):
-        voice = self._music_maker(current_stage)
-        self._annotate_logical_ties(voice, current_stage)
-        rhythm_voice = copy.deepcopy(voice)
-        self._attach_grace_notes(voice)
-        self._handle_voice(voice)
-        self._add_glissandi(voice)
-        self._name_voices(voice, rhythm_voice)
-        return [voice, rhythm_voice]
+                # attach indicators
+                self._attach_direction(direction, last_direction, tie)
+                self._attach_fluttertongue(fluttertongue, tie)
+                self._attach_phoneme(consonant, vowel, tie)
 
-    # PRIVATE METHODS #
-    def _add_glissandi(self, voice):
-        shortcuts.add_gliss(voice)
+                last_direction = direction
+            else:
+                last_direction=None
 
-    def _add_lip_pressure_notehead(self, logical_tie):
-        note = logical_tie.head
-        previous = inspect_(note).get_annotation(
-            'previous_lip_pressure_start'
-        )
-        current = inspect_(note).get_annotation(
-            'lip_pressure_start'
-        )
+    def _handle_voice(self, voice, current_stage):
+        last_pressure = None
+        for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+            if tie.is_pitched:
+                air_pressure_start = \
+                    self._air_pressure_envelopes[current_stage](offset_start)
+                if self._air_pressure_envelopes_release is None:
+                    air_pressure_end = \
+                        self._air_pressure_envelopes[current_stage](offset_end)
+                else:
+                    air_pressure_end = \
+                        self._air_pressure_envelopes_release[current_stage](offset_start)
+                self._set_y_offset(tie.head, air_pressure_start)
 
-        if previous is not None:
-            previous = shortcuts.quantize(previous, 4)
-        current = shortcuts.quantize(current, 4)
-        if previous != current:
-            circle_fill = shortcuts.make_circle_markup(1, current)
-            circle_outline = shortcuts.make_circle_outline_markup(1)
-            circle = Markup.combine(circle_fill, circle_outline)
-            override(note).note_head.stencil = \
-                'ly:text-interface::print'
-            override(note).note_head.text = circle
-        else:
-            shortcuts.point_note_head(note)
+                lip_pressure = self._lip_pressure_envelopes[current_stage](offset_start)
+                lip_pressure = self._quantize(lip_pressure, 4)
 
-    def _annotate_from_previous_logical_tie(self, previous, current):
-        if isinstance(previous[0], Note) and isinstance(current[0], Note):
-            previous_air_pressure_start = \
-                inspect_(previous[0]).get_annotation('air_pressure_start')
-            previous_air_pressure_start = indicatortools.Annotation(
-                'previous_air_pressure_start',
-                previous_air_pressure_start
-                )
-            attach(previous_air_pressure_start, current[0])
+                self._attach_pressure_notehead(tie, lip_pressure)
 
-            previous_air_pressure_stop = \
-                inspect_(previous[0]).get_annotation('air_pressure_stop')
-            previous_air_pressure_stop = indicatortools.Annotation(
-                'previous_air_pressure_stop',
-                previous_air_pressure_stop
-                )
-            attach(previous_air_pressure_stop, current[0])
+                staccato = self._cursor_next(self._staccato_patterns, current_stage)
+                if not staccato:
+                    vibrato = self._cursor_next(self._vibrato_patterns, current_stage)
+                    style = 'zigzag' if vibrato else None
+                    color = schemetools.Scheme('rgb-color', lip_pressure, lip_pressure, lip_pressure)
+                    self._attach_glissando(tie.head, style=style)
+                    self._hidden_grace_after(tie.tail)
+                    grace = inspect_(tie.tail).get_grace_container()[0]
+                    #self._attach_glissando(grace, style=style, thickness=2, color=color)
+                    self._set_y_offset(grace, air_pressure_end)
 
-            previous_lip_pressure_start = \
-                inspect_(previous[0]).get_annotation('lip_pressure_start')
-            previous_lip_pressure_start = indicatortools.Annotation(
-                'previous_lip_pressure_start',
-                previous_lip_pressure_start
-                )
-            attach(previous_lip_pressure_start, current[0])
-
-            previous_lip_pressure_stop = \
-                inspect_(previous[0]).get_annotation('lip_pressure_stop')
-            previous_lip_pressure_stop = indicatortools.Annotation(
-                'previous_lip_pressure_stop',
-                previous_lip_pressure_stop
-                )
-            attach(previous_lip_pressure_stop, current[0])
-
-    def _annotate_logical_tie(
-        self,
-        logical_tie,
-        air_pressure_start,
-        air_pressure_stop,
-        lip_pressure_start,
-        lip_pressure_stop
-    ):
-        air_pressure_start = indicatortools.Annotation(
-            'air_pressure_start', air_pressure_start)
-        air_pressure_stop = indicatortools.Annotation(
-            'air_pressure_stop', air_pressure_stop)
-        lip_pressure_start = indicatortools.Annotation(
-            'lip_pressure_start', lip_pressure_start)
-        lip_pressure_stop = indicatortools.Annotation(
-            'lip_pressure_stop', lip_pressure_stop)
-        attach(air_pressure_start, logical_tie.head)
-        attach(air_pressure_stop, logical_tie.head)
-        attach(lip_pressure_start, logical_tie.head)
-        attach(lip_pressure_stop, logical_tie.head)
-
-    def _annotate_logical_ties(self, voice, current_stage):
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            note = logical_tie.head
-            start_moment = inspect_(note).get_vertical_moment(voice)
-            x0 = float(start_moment.offset)
-            x1 = x0 + float(logical_tie.get_duration())
-            a0 = self._air_pressure_envelopes[current_stage](x0)
-            a1 = self._air_pressure_envelopes_release[current_stage](x1)
-            l0 = 1 - self._lip_pressure_envelopes[current_stage](x0)
-            l1 = 1 - self._lip_pressure_envelopes_release[current_stage](x1)
-            # consonants_cursor = self._create_cursor(
-            #         self._consonant_patterns[current_stage])
-            # voewls_cursor = self._create_cursor(
-            #         self._vowel_pattterns[current_stage])
-            # vibrato_cursor = self._create_cursor(
-            #         self._vibrato_patterns[current_stage])
-            # trills_cursor = self._create_cursor(
-            #         self._trill_patterns[current_stage])
-            # directions_cursor = self._create_cursor(
-            #         self._direction_patterns[current_stage])
-            self._annotate_logical_tie(logical_tie, a0, a1, l0, l1)
-        logical_ties = list(iterate(voice).by_logical_tie())
-        for previous, current in zip(logical_ties[:-1], logical_ties[1:]):
-            self._annotate_from_previous_logical_tie(previous, current)
-
-    def _attach_grace_notes(self, voice):
-        groups = shortcuts.get_consecutive_note_groups(voice)
-        for group in groups:
-            shortcuts.hidden_grace_after(group[-1])
-
-    def _create_cursor(self, pattern):
-        cyclic_tuple = datastructuretools.CyclicTuple(pattern)
-        return datastructuretools.Cursor(cyclic_tuple)
-
-    def _handle_voice(self, voice):
-        for logical_tie in iterate(voice).by_logical_tie(pitched=True):
-            self._add_lip_pressure_notehead(logical_tie)
-            self._set_y_offset(logical_tie)
-
-    def _name_voices(self, voice, rhythm_voice):
-        voice.name = self._music_maker.name
-        rhythm_voice.name = self._music_maker.name + " Rhythm"
-
-    def _set_y_offset(self, logical_tie):
-        n = self._number_of_staff_lines
-        y0 = inspect_(logical_tie.head).get_annotation('air_pressure_start')
-        y1 = inspect_(logical_tie.head).get_annotation('air_pressure_stop')
-        y0_offset = shortcuts.map_fraction_to_y_offset(y0, n)
-        y1_offset = shortcuts.map_fraction_to_y_offset(y1, n)
-        override(logical_tie.head).note_head.Y_offset = y0_offset
-        try:
-            grace = inspect_(logical_tie.tail).get_grace_container()
-        except:
-            grace = None
-        if grace is not None:
-            grace = inspect_(logical_tie.tail).get_grace_container()[0]
-            override(grace).note_head.Y_offset = y1_offset
-
-    # PUBLIC PROPERTIES #
-
-    @property
-    def instrument(self):
-        return self._music_maker.instrument
-
-    @property
-    def name(self):
-        return self._music_maker.name
+                if not tie.is_trivial:
+                    for note in tie[1:]:
+                        self._add_gliss_skip(note)
+                        self._hide_note_head(note)

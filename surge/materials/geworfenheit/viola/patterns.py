@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-string_indices_patterns = [
-    (),
-    (['I']),
-    (['IV']),
-    (['I'], ['I'], ['I'], ['I'],
-     ['II'], ['II'],
-     ['III'], ['III'],['III'],
-     ['IV'], ['IV'], ['IV'], ['IV'], ['IV']),
-    (),
-]
+from abjad import *
+
+# bowing
+
+string_index_patterns = ((['I','I','I','II']),)
+direction_patterns = [['<<<', '>>>', '<<<', '>>>', '|']]
+jete_patterns = [[False, False, False, False, False, True]]
+
+# fingering
+
+vibrato_patterns = [[False, False, True]]

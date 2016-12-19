@@ -6,7 +6,7 @@ Created on Nov 13, 2015
 '''
 from abjad import *
 
-
+# TODO move to Handler
 def add_gliss(music):
     container = Container(music[:])
     for leaf in iterate(container).by_leaf():
@@ -26,7 +26,7 @@ def convert_rests_to_skips(music):
             duration = leaf.written_duration
             mutate(leaf).replace(scoretools.Skip(duration))
 
-
+# TODO move to Handler
 def hidden_grace_after(leaf):
     grace_note = Note(0, Duration(1, 16))
     point_note_head(grace_note)
@@ -36,7 +36,7 @@ def hidden_grace_after(leaf):
     grace_container = scoretools.GraceContainer([grace_note], kind='after')
     attach(grace_container, leaf)
 
-
+# TODO move to Handler
 def get_consecutive_note_groups(music):
     import itertools
     leaves = list(iterate(music).by_leaf())
@@ -48,7 +48,7 @@ def get_consecutive_note_groups(music):
             groups.append(group)
     return groups
 
-
+# TODO move to Handler, rename "_attach_glissando", add line style support
 def gliss(leaf, color, thickness=0.5):
     if color is not None:
         color_override = lilypondnametools.LilyPondGrobOverride(
@@ -77,10 +77,9 @@ def gliss(leaf, color, thickness=0.5):
     )
     attach(glissando, leaf)
 
-
+# TODO: move to Handler
 def gliss_skip(leaf):
     override(leaf).note_column.glissando_skip = True
-
 
 def hide(leaf):
     if isinstance(leaf, Rest):
@@ -99,7 +98,7 @@ def hide(leaf):
     )
     attach(hide_dots, leaf)
 
-
+# TODO: move to Handler
 def make_circle_markup(size, grey=0):
     arc = markuptools.PostscriptOperator('arc', 0, 0, size, 0, 360)
     postscript = markuptools.Postscript([arc])
@@ -109,13 +108,13 @@ def make_circle_markup(size, grey=0):
     circle = postscript.as_markup()
     return circle
 
-
+# TODO: move to Handler
 def make_circle_outline_markup(size):
     circle_outline = markuptools.MarkupCommand(
         'draw-circle', size, 0.1, False)
     return Markup(circle_outline)
 
-
+# TODO: move to Handler
 def make_half_circle_markup(size, grey=0):
     arc = markuptools.PostscriptOperator(
         'arc', 0, 0, 1, 0, 180)
@@ -126,16 +125,16 @@ def make_half_circle_markup(size, grey=0):
     half_circle = postscript.as_markup()
     return half_circle
 
-
+# TODO:move to EnvelopeHandler
 def map_fraction_to_y_offset(x, number_of_staff_lines):
     y_offset = (x - 0.5) * (number_of_staff_lines - 2)
     return y_offset
 
-
+# TODO: move to EnvelopeHandler
 def quantize(x, steps):
     return round(float(x) * steps) / steps
 
-
+# TODO: move to Handler, rename _hide_note_head
 def point_note_head(leaf):
     if isinstance(leaf, Note):
         override(leaf).note_head.stencil = schemetools.Scheme('point-stencil')
@@ -151,7 +150,7 @@ def sum_time_signatures(time_signatures):
         sum_ += time_signature.duration
     return sum_
 
-
+# TODO: move to Handler
 def text_to_note_head(
     note,
     text_or_tuple,

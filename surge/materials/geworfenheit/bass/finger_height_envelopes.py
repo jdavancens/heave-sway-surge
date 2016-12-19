@@ -1,36 +1,27 @@
 # -*- coding: utf-8 -*-
 
 from surge import *
-from surge.tools.shortcuts import *
-from surge.materials.segment_1.time_signatures import time_signatures
 from abjad import *
 
-offsets_3 = shortcuts.time_signatures_to_offsets(time_signatures[2])
-total_duration_3 = float(shortcuts.sum_time_signatures(time_signatures[2]))
+palindrome = [6, 4, 3, 2, 1, 1, 2, 3, 4, 6]
+curves = []
+x1 = 0.
+one_sixth = float(Fraction(1,6))
+one_seventh = float(Fraction(1,7))
 
-offsets_3 = shortcuts.time_signatures_to_offsets(time_signatures[2])
-total_duration_3 = float(shortcuts.sum_time_signatures(time_signatures[2]))
+for _ in range(5):
+    for i, duration in enumerate(palindrome):
+        if i % 2 == 0:
+            y1 = one_sixth
+            y2 = one_seventh
+        else:
+            y1 = one_seventh
+            y2 = one_sixth
+        x2 = x1 + float(Fraction(duration, 16))
+        curve = BezierCurve(ControlPoint(x1, y1), ControlPoint(x2, y2))
+        curves.append(curve)
+        x1 = x2
 
-offsets_4 = shortcuts.time_signatures_to_offsets(time_signatures[3])
-total_duration_4 = float(shortcuts.sum_time_signatures(time_signatures[3]))
+path = Path(*curves)
 
-path_stage_3 = Path(
-    BezierCurve((offsets_3[0], 0.), (offsets_3[22], 0.25)),
-    BezierCurve((offsets_3[22], 0.25), (total_duration_3, 0)),
-    )
-path_stage_3.set_interpolater(SineInterpolater(freq=120, amp=2))
-
-path_stage_4 = Path(
-    BezierCurve((offsets_4[0], 0.5), (offsets_4[9], 0.25)),
-    BezierCurve((offsets_4[9], 0.25), (offsets_4[22], 0.34)),
-    BezierCurve((offsets_4[22], 0.34), (total_duration_4, 0)),
-    )
-path_stage_4.set_interpolater(SineInterpolater(freq=120, amp=2))
-
-finger_height_envelopes = (
-    None,
-    None,
-    path_stage_3,
-    path_stage_4,
-    None
-)
+finger_height_envelopes = (path,)

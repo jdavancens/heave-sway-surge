@@ -45,12 +45,7 @@ class ScoreTemplate(abctools.AbjadValueObject):
             context_name='TimeSignatureContext',
             name='Time Signatures and Tempi',
             )
-        score = Score(
-            [
-                time_signature_context,
-            ],
-            name='Score',
-            )
+        score = Score([time_signature_context], name='Score')
         counts = {instrument: 0 for instrument in self.instrument_list}
         current_counts = {instrument: 1 for instrument in self.instrument_list}
         # count multiples of instruments

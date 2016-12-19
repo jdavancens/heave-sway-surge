@@ -6,20 +6,20 @@ Created on Dec 4, 2015
 '''
 from abjad import *
 from surge import *
-from surge.segments.segment_1.definitions import oboe
-from surge.segments.segment_1.definitions import clarinet
-from surge.segments.segment_1.definitions import saxophone
-from surge.segments.segment_1.definitions import trombone
-from surge.segments.segment_1.definitions import guitar_1
-from surge.segments.segment_1.definitions import guitar_2
-from surge.segments.segment_1.definitions import violin
-from surge.segments.segment_1.definitions import viola
-from surge.segments.segment_1.definitions import cello
-from surge.segments.segment_1.definitions import bass
+from surge.segments.observer.definitions import oboe
+from surge.segments.observer.definitions import clarinet
+from surge.segments.observer.definitions import saxophone
+from surge.segments.observer.definitions import trombone
+from surge.segments.observer.definitions import guitar_1
+from surge.segments.observer.definitions import guitar_2
+from surge.segments.observer.definitions import violin
+from surge.segments.observer.definitions import viola
+from surge.segments.observer.definitions import cello
+from surge.segments.observer.definitions import bass
 from surge.materials.instruments import instruments
-from surge.materials.segment_1.time_signatures import time_signatures
-from surge.materials.segment_1.time_signatures import measures_per_stage
-from surge.materials.segment_1.tempo_map import tempo_map
+from surge.materials.observer.time_signatures import time_signatures
+from surge.materials.observer.time_signatures import measures_per_stage
+from surge.materials.observer.tempo_map import tempo_map
 
 
 def make_part(part_name, number_of_stages=None, ruler=False):

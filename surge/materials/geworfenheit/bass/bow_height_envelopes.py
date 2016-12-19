@@ -1,9 +1,13 @@
-# -*- coding: utf-8 -*-`
+# -*- coding: utf-8 -*-
 
 from surge import *
-from surge.tools.shortcuts import *
-from surge.materials.geworfenheit.time_signatures import time_signatures
 from abjad import *
 
-offsets = shortcuts.time_signatures_to_offsets(time_signatures[0])
-bow_height_envelopes = ()
+path = Path(
+    BezierCurve(
+        (Offset(0, 1), 0.99),
+        (Offset(10, 1), 0.99)
+    )
+)
+
+bow_height_envelopes = (path,)

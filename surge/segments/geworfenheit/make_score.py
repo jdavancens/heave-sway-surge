@@ -6,22 +6,24 @@ Created on Dec 4, 2015
 '''
 from abjad import *
 from surge import *
-from surge.segments.segment_2.definitions import oboe
-from surge.segments.segment_2.definitions import clarinet
-from surge.segments.segment_2.definitions import saxophone
-from surge.segments.segment_2.definitions import trombone
-from surge.segments.segment_2.definitions import guitar_1
-from surge.segments.segment_2.definitions import guitar_2
-from surge.segments.segment_2.definitions import violin
-from surge.segments.segment_2.definitions import viola
-from surge.segments.segment_2.definitions import cello
-from surge.segments.segment_2.definitions import bass
-from surge.materials.segment_2.time_signatures import *
-from surge.materials.segment_2.tempo_map import tempo_map
 
+from surge.segments.geworfenheit.definitions import oboe
+from surge.segments.geworfenheit.definitions import clarinet
+from surge.segments.geworfenheit.definitions import saxophone
+from surge.segments.geworfenheit.definitions import trombone
+from surge.segments.geworfenheit.definitions import guitar_1
+from surge.segments.geworfenheit.definitions import guitar_2
+from surge.segments.geworfenheit.definitions import violin
+from surge.segments.geworfenheit.definitions import viola
+from surge.segments.geworfenheit.definitions import cello
+from surge.segments.geworfenheit.definitions import bass
+from surge.materials.geworfenheit.time_signatures import *
+from surge.materials.geworfenheit.tempo_map import tempo_map
 
 def make_score(number_of_stages=None):
     segment_maker = SegmentMaker(
+        title="Surge::Dart::Drift",
+        segment_name="Geworfenheit",
         number_of_stages=number_of_stages,
         segment_number=2,
         tempo_map=tempo_map,
