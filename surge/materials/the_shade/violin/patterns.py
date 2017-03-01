@@ -2,7 +2,7 @@
 
 # bowing
 
-string_index_patterns = None
+string_index_patterns = [('IV',),('IV',),('IV',)]
 tremolo_patterns_bowing = None
 jete_patterns = None
 sweep_patterns = None

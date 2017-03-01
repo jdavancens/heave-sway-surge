@@ -7,7 +7,6 @@ Created on Dec 17, 2016
 
 from abjad import *
 from surge import *
-from surge.materials.the_shade.time_signatures import time_signatures
 from surge.materials.the_shade.guitar_1 import *
 
 # ==============================================================================
@@ -18,8 +17,13 @@ guitar = instrumenttools.Guitar(
     instrument_name='Guitar I',
     short_instrument_name='Gtr. I'
 )
-
-stages = (0, 1, 2, 3, 4)
+stages = (0, 1, 2)
+n_stages = 3
+measures_per_stage = (10, 13, 17)
+time_signatures = []
+for n in measures_per_stage:
+    stage = [TimeSignature((4,4))] * n
+    time_signatures.append(stage)
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -50,13 +54,16 @@ picking_music_handler = PickingHandler(
     picking_position_envelopes=picking_position_envelopes,
     picking_force_envelopes=picking_force_envelopes,
     string_index_patterns=string_index_patterns,
+    scrape_patterns=scrape_patterns,
+    snap_patterns=snap_patterns,
     tremolo_patterns=tremolo_patterns,
 )
 
 fretting_music_handler = GuitarFrettingHandler(
     music_maker=fretting_music_maker,
     fret_combinations=fret_combinations,
-    fret_combination_patterns=fret_combination_patterns
+    fret_combination_patterns=fret_combination_patterns,
+    hammer_patterns=hammer_patterns
 )
 
 music_handlers = [

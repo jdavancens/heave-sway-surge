@@ -18,3 +18,6 @@ vowel_patterns = None
 # fingering
 
 trill_patterns = None
+
+lh_fingerings = None
+rh_fingerings = None

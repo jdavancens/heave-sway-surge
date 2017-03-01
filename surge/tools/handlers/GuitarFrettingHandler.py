@@ -6,6 +6,7 @@ Created on Feb 15, 2016
 '''
 
 from abjad import *
+from surge.tools.handlers.Handler import Handler
 from surge.tools.handlers.TablatureHandler import TablatureHandler
 import copy
 
@@ -75,8 +76,8 @@ class GuitarFrettingHandler(TablatureHandler):
                         markup = Markup.concat([markup, diamond])
                     notehead.tweak.stencil = 'ly:text-interface::print'
                     notehead.tweak.text = markup.raise_(-0.5)
-            if not active:
-                notehead.tweak.stencil = schemetools.Scheme('point-stencil')
+                    if not active:
+                        notehead.tweak.stencil = schemetools.Scheme('point-stencil')
         mutate(tie.head).replace(chord)
 
         if not tie.is_trivial:
@@ -151,7 +152,7 @@ class GuitarFrettingHandler(TablatureHandler):
         for tie, _, _ in self._iterate_logical_ties(voice):
             if tie.is_pitched:
                 index = self._cursor_next(self._fret_combination_patterns, current_stage)
-                fret_combination = self._fret_combinations[index]
+                fret_combination = self._fret_combinations[current_stage][index]
                 chord = self._create_chord(tie)
                 self._change_noteheads(fret_combination, chord, tie)
 
@@ -173,3 +174,7 @@ class GuitarFrettingHandler(TablatureHandler):
                 value=glissando_map_vector
                 )
             return glissando_map
+
+    def _name_voices(self, voice, rhythm_voice, lifeline_voice):
+        Handler._name_voices(self, voice, rhythm_voice)
+        lifeline_voice.name = self._music_maker.name + ' Lifeline'

@@ -96,6 +96,8 @@ class WoodwindFingeringHandler(TablatureHandler):
 
     def _handle_lifeline_voice(self, voice, current_stage):
         if self._fingerings is None:
+            for note in iterate(voice).by_leaf():
+                self._hide_note_head(note)
             return
         i = 0
         for logical_tie in iterate(voice).by_logical_tie(pitched=True):
@@ -138,6 +140,8 @@ class WoodwindFingeringHandler(TablatureHandler):
 
     def _handle_voice(self, voice, current_stage):
         if self._fingerings is None:
+            for note in iterate(voice).by_leaf():
+                self._hide_note_head(note)
             return
         # get logical ties and construct fingering tablature
         i = 0

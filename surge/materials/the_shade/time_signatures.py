@@ -12,3 +12,5 @@ time_signatures = []
 for n in measures_per_stage:
     stage = [TimeSignature((4,4))] * n
     time_signatures.append(stage)
+
+assert(time_signatures is not None)

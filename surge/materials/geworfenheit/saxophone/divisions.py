@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
 from abjad import *
-from surge.tools.rhythmtools.leaves_to_ratios import music_to_ratios
+import math
 
-counts = [5,6,14,3,9,6,10,1,8,2,14,6,9,3]
-assert(sum(counts) == 16*6)
+counts = [-16, -16, -16, -16,
+          -5, 6, -5, -9, 3, -4, -5, 6, -5, -5, 1, -8, 2, -16, 4, -9, 3]
 
-divisions = [(x, 16) for x in counts]
+silence_indices = []
 
-#for division in divisions : print(division)
+for i, count in enumerate(counts):
+    if count < 0:
+        silence_indices.append(i)
+
+divisions = [
+    [(abs(x), 16) for x in counts]
+    ]

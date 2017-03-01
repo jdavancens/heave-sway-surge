@@ -18,8 +18,8 @@ tuplet_spelling_specifier = rhythmmakertools.TupletSpellingSpecifier(
     use_note_duration_bracket=False,
 )
 
-rhythm_makers_embouchure = []
+rhythm_makers_embouchure = [None]
 
-rhythm_makers_lh = []
+rhythm_makers_lh = [None]
 
-rhythm_makers_rh = []
+rhythm_makers_rh = [None]

@@ -28,24 +28,27 @@ embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Embouchure',
-    rhythms=rhythms_embouchure,
-    time_signatures=time_signatures
+    rhythm_makers=rhythm_makers_embouchure,
+    time_signatures=time_signatures,
+    divisions=divisions
 )
 
 lh_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Left Hand Fingering',
-    rhythms=rhythms_lh,
-    time_signatures=time_signatures
+    rhythm_makers=rhythm_makers_lh,
+    time_signatures=time_signatures,
+    divisions=divisions
 )
 
 rh_music_maker = MusicMaker(
     stages=stages,
     instrument=saxophone,
     name='Right Hand Fingering',
-    rhythms=rhythms_rh,
-    time_signatures=time_signatures    
+    rhythm_makers=rhythm_makers_rh,
+    time_signatures=time_signatures,
+    divisions=divisions
 )
 
 # ==============================================================================

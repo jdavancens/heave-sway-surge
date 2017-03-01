@@ -19,13 +19,12 @@ from surge.segments.the_shade.definitions import bass
 from surge.materials.the_shade.time_signatures import *
 from surge.materials.the_shade.tempo_map import tempo_map
 
-
 def make_score(number_of_stages=None):
     segment_maker = SegmentMaker(
         title="Surge::Dart::Drift",
-        segment_name="the_shade",
+        segment_name="The Shade",
         number_of_stages=number_of_stages,
-        segment_number=1,
+        segment_number=3,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         first_bar_number=1,

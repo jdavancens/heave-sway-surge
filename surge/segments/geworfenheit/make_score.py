@@ -6,7 +6,6 @@ Created on Dec 4, 2015
 '''
 from abjad import *
 from surge import *
-
 from surge.segments.geworfenheit.definitions import oboe
 from surge.segments.geworfenheit.definitions import clarinet
 from surge.segments.geworfenheit.definitions import saxophone

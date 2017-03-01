@@ -317,6 +317,7 @@
         \consists Text_engraver
         \consists Text_spanner_engraver
         \consists Time_signature_engraver
+        \hide StaffSymbol
         \override BarNumber.Y-extent = ##f
         \override BarNumber.extra-offset = #'(-6 . -4)
         \override BarNumber.font-size = 1

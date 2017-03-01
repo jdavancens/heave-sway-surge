@@ -11,6 +11,11 @@ class MusicMaker:
     signatures for each specified stage. If no rhythm maker is supplied, or the
     current stage is inactive, MusicMaker creates a list of full measure skips.
 
+
+    Can supply divisions an alternative to time signatures.
+
+    Can substitute an pre-composed rhythm.
+
     Returns a voice with rhythms on middle-c, skips or both.
     '''
     # CLASS ATTRIBUTES #
@@ -20,6 +25,7 @@ class MusicMaker:
         '_stages',
         '_rhythm_makers',
         '_time_signatures',
+        '_divisions',
         '_rhythms'
         )
 
@@ -31,7 +37,8 @@ class MusicMaker:
         rhythm_makers=None,
         stages=None,
         time_signatures=None,
-        rhythms=None
+        rhythms=None,
+        divisions=None
     ):
         assert(isinstance(instrument, instrumenttools.Instrument))
         assert(time_signatures is not None)
@@ -44,6 +51,7 @@ class MusicMaker:
         else:
             self._stages = stages
         self._time_signatures = time_signatures
+        self._divisions = divisions
 
     # SPECIAL METHODS #
 
@@ -98,7 +106,7 @@ class MusicMaker:
         return index
 
     def _hide_full_measure_rests(self, selection):
-        for i, chunk in enumerate(selection):
+        for chunk in selection:
             if len(chunk) is 1:
                 if isinstance(chunk[0], Container):
                     all_rest = True
@@ -137,10 +145,15 @@ class MusicMaker:
         return voice
 
     def _make_rhythm(self, current_stage):
-        time_signatures = self._time_signatures[current_stage]
-        time_signatures = sequencetools.flatten_sequence(time_signatures)
-        rhythm = self._rhythm_makers[current_stage](time_signatures)
-        self._hide_full_measure_rests(rhythm)
+        if self._divisions:
+            rhythm = self._rhythm_makers[current_stage](self._divisions[current_stage])
+        else:
+            time_signatures = self._time_signatures[current_stage]
+            time_signatures = sequencetools.flatten_sequence(time_signatures)
+            rhythm = self._rhythm_makers[current_stage](time_signatures)
+            self._hide_full_measure_rests(rhythm)
+
+
         voice = Voice()
         voice.extend(rhythm)
         self._flatten_trivial_tuplets(voice)

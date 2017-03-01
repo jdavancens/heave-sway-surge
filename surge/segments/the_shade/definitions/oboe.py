@@ -8,7 +8,6 @@ Created on Dec 17, 2016
 
 from abjad import *
 from surge import *
-from surge.materials.the_shade.time_signatures import time_signatures
 from surge.materials.the_shade.oboe import *
 
 # ==============================================================================
@@ -16,7 +15,13 @@ from surge.materials.the_shade.oboe import *
 # ==============================================================================
 
 oboe = instrumenttools.Oboe()
-stages = (0,)
+stages = (0, 1, 2)
+n_stages = 3
+measures_per_stage = (10, 13, 17)
+time_signatures = []
+for n in measures_per_stage:
+    stage = [TimeSignature((4,4))] * n
+    time_signatures.append(stage)
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -26,8 +31,9 @@ embouchure_music_maker = MusicMaker(
     stages=stages,
     instrument=oboe,
     name='Embouchure',
+
+    rhythm_makers=rhythm_makers_embouchure,
     time_signatures=time_signatures,
-    rhythm_makers=rhythm_makers_embouchure
 )
 
 lh_music_maker = MusicMaker(

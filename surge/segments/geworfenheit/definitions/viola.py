@@ -20,15 +20,17 @@ bowing_music_maker = MusicMaker(
     stages=stages,
     instrument=viola,
     name='Bowing',
-    rhythms=rhythms_rh,
-    time_signatures=time_signatures
+    rhythm_makers=rhythm_makers_lh,
+    time_signatures=time_signatures,
+    divisions=divisions
     )
 fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=viola,
     name='Fingering',
-    rhythms=rhythms_lh,
-    time_signatures=time_signatures
+    rhythm_makers=rhythm_makers_rh,
+    time_signatures=time_signatures,
+    divisions=divisions
     )
 
 # ==============================================================================

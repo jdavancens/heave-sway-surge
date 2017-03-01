@@ -2,7 +2,8 @@
 
 from .bow_height_envelopes import *
 from .bow_pressure_envelopes import *
+from .divisions import divisions
 from .finger_height_envelopes import *
 from .finger_pressure_envelopes import *
 from .patterns import *
-from .rhythms import *
+from .rhythm_makers import *

@@ -107,8 +107,6 @@ class Handler(object):
 
         attach(glissando, leaf)
 
-
-
     def _get_consecutive_note_groups(self, music):
         import itertools
         leaves = list(iterate(music).by_leaf())
@@ -227,6 +225,8 @@ class Handler(object):
             return None
         cursors = []
         for pattern in patterns:
+            if pattern is None:
+                pattern = []
             cyclic_tuple = datastructuretools.CyclicTuple(pattern)
             cursor = datastructuretools.Cursor(cyclic_tuple)
             cursors.append(cursor)
