@@ -47,13 +47,14 @@ class TestTablatureHandler(unittest.TestCase):
         fret_combination_patterns = [[0, 1]]
         self.handler = GuitarFrettingHandler(
             music_maker,
-            fret_combinations,
+            [fret_combinations],
             fret_combination_patterns
         )
 
     def test__handle_voice(self):
         voice = Voice("c'4 c'4 c'4 c'4")
         self.handler._handle_voice(voice, 0)
+
 
 if __name__ == '__main__':
     unittest.main()

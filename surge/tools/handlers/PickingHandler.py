@@ -1,4 +1,4 @@
-w# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 '''
 Created on Feb 15, 2016
 
@@ -35,7 +35,7 @@ class PickingHandler(EnvelopeHandler):
         '_string_index_patterns',
         '_tremolo_patterns',
         '_number_of_staff_lines'
-        )
+    )
 
     # INITIALIZER #
 
@@ -130,7 +130,7 @@ class PickingHandler(EnvelopeHandler):
                 elif scrape:
                     style = 'dashed-line'
                 else:
-                    style= None
+                    style = None
                 self._attach_glissando(tie.head, style=style)
                 self._hidden_grace_after(tie.tail)
                 grace = inspect_(tie.tail).get_grace_container()[0]
