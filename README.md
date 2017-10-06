@@ -10,3 +10,9 @@ For ten musicians:
 * Viola
 * Cello
 * Double Bass
+
+
+## Installation 
+Set up a virtual envirtonment, then run
+
+```pip install -r requirements.txt```
