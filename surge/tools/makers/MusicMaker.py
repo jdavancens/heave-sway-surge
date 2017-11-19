@@ -71,6 +71,7 @@ class MusicMaker:
         else:
             voice = self._make_skips(current_stage)
         assert isinstance(voice, abjad.Voice)
+        # abjad.f(voice)
         self._flatten_trivial_tuplets(voice)
         self._adjust_tuplet_prolation(voice)
         self._attach_instrument(voice)

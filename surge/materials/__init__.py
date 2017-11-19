@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import surge.materials.geworfenheit
 import surge.materials.observer
 import surge.materials.woodwindfingerings
 

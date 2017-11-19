@@ -1,17 +1,26 @@
-0:00
-cello and bass low loose unison drone, medium loudness, long bow strokes
-cello: two measure loop. slow -> fast -> slow bow height modulation. no lateral bow movement. open c
-bass: tremolo sul ponticello at the bow tip. c on a string. two measure loop of gradual reduction in bow pressure from medium to none
-
-0:15
-saxophone and viola enter together.
-saxophone utters short bursts of breathy staccato gasps and chaotic key flutters.
-viola mimics sounds of saxophone. halting, chopped-up bow tremolo. wildy fluctuating bow height. fingers long, fast glissando up and down
-cello and bass continue
+Blurry stage boundaries
 
 
-0:30
-cello and bass drop out while saxophone and viola continue. viola grows in intensity, bow strokes becoming faster and descent accelerates.
+STAGE 1
 
-0:45
-saxophone and viola stop abruptly, simultaneously
+Coordinated long glissandi
+Converging, diverging
+Discontinuous
+Isorhythmic, homo-rhythmic
+4|4
+Focus: pitch density
+
+STAGE 2
+
+Coordinated long glissandi
+Distinct, independent contours
+Hetero-rhythmic
+4|4
+Focus: pitch density
+
+STAGE 3
+
+Disjointed short glissandi, clicks, pops, scratches, groans
+Hetero-rhythmic, polyrhythmic
+Multiple time signatures
+Focus: temporal density

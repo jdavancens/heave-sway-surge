@@ -46,7 +46,6 @@ class StringFingeringHandler(EnvelopeHandler):
         number_of_staff_lines=31
     ):
         EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
-
         self._height_envelopes = height_envelopes
         if height_envelopes_release is None:
             self._height_envelopes_release = height_envelopes

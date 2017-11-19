@@ -22,7 +22,7 @@ class WoodwindFingeringsGenerator(object):
         rhythm_makers_lh,
         rhythm_makers_rh,
         number_of_stages,
-        segment_number
+        segment_name
     ):
 
         # make rhythms
@@ -84,7 +84,7 @@ class WoodwindFingeringsGenerator(object):
         fingerings_json_path = os.path.join(
             '..',
             'materials',
-            'segment_' + str(segment_number),
+            segment_name,
             stringtools.to_snake_case(instrument_string),
             'fingerings.json'
         )

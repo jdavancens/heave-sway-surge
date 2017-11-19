@@ -315,12 +315,14 @@ class SegmentMaker(SegmentMakerBaseClass):
             stylesheet = 'stylesheet_score.ily'
         stylesheet_path = os.path.join(
             '..',
+            '..',
             'includes',
             stylesheet,
         )
         includes = [stylesheet_path]
         if 1 < self._segment_number:
             path = os.path.join(
+                '..',
                 '..',
                 'includes',
                 'nonfirst-segment.ily',
@@ -354,11 +356,13 @@ class SegmentMaker(SegmentMakerBaseClass):
             time_signatures.extend(flattened_list)
         measures = []
         for time_signature in time_signatures:
-            number_of_stages = abjad.NoteMaker([0], time_signature)
+            note_maker = abjad.NoteMaker()
+            notes = note_maker([0], [time_signature])
             measure = abjad.scoretools.Measure(time_signature, notes)
-            beam = abjad.spannertools.Beam()
-            abjad.attach(beam, measure)
+            # beam = abjad.spannertools.Beam()
+            # abjad.attach(beam, measure)
             measures.append(measure)
+        print(measures)
         return measures
 
     def _make_score(self):

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
+from surge.tools.generators.WoodwindFingeringsGenerator import \
+    WoodwindFingeringsGenerator
 import sys
 import importlib
 
@@ -8,14 +9,11 @@ if __name__ == '__main__':
 
     # get input parameters
 
-    instrument = sys.argv[1]
+    segment_name = sys.argv[1]
+    instrument = sys.argv[2]
     instrument_string = stringtools.to_snake_case(instrument)
-    segment_number = sys.argv[2]
 
-    materials_path = 'materials'
-    segment_string = 'segment_' + str(segment_number)
-
-    segment_path = '.'.join([materials_path, segment_string])
+    segment_path = '.'.join(['materials', segment_name])
     instrument_path = '.'.join([segment_path, instrument_string])
 
     segment_module = importlib.import_module(segment_path)

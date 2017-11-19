@@ -49,6 +49,7 @@ class Path(object):
             self._curves = tuple(curves)
 
     def __call__(self, x):
+        # takes a normalized input (0...1)
         for curve in self:
             if x in curve:
                 return curve(x, self._interpolater)
