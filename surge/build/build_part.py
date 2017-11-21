@@ -12,11 +12,14 @@ if __name__ == '__main__':
     with abjad.systemtools.Timer() as big_timer:
         ruler = False
 
-        # parse arguments
-        segment_name = input("Enter segment name: ")
-        part_name = abjad.datastructuretools.String(input("Enter part name: "))
-        number_of_stages = int(input("Enter number of stages: "))
-        ruler = input("Render ruler? (y/n): ")
+        # parse argument
+
+        segment_name = sys.argv[1] or input("Enter segment name: ")
+        part_name = sys.argv[2] or input("Enter part name: ")
+        part_name = abjad.datastructuretools.String(part_name)
+        number_of_stages = sys.argv[3] or input("Enter number of stages: ")
+        number_of_stages = int(number_of_stages)
+        ruler = sys.argv[4] or input("Render ruler? (y/n): ")
         if ruler == 'y':
             ruler = True
         else:

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from abjad.tools.durationtools.Duration import Duration
+from surge.tools.utilities.flatten_list import flatten_list
 
 ''' pairs of durations, in eighth notes, representing timespans for stable
 tones then glissandi'''

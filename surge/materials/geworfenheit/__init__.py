@@ -8,3 +8,4 @@ import surge.materials.geworfenheit.violin
 from .stages import stages
 from .rhythm_makers import rhythm_makers_bowing, rhythm_makers_fingering
 from .tempo_map import tempo_map
+from .time_signatures import measures_per_stage, time_signatures

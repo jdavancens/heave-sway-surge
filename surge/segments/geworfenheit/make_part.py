@@ -7,9 +7,8 @@ Created on Dec 4, 2015
 
 
 from surge.materials.instruments import instruments
-from surge.materials.geworfenheit.time_signatures import time_signatures
-from surge.materials.geworfenheit.time_signatures import measures_per_stage
-from surge.materials.geworfenheit.tempo_map import tempo_map
+from surge.materials.geworfenheit import measures_per_stage, tempo_map, \
+    time_signatures
 from surge.segments.geworfenheit.definitions import *
 from surge.tools.makers.SegmentMaker import SegmentMaker
 from surge.tools.utilities.flatten_list import flatten_list
@@ -35,10 +34,10 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         ruler=ruler,
     )
     music_handlers = [
-        violin.music_handlers,
-        viola.music_handlers,
-        cello.music_handlers,
-        bass.music_handlers
+        violin_handlers,
+        viola_handlers,
+        cello_handlers,
+        bass_handlers
     ]
     music_handlers = flatten_list(music_handlers)
 

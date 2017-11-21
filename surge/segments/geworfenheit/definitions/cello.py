@@ -54,7 +54,7 @@ fingering_music_handler = StringFingeringHandler(
     music_maker=fingering_music_maker,
 )
 
-music_handlers = [
+cello_handlers = [
     bowing_music_handler,
     fingering_music_handler
 ]

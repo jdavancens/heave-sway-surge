@@ -146,6 +146,7 @@ class BowingHandler(EnvelopeHandler):
                     self._height_envelopes_release[current_stage](offset_end)
                 pressure = \
                     self._pressure_envelopes[current_stage](offset_start)
+
                 sweep = self._cycle_next(self._sweep_patterns, current_stage)
                 jete = self._cycle_next(self._jete_patterns, current_stage)
 

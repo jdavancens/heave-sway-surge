@@ -52,7 +52,7 @@ fingering_music_handler = StringFingeringHandler(
     pressure_envelopes=finger_pressure_envelopes,
 )
 
-music_handlers = [
+viola_handlers = [
     bowing_music_handler,
     fingering_music_handler
 ]

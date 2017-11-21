@@ -15,8 +15,9 @@ if __name__ == '__main__':
     with abjad.systemtools.Timer() as big_timer:
 
         # parse arguments
-        segment_name = input("Enter segment name: ")
-        number_of_stages = int(input("Enter number of stages: "))
+        segment_name = sys.argv[1] or input("Enter segment name: ")
+        number_of_stages = sys.argv[2] or input("Enter number of stages: ")
+        number_of_stages = int(number_of_stages)
 
         # TODO: validate segment packages
 

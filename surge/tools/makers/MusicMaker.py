@@ -145,13 +145,10 @@ class MusicMaker:
             self._time_signatures[current_stage]
         )
         voice = abjad.scoretools.Voice()
+        skip_maker = abjad.LeafMaker()
         for time_signature in time_signatures:
-            skip = abjad.Skip((1, 1))
-            abjad.attach(
-                abjad.durationtools.Multiplier(time_signature),
-                skip
-            )
-            voice.append(skip)
+            skips = skip_maker(None, [time_signature])
+            voice.extend(skips)
         return voice
 
     def _make_rhythm(self, current_stage):
@@ -163,7 +160,7 @@ class MusicMaker:
             time_signatures = self._time_signatures[current_stage]
             time_signatures = flatten_list(time_signatures)
             rhythm = self._rhythm_makers[current_stage](time_signatures)
-            self._hide_full_measure_rests(rhythm)
+            # self._hide_full_measure_rests(rhythm)
         voice = abjad.Voice()
         voice.extend(rhythm)
         return voice

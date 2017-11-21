@@ -5,6 +5,6 @@ import abjad
 
 bow_height_envelopes = (
     Path(
-        BezierCurve((0, 0.75), (1, 1))
+        BezierCurve((0, 0.75), (100, 1))
     ),
 )

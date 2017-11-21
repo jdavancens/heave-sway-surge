@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .bass import music_handlers
-from .cello import music_handlers
-from .viola import music_handlers
-from .violin import music_handlers
+from .bass import bass_handlers
+from .cello import cello_handlers
+from .viola import viola_handlers
+from .violin import violin_handlers

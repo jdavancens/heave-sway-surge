@@ -356,13 +356,14 @@ class SegmentMaker(SegmentMakerBaseClass):
             time_signatures.extend(flattened_list)
         measures = []
         for time_signature in time_signatures:
+            durations = [abjad.Duration(1, time_signature.denominator)] * \
+                time_signature.numerator
             note_maker = abjad.NoteMaker()
-            notes = note_maker([0], [time_signature])
+            notes = note_maker([0], durations)
             measure = abjad.scoretools.Measure(time_signature, notes)
-            # beam = abjad.spannertools.Beam()
-            # abjad.attach(beam, measure)
+            beam = abjad.spannertools.Beam()
+            abjad.attach(beam, measure)
             measures.append(measure)
-        print(measures)
         return measures
 
     def _make_score(self):

@@ -12,21 +12,9 @@
     \consists Text_engraver
     \consists Text_spanner_engraver
     \consists Time_signature_engraver
-
+    \hide Barline
+    \hide Clef
     \hide StaffSymbol
-
-    \omit Accidental
-    \omit Beam
-    \omit Clef
-    \omit Dots
-    \omit Flag
-    \omit InstrumentName
-    \hide Rest
-    \omit Stem
-    \omit Tie
-    \omit TupletBracket
-    \omit TupletNumber
-
     \override BarNumber.Y-extent = ##f
     \override BarNumber.extra-offset = #'(-6 . -4)
     \override BarNumber.font-size = 1

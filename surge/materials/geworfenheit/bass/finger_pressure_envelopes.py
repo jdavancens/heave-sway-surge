@@ -3,8 +3,4 @@ from surge.tools.bezzie.BezierCurve import BezierCurve
 from surge.tools.bezzie.Path import Path
 import abjad
 
-finger_pressure_envelopes = (
-    Path(
-        BezierCurve((0, 1), (abjad.Offset(1, 1), 1))
-    ),
-)
+finger_pressure_envelopes = [Path(BezierCurve((0, 1), (100, 1)))]

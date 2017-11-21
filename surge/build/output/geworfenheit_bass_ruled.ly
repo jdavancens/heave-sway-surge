@@ -1,4 +1,4 @@
-% 2017-11-03 08:35
+% 2017-11-21 14:08
 
 \version "2.19.80"
 \language "english"
@@ -24,11 +24,434 @@
         \context TimeSignatureContext = "Time Signatures and Tempi" {
             \new Voice {
                 {
-                    \time 4/4
+                    \time 4/8
                     \tempo 4=104
                     \mark #1
                     \bar ""
-                    c'1
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
+                }
+                {
+                    c'8 [
+                    c'8
+                    c'8
+                    c'8 ]
                     \bar "|"
                 }
             }
@@ -41,928 +464,1238 @@
                 \override Stem.direction = #UP
             } {
                 \context Voice = "Bowing Rhythm" {
-                    {
-                        c'16 [
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16 ]
-                        \bar "|"
-                    }
+                    c'2 ~
+                    c'2 ~
+                    c'2
+                    c'2 ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2
+                    c'2 ~
+                    c'2 ~
+                    c'2 ~
+                    c'4.
+                    c'8 ~
+                    c'2 ~
+                    c'2 ~
+                    c'2 ~
+                    c'2
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2 ~
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'4.
+                    c'8 ~
+                    c'2
+                    c'2 ~
+                    c'4.
+                    c'8 ~
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'4.
+                    c'8 ~
+                    c'2 ~
+                    c'2 ~
+                    c'2 ~
+                    c'4.
+                    c'8 ~
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'2 ~
+                    c'4.
+                    c'8 ~
+                    c'2 ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2 ~
+                    c'4
+                    c'4 ~
+                    c'2 ~
+                    c'8
+                    c'4. ~
+                    c'2 ~
+                    c'2 ~
+                    c'8
+                    c'4.
+                    \bar "|"
                 }
             }
             \context StringSpaceStaff = "String Space" \with {
                 instrumentName = \markup { Cb. }
             } <<
                 \context Voice = "Bowing" {
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.25
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'2
                     {
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #7.25
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando [
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #7.703125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #7.703125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #8.15625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #8.15625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #8.609375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #8.609375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #9.0625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #9.0625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #9.515625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #9.515625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #9.96875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #9.96875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #10.421875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #10.421875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #10.875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #10.875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #11.328125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #11.328125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #11.78125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #11.78125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #12.234375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #12.234375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #12.6875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #12.6875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #13.140625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #13.140625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #13.59375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #13.59375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #14.046875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #14.046875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando ]
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #14.5
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \bar "|"
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.358750000000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
                     }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.358750000000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.449374999999999
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.449374999999999
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'2
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.503750000000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.503750000000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.6396875
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.6396875
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'2
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.793750000000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.793750000000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.8753125000000015
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.8753125000000015
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #7.956875000000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #7.956875000000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'2
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.01125
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.01125
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.065624999999999
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.065624999999999
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.201562500000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.201562500000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.346562500000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.346562500000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.464375
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.464375
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.5278125
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.5278125
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.609375
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.609375
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.654687500000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.654687500000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'2
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.700000000000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.700000000000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'2 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.763437500000002
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.763437500000002
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.8540625
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.8540625
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #8.9446875
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #8.9446875
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.0896875
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.0896875
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.1803125
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.1803125
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4.
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.3071875
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.3071875
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'8 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.406875
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.406875
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.470312499999999
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.470312499999999
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.551874999999999
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.551874999999999
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'4
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.624375
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.624375
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4 \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.687812500000001
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.687812500000001
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    c'4. \glissando ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    c'2 ~
+                    \once \override NoteColumn.glissando-skip = ##t
+                    \once \override NoteHead.stencil = #point-stencil
+                    \afterGrace
+                    c'8
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.796562499999999
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \once \override Glissando.thickness = 1.5
+                    \once \override NoteHead.Y-offset = #9.796562499999999
+                    \once \override NoteHead.stencil = #ly:text-interface::print
+                    \once \override NoteHead.text = \markup {
+                        \combine
+                            \postscript
+                                #"
+                                0 0 1 0 360 arc
+                                closepath
+                                0 setgray
+                                fill
+                                "
+                            \draw-circle
+                                #1
+                                #0.1
+                                ##f
+                        }
+                    \afterGrace
+                    c'4. \glissando
+                    {
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.Y-offset = #9.82375
+                        \once \override NoteHead.stencil = #point-stencil
+                        \once \override Stem.stencil = ##f
+                        c'16
+                    }
+                    \bar "|"
                 }
                 \context Voice = "Fingering" {
-                    {
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-14.5
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando [
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-14.046875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-14.046875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-13.59375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-13.59375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-13.140625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-13.140625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-12.6875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-12.6875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-12.234375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-12.234375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-11.78125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-11.78125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-11.328125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-11.328125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-10.875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-10.875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-10.421875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-10.421875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-9.96875
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-9.96875
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-9.515625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-9.515625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-9.0625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-9.0625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-8.609375
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-8.609375
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-8.15625
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-8.15625
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-7.703125
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \once \override Glissando.thickness = 1.5
-                        \once \override NoteHead.Y-offset = #-7.703125
-                        \once \override NoteHead.stencil = #ly:text-interface::print
-                        \once \override NoteHead.text = \markup {
-                            \combine
-                                \postscript
-                                    #"
-                                    0 0 1 0 360 arc
-                                    closepath
-                                    0 setgray
-                                    fill
-                                    "
-                                \draw-circle
-                                    #1
-                                    #0.1
-                                    ##f
-                            }
-                        \afterGrace
-                        c'16 \glissando ]
-                        {
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.Y-offset = #-7.25
-                            \once \override NoteHead.stencil = #point-stencil
-                            \once \override Stem.stencil = ##f
-                            c'16
-                        }
-                        \bar "|"
-                    }
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    \bar "|"
                 }
             >>
             \context RhythmStaff = "Fingering Rhythm" \with {
                 \override Stem.direction = #DOWN
             } {
                 \context Voice = "Fingering Rhythm" {
-                    {
-                        c'16 [
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16
-                        c'16 ]
-                        \bar "|"
-                    }
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    r2
+                    \bar "|"
                 }
             }
         >>

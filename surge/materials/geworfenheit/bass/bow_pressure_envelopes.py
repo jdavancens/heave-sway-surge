@@ -5,6 +5,6 @@ import abjad
 
 bow_pressure_envelopes = (
     Path(
-        BezierCurve((0, 1), (1, 1))
+        BezierCurve((0, 1), (100, 1))
     ),
 )

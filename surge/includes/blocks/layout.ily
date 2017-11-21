@@ -11,6 +11,7 @@
     \include "contexts/separator-staff.ily"
     \include "contexts/string-space-staff.ily"
     \include "contexts/time-signature-staff.ily"
+    \include "contexts/trombone-slide-position-staff.ily"
     \include "contexts/woodwind-left-hand-fingering-staff.ily"
     \include "contexts/woodwind-right-hand-fingering-staff.ily"
 
