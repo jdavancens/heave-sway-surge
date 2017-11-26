@@ -9,7 +9,7 @@ tempo_map = [
         0,
         abjad.MetronomeMark(
             abjad.Duration(1, 4),
-            104
+            60
         )
     )
 ]

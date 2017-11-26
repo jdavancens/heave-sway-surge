@@ -339,9 +339,26 @@ class SegmentMaker(SegmentMakerBaseClass):
             if getattr(item, 'name', None) in ('layout', 'paper'):
                 lilypond_file.items.remove(item)
 
-        lilypond_file.header_block.composer = abjad.Markup("Joseph Davancens")
-        lilypond_file.header_block.title = abjad.Markup(self.title)
-        lilypond_file.header_block.subtitle = abjad.Markup(self.segment_name)
+        composer = abjad.Markup("Joseph Davancens")
+        composer = composer.override(("font-name", "Didot"))
+        composer = composer.fontsize(6)
+        # composer = composer.hspace(20)
+
+        title = abjad.Markup(self.title)
+        title = title.override(("font-name", "Didot Bold"))
+        title = title.fontsize(9)
+        # title = abjad.Markup.line([title]).center_align()
+        # title = abjad.Markup.column([title])
+
+        subtitle = abjad.Markup(self.segment_name)
+        subtitle = subtitle.override(("font-name", "Didot Bold"))
+        subtitle = subtitle.fontsize(7)
+        # subtitle = abjad.Markup.line([subtitle]).center_align()
+        # subtitle = abjad.Markup.column([subtitle])
+
+        lilypond_file.header_block.composer = composer
+        lilypond_file.header_block.title = title
+        lilypond_file.header_block.subtitle = subtitle
 
         self._lilypond_file = lilypond_file
 
@@ -361,8 +378,9 @@ class SegmentMaker(SegmentMakerBaseClass):
             note_maker = abjad.NoteMaker()
             notes = note_maker([0], durations)
             measure = abjad.scoretools.Measure(time_signature, notes)
-            beam = abjad.spannertools.Beam()
-            abjad.attach(beam, measure)
+            if time_signature.denominator > 4:
+                beam = abjad.spannertools.Beam()
+                abjad.attach(beam, measure)
             measures.append(measure)
         return measures
 
@@ -377,6 +395,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             abjad.setting(score).current_bar_number = first_bar_number
         else:
             abjad.override(score).bar_number.transparent = True
+
         self._score = score
         # show score structure
         # for x in inspect(score).get_descendants():print(x)

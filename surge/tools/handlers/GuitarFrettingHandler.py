@@ -49,7 +49,7 @@ class GuitarFrettingHandler(TablatureHandler):
 
     def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
-        rhythm_voice = copy.deepcopy(voice)
+        rhythm_voice = self._music_maker(current_stage)
         self._handle_voice(voice, current_stage)
         lifeline_voice = copy.deepcopy(voice)
         self._handle_lifeline_voice(lifeline_voice, current_stage)

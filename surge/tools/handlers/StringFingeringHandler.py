@@ -12,16 +12,15 @@ import copy
 
 
 class StringFingeringHandler(EnvelopeHandler):
-    r''' Non-fretted string instrument fingering handler.
+    """Non-fretted string instrument fingering handler.
     Height on string.
     Vibrato width.
     Vibrato rate.
-    tremolo width.
-    tremolo rate.
+    Tremolo width.
+    Tremolo rate.
     Finger pressure.
     Pressure tremolo rate.
-
-    '''
+    """
 
     # CLASS ATTRIBUTES
 
@@ -51,6 +50,7 @@ class StringFingeringHandler(EnvelopeHandler):
             self._height_envelopes_release = height_envelopes
         else:
             self._height_envelopes_release = height_envelopes_release
+
         self._pressure_envelopes = pressure_envelopes
 
         self._tremolo_patterns = self._create_cycles(tremolo_patterns)
@@ -71,14 +71,21 @@ class StringFingeringHandler(EnvelopeHandler):
         pass
 
     def _handle_voice(self, voice, current_stage):
+        if (self._height_envelopes is None or
+                self._height_envelopes[current_stage] is None):
+                    return
+
+        height_envelope = self._height_envelopes[current_stage]
+        height_envelope_release = self._height_envelopes_release[current_stage]
+        pressure_envelope = self._pressure_envelopes[current_stage]
+
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
             if tie.is_pitched:
-                height_start = self._height_envelopes[
-                    current_stage](offset_start)
-                height_end = self._height_envelopes_release[
-                    current_stage](offset_end)
-                pressure = \
-                    self._pressure_envelopes[current_stage](offset_start)
+
+                height_start = height_envelope(offset_start)
+                height_end = height_envelope_release(offset_end)
+                pressure = pressure_envelope(offset_start)
+
                 tremolo = \
                     self._cycle_next(self._tremolo_patterns, current_stage)
                 vibrato = \

@@ -4,10 +4,11 @@ import abjad
 
 
 class BowedStringStaffGroupTemplate:
-    __slots__ = ('instrument',)
+    __slots__ = ('instrument', 'include_rhythm_staves')
 
-    def __init__(self, instrument):
+    def __init__(self, instrument, include_rhythm_staves=False):
         self.instrument = instrument
+        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         name = self.instrument.instrument_name.title()
@@ -29,27 +30,26 @@ class BowedStringStaffGroupTemplate:
             name='Fingering Rhythm'
         )
 
-        abjad.override(
-            bowing_rhythm_staff
-        ).stem.direction = abjad.schemetools.Scheme('UP')
-        abjad.override(
-            fingering_rhythm_staff
-        ).stem.direction = abjad.schemetools.Scheme('DOWN')
-        staff_list = [
-            bowing_rhythm_staff,
-            string_space_staff,
-            fingering_rhythm_staff
-        ]
+        abjad.override(bowing_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+        abjad.override(fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('DOWN')
+
+        if self.include_rhythm_staves:
+            staff_list = [
+                bowing_rhythm_staff,
+                string_space_staff,
+                fingering_rhythm_staff
+            ]
+        else:
+            staff_list = [string_space_staff]
 
         for staff in staff_list:
             abjad.annotate(staff, 'instrument', name)
 
-        abjad.setting(
-            string_space_staff
-        ).instrument_name = abjad.Markup(name)
-        abjad.setting(
-            string_space_staff
-        ).instrument_name = abjad.Markup(short_name)
+        abjad.setting(string_space_staff).instrument_name = abjad.Markup(name)
+        abjad.setting(string_space_staff).instrument_name = \
+            abjad.Markup(short_name)
 
         instrument_staff_group = abjad.scoretools.StaffGroup(
             staff_list,

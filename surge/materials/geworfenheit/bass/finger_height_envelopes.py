@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from fractions import Fraction
-from surge.materials.geworfenheit.durations import durations
+from surge.materials.geworfenheit.durations import denominators, durations
 from surge.materials.geworfenheit.stages import number_of_stages
 from surge.materials.geworfenheit.utilities import make_glissandi
 from surge.tools.bezzie.BezierCurve import BezierCurve
@@ -27,4 +27,8 @@ finger_heights = [
     ]
 ]
 
-finger_height_envelopes = make_glissandi(finger_heights, durations)
+finger_height_envelopes = make_glissandi(
+    finger_heights,
+    durations,
+    denominators
+)

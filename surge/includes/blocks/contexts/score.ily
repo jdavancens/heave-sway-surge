@@ -6,8 +6,8 @@
     \accepts TromboneStaffGroup
     \accepts WoodwindInstrumentStaffGroup
     \accepts TimeSignatureContext
-    \consists Span_bar_engraver
-    \consists Span_bar_stub_engraver
+    %{\consists Span_bar_engraver
+    \consists Span_bar_stub_engraver%}
     \remove Bar_number_engraver
     \remove Mark_engraver
     \remove Metronome_mark_engraver
@@ -29,6 +29,8 @@
         (next-note semi-fixed-space . 0.0)
         (right-edge extra-space . 0.0)
     )
+
+    \override BarNumber.break-visibility = ##(#t #t #t)
 
     \override Beam.breakable = ##t
     \override Beam.damping = #+inf.0
@@ -55,7 +57,9 @@
     \override SpacingSpanner.strict-note-spacing = ##t
     \override SpacingSpanner.uniform-stretching = ##t
 
-    \override SpanBar.color = #(x11-color 'grey33)
+    \remove SpanBar
+
+    %{\override SpanBar.color = #(x11-color 'grey33)
     \override SpanBar.layer = #1001
     \override SpanBar.hair-thickness = #0.75
     \override SpanBar.space-alist = #'(
@@ -67,7 +71,7 @@
         (first-note fixed-space . 0.0)
         (next-note semi-fixed-space . 0.0)
         (right-edge extra-space . 0.0)
-    )
+    )%}
 
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
@@ -91,7 +95,7 @@
     \override Stem.details.lengths = #'(6)
     \override Stem.stemlet-length = #1.5
 
-    \override SystemStartSquare.thickness = 2
+    \override SystemStartSquare.thickness = 3
 
     \override TextSpanner.breakable = ##t
 
@@ -106,8 +110,8 @@
     \override TupletNumber.text = #tuplet-number::calc-fraction-text
 
     autoBeaming = ##f
-    defaultBarType = #"|"
-    proportionalNotationDuration = #(ly:make-moment 1 52)
+    defaultBarType = #"!"
+    proportionalNotationDuration = #(ly:make-moment 1 24)
     tupletFullLength = ##t
 
 }

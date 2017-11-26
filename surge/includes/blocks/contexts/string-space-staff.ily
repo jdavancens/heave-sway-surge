@@ -11,7 +11,7 @@
     \consists Staff_symbol_engraver
     \consists System_start_delimiter_engraver
     \accepts Voice
-    
+
     \omit Accidental
     \omit Beam
     \omit Clef
@@ -19,6 +19,7 @@
     \omit Flag
     \omit InstrumentName
     \hide Rest
+    \omit SpanBar
     \omit Stem
     \omit Tie
     \omit TimeSignature
@@ -55,6 +56,6 @@
     \override VerticalAxisGroup #'staff-staff-spacing =
         #'((basic-distance . 20)
            (minimum-distance . 18)
-           (padding . -10)
+           (padding . 10)
            (stretchability . 0))
 }

@@ -38,12 +38,15 @@ class Path(object):
 
     def __init__(self, *curves):
         self._interpolater = LinearInterpolater()
+
         assert isinstance(curves, (list, tuple)) and len(curves) > 0, \
             "Curves argument must be a non-empty list or tuple."
+
         if len(curves) > 1:
             for i in range(1, len(curves)):
                 assert isinstance(curves[i - 1], BezierCurve)
                 assert isinstance(curves[i], BezierCurve)
+                assert(curves[i - 1][-1][0] == curves[i][0][0])
                 self._curves = tuple(curves)
         else:
             self._curves = tuple(curves)
@@ -84,7 +87,7 @@ class Path(object):
 
         Returns float.
         '''
-        return sum([curve.length for curve in self])
+        return sum([curve.length for curve in self._curves])
 
     # PUBLIC METHODS
 

@@ -125,7 +125,7 @@ class BezierCurve(object):
 
         Returns a float.
         '''
-        first = self[0]
-        last = self[-1]
+        first = self._control_points[0]
+        last = self._control_points[-1]
         length = last[0] - first[0]
         return length

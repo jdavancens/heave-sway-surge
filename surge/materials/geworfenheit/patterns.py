@@ -16,3 +16,19 @@ for combination in contourEnum.yield_combinations(minimum_length=1):
 
 finger_height_low = 0.1
 finger_height_high = 0.4
+
+string_tremolo_patterns = [
+    [0, 0, 0, 1, 0, 0]
+]
+
+string_vibrato_patterns = [
+    [0, 0, 0, 0, 0, 1]
+]
+
+bow_tremolo_patterns = [
+    [0, 1, 0, 0, 0, 0, 0]
+]
+
+jete_patterns = [
+    [0, 0, 0, 0, 1, 0, 0]
+]

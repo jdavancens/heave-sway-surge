@@ -11,8 +11,9 @@
     \consists Staff_symbol_engraver
     \consists Pitch_squash_engraver
     \accepts Voice
+
+    \omit BarLine
     \omit Clef
-    \hide NoteHead
     \omit InstrumentName
     \omit TimeSignature
     \override StaffSymbol.line-count = #1

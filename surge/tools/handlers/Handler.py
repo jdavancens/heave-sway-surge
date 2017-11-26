@@ -30,16 +30,16 @@ class Handler(object):
     # PRIVATE METHODS
 
     def _add_stem_tremolo(self, logical_tie, tremolo_flags=32):
-        for leaf in logical_tie.leaves:
-            abjad.attach(abjad.indicatortools.StemTremolo(tremolo_flags), leaf)
-            override = abjad.lilypondnametools.LilyPondGrobOverride(
-                context_name=None,
-                grob_name='StemTremolo',
-                is_once=True,
-                property_path=('beam-width'),
-                value=1
-            )
-            abjad.attach(override, leaf)
+        leaf = logical_tie.head
+        abjad.attach(abjad.indicatortools.StemTremolo(tremolo_flags), leaf)
+        override = abjad.lilypondnametools.LilyPondGrobOverride(
+            context_name=None,
+            grob_name='StemTremolo',
+            is_once=True,
+            property_path=('beam-width'),
+            value=1
+        )
+        abjad.attach(override, leaf)
 
     def _add_gliss_skip(self, leaf):
         abjad.override(leaf).note_column.glissando_skip = True

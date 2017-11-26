@@ -30,13 +30,16 @@ class EnvelopeHandler(Handler):
 
     def __call__(self, current_stage):
         voice = self._music_maker(current_stage)
-        rhythm_voice = copy.deepcopy(voice)
+        rhythm_voice = self._music_maker(current_stage)
         self._name_voices(voice, rhythm_voice)
         self._handle_voice(voice, current_stage)
         self._handle_rhythm_voice(rhythm_voice, current_stage)
         return (voice, rhythm_voice)
 
     # PRIVATE METHODS #
+
+    def _lengths_match(self, voice, envelope):
+        return voice[:].get_duration() == envelope.length
 
     def _handle_voice(self, voice, current_stage):
         """Abstract method"""
@@ -47,8 +50,14 @@ class EnvelopeHandler(Handler):
         pass
 
     def _quantize(self, x, steps):
-        return round(float(x) * steps) / steps
+        if x is None:
+            return 0
+        else:
+            return round(float(x) * steps) / steps
 
     def _set_y_offset(self, note, y):
-        y_offset = (y - 0.5) * (self._number_of_staff_lines - 2)
+        if y is None:
+            y_offset = 0
+        else:
+            y_offset = (y - 0.5) * (self._number_of_staff_lines - 2)
         abjad.override(note).note_head.Y_offset = y_offset

@@ -25,7 +25,8 @@ class MusicMaker:
         '_rhythm_makers',
         '_time_signatures',
         '_divisions',
-        '_rhythms'
+        '_rhythms',
+        '_grace_note_indices'
     )
 
     # INTITIALIZER #
@@ -37,7 +38,8 @@ class MusicMaker:
         stages=None,
         time_signatures=None,
         rhythms=None,
-        divisions=None
+        divisions=None,
+        grace_note_indices=None
     ):
         assert(isinstance(instrument, abjad.instrumenttools.Instrument))
         assert(time_signatures is not None)
@@ -51,6 +53,7 @@ class MusicMaker:
             self._stages = stages
         self._time_signatures = time_signatures
         self._divisions = divisions
+        self._grace_note_indices = grace_note_indices
 
     # SPECIAL METHODS #
 
@@ -73,9 +76,21 @@ class MusicMaker:
         assert isinstance(voice, abjad.Voice)
         # abjad.f(voice)
         self._flatten_trivial_tuplets(voice)
-        self._adjust_tuplet_prolation(voice)
+        # self._adjust_tuplet_prolation(voice)
         self._attach_instrument(voice)
         return voice
+
+    def __str__(self):
+        s = "MusicMaker(instrument={}, name={})"
+        s = s.format(
+            self.instrument.instrument_name,
+            self.name,
+            self._rhythm_makers,
+            self._time_signatures,
+            self._rhythms,
+            self._divisions
+        )
+        return s
 
     # PRIVATE METHODS #
 

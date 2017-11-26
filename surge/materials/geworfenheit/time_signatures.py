@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
-from surge.materials.geworfenheit.durations import durations
+from surge.materials.geworfenheit.durations import stage_durations
 import abjad
 import math
 
+time_signature = abjad.TimeSignature((2, 4))
+time_signatures = []
 measures_per_stage = []
 
-for stage in durations:
-    stage_duration = sum([sum(duration_pair) for duration_pair in stage])
-    number_of_measures = int(math.ceil(stage_duration / 4))
+for duration in stage_durations:
+    number_of_measures = math.ceil(duration / time_signature.duration)
+    stage_time_signatures = [time_signature] * number_of_measures
     measures_per_stage.append(number_of_measures)
-
-
-time_signatures = [
-    [abjad.TimeSignature((4, 8))] * number_of_measures
-    for number_of_measures in measures_per_stage
-]
+    time_signatures.append(stage_time_signatures)

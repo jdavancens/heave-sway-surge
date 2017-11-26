@@ -70,7 +70,13 @@ class BowingHandler(EnvelopeHandler):
     # PRIVATE METHODS
 
     def _add_jete(self, note):
-        markup = self._make_text_markup("...", direction=Up)
+        markup = self._make_text_markup(
+            "…",
+            direction=Up,
+            font_size=2,
+        )
+        markup = markup.pad_around(0.5)
+        markup = markup.box()
         abjad.attach(markup, note)
 
     def _attach_direction(self, direction, tie):
@@ -123,9 +129,6 @@ class BowingHandler(EnvelopeHandler):
                     self._direction_patterns,
                     current_stage
                 )
-
-                if tremolo:
-                    self._add_stem_tremolo(tie)
                 if string_index != previous_string_index:
                     self._attach_string_index(string_index, tie)
                 if direction:
@@ -137,27 +140,39 @@ class BowingHandler(EnvelopeHandler):
     def _handle_voice(self, voice, current_stage):
         if (self._height_envelopes is None or
                 self._height_envelopes[current_stage] is None):
-                return
+                    return
+
+        height_envelope = self._height_envelopes[current_stage]
+        height_envelope_release = self._height_envelopes_release[current_stage]
+        pressure_envelope = self._pressure_envelopes[current_stage]
+
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
             if tie.is_pitched:
-                height_start = \
-                    self._height_envelopes[current_stage](offset_start)
-                height_end = \
-                    self._height_envelopes_release[current_stage](offset_end)
-                pressure = \
-                    self._pressure_envelopes[current_stage](offset_start)
+
+                height_start = height_envelope(offset_start)
+                height_end = height_envelope_release(offset_end)
+                pressure = pressure_envelope(offset_start)
 
                 sweep = self._cycle_next(self._sweep_patterns, current_stage)
-                jete = self._cycle_next(self._jete_patterns, current_stage)
-
-                style = 'zigzag' if sweep else None
+                tremolo = self._cycle_next(
+                    self._tremolo_patterns,
+                    current_stage
+                )
+                if sweep:
+                    style = 'zigzag'
+                elif tremolo:
+                    style = 'dashed-line'
+                else:
+                    style = None
                 self._attach_glissando(tie.head, style=style)
+
                 self._hidden_grace_after(tie.tail)
-                grace_container = abjad.inspect(
-                    tie.tail).get_after_grace_container()
+                grace_container = abjad.inspect(tie.tail)\
+                    .get_after_grace_container()
                 if (grace_container is not None and len(grace_container) > 0):
                     self._set_y_offset(grace_container[0], height_end)
 
+                jete = self._cycle_next(self._jete_patterns, current_stage)
                 if jete:
                     self._add_jete(tie.head)
 

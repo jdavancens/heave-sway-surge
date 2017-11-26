@@ -16,7 +16,7 @@ class ScoreTemplate:
     '''
 
     # CLASS ATTRIBUTES
-    __slots__ = ('instrument_list',)
+    __slots__ = ('instrument_list', 'include_rhythm_staves')
 
     # SPECIAL METHODS
     def __init__(
@@ -32,9 +32,11 @@ class ScoreTemplate:
             'viola',
             'cello',
             'contrabass',
-        ]
+        ],
+        include_rhythm_staves=False
     ):
         self.instrument_list = instrument_list
+        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         r'''Calls score template.
@@ -81,25 +83,29 @@ class ScoreTemplate:
         if instrument_name in instrument_categories['woodwinds']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.WoodwindStaffGroupTemplate(
-                instrument
+                instrument,
+                include_rhythm_staves=self.include_rhythm_staves
             )
             staff_group = template()
         elif instrument_name in instrument_categories['trombone']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.TromboneStaffGroupTemplate(
-                instrument
+                instrument,
+                include_rhythm_staves=self.include_rhythm_staves
             )
             staff_group = template()
         elif instrument_name in instrument_categories['plucked strings']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.GuitarStaffGroupTemplate(
-                instrument
+                instrument,
+                include_rhythm_staves=self.include_rhythm_staves
             )
             staff_group = template()
         elif instrument_name in instrument_categories['bowed strings']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.BowedStringStaffGroupTemplate(
-                instrument
+                instrument,
+                include_rhythm_staves=self.include_rhythm_staves
             )
             staff_group = template()
         else:
@@ -108,12 +114,9 @@ class ScoreTemplate:
                 instrument_name +
                 " does not belong to a valid instrument category."
             )
-        abjad.setting(
-            staff_group
-        ).instrument_name = abjad.Markup(name)
-        abjad.setting(
-            staff_group
-        ).short_instrument_name = abjad.Markup(short_name)
+        abjad.setting(staff_group).instrument_name = abjad.Markup(name)
+        abjad.setting(staff_group).short_instrument_name = \
+            abjad.Markup(short_name)
         return staff_group
 
     def _int_to_roman(self, integer):

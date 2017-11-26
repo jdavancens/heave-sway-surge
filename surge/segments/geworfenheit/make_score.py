@@ -31,14 +31,14 @@ def make_score(number_of_stages=None):
         ],
         page_size=('11x17', 'portrait'),
         staff_size=7,
-        final_barline=True,
+        final_barline=False,
         part=False
     )
     music_handlers = [
-        violin.music_handlers,
-        viola.music_handlers,
-        cello.music_handlers,
-        bass.music_handlers
+        violin_handlers,
+        viola_handlers,
+        cello_handlers,
+        bass_handlers
     ]
     music_handlers = flatten_list(music_handlers)
     segment_maker.add_music_handlers(music_handlers)

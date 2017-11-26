@@ -3,24 +3,45 @@ Blurry stage boundaries
 
 STAGE 1
 
-Coordinated long glissandi
+Strings:
+Long glissandi
 Converging, diverging
-Discontinuous
 Isorhythmic, homo-rhythmic
-4|4
+2|4
 Focus: pitch density
+
+Woodwinds
+Tacet
 
 STAGE 2
 
-Coordinated long glissandi
+Strings:
+Long glissandi
 Distinct, independent contours
-Hetero-rhythmic
-4|4
+Heterorhythmic
+2|4
 Focus: pitch density
+
+Woodwinds:
+
+
+Trombone:
+
+
+Guitars:
+
 
 STAGE 3
 
+Strings:
 Disjointed short glissandi, clicks, pops, scratches, groans
-Hetero-rhythmic, polyrhythmic
+Heterorhythmic, polyrhythmic
 Multiple time signatures
 Focus: temporal density
+
+Woodwinds:
+
+
+Trombone:
+
+Guitars:

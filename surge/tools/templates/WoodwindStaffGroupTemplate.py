@@ -13,10 +13,11 @@ import abjad
 
 
 class WoodwindStaffGroupTemplate():
-    __slots__ = ('instrument',)
+    __slots__ = ('instrument', 'include_rhythm_staves')
 
-    def __init__(self, instrument):
+    def __init__(self, instrument, include_rhythm_staves=False):
         self.instrument = instrument
+        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         name = self.instrument.instrument_name.title()
@@ -35,12 +36,9 @@ class WoodwindStaffGroupTemplate():
             name='Embouchure',
         )
 
-        abjad.setting(
-            embouchure_staff
-        ).instrument_name = abjad.Markup('Emb.')
-        abjad.setting(
-            embouchure_staff
-        ).short_instrument_name = abjad.Markup('Emb.')
+        abjad.setting(embouchure_staff).instrument_name = abjad.Markup('Emb.')
+        abjad.setting(embouchure_staff).short_instrument_name = \
+            abjad.Markup('Emb.')
 
         embouchure_rhythm_staff = abjad.scoretools.Staff(
             [],
@@ -54,12 +52,10 @@ class WoodwindStaffGroupTemplate():
             is_simultaneous=True,
             name='Left Hand Fingering',
         )
-        abjad.setting(
-            lh_fingering_staff
-        ).instrument_name = abjad.Markup('L.H.')
-        abjad.setting(
-            lh_fingering_staff
-        ).short_instrument_name = abjad.Markup('L.H.')
+        abjad.setting(lh_fingering_staff).instrument_name = \
+            abjad.Markup('L.H.')
+        abjad.setting(lh_fingering_staff).short_instrument_name = \
+            abjad.Markup('L.H.')
 
         rh_fingering_staff = abjad.scoretools.Staff(
             [],
@@ -67,12 +63,10 @@ class WoodwindStaffGroupTemplate():
             is_simultaneous=True,
             name='Right Hand Fingering',
         )
-        abjad.setting(
-            rh_fingering_staff
-        ).instrument_name = abjad.Markup('R.H.')
-        abjad.setting(
-            rh_fingering_staff
-        ).short_instrument_name = abjad.Markup('R.H.')
+        abjad.setting(rh_fingering_staff).instrument_name = \
+            abjad.Markup('R.H.')
+        abjad.setting(rh_fingering_staff).short_instrument_name = \
+            abjad.Markup('R.H.')
 
         lh_fingering_rhythm_staff = abjad.scoretools.Staff(
             [],
@@ -84,24 +78,28 @@ class WoodwindStaffGroupTemplate():
             context_name='RhythmStaff',
             name='Right Hand Fingering Rhythm',
         )
-        abjad.override(
-            embouchure_rhythm_staff
-        ).stem.direction = abjad.schemetools.Scheme('UP')
-        abjad.override(
-            lh_fingering_rhythm_staff
-        ).stem.direction = abjad.schemetools.Scheme('UP')
-        abjad.override(
-            rh_fingering_rhythm_staff
-        ).stem.direction = abjad.schemetools.Scheme('DOWN')
-        staff_list = [
-            embouchure_rhythm_staff,
-            embouchure_staff,
-            lh_fingering_rhythm_staff,
-            lh_fingering_staff,
-            # separator,
-            rh_fingering_staff,
-            rh_fingering_rhythm_staff
-        ]
+        abjad.override(embouchure_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+        abjad.override(lh_fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+        abjad.override(rh_fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('DOWN')
+
+        if self.include_rhythm_staves:
+            staff_list = [
+                embouchure_rhythm_staff,
+                embouchure_staff,
+                lh_fingering_rhythm_staff,
+                lh_fingering_staff,
+                rh_fingering_staff,
+                rh_fingering_rhythm_staff
+            ]
+        else:
+            staff_list = [
+                embouchure_staff,
+                lh_fingering_staff,
+                rh_fingering_staff,
+            ]
 
         for staff in staff_list:
             abjad.annotate(staff, 'instrument', name)
@@ -111,10 +109,8 @@ class WoodwindStaffGroupTemplate():
             context_name='WoodwindInstrumentStaffGroup',
             name=name + ' Staff Group'
         )
-        abjad.setting(
-            instrument_staff_group
-        ).instrument_name = abjad.Markup(name)
-        abjad.setting(
-            instrument_staff_group
-        ).instrument_name = abjad.Markup(short_name)
+        abjad.setting(instrument_staff_group).instrument_name = \
+            abjad.Markup(name)
+        abjad.setting(instrument_staff_group).instrument_name = \
+            abjad.Markup(short_name)
         return instrument_staff_group

@@ -9,6 +9,8 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \consists Pitch_squash_engraver
+    \omit BarLine
+    \omit SpanBar
     \omit Clef
     \hide NoteHead
     \omit InstrumentName
