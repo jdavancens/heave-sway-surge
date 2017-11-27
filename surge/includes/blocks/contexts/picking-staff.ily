@@ -27,11 +27,5 @@
         (x11-color 'grey33) white white white white
         white white white white white
         white white white white (x11-color 'grey33)
-        )
-
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 18)
-           (minimum-distance . 12)
-           (padding . -10)
-           (stretchability . 0))
+    )
 }

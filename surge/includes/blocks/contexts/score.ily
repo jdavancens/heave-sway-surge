@@ -18,7 +18,7 @@
 
     \override BarLine.color = #(x11-color 'grey33)
     \override BarLine.layer = #1000
-    \override BarLine.hair-thickness = #0.5
+    \override BarLine.hair-thickness = #1
     \override BarLine.space-alist = #'(
         (time-signature extra-space . 0.0)
         (custos minimum-space . 0.0)
@@ -32,14 +32,14 @@
 
     \override BarNumber.break-visibility = ##(#t #t #t)
 
-    \override Beam.breakable = ##t
+    %{\override Beam.breakable = ##t
     \override Beam.damping = #+inf.0
     \override Beam.beam-thickness = #0.75
-    \override Beam.length-fraction = #1.25
+    \override Beam.length-fraction = #1.25%}
 
     \override Glissando.breakable = ##t
 
-    \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 128)
+    \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 256)
     \override GraceSpacing.spacing-increment = #0
     \override GraceSpacing.shortest-duration-space = #0
 
@@ -82,7 +82,7 @@
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
            (minimum-distance . 0)
-           (padding . 0)
+           (padding . 10)
            (stretchability . 0))
 
     \override StaffSymbol.layer = #-400
@@ -91,11 +91,10 @@
     \override StemTremolo.flag-count = 2
     \override StemTremolo.slope = 0
 
-    \override Stem.details.beamed-lengths = #'(6)
+    %{\override Stem.details.beamed-lengths = #'(6)
     \override Stem.details.lengths = #'(6)
-    \override Stem.stemlet-length = #1.5
-
-    \override SystemStartSquare.thickness = 3
+    \override Stem.stemlet-length = #1.5%}
+    \override SystemStartBar.color = #(x11-color 'grey33)
 
     \override TextSpanner.breakable = ##t
 

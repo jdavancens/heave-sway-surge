@@ -93,7 +93,7 @@ class EmbouchureHandler(EnvelopeHandler):
             markup = self._make_text_markup(consonant + vowel)
             abjad.attach(markup, tie.head)
 
-    def _attach_pressure_notehead(self, tie, pressure, size=1, outline=True):
+    def _attach_pressure_notehead(self, tie, pressure, size=0.5, outline=True):
         fill = self._make_circle_markup(size, pressure)
         if outline:
             outline = self._make_circle_outline_markup(size)

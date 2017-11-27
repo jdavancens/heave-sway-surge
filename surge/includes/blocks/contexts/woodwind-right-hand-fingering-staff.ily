@@ -48,12 +48,6 @@
         (x11-color 'grey67)
         (x11-color 'grey67)
         white
-        )
+    )
     \override StaffSymbol.layer = -200
-
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 10)
-           (minimum-distance . 4)
-           (padding . -10)
-           (stretchability . 0))
 }

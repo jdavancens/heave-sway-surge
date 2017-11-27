@@ -64,7 +64,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         is_last_segment=False,
         raise_approximate_duration=False,
         check_well_formedness=True,
-        show_stage_annotations=False,
+        show_stage_annotations=True,
         first_bar_number=None,
         number_of_stages=None,
         measures_per_stage=None,
@@ -74,7 +74,9 @@ class SegmentMaker(SegmentMakerBaseClass):
         time_signatures=None,
         staff_size=7,
         part=False,
-        ruler=False
+        ruler=False,
+        header_font='Open Sans',
+        body_font='Open Sans'
     ):
         superclass = super(SegmentMaker, self)
         superclass.__init__()
@@ -134,7 +136,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             time = str(datetime.timedelta(seconds=seconds))
             print(time)
 
-        self._attach_rehearsal_mark()
+        # self._attach_rehearsal_mark()
         self._add_final_barline()
         self._add_final_markup()
         self._check_well_formedness()
@@ -171,20 +173,22 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         if not self.show_stage_annotations:
             return
+
         print('Annotating stages...')
+
         context = self._score[0]
+
         for stage_index in range(self.number_of_stages):
-            stage_number = stage_index + 1
-            result = self._stage_number_to_measure_indices(stage_number)
-            start_measure_index, stop_measure_index = result
-            rehearsal_letter = self._get_rehearsal_letter(self._segment_number)
+            start_measure_index, stop_measure_index = \
+                self._stage_index_to_measure_indices(stage_index)
             rehearsal_mark = abjad.indicatortools.RehearsalMark(
-                number=start_measure_index + 1
+                number=stage_index + 1
             )
             start_measure = context[0][start_measure_index]
             abjad.attach(rehearsal_mark, start_measure[0])
-            scheme = abjad.schemetools.Scheme('format-mark-box-alphabet')
-            abjad.setting(self._score).markFormatter = scheme
+
+        scheme = abjad.schemetools.Scheme('format-mark-box-alphabet')
+        abjad.setting(self._score).markFormatter = scheme
 
     def _attach_rehearsal_mark(self):
         r''' Adds rehearsal mark (segment #) to score
@@ -211,14 +215,6 @@ class SegmentMaker(SegmentMakerBaseClass):
                     score
                 ).tabulate_well_formedness_violations()
                 raise Exception(string)
-
-    def _get_rehearsal_letter(self, segment_number):
-        if segment_number == 1:
-            return ''
-        segment_index = segment_number - 1
-        rehearsal_ordinal = ord('A') - 1 + segment_index
-        rehearsal_letter = chr(rehearsal_ordinal)
-        return rehearsal_letter
 
     def _interpret_music_handlers(self):
         r''' Fills the empty score with music based on each instrument's music
@@ -340,18 +336,18 @@ class SegmentMaker(SegmentMakerBaseClass):
                 lilypond_file.items.remove(item)
 
         composer = abjad.Markup("Joseph Davancens")
-        composer = composer.override(("font-name", "Didot"))
+        composer = composer.override(("font-name", "Arial"))
         composer = composer.fontsize(6)
         # composer = composer.hspace(20)
 
         title = abjad.Markup(self.title)
-        title = title.override(("font-name", "Didot Bold"))
+        title = title.override(("font-name", "Arial"))
         title = title.fontsize(9)
         # title = abjad.Markup.line([title]).center_align()
         # title = abjad.Markup.column([title])
 
         subtitle = abjad.Markup(self.segment_name)
-        subtitle = subtitle.override(("font-name", "Didot Bold"))
+        subtitle = subtitle.override(("font-name", "Arial"))
         subtitle = subtitle.fontsize(7)
         # subtitle = abjad.Markup.line([subtitle]).center_align()
         # subtitle = abjad.Markup.column([subtitle])
@@ -493,9 +489,10 @@ class SegmentMaker(SegmentMakerBaseClass):
         total_duration = int(round(total_duration))
         message = '{} seconds'
         message = message.format(total_duration)
-        raise Exception(message)
+        print(message)
 
-    def _stage_number_to_measure_indices(self, stage_number):
+    def _stage_index_to_measure_indices(self, stage_index):
+        stage_number = stage_index + 1
         assert stage_number <= self.stage_count
         measure_indices = abjad.mathtools.cumulative_sums(
             self.measures_per_stage

@@ -23,7 +23,6 @@
     \omit TupletBracket
     \omit TupletNumber
 
-
     \override Glissando.after-line-breaking = ##t
     \override Glissando.thickness = #4
     \override Glissando.layer = #-100
@@ -52,12 +51,5 @@
         (x11-color 'grey67)
         (x11-color 'grey67)
         white
-        )
-
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 20)
-           (minimum-distance . 18)
-           (padding . -10)
-           (stretchability . 0))
-     %{\override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)%}
+    )
 }

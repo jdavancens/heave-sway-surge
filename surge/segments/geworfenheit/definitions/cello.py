@@ -6,25 +6,20 @@ Created on Oct 31, 2015
 '''
 
 from abjad.tools.instrumenttools import Cello
+
 # import materials
 from surge.materials.geworfenheit import bow_tremolo_patterns, jete_patterns, \
-    rhythm_makers_fingering, stages, string_tremolo_patterns, \
-    string_vibrato_patterns, time_signatures
+    stages, string_tremolo_patterns, string_vibrato_patterns, time_signatures
 from surge.materials.geworfenheit.cello import bow_height_envelopes, \
     bow_rhythm_makers, bow_pressure_envelopes, finger_height_envelopes, \
-    finger_pressure_envelopes, string_index_patterns
+    finger_pressure_envelopes, finger_rhythm_makers, string_index_patterns
 
 # import tools
 from surge.tools.handlers.BowingHandler import BowingHandler
 from surge.tools.handlers.StringFingeringHandler import StringFingeringHandler
 from surge.tools.makers.MusicMaker import MusicMaker
 
-# ==============================================================================
-#  HIGH LEVEL PARAMETERS
-# ==============================================================================
-
 cello = Cello()
-stages = (0,)
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -43,7 +38,7 @@ fingering_music_maker = MusicMaker(
     instrument=cello,
     name='Fingering',
     time_signatures=time_signatures,
-    rhythm_makers=rhythm_makers_fingering
+    rhythm_makers=finger_rhythm_makers
 )
 
 # ==============================================================================

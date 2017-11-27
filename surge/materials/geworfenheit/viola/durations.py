@@ -5,14 +5,14 @@ import abjad
 import copy
 import random
 
-durations_stage_2_bass = copy.deepcopy(durations_stage_1)
+durations_stage_2_viola = copy.deepcopy(durations_stage_1)
 
-random.seed(hash('bass'))
-random.shuffle(durations_stage_2_bass)
+random.seed(hash('viola'))
+random.shuffle(durations_stage_2_viola)
 
-durations = [durations_stage_1, durations_stage_2_bass]
+durations = [durations_stage_1, durations_stage_2_viola]
 
-denominators = [denominator_stage_1, 16]
+denominators = [16, 16]
 
 stage_durations = []
 for i, stage in enumerate(durations):

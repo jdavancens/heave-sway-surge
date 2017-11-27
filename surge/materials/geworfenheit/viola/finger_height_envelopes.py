@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from fractions import Fraction
-from surge.materials.geworfenheit.durations import denominators, durations
+from .durations import denominators, durations
 from surge.materials.geworfenheit.stages import number_of_stages
 from surge.materials.geworfenheit.utilities import make_glissandi
 from surge.tools.bezzie.BezierCurve import BezierCurve
@@ -24,6 +24,23 @@ finger_heights = [
         Fraction(3, 5),
         Fraction(1, 17),
         Fraction(4, 7)
+    ],
+    [
+        Fraction(4, 7),
+        Fraction(1, 11),
+        Fraction(2, 3),
+        Fraction(5, 7),
+        Fraction(2, 3),
+        Fraction(8, 11),
+        Fraction(3, 5),
+        Fraction(2, 5),
+        Fraction(3, 7),
+        Fraction(1, 2),
+        Fraction(10, 13),
+        Fraction(1, 3),
+        Fraction(2, 13),
+        Fraction(1, 2),
+        Fraction(5, 11)
     ]
 ]
 

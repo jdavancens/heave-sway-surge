@@ -17,11 +17,4 @@
     \omit TimeSignature
     \override StaffSymbol.line-count = #1
     squashedPosition = #0
-
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 8)
-           (minimum-distance . 6)
-           (padding . -10)
-           (stretchability . 0))
-    \override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)
 }

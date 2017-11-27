@@ -52,10 +52,7 @@
         (x11-color 'grey67) white white white white
         white white white white white
         white white white white white (x11-color 'grey33)
-        )
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 20)
-           (minimum-distance . 18)
-           (padding . 10)
-           (stretchability . 0))
+    )
+
+    systemStartDelimiter = #'SystemStartBar
 }

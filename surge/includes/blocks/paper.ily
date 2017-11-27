@@ -27,26 +27,28 @@
     page-breaking = #ly:optimal-breaking
     systems-per-page = 3
 
-    ragged-bottom = ##f
-    ragged-last-bottom = ##f
-    ragged-right = ##t
+    ragged-bottom = ##t
+    ragged-last-bottom = ##t
+    ragged-right = ##f
     ragged-last = ##t
 
     indent = 0\in
+    short-indent = 0\in
 
-    left-margin = 1\in
+    left-margin = 0.5\in
     right-margin = 0.5\in
     top-margin = 0.5\in
+    bottom-margin = 0.5\in
 
     system-system-spacing =
-        #'((basic-distance . 28)
-           (minimum-distance . 28)
-           (padding . -10)
+        #'((basic-distance . 0)
+           (minimum-distance . 0)
+           (padding . 20)
            (stretchability . 0))
 
     top-system-spacing =
-        #'((basic-distance . 18)
-           (minimum-distance . 18)
-           (padding . -10)
+        #'((basic-distance . 0)
+           (minimum-distance . 0)
+           (padding . 20)
            (stretchability . 0))
 }

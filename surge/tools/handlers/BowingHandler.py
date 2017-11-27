@@ -97,10 +97,9 @@ class BowingHandler(EnvelopeHandler):
             )
             abjad.attach(markup, tie.head)
 
-    def _attach_pressure_notehead(self, pressure, tie):
+    def _attach_pressure_notehead(self, pressure, tie, size=0.5):
         steps = 4
         pressure = self._quantize(pressure, steps)
-        size = 1
         fill = self._make_circle_markup(size, pressure)
         outline = self._make_circle_outline_markup(size)
         circle = abjad.Markup.combine([fill, outline])

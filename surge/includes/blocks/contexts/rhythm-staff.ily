@@ -19,11 +19,5 @@
     \override StaffSymbol.line-count = #1
     \override StaffSymbol.transparent = ##t
     squashedPosition = #0
-    \override VerticalAxisGroup.default-staff-staff-spacing = #'(
-        (basic-distance . 1)
-        (minimum-distance . 1)
-        (padding . 0)
-        (stretchability . 0)
-    )
     %{\override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)%}
 }
