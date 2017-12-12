@@ -336,18 +336,20 @@ class SegmentMaker(SegmentMakerBaseClass):
                 lilypond_file.items.remove(item)
 
         composer = abjad.Markup("Joseph Davancens")
-        composer = composer.override(("font-name", "Arial"))
+        composer = composer.override(("font-name", "Futura"))
+
         composer = composer.fontsize(6)
         # composer = composer.hspace(20)
 
         title = abjad.Markup(self.title)
-        title = title.override(("font-name", "Arial"))
+        title = title.override(("font-name", "Futura"))
         title = title.fontsize(9)
+        title = title.override(("font-series", "Medium"))
         # title = abjad.Markup.line([title]).center_align()
         # title = abjad.Markup.column([title])
 
         subtitle = abjad.Markup(self.segment_name)
-        subtitle = subtitle.override(("font-name", "Arial"))
+        subtitle = subtitle.override(("font-name", "Futura"))
         subtitle = subtitle.fontsize(7)
         # subtitle = abjad.Markup.line([subtitle]).center_align()
         # subtitle = abjad.Markup.column([subtitle])

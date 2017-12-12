@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from fractions import Fraction
 from .durations import denominators, durations
+from surge.materials.geworfenheit.durations import stage_durations
 from surge.materials.geworfenheit.stages import number_of_stages
 from surge.materials.geworfenheit.utilities import make_glissandi
 from surge.tools.bezzie.BezierCurve import BezierCurve
+from surge.tools.bezzie.DrunkInterpolater import DrunkInterpolater
 from surge.tools.bezzie.Path import Path
 import abjad
 
@@ -48,4 +50,15 @@ finger_height_envelopes = make_glissandi(
     finger_heights,
     durations,
     denominators
+)
+finger_height_envelopes.append(
+    Path(
+        BezierCurve(
+            (0, Fraction(1, 16)),
+            (stage_durations[2], Fraction(9, 13))
+        )
+    )
+)
+finger_height_envelopes[2].set_interpolater(
+    DrunkInterpolater(seed=hash('viola'), amp=2)
 )

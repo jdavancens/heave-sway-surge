@@ -23,5 +23,10 @@ for duration_pair in durations_stage_1:
         denominator_stage_1
     )
 
+
+# stage 1
 stage_durations.append(stage_1_total_duration)
+# stage 2 stage has equal total duration
 stage_durations.append(stage_1_total_duration)
+# stage 3
+stage_durations.append(abjad.Duration(35, 2))

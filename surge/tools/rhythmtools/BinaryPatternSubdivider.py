@@ -54,4 +54,4 @@ class BinaryPatternSubdivider(Subdivider):
         ratio = Subdivider._apply_sustain_mask(self, ratio)
         ratio = Subdivider._apply_silence_mask(self, ratio)
         ratio = Subdivider._rotate(self, ratio)
-        return abjad.mathtoolss.Ratio(ratio)
+        return abjad.mathtools.Ratio(ratio)

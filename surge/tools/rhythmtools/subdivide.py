@@ -3,6 +3,7 @@
 import abjad
 import surge
 
+
 def subdivide(music, n_cycle):
     cyclic_tuple = abjad.datastructuretools.CyclicTuple(n_cycle)
     cycle = surge.tools.datastructures.Cycle(cyclic_tuple)

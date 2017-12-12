@@ -14,7 +14,7 @@ from surge.tools.utilities.flatten_list import flatten_list
 
 def make_score(number_of_stages=None):
     segment_maker = SegmentMaker(
-        title="Surge::Dart::Drift",
+        title="Surge, Dart, Drift",
         segment_name="Geworfenheit",
         number_of_stages=number_of_stages,
         segment_number=1,
