@@ -39,6 +39,7 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
         staccato_patterns=None,
         vibrato_patterns=None,
         vowel_patterns=None,
+        show_rhythmic_notation=True
     ):
 
         EmbouchureHandler.__init__(
@@ -52,7 +53,8 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
             direction_patterns=direction_patterns,
             staccato_patterns=staccato_patterns,
             vibrato_patterns=vibrato_patterns,
-            vowel_patterns=vowel_patterns
+            vowel_patterns=vowel_patterns,
+            show_rhythmic_notation=show_rhythmic_notation
         )
 
         self._wah_envelopes = wah_envelopes
@@ -60,19 +62,24 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
     # PRIVATE METHODS
 
     def _attach_wah(self, wah, tie):
-        wah = int(self._quantize(wah, 3) * 3)
+        i = int(self._quantize(wah, 2) * 2)
         direction = abjad.OrdinalConstant('y', 1, 'Up')
         articulations = [
-            abjad.indicatortools.Articulation('stopped', direction),
-            abjad.indicatortools.Articulation('halfopen', direction),
-            abjad.indicatortools.Articulation('open'), direction
+            abjad.Articulation('stopped', direction),
+            abjad.Articulation('halfopen', direction),
+            abjad.Articulation('open', direction)
         ]
-        abjad.attach(articulations[wah], tie.head)
+        abjad.attach(articulations[i], tie.head)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             last_direction = None
+
+            if not self._show_rhythmic_notation:
+                for leaf in tie:
+                    self._hide_leaf(leaf)
+
             if tie.is_pitched:
                 # get current parameters
                 consonant = self._cycle_next(

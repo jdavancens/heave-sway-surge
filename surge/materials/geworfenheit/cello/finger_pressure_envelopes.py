@@ -6,5 +6,6 @@ import abjad
 
 finger_pressure_envelopes = (
     Path(BezierCurve((0, 1), (stage_durations[0], 1))),
-    Path(BezierCurve((0, 1), (stage_durations[1], 1)))
+    Path(BezierCurve((0, 1), (stage_durations[1], 1))),
+    Path(BezierCurve((0, 1), (stage_durations[2], 1)))
 )

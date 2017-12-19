@@ -49,12 +49,15 @@ for i in range(35):
     if non_rest_indices_stage_3.matches_index(i, 35):
         rest_indices_stage_3.append(i)
 
+# 1:1 (16th notes)
+# 01234567
+# *-**-*--
 prolater_stage_3 = TrivialProlater()
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,
-    rotation_cycle=range(9),
+    rotation_cycle=range(8),
     sustain_mask=abjad.rhythmmakertools.SustainMask.sustain_every(
-        indices=[1, 4, 6, 8],
+        indices=[1, 4, 6],
         period=10
     )
 )

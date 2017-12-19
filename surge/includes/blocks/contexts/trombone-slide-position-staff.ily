@@ -1,4 +1,3 @@
-
 \context {
     \Staff
     \name TromboneSlidePositionStaff
@@ -11,6 +10,7 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \accepts Voice
+
     \omit Accidental
     \omit Beam
     \omit Clef
@@ -37,11 +37,10 @@
             )
             (left
                 (attach-dir . 1)
-                (padding . 0)
+                (padding . -1)
                 (start-at-dot . #f)
             )
         )
-
     \override InstrumentName.padding = #1
     \override StaffSymbol.line-count = #15
     \override StaffSymbol.stencil = #(color-staff-lines

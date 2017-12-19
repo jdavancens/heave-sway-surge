@@ -37,4 +37,9 @@ class DrunkInterpolater(object):
         else:
             d = d_max
         dev = random.random() * d * self._amp
-        return y + (direction * dev)
+        y = y + (direction * dev)
+        if y < 0:
+            y = 0
+        if y > 1:
+            y = 1
+        return y

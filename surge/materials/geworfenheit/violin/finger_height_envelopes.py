@@ -54,8 +54,8 @@ finger_height_envelopes = make_glissandi(
 finger_height_envelopes.append(
     Path(
         BezierCurve(
-            (0, Fraction(1, 16)),
-            (stage_durations[2], Fraction(9, 13))
+            (0, Fraction(9, 13)),
+            (stage_durations[2], Fraction(1, 7))
         )
     )
 )

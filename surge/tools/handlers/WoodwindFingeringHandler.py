@@ -37,8 +37,14 @@ class WoodwindFingeringHandler(TablatureHandler):
         fingerings=None,
         trill_patterns=None,
         hand=None,
+        show_rhythmic_notation=True
     ):
-        TablatureHandler.__init__(self, music_maker, number_of_staff_lines=5)
+        TablatureHandler.__init__(
+            self,
+            music_maker=music_maker,
+            number_of_staff_lines=5,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._fingerings = fingerings
         self._trill_patterns = self._create_cycles(trill_patterns)
         self._hand = hand

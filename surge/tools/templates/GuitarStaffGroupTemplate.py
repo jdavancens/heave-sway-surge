@@ -4,11 +4,10 @@ import abjad
 
 
 class GuitarStaffGroupTemplate:
-    __slots__ = ('instrument', 'include_rhythm_staves')
+    __slots__ = ('instrument')
 
-    def __init__(self, instrument, include_rhythm_staves=False):
+    def __init__(self, instrument):
         self.instrument = instrument
-        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         fretting_rhythm_staff = abjad.scoretools.Staff(
@@ -46,15 +45,12 @@ class GuitarStaffGroupTemplate:
         abjad.override(fretting_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
-        if self.include_rhythm_staves:
-            staff_list = [
-                picking_rhythm_staff,
-                picking_staff,
-                fretting_staff,
-                fretting_rhythm_staff,
-            ]
-        else:
-            staff_list = [picking_staff, fretting_staff]
+        staff_list = [
+            picking_rhythm_staff,
+            picking_staff,
+            fretting_staff,
+            fretting_rhythm_staff,
+        ]
 
         name = self.instrument.instrument_name.title()
         if name[-1] == 'i':

@@ -22,8 +22,17 @@ class EnvelopeHandler(Handler):
 
     # INITIALIZER
 
-    def __init__(self, music_maker, number_of_staff_lines=15):
-        Handler.__init__(self, music_maker)
+    def __init__(
+        self,
+        music_maker,
+        number_of_staff_lines=15,
+        show_rhythmic_notation=True
+    ):
+        Handler.__init__(
+            self,
+            music_maker=music_maker,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._number_of_staff_lines = number_of_staff_lines
 
     # SPECIAL METHODS

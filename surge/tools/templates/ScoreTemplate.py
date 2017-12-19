@@ -16,7 +16,7 @@ class ScoreTemplate:
     '''
 
     # CLASS ATTRIBUTES
-    __slots__ = ('instrument_list', 'include_rhythm_staves')
+    __slots__ = ('instrument_list')
 
     # SPECIAL METHODS
     def __init__(
@@ -32,11 +32,9 @@ class ScoreTemplate:
             'viola',
             'cello',
             'contrabass',
-        ],
-        include_rhythm_staves=False
+        ]
     ):
         self.instrument_list = instrument_list
-        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         r'''Calls score template.
@@ -83,29 +81,25 @@ class ScoreTemplate:
         if instrument_name in instrument_categories['woodwinds']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.WoodwindStaffGroupTemplate(
-                instrument,
-                include_rhythm_staves=self.include_rhythm_staves
+                instrument
             )
             staff_group = template()
         elif instrument_name in instrument_categories['trombone']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.TromboneStaffGroupTemplate(
-                instrument,
-                include_rhythm_staves=self.include_rhythm_staves
+                instrument
             )
             staff_group = template()
         elif instrument_name in instrument_categories['plucked strings']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.GuitarStaffGroupTemplate(
-                instrument,
-                include_rhythm_staves=self.include_rhythm_staves
+                instrument
             )
             staff_group = template()
         elif instrument_name in instrument_categories['bowed strings']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.BowedStringStaffGroupTemplate(
-                instrument,
-                include_rhythm_staves=self.include_rhythm_staves
+                instrument
             )
             staff_group = template()
         else:

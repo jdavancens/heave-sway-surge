@@ -50,7 +50,7 @@ class TestMusicMakerEmpty(unittest.TestCase):
             stages=[0],
             time_signatures=time_signatures
         )
-        self.test_voice = Voice("s1 * 1 s1 * 1/2 s1 * 3/4")
+        self.test_voice = Voice("s1 s2 s2.")
 
     def test___call__(self):
         voice = self.music_maker(0)

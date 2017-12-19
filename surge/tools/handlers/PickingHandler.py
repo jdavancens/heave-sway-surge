@@ -51,9 +51,15 @@ class PickingHandler(EnvelopeHandler):
         snap_patterns=None,
         string_index_patterns=None,
         tremolo_patterns=None,
-        number_of_staff_lines=15
+        number_of_staff_lines=15,
+        show_rhythmic_notation=True
     ):
-        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
+        EnvelopeHandler.__init__(
+            self,
+            music_maker=music_maker,
+            number_of_staff_lines=number_of_staff_lines,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
 
         self._picking_force_envelopes = picking_force_envelopes
 

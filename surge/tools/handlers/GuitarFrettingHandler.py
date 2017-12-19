@@ -37,8 +37,14 @@ class GuitarFrettingHandler(TablatureHandler):
         fret_combination_patterns=None,
         hammer_patterns=None,
         glissando_patterns=None,
+        show_rhythmic_notation=True
     ):
-        TablatureHandler.__init__(self, music_maker, number_of_staff_lines=6)
+        TablatureHandler.__init__(
+            self,
+            music_maker,
+            number_of_staff_lines=6,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._fret_combinations = fret_combinations
         self._fret_combination_patterns = \
             self._create_cycles(fret_combination_patterns)

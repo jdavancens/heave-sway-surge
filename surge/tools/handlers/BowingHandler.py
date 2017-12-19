@@ -49,9 +49,15 @@ class BowingHandler(EnvelopeHandler):
         jete_patterns=None,
         sweep_patterns=None,
         direction_patterns=None,
-        number_of_staff_lines=31
+        number_of_staff_lines=31,
+        show_rhythmic_notation=True
     ):
-        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
+        EnvelopeHandler.__init__(
+            self,
+            music_maker=music_maker,
+            number_of_staff_lines=number_of_staff_lines,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._height_envelopes = height_envelopes
         if height_envelopes_release is None:
             self._height_envelopes_release = height_envelopes
@@ -114,6 +120,11 @@ class BowingHandler(EnvelopeHandler):
         previous_string_index = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
+            # hide leaves if necessary
+            if not self._show_rhythmic_notation:
+                for leaf in tie:
+                    self._hide_note(leaf)
+
             if tie.is_pitched:
 
                 tremolo = self._cycle_next(

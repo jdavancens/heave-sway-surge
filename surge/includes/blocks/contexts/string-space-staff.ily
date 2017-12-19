@@ -3,6 +3,9 @@
     \name StringSpaceStaff
     \alias Staff
     \type Engraver_group
+
+    \accepts Voice
+
     \consists Output_property_engraver
     \consists Font_size_engraver
     \consists Separating_line_group_engraver
@@ -10,8 +13,7 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \consists System_start_delimiter_engraver
-    \accepts Voice
-
+    
     \omit Accidental
     \omit Beam
     \omit Clef

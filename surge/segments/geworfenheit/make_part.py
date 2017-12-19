@@ -31,13 +31,14 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         staff_size=8,
         final_barline=True,
         part=True,
-        ruler=ruler,
+        ruler=ruler
     )
     music_handlers = [
         violin_handlers,
         viola_handlers,
         cello_handlers,
-        bass_handlers
+        bass_handlers,
+        trombone_handlers
     ]
     music_handlers = flatten_list(music_handlers)
 

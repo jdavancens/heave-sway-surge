@@ -11,11 +11,10 @@ import abjad
 
 
 class TromboneStaffGroupTemplate:
-    __slots__ = ('instrument', 'include_rhythm_staves')
+    __slots__ = ('instrument')
 
-    def __init__(self, instrument, include_rhythm_staves=False):
+    def __init__(self, instrument):
         self.instrument = instrument
-        self.include_rhythm_staves = include_rhythm_staves
 
     def __call__(self):
         name = self.instrument.instrument_name.title()
@@ -58,18 +57,20 @@ class TromboneStaffGroupTemplate:
         abjad.override(slide_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
-        if self.include_rhythm_staves:
-            staff_list = [
-                embouchure_rhythm_staff,
-                embouchure_staff,
-                slide_staff,
-                slide_rhythm_staff
-            ]
-        else:
-            staff_list = [embouchure_staff, slide_staff]
+        abjad.annotate(embouchure_rhythm_staff, 'instrument', name)
+        abjad.annotate(embouchure_staff, 'instrument', name)
+        abjad.annotate(slide_staff, 'instrument', name)
+        abjad.annotate(slide_rhythm_staff, 'instrument', name)
 
-        for staff in staff_list:
-            abjad.annotate(staff, 'instrument', name)
+        staff_list = [
+            embouchure_rhythm_staff,
+            abjad.StaffGroup(
+                [embouchure_staff, slide_staff],
+                context_name='StaffSubgroup',
+                name=name+ ' Staff Subgroup'
+            ),
+            slide_rhythm_staff
+        ]
 
         instrument_staff_group = abjad.StaffGroup(
             staff_list,

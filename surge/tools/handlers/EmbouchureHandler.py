@@ -55,9 +55,15 @@ class EmbouchureHandler(EnvelopeHandler):
         staccato_patterns=None,
         vibrato_patterns=None,
         vowel_patterns=None,
-        number_of_staff_lines=15
+        number_of_staff_lines=15,
+        show_rhythmic_notation=True
     ):
-        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
+        EnvelopeHandler.__init__(
+            self,
+            music_maker=music_maker,
+            number_of_staff_lines=number_of_staff_lines,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._air_pressure_envelopes = air_pressure_envelopes
         self._air_pressure_envelopes_release = air_pressure_envelopes_release
         self._lip_pressure_envelopes = lip_pressure_envelopes
@@ -88,9 +94,9 @@ class EmbouchureHandler(EnvelopeHandler):
     def _attach_phoneme(self, consonant, vowel, tie):
         consonant = '' if consonant is None else consonant
         vowel = '' if vowel is None else vowel
-        composite = consonant + vowel
-        if composite != '':
-            markup = self._make_text_markup(consonant + vowel)
+        phoneme = consonant + vowel
+        if phoneme != '':
+            markup = self._make_text_markup(phoneme)
             abjad.attach(markup, tie.head)
 
     def _attach_pressure_notehead(self, tie, pressure, size=0.5, outline=True):
@@ -135,32 +141,34 @@ class EmbouchureHandler(EnvelopeHandler):
                 last_direction = None
 
     def _handle_voice(self, voice, current_stage):
+        if (self._air_pressure_envelopes is None or
+                self._air_pressure_envelopes[current_stage] is None):
+            return
         last_pressure = None
+        air_pressure_envelope = self._air_pressure_envelopes[current_stage]
+        if (self._air_pressure_envelopes_release is None or
+                self._air_pressure_envelopes_release[current_stage] is None):
+            air_pressure_envelope_release = air_pressure_envelope
+        lip_pressure_envelope = self._lip_pressure_envelopes[current_stage]
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
             if tie.is_pitched:
-                air_pressure_start = \
-                    self._air_pressure_envelopes[current_stage](offset_start)
-                if self._air_pressure_envelopes_release is None:
-                    air_pressure_end = \
-                        self._air_pressure_envelopes[current_stage](offset_end)
-                else:
-                    air_pressure_end = \
-                        self._air_pressure_envelopes_release[current_stage](
-                            offset_start
-                        )
+                # calculate positions
+                air_pressure_start = air_pressure_envelope(offset_start)
+                air_pressure_end = air_pressure_envelope_release(offset_end)
                 self._set_y_offset(tie.head, air_pressure_start)
-
-                lip_pressure = \
-                    self._lip_pressure_envelopes[current_stage](offset_start)
+                lip_pressure = lip_pressure_envelope(offset_start)
                 lip_pressure = self._quantize(lip_pressure, 4)
 
+                # note head
                 self._attach_pressure_notehead(tie, lip_pressure)
 
+                # determine if line
                 staccato = self._cycle_next(
                     self._staccato_patterns,
                     current_stage
                 )
                 if not staccato:
+                    # determine line style
                     vibrato = self._cycle_next(
                         self._vibrato_patterns,
                         current_stage
@@ -174,17 +182,17 @@ class EmbouchureHandler(EnvelopeHandler):
                             lip_pressure
                         ]
                     )
+
+                    # create line anchors
                     self._attach_glissando(tie.head, style=style)
                     self._hidden_grace_after(tie.tail)
-                    grace_container = abjad.inspect(
-                        tie.tail).get_grace_container()
-                    if (grace_container is not None and
-                            len(grace_container) > 0):
-                        self._set_y_offset(
-                            grace_container[0],
-                            air_pressure_end
-                        )
 
+                    # set y offsets
+                    self._set_y_offset(tie.head, air_pressure_start)
+                    grace = abjad.inspect(tie.tail).get_after_grace_container()[0]
+                    self._set_y_offset(grace, air_pressure_end)
+
+                # hide tied noes
                 if not tie.is_trivial:
                     for note in tie[1:]:
                         self._add_gliss_skip(note)

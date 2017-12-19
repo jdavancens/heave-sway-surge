@@ -4,8 +4,6 @@ Created on Nov 20, 2015
 
 @author: josephdavancens
 '''
-
-
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
 import abjad
 import copy
@@ -42,9 +40,15 @@ class StringFingeringHandler(EnvelopeHandler):
         pressure_envelopes=None,
         tremolo_patterns=None,
         vibrato_patterns=None,
-        number_of_staff_lines=31
+        number_of_staff_lines=31,
+        show_rhythmic_notation=True,
     ):
-        EnvelopeHandler.__init__(self, music_maker, number_of_staff_lines)
+        EnvelopeHandler.__init__(
+            self,
+            music_maker=music_maker,
+            number_of_staff_lines=number_of_staff_lines,
+            show_rhythmic_notation=show_rhythmic_notation
+        )
         self._height_envelopes = height_envelopes
         if height_envelopes_release is None:
             self._height_envelopes_release = height_envelopes
@@ -97,14 +101,12 @@ class StringFingeringHandler(EnvelopeHandler):
                 else:
                     style = None
                 self._attach_glissando(tie.head, style=style)
+
                 self._hidden_grace_after(tie.tail)
-                grace = abjad.inspect(
-                    tie.tail
-                ).get_after_grace_container()[0]
+                grace = abjad.inspect(tie.tail).get_after_grace_container()[0]
 
                 self._set_y_offset(tie.head, height_start)
                 self._set_y_offset(grace, height_end)
-
                 self._attach_pressure_notehead(pressure, tie)
 
                 if not tie.is_trivial:

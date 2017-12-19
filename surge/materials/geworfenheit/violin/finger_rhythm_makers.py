@@ -40,6 +40,9 @@ for i in range(35):
     if non_rest_indices_stage_3.matches_index(i, 35):
         rest_indices_stage_3.append(i)
 
+# 10:8
+# 0123456789
+# *--*-*----
 prolater_stage_3 = DifferenceProlater([3])
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,

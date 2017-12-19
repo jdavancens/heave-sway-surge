@@ -20,12 +20,14 @@ class Handler(object):
 
     __slots__ = (
         '_music_maker',
+        '_show_rhythmic_notation'
     )
 
     # INITIALIZER
 
-    def __init__(self, music_maker):
+    def __init__(self, music_maker, show_rhythmic_notation=False):
         self._music_maker = music_maker
+        self._show_rhythmic_notation = show_rhythmic_notation
 
     # PRIVATE METHODS
 
@@ -149,6 +151,15 @@ class Handler(object):
                 note_head.tweak.stencil = abjad.schemetools.Scheme(
                     'point-stencil'
                 )
+
+    def _hide_leaf(self, leaf):
+        abjad.override(leaf).dots.transparent = True
+        abjad.override(leaf).note_head.transparent = True
+        abjad.override(leaf).stem.transparent = True
+        abjad.override(leaf).beam.transparent = True
+        abjad.override(leaf).tie.transparent = True
+        abjad.override(leaf).rest.transparent = True
+
 
     def _iterate_logical_ties(self, voice):
         for tie in abjad.iterate(voice).by_logical_tie():

@@ -24,6 +24,7 @@ def make_score(number_of_stages=None):
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
         instrument_list=[
+            'trombone',
             'violin',
             'viola',
             'cello',
@@ -38,7 +39,8 @@ def make_score(number_of_stages=None):
         violin_handlers,
         viola_handlers,
         cello_handlers,
-        bass_handlers
+        bass_handlers,
+        trombone_handlers
     ]
     music_handlers = flatten_list(music_handlers)
     segment_maker.add_music_handlers(music_handlers)

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+import surge.materials.geworfenheit.trombone
 import surge.materials.geworfenheit.bass
 import surge.materials.geworfenheit.cello
 import surge.materials.geworfenheit.viola
 import surge.materials.geworfenheit.violin
+
 
 from .patterns import bow_tremolo_patterns, jete_patterns, \
     string_tremolo_patterns, string_vibrato_patterns
