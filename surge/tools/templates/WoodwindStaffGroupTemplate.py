@@ -4,8 +4,9 @@
         embouchure rhythm staff
         embouchure staff
         left hand rhythm staff
-        left hand staff
-        right hand staff
+        staff subgroup
+            left hand staff
+            right hand staff
         right hand rhythm staff
 '''
 
@@ -84,19 +85,26 @@ class WoodwindStaffGroupTemplate():
         abjad.override(rh_fingering_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
+        abjad.annotate(embouchure_rhythm_staff, 'instrument', name)
+        abjad.annotate(embouchure_staff, 'instrument', name)
+        abjad.annotate(lh_fingering_rhythm_staff, 'instrument', name)
+        abjad.annotate(lh_fingering_staff, 'instrument', name)
+        abjad.annotate(rh_fingering_staff, 'instrument', name)
+        abjad.annotate(rh_fingering_rhythm_staff, 'instrument', name)
+
         staff_list = [
             embouchure_rhythm_staff,
             embouchure_staff,
             lh_fingering_rhythm_staff,
-            lh_fingering_staff,
-            rh_fingering_staff,
+            abjad.StaffGroup(
+                [lh_fingering_staff, rh_fingering_staff],
+                context_name='StaffSubgroup',
+                name=name + ' Staff Subgroup'
+            ),
             rh_fingering_rhythm_staff
         ]
 
-        for staff in staff_list:
-            abjad.annotate(staff, 'instrument', name)
-
-        instrument_staff_group = abjad.scoretools.StaffGroup(
+        instrument_staff_group = abjad.StaffGroup(
             staff_list,
             context_name='WoodwindInstrumentStaffGroup',
             name=name + ' Staff Group'
@@ -105,4 +113,5 @@ class WoodwindStaffGroupTemplate():
             abjad.Markup(name)
         abjad.setting(instrument_staff_group).instrument_name = \
             abjad.Markup(short_name)
+
         return instrument_staff_group

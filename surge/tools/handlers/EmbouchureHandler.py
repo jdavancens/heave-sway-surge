@@ -81,10 +81,11 @@ class EmbouchureHandler(EnvelopeHandler):
     def _attach_direction(self, direction, last_direction, tie):
         if direction is None:
             return
+        ordinal = abjad.OrdinalConstant('y', 1, 'Down')
         if direction == 'in':
-            articulation = abjad.Articulation('rtoe', direction=Up)
+            articulation = abjad.Articulation('rtoe', Down)
         elif direction == 'out':
-            articulation = abjad.Articulation('ltoe', direction=Up)
+            articulation = abjad.Articulation('ltoe', Down)
         abjad.attach(articulation, tie.head)
 
     def _attach_fluttertongue(self, fluttertongue, tie):
@@ -96,7 +97,7 @@ class EmbouchureHandler(EnvelopeHandler):
         vowel = '' if vowel is None else vowel
         phoneme = consonant + vowel
         if phoneme != '':
-            markup = self._make_text_markup(phoneme)
+            markup = self._make_text_markup(phoneme, enclosure='box')
             abjad.attach(markup, tie.head)
 
     def _attach_pressure_notehead(self, tie, pressure, size=0.5, outline=True):
@@ -112,6 +113,11 @@ class EmbouchureHandler(EnvelopeHandler):
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             last_direction = None
+
+            if not self._show_rhythmic_notation:
+                for leaf in tie:
+                    self._hide_leaf(leaf)
+
             if tie.is_pitched:
                 # get current parameters
                 consonant = self._cycle_next(
@@ -122,10 +128,10 @@ class EmbouchureHandler(EnvelopeHandler):
                     self._direction_patterns,
                     current_stage
                 )
-                fluttertongue = self._cycle_next(
-                    self._fluttertongue_patterns,
-                    current_stage
-                )
+                # fluttertongue = self._cycle_next(
+                #     self._fluttertongue_patterns,
+                #     current_stage
+                # )
                 vowel = self._cycle_next(
                     self._vowel_patterns,
                     current_stage
@@ -133,7 +139,7 @@ class EmbouchureHandler(EnvelopeHandler):
 
                 # attach indicators
                 self._attach_direction(direction, last_direction, tie)
-                self._attach_fluttertongue(fluttertongue, tie)
+                # self._attach_fluttertongue(fluttertongue, tie)
                 self._attach_phoneme(consonant, vowel, tie)
 
                 last_direction = direction
@@ -173,7 +179,17 @@ class EmbouchureHandler(EnvelopeHandler):
                         self._vibrato_patterns,
                         current_stage
                     )
-                    style = 'zigzag' if vibrato else None
+                    fluttertongue = self._cycle_next(
+                        self._fluttertongue_patterns,
+                        current_stage
+                    )
+                    if vibrato:
+                        style ='zigzag'
+                    elif fluttertongue:
+                        style = 'dashed'
+                    else:
+                        style = None
+
                     color = abjad.schemetools.Scheme(
                         [
                             'rgb-color',

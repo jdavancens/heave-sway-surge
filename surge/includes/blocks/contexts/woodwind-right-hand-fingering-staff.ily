@@ -42,7 +42,7 @@
     \override InstrumentName.padding = #1
     \override NoteHead.stem-attachment = #'(0 . 0)
     \override StaffSymbol.line-count = #4
-    \override StaffSymbol.staff-space = 3
+    \override StaffSymbol.staff-space = 2
     \override StaffSymbol.stencil = #(color-staff-lines
         (x11-color 'grey67)
         (x11-color 'grey67)

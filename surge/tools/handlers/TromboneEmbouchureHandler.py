@@ -61,15 +61,18 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
 
     # PRIVATE METHODS
 
+
+
     def _attach_wah(self, wah, tie):
-        i = int(self._quantize(wah, 2) * 2)
-        direction = abjad.OrdinalConstant('y', 1, 'Up')
-        articulations = [
-            abjad.Articulation('stopped', direction),
-            abjad.Articulation('halfopen', direction),
-            abjad.Articulation('open', direction)
-        ]
-        abjad.attach(articulations[i], tie.head)
+        # TODO convert to spanner
+        # i = int(self._quantize(wah, 2) * 2)
+        # articulations = [
+        #     abjad.Articulation('stopped', Down),
+        #     abjad.Articulation('halfopen', Down),
+        #     abjad.Articulation('open', Down)
+        # ]
+        # abjad.attach(articulations[i], tie.head)
+        pass
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         for tie, offset_start, offset_end in \

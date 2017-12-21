@@ -30,7 +30,7 @@ rhythm_maker_stage_2 = abjad.rhythmmakertools.TaleaRhythmMaker(
 # stage 3
 
 non_rest_indices_stage_3 = abjad.Pattern(
-    indices=[1, 8, 13, 18, 29],
+    indices=[2, 5, 16, 26],
     period=35,
     inverted=True
 )
@@ -39,16 +39,16 @@ for i in range(35):
     if non_rest_indices_stage_3.matches_index(i, 35):
         rest_indices_stage_3.append(i)
 
-# 1:1 (16th notes)
-# 01234567
-# *--*----
+# 9:8
+# 012345678
+# *--*-*---
 prolater_stage_3 = TrivialProlater()
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,
-    rotation_cycle=range(8),
+    rotation_cycle=range(9),
     sustain_mask=abjad.rhythmmakertools.SustainMask.sustain_every(
-        indices=[1, 2, 4, 5, 6, 7],
-        period=10
+        indices=[1, 2, 4, 5, 6, 7, 8],
+        period=9
     )
 )
 
@@ -66,7 +66,7 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
 
 # collect
 
-finger_rhythm_makers = [
+rhythm_makers_fingering = [
     rhythm_maker_stage_1,
     rhythm_maker_stage_2,
     rhythm_maker_stage_3

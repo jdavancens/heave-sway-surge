@@ -2,7 +2,7 @@
 from .durations import denominators, durations
 from surge.materials.geworfenheit.time_signatures import time_signatures
 from surge.tools.makers.RatioMaker import RatioMaker
-from surge.tools.rhythmtools.DifferenceProlater import DifferenceProlater
+from surge.tools.rhythmtools.TrivialProlater import TrivialProlater
 from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
 from surge.tools.utilities.flatten_list import flatten_list
 import abjad
@@ -30,7 +30,7 @@ rhythm_maker_stage_2 = abjad.rhythmmakertools.TaleaRhythmMaker(
 # stage 3
 
 non_rest_indices_stage_3 = abjad.Pattern(
-    indices=[3, 7, 10, 14, 21, 33],
+    indices=[1, 8, 13, 18, 29],
     period=35,
     inverted=True
 )
@@ -39,16 +39,16 @@ for i in range(35):
     if non_rest_indices_stage_3.matches_index(i, 35):
         rest_indices_stage_3.append(i)
 
-# 7:8 (16th notes)
-# 0123456
-# *--*---
-prolater_stage_3 = DifferenceProlater([0])
+# 1:1 (16th notes)
+# 01234567
+# *--*----
+prolater_stage_3 = TrivialProlater()
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,
-    rotation_cycle=range(7),
+    rotation_cycle=range(8),
     sustain_mask=abjad.rhythmmakertools.SustainMask.sustain_every(
-        indices=[1, 2, 4, 5, 6],
-        period=7
+        indices=[1, 2, 4, 5, 6, 7],
+        period=10
     )
 )
 
@@ -66,7 +66,7 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
 
 # collect
 
-finger_rhythm_makers = [
+rhythm_makers_fingering = [
     rhythm_maker_stage_1,
     rhythm_maker_stage_2,
     rhythm_maker_stage_3

@@ -153,9 +153,7 @@ class GuitarFrettingHandler(TablatureHandler):
 
             # make glissando anchor into chord
             try:
-                anchor = abjad.inspect(
-                    logical_tie[-1]
-                ).get_after_grace_container()
+                anchor = abjad.inspect(logical_tie[-1]).get_after_grace_container()
                 anchor[0] = abjad.Chord(logical_tie[0])
             except Exception:
                 pass

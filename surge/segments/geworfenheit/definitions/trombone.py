@@ -6,8 +6,8 @@ from abjad.tools.instrumenttools import TenorTrombone
 # import materials
 from surge.materials.geworfenheit import stages, time_signatures
 from surge.materials.geworfenheit.trombone import air_pressure_envelopes, \
-    embouchure_rhythm_makers, fluttertongue_patterns, lip_pressure_envelopes, \
-    slide_position_envelopes, slide_rhythm_makers, vowel_patterns, wah_envelopes
+    rhythm_makers_embouchure, fluttertongue_patterns, lip_pressure_envelopes, \
+    slide_position_envelopes, rhythm_makers_slide, vowel_patterns, wah_envelopes
 
 # import tools
 from surge.tools.handlers.TromboneEmbouchureHandler import \
@@ -26,7 +26,7 @@ embouchure_music_maker = MusicMaker(
     instrument=trombone,
     name='Embouchure',
     time_signatures=time_signatures,
-    rhythm_makers=embouchure_rhythm_makers
+    rhythm_makers=rhythm_makers_embouchure
 )
 
 slide_position_music_maker = MusicMaker(
@@ -34,7 +34,7 @@ slide_position_music_maker = MusicMaker(
     instrument=trombone,
     name='Slide Position',
     time_signatures=time_signatures,
-    rhythm_makers=slide_rhythm_makers
+    rhythm_makers=rhythm_makers_slide
 )
 
 # ==============================================================================

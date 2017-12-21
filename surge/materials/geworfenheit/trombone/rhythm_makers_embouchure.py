@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import abjad
 
-embouchure_rhythm_makers = [None, None]
+rhythm_makers_embouchure = [None, None]
 
 # stage 3
 
@@ -25,4 +25,4 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.NoteRhythmMaker(
     )
 )
 
-embouchure_rhythm_makers.append(rhythm_maker_stage_3)
+rhythm_makers_embouchure.append(rhythm_maker_stage_3)

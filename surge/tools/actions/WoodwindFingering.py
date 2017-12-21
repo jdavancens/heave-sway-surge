@@ -89,8 +89,8 @@ class WoodwindFingering(object):
 
     def __repr__(self):
         s = ""
+        space = " "
         if self._hand == "left":
-            space = " "
             thumb = str(self._keys['thumb'])
             index = str(self._keys['index'])
             middle = str(self._keys['middle'])

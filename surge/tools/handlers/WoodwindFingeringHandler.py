@@ -55,6 +55,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         voice = self._music_maker(current_stage)
         rhythm_voice = self._music_maker(current_stage)
         self._handle_voice(voice, current_stage)
+        self._handle_rhythm_voice(rhythm_voice, current_stage)
         lifeline_voice = copy.deepcopy(voice)
         self._handle_lifeline_voice(lifeline_voice, current_stage)
         self._name_voices(voice, rhythm_voice, lifeline_voice)
@@ -68,6 +69,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         fingering,
         previous_fingering
     ):
+        # create 'chords' at particular staff positions
         if self._hand == 'left':
             staff_positions = [4, 7, 11, 14, 17]
             finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
@@ -104,47 +106,69 @@ class WoodwindFingeringHandler(TablatureHandler):
                     note_head.tweak.stencil = \
                         abjad.schemetools.Scheme('point-stencil')
 
+    def _handle_rhythm_voice(self, voice, current_stage):
+        for logical_tie in abjad.iterate(voice).by_logical_tie():
+            if not self._show_rhythmic_notation:
+                for leaf in logical_tie:
+                    self._hide_leaf(leaf)
+
     def _handle_lifeline_voice(self, voice, current_stage):
+        # hide note heads if no fingerings
         if self._fingerings is None:
             for note in abjad.iterate(voice).by_leaf():
                 self._hide_note_head(note)
             return
+        # loop through logical ties
         i = 0
         for logical_tie in abjad.iterate(voice).by_logical_tie(pitched=True):
+            # hide all note heads
             for chord in logical_tie:
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = \
                         abjad.schemetools.Scheme('point-stencil')
+
+            # create glissando map (note index -> note index)
             fingering = self._fingerings[current_stage][i]
             glissando_map = self._make_glissando_map(
                 fingering,
                 voice.context_name
             )
-            trill = self._cycle_next(self._trill_patterns, current_stage)
+
+            # attach glissando map and glissando command
             if glissando_map is not None:
                 abjad.attach(glissando_map, logical_tie.head)
+
+                #determine line style
+                trill = self._cycle_next(self._trill_patterns, current_stage)
                 if trill:
                     style = 'dashed'
                 else:
                     style = None
+
+                # attach lifelines
                 self._attach_glissando(
                     logical_tie.head,
-                    thickness=4,
+                    thickness=3,
                     style=style
                 )
+
+                # add gliss skip to non-first leaves
                 if not logical_tie.is_trivial:
                     for leaf in logical_tie[1:]:
                         self._add_gliss_skip(leaf)
+
+            # make glissando anchor into chord
             try:
-                anchor = abjad.inspect(
-                    logical_tie[-1]
-                ).get_grace_container()
-                anchor[0] = abjad.scoretools.Chord(logical_tie[0])
+                anchor = abjad.inspect(logical_tie[-1]).get_after_grace_container()
+                anchor[0] = abjad.Chord(logical_tie[0])
             except Exception:
                 pass
             i += 1
+
+        # remove markups
         abjad.detach(abjad.Markup, voice)
-        # get groups of non-rest leaves attach, gliss anchor to last
+
+        # get groups of non-rest leaves, attach final gliss anchor to last
         for note_group in self._get_consecutive_note_groups(voice):
             last = note_group[-1]
             self._hidden_grace_after(
@@ -153,6 +177,7 @@ class WoodwindFingeringHandler(TablatureHandler):
             )
 
     def _handle_voice(self, voice, current_stage):
+        # hide all noteheads if no fingerings
         if self._fingerings is None:
             for note in abjad.iterate(voice).by_leaf():
                 self._hide_note_head(note)
@@ -262,26 +287,29 @@ class WoodwindFingeringHandler(TablatureHandler):
         (b)
         (down, b)
         (half, b)
+
+        key_combination is a combination of keys pressed by a single finger
         '''
+        circle_size = 0.5
         markups = []
         if key_combination is None:
-            white_circle = self._make_circle_markup(1, grey=1)
-            circle_outline = self._make_circle_outline_markup(1)
+            white_circle = self._make_circle_markup(circle_size, grey=1)
+            circle_outline = self._make_circle_outline_markup(circle_size)
             circle = abjad.Markup.combine([white_circle, circle_outline])
             markups.append(circle)
         else:
             for key in key_combination:
                 if key.lower() in ('t', 'thumb', 'down'):
-                    black_circle = self._make_circle_markup(1)
-                    circle_outline = self._make_circle_outline_markup(1)
+                    black_circle = self._make_circle_markup(circle_size, grey=0)
+                    circle_outline = self._make_circle_outline_markup(circle_size)
                     circle = abjad.Markup.combine(
                         [black_circle, circle_outline]
                     )
                     markups.append(circle)
                 elif key.lower() in ('half',):
-                    white_circle = self._make_circle_markup(1, grey=1)
-                    circle_outline = self._make_circle_outline_markup(1)
-                    half_circle = self._make_half_circle_markup(1)
+                    white_circle = self._make_circle_markup(circle_size, grey=1)
+                    circle_outline = self._make_circle_outline_markup(circle_size)
+                    half_circle = self._make_half_circle_markup(circle_size)
                     circle = abjad.Markup.combine(
                         [white_circle, circle_outline]
                     )
@@ -290,6 +318,7 @@ class WoodwindFingeringHandler(TablatureHandler):
                 else:
                     markup = self._make_key_name_markup(key)
                     markups.append(markup)
+        # concatenate multiple markups
         if len(markups) > 1:
             markups.reverse()
             markups_new = []

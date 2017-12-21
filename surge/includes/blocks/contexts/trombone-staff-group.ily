@@ -12,7 +12,7 @@
     \consists Vertical_align_engraver
     \consists Instrument_name_engraver
 
-    %{ \omit SpanBar %}
+    \omit SpanBar
 
     \remove System_start_delimiter_engraver
 

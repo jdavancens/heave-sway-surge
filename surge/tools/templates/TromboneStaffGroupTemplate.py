@@ -2,8 +2,9 @@
 '''
     trombone instrument staff group
         embouchure rhythm staff
-        embouchure staff
-        slide staff
+        staff subgroup
+            embouchure staff
+            slide staff
         slide rhythm staff
 '''
 

@@ -1,20 +1,18 @@
 # -*- coding: utf-8 -*-
 from surge.materials.geworfenheit.time_signatures import time_signatures
 from surge.tools.makers.RatioMaker import RatioMaker
-from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
 from surge.tools.rhythmtools.DifferenceProlater import DifferenceProlater
+from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
 import abjad
 import copy
 import random
 
-# stage 1
-
 ratios_stage_1 = [
-    (1,), (1,), (2, 2, 3), (3, 4), (1,), (1, 3, 1, 2), (1, 3, 3), (4, 3),
-    (4, 3), (1,), (1,), (4, 3), (1, 5, 1), (1,), (1,), (4, 1, 2), (4, 3), (1,),
-    (2, 4, 1), (4, 1, 1, 1), (1, 2, 1, 3), (1, 1, 2, 1, 2), (1,),
-    (1, 2, 1, 2, 1), (3, 2, 2), (1, 2, 2, 1, 1), (1, 4, 2), (2, 2, 3),
-    (1, 2, 2, 2), (2, 1, 4), (1, 1, 1, 4), (1,), (4, 3), (1,), (1,)
+    (1,), (1,), (2, 6, 1, 1), (1, 1, 3), (1,), (1, 2, 2), (2, 1, 2), (3, 2),
+    (1, 4), (4, 1), (1,), (3, 2), (1, 1, 1, 2), (1, 3, 1), (1, 1, 2, 1),
+    (2, 1, 2), (1, 2, 2), (1,), (2, 3), (1, 3, 1), (2, 1, 2), (1, 3, 1), (1,),
+    (1, 2, 1, 1), (2, 2, 1), (1, 4), (1, 3, 1), (1, 1, 2, 1), (2, 1, 1, 1),
+    (1, 2, 2), (1,), (1,)
 ]
 
 rhythm_maker_stage_1 = abjad.rhythmmakertools.TupletRhythmMaker(
@@ -24,10 +22,8 @@ rhythm_maker_stage_1 = abjad.rhythmmakertools.TupletRhythmMaker(
     )
 )
 
-# stage 2
-
 ratios_stage_2 = copy.deepcopy(ratios_stage_1)
-random.seed(hash('cello'))
+random.seed(hash('violin'))
 random.shuffle(ratios_stage_2)
 
 rhythm_maker_stage_2 = abjad.rhythmmakertools.TupletRhythmMaker(
@@ -37,10 +33,8 @@ rhythm_maker_stage_2 = abjad.rhythmmakertools.TupletRhythmMaker(
     )
 )
 
-# stage 3
-
 non_rest_indices_stage_3 = abjad.Pattern(
-    indices=[2, 5, 16, 26],
+    indices=[0, 4, 6, 9, 12, 22],
     period=35,
     inverted=True
 )
@@ -49,16 +43,16 @@ for i in range(35):
     if non_rest_indices_stage_3.matches_index(i, 35):
         rest_indices_stage_3.append(i)
 
-# 9:8 (16th notes)
-# 012345678
-# *--***-*-
-prolater_stage_3 = DifferenceProlater([2])
+# 10:8
+# 0123456789
+# *-**-*-*--
+prolater_stage_3 = DifferenceProlater([3])
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,
-    rotation_cycle=range(9),
+    rotation_cycle=range(10),
     sustain_mask=abjad.rhythmmakertools.SustainMask.sustain_every(
-        indices=[1, 2, 6, 8],
-        period=9
+        indices=[1, 4, 6, 8, 9],
+        period=10
     )
 )
 
@@ -74,9 +68,7 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
     tuplet_ratios=ratios_stage_3
 )
 
-# collect
-
-bow_rhythm_makers = [
+rhythm_makers_bowing = [
     rhythm_maker_stage_1,
     rhythm_maker_stage_2,
     rhythm_maker_stage_3

@@ -156,6 +156,7 @@ class Handler(object):
         abjad.override(leaf).dots.transparent = True
         abjad.override(leaf).note_head.transparent = True
         abjad.override(leaf).stem.transparent = True
+        abjad.override(leaf).stem_tremolo.transparent = True
         abjad.override(leaf).beam.transparent = True
         abjad.override(leaf).tie.transparent = True
         abjad.override(leaf).rest.transparent = True
@@ -171,7 +172,6 @@ class Handler(object):
             yield tie, offset_start, offset_end
 
     def _make_circle_markup(self, size, grey=0):
-        grey = 1 - grey
         arc = abjad.markuptools.PostscriptOperator('arc', 0, 0, size, 0, 360)
         postscript = abjad.markuptools.Postscript([arc])
         postscript = postscript.closepath()
@@ -190,7 +190,6 @@ class Handler(object):
         return abjad.Markup(circle_outline)
 
     def _make_half_circle_markup(self, size, grey=0):
-        grey = 1 - grey
         arc = abjad.markuptools.PostscriptOperator(
             'arc',
             0,

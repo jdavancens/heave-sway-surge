@@ -11,8 +11,8 @@ from abjad.tools.instrumenttools.Viola import Viola
 from surge.materials.geworfenheit import bow_tremolo_patterns, jete_patterns, \
     stages, string_tremolo_patterns, string_vibrato_patterns, time_signatures
 from surge.materials.geworfenheit.viola import bow_height_envelopes, \
-    bow_rhythm_makers, bow_pressure_envelopes, finger_height_envelopes, \
-    finger_pressure_envelopes, finger_rhythm_makers, string_index_patterns
+    rhythm_makers_bowing, bow_pressure_envelopes, finger_height_envelopes, \
+    finger_pressure_envelopes, rhythm_makers_fingering, string_index_patterns
 
 # import tools
 from surge.tools.handlers.BowingHandler import BowingHandler
@@ -30,14 +30,14 @@ bowing_music_maker = MusicMaker(
     instrument=viola,
     name='Bowing',
     time_signatures=time_signatures,
-    rhythm_makers=bow_rhythm_makers
+    rhythm_makers=rhythm_makers_bowing
 )
 fingering_music_maker = MusicMaker(
     stages=stages,
     instrument=viola,
     name='Fingering',
     time_signatures=time_signatures,
-    rhythm_makers=finger_rhythm_makers
+    rhythm_makers=rhythm_makers_fingering
 )
 
 # ==============================================================================

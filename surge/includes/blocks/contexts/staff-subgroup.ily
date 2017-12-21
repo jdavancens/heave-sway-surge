@@ -15,9 +15,9 @@
     \consists Output_property_engraver
     \consists Separating_line_group_engraver
     \consists Vertical_align_engraver
-    %{ \consists Span_bar_engraver %}
 
-    %{ \override SpanBar.Y-extent = #'(-2 . -2) %}
+    \consists Span_bar_engraver
+    \consists Span_bar_stub_engraver
 
     \override SystemStartBracket.padding = #1
     \override StaffGrouper #'staff-staff-spacing =
