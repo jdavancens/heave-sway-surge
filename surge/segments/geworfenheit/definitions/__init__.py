@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from .oboe import oboe_handlers
-from .trombone import trombone_handlers
-from .bass import bass_handlers
-from .cello import cello_handlers
-from .viola import viola_handlers
-from .violin import violin_handlers
+from .oboe import handlers as oboe_handlers
+from .clarinet import handlers as clarinet_handlers
+from .saxophone import handlers as saxophone_handlers
+from .trombone import handlers as trombone_handlers
+from .bass import handlers as bass_handlers
+from .cello import handlers as cello_handlers
+from .viola import handlers as viola_handlers
+from .violin import handlers as violin_handlers

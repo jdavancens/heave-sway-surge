@@ -7,7 +7,7 @@ import abjad
 fingerings_left_hand = [None, None]
 fingerings_right_hand = [None, None]
 
-instrument = abjad.instrumenttools.Oboe()
+instrument = abjad.instrumenttools.AltoSaxophone()
 
 lh_a = WoodwindFingering(
     instrument=instrument,

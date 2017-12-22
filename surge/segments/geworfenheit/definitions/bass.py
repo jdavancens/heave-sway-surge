@@ -19,7 +19,7 @@ from surge.tools.handlers.BowingHandler import BowingHandler
 from surge.tools.handlers.StringFingeringHandler import StringFingeringHandler
 from surge.tools.makers.MusicMaker import MusicMaker
 
-bass = Contrabass()
+instrument = Contrabass()
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -27,7 +27,7 @@ bass = Contrabass()
 
 bowing_music_maker = MusicMaker(
     stages=stages,
-    instrument=bass,
+    instrument=instrument,
     name='Bowing',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_bowing
@@ -35,7 +35,7 @@ bowing_music_maker = MusicMaker(
 
 fingering_music_maker = MusicMaker(
     stages=stages,
-    instrument=bass,
+    instrument=instrument,
     name='Fingering',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_fingering
@@ -64,7 +64,7 @@ fingering_music_handler = StringFingeringHandler(
     show_rhythmic_notation=False
 )
 
-bass_handlers = [
+handlers = [
     bowing_music_handler,
     fingering_music_handler
 ]

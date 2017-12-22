@@ -92,11 +92,11 @@ class EmbouchureHandler(EnvelopeHandler):
         if fluttertongue:
             self._add_stem_tremolo(tie)
 
-    def _attach_phoneme(self, consonant, vowel, tie):
+    def _attach_phoneme(self, consonant, vowel, tie, last_vowel):
         consonant = '' if consonant is None else consonant
         vowel = '' if vowel is None else vowel
         phoneme = consonant + vowel
-        if phoneme != '':
+        if phoneme != '' and phoneme != last_vowel:
             markup = self._make_text_markup(phoneme, enclosure='box')
             abjad.attach(markup, tie.head)
 
@@ -110,6 +110,7 @@ class EmbouchureHandler(EnvelopeHandler):
             self._markup_to_notehead(tie.head, fill)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        last_vowel = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             last_direction = None
@@ -136,11 +137,13 @@ class EmbouchureHandler(EnvelopeHandler):
 
                 # attach indicators
                 self._attach_direction(direction, last_direction, tie)
-                self._attach_phoneme(consonant, vowel, tie)
+                self._attach_phoneme(consonant, vowel, tie, last_vowel)
 
                 last_direction = direction
+                last_vowel = vowel
             else:
                 last_direction = None
+                last_vowel = None
 
     def _handle_voice(self, voice, current_stage):
         if (self._air_pressure_envelopes is None or

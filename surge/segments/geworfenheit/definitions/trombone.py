@@ -15,7 +15,7 @@ from surge.tools.handlers.TromboneEmbouchureHandler import \
 from surge.tools.handlers.SlidePositionHandler import SlidePositionHandler
 from surge.tools.makers.MusicMaker import MusicMaker
 
-trombone = TenorTrombone()
+instrument = TenorTrombone()
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -23,7 +23,7 @@ trombone = TenorTrombone()
 
 embouchure_music_maker = MusicMaker(
     stages=stages,
-    instrument=trombone,
+    instrument=instrument,
     name='Embouchure',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_embouchure
@@ -31,7 +31,7 @@ embouchure_music_maker = MusicMaker(
 
 slide_position_music_maker = MusicMaker(
     stages=stages,
-    instrument=trombone,
+    instrument=instrument,
     name='Slide Position',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_slide
@@ -57,7 +57,7 @@ slide_position_music_handler = SlidePositionHandler(
     show_rhythmic_notation=False
 )
 
-trombone_handlers = [
+handlers = [
     embouchure_music_handler,
     slide_position_music_handler,
 ]

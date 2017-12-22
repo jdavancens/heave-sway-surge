@@ -28,8 +28,8 @@
            (stretchability . 0))
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 0)
-           (padding . 8)
+           (minimum-distance . 10)
+           (padding . 0)
            (stretchability . 0))
 
     %{ systemStartDelimiter = #'SystemStartBrace

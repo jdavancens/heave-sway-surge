@@ -75,14 +75,14 @@
 
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 0)
-           (padding . 50)
+           (minimum-distance . 10)
+           (padding . 0)
            (stretchability . 0))
 
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 0)
-           (padding . 50)
+           (minimum-distance . 10)
+           (padding . 0)
            (stretchability . 0))
 
     \override StaffSymbol.layer = #-400
@@ -94,7 +94,7 @@
     %{\override Stem.details.beamed-lengths = #'(6)
     \override Stem.details.lengths = #'(6)
     \override Stem.stemlet-length = #1.5%}
-    \override SystemStartBar.color = #(x11-color 'grey33)
+    %{ \override SystemStartBar.color = #(x11-color 'grey33) %}
 
     \override TextSpanner.breakable = ##t
 

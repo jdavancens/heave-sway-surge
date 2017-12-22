@@ -25,6 +25,8 @@ def make_score(number_of_stages=None):
         show_stage_annotations=True,
         instrument_list=[
             'oboe',
+            'bass clarinet',
+            'saxophone',
             'trombone',
             'violin',
             'viola',
@@ -38,6 +40,8 @@ def make_score(number_of_stages=None):
     )
     music_handlers = [
         oboe_handlers,
+        clarinet_handlers,
+        saxophone_handlers,
         violin_handlers,
         viola_handlers,
         cello_handlers,

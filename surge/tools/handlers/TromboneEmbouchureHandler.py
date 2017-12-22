@@ -75,6 +75,7 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
         pass
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        last_vowel = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             last_direction = None
@@ -103,8 +104,10 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
                 # attach indicators
                 self._attach_direction(direction, last_direction, tie)
                 self._attach_fluttertongue(fluttertongue, tie)
-                self._attach_phoneme(consonant, vowel, tie)
+                self._attach_phoneme(consonant, vowel, tie, last_vowel)
                 self._attach_wah(wah, tie)
                 last_direction = direction
+                last_vowel = vowel
             else:
                 last_direction = None
+                last_vowel = None

@@ -19,7 +19,7 @@ from surge.tools.handlers.BowingHandler import BowingHandler
 from surge.tools.handlers.StringFingeringHandler import StringFingeringHandler
 from surge.tools.makers.MusicMaker import MusicMaker
 
-viola = Viola()
+instrument = Viola()
 
 # ==============================================================================
 # MUSIC-MAKERS
@@ -27,14 +27,14 @@ viola = Viola()
 
 bowing_music_maker = MusicMaker(
     stages=stages,
-    instrument=viola,
+    instrument=instrument,
     name='Bowing',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_bowing
 )
 fingering_music_maker = MusicMaker(
     stages=stages,
-    instrument=viola,
+    instrument=instrument,
     name='Fingering',
     time_signatures=time_signatures,
     rhythm_makers=rhythm_makers_fingering
@@ -60,10 +60,10 @@ fingering_music_handler = StringFingeringHandler(
     pressure_envelopes=finger_pressure_envelopes,
     tremolo_patterns=string_tremolo_patterns,
     vibrato_patterns=string_vibrato_patterns,
-    show_rhythmic_notation=False    
+    show_rhythmic_notation=False
 )
 
-viola_handlers = [
+handlers = [
     bowing_music_handler,
     fingering_music_handler
 ]

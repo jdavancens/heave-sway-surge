@@ -35,6 +35,8 @@ def make_part(part_name, number_of_stages=None, ruler=False):
     )
     music_handlers = [
         oboe_handlers,
+        clarinet_handlers,
+        saxophone_handlers,
         violin_handlers,
         viola_handlers,
         cello_handlers,
