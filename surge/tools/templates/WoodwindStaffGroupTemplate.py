@@ -48,7 +48,7 @@ class WoodwindStaffGroupTemplate():
 
         lh_fingering_staff = abjad.scoretools.Staff(
             [],
-            context_name='WoodwindLeftHandFingeringStaff',
+            context_name='WoodwindFingeringStaff',
             is_simultaneous=True,
             name='Left Hand Fingering',
         )
@@ -59,7 +59,7 @@ class WoodwindStaffGroupTemplate():
 
         rh_fingering_staff = abjad.scoretools.Staff(
             [],
-            context_name='WoodwindRightHandFingeringStaff',
+            context_name='WoodwindFingeringStaff',
             is_simultaneous=True,
             name='Right Hand Fingering',
         )

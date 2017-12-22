@@ -25,7 +25,6 @@
     print-page-number = ##t
 
     page-breaking = #ly:optimal-breaking
-    systems-per-page = 3
 
     ragged-bottom = ##t
     ragged-last-bottom = ##t

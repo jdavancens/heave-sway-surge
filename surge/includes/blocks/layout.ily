@@ -12,8 +12,8 @@
     \include "contexts/string-space-staff.ily"
     \include "contexts/time-signature-staff.ily"
     \include "contexts/trombone-slide-position-staff.ily"
-    \include "contexts/woodwind-left-hand-fingering-staff.ily"
-    \include "contexts/woodwind-right-hand-fingering-staff.ily"
+    \include "contexts/woodwind-fingering-staff.ily"
+    
     \include "contexts/staff-subgroup.ily"
     \include "contexts/bowed-string-instrument-staff-group.ily"
     \include "contexts/guitar-staff-group.ily"

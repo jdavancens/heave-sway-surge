@@ -1,5 +1,5 @@
 \include "stylesheet.ily"
 
 \paper {
-  %{max-systems-per-page = 3%}
+  max-systems-per-page = 1
 }

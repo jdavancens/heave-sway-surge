@@ -153,6 +153,7 @@ class Handler(object):
                 )
 
     def _hide_leaf(self, leaf):
+        abjad.override(leaf).flag.transparent = True
         abjad.override(leaf).dots.transparent = True
         abjad.override(leaf).note_head.transparent = True
         abjad.override(leaf).stem.transparent = True
@@ -160,6 +161,8 @@ class Handler(object):
         abjad.override(leaf).beam.transparent = True
         abjad.override(leaf).tie.transparent = True
         abjad.override(leaf).rest.transparent = True
+        abjad.override(leaf).tuplet_bracket.transparent = True
+        abjad.override(leaf).tuplet_number.transparent = True
 
 
     def _iterate_logical_ties(self, voice):

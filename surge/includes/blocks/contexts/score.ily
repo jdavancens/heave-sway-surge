@@ -76,13 +76,13 @@
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
            (minimum-distance . 0)
-           (padding . 0)
+           (padding . 50)
            (stretchability . 0))
 
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
            (minimum-distance . 0)
-           (padding . 10)
+           (padding . 50)
            (stretchability . 0))
 
     \override StaffSymbol.layer = #-400

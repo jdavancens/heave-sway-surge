@@ -128,10 +128,7 @@ class EmbouchureHandler(EnvelopeHandler):
                     self._direction_patterns,
                     current_stage
                 )
-                # fluttertongue = self._cycle_next(
-                #     self._fluttertongue_patterns,
-                #     current_stage
-                # )
+
                 vowel = self._cycle_next(
                     self._vowel_patterns,
                     current_stage
@@ -139,7 +136,6 @@ class EmbouchureHandler(EnvelopeHandler):
 
                 # attach indicators
                 self._attach_direction(direction, last_direction, tie)
-                # self._attach_fluttertongue(fluttertongue, tie)
                 self._attach_phoneme(consonant, vowel, tie)
 
                 last_direction = direction
@@ -186,7 +182,7 @@ class EmbouchureHandler(EnvelopeHandler):
                     if vibrato:
                         style ='zigzag'
                     elif fluttertongue:
-                        style = 'dashed'
+                        style = 'dashed-line'
                     else:
                         style = None
 

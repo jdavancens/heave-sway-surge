@@ -67,14 +67,16 @@ lh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=music_maker_left_hand,
     fingerings=fingerings_left_hand,
     hand='left',
-    show_rhythmic_notation=False
+    show_rhythmic_notation=False,
+    # trill_patterns=trill_patterns
 )
 
 rh_fingering_music_handler = WoodwindFingeringHandler(
     music_maker=music_maker_right_hand,
     fingerings=fingerings_right_hand,
     hand='right',
-    show_rhythmic_notation=False
+    show_rhythmic_notation=False,
+    trill_patterns=trill_patterns
 )
 
 oboe_handlers = [

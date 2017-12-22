@@ -71,7 +71,18 @@ class StringFingeringHandler(EnvelopeHandler):
         self._markup_to_notehead(tie.head, circle)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        pass
+        if (
+            self._height_envelopes is None or
+            self._height_envelopes[current_stage] is None
+        ):
+            return
+        previous_string_index = None
+        for tie, offset_start, offset_end in \
+                self._iterate_logical_ties(rhythm_voice):
+            # hide leaves if necessary
+            if not self._show_rhythmic_notation:
+                for leaf in tie:
+                    self._hide_leaf(leaf)
 
     def _handle_voice(self, voice, current_stage):
         if (self._height_envelopes is None or

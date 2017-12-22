@@ -123,7 +123,7 @@ class BowingHandler(EnvelopeHandler):
             # hide leaves if necessary
             if not self._show_rhythmic_notation:
                 for leaf in tie:
-                    self._hide_note(leaf)
+                    self._hide_leaf(leaf)
 
             if tie.is_pitched:
 

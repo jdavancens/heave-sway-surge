@@ -1,7 +1,6 @@
-% WOODWIND LEFT HAND FINGERING STAFF
 \context {
     \Staff
-    \name WoodwindLeftHandFingeringStaff
+    \name WoodwindFingeringStaff
     \alias Staff
     \type Engraver_group
     \consists Output_property_engraver
@@ -40,16 +39,15 @@
             )
         )
 
-    \override InstrumentName.padding = #1
+    \override InstrumentName.padding = 0
+
     \override NoteHead.stem-attachment = #'(0 . 0)
-    \override StaffSymbol.line-count = 5
+    \override StaffSymbol.layer = -200
+    \override StaffSymbol.line-count = 3
     \override StaffSymbol.staff-space = 2
-    \override StaffSymbol.layer = #-200
     \override StaffSymbol.stencil = #(color-staff-lines
-        white
         (x11-color 'grey67)
         (x11-color 'grey67)
         (x11-color 'grey67)
-        white
     )
 }

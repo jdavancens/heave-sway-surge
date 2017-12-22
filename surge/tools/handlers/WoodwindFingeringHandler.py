@@ -70,41 +70,46 @@ class WoodwindFingeringHandler(TablatureHandler):
         previous_fingering
     ):
         # create 'chords' at particular staff positions
-        if self._hand == 'left':
-            staff_positions = [4, 7, 11, 14, 17]
-            finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
-            finger_names.reverse()
-        else:
-            staff_positions = [5, 9, 12, 16]
-            finger_names = ['index', 'middle', 'ring', 'pinky']
-            finger_names.reverse()
-        for leaf in logical_tie:
+        staff_positions = [4, 7, 11, 14, 17]
+        finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
+        finger_names.reverse()
+        for i, leaf in enumerate(logical_tie):
             chord = abjad.scoretools.Chord(
                 staff_positions,
                 leaf.written_duration
             )
             abjad.mutate(leaf).replace(chord)
-            for i, note_head in enumerate(chord.note_heads):
-                finger_name = finger_names[i]
-                current_keys = fingering.keys[finger_name]
-                previous_keys = None
-                if previous_fingering is not None:
-                    previous_keys = previous_fingering.keys[finger_name]
-                if current_keys is not None:
-                    # continuation: hide note head
-                    if previous_keys == current_keys:
+            if i == 0:
+                # first leaf
+                for j, note_head in enumerate(chord.note_heads):
+                    finger_name = finger_names[j]
+                    current_keys = None
+                    if finger_name in fingering.keys.keys():
+                        current_keys = fingering.keys[finger_name]
+                    previous_keys = None
+                    if previous_fingering is not None:
+                        previous_keys = previous_fingering.keys[finger_name]
+                    if current_keys is not None:
+                        # continuation: hide note head
+                        if previous_keys == current_keys:
+                            note_head.tweak.stencil = \
+                                abjad.schemetools.Scheme('point-stencil')
+                        # new fingering: set note head to markup
+                        else:
+                            markup = self._make_note_head_markup(current_keys)
+                            if markup is not None:
+                                note_head.tweak.stencil = \
+                                    'ly:text-interface::print'
+                                note_head.tweak.text = markup
+                    else:
                         note_head.tweak.stencil = \
                             abjad.schemetools.Scheme('point-stencil')
-                    # new fingering: set note head to markup
-                    else:
-                        markup = self._make_note_head_markup(current_keys)
-                        if markup is not None:
-                            note_head.tweak.stencil = \
-                                'ly:text-interface::print'
-                            note_head.tweak.text = markup
-                else:
+            else:
+                # non-first leaf
+                for j, note_head in enumerate(chord.note_heads):
                     note_head.tweak.stencil = \
                         abjad.schemetools.Scheme('point-stencil')
+
 
     def _handle_rhythm_voice(self, voice, current_stage):
         for logical_tie in abjad.iterate(voice).by_logical_tie():
@@ -122,7 +127,9 @@ class WoodwindFingeringHandler(TablatureHandler):
         i = 0
         for logical_tie in abjad.iterate(voice).by_logical_tie(pitched=True):
             # hide all note heads
+
             for chord in logical_tie:
+                # assert(isinstance(chord, abjad.Chord))
                 for note_head in chord.note_heads:
                     note_head.tweak.stencil = \
                         abjad.schemetools.Scheme('point-stencil')
@@ -141,14 +148,13 @@ class WoodwindFingeringHandler(TablatureHandler):
                 #determine line style
                 trill = self._cycle_next(self._trill_patterns, current_stage)
                 if trill:
-                    style = 'dashed'
+                    style = 'dashed-line'
                 else:
                     style = None
-
                 # attach lifelines
                 self._attach_glissando(
                     logical_tie.head,
-                    thickness=3,
+                    thickness=2,
                     style=style
                 )
 
@@ -156,13 +162,6 @@ class WoodwindFingeringHandler(TablatureHandler):
                 if not logical_tie.is_trivial:
                     for leaf in logical_tie[1:]:
                         self._add_gliss_skip(leaf)
-
-            # make glissando anchor into chord
-            try:
-                anchor = abjad.inspect(logical_tie[-1]).get_after_grace_container()
-                anchor[0] = abjad.Chord(logical_tie[0])
-            except Exception:
-                pass
             i += 1
 
         # remove markups
@@ -173,7 +172,7 @@ class WoodwindFingeringHandler(TablatureHandler):
             last = note_group[-1]
             self._hidden_grace_after(
                 last,
-                grace_note=abjad.Chord(last)
+                grace_note=abjad.Chord(last.note_heads, (1, 16))
             )
 
     def _handle_voice(self, voice, current_stage):
@@ -189,9 +188,9 @@ class WoodwindFingeringHandler(TablatureHandler):
             if logical_tie.is_pitched:
                 fingering = self._fingerings[current_stage][i]
                 self._construct_fingering_tablature(
-                    logical_tie,
-                    fingering,
-                    previous_fingering,
+                    logical_tie=logical_tie,
+                    fingering=fingering,
+                    previous_fingering=previous_fingering,
                 )
                 previous_fingering = fingering
                 i += 1

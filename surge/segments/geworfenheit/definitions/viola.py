@@ -50,7 +50,8 @@ bowing_music_handler = BowingHandler(
     pressure_envelopes=bow_pressure_envelopes,
     string_index_patterns=string_index_patterns,
     jete_patterns=jete_patterns,
-    tremolo_patterns=bow_tremolo_patterns
+    tremolo_patterns=bow_tremolo_patterns,
+    show_rhythmic_notation=False
 )
 
 fingering_music_handler = StringFingeringHandler(
@@ -58,7 +59,8 @@ fingering_music_handler = StringFingeringHandler(
     height_envelopes=finger_height_envelopes,
     pressure_envelopes=finger_pressure_envelopes,
     tremolo_patterns=string_tremolo_patterns,
-    vibrato_patterns=string_vibrato_patterns
+    vibrato_patterns=string_vibrato_patterns,
+    show_rhythmic_notation=False    
 )
 
 viola_handlers = [

@@ -11,7 +11,7 @@ class ConstantProlater(Prolater):
     )
 
     def __init__(self, prolation_cycle, unit=None):
-        Prolater.__init__(unit)
+        Prolater.__init__(self, unit=unit)
         self._i = -1
         if not isinstance(prolation_cycle, (tuple, list)):
             self._prolation_cycle = [prolation_cycle]
@@ -28,7 +28,7 @@ class ConstantProlater(Prolater):
         else:
             unit = self._unit
             multiplier = unit / denominator
-        prolation = multiplier + self._next()
+        prolation = multiplier * self._next()
         if prolation < 1:
             prolation = 1
         return int(prolation)

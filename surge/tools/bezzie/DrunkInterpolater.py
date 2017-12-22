@@ -24,11 +24,13 @@ class DrunkInterpolater(object):
         self._amp = amp
 
     def __call__(self, x, y0, y1):
+        # choose direction
         if self.last_direction is None:
             direction = random.choice([-1, 1])
         else:
             direction = self.last_direction * -1
         self.last_direction = direction
+        # linear interpolation
         y = y0 + x * (y1 - y0)
         d_min = abs(y - y0)
         d_max = abs(y1 - y)
@@ -38,6 +40,7 @@ class DrunkInterpolater(object):
             d = d_max
         dev = random.random() * d * self._amp
         y = y + (direction * dev)
+        # constrain to 0 <= x <= 1
         if y < 0:
             y = 0
         if y > 1:

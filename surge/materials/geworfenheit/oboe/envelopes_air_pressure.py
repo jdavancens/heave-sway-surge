@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from surge.materials.geworfenheit.durations import stage_durations
 from surge.tools.bezzie.BezierCurve import BezierCurve
-from surge.tools.bezzie.DrunkInterpolater import DrunkInterpolater
+from surge.tools.bezzie.RandomInterpolater import RandomInterpolater
 from surge.tools.bezzie.Path import Path
 import abjad
 
@@ -12,5 +12,5 @@ envelopes_air_pressure = [
 ]
 
 envelopes_air_pressure[2].set_interpolater(
-    DrunkInterpolater(seed=hash('oboe'), amp=2)
+    RandomInterpolater(seed=hash('oboe'))
 )
