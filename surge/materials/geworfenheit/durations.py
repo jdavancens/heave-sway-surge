@@ -30,3 +30,5 @@ stage_durations.append(stage_1_total_duration)
 stage_durations.append(stage_1_total_duration)
 # stage 3
 stage_durations.append(abjad.Duration(35, 2))
+# stage 4
+stage_durations.append(abjad.Duration(35, 2))

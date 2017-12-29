@@ -110,7 +110,6 @@ class WoodwindFingeringHandler(TablatureHandler):
                     note_head.tweak.stencil = \
                         abjad.schemetools.Scheme('point-stencil')
 
-
     def _handle_rhythm_voice(self, voice, current_stage):
         for logical_tie in abjad.iterate(voice).by_logical_tie():
             if not self._show_rhythmic_notation:

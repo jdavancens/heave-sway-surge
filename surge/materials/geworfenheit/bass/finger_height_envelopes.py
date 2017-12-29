@@ -43,7 +43,7 @@ finger_heights = [
         Fraction(2, 11),
         Fraction(1, 2),
         Fraction(1, 7)
-    ]
+    ],
 ]
 
 finger_height_envelopes = make_glissandi(
@@ -59,6 +59,7 @@ finger_height_envelopes.append(
         )
     )
 )
+finger_height_envelopes.append(None) # stage 4
 finger_height_envelopes[2].set_interpolater(
     DrunkInterpolater(seed=hash('bass'), amp=2)
 )

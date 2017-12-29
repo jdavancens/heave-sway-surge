@@ -69,5 +69,6 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
 rhythm_makers_fingering = [
     rhythm_maker_stage_1,
     rhythm_maker_stage_2,
-    rhythm_maker_stage_3
+    rhythm_maker_stage_3,
+    None
 ]

@@ -10,6 +10,7 @@ bow_pressure_envelopes = (
     Path(BezierCurve((0, 0.1), (stage_durations[0], 0.9))),
     Path(BezierCurve((0, 0.9), (stage_durations[1], 0.1))),
     Path(BezierCurve((0, 0.1), (stage_durations[2], 0.9))),
+    None
 )
 
 bow_pressure_envelopes[0].set_interpolater(SineInterpolater(freq=110, amp=2))
