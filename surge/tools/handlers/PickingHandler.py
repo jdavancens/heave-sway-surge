@@ -124,6 +124,9 @@ class PickingHandler(EnvelopeHandler):
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
+            if not self._show_rhythmic_notation:
+                for leaf in tie:
+                    self._hide_leaf(leaf)
             if tie.is_pitched:
                 harp_harmonic = self._cycle_next(
                     self._harp_harmonic_patterns,

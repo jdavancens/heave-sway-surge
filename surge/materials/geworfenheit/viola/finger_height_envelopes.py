@@ -59,7 +59,7 @@ finger_height_envelopes.append(
         )
     )
 )
-finger_heights_envelopes.append(None)
+finger_height_envelopes.append(None)
 finger_height_envelopes[2].set_interpolater(
     DrunkInterpolater(seed=hash('viola'), amp=2)
 )

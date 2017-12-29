@@ -153,7 +153,8 @@ class GuitarFrettingHandler(TablatureHandler):
 
             # make glissando anchor into chord
             try:
-                anchor = abjad.inspect(logical_tie[-1]).get_after_grace_container()
+                anchor = \
+                    abjad.inspect(logical_tie[-1]).get_after_grace_container()
                 anchor[0] = abjad.Chord(logical_tie[0])
             except Exception:
                 pass
@@ -168,7 +169,11 @@ class GuitarFrettingHandler(TablatureHandler):
             self._hidden_grace_after(last, grace_note=abjad.Chord(last))
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        for tie, _, _ in self._iterate_logical_ties(rhythm_voice):
+        for logical_tie in abjad.iterate(voice).by_logical_tie():
+            if not self._show_rhythmic_notation:
+                for leaf in logical_tie:
+                    self._hide_leaf(leaf)
+
             hammer = self._cycle_next(self._hammer_patterns, current_stage)
             self._attach_hammer(hammer, tie)
 

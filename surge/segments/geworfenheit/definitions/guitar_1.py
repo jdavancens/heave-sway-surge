@@ -3,7 +3,20 @@ from abjad.tools.instrumenttools import Guitar
 
 from surge.materials.geworfenheit.time_signatures import time_signatures
 from surge.materials.geworfenheit.stages import stages
-from surge.materials.geworfenheit.guitar_1 import *
+from surge.materials.geworfenheit.guitar_1 import \
+    fret_combinations, \
+    fret_combination_patterns, \
+    glissando_patterns, \
+    hammer_patterns, \
+    harp_harmonic_patterns, \
+    picking_force_envelopes, \
+    picking_position_envelopes, \
+    rhythm_makers_fretting, \
+    rhythm_makers_picking, \
+    scrape_patterns, \
+    snap_patterns, \
+    string_index_patterns, \
+    tremolo_patterns
 from surge.tools.handlers.PickingHandler import PickingHandler
 from surge.tools.handlers.GuitarFrettingHandler import GuitarFrettingHandler
 from surge.tools.makers.MusicMaker import MusicMaker
@@ -37,21 +50,28 @@ fretting_music_maker = MusicMaker(
 # MUSIC-HANDLERS
 # ==============================================================================
 
-picking_music_handler = PickingHandler(
+picking_handler = PickingHandler(
     music_maker=picking_music_maker,
+    harp_harmonic_patterns=harp_harmonic_patterns,
     picking_position_envelopes=picking_position_envelopes,
     picking_force_envelopes=picking_force_envelopes,
+    scrape_patterns=scrape_patterns,
+    snap_patterns=snap_patterns,
     string_index_patterns=string_index_patterns,
     tremolo_patterns=tremolo_patterns,
+    show_rhythmic_notation=False
 )
 
-fretting_music_handler = GuitarFrettingHandler(
+fretting_handler = GuitarFrettingHandler(
     music_maker=fretting_music_maker,
     fret_combinations=fret_combinations,
-    fret_combination_patterns=fret_combination_patterns
+    fret_combination_patterns=fret_combination_patterns,
+    glissando_patterns=glissando_patterns,
+    hammer_patterns=hammer_patterns,
+    show_rhythmic_notation=False
 )
 
-music_handlers = [
-    fretting_music_handler,
-    picking_music_handler
+handlers = [
+    fretting_handler,
+    picking_handler
 ]

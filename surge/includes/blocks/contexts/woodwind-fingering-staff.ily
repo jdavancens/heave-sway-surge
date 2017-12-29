@@ -10,6 +10,7 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \accepts Voice
+
     \omit Accidental
     \omit Beam
     \omit Clef

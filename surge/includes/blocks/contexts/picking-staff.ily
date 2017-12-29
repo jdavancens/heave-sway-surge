@@ -10,6 +10,7 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \accepts Voice
+
     \omit Accidental
     \omit Beam
     \omit Clef
@@ -21,11 +22,30 @@
     \omit TimeSignature
     \omit TupletBracket
     \omit TupletNumber
-    \override InstrumentName.padding = #1
+
+    \override Glissando.after-line-breaking = ##t
+    \override Glissando.thickness = #3
+    \override Glissando.layer = #-50
+    \override Glissando.gap = #0
+    \override Glissando.bound-details =
+        #'(
+            (right
+                (attch-dir . -1)
+                (end-on-accidental . #t)
+                (padding . 0)
+            )
+            (left
+                (attach-dir . 1)
+                (padding . 0)
+                (start-at-dot . #f)
+            )
+        )
+    \override NoteHead.stem-attachment = #'(0 . 0)
+    \override InstrumentName.padding = 0
     \override StaffSymbol.line-count = #15
     \override StaffSymbol.stencil = #(color-staff-lines
         (x11-color 'grey33) white white white white
-        white white white white white
+        white white (x11-color 'grey67) white white
         white white white white (x11-color 'grey33)
     )
 }

@@ -183,7 +183,7 @@ class EmbouchureHandler(EnvelopeHandler):
                         current_stage
                     )
                     if vibrato:
-                        style ='zigzag'
+                        style = 'zigzag'
                     elif fluttertongue:
                         style = 'dashed-line'
                     else:
@@ -204,7 +204,8 @@ class EmbouchureHandler(EnvelopeHandler):
 
                     # set y offsets
                     self._set_y_offset(tie.head, air_pressure_start)
-                    grace = abjad.inspect(tie.tail).get_after_grace_container()[0]
+                    grace = \
+                        abjad.inspect(tie.tail).get_after_grace_container()[0]
                     self._set_y_offset(grace, air_pressure_end)
 
                 # hide tied noes

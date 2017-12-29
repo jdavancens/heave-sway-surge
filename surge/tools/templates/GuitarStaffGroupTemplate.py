@@ -45,18 +45,24 @@ class GuitarStaffGroupTemplate:
         abjad.override(fretting_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
-        staff_list = [
-            picking_rhythm_staff,
-            picking_staff,
-            fretting_staff,
-            fretting_rhythm_staff,
-        ]
-
         name = self.instrument.instrument_name.title()
         if name[-1] == 'i':
             name = name[0:-1] + 'I'
-        for staff in staff_list:
-            abjad.annotate(staff, 'instrument', name)
+
+        staff_list = [
+            picking_rhythm_staff,
+            abjad.StaffGroup(
+                [picking_staff, fretting_staff],
+                context_name='StaffSubgroup',
+                name=name + ' Staff Subgroup'
+            ),
+            fretting_rhythm_staff,
+        ]
+
+        abjad.annotate(staff_list[0], 'instrument', name)
+        abjad.annotate(staff_list[1][0], 'instrument', name)
+        abjad.annotate(staff_list[1][1], 'instrument', name)
+        abjad.annotate(staff_list[2], 'instrument', name)
 
         instrument_staff_group = abjad.scoretools.StaffGroup(
             staff_list,

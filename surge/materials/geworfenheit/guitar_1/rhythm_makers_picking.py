@@ -9,10 +9,15 @@ import abjad
 # stages 1-3
 rhythm_makers_picking = [None, None, None]
 
-rhythm_makers_picking.append(
-    RatioMaker(
-        time_signatures=time_signatures,
-        rest_indices=rest_indices,
-        subdivider=UnitSubdivider()
-    )
+# stage 4
+ratio_maker_stage_4 = RatioMaker(
+    time_signatures=time_signatures[3],
+    rest_indices=rest_indices[3],
+    subdivider=UnitSubdivider()
 )
+ratios_stage_4 = ratio_maker_stage_4()
+rhythm_maker_stage_4 = abjad.rhythmmakertools.TupletRhythmMaker(
+    tuplet_ratios=ratios_stage_4
+)
+
+rhythm_makers_picking.append(rhythm_maker_stage_4)

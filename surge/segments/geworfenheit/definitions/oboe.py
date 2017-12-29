@@ -4,15 +4,16 @@ from abjad.tools.instrumenttools import Oboe
 # import materials
 from surge.materials.geworfenheit.stages import stages
 from surge.materials.geworfenheit.time_signatures import time_signatures
-from surge.materials.geworfenheit.oboe import envelopes_air_pressure, \
-                                              envelopes_lip_pressure, \
-                                              fingerings_left_hand, \
-                                              fingerings_right_hand, \
-                                              trill_patterns, \
-                                              rhythm_makers_embouchure, \
-                                              rhythm_makers_fingering_left_hand,\
-                                              rhythm_makers_fingering_right_hand,\
-                                              vowel_patterns
+from surge.materials.geworfenheit.oboe import \
+    envelopes_air_pressure, \
+    envelopes_lip_pressure, \
+    fingerings_left_hand, \
+    fingerings_right_hand, \
+    trill_patterns, \
+    rhythm_makers_embouchure, \
+    rhythm_makers_fingering_left_hand,\
+    rhythm_makers_fingering_right_hand,\
+    vowel_patterns
 
 # import tools
 from surge.tools.actions.WoodwindFingering import WoodwindFingering

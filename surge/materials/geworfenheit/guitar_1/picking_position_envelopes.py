@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
+from surge.materials.geworfenheit.durations import stage_durations
 from surge.tools.bezzie.BezierCurve import BezierCurve
+from surge.tools.bezzie.RandomInterpolater import RandomInterpolater
 from surge.tools.bezzie.Path import Path
-from surge.tools.bezzie.SineInterpolater import SineInterpolater
-from surge.tools.rhythmtools.sum_time_signatures import sum_time_signatures
-from surge.tools.rhythmtools.time_signatures_to_offsets \
-    import time_signatures_to_offsets
-from surge.materials.observer.time_signatures import time_signatures
+import abjad
+
+picking_position_envelopes = [
+    None,
+    None,
+    None,
+    Path(BezierCurve((0, 0.75), (stage_durations[1], 0.25)))
+]
+
+picking_position_envelopes[3].set_interpolater(
+    RandomInterpolater(seed=hash('1 ratiug'))
+)

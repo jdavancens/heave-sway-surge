@@ -68,7 +68,7 @@ class TromboneStaffGroupTemplate:
             abjad.StaffGroup(
                 [embouchure_staff, slide_staff],
                 context_name='StaffSubgroup',
-                name=name+ ' Staff Subgroup'
+                name=name + ' Staff Subgroup'
             ),
             slide_rhythm_staff
         ]
