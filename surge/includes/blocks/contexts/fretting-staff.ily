@@ -46,5 +46,5 @@
     \override StaffSymbol.color = #(x11-color 'grey67)
     \override StaffSymbol.line-count = 6
     \override StaffSymbol.staff-space = 2
-    \override StaffSymbol.layer = #-100
+    \override StaffSymbol.layer = #-1000
 }

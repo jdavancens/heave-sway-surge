@@ -14,7 +14,7 @@ ratio_maker_stage_4 = RatioMaker(
     time_signatures=time_signatures[3],
     rest_indices=rest_indices[3],
     subdivider=EvenSubdivider(
-        [1, 2, 3, 2],
+        [3, 2, 1, 2],
         rotation_cycle=[0, 1, 2]
         # sustain_mask=abjad.sustain_all()
     ),

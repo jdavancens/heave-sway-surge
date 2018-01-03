@@ -38,6 +38,7 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         clarinet_handlers,
         saxophone_handlers,
         guitar_1_handlers,
+        guitar_2_handlers,
         violin_handlers,
         viola_handlers,
         cello_handlers,

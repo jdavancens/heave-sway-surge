@@ -6,5 +6,6 @@ from surge.tools.bezzie.Path import Path
 air_pressure_envelopes = (
     None,
     None,
-    Path(BezierCurve((0, 0.5), (stage_durations[2], 0.5)))
+    Path(BezierCurve((0, 0.5), (stage_durations[2], 0.5))),
+    Path(BezierCurve((0, 0.5), (stage_durations[3], 0.5))),
 )

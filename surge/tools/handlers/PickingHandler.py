@@ -102,7 +102,7 @@ class PickingHandler(EnvelopeHandler):
     def _attach_force_notehead(self, force, tie):
         steps = 4
         force = self._quantize(force, steps)
-        size = 1
+        size = 0.5
         fill = self._make_circle_markup(size, force)
         outline = self._make_circle_outline_markup(size)
         circle = abjad.Markup.combine([fill, outline])

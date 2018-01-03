@@ -2,7 +2,6 @@
     \Score
     \accepts BowedStringInstrumentStaffGroup
     \accepts GuitarStaffGroup
-    \accepts SeparatorStaff
     \accepts TromboneStaffGroup
     \accepts WoodwindInstrumentStaffGroup
     \accepts TimeSignatureContext

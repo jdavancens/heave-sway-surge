@@ -59,7 +59,7 @@ finger_height_envelopes.append(
         )
     )
 )
-finger_height_envelopes.append(None) # stage 4
+finger_height_envelopes.append(None)  # stage 4
 finger_height_envelopes[2].set_interpolater(
     DrunkInterpolater(seed=hash('bass'), amp=2)
 )

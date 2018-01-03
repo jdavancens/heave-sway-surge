@@ -4,10 +4,12 @@ from surge.tools.actions.WoodwindFingeringCombination import \
     WoodwindFingeringCombination
 import abjad
 
+instrument = abjad.instrumenttools.Oboe()
+
 fingerings_left_hand = [None, None]
 fingerings_right_hand = [None, None]
 
-instrument = abjad.instrumenttools.Oboe()
+# Stage 3
 
 lh_a = WoodwindFingering(
     instrument=instrument,
@@ -31,6 +33,11 @@ rh_a = WoodwindFingering(
         'pinky': None
     }
 )
+
+fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
+fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# Stage 4
 
 fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
 fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))

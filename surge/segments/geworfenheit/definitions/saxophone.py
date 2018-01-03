@@ -4,7 +4,7 @@ from abjad.tools.instrumenttools import AltoSaxophone
 # import materials
 from surge.materials.geworfenheit.stages import stages
 from surge.materials.geworfenheit.time_signatures import time_signatures
-from surge.materials.geworfenheit.clarinet import envelopes_air_pressure, \
+from surge.materials.geworfenheit.saxophone import envelopes_air_pressure, \
                                               envelopes_lip_pressure, \
                                               fingerings_left_hand, \
                                               fingerings_right_hand, \

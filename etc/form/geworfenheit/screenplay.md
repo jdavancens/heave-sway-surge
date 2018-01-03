@@ -2,7 +2,7 @@
 * Blurry stage boundaries
 * Emphasis on glissando
 * Steady meter (notated, not heard) $^2_4$
-* Hide rhythmic complexity
+* Hide rhythmic complexity (hide rhythmic notation)
 * Target duration: 8 minutes
 
 Stage | Duration | Total
@@ -10,12 +10,24 @@ Stage | Duration | Total
 | 1 | 01:10 | 01:10 |
 | 2 | 01:10 | 02:20 |
 | 3 | 01:10 | 03:30 |
-| 4 | 00:34 | 04:04 |
-| 5 | 01:10 | 05:14 |
-| 6 | 01:10 | 06:24 |
-| 7 | 00:34 | 06:58 |
-| 8 | 01:10 | 08:08 |
+| 4 | 01:10 | 04:40 |
+| 5 | 01:10 | 05:50 |
+| 6 | 01:10 | 07:00 |
+| 7 | 01:10 | 08:10 |
 
+```  
+      1  2  3  4  5  6  7  
+ob   |--|--|**|**|**|**|--|
+bcl  |--|--|**|**|**|**|--|
+as   |--|--|**|**|**|**|--|
+tbn  |--|--|**|**|**|**|--|
+gtr1 |--|--|--|**|**|**|**|
+gtr2 |--|--|--|**|**|**|**|
+vn   |**|**|**|--|**|**|--|
+va   |**|**|**|--|**|**|--|
+vc   |**|**|**|--|**|**|--|
+cv   |**|**|**|--|**|**|--|
+```
 
 ## Stage 1
 Strings
@@ -88,7 +100,7 @@ Trombone
 
 Guitars
 * Homorhythmic
-* Granular RH, glissando LH
+* Granular RH, static LH
 * Half LH pressure (no clear pitch)
 * Long glissando
 
@@ -104,6 +116,26 @@ gtr1 |--|--|--|**|**|**|**|**|--|--|--|**|**|**|**|**|--|--|--|--|**|**|**|--|--
 ```
 
 ## Stage 5
+Full Ensemble
+* Granular
+* Heterorhythmic / polyrhythmic
+* Coordinated rests
+* Interruptions, contrasts
+* Cross-category instrument groups
+* Growing more dense
+
 ## Stage 6
+Full Ensemble
+* Granular
+* Heterorhythmic / polyrhythmic
+* Coordinated rests
+* Interruptions, contrasts
+* Cross-category instrument groups
+* Growing more sparse
+
 ## Stage 7
-## Stage 8
+Guitars Only
+* Homorhythmic
+* Granular RH, static LH
+* Half LH pressure (no clear pitch)
+* Long glissando

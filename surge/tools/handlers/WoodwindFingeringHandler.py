@@ -74,10 +74,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
         finger_names.reverse()
         for i, leaf in enumerate(logical_tie):
-            chord = abjad.scoretools.Chord(
-                staff_positions,
-                leaf.written_duration
-            )
+            chord = abjad.Chord(staff_positions, leaf.written_duration)
             abjad.mutate(leaf).replace(chord)
             if i == 0:
                 # first leaf
@@ -93,7 +90,7 @@ class WoodwindFingeringHandler(TablatureHandler):
                         # continuation: hide note head
                         if previous_keys == current_keys:
                             note_head.tweak.stencil = \
-                                abjad.schemetools.Scheme('point-stencil')
+                                abjad.Scheme('point-stencil')
                         # new fingering: set note head to markup
                         else:
                             markup = self._make_note_head_markup(current_keys)
@@ -102,13 +99,11 @@ class WoodwindFingeringHandler(TablatureHandler):
                                     'ly:text-interface::print'
                                 note_head.tweak.text = markup
                     else:
-                        note_head.tweak.stencil = \
-                            abjad.schemetools.Scheme('point-stencil')
+                        note_head.tweak.stencil = abjad.Scheme('point-stencil')
             else:
                 # non-first leaf
-                for j, note_head in enumerate(chord.note_heads):
-                    note_head.tweak.stencil = \
-                        abjad.schemetools.Scheme('point-stencil')
+                for note_head in chord.note_heads:
+                    note_head.tweak.stencil = abjad.Scheme('point-stencil')
 
     def _handle_rhythm_voice(self, voice, current_stage):
         for logical_tie in abjad.iterate(voice).by_logical_tie():
@@ -144,7 +139,7 @@ class WoodwindFingeringHandler(TablatureHandler):
             if glissando_map is not None:
                 abjad.attach(glissando_map, logical_tie.head)
 
-                #determine line style
+                # determine line style
                 trill = self._cycle_next(self._trill_patterns, current_stage)
                 if trill:
                     style = 'dashed-line'
@@ -298,15 +293,25 @@ class WoodwindFingeringHandler(TablatureHandler):
         else:
             for key in key_combination:
                 if key.lower() in ('t', 'thumb', 'down'):
-                    black_circle = self._make_circle_markup(circle_size, grey=0)
-                    circle_outline = self._make_circle_outline_markup(circle_size)
+                    black_circle = self._make_circle_markup(
+                        circle_size,
+                        grey=0
+                    )
+                    circle_outline = self._make_circle_outline_markup(
+                        circle_size
+                    )
                     circle = abjad.Markup.combine(
                         [black_circle, circle_outline]
                     )
                     markups.append(circle)
                 elif key.lower() in ('half',):
-                    white_circle = self._make_circle_markup(circle_size, grey=1)
-                    circle_outline = self._make_circle_outline_markup(circle_size)
+                    white_circle = self._make_circle_markup(
+                        circle_size,
+                        grey=1
+                    )
+                    circle_outline = self._make_circle_outline_markup(
+                        circle_size
+                    )
                     half_circle = self._make_half_circle_markup(circle_size)
                     circle = abjad.Markup.combine(
                         [white_circle, circle_outline]

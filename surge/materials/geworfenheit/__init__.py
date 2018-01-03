@@ -3,6 +3,8 @@ import surge.materials.geworfenheit.oboe
 import surge.materials.geworfenheit.clarinet
 import surge.materials.geworfenheit.saxophone
 import surge.materials.geworfenheit.trombone
+import surge.materials.geworfenheit.guitar_1
+import surge.materials.geworfenheit.guitar_2
 import surge.materials.geworfenheit.bass
 import surge.materials.geworfenheit.cello
 import surge.materials.geworfenheit.viola

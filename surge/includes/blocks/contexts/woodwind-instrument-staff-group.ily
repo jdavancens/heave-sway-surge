@@ -18,8 +18,6 @@
     \remove System_start_delimiter_engraver
 
     \override InstrumentName.padding = 8
-    %{ \override InstrumentName.self-alignment-X = #RIGHT %}
-    %{ \override InstrumentName.X-offset = 0 %}
 
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
@@ -31,9 +29,4 @@
            (minimum-distance . 10)
            (padding . 0)
            (stretchability . 0))
-
-    %{ systemStartDelimiter = #'SystemStartBrace
-    \override SystemStartBrace.padding = 0
-    \override SystemStartBrace.X-offset = 0 %}
-
 }

@@ -21,6 +21,8 @@ class Cycle(object):
 
     def next(self):
         m = len(self._iterable)
+        if m == 0:
+            return None
         self._index = (self._index + 1) % m
         return self._iterable[self._index]
 

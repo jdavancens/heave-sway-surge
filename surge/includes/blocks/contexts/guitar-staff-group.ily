@@ -15,7 +15,8 @@
 
     \remove System_start_delimiter_engraver
 
-    \override InstrumentName.padding = #12
+    \override InstrumentName.padding = 8
+
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
            (minimum-distance . 0)
@@ -23,8 +24,7 @@
            (stretchability . 0))
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 0)
-           (padding . 2)
+           (minimum-distance . 10)
+           (padding . 0)
            (stretchability . 0))
-
 }

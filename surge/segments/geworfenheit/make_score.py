@@ -28,7 +28,8 @@ def make_score(number_of_stages=None):
             'bass clarinet',
             'saxophone',
             'trombone',
-            'guitar i'
+            'guitar i',
+            'guitar ii',
             'violin',
             'viola',
             'cello',
@@ -44,6 +45,7 @@ def make_score(number_of_stages=None):
         clarinet_handlers,
         saxophone_handlers,
         guitar_1_handlers,
+        guitar_2_handlers,
         violin_handlers,
         viola_handlers,
         cello_handlers,
