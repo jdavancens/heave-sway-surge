@@ -17,3 +17,11 @@ fret_combinations = [
         ]
     )
 ]
+
+for i in range(1, 20):
+    fp = [FretPlacement(string=s, fret=i, harmonic=True) for s in range(1, 7)]
+    fret_combination = FretCombination(
+        instrument=guitar,
+        fret_placements=fp
+    )
+    fret_combinations.append(fret_combination)

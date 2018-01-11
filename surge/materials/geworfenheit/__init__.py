@@ -10,7 +10,7 @@ import surge.materials.geworfenheit.cello
 import surge.materials.geworfenheit.viola
 import surge.materials.geworfenheit.violin
 
-
+from .instrument_groups import instrument_groups
 from .patterns import bow_tremolo_patterns, jete_patterns, \
     string_tremolo_patterns, string_vibrato_patterns
 from .stages import stages

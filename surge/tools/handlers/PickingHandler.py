@@ -122,6 +122,7 @@ class PickingHandler(EnvelopeHandler):
             abjad.attach(markup, tie.head)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        last_string_index = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             if not self._show_rhythmic_notation:
@@ -144,7 +145,11 @@ class PickingHandler(EnvelopeHandler):
                 self._attach_harp_harmonic(harp_harmonic, tie)
                 self._attach_finger_index(finger_index, tie)
                 self._attach_snap(snap, tie)
-                self._attach_string_index(string_index, tie)
+                if last_string_index is not None and string_index != last_string_index:
+                    self._attach_string_index(string_index, tie)
+                last_string_index = string_index
+            else:
+                last_string_index = None
 
     def _handle_voice(self, voice, current_stage):
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):

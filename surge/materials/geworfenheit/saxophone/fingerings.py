@@ -32,8 +32,22 @@ rh_a = WoodwindFingering(
     }
 )
 
+# stage 3
+
 fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
 fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# stage 4
+
+fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
+fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# stage 5
+
+fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
+fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# stage 6
 
 fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
 fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))

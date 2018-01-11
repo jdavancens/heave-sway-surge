@@ -1,25 +1,13 @@
 # -*- coding: utf-8 -*-
 from surge.materials.geworfenheit.durations import denominator_stage_1,\
-    durations_stage_1, stage_durations
+    durations_stage_1
+from surge.materials.geworfenheit.durations import stage_durations as stage_durations_global
 import abjad
 import copy
 import random
 
 durations_stage_2_bass = copy.deepcopy(durations_stage_1)
-stage_durations_3 = stage_durations[2]
-
 random.seed(hash('bass'))
 random.shuffle(durations_stage_2_bass)
-
 durations = [durations_stage_1, durations_stage_2_bass]
-
-denominators = [denominator_stage_1, 16]
-
-stage_durations = []
-for i, stage in enumerate(durations):
-    stage_duration = abjad.Duration(0, 1)
-    for duration_pair in stage:
-        stage_duration += abjad.Duration(duration_pair[0], denominators[i])
-        stage_duration += abjad.Duration(duration_pair[1], denominators[i])
-    stage_durations.append(stage_duration)
-stage_durations.append(stage_durations_3)
+denominators = [16, 16]

@@ -2,7 +2,7 @@
 from surge.materials.instruments import instruments
 from surge.tools.actions.FretCombination import FretCombination
 from surge.tools.actions.FretPlacement import FretPlacement
-guitar = instruments['guitar 1']
+guitar = instruments['guitar 2']
 
 fret_combinations = [
     FretCombination(
@@ -17,3 +17,10 @@ fret_combinations = [
         ]
     )
 ]
+for i in range(1, 20):
+    fp = [FretPlacement(string=s, fret=i, harmonic=True) for s in range(1, 7)]
+    fret_combination = FretCombination(
+        instrument=guitar,
+        fret_placements=fp
+    )
+    fret_combinations.append(fret_combination)

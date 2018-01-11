@@ -36,8 +36,8 @@ def make_score(number_of_stages=None):
             'contrabass',
         ],
         page_size=('11x17', 'portrait'),
-        staff_size=7,
-        final_barline=False,
+        staff_size=8,
+        final_barline=True,
         part=False
     )
     music_handlers = [

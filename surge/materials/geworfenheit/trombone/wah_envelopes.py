@@ -8,4 +8,7 @@ wah_envelopes = (
     None,
     Path(BezierCurve((0, 0), (stage_durations[2], 1))),
     Path(BezierCurve((0, 0), (stage_durations[3], 1))),
+    Path(BezierCurve((0, 0), (stage_durations[4], 1))),
+    Path(BezierCurve((0, 0), (stage_durations[5], 1))),
+    None
 )

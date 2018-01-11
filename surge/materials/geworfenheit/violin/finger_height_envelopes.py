@@ -5,9 +5,13 @@ from surge.materials.geworfenheit.durations import stage_durations
 from surge.materials.geworfenheit.stages import number_of_stages
 from surge.materials.geworfenheit.utilities import make_glissandi
 from surge.tools.bezzie.BezierCurve import BezierCurve
-from surge.tools.bezzie.DrunkInterpolater import DrunkInterpolater
+from surge.tools.bezzie.RandomInterpolater import RandomInterpolater
 from surge.tools.bezzie.Path import Path
 import abjad
+
+random_interpolater = RandomInterpolater(seed=hash('violin'))
+
+# stages 1 and 2
 
 finger_heights = [
     [
@@ -51,15 +55,37 @@ finger_height_envelopes = make_glissandi(
     durations,
     denominators
 )
+
+# stage 3
 finger_height_envelopes.append(
     Path(
-        BezierCurve(
-            (0, Fraction(9, 13)),
-            (stage_durations[2], Fraction(1, 7))
-        )
+        BezierCurve((0, Fraction(9, 13)), (stage_durations[2], Fraction(1, 7)))
     )
 )
+finger_height_envelopes[2].set_interpolater(random_interpolater)
+
+# stage 4
+
 finger_height_envelopes.append(None)
-finger_height_envelopes[2].set_interpolater(
-    DrunkInterpolater(seed=hash('violin'), amp=2)
+
+# stage 5
+
+finger_height_envelopes.append(
+    Path(
+        BezierCurve((0, Fraction(9, 13)), (stage_durations[4], Fraction(1, 7)))
+    )
 )
+finger_height_envelopes[4].set_interpolater(random_interpolater)
+
+# stage 6
+
+finger_height_envelopes.append(
+    Path(
+        BezierCurve((0, Fraction(9, 13)), (stage_durations[5], Fraction(1, 7)))
+    )
+)
+finger_height_envelopes[5].set_interpolater(random_interpolater)
+
+# stage 7
+
+finger_height_envelopes.append(None)

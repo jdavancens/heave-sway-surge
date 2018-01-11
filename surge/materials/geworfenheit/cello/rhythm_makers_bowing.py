@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from surge.materials.geworfenheit.rest_indices import rest_indices_by_group
 from surge.materials.geworfenheit.time_signatures import time_signatures
 from surge.tools.makers.RatioMaker import RatioMaker
 from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
@@ -56,10 +57,7 @@ prolater_stage_3 = DifferenceProlater([2])
 subdivider_stage_3 = UnitSubdivider(
     multiplier=2,
     rotation_cycle=range(9),
-    sustain_mask=abjad.rhythmmakertools.SustainMask.sustain_every(
-        indices=[1, 2, 6, 8],
-        period=9
-    )
+    sustain_mask=abjad.sustain_every(indices=[1, 2, 6, 8], period=9)
 )
 
 ratio_maker_stage_3 = RatioMaker(
@@ -74,11 +72,62 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
     tuplet_ratios=ratios_stage_3
 )
 
+# stage 5 (same as bowing)
+# 9:8 (16th notes)
+# 012345678
+# *-.*-.**-
+prolater_stage_5 = DifferenceProlater([2])
+subdivider_stage_5 = UnitSubdivider(
+    multiplier=2,
+    rotation_cycle=range(9),
+    sustain_mask=abjad.sustain_every(indices=[1, 4, 8], period=9),
+    silence_mask=abjad.silence_every(indices=[2, 5], period=9),
+)
+
+ratio_maker_stage_5 = RatioMaker(
+    time_signatures=time_signatures[4],
+    rest_indices=rest_indices_by_group["c"][4],
+    prolater=prolater_stage_5,
+    subdivider=subdivider_stage_5
+)
+ratios_stage_5 = ratio_maker_stage_5()
+
+rhythm_maker_stage_5 = abjad.rhythmmakertools.TupletRhythmMaker(
+    tuplet_ratios=ratios_stage_5
+)
+
+# stage 6 (same as bowing)
+# 9:8 (16th notes)
+# 012345678
+# *-.*-.**-
+prolater_stage_6 = DifferenceProlater([2])
+subdivider_stage_6 = UnitSubdivider(
+    multiplier=2,
+    rotation_cycle=range(9),
+    sustain_mask=abjad.sustain_every(indices=[1, 4, 8], period=9),
+    silence_mask=abjad.silence_every(indices=[2, 5], period=9),
+)
+
+ratio_maker_stage_6 = RatioMaker(
+    time_signatures=time_signatures[5],
+    rest_indices=rest_indices_by_group["f"][5],
+    prolater=prolater_stage_6,
+    subdivider=subdivider_stage_6
+)
+ratios_stage_6 = ratio_maker_stage_6()
+
+rhythm_maker_stage_6 = abjad.rhythmmakertools.TupletRhythmMaker(
+    tuplet_ratios=ratios_stage_6
+)
+
 # collect
 
 rhythm_makers_bowing = [
     rhythm_maker_stage_1,
     rhythm_maker_stage_2,
     rhythm_maker_stage_3,
+    None,
+    rhythm_maker_stage_5,
+    rhythm_maker_stage_6,
     None
 ]

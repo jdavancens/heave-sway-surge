@@ -8,4 +8,7 @@ air_pressure_envelopes = (
     None,
     Path(BezierCurve((0, 0.5), (stage_durations[2], 0.5))),
     Path(BezierCurve((0, 0.5), (stage_durations[3], 0.5))),
+    Path(BezierCurve((0, 0.5), (stage_durations[4], 0.5))),
+    Path(BezierCurve((0, 0.5), (stage_durations[5], 0.5))),
+    None
 )

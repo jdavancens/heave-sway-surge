@@ -41,3 +41,13 @@ fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
 
 fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
 fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# Stage 5
+
+fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
+fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
+
+# Stage 6
+
+fingerings_left_hand.append(abjad.CyclicTuple([lh_a]))
+fingerings_right_hand.append(abjad.CyclicTuple([rh_a]))
