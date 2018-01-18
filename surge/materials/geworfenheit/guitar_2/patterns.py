@@ -14,7 +14,15 @@ hammer_patterns = [None] * 7
 
 # Picking-related patterns
 
-harp_harmonic_patterns = [None] * 7
+harp_harmonic_patterns = [
+    None,
+    None,
+    None,
+    None,
+    None,
+    None,
+    [False, True, False, False, True, False, False]
+]
 
 scrape_patterns = [
     None,
@@ -53,5 +61,5 @@ tremolo_patterns = [
     [True, False, True, True],
     [True, False, True, True],
     [True, False, True, True],
-    [True, True, False, True, True, True, False]
+    None
 ]
