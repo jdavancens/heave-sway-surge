@@ -87,7 +87,7 @@ class PickingHandler(EnvelopeHandler):
         if harp_harmonic:
             articulation = abjad.indicatortools.Articulation(
                 'flageolet',
-                direction=Up
+                direction=Down
             )
             abjad.attach(articulation, tie.head)
 
@@ -95,13 +95,14 @@ class PickingHandler(EnvelopeHandler):
         if finger_index is not None:
             markup = self._make_text_markup(
                 str(finger_index),
-                enclosure='circle'
+                enclosure='circle',
+                direction=Down,
             )
             abjad.attach(markup, tie.head)
 
     def _attach_force_notehead(self, force, tie):
         steps = 4
-        force = self._quantize(force, steps)
+        force = 1 - self._quantize(force, steps)
         size = 0.5
         fill = self._make_circle_markup(size, force)
         outline = self._make_circle_outline_markup(size)
@@ -112,17 +113,20 @@ class PickingHandler(EnvelopeHandler):
         if snap:
             articulation = abjad.indicatortools.Articulation(
                 'snappizzicato',
-                direction=Up
+                direction=Down
             )
             abjad.attach(articulation, tie.head)
 
     def _attach_string_index(self, string_index, tie):
         if string_index is not None:
-            markup = self._make_text_markup(str(string_index), enclosure='box')
+            markup = self._make_text_markup(
+                str(string_index),
+                enclosure='box',
+                direction=Up
+            )
             abjad.attach(markup, tie.head)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        last_string_index = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
             if not self._show_rhythmic_notation:
@@ -138,20 +142,13 @@ class PickingHandler(EnvelopeHandler):
                     current_stage
                 )
                 snap = self._cycle_next(self._snap_patterns, current_stage)
-                string_index = self._cycle_next(
-                    self._string_index_patterns,
-                    current_stage
-                )
+
                 self._attach_harp_harmonic(harp_harmonic, tie)
                 self._attach_finger_index(finger_index, tie)
                 self._attach_snap(snap, tie)
-                if last_string_index is not None and string_index != last_string_index:
-                    self._attach_string_index(string_index, tie)
-                last_string_index = string_index
-            else:
-                last_string_index = None
 
     def _handle_voice(self, voice, current_stage):
+        last_string_index = None
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
             if tie.is_pitched:
                 force = \
@@ -175,16 +172,18 @@ class PickingHandler(EnvelopeHandler):
                     style = 'dashed-line'
                 else:
                     style = None
-                self._attach_glissando(tie.head, style=style)
-                self._hidden_grace_after(tie.tail)
-                grace_container = abjad.inspect(
-                    tie.tail
-                ).get_after_grace_container()
-                if (grace_container is not None and len(grace_container) > 0):
-                    self._set_y_offset(
-                        grace_container[0],
-                        picking_position_end
-                    )
+                if tremolo or scrape:
+                    self._attach_glissando(tie.head, style=style)
+                    self._hidden_grace_after(tie.tail)
+                    grace_container = abjad.inspect(
+                        tie.tail
+                    ).get_after_grace_container()
+                    if (grace_container is not None and
+                        len(grace_container) > 0):
+                        self._set_y_offset(
+                            grace_container[0],
+                            picking_position_end
+                        )
 
                 self._set_y_offset(tie.head, picking_position_start)
 
@@ -192,5 +191,17 @@ class PickingHandler(EnvelopeHandler):
 
                 if not tie.is_trivial:
                     for note in tie[1:]:
-                        self._add_gliss_skip(note)
+                        if tremolo or scrape:
+                            self._add_gliss_skip(note)
                         self._hide_note_head(note)
+
+                string_index = self._cycle_next(
+                    self._string_index_patterns,
+                    current_stage
+                )
+                if last_string_index and string_index != last_string_index:
+                    self._attach_string_index(string_index, tie)
+                last_string_index = string_index
+
+            else:
+                last_string_index = None

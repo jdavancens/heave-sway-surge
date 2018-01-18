@@ -19,5 +19,4 @@
     \override StaffSymbol.line-count = #1
     \override StaffSymbol.transparent = ##t
     squashedPosition = #0
-    %{\override VerticalAxisGroup.minimum-Y-extent = #'(-20 . 20)%}
 }

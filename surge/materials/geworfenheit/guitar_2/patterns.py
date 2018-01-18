@@ -9,21 +9,12 @@ fret_combination_patterns = [None, None, None, [0], [0], [0]]
 fret_comination_patters_stage_7 = list(range(1, 20))
 fret_combination_patterns.append(fret_comination_patters_stage_7)
 
-glissando_patterns = [
-    None,
-    None,
-    None,
-    [True, False],
-    [True, False],
-    [True, False],
-    [True, False]
-]
-
-hammer_patterns = [None, None, None, None, None, None, None]
+glissando_patterns = [None] * 7
+hammer_patterns = [None] * 7
 
 # Picking-related patterns
 
-harp_harmonic_patterns = [None, None, None, None, None, None, None]
+harp_harmonic_patterns = [None] * 7
 
 scrape_patterns = [
     None,
@@ -32,10 +23,18 @@ scrape_patterns = [
     [False, True, False, False],
     [False, True, False, False],
     [False, True, False, False],
-    [False, True, False, False]
+    None
 ]
 
-snap_patterns = [None, None, None, None, None, None, None]
+snap_patterns = [
+    None,
+    None,
+    None,
+    None,
+    None,
+    None,
+    [False, False, True, False, False, False, True]
+]
 
 string_index_patterns = [
     None,
@@ -54,5 +53,5 @@ tremolo_patterns = [
     [True, False, True, True],
     [True, False, True, True],
     [True, False, True, True],
-    [True, False, True, True]
+    [True, True, False, True, True, True, False]
 ]

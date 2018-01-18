@@ -70,13 +70,13 @@ rhythm_makers_picking.append(rhythm_maker_stage_6)
 
 # stage 7
 # 0123456789a
-# *--*--*----
+# *--**-*--*-
 prolater_stage_7 = DifferenceProlater([5])
 subdivider_stage_7 = UnitSubdivider(
     multiplier=2,
     rotation_cycle=range(11),
     sustain_mask=abjad.sustain_every(
-        indices=[1, 2, 4, 5, 7, 8, 9, 10],
+        indices=[1, 2, 5, 7, 8, 10],
         period=11
     ),
 )

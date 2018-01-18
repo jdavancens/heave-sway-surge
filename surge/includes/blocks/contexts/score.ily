@@ -5,8 +5,7 @@
     \accepts TromboneStaffGroup
     \accepts WoodwindInstrumentStaffGroup
     \accepts TimeSignatureContext
-    %{\consists Span_bar_engraver
-    \consists Span_bar_stub_engraver%}
+
     \remove Bar_number_engraver
     \remove Mark_engraver
     \remove Metronome_mark_engraver
@@ -31,11 +30,6 @@
 
     \override BarNumber.break-visibility = ##(#t #t #t)
 
-    %{\override Beam.breakable = ##t
-    \override Beam.damping = #+inf.0
-    \override Beam.beam-thickness = #0.75
-    \override Beam.length-fraction = #1.25%}
-
     \override Glissando.breakable = ##t
 
     \override GraceSpacing.common-shortest-duration = #(ly:make-moment 1 256)
@@ -52,29 +46,19 @@
 
     \override RestCollision.minimum-distance = #0
 
+    \override Script.extra-offset = #'(0 . 0)
+    \override Script.padding = #1
+    \override Script.outside-staff-horizontal-padding = #0
+
     \override SpacingSpanner.strict-grace-spacing = ##t
     \override SpacingSpanner.strict-note-spacing = ##t
     \override SpacingSpanner.uniform-stretching = ##t
 
     \remove SpanBar
 
-    %{\override SpanBar.color = #(x11-color 'grey33)
-    \override SpanBar.layer = #1001
-    \override SpanBar.hair-thickness = #0.75
-    \override SpanBar.space-alist = #'(
-        (time-signature extra-space . 0.0)
-        (custos minimum-space . 0.0)
-        (clef minimum-space . 0.0)
-        (key-signature extra-space . 0.0)
-        (key-cancellation extra-space . 0.0)
-        (first-note fixed-space . 0.0)
-        (next-note semi-fixed-space . 0.0)
-        (right-edge extra-space . 0.0)
-    )%}
-
     \override StaffGrouper #'staff-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 10)
+           (minimum-distance . 12)
            (padding . 0)
            (stretchability . 0))
 
@@ -90,12 +74,11 @@
     \override StemTremolo.flag-count = 2
     \override StemTremolo.slope = 0
 
-    %{\override Stem.details.beamed-lengths = #'(6)
-    \override Stem.details.lengths = #'(6)
-    \override Stem.stemlet-length = #1.5%}
-    %{ \override SystemStartBar.color = #(x11-color 'grey33) %}
-
     \override TextSpanner.breakable = ##t
+
+    \override TextScript.extra-offset = #'(0 . 0)
+    \override TextScript.padding = #1
+    \override TextScript.outside-staff-horizontal-padding = #0
 
     \override TrillSpanner.bound-details.right.padding = 2
 

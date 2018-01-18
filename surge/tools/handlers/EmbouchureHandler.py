@@ -97,7 +97,7 @@ class EmbouchureHandler(EnvelopeHandler):
         vowel = '' if vowel is None else vowel
         phoneme = consonant + vowel
         if phoneme != '' and phoneme != last_vowel:
-            markup = self._make_text_markup(phoneme, enclosure='box')
+            markup = self._make_text_markup(phoneme)
             abjad.attach(markup, tie.head)
 
     def _attach_pressure_notehead(self, tie, pressure, size=0.5, outline=True):
