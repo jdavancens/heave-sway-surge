@@ -169,7 +169,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         )
 
     def _annotate_stages(self):
-        r''' Adds stage number markup to score.
+        r''' Adds stage number markup and barlines to score.
         '''
         if not self.show_stage_annotations:
             return
@@ -185,7 +185,11 @@ class SegmentMaker(SegmentMakerBaseClass):
                 number=stage_index + 1
             )
             start_measure = context[0][start_measure_index]
+            stop_measure = context[0][stop_measure_index]
             abjad.attach(rehearsal_mark, start_measure[0])
+            bar_line = abjad.BarLine('|')
+            abjad.attach(bar_line, stop_measure)
+
 
         scheme = abjad.schemetools.Scheme('format-mark-box-alphabet')
         abjad.setting(self._score).markFormatter = scheme
