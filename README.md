@@ -1,4 +1,4 @@
-# SURGE :: DART :: DRIFT
+# Heave, Sway, Surge
 
 For ten musicians:
 * Oboe
