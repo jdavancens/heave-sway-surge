@@ -15,7 +15,7 @@ def main():
         name='surge',
         packages=('surge',),
         url='https://github.com/jdavancens/surge',
-        version='0.1',
+        version='2.0',
         zip_safe=False,
     )
 

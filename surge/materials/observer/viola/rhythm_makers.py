@@ -12,6 +12,7 @@ tuplet_maker = TupletRhythmMaker
 duration_spelling_specifier = DurationSpellingSpecifier(
     decrease_durations_monotonically=True,
     forbid_meter_rewriting=False,
+    forbidden_written_duration=(1, 2),
     rewrite_meter=True,
     spell_metrically='unassignable',
 )
