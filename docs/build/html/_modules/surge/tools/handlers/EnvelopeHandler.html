@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.handlers.EnvelopeHandler &mdash; Surge  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="Surge  documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Surge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Surge</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>surge.tools.handlers.EnvelopeHandler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for surge.tools.handlers.EnvelopeHandler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Sept 28, 2016</span>
+
+<span class="sd">@author: josephdavancens</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">abjad</span>
+<span class="kn">from</span> <span class="nn">surge.tools.handlers.Handler</span> <span class="k">import</span> <span class="n">Handler</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+
+<div class="viewcode-block" id="EnvelopeHandler"><a class="viewcode-back" href="../../../../surge.tools.handlers.html#surge.tools.handlers.EnvelopeHandler.EnvelopeHandler">[docs]</a><span class="k">class</span> <span class="nc">EnvelopeHandler</span><span class="p">(</span><span class="n">Handler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for continuous parameter staves.</span>
+
+<span class="sd">    The methods `_handle_voice` and `_handle_rhythm_voice` must be implemented</span>
+<span class="sd">    in subclasses.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># CLASS ATTRIBUTES</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_number_of_staff_lines&#39;</span><span class="p">,)</span>
+
+    <span class="c1"># INITIALIZER</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">music_maker</span><span class="p">,</span>
+        <span class="n">number_of_staff_lines</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">):</span>
+        <span class="n">Handler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">music_maker</span><span class="o">=</span><span class="n">music_maker</span><span class="p">,</span>
+            <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="n">show_rhythmic_notation</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_number_of_staff_lines</span> <span class="o">=</span> <span class="n">number_of_staff_lines</span>
+
+    <span class="c1"># SPECIAL METHODS</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="n">voice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_music_maker</span><span class="p">(</span><span class="n">current_stage</span><span class="p">)</span>
+        <span class="n">rhythm_voice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_music_maker</span><span class="p">(</span><span class="n">current_stage</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name_voices</span><span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handle_voice</span><span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handle_rhythm_voice</span><span class="p">(</span><span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">)</span>
+
+    <span class="c1"># PRIVATE METHODS #</span>
+
+    <span class="k">def</span> <span class="nf">_lengths_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">envelope</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">voice</span><span class="p">[:]</span><span class="o">.</span><span class="n">get_duration</span><span class="p">()</span> <span class="o">==</span> <span class="n">envelope</span><span class="o">.</span><span class="n">length</span>
+
+    <span class="k">def</span> <span class="nf">_handle_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Abstract method&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_handle_rhythm_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Abstract method&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_quantize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">steps</span><span class="p">)</span> <span class="o">/</span> <span class="n">steps</span>
+
+    <span class="k">def</span> <span class="nf">_set_y_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">note</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">y_offset</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_number_of_staff_lines</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">abjad</span><span class="o">.</span><span class="n">override</span><span class="p">(</span><span class="n">note</span><span class="p">)</span><span class="o">.</span><span class="n">note_head</span><span class="o">.</span><span class="n">Y_offset</span> <span class="o">=</span> <span class="n">y_offset</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

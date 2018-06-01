@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.bezzie package &mdash; Surge  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Surge  documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Surge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">surge.tools.bezzie package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.BezierCurve">surge.tools.bezzie.BezierCurve module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.ConstantInterpolater">surge.tools.bezzie.ConstantInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.ConstantMeanInterpolater">surge.tools.bezzie.ConstantMeanInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.ControlPoint">surge.tools.bezzie.ControlPoint module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.DrunkInterpolater">surge.tools.bezzie.DrunkInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.HumpInterpolater">surge.tools.bezzie.HumpInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.LinearInterpolater">surge.tools.bezzie.LinearInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.Path">surge.tools.bezzie.Path module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.RandomInterpolater">surge.tools.bezzie.RandomInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.SineInterpolater">surge.tools.bezzie.SineInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie.SpikeInterpolater">surge.tools.bezzie.SpikeInterpolater module</a></li>
+<li><a class="reference internal" href="#module-surge.tools.bezzie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Surge</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>surge.tools.bezzie package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/surge.tools.bezzie.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="surge-tools-bezzie-package">
+<h1>surge.tools.bezzie package<a class="headerlink" href="#surge-tools-bezzie-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="surge.tools.bezzie.tests.html">surge.tools.bezzie.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="surge.tools.bezzie.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surge.tools.bezzie.tests.html#module-surge.tools.bezzie.tests.test_BezierCurve">surge.tools.bezzie.tests.test_BezierCurve module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surge.tools.bezzie.tests.html#module-surge.tools.bezzie.tests.test_ControlPoint">surge.tools.bezzie.tests.test_ControlPoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surge.tools.bezzie.tests.html#module-surge.tools.bezzie.tests.test_Path">surge.tools.bezzie.tests.test_Path module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surge.tools.bezzie.tests.html#module-surge.tools.bezzie.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-surge.tools.bezzie.BezierCurve">
+<span id="surge-tools-bezzie-beziercurve-module"></span><h2>surge.tools.bezzie.BezierCurve module<a class="headerlink" href="#module-surge.tools.bezzie.BezierCurve" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.BezierCurve.BezierCurve">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.BezierCurve.</code><code class="descname">BezierCurve</code><span class="sig-paren">(</span><em>*control_points</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/BezierCurve.html#BezierCurve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.BezierCurve.BezierCurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>An arbitrary degree two-dimensional Bezier curve. The number of
+<cite>ControlPoint</cite> objects supplied determines the degree of the curve.</p>
+<p>Intializes from one or more <a href="#id1"><span class="problematic" id="id2">`</span></a>ControlPoint`s.</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BezierCurve</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">BezierCurve((0.0, 0.0), (50.0, 100.0), (100.0, 0.0))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">length</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">in</span> <span class="n">b</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">37.5</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BezierCurve</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">BezierCurve((0.0, 0.0), (0.5, 1.0))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">length</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">in</span> <span class="n">b</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="ow">in</span> <span class="n">b</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="go">0.5</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="attribute">
+<dt id="surge.tools.bezzie.BezierCurve.BezierCurve.control_points">
+<code class="descname">control_points</code><a class="headerlink" href="#surge.tools.bezzie.BezierCurve.BezierCurve.control_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The control points that determine the shape of the curve.</p>
+<p>Returns a list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surge.tools.bezzie.BezierCurve.BezierCurve.degree">
+<code class="descname">degree</code><a class="headerlink" href="#surge.tools.bezzie.BezierCurve.BezierCurve.degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>The degree of the curve.</p>
+<p>Returns an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surge.tools.bezzie.BezierCurve.BezierCurve.length">
+<code class="descname">length</code><a class="headerlink" href="#surge.tools.bezzie.BezierCurve.BezierCurve.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the distance between the x values of the first and last
+<a href="#id3"><span class="problematic" id="id4">`</span></a>ControlPoint`s.</p>
+<p>Returns a float.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.ConstantInterpolater">
+<span id="surge-tools-bezzie-constantinterpolater-module"></span><h2>surge.tools.bezzie.ConstantInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.ConstantInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.ConstantInterpolater.ConstantInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.ConstantInterpolater.</code><code class="descname">ConstantInterpolater</code><a class="reference internal" href="_modules/surge/tools/bezzie/ConstantInterpolater.html#ConstantInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.ConstantInterpolater.ConstantInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A constant interpolater. Outputs y_0 for all x.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span> <span class="o">=</span> <span class="n">ConstantInterpolater</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.ConstantMeanInterpolater">
+<span id="surge-tools-bezzie-constantmeaninterpolater-module"></span><h2>surge.tools.bezzie.ConstantMeanInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.ConstantMeanInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.ConstantMeanInterpolater.ConstantMeanInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.ConstantMeanInterpolater.</code><code class="descname">ConstantMeanInterpolater</code><a class="reference internal" href="_modules/surge/tools/bezzie/ConstantMeanInterpolater.html#ConstantMeanInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.ConstantMeanInterpolater.ConstantMeanInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A constant mean interpolater. Outputs halfway between y0 and y1 for all
+x.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span> <span class="o">=</span> <span class="n">ConstantMeanInterpolater</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.5</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.ControlPoint">
+<span id="surge-tools-bezzie-controlpoint-module"></span><h2>surge.tools.bezzie.ControlPoint module<a class="headerlink" href="#module-surge.tools.bezzie.ControlPoint" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.ControlPoint.ControlPoint">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.ControlPoint.</code><code class="descname">ControlPoint</code><span class="sig-paren">(</span><em>*coordinates</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/ControlPoint.html#ControlPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.ControlPoint.ControlPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A point in n dimensions.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">ControlPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span>
+<span class="go">ControlPoint(1.0, 2.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">2.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">ControlPoint</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span>
+<span class="go">ControlPoint(1.0, 2.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">==</span> <span class="n">p1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">ControlPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">&lt;=</span> <span class="n">p2</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">&gt;</span> <span class="n">p1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">&gt;=</span> <span class="n">p1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p3</span> <span class="o">=</span> <span class="n">ControlPoint</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p3</span>
+<span class="go">ControlPoint(1.0, 2.0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.DrunkInterpolater">
+<span id="surge-tools-bezzie-drunkinterpolater-module"></span><h2>surge.tools.bezzie.DrunkInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.DrunkInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.DrunkInterpolater.DrunkInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.DrunkInterpolater.</code><code class="descname">DrunkInterpolater</code><span class="sig-paren">(</span><em>seed=0</em>, <em>amp=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/DrunkInterpolater.html#DrunkInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.DrunkInterpolater.DrunkInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A constant interpolater. For each x, takes a step in random direction,
+with a random step size.</p>
+<p>Initializes from a random seed and optionally, an amplitude.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span> <span class="o">=</span> <span class="n">DrunkInterpolater</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.2897142095845775</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.HumpInterpolater">
+<span id="surge-tools-bezzie-humpinterpolater-module"></span><h2>surge.tools.bezzie.HumpInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.HumpInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.HumpInterpolater.HumpInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.HumpInterpolater.</code><code class="descname">HumpInterpolater</code><a class="reference internal" href="_modules/surge/tools/bezzie/HumpInterpolater.html#HumpInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.HumpInterpolater.HumpInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.LinearInterpolater">
+<span id="surge-tools-bezzie-linearinterpolater-module"></span><h2>surge.tools.bezzie.LinearInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.LinearInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.LinearInterpolater.LinearInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.LinearInterpolater.</code><code class="descname">LinearInterpolater</code><a class="reference internal" href="_modules/surge/tools/bezzie/LinearInterpolater.html#LinearInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.LinearInterpolater.LinearInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Linear interpolater.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span> <span class="o">=</span> <span class="n">LinearInterpolater</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.Path">
+<span id="surge-tools-bezzie-path-module"></span><h2>surge.tools.bezzie.Path module<a class="headerlink" href="#module-surge.tools.bezzie.Path" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.Path.Path">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.Path.</code><code class="descname">Path</code><span class="sig-paren">(</span><em>*curves</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/Path.html#Path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.Path.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A sequence of linked BezierCurves B0, B1, …, Bn. The final x-value of Bi
+must be equal to the first x-value of Bi+1.</p>
+<p>Initializes from one or more <a href="#id5"><span class="problematic" id="id6">`</span></a>BezierCurve`s.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b0</span> <span class="o">=</span> <span class="n">BezierCurve</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b1</span> <span class="o">=</span> <span class="n">BezierCurve</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">surge</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">bezzie</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">length</span>
+<span class="go">200.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">in</span> <span class="n">p</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="go">50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="go">-50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="attribute">
+<dt id="surge.tools.bezzie.Path.Path.length">
+<code class="descname">length</code><a class="headerlink" href="#surge.tools.bezzie.Path.Path.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>The combined lengths of the curves.</p>
+<p>Returns float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="surge.tools.bezzie.Path.Path.set_interpolater">
+<code class="descname">set_interpolater</code><span class="sig-paren">(</span><em>interpolater</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/Path.html#Path.set_interpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.Path.Path.set_interpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the interpolation function to be used.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.RandomInterpolater">
+<span id="surge-tools-bezzie-randominterpolater-module"></span><h2>surge.tools.bezzie.RandomInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.RandomInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.RandomInterpolater.RandomInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.RandomInterpolater.</code><code class="descname">RandomInterpolater</code><span class="sig-paren">(</span><em>seed=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/RandomInterpolater.html#RandomInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.RandomInterpolater.RandomInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A constant interpolater. For each x, jumps to a random y between y0 and
+y1.</p>
+<p>Initializes from a random seed and optionally, an amplitude.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.SineInterpolater">
+<span id="surge-tools-bezzie-sineinterpolater-module"></span><h2>surge.tools.bezzie.SineInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.SineInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.SineInterpolater.SineInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.SineInterpolater.</code><code class="descname">SineInterpolater</code><span class="sig-paren">(</span><em>freq</em>, <em>amp=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/surge/tools/bezzie/SineInterpolater.html#SineInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.SineInterpolater.SineInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Sine wave interpolater.</p>
+<p>Initializes with frequency and amplitude.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie.SpikeInterpolater">
+<span id="surge-tools-bezzie-spikeinterpolater-module"></span><h2>surge.tools.bezzie.SpikeInterpolater module<a class="headerlink" href="#module-surge.tools.bezzie.SpikeInterpolater" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surge.tools.bezzie.SpikeInterpolater.SpikeInterpolater">
+<em class="property">class </em><code class="descclassname">surge.tools.bezzie.SpikeInterpolater.</code><code class="descname">SpikeInterpolater</code><a class="reference internal" href="_modules/surge/tools/bezzie/SpikeInterpolater.html#SpikeInterpolater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#surge.tools.bezzie.SpikeInterpolater.SpikeInterpolater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Hump interpolater.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span> <span class="o">=</span> <span class="n">SpikeInterpolater</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-surge.tools.bezzie">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-surge.tools.bezzie" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

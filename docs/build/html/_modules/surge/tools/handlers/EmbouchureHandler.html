@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.handlers.EmbouchureHandler &mdash; Surge  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="Surge  documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Surge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Surge</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>surge.tools.handlers.EmbouchureHandler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for surge.tools.handlers.EmbouchureHandler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Nov 20, 2015</span>
+
+<span class="sd">@author: josephdavancens</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">abjad</span>
+<span class="kn">from</span> <span class="nn">surge.tools.handlers.EnvelopeHandler</span> <span class="k">import</span> <span class="n">EnvelopeHandler</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+
+<div class="viewcode-block" id="EmbouchureHandler"><a class="viewcode-back" href="../../../../surge.tools.handlers.html#surge.tools.handlers.EmbouchureHandler.EmbouchureHandler">[docs]</a><span class="k">class</span> <span class="nc">EmbouchureHandler</span><span class="p">(</span><span class="n">EnvelopeHandler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An embouchure handler for brass instruments</span>
+
+<span class="sd">        Air pressure -&gt; staff position, glissando spanner</span>
+<span class="sd">        Air pressure tremolo -&gt; glissando spanner style (rate)</span>
+<span class="sd">        Lip pressure -&gt; circle notehead grey value</span>
+<span class="sd">        Vowels -&gt; markup</span>
+<span class="sd">        Consonant patterns -&gt; markup</span>
+<span class="sd">        Air pressure tremolo -&gt; glissando spanner style, shape</span>
+<span class="sd">        Staccato -&gt; hide line spanner</span>
+<span class="sd">        Inhale -&gt; Indicator</span>
+
+<span class="sd">    Returns voices for a particular stage in a segment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># CLASS ATTRIBUTES</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;_music_maker&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_air_pressure_envelopes&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_air_pressure_envelopes_release&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_lip_pressure_envelopes&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_number_of_staff_lines&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_consonant_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_fluttertongue_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_direction_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_staccato_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_vibrato_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_vowel_patterns&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># INTIALIZER</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">music_maker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">air_pressure_envelopes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">air_pressure_envelopes_release</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">lip_pressure_envelopes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">consonant_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fluttertongue_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">direction_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">staccato_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vibrato_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vowel_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">number_of_staff_lines</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">):</span>
+        <span class="n">EnvelopeHandler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">music_maker</span><span class="o">=</span><span class="n">music_maker</span><span class="p">,</span>
+            <span class="n">number_of_staff_lines</span><span class="o">=</span><span class="n">number_of_staff_lines</span><span class="p">,</span>
+            <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="n">show_rhythmic_notation</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes</span> <span class="o">=</span> <span class="n">air_pressure_envelopes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes_release</span> <span class="o">=</span> <span class="n">air_pressure_envelopes_release</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lip_pressure_envelopes</span> <span class="o">=</span> <span class="n">lip_pressure_envelopes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_consonant_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">consonant_patterns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_direction_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">direction_patterns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fluttertongue_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span>
+            <span class="n">fluttertongue_patterns</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_staccato_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">staccato_patterns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vibrato_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">vibrato_patterns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vowel_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">vowel_patterns</span><span class="p">)</span>
+
+    <span class="c1"># PRIVATE METHODS</span>
+
+    <span class="k">def</span> <span class="nf">_attach_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">last_direction</span><span class="p">,</span> <span class="n">tie</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">ordinal</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">OrdinalConstant</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Down&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span>
+            <span class="n">articulation</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Articulation</span><span class="p">(</span><span class="s1">&#39;rtoe&#39;</span><span class="p">,</span> <span class="n">Down</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;out&#39;</span><span class="p">:</span>
+            <span class="n">articulation</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Articulation</span><span class="p">(</span><span class="s1">&#39;ltoe&#39;</span><span class="p">,</span> <span class="n">Down</span><span class="p">)</span>
+        <span class="n">abjad</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">articulation</span><span class="p">,</span> <span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_attach_fluttertongue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fluttertongue</span><span class="p">,</span> <span class="n">tie</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fluttertongue</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_stem_tremolo</span><span class="p">(</span><span class="n">tie</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_attach_phoneme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">consonant</span><span class="p">,</span> <span class="n">vowel</span><span class="p">,</span> <span class="n">tie</span><span class="p">,</span> <span class="n">last_vowel</span><span class="p">):</span>
+        <span class="n">consonant</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="n">consonant</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">consonant</span>
+        <span class="n">vowel</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="n">vowel</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">vowel</span>
+        <span class="n">phoneme</span> <span class="o">=</span> <span class="n">consonant</span> <span class="o">+</span> <span class="n">vowel</span>
+        <span class="k">if</span> <span class="n">phoneme</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">phoneme</span> <span class="o">!=</span> <span class="n">last_vowel</span><span class="p">:</span>
+            <span class="n">markup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_text_markup</span><span class="p">(</span><span class="n">phoneme</span><span class="p">)</span>
+            <span class="n">abjad</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span> <span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_attach_pressure_notehead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tie</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">fill</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_markup</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">pressure</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outline</span><span class="p">:</span>
+            <span class="n">outline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_outline_markup</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">circle</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">combine</span><span class="p">([</span><span class="n">fill</span><span class="p">,</span> <span class="n">outline</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_markup_to_notehead</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">circle</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_markup_to_notehead</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_handle_rhythm_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="n">last_vowel</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">tie</span><span class="p">,</span> <span class="n">offset_start</span><span class="p">,</span> <span class="n">offset_end</span> <span class="ow">in</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">_iterate_logical_ties</span><span class="p">(</span><span class="n">rhythm_voice</span><span class="p">):</span>
+            <span class="n">last_direction</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_rhythmic_notation</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">tie</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_hide_leaf</span><span class="p">(</span><span class="n">leaf</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">tie</span><span class="o">.</span><span class="n">is_pitched</span><span class="p">:</span>
+                <span class="c1"># get current parameters</span>
+                <span class="n">consonant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_consonant_patterns</span><span class="p">,</span>
+                    <span class="n">current_stage</span>
+                <span class="p">)</span>
+                <span class="n">direction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_direction_patterns</span><span class="p">,</span>
+                    <span class="n">current_stage</span>
+                <span class="p">)</span>
+
+                <span class="n">vowel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_vowel_patterns</span><span class="p">,</span>
+                    <span class="n">current_stage</span>
+                <span class="p">)</span>
+
+                <span class="c1"># attach indicators</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_attach_direction</span><span class="p">(</span><span class="n">direction</span><span class="p">,</span> <span class="n">last_direction</span><span class="p">,</span> <span class="n">tie</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_attach_phoneme</span><span class="p">(</span><span class="n">consonant</span><span class="p">,</span> <span class="n">vowel</span><span class="p">,</span> <span class="n">tie</span><span class="p">,</span> <span class="n">last_vowel</span><span class="p">)</span>
+
+                <span class="n">last_direction</span> <span class="o">=</span> <span class="n">direction</span>
+                <span class="n">last_vowel</span> <span class="o">=</span> <span class="n">vowel</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">last_direction</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">last_vowel</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_handle_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes</span><span class="p">[</span><span class="n">current_stage</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="n">last_pressure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">air_pressure_envelope</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes</span><span class="p">[</span><span class="n">current_stage</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes_release</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_air_pressure_envelopes_release</span><span class="p">[</span><span class="n">current_stage</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">air_pressure_envelope_release</span> <span class="o">=</span> <span class="n">air_pressure_envelope</span>
+        <span class="n">lip_pressure_envelope</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lip_pressure_envelopes</span><span class="p">[</span><span class="n">current_stage</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">tie</span><span class="p">,</span> <span class="n">offset_start</span><span class="p">,</span> <span class="n">offset_end</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iterate_logical_ties</span><span class="p">(</span><span class="n">voice</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">tie</span><span class="o">.</span><span class="n">is_pitched</span><span class="p">:</span>
+                <span class="c1"># calculate positions</span>
+                <span class="n">air_pressure_start</span> <span class="o">=</span> <span class="n">air_pressure_envelope</span><span class="p">(</span><span class="n">offset_start</span><span class="p">)</span>
+                <span class="n">air_pressure_end</span> <span class="o">=</span> <span class="n">air_pressure_envelope_release</span><span class="p">(</span><span class="n">offset_end</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_set_y_offset</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">air_pressure_start</span><span class="p">)</span>
+                <span class="n">lip_pressure</span> <span class="o">=</span> <span class="n">lip_pressure_envelope</span><span class="p">(</span><span class="n">offset_start</span><span class="p">)</span>
+                <span class="n">lip_pressure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantize</span><span class="p">(</span><span class="n">lip_pressure</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+                <span class="c1"># note head</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_attach_pressure_notehead</span><span class="p">(</span><span class="n">tie</span><span class="p">,</span> <span class="n">lip_pressure</span><span class="p">)</span>
+
+                <span class="c1"># determine if line</span>
+                <span class="n">staccato</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_staccato_patterns</span><span class="p">,</span>
+                    <span class="n">current_stage</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">staccato</span><span class="p">:</span>
+                    <span class="c1"># determine line style</span>
+                    <span class="n">vibrato</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_vibrato_patterns</span><span class="p">,</span>
+                        <span class="n">current_stage</span>
+                    <span class="p">)</span>
+                    <span class="n">fluttertongue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_fluttertongue_patterns</span><span class="p">,</span>
+                        <span class="n">current_stage</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="n">vibrato</span><span class="p">:</span>
+                        <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;zigzag&#39;</span>
+                    <span class="k">elif</span> <span class="n">fluttertongue</span><span class="p">:</span>
+                        <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;dashed-line&#39;</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">style</span> <span class="o">=</span> <span class="kc">None</span>
+
+                    <span class="n">color</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">schemetools</span><span class="o">.</span><span class="n">Scheme</span><span class="p">(</span>
+                        <span class="p">[</span>
+                            <span class="s1">&#39;rgb-color&#39;</span><span class="p">,</span>
+                            <span class="n">lip_pressure</span><span class="p">,</span>
+                            <span class="n">lip_pressure</span><span class="p">,</span>
+                            <span class="n">lip_pressure</span>
+                        <span class="p">]</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># create line anchors</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_attach_glissando</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_hidden_grace_after</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+
+                    <span class="c1"># set y offsets</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_set_y_offset</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">air_pressure_start</span><span class="p">)</span>
+                    <span class="n">grace</span> <span class="o">=</span> \
+                        <span class="n">abjad</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">tie</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span><span class="o">.</span><span class="n">get_after_grace_container</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_set_y_offset</span><span class="p">(</span><span class="n">grace</span><span class="p">,</span> <span class="n">air_pressure_end</span><span class="p">)</span>
+
+                <span class="c1"># hide tied noes</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">tie</span><span class="o">.</span><span class="n">is_trivial</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">tie</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_add_gliss_skip</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_hide_note_head</span><span class="p">(</span><span class="n">note</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

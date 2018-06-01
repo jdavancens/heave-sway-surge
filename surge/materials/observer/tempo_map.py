@@ -7,28 +7,28 @@ from .time_signatures import time_signatures
 
 tempi = (
     (
-        MetronomeMark(Duration(1, 4), 54),
-        MetronomeMark(Duration(1, 4), 81)
+        MetronomeMark(Duration(1, 8), 108),
+        MetronomeMark(Duration(1, 8), 162)
     ),
     (
-        MetronomeMark(Duration(1, 4), 68),
-        MetronomeMark(Duration(1, 4), 54),
-        MetronomeMark(Duration(1, 4), 81),
+        MetronomeMark(Duration(1, 8), 136),
+        MetronomeMark(Duration(1, 8), 108),
+        MetronomeMark(Duration(1, 8), 162),
     ),
     (
-        MetronomeMark(Duration(1, 4), 68),
-        MetronomeMark(Duration(1, 4), 47),
-        MetronomeMark(Duration(1, 4), 81),
-        MetronomeMark(Duration(1, 4), 72),
+        MetronomeMark(Duration(1, 8), 136),
+        MetronomeMark(Duration(1, 8), 94),
+        MetronomeMark(Duration(1, 8), 162),
+        MetronomeMark(Duration(1, 8), 144),
     ),
     (
-        MetronomeMark(Duration(1, 4), 54),
-        MetronomeMark(Duration(1, 4), 68),
-        MetronomeMark(Duration(1, 4), 81),
+        MetronomeMark(Duration(1, 8), 108),
+        MetronomeMark(Duration(1, 8), 136),
+        MetronomeMark(Duration(1, 8), 162),
     ),
     (
-        MetronomeMark(Duration(1, 4), 68),
-        MetronomeMark(Duration(1, 4), 54),
+        MetronomeMark(Duration(1, 8), 136),
+        MetronomeMark(Duration(1, 8), 108),
     ),
 )
 assert(len(tempi) == len(time_signatures))

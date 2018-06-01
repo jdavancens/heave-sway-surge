@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.handlers.WoodwindFingeringHandler &mdash; Surge  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="Surge  documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Surge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Surge</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>surge.tools.handlers.WoodwindFingeringHandler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for surge.tools.handlers.WoodwindFingeringHandler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Created on Nov 20, 2015</span>
+
+<span class="sd">@author: josephdavancens</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">surge.tools.handlers.Handler</span> <span class="k">import</span> <span class="n">Handler</span>
+<span class="kn">from</span> <span class="nn">surge.tools.handlers.TablatureHandler</span> <span class="k">import</span> <span class="n">TablatureHandler</span>
+<span class="kn">import</span> <span class="nn">abjad</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+
+<div class="viewcode-block" id="WoodwindFingeringHandler"><a class="viewcode-back" href="../../../../surge.tools.handlers.html#surge.tools.handlers.WoodwindFingeringHandler.WoodwindFingeringHandler">[docs]</a><span class="k">class</span> <span class="nc">WoodwindFingeringHandler</span><span class="p">(</span><span class="n">TablatureHandler</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A fingering handler for woodwind instruments.</span>
+<span class="sd">        Maps key index to staff position</span>
+<span class="sd">        Key indication as note head (open, closed), articulation (side keys)</span>
+<span class="sd">        Trill (piano tremolo style - between notes)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># CLASS ATTRIBUTES</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;_music_maker&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_fingerings&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_trill_patterns&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;_hand&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># INITIALIZER</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">music_maker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fingerings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">trill_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">hand</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">):</span>
+        <span class="n">TablatureHandler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">music_maker</span><span class="o">=</span><span class="n">music_maker</span><span class="p">,</span>
+            <span class="n">number_of_staff_lines</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">show_rhythmic_notation</span><span class="o">=</span><span class="n">show_rhythmic_notation</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fingerings</span> <span class="o">=</span> <span class="n">fingerings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trill_patterns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cycles</span><span class="p">(</span><span class="n">trill_patterns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hand</span> <span class="o">=</span> <span class="n">hand</span>
+
+    <span class="c1"># SPECIAL METHODS</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="n">voice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_music_maker</span><span class="p">(</span><span class="n">current_stage</span><span class="p">)</span>
+        <span class="n">rhythm_voice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_music_maker</span><span class="p">(</span><span class="n">current_stage</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handle_voice</span><span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handle_rhythm_voice</span><span class="p">(</span><span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+        <span class="n">lifeline_voice</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handle_lifeline_voice</span><span class="p">(</span><span class="n">lifeline_voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name_voices</span><span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">lifeline_voice</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">lifeline_voice</span><span class="p">)</span>
+
+    <span class="c1"># PRIVATE METHODS</span>
+
+    <span class="k">def</span> <span class="nf">_construct_fingering_tablature</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">logical_tie</span><span class="p">,</span>
+        <span class="n">fingering</span><span class="p">,</span>
+        <span class="n">previous_fingering</span>
+    <span class="p">):</span>
+        <span class="c1"># create &#39;chords&#39; at particular staff positions</span>
+        <span class="n">staff_positions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+        <span class="n">finger_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;thumb&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="s1">&#39;ring&#39;</span><span class="p">,</span> <span class="s1">&#39;pinky&#39;</span><span class="p">]</span>
+        <span class="n">finger_names</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">logical_tie</span><span class="p">):</span>
+            <span class="n">chord</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Chord</span><span class="p">(</span><span class="n">staff_positions</span><span class="p">,</span> <span class="n">leaf</span><span class="o">.</span><span class="n">written_duration</span><span class="p">)</span>
+            <span class="n">abjad</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">leaf</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">chord</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># first leaf</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">note_head</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chord</span><span class="o">.</span><span class="n">note_heads</span><span class="p">):</span>
+                    <span class="n">finger_name</span> <span class="o">=</span> <span class="n">finger_names</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                    <span class="n">current_keys</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="n">finger_name</span> <span class="ow">in</span> <span class="n">fingering</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">current_keys</span> <span class="o">=</span> <span class="n">fingering</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">finger_name</span><span class="p">]</span>
+                    <span class="n">previous_keys</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="n">previous_fingering</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">previous_keys</span> <span class="o">=</span> <span class="n">previous_fingering</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">finger_name</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">current_keys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="c1"># continuation: hide note head</span>
+                        <span class="k">if</span> <span class="n">previous_keys</span> <span class="o">==</span> <span class="n">current_keys</span><span class="p">:</span>
+                            <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">stencil</span> <span class="o">=</span> \
+                                <span class="n">abjad</span><span class="o">.</span><span class="n">Scheme</span><span class="p">(</span><span class="s1">&#39;point-stencil&#39;</span><span class="p">)</span>
+                        <span class="c1"># new fingering: set note head to markup</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">markup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_note_head_markup</span><span class="p">(</span><span class="n">current_keys</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">markup</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">stencil</span> <span class="o">=</span> \
+                                    <span class="s1">&#39;ly:text-interface::print&#39;</span>
+                                <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">markup</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">stencil</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Scheme</span><span class="p">(</span><span class="s1">&#39;point-stencil&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># non-first leaf</span>
+                <span class="k">for</span> <span class="n">note_head</span> <span class="ow">in</span> <span class="n">chord</span><span class="o">.</span><span class="n">note_heads</span><span class="p">:</span>
+                    <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">stencil</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Scheme</span><span class="p">(</span><span class="s1">&#39;point-stencil&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_handle_rhythm_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">logical_tie</span> <span class="ow">in</span> <span class="n">abjad</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span><span class="o">.</span><span class="n">by_logical_tie</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_rhythmic_notation</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">logical_tie</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_hide_leaf</span><span class="p">(</span><span class="n">leaf</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_handle_lifeline_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="c1"># hide note heads if no fingerings</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerings</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">abjad</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span><span class="o">.</span><span class="n">by_leaf</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_hide_note_head</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="c1"># loop through logical ties</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">logical_tie</span> <span class="ow">in</span> <span class="n">abjad</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span><span class="o">.</span><span class="n">by_logical_tie</span><span class="p">(</span><span class="n">pitched</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="c1"># hide all note heads</span>
+
+            <span class="k">for</span> <span class="n">chord</span> <span class="ow">in</span> <span class="n">logical_tie</span><span class="p">:</span>
+                <span class="c1"># assert(isinstance(chord, abjad.Chord))</span>
+                <span class="k">for</span> <span class="n">note_head</span> <span class="ow">in</span> <span class="n">chord</span><span class="o">.</span><span class="n">note_heads</span><span class="p">:</span>
+                    <span class="n">note_head</span><span class="o">.</span><span class="n">tweak</span><span class="o">.</span><span class="n">stencil</span> <span class="o">=</span> \
+                        <span class="n">abjad</span><span class="o">.</span><span class="n">schemetools</span><span class="o">.</span><span class="n">Scheme</span><span class="p">(</span><span class="s1">&#39;point-stencil&#39;</span><span class="p">)</span>
+
+            <span class="c1"># create glissando map (note index -&gt; note index)</span>
+            <span class="n">fingering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerings</span><span class="p">[</span><span class="n">current_stage</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">glissando_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_glissando_map</span><span class="p">(</span>
+                <span class="n">fingering</span><span class="p">,</span>
+                <span class="n">voice</span><span class="o">.</span><span class="n">context_name</span>
+            <span class="p">)</span>
+
+            <span class="c1"># attach glissando map and glissando command</span>
+            <span class="k">if</span> <span class="n">glissando_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">abjad</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">glissando_map</span><span class="p">,</span> <span class="n">logical_tie</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+
+                <span class="c1"># determine line style</span>
+                <span class="n">trill</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle_next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_trill_patterns</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">trill</span><span class="p">:</span>
+                    <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;dashed-line&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">style</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="c1"># attach lifelines</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_attach_glissando</span><span class="p">(</span>
+                    <span class="n">logical_tie</span><span class="o">.</span><span class="n">head</span><span class="p">,</span>
+                    <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">style</span><span class="o">=</span><span class="n">style</span>
+                <span class="p">)</span>
+
+                <span class="c1"># add gliss skip to non-first leaves</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">logical_tie</span><span class="o">.</span><span class="n">is_trivial</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">logical_tie</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_add_gliss_skip</span><span class="p">(</span><span class="n">leaf</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># remove markups</span>
+        <span class="n">abjad</span><span class="o">.</span><span class="n">detach</span><span class="p">(</span><span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">,</span> <span class="n">voice</span><span class="p">)</span>
+
+        <span class="c1"># get groups of non-rest leaves, attach final gliss anchor to last</span>
+        <span class="k">for</span> <span class="n">note_group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_consecutive_note_groups</span><span class="p">(</span><span class="n">voice</span><span class="p">):</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="n">note_group</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hidden_grace_after</span><span class="p">(</span>
+                <span class="n">last</span><span class="p">,</span>
+                <span class="n">grace_note</span><span class="o">=</span><span class="n">abjad</span><span class="o">.</span><span class="n">Chord</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">note_heads</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_handle_voice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">current_stage</span><span class="p">):</span>
+        <span class="c1"># hide all noteheads if no fingerings</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerings</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">abjad</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span><span class="o">.</span><span class="n">by_leaf</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_hide_note_head</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="c1"># get logical ties and construct fingering tablature</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">previous_fingering</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">logical_tie</span> <span class="ow">in</span> <span class="n">abjad</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">voice</span><span class="p">)</span><span class="o">.</span><span class="n">by_logical_tie</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">logical_tie</span><span class="o">.</span><span class="n">is_pitched</span><span class="p">:</span>
+                <span class="n">fingering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fingerings</span><span class="p">[</span><span class="n">current_stage</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_construct_fingering_tablature</span><span class="p">(</span>
+                    <span class="n">logical_tie</span><span class="o">=</span><span class="n">logical_tie</span><span class="p">,</span>
+                    <span class="n">fingering</span><span class="o">=</span><span class="n">fingering</span><span class="p">,</span>
+                    <span class="n">previous_fingering</span><span class="o">=</span><span class="n">previous_fingering</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">previous_fingering</span> <span class="o">=</span> <span class="n">fingering</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">previous_fingering</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_make_glissando_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fingering</span><span class="p">,</span> <span class="n">context_name</span><span class="p">):</span>
+        <span class="n">binary_list</span> <span class="o">=</span> <span class="n">fingering</span><span class="o">.</span><span class="n">as_binary_list</span><span class="p">()</span>
+        <span class="n">binary_list</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+        <span class="n">glissando_map_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">finger</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">binary_list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">finger</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">mapping</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">schemetools</span><span class="o">.</span><span class="n">SchemePair</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+                <span class="n">glissando_map_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">binary_list</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">binary_list</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">glissando_map_vector</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">schemetools</span><span class="o">.</span><span class="n">SchemeVector</span><span class="p">(</span>
+                <span class="n">glissando_map_list</span>
+            <span class="p">)</span>
+            <span class="n">glissando_map</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">lilypondnametools</span><span class="o">.</span><span class="n">LilyPondContextSetting</span><span class="p">(</span>
+                <span class="n">context_name</span><span class="o">=</span><span class="n">context_name</span><span class="p">,</span>
+                <span class="n">context_property</span><span class="o">=</span><span class="s1">&#39;glissandoMap&#39;</span><span class="p">,</span>
+                <span class="n">value</span><span class="o">=</span><span class="n">glissando_map_vector</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">glissando_map</span>
+
+    <span class="k">def</span> <span class="nf">_make_key_name_markup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_name</span><span class="p">):</span>
+        <span class="n">key_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
+        <span class="n">pitch</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;cis&#39;</span><span class="p">,</span> <span class="s1">&#39;fis&#39;</span><span class="p">,</span> <span class="s1">&#39;gis&#39;</span><span class="p">,</span> <span class="s1">&#39;ees&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;bes&#39;</span><span class="p">]</span>
+        <span class="n">alt_pitch</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;low-bes&#39;</span><span class="p">,</span> <span class="s1">&#39;high-fis&#39;</span><span class="p">,</span> <span class="s1">&#39;low-c&#39;</span><span class="p">,</span> <span class="s1">&#39;front-f&#39;</span><span class="p">]</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;II&#39;</span><span class="p">,</span> <span class="s2">&quot;III&quot;</span><span class="p">,</span>
+                 <span class="s1">&#39;banana&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">key_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;thumb&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;thumb&#39;</span><span class="p">,</span> <span class="s1">&#39;half&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">pitch</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">key_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+                <span class="n">acc</span> <span class="o">=</span> <span class="n">key_name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="k">if</span> <span class="n">acc</span> <span class="o">==</span> <span class="s1">&#39;es&#39;</span><span class="p">:</span>
+                    <span class="n">acc</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">flat</span><span class="p">()</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">acc</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">sharp</span><span class="p">()</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">p</span><span class="p">,</span> <span class="n">acc</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">key_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">alt_pitch</span><span class="p">:</span>
+            <span class="n">alt</span><span class="p">,</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">key_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+            <span class="n">alt</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">alt</span><span class="p">)</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">pitch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">acc</span> <span class="o">=</span> <span class="n">pitch</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="k">if</span> <span class="n">acc</span> <span class="o">==</span> <span class="s1">&#39;es&#39;</span><span class="p">:</span>
+                    <span class="n">acc</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">flat</span><span class="p">()</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">acc</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">sharp</span><span class="p">()</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">pitch</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">p</span><span class="p">,</span> <span class="n">acc</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pitch</span> <span class="o">=</span> <span class="n">p</span>
+            <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">alt</span><span class="p">,</span> <span class="n">pitch</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;II&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;III&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;four&#39;</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;IV&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;bn&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">markup</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">fontsize</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">bold</span><span class="p">()</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">whiteout</span><span class="p">()</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">pad_around</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">markup</span>
+
+    <span class="k">def</span> <span class="nf">_make_note_head_markup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_combination</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; key names: a, b, c, d, e, f, g, cis, ees, bes, low-bes, cis, fis,</span>
+<span class="sd">        gis, high-fis, low-c, front-f, thumb, T, R, banana, one, two, three,</span>
+<span class="sd">        four, h, I, II, III.</span>
+<span class="sd">        positions: down, half</span>
+<span class="sd">        (down)</span>
+<span class="sd">        (half)</span>
+<span class="sd">        (b)</span>
+<span class="sd">        (down, b)</span>
+<span class="sd">        (half, b)</span>
+
+<span class="sd">        key_combination is a combination of keys pressed by a single finger</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">circle_size</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">markups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">key_combination</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">white_circle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_markup</span><span class="p">(</span><span class="n">circle_size</span><span class="p">,</span> <span class="n">grey</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">circle_outline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_outline_markup</span><span class="p">(</span><span class="n">circle_size</span><span class="p">)</span>
+            <span class="n">circle</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">combine</span><span class="p">([</span><span class="n">white_circle</span><span class="p">,</span> <span class="n">circle_outline</span><span class="p">])</span>
+            <span class="n">markups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_combination</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;thumb&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">):</span>
+                    <span class="n">black_circle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_markup</span><span class="p">(</span>
+                        <span class="n">circle_size</span><span class="p">,</span>
+                        <span class="n">grey</span><span class="o">=</span><span class="mi">0</span>
+                    <span class="p">)</span>
+                    <span class="n">circle_outline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_outline_markup</span><span class="p">(</span>
+                        <span class="n">circle_size</span>
+                    <span class="p">)</span>
+                    <span class="n">circle</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">black_circle</span><span class="p">,</span> <span class="n">circle_outline</span><span class="p">]</span>
+                    <span class="p">)</span>
+                    <span class="n">markups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;half&#39;</span><span class="p">,):</span>
+                    <span class="n">white_circle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_markup</span><span class="p">(</span>
+                        <span class="n">circle_size</span><span class="p">,</span>
+                        <span class="n">grey</span><span class="o">=</span><span class="mi">1</span>
+                    <span class="p">)</span>
+                    <span class="n">circle_outline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_circle_outline_markup</span><span class="p">(</span>
+                        <span class="n">circle_size</span>
+                    <span class="p">)</span>
+                    <span class="n">half_circle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_half_circle_markup</span><span class="p">(</span><span class="n">circle_size</span><span class="p">)</span>
+                    <span class="n">circle</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">white_circle</span><span class="p">,</span> <span class="n">circle_outline</span><span class="p">]</span>
+                    <span class="p">)</span>
+                    <span class="n">circle</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">combine</span><span class="p">([</span><span class="n">circle</span><span class="p">,</span> <span class="n">half_circle</span><span class="p">])</span>
+                    <span class="n">markups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">markup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_key_name_markup</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                    <span class="n">markups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">markup</span><span class="p">)</span>
+        <span class="c1"># concatenate multiple markups</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">markups</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">markups</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+            <span class="n">markups_new</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">markup</span> <span class="ow">in</span> <span class="n">markups</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">hspace</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="o">.</span><span class="n">hspace</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">markups_new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">markup</span><span class="p">)</span>
+                <span class="n">markups_new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hspace</span><span class="p">)</span>
+            <span class="n">markups_new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">markups</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">abjad</span><span class="o">.</span><span class="n">Markup</span><span class="p">()</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">markups_new</span><span class="p">)</span><span class="o">.</span><span class="n">halign</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">markups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">halign</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_name_voices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">,</span> <span class="n">lifeline_voice</span><span class="p">):</span>
+        <span class="n">Handler</span><span class="o">.</span><span class="n">_name_voices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voice</span><span class="p">,</span> <span class="n">rhythm_voice</span><span class="p">)</span>
+        <span class="n">lifeline_voice</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_music_maker</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; Lifeline&#39;</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

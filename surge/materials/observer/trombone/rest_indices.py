@@ -6,19 +6,19 @@ rest_indices = [
     ],
     [
         'all',
-        'all',
-        'all'
+        [0] + list(range(2, 9)),
+        list(range(7)) + list(range(8, 15)),
     ],
     [
-        [0, 3, 5],
-        [0, 4, 7, 11],
-        [0, 4, 7, 10],
-        [0, 4, 7, 11]
+        range(5),
+        list(range(4)) + list(range(7, 11)),
+        list(range(4)) + list(range(7, 10)),
+        list(range(4)) + list(range(7, 11)),
     ],
     [
-        [0, 1, 2],
-        [0, 7],
-        [3, 4, 5, 6, 7]
+        range(2, 9),
+        range(4, 13),
+        range(3),
     ],
     [
         'all',

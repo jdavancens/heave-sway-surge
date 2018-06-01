@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>surge.tools.rhythmtools.BinaryPatternSubdivider &mdash; Surge  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="Surge  documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Surge
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Surge</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>surge.tools.rhythmtools.BinaryPatternSubdivider</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for surge.tools.rhythmtools.BinaryPatternSubdivider</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">surge.tools.rhythmtools.Subdivider</span> <span class="k">import</span> <span class="n">Subdivider</span>
+<span class="kn">import</span> <span class="nn">abjad</span>
+<span class="kn">import</span> <span class="nn">rhypy</span>
+
+
+<div class="viewcode-block" id="BinaryPatternSubdivider"><a class="viewcode-back" href="../../../../surge.tools.rhythmtools.html#surge.tools.rhythmtools.BinaryPatternSubdivider.BinaryPatternSubdivider">[docs]</a><span class="k">class</span> <span class="nc">BinaryPatternSubdivider</span><span class="p">(</span><span class="n">Subdivider</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Binary pattern subdivider.</span>
+
+<span class="sd">        ::</span>
+<span class="sd">            &gt;&gt;&gt; b = BinaryPatternSubdivider([1,0,1])</span>
+<span class="sd">            &gt;&gt;&gt; b(6)</span>
+<span class="sd">            Ratio((2, 1, 2, 1))</span>
+
+<span class="sd">            &gt;&gt;&gt; b = BinaryPatternSubdivider([1,0,1])</span>
+<span class="sd">            &gt;&gt;&gt; b(7)</span>
+<span class="sd">            Ratio((2, 1, 2, 1, 1))</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_binary_pattern&#39;</span><span class="p">,)</span>
+
+    <span class="c1"># INITIALIZER</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">binary_pattern</span><span class="p">,</span>
+        <span class="n">rotation_cycle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">second_level_subdivider</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">second_level_subdivision_pattern</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">sustain_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">silence_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_binary_pattern</span> <span class="o">=</span> <span class="n">binary_pattern</span>
+        <span class="n">Subdivider</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">rotation_cycle</span><span class="o">=</span><span class="n">rotation_cycle</span><span class="p">,</span>
+            <span class="n">second_level_subdivider</span><span class="o">=</span><span class="n">second_level_subdivider</span><span class="p">,</span>
+            <span class="n">second_level_subdivision_pattern</span><span class="o">=</span><span class="n">second_level_subdivision_pattern</span><span class="p">,</span>
+            <span class="n">sustain_mask</span><span class="o">=</span><span class="n">sustain_mask</span><span class="p">,</span>
+            <span class="n">silence_mask</span><span class="o">=</span><span class="n">silence_mask</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="c1"># SPECIAL METHODS</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="n">abjad</span><span class="o">.</span><span class="n">datastructuretools</span><span class="o">.</span><span class="n">Pattern</span><span class="o">.</span><span class="n">from_vector</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_binary_pattern</span>
+        <span class="p">)</span>
+        <span class="n">binary_rhythm</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">get_boolean_vector</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+        <span class="n">rhythm</span> <span class="o">=</span> <span class="n">rhypy</span><span class="o">.</span><span class="n">Rhythm</span><span class="p">(</span><span class="n">binary_rhythm</span><span class="p">)</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">rhythm</span><span class="o">.</span><span class="n">inter_onset_intervals</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">Subdivider</span><span class="o">.</span><span class="n">_apply_second_level_subdivider</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">Subdivider</span><span class="o">.</span><span class="n">_apply_sustain_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">Subdivider</span><span class="o">.</span><span class="n">_apply_silence_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">Subdivider</span><span class="o">.</span><span class="n">_rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">abjad</span><span class="o">.</span><span class="n">mathtools</span><span class="o">.</span><span class="n">Ratio</span><span class="p">(</span><span class="n">ratio</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Joseph Davancens.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

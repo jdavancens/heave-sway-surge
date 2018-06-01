@@ -7,18 +7,18 @@ rest_indices = [
     [
         'all',
         'all',
-        range(15)
+        'all'
     ],
     [
-        range(5),
-        range(11),
-        range(10),
-        range(11)
+        range(1, 9),
+        'all',
+        [0, 1, 2, 7, 8, 9],
+        range(7, 13)
     ],
     [
-        [3, 4, 8],
-        [0, 4, 7, 11],
-        None
+        'all',
+        range(7, 13),
+        range(4)
     ],
     [
         'all',
