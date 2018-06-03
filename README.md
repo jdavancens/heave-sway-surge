@@ -20,3 +20,7 @@ Set up a virtual envirtonment with virtualenvwrapper, i.e.:
 then run
 
 ```pip install -r requirements.txt```
+
+Make sure to add the surge directory to the virtual environment PATH variable:
+
+```add2virtualenv ~/dev/heave-sway-surge/surge```
