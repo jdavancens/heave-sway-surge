@@ -13,6 +13,10 @@ For ten musicians:
 
 
 ## Installation 
-Set up a virtual envirtonment, then run
+Set up a virtual envirtonment with virtualenvwrapper, i.e.: 
+
+``` mkvirtualenv -a ~/dev/heave-sway-surge/surge/ -r ~/dev/heave-sway-surge/requirements.txt surge --python=/usr/local/bin/python3.5```
+
+then run
 
 ```pip install -r requirements.txt```
