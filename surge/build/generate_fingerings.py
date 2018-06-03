@@ -2,6 +2,7 @@
 
 from surge.tools.generators.WoodwindFingeringsGenerator import \
     WoodwindFingeringsGenerator
+import abjad
 import sys
 import importlib
 
@@ -11,9 +12,12 @@ if __name__ == '__main__':
 
     segment_name = sys.argv[1]
     instrument = sys.argv[2]
-    instrument_string = stringtools.to_snake_case(instrument)
+    instrument_string = abjad.datastructuretools.String(instrument)
+    instrument_string = instrument_string.to_snake_case()
 
-    segment_path = '.'.join(['materials', segment_name])
+    materials_path = 'surge.materials'
+
+    segment_path = '.'.join([materials_path, segment_name])
     instrument_path = '.'.join([segment_path, instrument_string])
 
     segment_module = importlib.import_module(segment_path)
@@ -43,5 +47,5 @@ if __name__ == '__main__':
         rhythm_makers_lh,
         rhythm_makers_rh,
         number_of_stages,
-        segment_number
+        segment_name
     )

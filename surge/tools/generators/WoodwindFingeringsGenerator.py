@@ -3,6 +3,7 @@
 from surge.materials.instruments import instruments
 from surge.tools.makers.MusicMaker import MusicMaker
 from surge.tools.makers.FingeringMaker import FingeringMaker
+import abjad
 import json
 import os
 import importlib
@@ -53,18 +54,18 @@ class WoodwindFingeringsGenerator(object):
             # generate fingerings
             # calculate vertical moments, pick fingerings
             fingering_maker = FingeringMaker(instrument_string, fingering_sets)
-            lh_staff = Staff([lh_voice])
-            rh_staff = Staff([rh_voice])
-            staff_group = StaffGroup([lh_staff, rh_staff])
+            lh_staff = abjad.Staff([lh_voice])
+            rh_staff = abjad.Staff([rh_voice])
+            staff_group = abjad.StaffGroup([lh_staff, rh_staff])
             lh_fingerings = []
             rh_fingerings = []
-            for vertical_moment in iterate(staff_group).by_vertical_moment():
+            for vertical_moment in abjad.iterate(staff_group).by_vertical_moment():
                 offset = vertical_moment.offset
-                left = (inspect(lh_staff)).get_vertical_moment_at(offset)
+                left = (abjad.inspect(lh_staff)).get_vertical_moment_at(offset)
                 left = bool(left.start_notes)
-                right = (inspect(rh_staff)).get_vertical_moment_at(offset)
+                right = (abjad.inspect(rh_staff)).get_vertical_moment_at(offset)
                 right = bool(right.start_notes)
-                fingering = fingering_maker(l, r, stage_index)
+                fingering = fingering_maker(left, right, stage_index)
                 if fingering is not None:
                     lh_fingerings.append(fingering.left)
                     rh_fingerings.append(fingering.right)
@@ -85,7 +86,7 @@ class WoodwindFingeringsGenerator(object):
             '..',
             'materials',
             segment_name,
-            stringtools.to_snake_case(instrument_string),
+            instrument_string,
             'fingerings.json'
         )
 

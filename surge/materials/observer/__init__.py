@@ -13,5 +13,6 @@ import surge.materials.observer.violin
 
 from .guitar_taleas import taleas_picking_guitar_1, taleas_picking_guitar_2
 from .patterns import *
+from .stages import number_of_stages, stages
 from .tempo_map import tempo_map
 from .time_signatures import measures_per_stage, time_signatures

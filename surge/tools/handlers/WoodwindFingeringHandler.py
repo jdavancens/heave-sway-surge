@@ -70,7 +70,9 @@ class WoodwindFingeringHandler(TablatureHandler):
         previous_fingering
     ):
         # create 'chords' at particular staff positions
-        staff_positions = [4, 7, 11, 14, 17]
+        staff_positions = [7, 11, 14, 17]
+        if (self._hand == 'left'):
+            staff_positions.insert(4, 0)
         finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
         finger_names.reverse()
         for i, leaf in enumerate(logical_tie):
