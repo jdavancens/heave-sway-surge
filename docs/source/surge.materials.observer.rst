@@ -1,4 +1,4 @@
-surge\.materials\.observer package
+surge\.materials\.segment_i package
 ==================================
 
 Subpackages
@@ -6,48 +6,48 @@ Subpackages
 
 .. toctree::
 
-    surge.materials.observer.bass
-    surge.materials.observer.cello
-    surge.materials.observer.clarinet
-    surge.materials.observer.guitar_1
-    surge.materials.observer.guitar_2
-    surge.materials.observer.oboe
-    surge.materials.observer.saxophone
-    surge.materials.observer.trombone
-    surge.materials.observer.viola
-    surge.materials.observer.violin
+    surge.materials.segment_i.bass
+    surge.materials.segment_i.cello
+    surge.materials.segment_i.clarinet
+    surge.materials.segment_i.guitar_1
+    surge.materials.segment_i.guitar_2
+    surge.materials.segment_i.oboe
+    surge.materials.segment_i.saxophone
+    surge.materials.segment_i.trombone
+    surge.materials.segment_i.viola
+    surge.materials.segment_i.violin
 
 Submodules
 ----------
 
-surge\.materials\.observer\.guitar\_taleas module
+surge\.materials\.segment_i\.guitar\_taleas module
 -------------------------------------------------
 
-.. automodule:: surge.materials.observer.guitar_taleas
+.. automodule:: surge.materials.segment_i.guitar_taleas
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.patterns module
+surge\.materials\.segment_i\.patterns module
 -------------------------------------------
 
-.. automodule:: surge.materials.observer.patterns
+.. automodule:: surge.materials.segment_i.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.tempo\_map module
+surge\.materials\.segment_i\.tempo\_map module
 ---------------------------------------------
 
-.. automodule:: surge.materials.observer.tempo_map
+.. automodule:: surge.materials.segment_i.tempo_map
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.time\_signatures module
+surge\.materials\.segment_i\.time\_signatures module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.observer.time_signatures
+.. automodule:: surge.materials.segment_i.time_signatures
     :members:
     :undoc-members:
     :show-inheritance:
@@ -56,7 +56,7 @@ surge\.materials\.observer\.time\_signatures module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer
+.. automodule:: surge.materials.segment_i
     :members:
     :undoc-members:
     :show-inheritance:

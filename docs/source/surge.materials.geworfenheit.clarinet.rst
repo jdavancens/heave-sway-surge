@@ -1,61 +1,61 @@
-surge\.materials\.geworfenheit\.clarinet package
+surge\.materials\.segment_ii\.clarinet package
 ================================================
 
 Submodules
 ----------
 
-surge\.materials\.geworfenheit\.clarinet\.envelopes\_air\_pressure module
+surge\.materials\.segment_ii\.clarinet\.envelopes\_air\_pressure module
 -------------------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.envelopes_air_pressure
+.. automodule:: surge.materials.segment_ii.clarinet.envelopes_air_pressure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.envelopes\_lip\_pressure module
+surge\.materials\.segment_ii\.clarinet\.envelopes\_lip\_pressure module
 -------------------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.envelopes_lip_pressure
+.. automodule:: surge.materials.segment_ii.clarinet.envelopes_lip_pressure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.fingerings module
+surge\.materials\.segment_ii\.clarinet\.fingerings module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.fingerings
+.. automodule:: surge.materials.segment_ii.clarinet.fingerings
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.patterns module
+surge\.materials\.segment_ii\.clarinet\.patterns module
 ---------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.patterns
+.. automodule:: surge.materials.segment_ii.clarinet.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.rest\_indices module
+surge\.materials\.segment_ii\.clarinet\.rest\_indices module
 --------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.rest_indices
+.. automodule:: surge.materials.segment_ii.clarinet.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.rhythm\_makers\_embouchure module
+surge\.materials\.segment_ii\.clarinet\.rhythm\_makers\_embouchure module
 ---------------------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.rhythm_makers_embouchure
+.. automodule:: surge.materials.segment_ii.clarinet.rhythm_makers_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.clarinet\.rhythm\_makers\_fingering module
+surge\.materials\.segment_ii\.clarinet\.rhythm\_makers\_fingering module
 --------------------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet.rhythm_makers_fingering
+.. automodule:: surge.materials.segment_ii.clarinet.rhythm_makers_fingering
     :members:
     :undoc-members:
     :show-inheritance:
@@ -64,7 +64,7 @@ surge\.materials\.geworfenheit\.clarinet\.rhythm\_makers\_fingering module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.geworfenheit.clarinet
+.. automodule:: surge.materials.segment_ii.clarinet
     :members:
     :undoc-members:
     :show-inheritance:

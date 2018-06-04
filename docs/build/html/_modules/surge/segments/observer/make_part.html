@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>surge.segments.observer.make_part &mdash; Surge  documentation</title>
+  <title>surge.segments.segment_i.make_part &mdash; Surge  documentation</title>
   
 
   
@@ -131,7 +131,7 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-      <li>surge.segments.observer.make_part</li>
+      <li>surge.segments.segment_i.make_part</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,7 +148,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for surge.segments.observer.make_part</h1><div class="highlight"><pre>
+  <h1>Source code for surge.segments.segment_i.make_part</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Created on Dec 4, 2015</span>
@@ -157,19 +157,19 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 
-<span class="kn">from</span> <span class="nn">surge.segments.observer.definitions</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">surge.segments.segment_i.definitions</span> <span class="k">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">surge.materials.instruments</span> <span class="k">import</span> <span class="n">instruments</span>
-<span class="kn">from</span> <span class="nn">surge.materials.observer.time_signatures</span> <span class="k">import</span> <span class="n">time_signatures</span>
-<span class="kn">from</span> <span class="nn">surge.materials.observer.time_signatures</span> <span class="k">import</span> <span class="n">measures_per_stage</span>
-<span class="kn">from</span> <span class="nn">surge.materials.observer.tempo_map</span> <span class="k">import</span> <span class="n">tempo_map</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_i.time_signatures</span> <span class="k">import</span> <span class="n">time_signatures</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_i.time_signatures</span> <span class="k">import</span> <span class="n">measures_per_stage</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_i.tempo_map</span> <span class="k">import</span> <span class="n">tempo_map</span>
 <span class="kn">from</span> <span class="nn">surge.tools.makers.SegmentMaker</span> <span class="k">import</span> <span class="n">SegmentMaker</span>
 <span class="kn">from</span> <span class="nn">surge.tools.utilities.flatten_list</span> <span class="k">import</span> <span class="n">flatten_list</span>
 
 
-<div class="viewcode-block" id="make_part"><a class="viewcode-back" href="../../../../surge.segments.observer.html#surge.segments.observer.make_part.make_part">[docs]</a><span class="k">def</span> <span class="nf">make_part</span><span class="p">(</span><span class="n">part_name</span><span class="p">,</span> <span class="n">number_of_stages</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ruler</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="make_part"><a class="viewcode-back" href="../../../../surge.segments.segment_i.html#surge.segments.segment_i.make_part.make_part">[docs]</a><span class="k">def</span> <span class="nf">make_part</span><span class="p">(</span><span class="n">part_name</span><span class="p">,</span> <span class="n">number_of_stages</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ruler</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">segment_maker</span> <span class="o">=</span> <span class="n">SegmentMaker</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Surge::Dart::Drift&quot;</span><span class="p">,</span>
-        <span class="n">segment_name</span><span class="o">=</span><span class="s2">&quot;Observer&quot;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Heave, Sway, Surge&quot;</span><span class="p">,</span>
+        <span class="n">segment_name</span><span class="o">=</span><span class="s2">&quot;Segment I&quot;</span><span class="p">,</span>
         <span class="n">number_of_stages</span><span class="o">=</span><span class="n">number_of_stages</span><span class="p">,</span>
         <span class="n">segment_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">tempo_map</span><span class="o">=</span><span class="n">tempo_map</span><span class="p">,</span>

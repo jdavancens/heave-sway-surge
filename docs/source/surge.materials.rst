@@ -6,8 +6,8 @@ Subpackages
 
 .. toctree::
 
-    surge.materials.geworfenheit
-    surge.materials.observer
+    surge.materials.segment_ii
+    surge.materials.segment_i
     surge.materials.woodwindfingerings
 
 Submodules

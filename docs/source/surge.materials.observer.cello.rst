@@ -1,77 +1,77 @@
-surge\.materials\.observer\.cello package
+surge\.materials\.segment_i\.cello package
 =========================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.cello\.bow\_height\_envelopes module
+surge\.materials\.segment_i\.cello\.bow\_height\_envelopes module
 ----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.bow_height_envelopes
+.. automodule:: surge.materials.segment_i.cello.bow_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.bow\_pressure\_envelopes module
+surge\.materials\.segment_i\.cello\.bow\_pressure\_envelopes module
 ------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.bow_pressure_envelopes
+.. automodule:: surge.materials.segment_i.cello.bow_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.finger\_height\_envelopes module
+surge\.materials\.segment_i\.cello\.finger\_height\_envelopes module
 -------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.finger_height_envelopes
+.. automodule:: surge.materials.segment_i.cello.finger_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.finger\_pressure\_envelopes module
+surge\.materials\.segment_i\.cello\.finger\_pressure\_envelopes module
 ---------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.finger_pressure_envelopes
+.. automodule:: surge.materials.segment_i.cello.finger_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.patterns module
+surge\.materials\.segment_i\.cello\.patterns module
 --------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.patterns
+.. automodule:: surge.materials.segment_i.cello.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.ratios\_bowing module
+surge\.materials\.segment_i\.cello\.ratios\_bowing module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.ratios_bowing
+.. automodule:: surge.materials.segment_i.cello.ratios_bowing
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.ratios\_fingering module
+surge\.materials\.segment_i\.cello\.ratios\_fingering module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.ratios_fingering
+.. automodule:: surge.materials.segment_i.cello.ratios_fingering
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.rest\_indices module
+surge\.materials\.segment_i\.cello\.rest\_indices module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.rest_indices
+.. automodule:: surge.materials.segment_i.cello.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.cello\.rhythm\_makers module
+surge\.materials\.segment_i\.cello\.rhythm\_makers module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.cello.rhythm_makers
+.. automodule:: surge.materials.segment_i.cello.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -80,7 +80,7 @@ surge\.materials\.observer\.cello\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.cello
+.. automodule:: surge.materials.segment_i.cello
     :members:
     :undoc-members:
     :show-inheritance:

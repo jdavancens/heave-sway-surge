@@ -1,4 +1,4 @@
-surge\.materials\.geworfenheit package
+surge\.materials\.segment_ii package
 ======================================
 
 Subpackages
@@ -6,88 +6,88 @@ Subpackages
 
 .. toctree::
 
-    surge.materials.geworfenheit.bass
-    surge.materials.geworfenheit.cello
-    surge.materials.geworfenheit.clarinet
-    surge.materials.geworfenheit.guitar_1
-    surge.materials.geworfenheit.guitar_2
-    surge.materials.geworfenheit.oboe
-    surge.materials.geworfenheit.saxophone
-    surge.materials.geworfenheit.trombone
-    surge.materials.geworfenheit.viola
-    surge.materials.geworfenheit.violin
+    surge.materials.segment_ii.bass
+    surge.materials.segment_ii.cello
+    surge.materials.segment_ii.clarinet
+    surge.materials.segment_ii.guitar_1
+    surge.materials.segment_ii.guitar_2
+    surge.materials.segment_ii.oboe
+    surge.materials.segment_ii.saxophone
+    surge.materials.segment_ii.trombone
+    surge.materials.segment_ii.viola
+    surge.materials.segment_ii.violin
 
 Submodules
 ----------
 
-surge\.materials\.geworfenheit\.durations module
+surge\.materials\.segment_ii\.durations module
 ------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.durations
+.. automodule:: surge.materials.segment_ii.durations
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.instrument\_groups module
+surge\.materials\.segment_ii\.instrument\_groups module
 ---------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.instrument_groups
+.. automodule:: surge.materials.segment_ii.instrument_groups
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.patterns module
+surge\.materials\.segment_ii\.patterns module
 -----------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.patterns
+.. automodule:: surge.materials.segment_ii.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.rest\_indices module
+surge\.materials\.segment_ii\.rest\_indices module
 ----------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.rest_indices
+.. automodule:: surge.materials.segment_ii.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.stages module
+surge\.materials\.segment_ii\.stages module
 ---------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.stages
+.. automodule:: surge.materials.segment_ii.stages
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.tempo\_map module
+surge\.materials\.segment_ii\.tempo\_map module
 -------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.tempo_map
+.. automodule:: surge.materials.segment_ii.tempo_map
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.time\_signatures module
+surge\.materials\.segment_ii\.time\_signatures module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.time_signatures
+.. automodule:: surge.materials.segment_ii.time_signatures
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.utilities module
+surge\.materials\.segment_ii\.utilities module
 ------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.utilities
+.. automodule:: surge.materials.segment_ii.utilities
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.geworfenheit\.woodwind\_rest\_indices module
+surge\.materials\.segment_ii\.woodwind\_rest\_indices module
 --------------------------------------------------------------
 
-.. automodule:: surge.materials.geworfenheit.woodwind_rest_indices
+.. automodule:: surge.materials.segment_ii.woodwind_rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
@@ -96,7 +96,7 @@ surge\.materials\.geworfenheit\.woodwind\_rest\_indices module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.geworfenheit
+.. automodule:: surge.materials.segment_ii
     :members:
     :undoc-members:
     :show-inheritance:

@@ -63,20 +63,18 @@ class MusicMaker:
         Returns a voice.
         '''
         if current_stage in self._stages:
-            if (self._rhythm_makers is None or
-                    self._rhythm_makers[current_stage] is None):
-                if self._rhythms is not None:
-                    voice = self._rhythms[current_stage]
-                else:
+            if (self._rhythm_makers is None
+                    or self._rhythm_makers[current_stage] is None):
+                if self._rhythms is None:
                     voice = self._make_skips(current_stage)
+                else:
+                    voice = self._rhythms[current_stage]
             else:
                 voice = self._make_rhythm(current_stage)
         else:
             voice = self._make_skips(current_stage)
         assert isinstance(voice, abjad.Voice)
-        # abjad.f(voice)
         self._flatten_trivial_tuplets(voice)
-        # self._adjust_tuplet_prolation(voice)
         self._attach_instrument(voice)
         return voice
 
@@ -175,7 +173,7 @@ class MusicMaker:
             time_signatures = self._time_signatures[current_stage]
             time_signatures = flatten_list(time_signatures)
             rhythm = self._rhythm_makers[current_stage](time_signatures)
-            # self._hide_full_measure_rests(rhythm)
+            self._hide_full_measure_rests(rhythm)
         voice = abjad.Voice()
         voice.extend(rhythm)
         return voice
@@ -215,13 +213,11 @@ class MusicMaker:
         elif abjad.mathtools.is_positive_integer(expr):
             self._stages = (expr, expr)
         elif (
-            abjad.mathtools.all_are_positive_integers(expr) and
-            len(expr) == 2
+            abjad.mathtools.all_are_positive_integers(expr) and len(expr) == 2
         ):
             self._stages = tuple(expr)
         else:
-            message = \
-                'positive integer or pair of positive integers: {!r}.'
+            message = 'positive integer or pair of positive integers: {!r}.'
             message = message.format(expr)
             raise TypeError(message)
 

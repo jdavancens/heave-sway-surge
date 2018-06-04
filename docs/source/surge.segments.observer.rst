@@ -1,4 +1,4 @@
-surge\.segments\.observer package
+surge\.segments\.segment_i package
 =================================
 
 Subpackages
@@ -6,31 +6,31 @@ Subpackages
 
 .. toctree::
 
-    surge.segments.observer.definitions
+    surge.segments.segment_i.definitions
 
 Submodules
 ----------
 
-surge\.segments\.observer\.make\_conductor\_part module
+surge\.segments\.segment_i\.make\_conductor\_part module
 -------------------------------------------------------
 
-.. automodule:: surge.segments.observer.make_conductor_part
+.. automodule:: surge.segments.segment_i.make_conductor_part
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.observer\.make\_part module
+surge\.segments\.segment_i\.make\_part module
 --------------------------------------------
 
-.. automodule:: surge.segments.observer.make_part
+.. automodule:: surge.segments.segment_i.make_part
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.observer\.make\_score module
+surge\.segments\.segment_i\.make\_score module
 ---------------------------------------------
 
-.. automodule:: surge.segments.observer.make_score
+.. automodule:: surge.segments.segment_i.make_score
     :members:
     :undoc-members:
     :show-inheritance:
@@ -39,7 +39,7 @@ surge\.segments\.observer\.make\_score module
 Module contents
 ---------------
 
-.. automodule:: surge.segments.observer
+.. automodule:: surge.segments.segment_i
     :members:
     :undoc-members:
     :show-inheritance:

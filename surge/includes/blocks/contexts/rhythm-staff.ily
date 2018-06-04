@@ -13,6 +13,7 @@
     \accepts Voice
     \omit BarLine
     \omit Clef
+    \omit NoteHead
     \omit SpanBar
     \omit InstrumentName
     \omit TimeSignature

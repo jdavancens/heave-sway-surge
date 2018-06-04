@@ -1,77 +1,77 @@
-surge\.materials\.observer\.bass package
+surge\.materials\.segment_i\.bass package
 ========================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.bass\.bow\_height\_envelopes module
+surge\.materials\.segment_i\.bass\.bow\_height\_envelopes module
 ---------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.bow_height_envelopes
+.. automodule:: surge.materials.segment_i.bass.bow_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.bow\_pressure\_envelopes module
+surge\.materials\.segment_i\.bass\.bow\_pressure\_envelopes module
 -----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.bow_pressure_envelopes
+.. automodule:: surge.materials.segment_i.bass.bow_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.finger\_height\_envelopes module
+surge\.materials\.segment_i\.bass\.finger\_height\_envelopes module
 ------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.finger_height_envelopes
+.. automodule:: surge.materials.segment_i.bass.finger_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.finger\_pressure\_envelopes module
+surge\.materials\.segment_i\.bass\.finger\_pressure\_envelopes module
 --------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.finger_pressure_envelopes
+.. automodule:: surge.materials.segment_i.bass.finger_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.patterns module
+surge\.materials\.segment_i\.bass\.patterns module
 -------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.patterns
+.. automodule:: surge.materials.segment_i.bass.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.ratios\_bowing module
+surge\.materials\.segment_i\.bass\.ratios\_bowing module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.ratios_bowing
+.. automodule:: surge.materials.segment_i.bass.ratios_bowing
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.ratios\_fingering module
+surge\.materials\.segment_i\.bass\.ratios\_fingering module
 ----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.ratios_fingering
+.. automodule:: surge.materials.segment_i.bass.ratios_fingering
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.rest\_indices module
+surge\.materials\.segment_i\.bass\.rest\_indices module
 ------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.rest_indices
+.. automodule:: surge.materials.segment_i.bass.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.bass\.rhythm\_makers module
+surge\.materials\.segment_i\.bass\.rhythm\_makers module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.bass.rhythm_makers
+.. automodule:: surge.materials.segment_i.bass.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -80,7 +80,7 @@ surge\.materials\.observer\.bass\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.bass
+.. automodule:: surge.materials.segment_i.bass
     :members:
     :undoc-members:
     :show-inheritance:

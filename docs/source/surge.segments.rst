@@ -6,8 +6,8 @@ Subpackages
 
 .. toctree::
 
-    surge.segments.geworfenheit
-    surge.segments.observer
+    surge.segments.segment_ii
+    surge.segments.segment_i
 
 Module contents
 ---------------

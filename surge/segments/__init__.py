@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-import surge.segments.geworfenheit
-import surge.segments.observer
+import surge.segments.segment_ii
+import surge.segments.segment_i

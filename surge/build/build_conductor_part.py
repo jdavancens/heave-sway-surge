@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from surge.segments.observer.make_conductor_part \
+from surge.segments.segment_i.make_conductor_part \
     import make_conductor_part
 import abjad
 import datetime

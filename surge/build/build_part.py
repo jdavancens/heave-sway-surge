@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-''' usage: python build_observer_part.py part_name number_of_stages
+''' usage: python build_segment_i_part.py part_name number_of_stages
 '''
-# from surge.segments.observer.make_part import make_part
+# from surge.segments.segment_i.make_part import make_part
 import abjad
 import datetime
 import importlib

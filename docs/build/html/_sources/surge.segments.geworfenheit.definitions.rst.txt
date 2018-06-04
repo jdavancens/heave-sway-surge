@@ -1,85 +1,85 @@
-surge\.segments\.geworfenheit\.definitions package
+surge\.segments\.segment_ii\.definitions package
 ==================================================
 
 Submodules
 ----------
 
-surge\.segments\.geworfenheit\.definitions\.bass module
+surge\.segments\.segment_ii\.definitions\.bass module
 -------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.bass
+.. automodule:: surge.segments.segment_ii.definitions.bass
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.cello module
+surge\.segments\.segment_ii\.definitions\.cello module
 --------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.cello
+.. automodule:: surge.segments.segment_ii.definitions.cello
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.clarinet module
+surge\.segments\.segment_ii\.definitions\.clarinet module
 -----------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.clarinet
+.. automodule:: surge.segments.segment_ii.definitions.clarinet
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.guitar\_1 module
+surge\.segments\.segment_ii\.definitions\.guitar\_1 module
 ------------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.guitar_1
+.. automodule:: surge.segments.segment_ii.definitions.guitar_1
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.guitar\_2 module
+surge\.segments\.segment_ii\.definitions\.guitar\_2 module
 ------------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.guitar_2
+.. automodule:: surge.segments.segment_ii.definitions.guitar_2
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.oboe module
+surge\.segments\.segment_ii\.definitions\.oboe module
 -------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.oboe
+.. automodule:: surge.segments.segment_ii.definitions.oboe
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.saxophone module
+surge\.segments\.segment_ii\.definitions\.saxophone module
 ------------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.saxophone
+.. automodule:: surge.segments.segment_ii.definitions.saxophone
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.trombone module
+surge\.segments\.segment_ii\.definitions\.trombone module
 -----------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.trombone
+.. automodule:: surge.segments.segment_ii.definitions.trombone
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.viola module
+surge\.segments\.segment_ii\.definitions\.viola module
 --------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.viola
+.. automodule:: surge.segments.segment_ii.definitions.viola
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.definitions\.violin module
+surge\.segments\.segment_ii\.definitions\.violin module
 ---------------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.definitions.violin
+.. automodule:: surge.segments.segment_ii.definitions.violin
     :members:
     :undoc-members:
     :show-inheritance:
@@ -88,7 +88,7 @@ surge\.segments\.geworfenheit\.definitions\.violin module
 Module contents
 ---------------
 
-.. automodule:: surge.segments.geworfenheit.definitions
+.. automodule:: surge.segments.segment_ii.definitions
     :members:
     :undoc-members:
     :show-inheritance:

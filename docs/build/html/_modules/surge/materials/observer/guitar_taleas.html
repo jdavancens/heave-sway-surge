@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>surge.materials.observer.guitar_taleas &mdash; Surge  documentation</title>
+  <title>surge.materials.segment_i.guitar_taleas &mdash; Surge  documentation</title>
   
 
   
@@ -131,7 +131,7 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-      <li>surge.materials.observer.guitar_taleas</li>
+      <li>surge.materials.segment_i.guitar_taleas</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,14 +148,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for surge.materials.observer.guitar_taleas</h1><div class="highlight"><pre>
+  <h1>Source code for surge.materials.segment_i.guitar_taleas</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">abjad.tools.rhythmmakertools.Talea</span> <span class="k">import</span> <span class="n">Talea</span>
 <span class="kn">from</span> <span class="nn">surge.tools.utilities.sum_elements</span> <span class="k">import</span> <span class="n">sum_elements</span>
 
 
-<div class="viewcode-block" id="split"><a class="viewcode-back" href="../../../../surge.materials.observer.html#surge.materials.observer.guitar_taleas.split">[docs]</a><span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">counts</span><span class="p">):</span>
+<div class="viewcode-block" id="split"><a class="viewcode-back" href="../../../../surge.materials.segment_i.html#surge.materials.segment_i.guitar_taleas.split">[docs]</a><span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">counts</span><span class="p">):</span>
     <span class="n">counts_1</span> <span class="o">=</span> <span class="n">sum_elements</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">period</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">counts_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> \
         <span class="n">sum_elements</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">period</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>

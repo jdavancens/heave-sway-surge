@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import surge.materials.geworfenheit
-import surge.materials.observer
+import surge.materials.segment_ii
+import surge.materials.segment_i
 import surge.materials.woodwindfingerings
 
 from .instrument_categories import instrument_categories

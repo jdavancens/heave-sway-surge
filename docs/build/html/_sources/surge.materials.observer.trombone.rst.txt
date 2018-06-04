@@ -1,61 +1,61 @@
-surge\.materials\.observer\.trombone package
+surge\.materials\.segment_i\.trombone package
 ============================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.trombone\.air\_pressure\_envelopes module
+surge\.materials\.segment_i\.trombone\.air\_pressure\_envelopes module
 ---------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.air_pressure_envelopes
+.. automodule:: surge.materials.segment_i.trombone.air_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.lip\_pressure\_envelopes module
+surge\.materials\.segment_i\.trombone\.lip\_pressure\_envelopes module
 ---------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.lip_pressure_envelopes
+.. automodule:: surge.materials.segment_i.trombone.lip_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.ratios\_embouchure module
+surge\.materials\.segment_i\.trombone\.ratios\_embouchure module
 ---------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.ratios_embouchure
+.. automodule:: surge.materials.segment_i.trombone.ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.ratios\_slide\_position module
+surge\.materials\.segment_i\.trombone\.ratios\_slide\_position module
 --------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.ratios_slide_position
+.. automodule:: surge.materials.segment_i.trombone.ratios_slide_position
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.rest\_indices module
+surge\.materials\.segment_i\.trombone\.rest\_indices module
 ----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.rest_indices
+.. automodule:: surge.materials.segment_i.trombone.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.rhythm\_makers module
+surge\.materials\.segment_i\.trombone\.rhythm\_makers module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.rhythm_makers
+.. automodule:: surge.materials.segment_i.trombone.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.trombone\.slide\_position\_envelopes module
+surge\.materials\.segment_i\.trombone\.slide\_position\_envelopes module
 -----------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.trombone.slide_position_envelopes
+.. automodule:: surge.materials.segment_i.trombone.slide_position_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
@@ -64,7 +64,7 @@ surge\.materials\.observer\.trombone\.slide\_position\_envelopes module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.trombone
+.. automodule:: surge.materials.segment_i.trombone
     :members:
     :undoc-members:
     :show-inheritance:

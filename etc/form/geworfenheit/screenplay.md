@@ -1,4 +1,4 @@
-# Segment 2: *Geworfenheit*
+# Segment 2: *Segment II*
 * Blurry stage boundaries
 * Emphasis on glissando
 * Steady meter (notated, not heard) $^2_4$

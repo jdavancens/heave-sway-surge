@@ -1,69 +1,69 @@
-surge\.materials\.observer\.saxophone package
+surge\.materials\.segment_i\.saxophone package
 =============================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.saxophone\.air\_pressure\_envelopes module
+surge\.materials\.segment_i\.saxophone\.air\_pressure\_envelopes module
 ----------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.air_pressure_envelopes
+.. automodule:: surge.materials.segment_i.saxophone.air_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.fingering\_sets module
+surge\.materials\.segment_i\.saxophone\.fingering\_sets module
 -------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.fingering_sets
+.. automodule:: surge.materials.segment_i.saxophone.fingering_sets
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.lip\_pressure\_envelopes module
+surge\.materials\.segment_i\.saxophone\.lip\_pressure\_envelopes module
 ----------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.lip_pressure_envelopes
+.. automodule:: surge.materials.segment_i.saxophone.lip_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.ratios\_embouchure module
+surge\.materials\.segment_i\.saxophone\.ratios\_embouchure module
 ----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.ratios_embouchure
+.. automodule:: surge.materials.segment_i.saxophone.ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.ratios\_lh module
+surge\.materials\.segment_i\.saxophone\.ratios\_lh module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.ratios_lh
+.. automodule:: surge.materials.segment_i.saxophone.ratios_lh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.ratios\_rh module
+surge\.materials\.segment_i\.saxophone\.ratios\_rh module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.ratios_rh
+.. automodule:: surge.materials.segment_i.saxophone.ratios_rh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.rest\_indices module
+surge\.materials\.segment_i\.saxophone\.rest\_indices module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.rest_indices
+.. automodule:: surge.materials.segment_i.saxophone.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.saxophone\.rhythm\_makers module
+surge\.materials\.segment_i\.saxophone\.rhythm\_makers module
 ------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.saxophone.rhythm_makers
+.. automodule:: surge.materials.segment_i.saxophone.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -72,7 +72,7 @@ surge\.materials\.observer\.saxophone\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.saxophone
+.. automodule:: surge.materials.segment_i.saxophone
     :members:
     :undoc-members:
     :show-inheritance:

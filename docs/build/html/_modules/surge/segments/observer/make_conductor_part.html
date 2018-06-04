@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>surge.segments.observer.make_conductor_part &mdash; Surge  documentation</title>
+  <title>surge.segments.segment_i.make_conductor_part &mdash; Surge  documentation</title>
   
 
   
@@ -131,7 +131,7 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-      <li>surge.segments.observer.make_conductor_part</li>
+      <li>surge.segments.segment_i.make_conductor_part</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,18 +148,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for surge.segments.observer.make_conductor_part</h1><div class="highlight"><pre>
+  <h1>Source code for surge.segments.segment_i.make_conductor_part</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">abjad</span>
-<span class="kn">from</span> <span class="nn">surge.materials.observer.time_signatures</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">surge.materials.observer.tempo_map</span> <span class="k">import</span> <span class="n">tempo_map</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_i.time_signatures</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">surge.materials.segment_i.tempo_map</span> <span class="k">import</span> <span class="n">tempo_map</span>
 <span class="kn">from</span> <span class="nn">surge.tools.utilities.flatten_list</span> <span class="k">import</span> <span class="n">flatten_list</span>
 <span class="kn">from</span> <span class="nn">surge.tools.utilities.make_spacer_skip_measures</span> <span class="k">import</span> \
     <span class="n">make_spacer_skip_measures</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-<div class="viewcode-block" id="make_conductor_part"><a class="viewcode-back" href="../../../../surge.segments.observer.html#surge.segments.observer.make_conductor_part.make_conductor_part">[docs]</a><span class="k">def</span> <span class="nf">make_conductor_part</span><span class="p">():</span>
+<div class="viewcode-block" id="make_conductor_part"><a class="viewcode-back" href="../../../../surge.segments.segment_i.html#surge.segments.segment_i.make_conductor_part.make_conductor_part">[docs]</a><span class="k">def</span> <span class="nf">make_conductor_part</span><span class="p">():</span>
     <span class="n">flat</span> <span class="o">=</span> <span class="n">flatten_list</span><span class="p">(</span><span class="n">time_signatures</span><span class="p">)</span>
     <span class="n">measures</span> <span class="o">=</span> <span class="n">make_spacer_skip_measures</span><span class="p">(</span><span class="n">flat</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">tempo</span> <span class="ow">in</span> <span class="n">tempo_map</span><span class="p">:</span>

@@ -24,7 +24,7 @@ class RatioMaker:
         subdivider=UnitSubdivider()
     ):
         if rest_indices == 'all':
-            ratios = [(-1,) for ts in time_signatures]
+            ratios = [(-1,) * ts.numerator for ts in time_signatures]
         else:
             ratios = []
             for i, time_signature in enumerate(time_signatures):
@@ -33,7 +33,7 @@ class RatioMaker:
                     ratio = subdivider(prolation)
                     ratios.append(ratio.numbers)
                 else:
-                    ratios.append((-1,))
+                    ratios.append((-1,) * time_signature.numerator)
         self._ratios = ratios
 
     def __call__(self):

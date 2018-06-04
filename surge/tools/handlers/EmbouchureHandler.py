@@ -146,13 +146,13 @@ class EmbouchureHandler(EnvelopeHandler):
                 last_vowel = None
 
     def _handle_voice(self, voice, current_stage):
-        if (self._air_pressure_envelopes is None or
-                self._air_pressure_envelopes[current_stage] is None):
+        if (self._air_pressure_envelopes is None
+                or self._air_pressure_envelopes[current_stage] is None):
             return
         last_pressure = None
         air_pressure_envelope = self._air_pressure_envelopes[current_stage]
-        if (self._air_pressure_envelopes_release is None or
-                self._air_pressure_envelopes_release[current_stage] is None):
+        if (self._air_pressure_envelopes_release is None
+                or self._air_pressure_envelopes_release[current_stage] is None):
             air_pressure_envelope_release = air_pressure_envelope
         lip_pressure_envelope = self._lip_pressure_envelopes[current_stage]
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):

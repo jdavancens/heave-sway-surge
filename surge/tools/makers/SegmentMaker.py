@@ -115,8 +115,8 @@ class SegmentMaker(SegmentMakerBaseClass):
     # SPECIAL METHODS
 
     def __call__(self):
-        '''Calls segment maker. Creates a blank score, interprets music handlers,
-        and puts it into a lilypond file.
+        '''Calls segment maker. Creates a blank score, interprets music
+        handlers, and puts it into a lilypond file.
 
         Returns LilyPond file.
         '''
@@ -189,7 +189,6 @@ class SegmentMaker(SegmentMakerBaseClass):
             abjad.attach(rehearsal_mark, start_measure[0])
             bar_line = abjad.BarLine('|')
             abjad.attach(bar_line, stop_measure)
-
 
         scheme = abjad.schemetools.Scheme('format-mark-box-alphabet')
         abjad.setting(self._score).markFormatter = scheme
@@ -341,22 +340,16 @@ class SegmentMaker(SegmentMakerBaseClass):
 
         composer = abjad.Markup("Joseph Davancens")
         composer = composer.override(("font-name", "Futura"))
-
         composer = composer.fontsize(6)
-        # composer = composer.hspace(20)
 
         title = abjad.Markup(self.title)
         title = title.override(("font-name", "Futura"))
         title = title.fontsize(9)
         title = title.override(("font-series", "Medium"))
-        # title = abjad.Markup.line([title]).center_align()
-        # title = abjad.Markup.column([title])
 
         subtitle = abjad.Markup(self.segment_name)
         subtitle = subtitle.override(("font-name", "Futura"))
         subtitle = subtitle.fontsize(7)
-        # subtitle = abjad.Markup.line([subtitle]).center_align()
-        # subtitle = abjad.Markup.column([subtitle])
 
         lilypond_file.header_block.composer = composer
         lilypond_file.header_block.title = title
@@ -399,11 +392,11 @@ class SegmentMaker(SegmentMakerBaseClass):
             abjad.override(score).bar_number.transparent = True
 
         self._score = score
-        # show score structure
-        # for x in inspect(score).get_descendants():print(x)
 
     def _make_skip_filled_measures(self):
-        r''' Creates measures with measure-length skips for time signature context.
+        r''' Creates measures with measure-length skips for time signature
+        context.
+
         Returns list of measures.
         '''
         time_signatures = []

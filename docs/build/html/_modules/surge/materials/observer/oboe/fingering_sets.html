@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>surge.materials.observer.oboe.fingering_sets &mdash; Surge  documentation</title>
+  <title>surge.materials.segment_i.oboe.fingering_sets &mdash; Surge  documentation</title>
   
 
   
@@ -131,7 +131,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>surge.materials.observer.oboe.fingering_sets</li>
+      <li>surge.materials.segment_i.oboe.fingering_sets</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,14 +148,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for surge.materials.observer.oboe.fingering_sets</h1><div class="highlight"><pre>
+  <h1>Source code for surge.materials.segment_i.oboe.fingering_sets</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">surge.materials.woodwindfingerings.oboe.all_fingerings</span> \
     <span class="kn">import</span> <span class="nn">all_fingerings</span>
 <span class="kn">import</span> <span class="nn">abjad</span>
 
 
-<div class="viewcode-block" id="pitch_filter"><a class="viewcode-back" href="../../../../../surge.materials.observer.oboe.html#surge.materials.observer.oboe.fingering_sets.pitch_filter">[docs]</a><span class="k">def</span> <span class="nf">pitch_filter</span><span class="p">(</span><span class="n">pitches</span><span class="p">):</span>
+<div class="viewcode-block" id="pitch_filter"><a class="viewcode-back" href="../../../../../surge.materials.segment_i.oboe.html#surge.materials.segment_i.oboe.fingering_sets.pitch_filter">[docs]</a><span class="k">def</span> <span class="nf">pitch_filter</span><span class="p">(</span><span class="n">pitches</span><span class="p">):</span>
     <span class="n">pitches</span> <span class="o">=</span> <span class="p">[</span><span class="n">abjad</span><span class="o">.</span><span class="n">NamedPitch</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="k">for</span> <span class="n">pitch</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">]</span>
     <span class="n">filtered_fingerings</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">fingering</span> <span class="ow">in</span> <span class="n">all_fingerings</span><span class="p">:</span>

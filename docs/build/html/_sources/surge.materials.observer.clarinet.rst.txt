@@ -1,69 +1,69 @@
-surge\.materials\.observer\.clarinet package
+surge\.materials\.segment_i\.clarinet package
 ============================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.clarinet\.air\_pressure\_envelopes module
+surge\.materials\.segment_i\.clarinet\.air\_pressure\_envelopes module
 ---------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.air_pressure_envelopes
+.. automodule:: surge.materials.segment_i.clarinet.air_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.fingering\_sets module
+surge\.materials\.segment_i\.clarinet\.fingering\_sets module
 ------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.fingering_sets
+.. automodule:: surge.materials.segment_i.clarinet.fingering_sets
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.lip\_pressure\_envelopes module
+surge\.materials\.segment_i\.clarinet\.lip\_pressure\_envelopes module
 ---------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.lip_pressure_envelopes
+.. automodule:: surge.materials.segment_i.clarinet.lip_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.ratios\_embouchure module
+surge\.materials\.segment_i\.clarinet\.ratios\_embouchure module
 ---------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.ratios_embouchure
+.. automodule:: surge.materials.segment_i.clarinet.ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.ratios\_lh module
+surge\.materials\.segment_i\.clarinet\.ratios\_lh module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.ratios_lh
+.. automodule:: surge.materials.segment_i.clarinet.ratios_lh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.ratios\_rh module
+surge\.materials\.segment_i\.clarinet\.ratios\_rh module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.ratios_rh
+.. automodule:: surge.materials.segment_i.clarinet.ratios_rh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.rest\_indices module
+surge\.materials\.segment_i\.clarinet\.rest\_indices module
 ----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.rest_indices
+.. automodule:: surge.materials.segment_i.clarinet.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.clarinet\.rhythm\_makers module
+surge\.materials\.segment_i\.clarinet\.rhythm\_makers module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.clarinet.rhythm_makers
+.. automodule:: surge.materials.segment_i.clarinet.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -72,7 +72,7 @@ surge\.materials\.observer\.clarinet\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.clarinet
+.. automodule:: surge.materials.segment_i.clarinet
     :members:
     :undoc-members:
     :show-inheritance:

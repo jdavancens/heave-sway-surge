@@ -1,69 +1,69 @@
-surge\.materials\.observer\.oboe package
+surge\.materials\.segment_i\.oboe package
 ========================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.oboe\.air\_pressure\_envelopes module
+surge\.materials\.segment_i\.oboe\.air\_pressure\_envelopes module
 -----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.air_pressure_envelopes
+.. automodule:: surge.materials.segment_i.oboe.air_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.fingering\_sets module
+surge\.materials\.segment_i\.oboe\.fingering\_sets module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.fingering_sets
+.. automodule:: surge.materials.segment_i.oboe.fingering_sets
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.lip\_pressure\_envelopes module
+surge\.materials\.segment_i\.oboe\.lip\_pressure\_envelopes module
 -----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.lip_pressure_envelopes
+.. automodule:: surge.materials.segment_i.oboe.lip_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.ratios\_embouchure module
+surge\.materials\.segment_i\.oboe\.ratios\_embouchure module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.ratios_embouchure
+.. automodule:: surge.materials.segment_i.oboe.ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.ratios\_lh module
+surge\.materials\.segment_i\.oboe\.ratios\_lh module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.ratios_lh
+.. automodule:: surge.materials.segment_i.oboe.ratios_lh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.ratios\_rh module
+surge\.materials\.segment_i\.oboe\.ratios\_rh module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.ratios_rh
+.. automodule:: surge.materials.segment_i.oboe.ratios_rh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.rest\_indices module
+surge\.materials\.segment_i\.oboe\.rest\_indices module
 ------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.rest_indices
+.. automodule:: surge.materials.segment_i.oboe.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.oboe\.rhythm\_makers module
+surge\.materials\.segment_i\.oboe\.rhythm\_makers module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.observer.oboe.rhythm_makers
+.. automodule:: surge.materials.segment_i.oboe.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -72,7 +72,7 @@ surge\.materials\.observer\.oboe\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.oboe
+.. automodule:: surge.materials.segment_i.oboe
     :members:
     :undoc-members:
     :show-inheritance:

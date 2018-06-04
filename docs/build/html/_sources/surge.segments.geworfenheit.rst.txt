@@ -1,4 +1,4 @@
-surge\.segments\.geworfenheit package
+surge\.segments\.segment_ii package
 =====================================
 
 Subpackages
@@ -6,23 +6,23 @@ Subpackages
 
 .. toctree::
 
-    surge.segments.geworfenheit.definitions
+    surge.segments.segment_ii.definitions
 
 Submodules
 ----------
 
-surge\.segments\.geworfenheit\.make\_part module
+surge\.segments\.segment_ii\.make\_part module
 ------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.make_part
+.. automodule:: surge.segments.segment_ii.make_part
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.segments\.geworfenheit\.make\_score module
+surge\.segments\.segment_ii\.make\_score module
 -------------------------------------------------
 
-.. automodule:: surge.segments.geworfenheit.make_score
+.. automodule:: surge.segments.segment_ii.make_score
     :members:
     :undoc-members:
     :show-inheritance:
@@ -31,7 +31,7 @@ surge\.segments\.geworfenheit\.make\_score module
 Module contents
 ---------------
 
-.. automodule:: surge.segments.geworfenheit
+.. automodule:: surge.segments.segment_ii
     :members:
     :undoc-members:
     :show-inheritance:

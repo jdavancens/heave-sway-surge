@@ -1,77 +1,77 @@
-surge\.materials\.observer\.violin package
+surge\.materials\.segment_i\.violin package
 ==========================================
 
 Submodules
 ----------
 
-surge\.materials\.observer\.violin\.bow\_height\_envelopes module
+surge\.materials\.segment_i\.violin\.bow\_height\_envelopes module
 -----------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.bow_height_envelopes
+.. automodule:: surge.materials.segment_i.violin.bow_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.bow\_pressure\_envelopes module
+surge\.materials\.segment_i\.violin\.bow\_pressure\_envelopes module
 -------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.bow_pressure_envelopes
+.. automodule:: surge.materials.segment_i.violin.bow_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.finger\_height\_envelopes module
+surge\.materials\.segment_i\.violin\.finger\_height\_envelopes module
 --------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.finger_height_envelopes
+.. automodule:: surge.materials.segment_i.violin.finger_height_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.finger\_pressure\_envelopes module
+surge\.materials\.segment_i\.violin\.finger\_pressure\_envelopes module
 ----------------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.finger_pressure_envelopes
+.. automodule:: surge.materials.segment_i.violin.finger_pressure_envelopes
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.patterns module
+surge\.materials\.segment_i\.violin\.patterns module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.patterns
+.. automodule:: surge.materials.segment_i.violin.patterns
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.ratios\_bowing module
+surge\.materials\.segment_i\.violin\.ratios\_bowing module
 ---------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.ratios_bowing
+.. automodule:: surge.materials.segment_i.violin.ratios_bowing
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.ratios\_fingering module
+surge\.materials\.segment_i\.violin\.ratios\_fingering module
 ------------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.ratios_fingering
+.. automodule:: surge.materials.segment_i.violin.ratios_fingering
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.rest\_indices module
+surge\.materials\.segment_i\.violin\.rest\_indices module
 --------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.rest_indices
+.. automodule:: surge.materials.segment_i.violin.rest_indices
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.observer\.violin\.rhythm\_makers module
+surge\.materials\.segment_i\.violin\.rhythm\_makers module
 ---------------------------------------------------------
 
-.. automodule:: surge.materials.observer.violin.rhythm_makers
+.. automodule:: surge.materials.segment_i.violin.rhythm_makers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -80,7 +80,7 @@ surge\.materials\.observer\.violin\.rhythm\_makers module
 Module contents
 ---------------
 
-.. automodule:: surge.materials.observer.violin
+.. automodule:: surge.materials.segment_i.violin
     :members:
     :undoc-members:
     :show-inheritance:
