@@ -23,11 +23,7 @@ tie_specifier = rhythmmakertools.TieSpecifier(
 
 rhythm_makers_picking = (
     # Stage 1
-    rhythmmakertools.NoteRhythmMaker(
-        beam_specifier=beam_specifier,
-        duration_spelling_specifier=duration_spelling_specifier,
-        tie_specifier=tie_specifier
-    ),
+    None,
     # Stage 2
     rhythmmakertools.TaleaRhythmMaker(
         talea=taleas_picking_guitar_1['2'],
@@ -56,10 +52,7 @@ rhythm_makers_picking = (
 
 rhythm_makers_fretting = (
     # Stage 1
-    rhythmmakertools.NoteRhythmMaker(
-        beam_specifier=beam_specifier,
-        duration_spelling_specifier=duration_spelling_specifier,
-    ),
+    None,
     # Stage 2
     rhythmmakertools.NoteRhythmMaker(
         beam_specifier=beam_specifier,

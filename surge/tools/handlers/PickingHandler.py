@@ -178,8 +178,7 @@ class PickingHandler(EnvelopeHandler):
                     grace_container = abjad.inspect(
                         tie.tail
                     ).get_after_grace_container()
-                    if (grace_container is not None and
-                        len(grace_container) > 0):
+                    if (grace_container is not None and len(grace_container) > 0):
                         self._set_y_offset(
                             grace_container[0],
                             picking_position_end

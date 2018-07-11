@@ -23,16 +23,16 @@ def make_score(number_of_stages=None):
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
         instrument_list=[
-            'oboe',
-            'bass clarinet',
-            'alto saxophone',
-            'trombone',
+            # 'oboe',
+            # 'bass clarinet',
+            # 'alto saxophone',
+            # 'trombone',
             'guitar i',
             'guitar ii',
-            'violin',
-            'viola',
-            'cello',
-            'contrabass',
+            # 'violin',
+            # 'viola',
+            # 'cello',
+            # 'contrabass',
         ],
         page_size=('11x17', 'landscape'),
         staff_size=7,
@@ -40,16 +40,16 @@ def make_score(number_of_stages=None):
         part=False
     )
     music_handlers = [
-        oboe.music_handlers,
-        clarinet.music_handlers,
-        saxophone.music_handlers,
-        trombone.music_handlers,
+        # oboe.music_handlers,
+        # clarinet.music_handlers,
+        # saxophone.music_handlers,
+        # trombone.music_handlers,
         guitar_1.music_handlers,
         guitar_2.music_handlers,
-        violin.music_handlers,
-        viola.music_handlers,
-        cello.music_handlers,
-        bass.music_handlers
+        # violin.music_handlers,
+        # viola.music_handlers,
+        # cello.music_handlers,
+        # bass.music_handlers
     ]
     music_handlers = flatten_list(music_handlers)
     segment_maker.add_music_handlers(music_handlers)

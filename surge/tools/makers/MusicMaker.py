@@ -157,7 +157,7 @@ class MusicMaker:
         time_signatures = flatten_list(
             self._time_signatures[current_stage]
         )
-        voice = abjad.scoretools.Voice()
+        voice = abjad.Voice()
         skip_maker = abjad.LeafMaker(skips_instead_of_rests=True)
         for time_signature in time_signatures:
             skips = skip_maker(None, [time_signature])

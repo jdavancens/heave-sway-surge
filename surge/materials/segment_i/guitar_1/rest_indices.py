@@ -1,8 +1,8 @@
-w# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 rest_indices = [
     [
         None,
-        list(range(16)) + list(range(17, 20))
+        None,
     ],
     [
         [12],

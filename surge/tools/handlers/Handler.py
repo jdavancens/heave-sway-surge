@@ -6,7 +6,6 @@ Created on Sept 28, 2016
 '''
 
 import abjad
-from abjad.tools.instrumenttools.Contrabass import Contrabass
 from surge.tools.datastructures.Cycle import Cycle
 import copy
 
@@ -163,7 +162,6 @@ class Handler(object):
         abjad.override(leaf).rest.transparent = True
         abjad.override(leaf).tuplet_bracket.transparent = True
         abjad.override(leaf).tuplet_number.transparent = True
-
 
     def _iterate_logical_ties(self, voice):
         for tie in abjad.iterate(voice).by_logical_tie():
