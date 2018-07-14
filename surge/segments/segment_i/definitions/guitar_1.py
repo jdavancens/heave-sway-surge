@@ -32,7 +32,7 @@ picking_music_maker = MusicMaker(
     instrument=guitar,
     name='Picking',
     time_signatures=time_signatures,
-    # rhythms=rhythms_picking,
+    rhythms=rhythms_picking,
     rhythm_makers=rhythm_makers_picking
 )
 

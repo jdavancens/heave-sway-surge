@@ -43,10 +43,10 @@ class FretPlacement(object):
         if other is None:
             return False
         if (
-            self.instrument == other.instrument and
-            self.string == other.string and
-            self.fret == other.fret and
-            self.harmonic == other.harmonic
+            self.instrument == other.instrument
+            and self.string == other.string
+            and self.fret == other.fret
+            and self.harmonic == other.harmonic
         ):
             return True
         else:

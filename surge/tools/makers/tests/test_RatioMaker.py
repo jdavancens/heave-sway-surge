@@ -26,7 +26,7 @@ class TestRatioMaker(unittest.TestCase):
         ratios = ratio_maker()
         self.assertEqual(
             ratios,
-            [(-1,), (-1,)]
+            [(-1, -1, -1, -1), (-1, -1, -1, -1)]
         )
 
     def test_one_rest(self):
@@ -37,7 +37,7 @@ class TestRatioMaker(unittest.TestCase):
         ratios = ratio_maker()
         self.assertEqual(
             ratios,
-            [(1, 1, 1, 1), (-1,)]
+            [(1, 1, 1, 1), (-1, -1, -1, -1)]
         )
 
 

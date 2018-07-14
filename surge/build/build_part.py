@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-''' usage: python build_segment_i_part.py part_name number_of_stages
+''' usage: python build_segment.py segment_name part_name number_of_stages ruler
 '''
 # from surge.segments.segment_i.make_part import make_part
 import abjad

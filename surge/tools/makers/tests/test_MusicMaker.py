@@ -87,5 +87,32 @@ class TestMusicMakerTwoStages(unittest.TestCase):
         self.assertEqual(str(voice), str(self.test_voice))
 
 
+class TestMusicMakerNoRhythmMaker(unittest.TestCase):
+
+    def setUp(self):
+        time_signatures = (
+            [
+                abjad.TimeSignature((4, 4)),
+            ],
+        )
+        rhythm = abjad.Voice("c'4 c'4 c'4 c'4")
+        self.music_maker = MusicMaker(
+            instrument=abjad.instrumenttools.Oboe(),
+            name='Name',
+            rhythms=[rhythm],
+            stages=[0],
+            time_signatures=time_signatures
+        )
+        self.testVoice = rhythm
+
+        def test__call__(self):
+            voice = self.music_maker(0)
+            self.assertEqual(str(voice), str(self.testVoice))
+
+        def test_attach_instrument(self):
+            voice = self.music_maker(0)
+            result = abjad.inspect(voice).has_indicator(abjad.instrumenttools.Oboe)
+            self.assertTrue(result)
+
 if __name__ == '__main__':
     unittest.main()

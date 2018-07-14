@@ -52,7 +52,11 @@ rhythm_makers_picking = (
 
 rhythm_makers_fretting = (
     # Stage 1
-    None,
+    rhythmmakertools.NoteRhythmMaker(
+        beam_specifier=beam_specifier,
+        duration_spelling_specifier=duration_spelling_specifier,
+        tie_specifier=tie_specifier
+    ),
     # Stage 2
     rhythmmakertools.NoteRhythmMaker(
         beam_specifier=beam_specifier,

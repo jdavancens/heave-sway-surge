@@ -23,11 +23,11 @@ class ScoreTemplate:
         self,
         instrument_list=[
             'oboe',
-            'clarinet in b-flat',
+            'bass clarinet',
             'alto saxophone',
             'trombone',
-            'guitar',
-            'guitar',
+            'guitar i',
+            'guitar ii',
             'violin'
             'viola',
             'cello',
@@ -51,8 +51,8 @@ class ScoreTemplate:
         )
         counts = {instrument: 0 for instrument in self.instrument_list}
         current_counts = {instrument: 1 for instrument in self.instrument_list}
-        # count multiples of instruments
 
+        # count multiples of instruments
         for instrument_name in self.instrument_list:
             counts[instrument_name] += 1
         for instrument_name in self.instrument_list:

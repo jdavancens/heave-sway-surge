@@ -38,11 +38,36 @@ class TestFretPlacement(unittest.TestCase):
             harmonic=True
         )
 
+    def test_init(self):
+        result = FretPlacement(Guitar(), 0, 0, False)
+        self.assertIsInstance(result, FretPlacement)
+
     def test_equal(self):
-        self.assertEqual(self.fret_placement, self.fret_placement_same)
+        self.assertTrue(self.fret_placement == self.fret_placement_same)
+
+    def test_equal_none_returns_false(self):
+        self.assertFalse(self.fret_placement == None)
 
     def test_not_equal(self):
-        self.assertNotEqual(self.fret_placement, self.fret_placement_different)
+        self.assertTrue(self.fret_placement != self.fret_placement_different)
+
+    def test_to_string(self):
+        self.assertEqual(str(self.fret_placement), '0')
+
+    def test_to_string_harmonic(self):
+        self.assertEqual(str(self.fret_placement_different), '0◇')
+
+    def test_property_instrument(self):
+        self.assertIsInstance(self.fret_placement.instrument, Guitar)
+
+    def test_property_fret(self):
+        self.assertEqual(self.fret_placement.fret, 0)
+
+    def test_property_harmonic(self):
+        self.assertFalse(self.fret_placement.harmonic)
+
+    def test_property_string(self):
+        self.assertEqual(self.fret_placement.string, 0)
 
 
 if __name__ == '__main__':

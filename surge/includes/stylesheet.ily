@@ -1,4 +1,4 @@
-\version "2.19.29"
+\version "2.18.1"
 
 \include "custom_functions/path-gliss.ily"
 \include "custom_functions/scheme.ily"

@@ -57,14 +57,41 @@ class TestFretCombination(unittest.TestCase):
             number_of_strings=6
         )
 
+    def test_init(self):
+        fret_placement = FretPlacement(
+            instrument=Guitar(),
+            string=0,
+            fret=0,
+            harmonic=False
+        )
+        combo = FretCombination(
+            instrument=Guitar(),
+            fret_placements=[fret_placement],
+            number_of_strings=6
+        )
+        self.assertIsInstance(combo, FretCombination)
+
     def test_equal(self):
-        self.assertEqual(self.combo, self.combo_same)
+        self.assertTrue(self.combo == self.combo_same)
+        # self.assertEqual(self.combo, self.combo_same)
 
     def test_not_equal(self):
-        self.assertNotEqual(self.combo, self.combo_different)
+        # self.assertNotEqual(self.combo, self.combo_different)
+        self.assertFalse(self.combo == self.combo_different)
+
+    def test_to_string(self):
+        result = str(self.combo)
+        expected = 'FretCombination(0)'
+        self.assertEqual(result, expected)
 
     def test_as_binary_list(self):
         self.assertEqual(self.combo.as_binary_list(), [0, 0, 0, 0, 0, 1])
+
+    def test_property_instrument(self):
+        self.assertIsInstance(self.combo.instrument, Guitar)
+
+    def test_property_fret_placements(self):
+        self.assertIsInstance(self.combo.fret_placements, list)
 
 
 if __name__ == '__main__':

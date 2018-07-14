@@ -256,6 +256,8 @@ class SegmentMaker(SegmentMakerBaseClass):
                     voice_instrument = abjad.inspect(voice).get_indicator(
                         abjad.Instrument
                     )
+                    # import pdb
+                    # pdb.set_trace()
                     assert(isinstance(voice_instrument, abjad.Instrument))
                     voice_instrument = voice_instrument.instrument_name
                     voice_instrument = voice_instrument.title()

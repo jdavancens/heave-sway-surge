@@ -69,6 +69,8 @@ class MusicMaker:
                     voice = self._make_skips(current_stage)
                 else:
                     voice = self._rhythms[current_stage]
+                    print(voice)
+
             else:
                 voice = self._make_rhythm(current_stage)
         else:
