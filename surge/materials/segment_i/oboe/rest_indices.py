@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 rest_indices = [
     [
-        range(15),
         'all'
     ],
     [
-        range(4, 12),
+        list(range(4, 12)),
         list(range(3)) + list(range(4, 9)),
         list(range(1, 5)) + list(range(9, 13))
     ],

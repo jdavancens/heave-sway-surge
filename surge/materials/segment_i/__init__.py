@@ -10,7 +10,6 @@ import surge.materials.segment_i.trombone
 import surge.materials.segment_i.viola
 import surge.materials.segment_i.violin
 
-
 from .guitar_taleas import taleas_picking_guitar_1, taleas_picking_guitar_2
 from .patterns import *
 from .stages import number_of_stages, stages

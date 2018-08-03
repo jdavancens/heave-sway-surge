@@ -56,7 +56,7 @@ class FretPlacement(object):
         harmonic = ''
         if self.harmonic:
             harmonic = '◇'
-        return str(self.fret) + harmonic
+        return '({}, {}{})'.format(self.string, self.fret, harmonic)
 
     # PUBLIC PROPERTIES
 

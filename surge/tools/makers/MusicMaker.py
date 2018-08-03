@@ -65,12 +65,11 @@ class MusicMaker:
         if current_stage in self._stages:
             if (self._rhythm_makers is None
                     or self._rhythm_makers[current_stage] is None):
-                if self._rhythms is None:
+                if (self._rhythms is None
+                        or self._rhythms[current_stage] is None):
                     voice = self._make_skips(current_stage)
                 else:
-                    voice = self._rhythms[current_stage]
-                    print(voice)
-
+                    voice = copy.deepcopy(self._rhythms[current_stage])
             else:
                 voice = self._make_rhythm(current_stage)
         else:
@@ -78,17 +77,15 @@ class MusicMaker:
         assert isinstance(voice, abjad.Voice)
         self._flatten_trivial_tuplets(voice)
         self._attach_instrument(voice)
+        # print(voice)
         return voice
 
     def __str__(self):
-        s = "MusicMaker(instrument={}, name={})"
+        s = "MusicMaker(instrument={}, name={}, rhythm_maker={})"
         s = s.format(
-            self.instrument.instrument_name,
-            self.name,
+            self._instrument.instrument_name,
+            self._name,
             self._rhythm_makers,
-            self._time_signatures,
-            self._rhythms,
-            self._divisions
         )
         return s
 

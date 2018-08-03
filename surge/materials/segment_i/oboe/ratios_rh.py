@@ -5,21 +5,10 @@ from surge.tools.rhythmtools.EvenSubdivider import EvenSubdivider
 from surge.tools.rhythmtools.MultiDiffProlater import MultiDiffProlater
 from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
 from surge.materials.segment_i.time_signatures import time_signatures
-from surge.materials.segment_i.patterns import *
+from surge.materials.segment_i import patterns
 from .rest_indices import rest_indices
 
-ratio_makers_rh_stage_1 = (
-    # 1-1
-    RatioMaker(
-        time_signatures=time_signatures[0][0],
-        rest_indices=rest_indices[0][0],
-    ),
-    # 1-2
-    RatioMaker(
-        time_signatures=time_signatures[0][1],
-        rest_indices=rest_indices[0][1],
-    )
-)
+ratio_makers_rh_stage_1 = ()
 
 ratio_makers_rh_stage_2 = (
     # 2-1
@@ -39,7 +28,7 @@ ratio_makers_rh_stage_2 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5a)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5a)
         )
     ),
     # 2-3
@@ -53,7 +42,7 @@ ratio_makers_rh_stage_2 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_7b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_7b)
         )
     )
 )
@@ -71,7 +60,7 @@ ratio_makers_rh_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_3b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_3b)
         )
     ),
     # 3-2
@@ -85,7 +74,7 @@ ratio_makers_rh_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5b)
         )
     ),
     # 3-3
@@ -99,7 +88,7 @@ ratio_makers_rh_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_4b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_4b)
         )
     ),
     # 3-4
@@ -121,7 +110,7 @@ ratio_makers_rh_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_6b)
         )
     ),
     # 4-2
@@ -135,7 +124,7 @@ ratio_makers_rh_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_6b)
         )
     ),
     # 4-3
@@ -149,7 +138,7 @@ ratio_makers_rh_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_7b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_7b)
         )
     )
 )
@@ -166,7 +155,7 @@ ratio_makers_rh_stage_5 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[2, 0, 1],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5a)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5a)
         )
     ),
     # 5-2

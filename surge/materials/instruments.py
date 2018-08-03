@@ -207,7 +207,3 @@ instruments = abjad.TypedOrderedDict([
         )
     ),
 ])
-
-instrumentMap = {
-    ''
-}

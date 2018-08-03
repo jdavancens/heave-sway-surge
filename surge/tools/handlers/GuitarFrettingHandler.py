@@ -6,7 +6,6 @@ Created on Feb 15, 2016
 '''
 
 import abjad
-from surge.tools.actions.FretCombination import FretCombination
 from surge.tools.handlers.Handler import Handler
 from surge.tools.handlers.TablatureHandler import TablatureHandler
 import copy
@@ -62,7 +61,7 @@ class GuitarFrettingHandler(TablatureHandler):
         self._handle_lifeline_voice(lifeline_voice, current_stage)
 
         self._name_voices(voice, rhythm_voice, lifeline_voice)
-        return (voice, rhythm_voice, lifeline_voice)
+        return (voice, rhythm_voice)
 
     # PRIVATE METHODS #
 
@@ -71,60 +70,63 @@ class GuitarFrettingHandler(TablatureHandler):
             accent = abjad.indicatortools.Articulation("ltoe", direction=Up)
             abjad.attach(accent, tie.head)
 
+    def _create_tablature_notehead(self, note_head, fret_placement):
+        markup = abjad.Markup(fret_placement.fret)
+        markup = markup.fontsize(-1).bold()
+        if fret_placement.harmonic:
+            diamond = abjad.Markup.musicglyph(
+                'noteheads.s2harmonic'
+            )
+            diamond = diamond.raise_(0.5)
+            markup = abjad.Markup.concat(
+                [markup, diamond]
+            )
+        markup = markup.whiteout()
+        note_head.tweak.stencil = \
+            'ly:text-interface::print'
+        note_head.tweak.text = markup.raise_(-0.5)
+
     def _construct_fretting_tablature(
         self,
         logical_tie,
         fret_combination,
         last_fret_combination,
     ):
-        chord = logical_tie.head
         string_ids = [6, 5, 4, 3, 2, 1]
         staff_positions = [2, 5, 9, 12, 16, 19]
         for i, leaf in enumerate(logical_tie):
+            # replace note with chord
             chord = abjad.Chord(staff_positions, leaf.written_duration)
-            abjad.mutate(leaf).replace(chord)
+            # first leaf
             if i == 0:
+                # replace noteheads
                 for j, note_head in enumerate(chord.note_heads):
-                    if fret_combination == last_fret_combination:
-                        for note_head in chord.note_heads:
-                            note_head.tweak.stencil = \
-                                abjad.Scheme('point-stencil')
+                    string = string_ids[j]
+                    if fret_combination.includes_string(string):
+                        fret_placement = \
+                            fret_combination.get_fret_placement(string)
+                        self._create_tablature_notehead(
+                            note_head,
+                            fret_placement
+                        )
                     else:
-                        for fret_placement in fret_combination.fret_placements:
-                            if fret_placement.string == string_ids[j]:
-                                markup = abjad.Markup(fret_placement.fret)
-                                markup = markup.fontsize(-1).bold()
-                                if fret_placement.harmonic:
-                                    diamond = abjad.Markup.musicglyph(
-                                        'noteheads.s2harmonic'
-                                    )
-                                    diamond = diamond.raise_(0.5)
-                                    markup = abjad.Markup.concat(
-                                        [markup, diamond]
-                                    )
-                                markup = markup.whiteout()
-                                note_head.tweak.stencil = \
-                                    'ly:text-interface::print'
-                                note_head.tweak.text = markup.raise_(-0.5)
+                        self._hide_note_head(note_head)
             else:
-                for note_head in chord.note_heads:
-                    note_head.tweak.stencil = abjad.Scheme('point-stencil')
+                self._hide_note_head(chord)
+            abjad.mutate(leaf).replace(chord)
 
     def _handle_lifeline_voice(self, voice, current_stage):
         if self._fret_combinations is None:
             return
-        i = 0
+
         # reset the fret combination pattern cycle
         pattern = self._fret_combination_patterns[current_stage]
         pattern.reset()
 
-        for logical_tie in abjad.iterate(voice).by_logical_tie(
-            pitched=True
-        ):
+        for logical_tie in abjad.iterate(voice).by_logical_tie(pitched=True):
             # hide all note_heads
             for chord in logical_tie:
-                for note_head in chord.note_heads:
-                    note_head.tweak.stencil = abjad.Scheme('point-stencil')
+                self._hide_note_head(chord)
 
             # make a glissando map
             fret_combination = self._fret_combinations[pattern.next()]
@@ -136,10 +138,8 @@ class GuitarFrettingHandler(TablatureHandler):
             # attach glissando map and glissando command
             if glissando_map is not None:
                 abjad.attach(glissando_map, logical_tie.head)
-                self._attach_glissando(
-                    logical_tie.head,
-                    thickness=2,
-                )
+                self._attach_glissando(logical_tie.head, thickness=2)
+
                 if not logical_tie.is_trivial:
                     for leaf in logical_tie[1:]:
                         self._add_gliss_skip(leaf)
@@ -151,7 +151,6 @@ class GuitarFrettingHandler(TablatureHandler):
                 anchor[0] = abjad.Chord(logical_tie[0])
             except Exception:
                 pass
-            i += 1
 
         # strip other markups
         abjad.detach(abjad.Markup, voice)
@@ -172,9 +171,7 @@ class GuitarFrettingHandler(TablatureHandler):
                     self._attach_hammer(hammer, logical_tie)
 
     def _handle_voice(self, voice, current_stage):
-        # save the instrument to reattach later
-        first_leaf = abjad.inspect(voice).get_leaf(0)
-        instrument = abjad.inspect(first_leaf).get_indicator(abjad.Instrument)
+        instrument = abjad.inspect(voice).get_indicator(abjad.Instrument)
         last_fret_combination = None
         # loop through logical ties, create chords with fret combination markup
         for logical_tie in abjad.iterate(voice).by_logical_tie():
@@ -192,9 +189,7 @@ class GuitarFrettingHandler(TablatureHandler):
                 last_fret_combination = fret_combination
             else:
                 last_fret_combination = None
-        # reattach instrument
-        first_leaf = abjad.inspect(voice).get_leaf(0)
-        abjad.attach(instrument, first_leaf)
+        abjad.attach(instrument, voice)
 
     def _make_glissando_map(self, fret_combination, context_name):
         binary_list = fret_combination.as_binary_list()

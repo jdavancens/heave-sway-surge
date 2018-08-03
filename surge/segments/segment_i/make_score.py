@@ -4,11 +4,11 @@ Created on Dec 4, 2015
 
 @author: josephdavancens
 '''
-from surge.tools.makers.SegmentMaker import SegmentMaker
-from surge.tools.utilities.flatten_list import flatten_list
-from surge.segments.segment_i.definitions import *
-from surge.materials.segment_i.time_signatures import *
+from surge.materials import instrument_list
+from surge.materials.segment_i import measures_per_stage, time_signatures
 from surge.materials.segment_i.tempo_map import tempo_map
+from surge.segments.segment_i.music_handlers import music_handlers
+from surge.tools.makers.SegmentMaker import SegmentMaker
 
 
 def make_score(number_of_stages=None):
@@ -22,36 +22,12 @@ def make_score(number_of_stages=None):
         first_bar_number=1,
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
-        instrument_list=[
-            'oboe',
-            'bass clarinet',
-            'alto saxophone',
-            'trombone',
-            'guitar i',
-            'guitar ii',
-            'violin',
-            'viola',
-            'cello',
-            'contrabass',
-        ],
-        page_size=('11x17', 'landscape'),
+        instrument_list=instrument_list,
+        page_size=('11x17', 'portrait'),
         staff_size=7,
         final_barline=True,
         part=False
     )
-    music_handlers = [
-        oboe.music_handlers,
-        clarinet.music_handlers,
-        saxophone.music_handlers,
-        trombone.music_handlers,
-        guitar_1.music_handlers,
-        guitar_2.music_handlers,
-        violin.music_handlers,
-        viola.music_handlers,
-        cello.music_handlers,
-        bass.music_handlers
-    ]
-    music_handlers = flatten_list(music_handlers)
     segment_maker.add_music_handlers(music_handlers)
     segment = segment_maker()
     return segment

@@ -3,6 +3,7 @@ from surge.materials.woodwindfingerings.clarinet.all_fingerings \
     import all_fingerings
 import abjad
 
+
 def pitch_filter(pitches):
     pitches = [abjad.NamedPitch(pitch) for pitch in pitches]
     filtered_fingerings = []
@@ -11,6 +12,7 @@ def pitch_filter(pitches):
             if pitch in fingering.predicted_pitches:
                 filtered_fingerings.append(fingering)
     return filtered_fingerings
+
 
 fingering_sets = (
     pitch_filter(["B4"]),

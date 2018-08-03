@@ -8,12 +8,12 @@ from surge.tools.rhythmtools.time_signatures_to_offsets \
 from surge.materials.segment_i.time_signatures import time_signatures
 
 offsets_2 = time_signatures_to_offsets(time_signatures[1])
-total_duration_2 = float(sum_time_signatures(time_signatures[1]))
 offsets_3 = time_signatures_to_offsets(time_signatures[2])
-total_duration_3 = float(sum_time_signatures(time_signatures[2]))
 offsets_4 = time_signatures_to_offsets(time_signatures[3])
-total_duration_4 = float(sum_time_signatures(time_signatures[3]))
 offsets_5 = time_signatures_to_offsets(time_signatures[4])
+total_duration_2 = float(sum_time_signatures(time_signatures[1]))
+total_duration_3 = float(sum_time_signatures(time_signatures[2]))
+total_duration_4 = float(sum_time_signatures(time_signatures[3]))
 total_duration_5 = float(sum_time_signatures(time_signatures[4]))
 
 path_stage_2 = Path(

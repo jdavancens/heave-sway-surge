@@ -46,7 +46,7 @@ class TestFretPlacement(unittest.TestCase):
         self.assertTrue(self.fret_placement == self.fret_placement_same)
 
     def test_equal_none_returns_false(self):
-        self.assertFalse(self.fret_placement == None)
+        self.assertFalse(self.fret_placement is None)
 
     def test_not_equal(self):
         self.assertTrue(self.fret_placement != self.fret_placement_different)

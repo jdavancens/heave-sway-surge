@@ -13,7 +13,6 @@ from surge.tools.utilities.flatten_list import flatten_list
 from surge.tools.utilities.make_spacer_skip_measures import \
     make_spacer_skip_measures
 import abjad
-import copy
 import datetime
 import os
 
@@ -225,6 +224,7 @@ class SegmentMaker(SegmentMakerBaseClass):
         '''
         # For each stage,
         for stage in range(self.number_of_stages):
+            # Log the stage
             stage_string = '\tStage {} of {}'
             stage_string = stage_string.format(
                 stage + 1,
@@ -256,8 +256,6 @@ class SegmentMaker(SegmentMakerBaseClass):
                     voice_instrument = abjad.inspect(voice).get_indicator(
                         abjad.Instrument
                     )
-                    # import pdb
-                    # pdb.set_trace()
                     assert(isinstance(voice_instrument, abjad.Instrument))
                     voice_instrument = voice_instrument.instrument_name
                     voice_instrument = voice_instrument.title()

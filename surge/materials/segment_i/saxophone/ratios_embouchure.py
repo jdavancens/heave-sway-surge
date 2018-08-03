@@ -1,25 +1,15 @@
 # -*- coding: utf-8 -*-
+import abjad
 from abjad import rhythmmakertools
 from surge.tools.makers.RatioMaker import RatioMaker
 from surge.tools.rhythmtools.EvenSubdivider import EvenSubdivider
 from surge.tools.rhythmtools.MultiDiffProlater import MultiDiffProlater
 from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
-from surge.materials.segment_i.patterns import *
+from surge.materials.segment_i import patterns
 from surge.materials.segment_i.time_signatures import time_signatures
 from .rest_indices import rest_indices
 
-ratio_makers_embouchure_stage_1 = (
-    # 1-1
-    RatioMaker(
-        time_signatures=time_signatures[0][0],
-        rest_indices=rest_indices[0][0],
-    ),
-    # 1-2
-    RatioMaker(
-        time_signatures=time_signatures[0][1],
-        rest_indices=rest_indices[0][1],
-    )
-)
+ratio_makers_embouchure_stage_1 = ()
 
 ratio_makers_embouchure_stage_2 = (
     # 2-1
@@ -39,7 +29,7 @@ ratio_makers_embouchure_stage_2 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5a)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5a)
         )
     ),
     # 2-3
@@ -53,7 +43,7 @@ ratio_makers_embouchure_stage_2 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_7b)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_7b)
         )
     )
 )
@@ -70,8 +60,11 @@ ratio_makers_embouchure_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_3b),
-            silence_mask=rhythmmakertools.SilenceMask.silence_every([2], period=4)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_3b),
+            silence_mask=rhythmmakertools.SilenceMask.silence_every(
+                [2],
+                period=4
+            )
         )
     ),
     # 3-2
@@ -85,8 +78,11 @@ ratio_makers_embouchure_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5b),
-            silence_mask=rhythmmakertools.SilenceMask.silence_every([2], period=4)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5b),
+            silence_mask=rhythmmakertools.SilenceMask.silence_every(
+                [2],
+                period=4
+            )
         )
     ),
     # 3-3
@@ -100,8 +96,11 @@ ratio_makers_embouchure_stage_3 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_4b),
-            silence_mask=rhythmmakertools.SilenceMask.silence_every([2], period=4)
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_4b),
+            silence_mask=rhythmmakertools.SilenceMask.silence_every(
+                [2],
+                period=4
+            )
         )
     ),
     # 3-4
@@ -123,11 +122,12 @@ ratio_makers_embouchure_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6c),
-            silence_mask=rhythmmakertools.SilenceMask.silence_every([3], period=4),
-            second_level_subdivider=EvenSubdivider(
-                [2],
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_6c),
+            silence_mask=rhythmmakertools.SilenceMask.silence_every(
+                [3],
+                period=4
             ),
+            second_level_subdivider=EvenSubdivider([2]),
             second_level_subdivision_pattern=abjad.index_every(
                 indices=[0, 2],
                 period=3
@@ -145,8 +145,11 @@ ratio_makers_embouchure_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_6c),
-            silence_mask=rhythmmakertools.SilenceMask.silence_every([3], period=4),
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_6c),
+            silence_mask=rhythmmakertools.SilenceMask.silence_every(
+                [3],
+                period=4
+            ),
         )
     ),
     # 4-3
@@ -160,7 +163,7 @@ ratio_makers_embouchure_stage_4 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_7b),
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_7b),
             second_level_subdivider=EvenSubdivider(
                 [2],
             ),
@@ -184,12 +187,12 @@ ratio_makers_embouchure_stage_5 = (
         ),
         subdivider=UnitSubdivider(
             rotation_cycle=[0, 1, 2],
-            sustain_mask=rhythmmakertools.SustainMask(pattern_5a),
+            sustain_mask=rhythmmakertools.SustainMask(patterns.pattern_5a),
             second_level_subdivider=EvenSubdivider([3]),
             second_level_subdivision_pattern=abjad.index_every(
-                    [0],
-                    period=3
-                )
+                [0],
+                period=3
+            )
         )
     ),
     # 5-2

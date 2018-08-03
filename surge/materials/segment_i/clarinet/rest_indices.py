@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 rest_indices = [
     [
-        list(range(16)),
-        list(range(16)) + list(range(17, 20))
+        'all'
     ],
     [
         list(range(7, 13)),

@@ -2,7 +2,6 @@
 rest_indices = [
     [
         'all',
-        list(range(12)) + list(range(13, 20))
     ],
     [
         list(range(5)) + [11, 12],

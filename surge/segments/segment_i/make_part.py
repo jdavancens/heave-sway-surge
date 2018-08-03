@@ -4,15 +4,12 @@ Created on Dec 4, 2015
 
 @author: josephdavancens
 '''
-
-
-from surge.segments.segment_i.definitions import *
-from surge.materials.instruments import instruments
+from surge.materials import instruments
 from surge.materials.segment_i.time_signatures import time_signatures
 from surge.materials.segment_i.time_signatures import measures_per_stage
 from surge.materials.segment_i.tempo_map import tempo_map
+from surge.segments.segment_i.music_handlers import music_handlers
 from surge.tools.makers.SegmentMaker import SegmentMaker
-from surge.tools.utilities.flatten_list import flatten_list
 
 
 def make_part(part_name, number_of_stages=None, ruler=False):
@@ -33,19 +30,6 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         part=True,
         ruler=ruler,
     )
-    music_handlers = [
-        oboe.music_handlers,
-        clarinet.music_handlers,
-        saxophone.music_handlers,
-        trombone.music_handlers,
-        guitar_1.music_handlers,
-        guitar_2.music_handlers,
-        violin.music_handlers,
-        viola.music_handlers,
-        cello.music_handlers,
-        bass.music_handlers
-    ]
-    music_handlers = flatten_list(music_handlers)
     for music_handler in music_handlers:
         inst = music_handler.instrument.instrument_name.lower()
         if instruments[part_name] == instruments[inst]:

@@ -142,14 +142,16 @@ class Handler(object):
             self._add_gliss_skip(note)
 
     def _hide_note_head(self, leaf):
+        def point_stencil():
+            return abjad.schemetools.Scheme('point-stencil')
+
+        if isinstance(leaf, abjad.scoretools.NoteHead):
+            leaf.tweak.stencil = point_stencil()
         if isinstance(leaf, abjad.scoretools.Note):
-            abjad.override(leaf).note_head.stencil = \
-                abjad.schemetools.Scheme('point-stencil')
-        elif isinstance(leaf, abjad.Chord):
+            abjad.override(leaf).note_head.stencil = point_stencil()
+        elif isinstance(leaf, abjad.scoretools.Chord):
             for note_head in leaf.note_heads:
-                note_head.tweak.stencil = abjad.schemetools.Scheme(
-                    'point-stencil'
-                )
+                note_head.tweak.stencil = point_stencil()
 
     def _hide_leaf(self, leaf):
         abjad.override(leaf).flag.transparent = True

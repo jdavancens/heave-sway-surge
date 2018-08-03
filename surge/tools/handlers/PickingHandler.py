@@ -7,7 +7,6 @@ Created on Feb 15, 2016
 
 import abjad
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
-import copy
 
 
 class PickingHandler(EnvelopeHandler):
@@ -175,10 +174,12 @@ class PickingHandler(EnvelopeHandler):
                 if tremolo or scrape:
                     self._attach_glissando(tie.head, style=style)
                     self._hidden_grace_after(tie.tail)
-                    grace_container = abjad.inspect(
-                        tie.tail
-                    ).get_after_grace_container()
-                    if (grace_container is not None and len(grace_container) > 0):
+                    grace_container = \
+                        abjad.inspect(tie.tail).get_after_grace_container()
+                    if (
+                        grace_container is not None
+                        and len(grace_container) > 0
+                    ):
                         self._set_y_offset(
                             grace_container[0],
                             picking_position_end
@@ -201,6 +202,5 @@ class PickingHandler(EnvelopeHandler):
                 if last_string_index and string_index != last_string_index:
                     self._attach_string_index(string_index, tie)
                 last_string_index = string_index
-
             else:
                 last_string_index = None

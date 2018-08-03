@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from abjad.tools.rhythmmakertools.Talea import Talea
 from surge.tools.utilities.sum_elements import sum_elements
 

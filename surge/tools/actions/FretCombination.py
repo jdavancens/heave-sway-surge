@@ -26,7 +26,9 @@ class FretCombination(object):
         assert isinstance(instrument, abjad.instrumenttools.Instrument)
         self._instrument = instrument
         assert len(fret_placements) <= number_of_strings
-        self._fret_placements = fret_placements
+        self._fret_placements = {}
+        for fret_placement in fret_placements:
+            self._fret_placements[fret_placement.string] = fret_placement
         self._number_of_strings = number_of_strings
 
     # PRIVATE METHODS
@@ -41,17 +43,28 @@ class FretCombination(object):
             return False
 
     def __repr__(self):
-        items = str(self._fret_placements)[1:-1]
-        string = 'FretCombination({})'.format(items)
+        items = self._fret_placements.values()
+        string = 'FretCombination({})'.format(list(items))
         return string
 
-    # PUBLIC PROPERTIES
+    # PUBLIC METHODS
+
+    def get_fret_placement(self, string_index):
+        if self.includes_string(string_index):
+            return self._fret_placements[string_index]
+        else:
+            return None
+
+    def includes_string(self, string_index):
+        return string_index in self.fret_placements
 
     def as_binary_list(self):
         binary_list = [0] * self.number_of_strings
-        for fret_placement in self.fret_placements:
-            binary_list[fret_placement.string - 1] = 1
+        for i in range(self.number_of_strings):
+            binary_list[i] = self.includes_string(i)
         return binary_list
+
+    # PUBLIC PROPERTIES
 
     @property
     def instrument(self):
