@@ -20,18 +20,18 @@ surge\.materials\.segment_i\.trombone\.lip\_pressure\_envelopes module
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.trombone\.ratios\_embouchure module
+surge\.materials\.segment_i\.trombone\.tuplet_ratios\_embouchure module
 ---------------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.trombone.ratios_embouchure
+.. automodule:: surge.materials.segment_i.trombone.tuplet_ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.trombone\.ratios\_slide\_position module
+surge\.materials\.segment_i\.trombone\.tuplet_ratios\_slide\_position module
 --------------------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.trombone.ratios_slide_position
+.. automodule:: surge.materials.segment_i.trombone.tuplet_ratios_slide_position
     :members:
     :undoc-members:
     :show-inheritance:

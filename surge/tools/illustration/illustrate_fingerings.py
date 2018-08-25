@@ -34,7 +34,7 @@ def illustrate_fingerings(instrument, fingering_map, file_path, kind='basic'):
     if isinstance(fingering_map, dict):
         fingering_map = list(fingering_map.items())
 
-    # put all fingerings in a list (make all keys a set or list of pitches)
+    # put all fingerings.py in a list (make all keys a set or list of pitches)
     fingerings = list()
     for mapping in fingering_map:
         k = mapping[0]

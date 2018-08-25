@@ -61,7 +61,7 @@ class FretCombination(object):
     def as_binary_list(self):
         binary_list = [0] * self.number_of_strings
         for i in range(self.number_of_strings):
-            binary_list[i] = self.includes_string(i)
+            binary_list[i] = 1 if self.includes_string(i) else 0
         return binary_list
 
     # PUBLIC PROPERTIES

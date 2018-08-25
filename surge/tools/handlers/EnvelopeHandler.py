@@ -43,12 +43,9 @@ class EnvelopeHandler(Handler):
         self._name_voices(voice, rhythm_voice)
         self._handle_voice(voice, current_stage)
         self._handle_rhythm_voice(rhythm_voice, current_stage)
-        return (voice, rhythm_voice)
+        return voice, rhythm_voice
 
     # PRIVATE METHODS #
-
-    def _lengths_match(self, voice, envelope):
-        return voice[:].get_duration() == envelope.length
 
     def _handle_voice(self, voice, current_stage):
         """Abstract method"""
@@ -58,15 +55,64 @@ class EnvelopeHandler(Handler):
         """Abstract method"""
         pass
 
-    def _quantize(self, x, steps):
-        if x is None:
-            return 0
-        else:
-            return round(float(x) * steps) / steps
-
     def _set_y_offset(self, note, y):
         if y is None:
             y_offset = 0
         else:
             y_offset = (y - 0.5) * (self._number_of_staff_lines - 2)
         abjad.override(note).note_head.Y_offset = y_offset
+
+    # STATIC METHODS
+
+    @staticmethod
+    def _get_value(envelopes,
+                   patterns,
+                   current_stage,
+                   offset_start,
+                   offset_end,
+                   last):
+
+        if envelopes is None or envelopes[current_stage] is None:
+            start, end = EnvelopeHandler._get_value_from_pattern(
+                patterns,
+                current_stage,
+                last,
+            )
+        else:
+            envelope = envelopes[current_stage]
+            start, end = EnvelopeHandler._get_value_from_envelope(
+                envelope,
+                offset_start,
+                offset_end,
+            )
+        return start, end
+
+    @staticmethod
+    def _get_value_from_envelope(envelopes,
+                                 current_stage,
+                                 offset_start,
+                                 offset_end):
+        envelope = envelopes[current_stage]
+        start = envelope(offset_start)
+        end = envelope(offset_end)
+        return start, end
+
+    @staticmethod
+    def _get_value_from_pattern(patterns, current_stage, last):
+        if last is None:
+            start = EnvelopeHandler._cycle_next(patterns, current_stage)
+        else:
+            start = last
+        end = EnvelopeHandler._cycle_next(patterns, current_stage)
+        return start, end
+
+    @staticmethod
+    def _lengths_match(voice, envelope):
+        return voice[:].get_duration() == envelope.length
+
+    @staticmethod
+    def _quantize(x, steps):
+        if x is None:
+            return 0
+        else:
+            return round(float(x) * steps) / steps

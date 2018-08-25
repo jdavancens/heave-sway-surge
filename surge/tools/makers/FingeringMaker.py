@@ -13,17 +13,23 @@ class FingeringMaker(object):
         "_previous_fingering",
     )
 
-    def __init__(self, instrument, fingering_sets):
+    def __init__(self, instrument, fingering_sets, random_seed=None):
         self._instrument = instrument
         self._fingering_sets = fingering_sets
         self._previous_fingering = None
+        self._random_seed = random_seed
 
-    def __call__(self, left, right, set_index):
+    def __call__(self, left, right, stage_index):
         new_fingering = None
-        fingering_set = self._fingering_sets[set_index]
+        fingering_set = self._fingering_sets[stage_index]
         previous = self._previous_fingering
 
+        # set random seed so we can have repeatable results
+        if self._random_seed is not None:
+            random.seed(self._random_seed)
+
         if previous is None:
+            # first fingering
             return random.choice(fingering_set)
 
         if left and not right:

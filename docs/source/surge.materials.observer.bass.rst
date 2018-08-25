@@ -44,18 +44,18 @@ surge\.materials\.segment_i\.bass\.patterns module
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.bass\.ratios\_bowing module
+surge\.materials\.segment_i\.bass\.tuplet_ratios\_bowing module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.bass.ratios_bowing
+.. automodule:: surge.materials.segment_i.bass.tuplet_ratios_bowing
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.bass\.ratios\_fingering module
+surge\.materials\.segment_i\.bass\.tuplet_ratios\_fingering module
 ----------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.bass.ratios_fingering
+.. automodule:: surge.materials.segment_i.bass.tuplet_ratios_fingering
     :members:
     :undoc-members:
     :show-inheritance:

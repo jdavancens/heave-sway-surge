@@ -1,28 +1,8 @@
 # -*- coding: utf-8 -*-
-
 rest_indices = [
-    [
-        range(15),
-        'all'
-    ],
-    [
-        'all',
-        'all',
-        'all'
-    ],
-    [
-        range(1, 9),
-        [4, 5, 6, 11, 12],
-        None,
-        [0, 1] + list(range(7, 13))
-    ],
-    [
-        'all',
-        range(11),
-        [3, 4]
-    ],
-    [
-        'all',
-        'all',
-    ],
+    list(range(36)),
+    list(range(38)),
+    list(range(3, 9)) + [13, 14, 15, 20, 21, 34, 35] + list(range(41, 47)),
+    list(range(20)) + [25, 26],
+    list(range(33)),
 ]

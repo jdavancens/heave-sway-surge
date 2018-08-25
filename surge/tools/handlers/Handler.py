@@ -30,7 +30,14 @@ class Handler(object):
 
     # PRIVATE METHODS
 
-    def _add_stem_tremolo(self, logical_tie, tremolo_flags=32):
+    def _name_voices(self, voice, rhythm_voice):
+        voice.name = self._music_maker.name
+        rhythm_voice.name = self._music_maker.name + ' Rhythm'
+
+    # STATIC METHODS
+
+    @staticmethod
+    def _add_stem_tremolo(logical_tie, tremolo_flags=32):
         leaf = logical_tie.head
         abjad.attach(abjad.indicatortools.StemTremolo(tremolo_flags), leaf)
         override = abjad.lilypondnametools.LilyPondGrobOverride(
@@ -42,10 +49,12 @@ class Handler(object):
         )
         abjad.attach(override, leaf)
 
-    def _add_gliss_skip(self, leaf):
+    @staticmethod
+    def _add_gliss_skip(leaf):
         abjad.override(leaf).note_column.glissando_skip = True
 
-    def _attach_glissando(self, leaf, color=None, thickness=1.5, style=None):
+    @staticmethod
+    def _attach_glissando(leaf, color=None, thickness=1.5, style=None):
         if color is not None:
             color_override = abjad.lilypondnametools.LilyPondGrobOverride(
                 context_name=None,
@@ -113,7 +122,31 @@ class Handler(object):
 
         abjad.attach(glissando, leaf)
 
-    def _get_consecutive_note_groups(self, music):
+    @staticmethod
+    def integer_to_roman_numeral(x):
+        return ('0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII')[x]
+
+    @staticmethod
+    def _create_cycles(patterns):
+        if patterns is None:
+            return None
+        cycles = []
+        for pattern in patterns:
+            if pattern is None:
+                pattern = []
+            cycle = Cycle(pattern)
+            cycles.append(cycle)
+        return cycles
+
+    @staticmethod
+    def _cycle_next(cycles, current_stage):
+        if cycles is None or current_stage > len(cycles):
+            return None
+        else:
+            return cycles[current_stage].next()
+
+    @staticmethod
+    def _get_consecutive_note_groups(music):
         import itertools
         leaves = list(abjad.iterate(music).by_leaf())
         groups = []
@@ -124,36 +157,27 @@ class Handler(object):
                 groups.append(group)
         return groups
 
-    def _hidden_grace_after(self, leaf, attachments=[], grace_note=None):
+    @staticmethod
+    def _hidden_grace_after(leaf, attachments=[], grace_note=None):
         if grace_note is None:
             grace_note = abjad.Note(0, abjad.Duration(1, 16))
         for attachment in attachments:
             abjad.attach(attachment, grace_note)
-        self._hide_note_head(grace_note)
+        Handler._hide_note_head(grace_note)
         abjad.override(grace_note).stem.stencil = False
         abjad.override(grace_note).beam.stencil = False
         abjad.override(grace_note).flag.stencil = False
         grace_container = abjad.scoretools.AfterGraceContainer([grace_note])
         abjad.attach(grace_container, leaf)
 
-    def _hide_and_skip_tied_notes(self, logical_tie):
+    @staticmethod
+    def _hide_and_skip_tied_notes(logical_tie):
         for note in logical_tie[1:]:
-            self._hide_note_head(note)
-            self._add_gliss_skip(note)
+            Handler._hide_note_head(note)
+            Handler._add_gliss_skip(note)
 
-    def _hide_note_head(self, leaf):
-        def point_stencil():
-            return abjad.schemetools.Scheme('point-stencil')
-
-        if isinstance(leaf, abjad.scoretools.NoteHead):
-            leaf.tweak.stencil = point_stencil()
-        if isinstance(leaf, abjad.scoretools.Note):
-            abjad.override(leaf).note_head.stencil = point_stencil()
-        elif isinstance(leaf, abjad.scoretools.Chord):
-            for note_head in leaf.note_heads:
-                note_head.tweak.stencil = point_stencil()
-
-    def _hide_leaf(self, leaf):
+    @staticmethod
+    def _hide_leaf(leaf):
         abjad.override(leaf).flag.transparent = True
         abjad.override(leaf).dots.transparent = True
         abjad.override(leaf).note_head.transparent = True
@@ -165,7 +189,21 @@ class Handler(object):
         abjad.override(leaf).tuplet_bracket.transparent = True
         abjad.override(leaf).tuplet_number.transparent = True
 
-    def _iterate_logical_ties(self, voice):
+    @staticmethod
+    def _hide_note_head(leaf):
+        def point_stencil():
+            return abjad.schemetools.Scheme('point-stencil')
+
+        if isinstance(leaf, abjad.scoretools.NoteHead):
+            leaf.tweak.stencil = point_stencil()
+        if isinstance(leaf, abjad.scoretools.Note):
+            abjad.override(leaf).note_head.stencil = point_stencil()
+        elif isinstance(leaf, abjad.scoretools.Chord):
+            for note_head in leaf.note_heads:
+                note_head.tweak.stencil = point_stencil()
+
+    @staticmethod
+    def _iterate_logical_ties(voice):
         for tie in abjad.iterate(voice).by_logical_tie():
             start_moment = abjad.inspect(
                 tie.head
@@ -174,7 +212,8 @@ class Handler(object):
             offset_end = offset_start + float(tie.get_duration())
             yield tie, offset_start, offset_end
 
-    def _make_circle_markup(self, size, grey=0):
+    @staticmethod
+    def _make_circle_markup(size, grey=0):
         arc = abjad.markuptools.PostscriptOperator('arc', 0, 0, size, 0, 360)
         postscript = abjad.markuptools.Postscript([arc])
         postscript = postscript.closepath()
@@ -183,7 +222,8 @@ class Handler(object):
         circle = postscript.as_markup()
         return circle
 
-    def _make_circle_outline_markup(self, size):
+    @staticmethod
+    def _make_circle_outline_markup(size):
         circle_outline = abjad.MarkupCommand(
             'draw-circle',
             size,
@@ -192,7 +232,8 @@ class Handler(object):
         )
         return abjad.Markup(circle_outline)
 
-    def _make_half_circle_markup(self, size, grey=0):
+    @staticmethod
+    def _make_half_circle_markup(size, grey=0):
         arc = abjad.markuptools.PostscriptOperator(
             'arc',
             0,
@@ -208,18 +249,18 @@ class Handler(object):
         half_circle = postscript.as_markup()
         return half_circle
 
+    @staticmethod
     def _make_text_markup(
-        self,
-        text_or_tuple,
-        font_size=0,
-        bold=True,
-        raise_amount=0.5,
-        direction=Down,
-        orientation='x',
-        commas=False,
-        enclosure=None,
-        uppercase=False,
-        whiteout=False
+            text_or_tuple,
+            font_size=0,
+            bold=True,
+            raise_amount=0.5,
+            direction=abjad.OrdinalConstant('y', -1, 'Down'),
+            orientation='x',
+            commas=False,
+            enclosure=None,
+            uppercase=False,
+            whiteout=False
     ):
         if isinstance(text_or_tuple, str):
             text_or_tuple = (text_or_tuple,)
@@ -252,39 +293,11 @@ class Handler(object):
         markup = markup.raise_(raise_amount)
         return markup
 
-    def _markup_to_notehead(self, note, markup):
+    @staticmethod
+    def _markup_to_notehead(note, markup):
         abjad.override(note).note_head.stencil = \
             'ly:text-interface::print'
         abjad.override(note).note_head.text = markup
-
-    def _name_voices(self, voice, rhythm_voice):
-        voice.name = self._music_maker.name
-        rhythm_voice.name = self._music_maker.name + ' Rhythm'
-
-    # STATIC METHODS
-
-    @staticmethod
-    def integer_to_roman_numeral(x):
-        return ('0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII')[x]
-
-    @staticmethod
-    def _create_cycles(patterns):
-        if patterns is None:
-            return None
-        cycles = []
-        for pattern in patterns:
-            if pattern is None:
-                pattern = []
-            cycle = Cycle(pattern)
-            cycles.append(cycle)
-        return cycles
-
-    @staticmethod
-    def _cycle_next(cycles, current_stage):
-        if cycles is None:
-            return None
-        else:
-            return cycles[current_stage].next()
 
     @staticmethod
     def _reset_cycle(cycle):

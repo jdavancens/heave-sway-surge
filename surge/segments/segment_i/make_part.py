@@ -4,7 +4,7 @@ Created on Dec 4, 2015
 
 @author: josephdavancens
 '''
-from surge.materials import instruments
+from surge.materials.instruments import instruments
 from surge.materials.segment_i.time_signatures import time_signatures
 from surge.materials.segment_i.time_signatures import measures_per_stage
 from surge.materials.segment_i.tempo_map import tempo_map

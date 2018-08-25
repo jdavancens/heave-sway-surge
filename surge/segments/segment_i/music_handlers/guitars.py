@@ -6,11 +6,11 @@ Created on July 27, 2018
 '''
 from abjad.tools.instrumenttools import Guitar
 from surge.materials.segment_i.time_signatures import time_signatures
-from surge.tools.handlers.PickingHandler import PickingHandler
 from surge.tools.handlers.GuitarFrettingHandler import GuitarFrettingHandler
+from surge.tools.handlers.PickingHandler import PickingHandler
 from surge.tools.makers.MusicMaker import MusicMaker
 import surge.materials.segment_i.guitar_1 as guitar_i_materials
-import surge.materials.segment_i.guitar_1 as guitar_ii_materials
+import surge.materials.segment_i.guitar_2 as guitar_ii_materials
 
 
 def make_handlers(instrument, materials):
@@ -22,8 +22,7 @@ def make_handlers(instrument, materials):
         instrument=instrument,
         name='Picking',
         time_signatures=time_signatures,
-        rhythms=materials.rhythms_picking,
-        rhythm_makers=materials.rhythm_makers_picking
+        rhythm_makers=materials.picking.rhythm_makers
     )
 
     fretting_music_maker = MusicMaker(
@@ -31,23 +30,22 @@ def make_handlers(instrument, materials):
         instrument=instrument,
         name='Fretting',
         time_signatures=time_signatures,
-        rhythms=materials.rhythms_fretting,
-        rhythm_makers=materials.rhythm_makers_fretting
+        rhythm_makers=materials.fretting.rhythm_makers
     )
 
     # music handlers
     picking_music_handler = PickingHandler(
         music_maker=picking_music_maker,
-        picking_position_envelopes=materials.picking_position_envelopes,
-        picking_force_envelopes=materials.picking_force_envelopes,
-        string_index_patterns=materials.string_index_patterns,
-        tremolo_patterns=materials.tremolo_patterns,
+        picking_position_envelopes=materials.picking.envelopes.position,
+        picking_force_envelopes=materials.picking.envelopes.force,
+        string_index_patterns=materials.picking.patterns.string_index,
+        tremolo_patterns=materials.picking.patterns.tremolo,
     )
 
     fretting_music_handler = GuitarFrettingHandler(
         music_maker=fretting_music_maker,
-        fret_combinations=materials.fret_combinations,
-        fret_combination_patterns=materials.fret_combination_patterns
+        fret_combinations=materials.fretting.fret_combinations,
+        fret_combination_patterns=materials.fretting.patterns.fret_combination
     )
 
     return [picking_music_handler, fretting_music_handler]
@@ -66,4 +64,4 @@ guitar_ii = Guitar(
 guitar_i_handlers = make_handlers(guitar_i, guitar_i_materials)
 guitar_ii_handlers = make_handlers(guitar_ii, guitar_ii_materials)
 
-music_handlers = guitar_i_handlers + guitar_ii_handlers
+guitar_handlers = guitar_i_handlers + guitar_ii_handlers

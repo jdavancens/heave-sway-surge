@@ -24,7 +24,7 @@
         Category 4: loud, with beats
         Category 5: dyads, soft
         Category 6: variable in upper partials, shrill, two or more partials
-            possible. Omitted due to similarity to normal fingerings.
+            possible. Omitted due to similarity to normal fingerings.py.
 '''
 
 import abjad

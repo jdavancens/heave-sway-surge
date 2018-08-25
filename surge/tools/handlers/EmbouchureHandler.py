@@ -30,8 +30,10 @@ class EmbouchureHandler(EnvelopeHandler):
     __slots__ = (
         '_music_maker',
         '_air_pressure_envelopes',
+        '_air_pressure_envelope_patterns',
         '_air_pressure_envelopes_release',
         '_lip_pressure_envelopes',
+        '_lip_pressure_envelope_patterns',
         '_number_of_staff_lines',
         '_consonant_patterns',
         '_fluttertongue_patterns',
@@ -43,101 +45,101 @@ class EmbouchureHandler(EnvelopeHandler):
 
     # INTIALIZER
 
-    def __init__(
-        self,
-        music_maker=None,
-        air_pressure_envelopes=None,
-        air_pressure_envelopes_release=None,
-        lip_pressure_envelopes=None,
-        consonant_patterns=None,
-        fluttertongue_patterns=None,
-        direction_patterns=None,
-        staccato_patterns=None,
-        vibrato_patterns=None,
-        vowel_patterns=None,
-        number_of_staff_lines=15,
-        show_rhythmic_notation=True
-    ):
+    def __init__(self,
+                 music_maker=None,
+                 air_pressure_envelope_patterns=None,
+                 air_pressure_envelopes=None,
+                 air_pressure_envelopes_release=None,
+                 lip_pressure_envelope_patterns=None,
+                 lip_pressure_envelopes=None,
+                 consonant_patterns=None,
+                 fluttertongue_patterns=None,
+                 direction_patterns=None,
+                 staccato_patterns=None,
+                 vibrato_patterns=None,
+                 vowel_patterns=None,
+                 number_of_staff_lines=15,
+                 show_rhythmic_notation=True
+                 ):
         EnvelopeHandler.__init__(
             self,
             music_maker=music_maker,
             number_of_staff_lines=number_of_staff_lines,
             show_rhythmic_notation=show_rhythmic_notation
         )
+        self._air_pressure_envelope_patterns = \
+            EmbouchureHandler._create_cycles(air_pressure_envelope_patterns)
+
         self._air_pressure_envelopes = air_pressure_envelopes
+
         self._air_pressure_envelopes_release = air_pressure_envelopes_release
+
+        self._lip_pressure_envelope_patterns = \
+            EmbouchureHandler._create_cycles(lip_pressure_envelope_patterns)
+
         self._lip_pressure_envelopes = lip_pressure_envelopes
-        self._consonant_patterns = self._create_cycles(consonant_patterns)
-        self._direction_patterns = self._create_cycles(direction_patterns)
-        self._fluttertongue_patterns = self._create_cycles(
+
+        self._consonant_patterns = \
+            EmbouchureHandler._create_cycles(consonant_patterns)
+
+        self._direction_patterns = \
+            EmbouchureHandler._create_cycles(direction_patterns)
+
+        self._fluttertongue_patterns = EmbouchureHandler._create_cycles(
             fluttertongue_patterns
         )
-        self._staccato_patterns = self._create_cycles(staccato_patterns)
-        self._vibrato_patterns = self._create_cycles(vibrato_patterns)
-        self._vowel_patterns = self._create_cycles(vowel_patterns)
+        self._staccato_patterns = \
+            EmbouchureHandler._create_cycles(staccato_patterns)
+
+        self._vibrato_patterns = \
+            EmbouchureHandler._create_cycles(vibrato_patterns)
+
+        self._vowel_patterns = \
+            EmbouchureHandler._create_cycles(vowel_patterns)
 
     # PRIVATE METHODS
 
-    def _attach_direction(self, direction, last_direction, tie):
-        if direction is None:
-            return
-        ordinal = abjad.OrdinalConstant('y', 1, 'Down')
-        if direction == 'in':
-            articulation = abjad.Articulation('rtoe', Down)
-        elif direction == 'out':
-            articulation = abjad.Articulation('ltoe', Down)
-        abjad.attach(articulation, tie.head)
-
-    def _attach_fluttertongue(self, fluttertongue, tie):
-        if fluttertongue:
-            self._add_stem_tremolo(tie)
-
-    def _attach_phoneme(self, consonant, vowel, tie, last_vowel):
-        consonant = '' if consonant is None else consonant
-        vowel = '' if vowel is None else vowel
-        phoneme = consonant + vowel
-        if phoneme != '' and phoneme != last_vowel:
-            markup = self._make_text_markup(phoneme)
-            abjad.attach(markup, tie.head)
-
-    def _attach_pressure_notehead(self, tie, pressure, size=0.5, outline=True):
-        fill = self._make_circle_markup(size, pressure)
-        if outline:
-            outline = self._make_circle_outline_markup(size)
-            circle = abjad.Markup.combine([fill, outline])
-            self._markup_to_notehead(tie.head, circle)
-        else:
-            self._markup_to_notehead(tie.head, fill)
-
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         last_vowel = None
+        last_direction = None
+
         for tie, offset_start, offset_end in \
-                self._iterate_logical_ties(rhythm_voice):
-            last_direction = None
+                EmbouchureHandler._iterate_logical_ties(rhythm_voice):
 
             if not self._show_rhythmic_notation:
                 for leaf in tie:
-                    self._hide_leaf(leaf)
+                    EmbouchureHandler._hide_leaf(leaf)
 
             if tie.is_pitched:
                 # get current parameters
-                consonant = self._cycle_next(
+                consonant = EmbouchureHandler._cycle_next(
                     self._consonant_patterns,
                     current_stage
                 )
-                direction = self._cycle_next(
+
+                direction = EmbouchureHandler._cycle_next(
                     self._direction_patterns,
                     current_stage
                 )
 
-                vowel = self._cycle_next(
+                vowel = EmbouchureHandler._cycle_next(
                     self._vowel_patterns,
                     current_stage
                 )
 
                 # attach indicators
-                self._attach_direction(direction, last_direction, tie)
-                self._attach_phoneme(consonant, vowel, tie, last_vowel)
+                EmbouchureHandler._attach_direction(
+                    direction,
+                    last_direction,
+                    tie
+                )
+
+                EmbouchureHandler._attach_phoneme(
+                    consonant,
+                    vowel,
+                    tie,
+                    last_vowel
+                )
 
                 last_direction = direction
                 last_vowel = vowel
@@ -146,42 +148,62 @@ class EmbouchureHandler(EnvelopeHandler):
                 last_vowel = None
 
     def _handle_voice(self, voice, current_stage):
-        if (self._air_pressure_envelopes is None
-                or self._air_pressure_envelopes[current_stage] is None):
+        # skip if no data
+        if (self._air_pressure_envelopes is None or
+            self._air_pressure_envelopes[current_stage] is None) and \
+                (self._air_pressure_envelope_patterns is None or
+                 self._air_pressure_envelope_patterns[current_stage] is None):
             return
-        last_pressure = None
-        air_pressure_envelope = self._air_pressure_envelopes[current_stage]
-        if (self._air_pressure_envelopes_release is None
-                or self._air_pressure_envelopes_release[current_stage] is None):
-            air_pressure_envelope_release = air_pressure_envelope
-        lip_pressure_envelope = self._lip_pressure_envelopes[current_stage]
-        for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+
+        last_air_pressure = None
+        last_lip_pressure = None
+
+        for tie, offset_start, offset_end in \
+                EmbouchureHandler._iterate_logical_ties(voice):
+
             if tie.is_pitched:
-                # calculate positions
-                air_pressure_start = air_pressure_envelope(offset_start)
-                air_pressure_end = air_pressure_envelope_release(offset_end)
-                self._set_y_offset(tie.head, air_pressure_start)
-                lip_pressure = lip_pressure_envelope(offset_start)
-                lip_pressure = self._quantize(lip_pressure, 4)
+                air_pressure_start, air_pressure_end = \
+                    EmbouchureHandler._get_value(
+                        self._air_pressure_envelopes,
+                        self._air_pressure_envelope_patterns,
+                        current_stage,
+                        offset_start,
+                        offset_end,
+                        last_air_pressure,
+                    )
 
-                # note head
-                self._attach_pressure_notehead(tie, lip_pressure)
+                lip_pressure, _ = \
+                    EmbouchureHandler._get_value(
+                        self._lip_pressure_envelopes,
+                        self._lip_pressure_envelope_patterns,
+                        current_stage,
+                        offset_start,
+                        offset_end,
+                        last_lip_pressure,
+                    )
 
-                # determine if line
-                staccato = self._cycle_next(
+                # make a note head
+                lip_pressure = EmbouchureHandler._quantize(lip_pressure, 4)
+                EmbouchureHandler._attach_pressure_notehead(tie, lip_pressure)
+
+                # determine if we need to draw a line
+                staccato = EmbouchureHandler._cycle_next(
                     self._staccato_patterns,
                     current_stage
                 )
+
                 if not staccato:
                     # determine line style
-                    vibrato = self._cycle_next(
+                    vibrato = EmbouchureHandler._cycle_next(
                         self._vibrato_patterns,
                         current_stage
                     )
-                    fluttertongue = self._cycle_next(
+
+                    fluttertongue = EmbouchureHandler._cycle_next(
                         self._fluttertongue_patterns,
                         current_stage
                     )
+
                     if vibrato:
                         style = 'zigzag'
                     elif fluttertongue:
@@ -189,27 +211,73 @@ class EmbouchureHandler(EnvelopeHandler):
                     else:
                         style = None
 
-                    color = abjad.schemetools.Scheme(
-                        [
-                            'rgb-color',
-                            lip_pressure,
-                            lip_pressure,
-                            lip_pressure
-                        ]
-                    )
-
                     # create line anchors
-                    self._attach_glissando(tie.head, style=style)
-                    self._hidden_grace_after(tie.tail)
+                    EmbouchureHandler._attach_glissando(tie.head, style=style)
+                    EmbouchureHandler._hidden_grace_after(tie.tail)
 
                     # set y offsets
                     self._set_y_offset(tie.head, air_pressure_start)
+
                     grace = \
                         abjad.inspect(tie.tail).get_after_grace_container()[0]
+
                     self._set_y_offset(grace, air_pressure_end)
 
                 # hide tied noes
                 if not tie.is_trivial:
                     for note in tie[1:]:
-                        self._add_gliss_skip(note)
-                        self._hide_note_head(note)
+                        EmbouchureHandler._add_gliss_skip(note)
+                        EmbouchureHandler._hide_note_head(note)
+
+                last_air_pressure = air_pressure_end
+                last_lip_pressure = lip_pressure
+            else:
+                last_air_pressure = None
+                last_lip_pressure = None
+
+    # STATIC METHODS
+
+    @staticmethod
+    def _attach_direction(direction, last_direction, tie):
+        if direction is None or direction == last_direction:
+            return
+        ordinal = abjad.OrdinalConstant('y', 1, 'Down')
+        if direction == 'in':
+            articulation = abjad.Articulation('rtoe', ordinal)
+        elif direction == 'out':
+            articulation = abjad.Articulation('ltoe', ordinal)
+
+        abjad.attach(articulation, tie.head)
+
+    @staticmethod
+    def _attach_fluttertongue(fluttertongue, tie):
+        if fluttertongue:
+            EmbouchureHandler._add_stem_tremolo(tie)
+
+    @staticmethod
+    def _attach_phoneme(consonant, vowel, tie, last_vowel):
+        consonant = '' if consonant is None else consonant
+        vowel = '' if vowel is None else vowel
+        phoneme = consonant + vowel
+        if phoneme != '' and phoneme != last_vowel:
+            markup = EmbouchureHandler._make_text_markup(phoneme)
+            abjad.attach(markup, tie.head)
+
+    @staticmethod
+    def _attach_pressure_notehead(tie, pressure, size=0.5, outline=True):
+        fill = EmbouchureHandler._make_circle_markup(size, pressure)
+        if outline:
+            outline = EmbouchureHandler._make_circle_outline_markup(size)
+            circle = abjad.Markup.combine([fill, outline])
+            EmbouchureHandler._markup_to_notehead(tie.head, circle)
+        else:
+            EmbouchureHandler._markup_to_notehead(tie.head, fill)
+
+    @staticmethod
+    def _prepare_envelopes(current_stage, envelopes, release_envelope=None):
+        if envelopes is None:
+            envelope = None
+        if release_envelope is None and release_envelope[current_stage] is None:
+            release_envelope[current_stage] = envelopes
+        return envelope, release_envelope
+

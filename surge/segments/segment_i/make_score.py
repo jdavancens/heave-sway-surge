@@ -4,8 +4,9 @@ Created on Dec 4, 2015
 
 @author: josephdavancens
 '''
-from surge.materials import instrument_list
-from surge.materials.segment_i import measures_per_stage, time_signatures
+from surge.materials.instrument_list import instrument_list
+from surge.materials.segment_i.time_signatures import measures_per_stage,\
+    time_signatures
 from surge.materials.segment_i.tempo_map import tempo_map
 from surge.segments.segment_i.music_handlers import music_handlers
 from surge.tools.makers.SegmentMaker import SegmentMaker

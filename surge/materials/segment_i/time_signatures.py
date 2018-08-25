@@ -48,6 +48,8 @@ stages = (
     (Duration(155, 16), Duration(33, 4)),
 )
 
+number_of_stages = len(stages)
+
 # bifurcate durations | division(subdivision(subdivision2,),))
 divisions = []
 for stage in stages:

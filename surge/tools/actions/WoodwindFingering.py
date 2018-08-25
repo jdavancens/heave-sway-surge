@@ -20,7 +20,7 @@ class WoodwindFingering(object):
 
     # INTITIALIZER
 
-    def __init__(
+    def  __init__(
         self,
         instrument=None,
         hand=None,

@@ -28,26 +28,26 @@ surge\.materials\.segment_i\.oboe\.lip\_pressure\_envelopes module
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.oboe\.ratios\_embouchure module
+surge\.materials\.segment_i\.oboe\.tuplet_ratios\_embouchure module
 -----------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.oboe.ratios_embouchure
+.. automodule:: surge.materials.segment_i.oboe.tuplet_ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.oboe\.ratios\_lh module
+surge\.materials\.segment_i\.oboe\.tuplet_ratios\_lh module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.oboe.ratios_lh
+.. automodule:: surge.materials.segment_i.oboe.tuplet_ratios_lh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.oboe\.ratios\_rh module
+surge\.materials\.segment_i\.oboe\.tuplet_ratios\_rh module
 ---------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.oboe.ratios_rh
+.. automodule:: surge.materials.segment_i.oboe.tuplet_ratios_rh
     :members:
     :undoc-members:
     :show-inheritance:

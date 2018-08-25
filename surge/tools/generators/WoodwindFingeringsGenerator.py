@@ -6,13 +6,12 @@ from surge.tools.makers.FingeringMaker import FingeringMaker
 import abjad
 import json
 import os
-import importlib
 
 
 class WoodwindFingeringsGenerator(object):
-    '''Woodwind fingering generator. Generates fingerings for existing rhythmic
+    """Woodwind fingering generator. Generates fingerings.py for existing rhythmic
     patterns.
-    '''
+    """
     # SPECIAL METHODS
 
     def __init__(
@@ -51,8 +50,8 @@ class WoodwindFingeringsGenerator(object):
             lh_voice = (lh_music_maker(stage_index))
             rh_voice = (rh_music_maker(stage_index))
 
-            # generate fingerings
-            # calculate vertical moments, pick fingerings
+            # generate fingerings.py
+            # calculate vertical moments, pick fingerings.py
             fingering_maker = FingeringMaker(instrument_string, fingering_sets)
             lh_staff = abjad.Staff([lh_voice])
             rh_staff = abjad.Staff([rh_voice])
@@ -70,7 +69,7 @@ class WoodwindFingeringsGenerator(object):
                     lh_fingerings.append(fingering.left)
                     rh_fingerings.append(fingering.right)
 
-            # save fingerings in json file in the materials directory
+            # save fingerings.py in json file in the materials directory
 
             lh_fingerings_json = \
                 [fingering.to_json() for fingering in lh_fingerings]
@@ -87,7 +86,7 @@ class WoodwindFingeringsGenerator(object):
             'materials',
             segment_name,
             instrument_string,
-            'fingerings.json'
+            'fingerings.py.json'
         )
 
         with open(fingerings_json_path, 'w') as f:

@@ -20,13 +20,17 @@ class RatioMaker:
         self,
         time_signatures,
         rest_indices,
-        prolater=TrivialProlater(),
-        subdivider=UnitSubdivider()
+        prolater=None,
+        subdivider=None
     ):
         if rest_indices == 'all':
             ratios = [(-1,) * ts.numerator for ts in time_signatures]
         else:
             ratios = []
+            if prolater is None:
+                prolater = TrivialProlater()
+            if subdivider is None:
+                subdivider = UnitSubdivider()
             for i, time_signature in enumerate(time_signatures):
                 if rest_indices is None or i not in rest_indices:
                     prolation = prolater(time_signature)

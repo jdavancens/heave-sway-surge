@@ -28,26 +28,26 @@ surge\.materials\.segment_i\.clarinet\.lip\_pressure\_envelopes module
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.clarinet\.ratios\_embouchure module
+surge\.materials\.segment_i\.clarinet\.tuplet_ratios\_embouchure module
 ---------------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.clarinet.ratios_embouchure
+.. automodule:: surge.materials.segment_i.clarinet.tuplet_ratios_embouchure
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.clarinet\.ratios\_lh module
+surge\.materials\.segment_i\.clarinet\.tuplet_ratios\_lh module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.clarinet.ratios_lh
+.. automodule:: surge.materials.segment_i.clarinet.tuplet_ratios_lh
     :members:
     :undoc-members:
     :show-inheritance:
 
-surge\.materials\.segment_i\.clarinet\.ratios\_rh module
+surge\.materials\.segment_i\.clarinet\.tuplet_ratios\_rh module
 -------------------------------------------------------
 
-.. automodule:: surge.materials.segment_i.clarinet.ratios_rh
+.. automodule:: surge.materials.segment_i.clarinet.tuplet_ratios_rh
     :members:
     :undoc-members:
     :show-inheritance:

@@ -52,10 +52,10 @@ class TestFretPlacement(unittest.TestCase):
         self.assertTrue(self.fret_placement != self.fret_placement_different)
 
     def test_to_string(self):
-        self.assertEqual(str(self.fret_placement), '0')
+        self.assertEqual(str(self.fret_placement), '(0, 0)')
 
     def test_to_string_harmonic(self):
-        self.assertEqual(str(self.fret_placement_different), '0◇')
+        self.assertEqual(str(self.fret_placement_different), '(0, 0◇)')
 
     def test_property_instrument(self):
         self.assertIsInstance(self.fret_placement.instrument, Guitar)

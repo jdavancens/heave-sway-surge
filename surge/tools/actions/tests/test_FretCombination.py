@@ -81,17 +81,17 @@ class TestFretCombination(unittest.TestCase):
 
     def test_to_string(self):
         result = str(self.combo)
-        expected = 'FretCombination(0)'
+        expected = 'FretCombination([(0, 0)])'
         self.assertEqual(result, expected)
 
     def test_as_binary_list(self):
-        self.assertEqual(self.combo.as_binary_list(), [0, 0, 0, 0, 0, 1])
+        self.assertEqual(self.combo.as_binary_list(), [1, 0, 0, 0, 0, 0])
 
     def test_property_instrument(self):
         self.assertIsInstance(self.combo.instrument, Guitar)
 
     def test_property_fret_placements(self):
-        self.assertIsInstance(self.combo.fret_placements, list)
+        self.assertIsInstance(self.combo.fret_placements, dict)
 
 
 if __name__ == '__main__':

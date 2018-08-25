@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
+from .guitars import guitar_handlers
+from .strings import string_handlers
+from .trombone import trombone_handlers
+from .woodwinds import woodwind_handlers
 
-from .guitars import music_handlers as guitar_music_handlers
-from .trombone import music_handlers as trombone_music_handlers
-from .strings import music_handlers as string_music_handlers
-from .woodwinds import music_handlers as woodwind_music_handlers
-
-music_handlers = guitar_music_handlers + trombone_music_handlers + \
-    string_music_handlers + woodwind_music_handlers
+music_handlers = guitar_handlers + string_handlers + trombone_handlers + \
+    woodwind_handlers
