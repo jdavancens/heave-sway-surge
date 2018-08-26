@@ -6,7 +6,7 @@ import rhypy
 
 
 class BinaryPattern(Subdivider):
-    '''Binary pattern subdivider.
+    """Binary pattern subdivider.
 
         ::
             >>> b = BinaryPattern([1,0,1])
@@ -17,7 +17,7 @@ class BinaryPattern(Subdivider):
             >>> b(7)
             Ratio((2, 1, 2, 1, 1))
 
-    '''
+    """
     __slots__ = ('_binary_pattern',)
 
     # INITIALIZER
@@ -55,3 +55,6 @@ class BinaryPattern(Subdivider):
         ratio = Subdivider._apply_silence_mask(self, ratio)
         ratio = Subdivider._rotate(self, ratio)
         return abjad.mathtools.Ratio(ratio)
+
+    def __repr__(self):
+        return "BinaryPattern()"

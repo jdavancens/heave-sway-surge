@@ -4,22 +4,25 @@ from surge.tools import rhythmtools
 
 
 def create_ratios(time_signatures, prolaters, subdividers):
-    tuplet_ratios = []
-    for i in range(len(time_signatures)):
-        ratios = []
-        for j in range(len(time_signatures[i])):
+    ratios = []
 
+    n_stages = len(time_signatures)
+
+    for i in range(n_stages):
+        n_sections = len(time_signatures[i])
+
+        stage = []
+
+        for j in range(n_sections):
             prolater = prolaters[i][j] if \
                 isinstance(prolaters[i], list) and \
-                len(prolaters) < i and \
-                len(prolaters[i]) < j \
-                else rhythmtools.Prolater()
+                len(prolaters[i]) == n_sections \
+                else None
 
-            subdivider = subdivider[i][j] if \
+            subdivider = subdividers[i][j] if \
                 isinstance(subdividers[i], list) and \
-                len(subdividers) < i and \
-                len(subdividers[i]) < j \
-                else rhythmtools.subdividers.Unit()
+                len(subdividers[i]) == n_sections \
+                else None
 
             ratio_maker = RatioMaker(
                 rest_indices=None,
@@ -28,7 +31,9 @@ def create_ratios(time_signatures, prolaters, subdividers):
                 subdivider=subdivider
             )
 
-            ratios.extend(ratio_maker())
+            section = ratio_maker()
 
-        tuplet_ratios.append(ratios)
-    return tuplet_ratios
+            stage.extend(section)
+
+        ratios.append(stage)
+    return ratios

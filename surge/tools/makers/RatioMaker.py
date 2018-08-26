@@ -14,7 +14,11 @@ class RatioMaker:
     Calling the `RatioMaker` returns list of ratios.
     '''
 
-    __slots__ = ('_ratios')
+    __slots__ = (
+        '_ratios',
+        '_prolater',
+        '_subdivider',
+    )
 
     def __init__(
         self,
@@ -23,6 +27,9 @@ class RatioMaker:
         prolater=None,
         subdivider=None
     ):
+        self._prolater=prolater
+        self._subdivider=subdivider
+
         if rest_indices == 'all':
             ratios = [(-1,) * ts.numerator for ts in time_signatures]
         else:
@@ -42,3 +49,9 @@ class RatioMaker:
 
     def __call__(self):
         return self._ratios
+
+    def __repr__(self):
+        return "RatioMaker(prolater={},subdivider={})".format(
+            self._prolater,
+            self._subdivider
+        )

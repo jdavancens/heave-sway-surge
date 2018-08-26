@@ -75,3 +75,6 @@ class Unit(Subdivider):
         ratio = Subdivider._apply_silence_mask(self, ratio)
         ratio = Subdivider._rotate(self, ratio)
         return abjad.mathtools.Ratio(ratio)
+
+    def __repr__(self):
+        return "Unit()"

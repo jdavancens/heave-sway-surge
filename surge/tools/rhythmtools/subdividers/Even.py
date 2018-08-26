@@ -64,6 +64,9 @@ class Even(Subdivider):
         ratio = Subdivider._rotate(self, ratio)
         return Ratio(ratio)
 
+    def __repr__(self):
+        return "Even()"
+
     # PRIVATE METHODS
 
     def _bjorklund(self, steps, pulses):

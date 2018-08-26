@@ -52,6 +52,9 @@ class RandomTree(Subdivider):
         ratio = self._apply_silence_mask(ratio)
         return abjad.mathtoolss.Ratio(ratio)
 
+    def __repr__(self):
+        return "RandomTree()"
+
     # PRIVATE METHODS
 
     def _branch(self, x):

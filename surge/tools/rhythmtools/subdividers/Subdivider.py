@@ -46,6 +46,9 @@ class Subdivider:
             self._second_level_subdivision_pattern = \
                 second_level_subdivision_pattern
 
+    def __repr__(self):
+        return "Subdivider()"
+
     def _apply_second_level_subdivider(self, ratio):
         if self._second_level_subdivider is None:
             return ratio

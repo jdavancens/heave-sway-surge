@@ -5,40 +5,34 @@ class Prolater:
     __slots__ = (
         '_i',
         '_j',
-        '_difference',
-        '_multiplier',
+        '_constant',
+        '_scalar',
         '_unit'
     )
 
-    def __init__(self, multiplier=1, difference=[0], unit=None):
+    def __init__(self, scalar=1, constant=[0], unit=None):
         self._i = -1
         self._j = -1
 
-        self._difference = difference if isinstance(difference, list) else \
-            [difference]
+        self._constant = constant if isinstance(constant, list) else [constant]
 
-        self._multiplier = multiplier if isinstance(multiplier, list) else \
-            [multiplier]
+        self._scalar = scalar if isinstance(scalar, list) else [scalar]
 
         self._unit = unit
 
     def __call__(self, time_signature):
 
-        numerator = time_signature.numerator
-        denominator = time_signature.denominator
+        m = time_signature.numerator
+        n = time_signature.denominator
+        u = self._unit
 
-        if self._unit is None:
-            multiplier = 1
-        elif denominator <= self._unit:
-            unit = denominator
-            multiplier = unit / denominator
-        else:
-            unit = self._unit
-            multiplier = unit / denominator
+        if u is None or u < n:
+            u = n
 
-        x = numerator * multiplier
-        a = self._next_multiplier()
-        b = self._next_difference()
+        x = m * u / n
+
+        a = self._next_scalar()
+        b = self._next_constant()
 
         prolation = a * x + b
 
@@ -47,10 +41,19 @@ class Prolater:
 
         return int(prolation)
 
-    def _next_multiplier(self):
-        self._i = (self._i + 1) % len(self._multiplier)
-        return self._multiplier[self._i]
+    def __repr__(self):
+        return "Prolater(scalar={}, constant={}, unit={})".format(
+            self._scalar,
+            self._constant,
+            self._unit,
+        )
 
-    def _next_difference(self):
-        self._j = (self._j + 1) % len(self._difference)
-        return self._difference[self._j]
+    def _next_scalar(self):
+        self._i = (self._i + 1) % len(self._scalar)
+
+        return self._scalar[self._i]
+
+    def _next_constant(self):
+        self._j = (self._j + 1) % len(self._constant)
+
+        return self._constant[self._j]
