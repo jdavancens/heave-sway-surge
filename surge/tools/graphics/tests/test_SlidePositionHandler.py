@@ -20,11 +20,9 @@ class TestSlidePositionHandler(unittest.TestCase):
             stages=[0],
             time_signatures=time_signatures
         )
-        self.handler = SlidePositionHandler(
-            music_maker=music_maker,
-            slide_position_envelopes=slide_position_envelopes,
-            vibrato_patterns=vibrato_patterns,
-        )
+        self.handler = SlidePositionHandler(music_maker=music_maker,
+                                            position_envelopes=slide_position_envelopes,
+                                            vibrato_patterns=vibrato_patterns)
 
     def test__handle_rhythm_voice(self):
         rhythm_voice = abjad.Voice("c'4 c'4 c'4 c'4")

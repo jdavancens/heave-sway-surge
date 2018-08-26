@@ -5,7 +5,7 @@ Created on Feb 15, 2016
 @author: josephdavancens
 '''
 
-from abjad.tools.instrumenttools import TenorTrombone
+from abjad import instrumenttools
 from surge.materials.segment_i.time_signatures import number_of_stages, \
     time_signatures
 import surge.materials.segment_i.trombone as materials
@@ -17,7 +17,7 @@ from surge.tools.makers.MusicMaker import MusicMaker
 #  HIGH LEVEL PARAMETERS
 # ==============================================================================
 
-trombone = TenorTrombone()
+trombone = instrumenttools.TenorTrombone()
 stages = list(range(number_of_stages))
 
 # ==============================================================================
@@ -46,13 +46,16 @@ slide_music_maker = MusicMaker(
 
 embouchure_music_handler = EmbouchureHandler(
     music_maker=embouchure_music_maker,
+    air_pressure_envelope_patterns=materials.embouchure.patterns.air_pressure,
     air_pressure_envelopes=materials.embouchure.envelopes.air_pressure,
+    lip_pressure_envelope_patterns=materials.embouchure.patterns.lip_pressure,
     lip_pressure_envelopes=materials.embouchure.envelopes.lip_pressure,
 )
 
 slide_music_handler = SlidePositionHandler(
     music_maker=slide_music_maker,
-    slide_position_envelopes=materials.slide.envelopes.position,
+    position_envelope_patterns=materials.slide.patterns.position,
+    position_envelopes=materials.slide.envelopes.position
 )
 
 trombone_handlers = [

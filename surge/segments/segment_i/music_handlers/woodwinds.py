@@ -47,6 +47,7 @@ def make_handlers(instrument, materials):
     )
 
     # music handlers
+
     embouchure_music_handler = EmbouchureHandler(
         music_maker=embouchure_music_maker,
         air_pressure_envelope_patterns=materials.embouchure.patterns.air_pressure,

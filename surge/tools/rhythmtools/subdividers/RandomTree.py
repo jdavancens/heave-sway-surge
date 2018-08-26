@@ -3,10 +3,10 @@
 import abjad
 import random
 
-from surge.tools.rhythmtools.Subdivider import Subdivider
+from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 
 
-class RandomTreeSubdivider(Subdivider):
+class RandomTree(Subdivider):
 
     __slots__ = (
         '_minimum_duration',

@@ -53,9 +53,7 @@ embouchure_music_handler = TromboneEmbouchureHandler(
 
 slide_position_music_handler = SlidePositionHandler(
     music_maker=slide_position_music_maker,
-    slide_position_envelopes=slide_position_envelopes,
-    show_rhythmic_notation=False
-)
+    position_envelopes=slide_position_envelopes, show_rhythmic_notation=False)
 
 handlers = [
     embouchure_music_handler,

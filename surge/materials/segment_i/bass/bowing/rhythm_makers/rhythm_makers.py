@@ -11,7 +11,7 @@ from .tuplet_ratios import tuplet_ratios
 rhythm_maker_classes = [
     None,
     rhythmmakertools.TaleaRhythmMaker,
-    rhythmmakertools.TaleaRhythmMaker,
+    rhythmmakertools.TupletRhythmMaker,
     rhythmmakertools.TaleaRhythmMaker,
     None,
 ]

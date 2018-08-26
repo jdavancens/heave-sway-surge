@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-import abjad
 import surge
 from abjad.tools.mathtools.Ratio import Ratio
-from surge.tools.rhythmtools.Subdivider import Subdivider
+from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 
 
-class EvenSubdivider(Subdivider):
+class Even(Subdivider):
     '''Even subdivider. Tries to create a maximally even subdivision.
 
     Initializes from a list of integers, a `Subdivider`, a subdivision pattern,
@@ -14,12 +13,12 @@ class EvenSubdivider(Subdivider):
     When called, subdivides a `Duration` and returns a `Ratio`
 
     ::
-        >>> e = EvenSubdivider([3, 2])
+        >>> e = Even([3, 2])
         >>> e(5)
         Ratio((2, 2, 1))
         >>> e(5)
         Ratio((2, 3))
-        >>> e = EvenSubdivider([3], rotation_cycle=[0, 1, 2])
+        >>> e = Even([3], rotation_cycle=[0, 1, 2])
         >>> e(5)
         Ratio((2, 2, 1))
         >>> e(5)

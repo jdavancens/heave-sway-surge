@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from surge.tools.rhythmtools.TrivialProlater import TrivialProlater
-from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
+from surge.tools.rhythmtools.Prolater import Prolater
+from surge.tools.rhythmtools.subdividers.Unit import Unit
 
 
 class RatioMaker:
@@ -28,9 +28,9 @@ class RatioMaker:
         else:
             ratios = []
             if prolater is None:
-                prolater = TrivialProlater()
+                prolater = Prolater()
             if subdivider is None:
-                subdivider = UnitSubdivider()
+                subdivider = Unit()
             for i, time_signature in enumerate(time_signatures):
                 if rest_indices is None or i not in rest_indices:
                     prolation = prolater(time_signature)

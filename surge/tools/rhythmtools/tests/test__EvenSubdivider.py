@@ -4,20 +4,20 @@ from abjad.tools.mathtools.Ratio import Ratio
 from abjad.tools.datastructuretools import Pattern
 from abjad.tools.rhythmmakertools import SustainMask
 from abjad.tools.rhythmmakertools import SilenceMask
-from surge.tools.rhythmtools.EvenSubdivider import EvenSubdivider
+from surge.tools.rhythmtools.subdividers.Even import Even
 
 
 class TestEvenSubdivider(unittest.TestCase):
 
     def test_basic(self):
-        even_subdivider = EvenSubdivider(3)
+        even_subdivider = Even(3)
         self.assertEqual(
             even_subdivider(5),
             Ratio((2, 2, 1))
         )
 
     def test_basic_multiple_n(self):
-        even_subdivider = EvenSubdivider([3, 2])
+        even_subdivider = Even([3, 2])
         self.assertEqual(
             even_subdivider(5),
             Ratio((2, 2, 1))
@@ -28,7 +28,7 @@ class TestEvenSubdivider(unittest.TestCase):
         )
 
     def test_basic_with_rotation(self):
-        even_subdivider = EvenSubdivider(
+        even_subdivider = Even(
             3,
             rotation_cycle=[0, 1, 2])
         self.assertEqual(
@@ -49,9 +49,9 @@ class TestEvenSubdivider(unittest.TestCase):
         )
 
     def test_second_level_subdivider(self):
-        even_subdivider = EvenSubdivider(
+        even_subdivider = Even(
             3,
-            second_level_subdivider=EvenSubdivider(2),
+            second_level_subdivider=Even(2),
             second_level_subdivision_pattern=[0, 1],
         )
         self.assertEqual(
@@ -60,7 +60,7 @@ class TestEvenSubdivider(unittest.TestCase):
         )
 
     def test_sustain_mask(self):
-        even_subdivider = EvenSubdivider(
+        even_subdivider = Even(
             3,
             sustain_mask=SustainMask(pattern=Pattern(indices=[1], period=3))
         )
@@ -70,7 +70,7 @@ class TestEvenSubdivider(unittest.TestCase):
         )
 
     def test_silence_mask(self):
-        even_subdivider = EvenSubdivider(
+        even_subdivider = Even(
             3,
             silence_mask=SilenceMask(pattern=Pattern(indices=[1], period=5))
         )

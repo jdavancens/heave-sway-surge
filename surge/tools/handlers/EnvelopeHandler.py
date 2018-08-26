@@ -22,12 +22,11 @@ class EnvelopeHandler(Handler):
 
     # INITIALIZER
 
-    def __init__(
-        self,
-        music_maker,
-        number_of_staff_lines=15,
-        show_rhythmic_notation=True
-    ):
+    def __init__(self,
+                 music_maker,
+                 number_of_staff_lines=15,
+                 show_rhythmic_notation=True):
+
         Handler.__init__(
             self,
             music_maker=music_maker,
@@ -79,9 +78,9 @@ class EnvelopeHandler(Handler):
                 last,
             )
         else:
-            envelope = envelopes[current_stage]
             start, end = EnvelopeHandler._get_value_from_envelope(
-                envelope,
+                envelopes,
+                current_stage,
                 offset_start,
                 offset_end,
             )
@@ -92,6 +91,7 @@ class EnvelopeHandler(Handler):
                                  current_stage,
                                  offset_start,
                                  offset_end):
+
         envelope = envelopes[current_stage]
         start = envelope(offset_start)
         end = envelope(offset_end)

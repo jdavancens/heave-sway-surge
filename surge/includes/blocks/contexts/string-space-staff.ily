@@ -48,12 +48,37 @@
     \override InstrumentName.padding = #1
     \override StaffSymbol.line-count = #31
     \override StaffSymbol.stencil = #(color-staff-lines
-        (x11-color 'grey33) white white white white
-        white white (x11-color 'grey50) white white
-        white white white white white
-        (x11-color 'grey67) white white white white
-        white white white white white
-        white white white white white (x11-color 'grey33)
+        (x11-color 'grey33)
+        white
+        white
+        white
+        white
+        white
+        white
+        (x11-color 'grey50)
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        (x11-color 'grey67)
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        white
+        (x11-color 'grey33)
     )
 
     systemStartDelimiter = #'SystemStartBar

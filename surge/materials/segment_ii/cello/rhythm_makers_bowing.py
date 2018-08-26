@@ -2,8 +2,8 @@
 from surge.materials.segment_ii.rest_indices import rest_indices_by_group
 from surge.materials.segment_ii.time_signatures import time_signatures
 from surge.tools.makers.RatioMaker import RatioMaker
-from surge.tools.rhythmtools.UnitSubdivider import UnitSubdivider
-from surge.tools.rhythmtools.DifferenceProlater import DifferenceProlater
+from surge.tools.rhythmtools.subdividers.Unit import Unit
+from surge.tools.rhythmtools.Prolater import Prolater
 import abjad
 import copy
 import random
@@ -53,8 +53,8 @@ for i in range(35):
 # 9:8 (16th notes)
 # 012345678
 # *--***-*-
-prolater_stage_3 = DifferenceProlater([2])
-subdivider_stage_3 = UnitSubdivider(
+prolater_stage_3 = Prolater(1, [2])
+subdivider_stage_3 = Unit(
     multiplier=2,
     rotation_cycle=range(9),
     sustain_mask=abjad.sustain_every(indices=[1, 2, 6, 8], period=9)
@@ -76,8 +76,8 @@ rhythm_maker_stage_3 = abjad.rhythmmakertools.TupletRhythmMaker(
 # 9:8 (16th notes)
 # 012345678
 # *-.*-.**-
-prolater_stage_5 = DifferenceProlater([2])
-subdivider_stage_5 = UnitSubdivider(
+prolater_stage_5 = Prolater(1, [2])
+subdivider_stage_5 = Unit(
     multiplier=2,
     rotation_cycle=range(9),
     sustain_mask=abjad.sustain_every(indices=[1, 4, 8], period=9),
@@ -100,8 +100,8 @@ rhythm_maker_stage_5 = abjad.rhythmmakertools.TupletRhythmMaker(
 # 9:8 (16th notes)
 # 012345678
 # *-.*-.**-
-prolater_stage_6 = DifferenceProlater([2])
-subdivider_stage_6 = UnitSubdivider(
+prolater_stage_6 = Prolater(1, [2])
+subdivider_stage_6 = Unit(
     multiplier=2,
     rotation_cycle=range(9),
     sustain_mask=abjad.sustain_every(indices=[1, 4, 8], period=9),

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
-from surge.tools.rhythmtools.Subdivider import Subdivider
+from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 import abjad
 import rhypy
 
 
-class BinaryPatternSubdivider(Subdivider):
+class BinaryPattern(Subdivider):
     '''Binary pattern subdivider.
 
         ::
-            >>> b = BinaryPatternSubdivider([1,0,1])
+            >>> b = BinaryPattern([1,0,1])
             >>> b(6)
             Ratio((2, 1, 2, 1))
 
-            >>> b = BinaryPatternSubdivider([1,0,1])
+            >>> b = BinaryPattern([1,0,1])
             >>> b(7)
             Ratio((2, 1, 2, 1, 1))
 

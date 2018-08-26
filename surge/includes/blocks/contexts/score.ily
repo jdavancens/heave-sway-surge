@@ -64,7 +64,7 @@
 
     \override StaffGrouper #'staffgroup-staff-spacing =
         #'((basic-distance . 0)
-           (minimum-distance . 12)
+           (minimum-distance . 16)
            (padding . 0)
            (stretchability . 0))
 

@@ -18,7 +18,7 @@ pressure = [
 string_index = [
     None,
     (['IV']),
-    (['IV']),
-    (['IV']),
+    (['I']),
+    (['I', 'I', 'I', 'IV', 'IV']),
     None,
 ]

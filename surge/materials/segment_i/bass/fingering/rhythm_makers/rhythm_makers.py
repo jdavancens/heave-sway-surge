@@ -10,7 +10,7 @@ from .tuplet_ratios import tuplet_ratios
 
 rhythm_maker_classes = [
     None,
-    None,
+    rhythmmakertools.TaleaRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
     None,
@@ -21,6 +21,7 @@ rhythm_makers = create_rhythm_makers(
     rhythm_maker_classes,
     specifiers=specifiers,
     division_masks=division_masks,
+    taleas=taleas,
     tie_vectors=tie_vectors,
     tuplet_ratios=tuplet_ratios,
 )

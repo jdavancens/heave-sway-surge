@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import abjad
 from surge.materials.utils.create_ratios import create_ratios
-from surge.tools.rhythmtools import TrivialProlater
-from surge.tools.rhythmtools import UnitSubdivider
+from surge.tools.rhythmtools import Prolater
+from surge.tools.rhythmtools.subdividers import Unit
 
 
 def test_create_ratios():
@@ -15,12 +15,12 @@ def test_create_ratios():
     ]
     prolaters = [
         [
-            TrivialProlater()
+            Prolater()
         ]
     ]
     subdividers = [
         [
-            UnitSubdivider()
+            Unit()
         ]
     ]
     expected = [

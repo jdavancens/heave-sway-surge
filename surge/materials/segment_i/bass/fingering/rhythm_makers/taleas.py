@@ -6,4 +6,4 @@ stage_2 = rhythmmakertools.Talea(
     denominator=16
 )
 
-taleas = [None, stage_2, stage_2, stage_2, None]
+taleas = [None, stage_2, None, None, None]

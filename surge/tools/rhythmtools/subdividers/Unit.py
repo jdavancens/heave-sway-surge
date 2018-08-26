@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import abjad
-from surge.tools.rhythmtools.Subdivider import Subdivider
+from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 
 
-class UnitSubdivider(Subdivider):
-    '''Unit subdivider. Applies an optional multiplier.
+class Unit(Subdivider):
+    """Unit subdivider. Applies an optional multiplier.
 
     Initializes from an integer, a `Subdivider`, a subdivision pattern,
     a `SustainMask` and a `SilenceMask`.
@@ -13,19 +13,19 @@ class UnitSubdivider(Subdivider):
     When called, subdivides a `Duration` and returns a `Ratio`
 
     ::
-        >>> u = UnitSubdivider()
+        >>> u = Unit()
         >>> u(3)
         Ratio((1, 1, 1))
 
-        >>> u = UnitSubdivider(multiplier=2)
+        >>> u = Unit(multiplier=2)
         >>> u(3)
         Ratio((1, 1, 1, 1, 1, 1))
 
-        >>> u = UnitSubdivider(multiplier=1.5)
+        >>> u = Unit(multiplier=1.5)
         >>> u(2)
         Ratio((1, 1, 1))
 
-        >>> u = UnitSubdivider(multiplier=1.5)
+        >>> u = Unit(multiplier=1.5)
         >>> u(3)
         Ratio((1, 1, 1, 1, 1))
 
@@ -33,7 +33,7 @@ class UnitSubdivider(Subdivider):
         >>> from abjad import rhythmmakertools
         >>> pattern = patterntools.Pattern(indices=[2, 4], period=5)
         >>> sustain_mask = rhythmmakertools.SustainMask(pattern)
-        >>> u = UnitSubdivider(
+        >>> u = Unit(
         ...     rotation_cycle=[0, 1],
         ...     sustain_mask=sustain_mask
         ... )
@@ -41,7 +41,7 @@ class UnitSubdivider(Subdivider):
         Ratio((1, 2, 2))
         >>> u(5)
         Ratio((2, 2, 1))
-    '''
+    """
 
     __slots__ = ('_multiplier',)
 

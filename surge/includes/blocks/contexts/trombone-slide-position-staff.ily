@@ -42,14 +42,14 @@
             )
         )
     \override InstrumentName.padding = #1
-    \override StaffSymbol.line-count = #15
+    \override StaffSymbol.line-count = #13
     \override StaffSymbol.stencil = #(color-staff-lines
         (x11-color 'grey33) white
         (x11-color 'grey67) white
         (x11-color 'grey67) white
+        (x11-color 'grey15) white
         (x11-color 'grey67) white
         (x11-color 'grey67) white
-        (x11-color 'grey67) white
-        (x11-color 'grey67) white (x11-color 'grey33)
+        (x11-color 'grey33)
     )
 }
