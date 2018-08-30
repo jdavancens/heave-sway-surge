@@ -7,7 +7,13 @@ from .division_masks import division_masks
 from .tie_vectors import tie_vectors
 from .specifiers import specifiers
 
-rhythm_maker_classes = [rhythmmakertools.TupletRhythmMaker] * number_of_stages
+rhythm_maker_classes = [
+    None,
+    None,
+    rhythmmakertools.NoteRhythmMaker,
+    rhythmmakertools.NoteRhythmMaker,
+    None,
+]
 
 rhythm_makers = create_rhythm_makers(
     number_of_stages,

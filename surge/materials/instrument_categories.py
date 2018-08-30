@@ -13,10 +13,6 @@ instrument_categories = {
         'saxophone',
         'alto saxophone'
     ],
-    'trombone': [
-        'tbn',
-        'trombone'
-    ],
     'plucked strings': [
         'gtr1',
         'guitar 1',

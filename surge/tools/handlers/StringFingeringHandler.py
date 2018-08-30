@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Nov 20, 2015
 
 @author: josephdavancens
-'''
+"""
+from surge.tools.graphics.grayscale_to_rgb import grayscale_to_rgb
+from surge.tools.graphics.scheme_rgb_color import scheme_rgb_color
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
+from surge.tools.handlers.Handler import Handler
 import abjad
 import copy
 
@@ -34,27 +37,27 @@ class StringFingeringHandler(EnvelopeHandler):
 
     # INTIALIZER
 
-    def __init__(
-        self,
-        music_maker=None,
-        height_envelope_patterns=None,
-        height_envelopes=None,
-        height_envelopes_release=None,
-        pressure_envelope_patterns=None,
-        pressure_envelopes=None,
-        tremolo_patterns=None,
-        vibrato_patterns=None,
-        number_of_staff_lines=31,
-        show_rhythmic_notation=True,
-    ):
+    def __init__(self,
+                 music_maker=None,
+                 height_envelope_patterns=None,
+                 height_envelopes=None,
+                 height_envelopes_release=None,
+                 pressure_envelope_patterns=None,
+                 pressure_envelopes=None,
+                 tremolo_patterns=None,
+                 vibrato_patterns=None,
+                 number_of_staff_lines=31,
+                 show_rhythmic_notation=True,
+                 ):
         EnvelopeHandler.__init__(
             self,
             music_maker=music_maker,
             number_of_staff_lines=number_of_staff_lines,
             show_rhythmic_notation=show_rhythmic_notation
         )
+        
         self._height_envelope_patterns = \
-            StringFingeringHandler._create_cycles(height_envelope_patterns)
+            Handler._create_cycles(height_envelope_patterns)
 
         self._height_envelopes = height_envelopes
 
@@ -64,23 +67,15 @@ class StringFingeringHandler(EnvelopeHandler):
             self._height_envelopes_release = height_envelopes_release
 
         self._pressure_envelope_patterns = \
-            StringFingeringHandler._create_cycles(pressure_envelope_patterns)
+            Handler._create_cycles(pressure_envelope_patterns)
 
         self._pressure_envelopes = pressure_envelopes
 
-        self._tremolo_patterns = self._create_cycles(tremolo_patterns)
+        self._tremolo_patterns = Handler._create_cycles(tremolo_patterns)
 
-        self._vibrato_patterns = self._create_cycles(vibrato_patterns)
+        self._vibrato_patterns = Handler._create_cycles(vibrato_patterns)
 
     # PRIVATE METHODS
-
-    def _attach_pressure_notehead(self, pressure, tie, size=0.5):
-        steps = 4
-        pressure = self._quantize(pressure, steps)
-        fill = self._make_circle_markup(size, pressure)
-        outline = self._make_circle_outline_markup(size)
-        circle = abjad.Markup.combine([fill, outline])
-        self._markup_to_notehead(tie.head, circle)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         if (
@@ -90,11 +85,11 @@ class StringFingeringHandler(EnvelopeHandler):
             return
         # previous_string_index = None
         for tie, offset_start, offset_end in \
-                self._iterate_logical_ties(rhythm_voice):
+                Handler._iterate_logical_ties(rhythm_voice):
             # hide leaves if necessary
             if not self._show_rhythmic_notation:
                 for leaf in tie:
-                    self._hide_leaf(leaf)
+                    Handler._hide_leaf(leaf)
 
     def _handle_voice(self, voice, current_stage):
         if (self._height_envelopes is None or
@@ -106,10 +101,10 @@ class StringFingeringHandler(EnvelopeHandler):
         last_height = None
         last_pressure = None
 
-        for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+        for tie, offset_start, offset_end in Handler._iterate_logical_ties(voice):
             if tie.is_pitched:
                 height_start, height_end = \
-                    StringFingeringHandler._get_value(
+                    EnvelopeHandler._get_value(
                         self._height_envelopes,
                         self._height_envelope_patterns,
                         current_stage,
@@ -119,7 +114,7 @@ class StringFingeringHandler(EnvelopeHandler):
                     )
 
                 pressure_start, pressure_end = \
-                    StringFingeringHandler._get_value(
+                    EnvelopeHandler._get_value(
                         self._pressure_envelopes,
                         self._pressure_envelope_patterns,
                         current_stage,
@@ -128,12 +123,15 @@ class StringFingeringHandler(EnvelopeHandler):
                         last_pressure,
                     )
 
-                tremolo = self._cycle_next(
+                gray = 1 - Handler._scale(pressure_start, 0, 1,
+                                                         0.5, 1,)
+
+                tremolo = Handler._cycle_next(
                     self._tremolo_patterns,
                     current_stage
                 )
 
-                vibrato = self._cycle_next(
+                vibrato = Handler._cycle_next(
                     self._vibrato_patterns,
                     current_stage
                 )
@@ -145,9 +143,13 @@ class StringFingeringHandler(EnvelopeHandler):
                 else:
                     style = None
 
-                self._attach_glissando(tie.head, style=style)
+                EnvelopeHandler._attach_glissando(
+                    tie.head,
+                    style=style,
+                    color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                )
 
-                self._hidden_grace_after(tie.tail)
+                Handler._hidden_grace_after(tie.tail)
 
                 grace_container = abjad.inspect(tie.tail) \
                     .get_after_grace_container()
@@ -158,12 +160,12 @@ class StringFingeringHandler(EnvelopeHandler):
 
                 self._set_y_offset(tie.head, height_start)
 
-                self._attach_pressure_notehead(pressure_start, tie)
+                EnvelopeHandler._attach_notehead(tie, gray)
 
                 if not tie.is_trivial:
                     for note in tie[1:]:
-                        self._add_gliss_skip(note)
-                        self._hide_note_head(note)
+                        Handler._add_gliss_skip(note)
+                        Handler._hide_note_head(note)
 
                 last_height = height_end
                 last_pressure = pressure_end

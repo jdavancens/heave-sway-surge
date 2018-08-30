@@ -7,6 +7,5 @@ def grayscale_to_rgb(value):
     Returns a tuple.
     '''
     # a value from 0-1, 0:white - 1:black
-    value = 1 - float(value)
-    value = round(value)
-    return (value, value, value)
+    value = float(value)
+    return value, value, value

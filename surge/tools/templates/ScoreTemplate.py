@@ -1,46 +1,46 @@
 # -*- coding: utf-8-*-
-'''
+"""
 Created on Oct 31, 2015
 
 @author: josephdavancens
-'''
+"""
 
 import abjad
 import surge
 from surge.materials.instruments import instruments
 from surge.materials.instrument_categories import instrument_categories
 
+default_instrument_list = [
+    'oboe',
+    'bass clarinet',
+    'alto saxophone',
+    'time_signature',
+    'guitar i',
+    'guitar ii',
+    'time_signature',
+    'violin'
+    'viola',
+    'cello',
+    'contrabass',
+]
+
 
 class ScoreTemplate:
-    r'''Constructs a score template.
-    '''
+    r"""Constructs a score template.
+    """
 
     # CLASS ATTRIBUTES
-    __slots__ = ('instrument_list')
+    __slots__ = ('instrument_list',)
 
     # SPECIAL METHODS
-    def __init__(
-        self,
-        instrument_list=[
-            'oboe',
-            'bass clarinet',
-            'alto saxophone',
-            'trombone',
-            'guitar i',
-            'guitar ii',
-            'violin'
-            'viola',
-            'cello',
-            'contrabass',
-        ]
-    ):
+    def __init__(self, instrument_list=default_instrument_list):
         self.instrument_list = instrument_list
 
     def __call__(self):
-        r'''Calls score template.
+        r"""Calls score template.
         Creates time signature, staff and staff group contexts
         Returns a score.
-        '''
+        """
         time_signature_context = abjad.scoretools.Context(
             context_name='TimeSignatureContext',
             name='Time Signatures and Tempi',
@@ -55,38 +55,37 @@ class ScoreTemplate:
         # count multiples of instruments
         for instrument_name in self.instrument_list:
             counts[instrument_name] += 1
+
         for instrument_name in self.instrument_list:
-            instrument = instruments[instrument_name]
-            name = instrument.instrument_name.title()
-            if name[-1] == 'i':
-                name = name[0:-1] + 'I'
-            short_name = instrument.short_instrument_name.title()
-            if short_name[-1] == 'i':
-                short_name = short_name[0:-1] + 'I'
-            if counts[instrument_name] > 1:
-                ordinal = current_counts[instrument_name]
-                current_counts[instrument_name] += 1
-                roman = self._int_to_roman(ordinal)
-                name = ' '.join([name, roman])
-                short_name = ' '.join([short_name, roman])
-            instrument_group = self._create_staff_group(
-                instrument_name,
-                name,
-                short_name
-            )
-            score.append(instrument_group)
+            if instrument_name == 'time_signature':
+                score.append(time_signature_context)
+            else:
+                instrument = instruments[instrument_name]
+                name = instrument.instrument_name.title()
+                if name[-1] == 'i':
+                    name = name[0:-1] + 'I'
+                short_name = instrument.short_instrument_name.title()
+                if short_name[-1] == 'i':
+                    short_name = short_name[0:-1] + 'I'
+                if counts[instrument_name] > 1:
+                    ordinal = current_counts[instrument_name]
+                    current_counts[instrument_name] += 1
+                    roman = ScoreTemplate._int_to_roman(ordinal)
+                    name = ' '.join([name, roman])
+                    short_name = ' '.join([short_name, roman])
+                instrument_group = ScoreTemplate._create_staff_group(
+                    instrument_name,
+                    name,
+                    short_name
+                )
+                score.append(instrument_group)
         return score
 
-    def _create_staff_group(self, instrument_name, name, short_name):
+    @staticmethod
+    def _create_staff_group(instrument_name, name, short_name):
         if instrument_name in instrument_categories['woodwinds']:
             instrument = instruments[instrument_name]
             template = surge.tools.templates.WoodwindStaffGroupTemplate(
-                instrument
-            )
-            staff_group = template()
-        elif instrument_name in instrument_categories['trombone']:
-            instrument = instruments[instrument_name]
-            template = surge.tools.templates.TromboneStaffGroupTemplate(
                 instrument
             )
             staff_group = template()
@@ -113,7 +112,8 @@ class ScoreTemplate:
             abjad.Markup(short_name)
         return staff_group
 
-    def _int_to_roman(self, integer):
+    @staticmethod
+    def _int_to_roman(integer):
         roman = [None, 'I', 'II', 'III', 'IV', 'V']
         roman = roman[integer]
         return roman

@@ -4,7 +4,7 @@ from surge.tools.bezzie.LinearInterpolater import LinearInterpolater
 
 
 class Path(object):
-    ''' A sequence of linked BezierCurves B0, B1, ..., Bn. The final x-value of Bi
+    """ A sequence of linked BezierCurves B0, B1, ..., Bn. The final x-value of Bi
     must be equal to the first x-value of Bi+1.
 
 
@@ -31,7 +31,7 @@ class Path(object):
             -50.0
             >>> p(1)
             0.0
-    '''
+    """
     __slots__ = ('_interpolater', '_curves')
 
     # INITIALIZER
@@ -83,16 +83,16 @@ class Path(object):
 
     @property
     def length(self):
-        '''The combined lengths of the curves.
+        """The combined lengths of the curves.
 
         Returns float.
-        '''
+        """
         return sum([curve.length for curve in self._curves])
 
     # PUBLIC METHODS
 
     def set_interpolater(self, interpolater):
-        '''Sets the interpolation function to be used.
+        """Sets the interpolation function to be used.
 
-        '''
+        """
         self._interpolater = interpolater

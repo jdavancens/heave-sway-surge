@@ -31,8 +31,8 @@ class TestPickingHandler(unittest.TestCase):
 
         self.handler = PickingHandler(
             music_maker=music_maker,
-            picking_force_envelopes=picking_force_envelopes,
-            picking_position_envelopes=picking_position_envelopes,
+            force_envelopes=picking_force_envelopes,
+            position_envelopes=picking_position_envelopes,
             harp_harmonic_patterns=harp_harmonic_patterns,
             finger_index_patterns=finger_index_patterns,
             scrape_patterns=scrape_patterns,

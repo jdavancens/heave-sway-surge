@@ -85,3 +85,6 @@ for i, divisions in enumerate(divisions):
             stage_division.append(time_signature)
         stage.append(stage_division)
     time_signatures.append(stage)
+
+
+

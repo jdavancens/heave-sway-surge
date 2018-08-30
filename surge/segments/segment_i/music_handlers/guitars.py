@@ -36,8 +36,8 @@ def make_handlers(instrument, materials):
     # music handlers
     picking_music_handler = PickingHandler(
         music_maker=picking_music_maker,
-        picking_position_envelopes=materials.picking.envelopes.position,
-        picking_force_envelopes=materials.picking.envelopes.force,
+        position_envelopes=materials.picking.envelopes.position,
+        force_envelopes=materials.picking.envelopes.force,
         string_index_patterns=materials.picking.patterns.string_index,
         tremolo_patterns=materials.picking.patterns.tremolo,
     )

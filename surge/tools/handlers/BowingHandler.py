@@ -4,9 +4,10 @@ Created on Nov 20, 2015
 
 @author: josephdavancens
 """
-
-
+from surge.tools.graphics.grayscale_to_rgb import grayscale_to_rgb
+from surge.tools.graphics.scheme_rgb_color import scheme_rgb_color
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
+from surge.tools.handlers.Handler import Handler
 import abjad
 import copy
 
@@ -31,6 +32,7 @@ class BowingHandler(EnvelopeHandler):
         '_height_envelopes_release',
         '_pressure_envelope_patterns',
         '_pressure_envelopes',
+        '_staccato_patterns',
         '_string_index_patterns',
         '_tremolo_patterns',
         '_jete_patterns',
@@ -47,6 +49,7 @@ class BowingHandler(EnvelopeHandler):
                  height_envelopes_release=None,
                  pressure_envelope_patterns=None,
                  pressure_envelopes=None,
+                 staccato_patterns=None,
                  string_index_patterns=None,
                  tremolo_patterns=None,
                  jete_patterns=None,
@@ -63,7 +66,7 @@ class BowingHandler(EnvelopeHandler):
         )
 
         self._height_envelope_patterns = \
-            BowingHandler._create_cycles(height_envelope_patterns)
+            Handler._create_cycles(height_envelope_patterns)
 
         self._height_envelopes = height_envelopes
 
@@ -73,58 +76,24 @@ class BowingHandler(EnvelopeHandler):
             self._height_envelopes_release = height_envelopes_release
 
         self._pressure_envelope_patterns = \
-            BowingHandler._create_cycles(pressure_envelope_patterns)
+            Handler._create_cycles(pressure_envelope_patterns)
 
         self._pressure_envelopes = pressure_envelopes
 
+        self._staccato_patterns = Handler._create_cycles(staccato_patterns)
+
         self._string_index_patterns = \
-            self._create_cycles(string_index_patterns)
+            Handler._create_cycles(string_index_patterns)
 
-        self._tremolo_patterns = self._create_cycles(tremolo_patterns)
+        self._tremolo_patterns = Handler._create_cycles(tremolo_patterns)
 
-        self._jete_patterns = self._create_cycles(jete_patterns)
+        self._jete_patterns = Handler._create_cycles(jete_patterns)
 
-        self._sweep_patterns = self._create_cycles(sweep_patterns)
+        self._sweep_patterns = Handler._create_cycles(sweep_patterns)
 
-        self._direction_patterns = self._create_cycles(direction_patterns)
+        self._direction_patterns = Handler._create_cycles(direction_patterns)
 
     # PRIVATE METHODS
-
-    def _add_jete(self, note):
-        markup = self._make_text_markup(
-            "…",
-            direction=Up,
-            font_size=2,
-        )
-        markup = markup.pad_around(0.5)
-        markup = markup.box()
-        abjad.attach(markup, note)
-
-    def _attach_direction(self, direction, tie):
-        if direction is not None:
-            markup = self._make_text_markup(
-                direction,
-                direction=Up,
-                enclosure='box'
-            )
-            abjad.attach(markup, tie.head)
-
-    def _attach_string_index(self, string_index, tie):
-        if string_index is not None:
-            markup = self._make_text_markup(
-                string_index,
-                direction=Down,
-                enclosure='circle'
-            )
-            abjad.attach(markup, tie.head)
-
-    def _attach_pressure_notehead(self, pressure, tie, size=0.5):
-        steps = 4
-        pressure = self._quantize(pressure, steps)
-        fill = self._make_circle_markup(size, pressure)
-        outline = self._make_circle_outline_markup(size)
-        circle = abjad.Markup.combine([fill, outline])
-        self._markup_to_notehead(tie.head, circle)
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
         if (
@@ -138,25 +107,33 @@ class BowingHandler(EnvelopeHandler):
             # hide leaves if necessary
             if not self._show_rhythmic_notation:
                 for leaf in tie:
-                    self._hide_leaf(leaf)
+                    Handler._hide_leaf(leaf)
 
             if tie.is_pitched:
-                tremolo = self._cycle_next(
+                tremolo = Handler._cycle_next(
                     self._tremolo_patterns,
                     current_stage
                 )
-                string_index = self._cycle_next(
+
+                string_index = Handler._cycle_next(
                     self._string_index_patterns,
                     current_stage
                 )
-                direction = self._cycle_next(
+
+                direction = Handler._cycle_next(
                     self._direction_patterns,
                     current_stage
                 )
+
                 if string_index != previous_string_index:
-                    self._attach_string_index(string_index, tie)
+                    BowingHandler._attach_string_index(string_index, tie)
+
                 if direction:
-                    self._attach_direction(direction, tie)
+                    BowingHandler._attach_direction(direction, tie)
+
+                if tremolo:
+                    Handler._add_stem_tremolo(tie)
+
                 previous_string_index = string_index
             else:
                 previous_string_index = None
@@ -172,10 +149,10 @@ class BowingHandler(EnvelopeHandler):
         last_pressure = None
 
         for tie, offset_start, offset_end in \
-                self._iterate_logical_ties(voice):
+                Handler._iterate_logical_ties(voice):
             if tie.is_pitched:
                 height_start, height_end = \
-                    BowingHandler._get_value(
+                    EnvelopeHandler._get_value(
                         self._height_envelopes,
                         self._height_envelope_patterns,
                         current_stage,
@@ -185,7 +162,7 @@ class BowingHandler(EnvelopeHandler):
                     )
 
                 pressure_start, pressure_end = \
-                    BowingHandler._get_value(
+                    EnvelopeHandler._get_value(
                         self._pressure_envelopes,
                         self._pressure_envelope_patterns,
                         current_stage,
@@ -194,50 +171,89 @@ class BowingHandler(EnvelopeHandler):
                         last_pressure,
                     )
 
-                sweep = self._cycle_next(
-                    self._sweep_patterns,
-                    current_stage,
-                )
+                gray = 1 - Handler._scale(pressure_start, 0, 1, 0.5, 1)
 
-                tremolo = self._cycle_next(
-                    self._tremolo_patterns,
-                    current_stage,
-                )
+                staccato = Handler._cycle_next(self._staccato_patterns,
+                                               current_stage)
 
-                if sweep:
-                    style = 'zigzag'
-                elif tremolo:
-                    style = 'dashed-line'
-                else:
-                    style = None
+                sweep = Handler._cycle_next(self._sweep_patterns, current_stage)
 
-                self._attach_glissando(tie.head, style=style)
+                tremolo = Handler._cycle_next(self._tremolo_patterns,
+                                              current_stage)
 
-                self._hidden_grace_after(tie.tail)
+                if not staccato:
+                    if sweep:
+                        style = 'zigzag'
+                    elif tremolo:
+                        style = 'dashed-line'
+                    else:
+                        style = None
 
-                grace_container = abjad.inspect(tie.tail)\
-                    .get_after_grace_container()
+                    Handler._attach_glissando(
+                        tie.head,
+                        style=style,
+                        color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                    )
 
-                if grace_container is not None and \
-                        len(grace_container) > 0:
-                    self._set_y_offset(grace_container[0], height_end)
+                    Handler._hidden_grace_after(tie.tail)
 
-                jete = self._cycle_next(self._jete_patterns, current_stage)
+                    grace_container = abjad.inspect(tie.tail)\
+                        .get_after_grace_container()
+
+                    if grace_container is not None and \
+                            len(grace_container) > 0:
+                        self._set_y_offset(grace_container[0],
+                                                      height_end)
+
+                jete = Handler._cycle_next(self._jete_patterns, current_stage)
 
                 if jete:
-                    self._add_jete(tie.head)
+                    BowingHandler._add_jete(tie.head)
 
                 self._set_y_offset(tie.head, height_start)
 
-                self._attach_pressure_notehead(pressure_start, tie)
+                EnvelopeHandler._attach_notehead(tie, gray)
 
                 if not tie.is_trivial:
                     for note in tie[1:]:
-                        self._add_gliss_skip(note)
-                        self._hide_note_head(note)
+                        Handler._add_gliss_skip(note)
+                        Handler._hide_note_head(note)
 
                 last_height = height_end
                 last_pressure = pressure_end
             else:
                 last_height = None
                 last_pressure = None
+
+    # STATIC METHODS
+
+    @staticmethod
+    def _add_jete(note):
+        markup = Handler._make_text_markup(
+            "…",
+            direction=Up,
+            font_size=2,
+        )
+        markup = markup.pad_around(0.5)
+        markup = markup.box()
+        abjad.attach(markup, note)
+
+    @staticmethod
+    def _attach_direction(direction, tie):
+        if direction is not None:
+            markup = Handler._make_text_markup(
+                direction,
+                direction=Up,
+                enclosure='box'
+            )
+            abjad.attach(markup, tie.head)
+
+    @staticmethod
+    def _attach_string_index(string_index, tie):
+        if string_index is not None:
+            markup = Handler._make_text_markup(
+                string_index,
+                direction=Down,
+                enclosure='circle'
+            )
+            abjad.attach(markup, tie.head)

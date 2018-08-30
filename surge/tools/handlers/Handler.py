@@ -54,13 +54,13 @@ class Handler(object):
         abjad.override(leaf).note_column.glissando_skip = True
 
     @staticmethod
-    def _attach_glissando(leaf, color=None, thickness=1.5, style=None):
+    def _attach_glissando(leaf, color=None, thickness=3, style=None):
         if color is not None:
             color_override = abjad.lilypondnametools.LilyPondGrobOverride(
                 context_name=None,
                 grob_name='Glissando',
                 is_once=True,
-                property_path=('color'),
+                property_path=('color',),
                 value=color
             )
             abjad.attach(color_override, leaf)
@@ -69,7 +69,7 @@ class Handler(object):
             context_name=None,
             grob_name='Glissando',
             is_once=True,
-            property_path=('thickness'),
+            property_path=('thickness',),
             value=thickness
         )
         abjad.attach(thickness_override, leaf)
@@ -80,7 +80,7 @@ class Handler(object):
                 context_name=None,
                 grob_name='Glissando',
                 is_once=True,
-                property_path=('style'),
+                property_path=('style',),
                 value=abjad.schemetools.SchemeSymbol(style),
             )
             abjad.attach(style_override, leaf)
@@ -90,7 +90,7 @@ class Handler(object):
                     context_name=None,
                     grob_name='Glissando',
                     is_once=True,
-                    property_path=('dash-period'),
+                    property_path=('dash-period',),
                     value=1.5,
                 )
                 abjad.attach(period_override, leaf)
@@ -99,7 +99,7 @@ class Handler(object):
                         context_name=None,
                         grob_name='Glissando',
                         is_once=True,
-                        property_path=('dash-fraction'),
+                        property_path=('dash-fraction',),
                         value=0.5,
                     )
                 abjad.attach(fraction_override, leaf)
@@ -110,7 +110,7 @@ class Handler(object):
                         context_name=None,
                         grob_name='Glissando',
                         is_once=True,
-                        property_path=('zigzag-width'),
+                        property_path=('zigzag-width',),
                         value=1.5,
                     )
                 abjad.attach(zigzag_width_override, leaf)
@@ -227,7 +227,7 @@ class Handler(object):
         circle_outline = abjad.MarkupCommand(
             'draw-circle',
             size,
-            0.1,
+            0.25,
             False
         )
         return abjad.Markup(circle_outline)
@@ -302,6 +302,20 @@ class Handler(object):
     @staticmethod
     def _reset_cycle(cycle):
         cycle.reset()
+
+    @staticmethod
+    def _quantize(x, steps):
+        if x is None:
+            return 0
+        else:
+            return round(float(x) * steps) / steps
+
+    @staticmethod
+    def _scale(x, low, high, low_, high_):
+        if x is None:
+            return 1
+        x_ = ((x - low) * (high_ - low_) / (high - low)) + low_
+        return x_
 
     # PUBLIC PROPERTIES
 

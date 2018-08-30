@@ -2,12 +2,12 @@
 from surge.tools.actions.WoodwindFingering import WoodwindFingering
 from surge.materials.instruments import instruments
 
-clarinet = instruments['bass clarinet']
+instrument = instruments['bass clarinet']
 hand = 'left'
 
 segment_2 = [
     WoodwindFingering(
-        instrument=clarinet,
+        instrument=instrument,
         hand=hand,
         keys={
             'thumb': 'down',
@@ -18,7 +18,7 @@ segment_2 = [
         },
     ),
     WoodwindFingering(
-        instrument=clarinet,
+        instrument=instrument,
         hand=hand,
         keys={
             'thumb': 'down',
@@ -30,4 +30,29 @@ segment_2 = [
     ),
 ]
 
-fingerings = [None, segment_2, None, segment_2, None]
+segment_4 = [
+    WoodwindFingering(
+        instrument=instrument,
+        hand=hand,
+        keys={
+            'thumb': 'down',
+            'index': 'down',
+            'middle': 'down',
+            'ring': None,
+            'pinky': None,
+        },
+    ),
+    WoodwindFingering(
+        instrument=instrument,
+        hand=hand,
+        keys={
+            'thumb': None,
+            'index': 'down',
+            'middle': 'down',
+            'ring': None,
+            'pinky': None,
+        },
+    ),
+]
+
+fingerings = [None, segment_2, None, segment_4, None]

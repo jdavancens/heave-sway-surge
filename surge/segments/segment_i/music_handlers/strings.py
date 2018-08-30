@@ -43,6 +43,7 @@ def make_string_handlers(instrument, materials):
         height_envelopes=materials.bowing.envelopes.height,
         pressure_envelope_patterns=materials.bowing.patterns.pressure,
         pressure_envelopes=materials.bowing.envelopes.pressure,
+        staccato_patterns=materials.bowing.patterns.staccato,
         string_index_patterns=materials.bowing.patterns.string_index
     )
 

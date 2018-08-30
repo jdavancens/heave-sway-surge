@@ -165,20 +165,6 @@ instruments = abjad.TypedOrderedDict([
         )
     ),
     (
-        'trombone',
-        abjad.instrumenttools.TenorTrombone(
-            instrument_name='Tenor Trombone',
-            short_instrument_name='Tbn.'
-        )
-    ),
-    (
-        'tenor trombone',
-        abjad.instrumenttools.TenorTrombone(
-            instrument_name='Tenor Trombone',
-            short_instrument_name='Tbn.'
-        )
-    ),
-    (
         'va',
         abjad.instrumenttools.Viola(
             instrument_name='Viola',

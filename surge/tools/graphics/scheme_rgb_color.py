@@ -10,9 +10,7 @@ def scheme_rgb_color(rgb_tuple):
     assert isinstance(rgb_tuple, tuple)
     assert len(rgb_tuple) == 3
     scheme_color = schemetools.Scheme(
-        'rgb-color',
-        rgb_tuple[0],
-        rgb_tuple[1],
-        rgb_tuple[2]
+        ['rgb-color', *rgb_tuple],
+        force_quotes=True
     )
     return scheme_color

@@ -6,7 +6,7 @@ position = [None] * 5
 string_index = (
     None,
     None,
-    [4, 5, 6],
+    None,
     None,
     None,
 )

@@ -24,8 +24,6 @@ staff_map = {
         'Right Hand Fingering Lifeline'
     ),
     'Right Hand Fingering Rhythm': ('Right Hand Fingering Rhythm',),
-    'Slide Position Rhythm': ('Slide Position Rhythm',),
-    'Slide Position': ('Slide Position',),
     'Left Hand': ('Left Hand',),
     'Right Hand': ('Right Hand',),
     'Pedaling': ('Pedaling',),

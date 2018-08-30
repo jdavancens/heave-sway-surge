@@ -39,6 +39,12 @@
     top-margin = 0.5\in
     bottom-margin = 0.5\in
 
+    markup-system-spacing =
+        #'((basic-distance . 0)
+           (minimum-distance . 0)
+           (padding . 20)
+           (stretchability . 0))
+
     system-system-spacing =
         #'((basic-distance . 0)
            (minimum-distance . 0)

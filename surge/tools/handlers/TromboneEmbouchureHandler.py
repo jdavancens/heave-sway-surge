@@ -22,16 +22,23 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
 
     # CLASS ATTRIBUTES
 
-    __slots__ = ('_wah_envelopes', '_wah_envelopes_release')
+    __slots__ = (
+        '_wah_envelope_patterns',
+        '_wah_envelopes',
+        '_wah_envelopes_release',
+    )
 
     # INITIALIZER
 
     def __init__(
         self,
         music_maker=None,
+        air_pressure_envelope_patterns=None,
         air_pressure_envelopes=None,
         air_pressure_envelopes_release=None,
+        lip_pressure_envelope_patterns=None,
         lip_pressure_envelopes=None,
+        wah_envelope_patterns=None,
         wah_envelopes=None,
         consonant_patterns=None,
         fluttertongue_patterns=None,
@@ -45,8 +52,10 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
         EmbouchureHandler.__init__(
             self,
             music_maker=music_maker,
+            air_pressure_envelope_patterns=air_pressure_envelope_patterns,
             air_pressure_envelopes=air_pressure_envelopes,
             air_pressure_envelopes_release=air_pressure_envelopes_release,
+            lip_pressure_envelope_patterns=lip_pressure_envelope_patterns,
             lip_pressure_envelopes=lip_pressure_envelopes,
             consonant_patterns=consonant_patterns,
             fluttertongue_patterns=fluttertongue_patterns,
@@ -56,14 +65,14 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
             vowel_patterns=vowel_patterns,
             show_rhythmic_notation=show_rhythmic_notation
         )
-
+        self._wah_envelope_patterns = EmbouchureHandler._create_cycles(
+            wah_envelope_patterns,
+        )
         self._wah_envelopes = wah_envelopes
 
     # PRIVATE METHODS
 
-
-
-    def _attach_wah(self, wah, tie):
+    def _attach_wah(self, wah_position, tie):
         # TODO convert to spanner
         # i = int(self._quantize(wah, 2) * 2)
         # articulations = [
@@ -75,39 +84,59 @@ class TromboneEmbouchureHandler(EmbouchureHandler):
         pass
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
+        last_direction = None
         last_vowel = None
+        last_wah_position = None
+
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
-            last_direction = None
 
             if not self._show_rhythmic_notation:
                 for leaf in tie:
                     self._hide_leaf(leaf)
 
             if tie.is_pitched:
-                # get current parameters
+                # get values
+
                 consonant = self._cycle_next(
                     self._consonant_patterns,
                     current_stage
                 )
+
                 direction = self._cycle_next(
                     self._direction_patterns,
                     current_stage
                 )
+
                 fluttertongue = self._cycle_next(
                     self._fluttertongue_patterns,
                     current_stage
                 )
+
                 vowel = self._cycle_next(self._vowel_patterns, current_stage)
-                wah = self._wah_envelopes[current_stage](offset_start)
+
+                wah_position = EmbouchureHandler._get_value(
+                    self._wah_envelopes,
+                    self._wah_envelope_patterns,
+                    current_stage,
+                    offset_start,
+                    offset_end,
+                    last_wah_position,
+                )
 
                 # attach indicators
+
                 self._attach_direction(direction, last_direction, tie)
                 self._attach_fluttertongue(fluttertongue, tie)
                 self._attach_phoneme(consonant, vowel, tie, last_vowel)
-                self._attach_wah(wah, tie)
+                self._attach_wah(wah_position, tie)
+
+                # set last to current
+
                 last_direction = direction
                 last_vowel = vowel
+                last_wah_position = wah_position
             else:
                 last_direction = None
                 last_vowel = None
+                last_wah_position = None

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 height = [
     None,
-    [0.999],
+    [0.99],
     [0.75],
-    [0.875],
+    [0.99],
     None
 ]
 
@@ -19,6 +19,14 @@ string_index = [
     None,
     (['IV']),
     (['I']),
-    (['I', 'I', 'I', 'IV', 'IV']),
+    (['I']),
+    None,
+]
+
+staccato = [
+    None,
+    None,
+    None,
+    [True],
     None,
 ]

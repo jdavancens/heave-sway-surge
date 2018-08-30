@@ -64,6 +64,17 @@ class EnvelopeHandler(Handler):
     # STATIC METHODS
 
     @staticmethod
+    def _attach_notehead(tie, pressure, size=0.75, outline=True):
+        fill = Handler._make_circle_markup(size, pressure)
+        if outline:
+            outline = Handler._make_circle_outline_markup(size)
+            circle = abjad.Markup.combine([fill, outline])
+            Handler._markup_to_notehead(tie.head, circle)
+        else:
+            Handler._markup_to_notehead(tie.head, fill)
+
+
+    @staticmethod
     def _get_value(envelopes,
                    patterns,
                    current_stage,
@@ -100,19 +111,12 @@ class EnvelopeHandler(Handler):
     @staticmethod
     def _get_value_from_pattern(patterns, current_stage, last):
         if last is None:
-            start = EnvelopeHandler._cycle_next(patterns, current_stage)
+            start = Handler._cycle_next(patterns, current_stage)
         else:
             start = last
-        end = EnvelopeHandler._cycle_next(patterns, current_stage)
+        end = Handler._cycle_next(patterns, current_stage)
         return start, end
 
     @staticmethod
     def _lengths_match(voice, envelope):
         return voice[:].get_duration() == envelope.length
-
-    @staticmethod
-    def _quantize(x, steps):
-        if x is None:
-            return 0
-        else:
-            return round(float(x) * steps) / steps

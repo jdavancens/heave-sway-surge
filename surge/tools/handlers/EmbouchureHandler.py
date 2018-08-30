@@ -6,7 +6,10 @@ Created on Nov 20, 2015
 """
 
 import abjad
+from surge.tools.graphics.grayscale_to_rgb import grayscale_to_rgb
+from surge.tools.graphics.scheme_rgb_color import scheme_rgb_color
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
+from surge.tools.handlers.Handler import Handler
 import copy
 
 
@@ -68,34 +71,29 @@ class EmbouchureHandler(EnvelopeHandler):
             show_rhythmic_notation=show_rhythmic_notation
         )
         self._air_pressure_envelope_patterns = \
-            EmbouchureHandler._create_cycles(air_pressure_envelope_patterns)
+            Handler._create_cycles(air_pressure_envelope_patterns)
 
         self._air_pressure_envelopes = air_pressure_envelopes
 
         self._air_pressure_envelopes_release = air_pressure_envelopes_release
 
         self._lip_pressure_envelope_patterns = \
-            EmbouchureHandler._create_cycles(lip_pressure_envelope_patterns)
+            Handler._create_cycles(lip_pressure_envelope_patterns)
 
         self._lip_pressure_envelopes = lip_pressure_envelopes
 
-        self._consonant_patterns = \
-            EmbouchureHandler._create_cycles(consonant_patterns)
+        self._consonant_patterns = Handler._create_cycles(consonant_patterns)
 
-        self._direction_patterns = \
-            EmbouchureHandler._create_cycles(direction_patterns)
+        self._direction_patterns = Handler._create_cycles(direction_patterns)
 
-        self._fluttertongue_patterns = EmbouchureHandler._create_cycles(
-            fluttertongue_patterns
-        )
-        self._staccato_patterns = \
-            EmbouchureHandler._create_cycles(staccato_patterns)
+        self._fluttertongue_patterns = \
+            Handler._create_cycles(fluttertongue_patterns)
 
-        self._vibrato_patterns = \
-            EmbouchureHandler._create_cycles(vibrato_patterns)
+        self._staccato_patterns = Handler._create_cycles(staccato_patterns)
 
-        self._vowel_patterns = \
-            EmbouchureHandler._create_cycles(vowel_patterns)
+        self._vibrato_patterns = Handler._create_cycles(vibrato_patterns)
+
+        self._vowel_patterns = Handler._create_cycles(vowel_patterns)
 
     # PRIVATE METHODS
 
@@ -159,11 +157,11 @@ class EmbouchureHandler(EnvelopeHandler):
         last_lip_pressure = None
 
         for tie, offset_start, offset_end in \
-                EmbouchureHandler._iterate_logical_ties(voice):
+                Handler._iterate_logical_ties(voice):
 
             if tie.is_pitched:
                 air_pressure_start, air_pressure_end = \
-                    EmbouchureHandler._get_value(
+                    EnvelopeHandler._get_value(
                         self._air_pressure_envelopes,
                         self._air_pressure_envelope_patterns,
                         current_stage,
@@ -172,8 +170,8 @@ class EmbouchureHandler(EnvelopeHandler):
                         last_air_pressure,
                     )
 
-                lip_pressure, _ = \
-                    EmbouchureHandler._get_value(
+                lip_pressure_start, lip_pressure_end = \
+                    EnvelopeHandler._get_value(
                         self._lip_pressure_envelopes,
                         self._lip_pressure_envelope_patterns,
                         current_stage,
@@ -182,9 +180,12 @@ class EmbouchureHandler(EnvelopeHandler):
                         last_lip_pressure,
                     )
 
+                gray = 1 - EmbouchureHandler._scale(lip_pressure_start, 0, 1,
+                                                    0.5, 1,)
+
                 # make a note head
-                lip_pressure = EmbouchureHandler._quantize(lip_pressure, 4)
-                EmbouchureHandler._attach_pressure_notehead(tie, lip_pressure)
+
+                EnvelopeHandler._attach_notehead(tie, gray)
 
                 # determine if we need to draw a line
                 staccato = EmbouchureHandler._cycle_next(
@@ -211,9 +212,14 @@ class EmbouchureHandler(EnvelopeHandler):
                     else:
                         style = None
 
-                    # create line anchors
-                    EmbouchureHandler._attach_glissando(tie.head, style=style)
-                    EmbouchureHandler._hidden_grace_after(tie.tail)
+                    # create lines
+                    EnvelopeHandler._attach_glissando(
+                        tie.head,
+                        style=style,
+                        color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                    )
+
+                    EnvelopeHandler._hidden_grace_after(tie.tail)
 
                     # set y offsets
                     self._set_y_offset(tie.head, air_pressure_start)
@@ -230,7 +236,7 @@ class EmbouchureHandler(EnvelopeHandler):
                         EmbouchureHandler._hide_note_head(note)
 
                 last_air_pressure = air_pressure_end
-                last_lip_pressure = lip_pressure
+                last_lip_pressure = lip_pressure_end
             else:
                 last_air_pressure = None
                 last_lip_pressure = None
@@ -244,10 +250,10 @@ class EmbouchureHandler(EnvelopeHandler):
         ordinal = abjad.OrdinalConstant('y', 1, 'Down')
         if direction == 'in':
             articulation = abjad.Articulation('rtoe', ordinal)
+            abjad.attach(articulation, tie.head)
         elif direction == 'out':
             articulation = abjad.Articulation('ltoe', ordinal)
-
-        abjad.attach(articulation, tie.head)
+            abjad.attach(articulation, tie.head)
 
     @staticmethod
     def _attach_fluttertongue(fluttertongue, tie):
@@ -262,16 +268,6 @@ class EmbouchureHandler(EnvelopeHandler):
         if phoneme != '' and phoneme != last_vowel:
             markup = EmbouchureHandler._make_text_markup(phoneme)
             abjad.attach(markup, tie.head)
-
-    @staticmethod
-    def _attach_pressure_notehead(tie, pressure, size=0.5, outline=True):
-        fill = EmbouchureHandler._make_circle_markup(size, pressure)
-        if outline:
-            outline = EmbouchureHandler._make_circle_outline_markup(size)
-            circle = abjad.Markup.combine([fill, outline])
-            EmbouchureHandler._markup_to_notehead(tie.head, circle)
-        else:
-            EmbouchureHandler._markup_to_notehead(tie.head, fill)
 
     @staticmethod
     def _prepare_envelopes(current_stage, envelopes, release_envelope=None):

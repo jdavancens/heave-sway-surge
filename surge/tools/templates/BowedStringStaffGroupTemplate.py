@@ -4,7 +4,7 @@ import abjad
 
 
 class BowedStringStaffGroupTemplate:
-    __slots__ = ('instrument')
+    __slots__ = ('instrument',)
 
     def __init__(self, instrument):
         self.instrument = instrument

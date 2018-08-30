@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
-height = [None] * 5
+height = [
+    None,
+    None,
+    [0.25, 0.5],
+    [0.5],
+    None
+]
 
-pressure = [None] * 5
+pressure = [
+    None,
+    None,
+    [0],
+    [0],
+    None,
+]

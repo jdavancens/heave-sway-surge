@@ -423,29 +423,32 @@ class SegmentMaker(SegmentMakerBaseClass):
         r''' Makes and inserts blank measures for time signature context and
         attaches tempo indicators.
         '''
-        if self._ruler:
-            measures = self._make_repeated_note_measures()
-        else:
-            measures = self._make_skip_filled_measures()
-        # attach Tempi
-        for tempo in self.tempo_map:
-            if tempo[0] < len(measures):
-                abjad.attach(tempo[1], measures[tempo[0]][0])
-        leaves = abjad.iterate(measures).by_class(abjad.Leaf)
-        leaves = list(leaves)
-        first_leaf = leaves[0]
-        dummy_first_bar_command = abjad.indicatortools.LilyPondCommand(
-            'bar ""'
-        )
-        abjad.attach(dummy_first_bar_command, first_leaf)
-        time_signature_context = self._score[0]
-        voice = abjad.Voice(measures)
-        time_signature_context.append(voice)
+        for staff in abjad.iterate(self._score).by_class(abjad.Context):
+            # if staff.name is 'Separator':
+            #     measures = self._make_skip_filled_measures()
+            #     staff.extend(measures)
+            if staff.context_name == 'TimeSignatureContext':
+                if self._ruler:
+                    measures = self._make_repeated_note_measures()
+                else:
+                    measures = self._make_skip_filled_measures()
 
-        for staff in abjad.iterate(self._score).by_class(abjad.Staff):
-            if staff.name is 'Separator':
-                measures = self._make_skip_filled_measures()
-                staff.extend(measures)
+                # attach Tempi
+                for tempo in self.tempo_map:
+                    if tempo[0] < len(measures):
+                        abjad.attach(tempo[1], measures[tempo[0]][0])
+
+                # attach dummy first bar command
+                leaves = abjad.iterate(measures).by_class(abjad.Leaf)
+                leaves = list(leaves)
+                first_leaf = leaves[0]
+                dummy_first_bar_command = abjad.indicatortools.LilyPondCommand(
+                    'bar ""'
+                )
+                abjad.attach(dummy_first_bar_command, first_leaf)
+
+                voice = abjad.Voice(measures)
+                staff.append(voice)
 
     def _raise_approximate_duration_in_seconds(self):
         r''' Calculates the duration, in seconds, of the segment and raises an

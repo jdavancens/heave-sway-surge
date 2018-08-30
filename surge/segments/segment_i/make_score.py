@@ -24,8 +24,8 @@ def make_score(number_of_stages=None):
         measures_per_stage=measures_per_stage,
         show_stage_annotations=True,
         instrument_list=instrument_list,
-        page_size=('11x17', 'portrait'),
-        staff_size=7,
+        page_size=('super-b', 'portrait'),
+        staff_size=9,
         final_barline=True,
         part=False
     )
