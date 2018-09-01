@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from surge.materials.segment_ii.durations import denominator_stage_1,\
     durations_stage_1
-from surge.materials.segment_ii.durations import stage_durations as stage_durations_global
+from surge.materials.segment_ii.durations import stage_durations as \
+    stage_durations_global
 import abjad
 import copy
 import random

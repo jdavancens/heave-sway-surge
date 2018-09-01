@@ -9,6 +9,7 @@ import abjad
 from surge.tools.graphics.grayscale_to_rgb import grayscale_to_rgb
 from surge.tools.graphics.scheme_rgb_color import scheme_rgb_color
 from surge.tools.handlers.EnvelopeHandler import EnvelopeHandler
+from surge.tools.handlers.Handler import Handler
 
 
 class PickingHandler(EnvelopeHandler):
@@ -135,8 +136,6 @@ class PickingHandler(EnvelopeHandler):
                         last_position,
                     )
 
-                gray = 1 - PickingHandler._scale(force_start, 0, 1, 0.5, 1)
-
                 scrape = self._cycle_next(self._scrape_patterns, current_stage)
 
                 tremolo = self._cycle_next(self._tremolo_patterns,
@@ -153,7 +152,11 @@ class PickingHandler(EnvelopeHandler):
                     EnvelopeHandler._attach_glissando(
                         tie.head,
                         style=style,
-                        color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                        color=scheme_rgb_color(
+                            grayscale_to_rgb(
+                                Handler._intensity_to_grayscale(force_start)
+                            )
+                        ),
                     )
 
                     self._hidden_grace_after(tie.tail)

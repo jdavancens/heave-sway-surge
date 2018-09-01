@@ -10,7 +10,7 @@ rhythm_maker_classes = [
     rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
-    None,
+    rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
 ]
 

@@ -6,6 +6,7 @@ Created on Feb 15, 2016
 @author: josephdavancens
 '''
 import abjad
+from surge.tools.actions.FretPlacement import FretPlacement
 
 
 class FretCombination(object):
@@ -63,6 +64,25 @@ class FretCombination(object):
         for i in range(self.number_of_strings):
             binary_list[i] = 1 if self.includes_string(i) else 0
         return binary_list
+
+    # STATIC METHODS
+    @staticmethod
+    def from_lists(instrument, strings, frets, harmonic):
+        assert(len(strings) == len(frets))
+        fret_placements = []
+        for fret, string in zip(frets, strings):
+            fret_placements.append(
+                FretPlacement(
+                    instrument=instrument,
+                    fret=fret,
+                    string=string,
+                    harmonic=harmonic
+                )
+            )
+        return FretCombination(
+            instrument=instrument,
+            fret_placements=fret_placements,
+        )
 
     # PUBLIC PROPERTIES
 

@@ -1,26 +1,23 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Dec 4, 2015
 
 @author: josephdavancens
-'''
-
-
+"""
 from surge.materials.instruments import instruments
-from surge.materials.segment_ii import measures_per_stage, tempo_map, \
+from surge.materials.segment_ii.time_signatures import measures_per_stage,\
     time_signatures
-from surge.segments.segment_ii.definitions import *
+from surge.materials.segment_ii.tempo_map import tempo_map
+from surge.segments.segment_ii.music_handlers import music_handlers
 from surge.tools.makers.SegmentMaker import SegmentMaker
-from surge.tools.utilities.flatten_list import flatten_list
 
 
 def make_part(part_name, number_of_stages=None, ruler=False):
-
     segment_maker = SegmentMaker(
         title="Heave, Sway, Surge",
         segment_name="Segment II",
         number_of_stages=number_of_stages,
-        segment_number=1,
+        segment_number=2,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         first_bar_number=1,
@@ -31,23 +28,8 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         staff_size=8,
         final_barline=True,
         part=True,
-        ruler=ruler
+        ruler=ruler,
     )
-    music_handlers = [
-        oboe_handlers,
-        clarinet_handlers,
-        saxophone_handlers,
-        guitar_1_handlers,
-        guitar_2_handlers,
-        violin_handlers,
-        viola_handlers,
-        cello_handlers,
-        bass_handlers,
-        trombone_handlers
-    ]
-    music_handlers = flatten_list(music_handlers)
-
-    # filter handlers by parts specified in instrument list
     for music_handler in music_handlers:
         inst = music_handler.instrument.instrument_name.lower()
         if instruments[part_name] == instruments[inst]:

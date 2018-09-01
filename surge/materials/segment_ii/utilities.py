@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import abjad
 from surge.tools.bezzie.BezierCurve import BezierCurve
 from surge.tools.bezzie.Path import Path
@@ -22,7 +21,6 @@ def make_glissandi(finger_heights, durations, denominators):
         curves = []
         offset = 0
         denominator = denominators[i]
-        total_duration = sum(flatten_list(durations[i])) / denominator
         for j in range(len(finger_heights[i]) - 1):
             # offsets from durations
             d_0 = durations[i][j][0]

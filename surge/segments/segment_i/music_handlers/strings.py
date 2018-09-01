@@ -39,19 +39,14 @@ def make_string_handlers(instrument, materials):
     # music handlers
     bowing_music_handler = BowingHandler(
         music_maker=bowing_music_maker,
-        height_envelope_patterns=materials.bowing.patterns.height,
         height_envelopes=materials.bowing.envelopes.height,
-        pressure_envelope_patterns=materials.bowing.patterns.pressure,
         pressure_envelopes=materials.bowing.envelopes.pressure,
-        staccato_patterns=materials.bowing.patterns.staccato,
         string_index_patterns=materials.bowing.patterns.string_index
     )
 
     fingering_music_handler = StringFingeringHandler(
         music_maker=fingering_music_maker,
-        height_envelope_patterns=materials.fingering.patterns.height,
         height_envelopes=materials.fingering.envelopes.height,
-        pressure_envelope_patterns=materials.fingering.patterns.pressure,
         pressure_envelopes=materials.fingering.envelopes.pressure,
     )
 

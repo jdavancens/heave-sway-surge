@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
-from surge.materials.segment_i.make_offsets import make_offsets
-from surge.materials.segment_i.time_signatures import time_signatures
+from surge.materials.segment_i.time_signatures import offsets, \
+    measures_per_stage, stage_durations, subsection_indices
+from surge.materials.utils.path_makers import zig_zag_by_counts
 from surge.tools.bezzie.BezierCurve import BezierCurve
 from surge.tools.bezzie.Path import Path
 
-offsets = make_offsets(time_signatures)
 
 pressure = [
     None,
     None,
-    None,
-    Path(
-        BezierCurve((offsets[3][0], 0.75), (offsets[3][9], 1)),
-        BezierCurve((offsets[3][9], 1), (offsets[3][22], 0.5)),
-        BezierCurve((offsets[3][22], 0.5), (offsets[3][-1], 0.25))
-    ),
+    zig_zag_by_counts(0, 0.5, offsets, subsection_indices, measures_per_stage,
+                      stage_durations, 2),
+    zig_zag_by_counts(0, 1, offsets, subsection_indices, measures_per_stage,
+                      stage_durations, 3),
     None,
 ]

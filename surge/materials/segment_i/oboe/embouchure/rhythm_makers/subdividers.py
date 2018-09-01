@@ -6,6 +6,6 @@ subdividers = [
     None,
     None,
     None,
-    [subdividers.Unit()] * 3,
+    [subdividers.Identity()] * 3,
     None
 ]

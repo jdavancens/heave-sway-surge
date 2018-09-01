@@ -180,12 +180,8 @@ class EmbouchureHandler(EnvelopeHandler):
                         last_lip_pressure,
                     )
 
-                gray = 1 - EmbouchureHandler._scale(lip_pressure_start, 0, 1,
-                                                    0.5, 1,)
-
                 # make a note head
-
-                EnvelopeHandler._attach_notehead(tie, gray)
+                EnvelopeHandler._attach_notehead(tie, lip_pressure_start)
 
                 # determine if we need to draw a line
                 staccato = EmbouchureHandler._cycle_next(
@@ -216,7 +212,13 @@ class EmbouchureHandler(EnvelopeHandler):
                     EnvelopeHandler._attach_glissando(
                         tie.head,
                         style=style,
-                        color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                        color=scheme_rgb_color(
+                            grayscale_to_rgb(
+                                Handler._intensity_to_grayscale(
+                                    lip_pressure_start
+                                )
+                            )
+                        ),
                     )
 
                     EnvelopeHandler._hidden_grace_after(tie.tail)

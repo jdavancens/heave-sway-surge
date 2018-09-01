@@ -171,8 +171,6 @@ class BowingHandler(EnvelopeHandler):
                         last_pressure,
                     )
 
-                gray = 1 - Handler._scale(pressure_start, 0, 1, 0.5, 1)
-
                 staccato = Handler._cycle_next(self._staccato_patterns,
                                                current_stage)
 
@@ -192,7 +190,11 @@ class BowingHandler(EnvelopeHandler):
                     Handler._attach_glissando(
                         tie.head,
                         style=style,
-                        color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                        color=scheme_rgb_color(
+                            grayscale_to_rgb(
+                                Handler._intensity_to_grayscale(pressure_start)
+                            )
+                        ),
                     )
 
                     Handler._hidden_grace_after(tie.tail)
@@ -202,17 +204,15 @@ class BowingHandler(EnvelopeHandler):
 
                     if grace_container is not None and \
                             len(grace_container) > 0:
-                        self._set_y_offset(grace_container[0],
-                                                      height_end)
+                        self._set_y_offset(grace_container[0], height_end)
 
                 jete = Handler._cycle_next(self._jete_patterns, current_stage)
 
                 if jete:
                     BowingHandler._add_jete(tie.head)
-
+                # print(current_stage, offset_start, pressure_start)
                 self._set_y_offset(tie.head, height_start)
-
-                EnvelopeHandler._attach_notehead(tie, gray)
+                EnvelopeHandler._attach_notehead(tie, pressure_start)
 
                 if not tie.is_trivial:
                     for note in tie[1:]:

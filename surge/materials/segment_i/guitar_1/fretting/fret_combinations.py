@@ -6,30 +6,32 @@ from surge.materials.segment_i.make_harmonics import make_harmonics
 
 guitar = instruments['guitar 1']
 
+# 0-29
 fret_combinations = make_harmonics(guitar)
 
+# 30
 fret_combinations.append(
     FretCombination(
         instrument=guitar,
         fret_placements=[
             FretPlacement(
                 instrument=guitar,
-                string=3,
-                fret=5,
-                harmonic=True,
-            ),
-            FretPlacement(
-                instrument=guitar,
-                string=3,
-                fret=4,
-                harmonic=True,
-            ),
-            FretPlacement(
-                instrument=guitar,
-                string=3,
-                fret=5,
-                harmonic=True,
+                string=4,
+                fret=0,
+                harmonic=False,
             ),
         ]
     )
 )
+
+# 31
+fret_combinations.append(
+    FretCombination.from_lists(
+        instrument=guitar,
+        strings=[2, 3, 4, 5],
+        frets=[7, 5, 5, 5],
+        harmonic=True,
+    )
+)
+
+

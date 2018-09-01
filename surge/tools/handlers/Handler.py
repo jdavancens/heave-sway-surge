@@ -203,6 +203,10 @@ class Handler(object):
                 note_head.tweak.stencil = point_stencil()
 
     @staticmethod
+    def _intensity_to_grayscale(intensity):
+        return (1 - intensity) * 0.667
+
+    @staticmethod
     def _iterate_logical_ties(voice):
         for tie in abjad.iterate(voice).by_logical_tie():
             start_moment = abjad.inspect(

@@ -5,7 +5,7 @@ from surge.tools.rhythmtools import subdividers
 subdividers = [
     None,
     None,
-    [subdividers.Unit()] * 4,
+    [subdividers.Identity()] * 4,
     None,
     None
 ]

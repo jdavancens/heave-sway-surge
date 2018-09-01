@@ -7,9 +7,6 @@ Created on July 27, 2018
 '''
 from surge.materials.segment_i.time_signatures import time_signatures
 from abjad import instrumenttools
-# from abjad.tools.instrumenttools import BassClarinet
-# from abjad.tools.instrumenttools import Oboe
-# from abjad.tools.instrumenttools import AltoSaxophone
 import surge.materials.segment_i.oboe as oboe_materials
 import surge.materials.segment_i.clarinet as clarinet_materials
 import surge.materials.segment_i.saxophone as saxophone_materials

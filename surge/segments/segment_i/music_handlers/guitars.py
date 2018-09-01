@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on July 27, 2018
 
 @author: josephdavancens
-'''
-from abjad.tools.instrumenttools import Guitar
+"""
+from abjad import instrumenttools
 from surge.materials.segment_i.time_signatures import time_signatures
 from surge.tools.handlers.GuitarFrettingHandler import GuitarFrettingHandler
 from surge.tools.handlers.PickingHandler import PickingHandler
@@ -38,6 +38,9 @@ def make_handlers(instrument, materials):
         music_maker=picking_music_maker,
         position_envelopes=materials.picking.envelopes.position,
         force_envelopes=materials.picking.envelopes.force,
+        harp_harmonic_patterns=materials.picking.patterns.harp_harmonic,
+        scrape_patterns=materials.picking.patterns.scrape,
+        snap_patterns=materials.picking.patterns.snap,
         string_index_patterns=materials.picking.patterns.string_index,
         tremolo_patterns=materials.picking.patterns.tremolo,
     )
@@ -51,12 +54,12 @@ def make_handlers(instrument, materials):
     return [picking_music_handler, fretting_music_handler]
 
 
-guitar_i = Guitar(
+guitar_i = instrumenttools.Guitar(
     instrument_name='Guitar I',
     short_instrument_name='Gtr. I'
 )
 
-guitar_ii = Guitar(
+guitar_ii = instrumenttools.Guitar(
     instrument_name='Guitar II',
     short_instrument_name='Gtr. II'
 )

@@ -123,9 +123,6 @@ class StringFingeringHandler(EnvelopeHandler):
                         last_pressure,
                     )
 
-                gray = 1 - Handler._scale(pressure_start, 0, 1,
-                                                         0.5, 1,)
-
                 tremolo = Handler._cycle_next(
                     self._tremolo_patterns,
                     current_stage
@@ -146,7 +143,11 @@ class StringFingeringHandler(EnvelopeHandler):
                 EnvelopeHandler._attach_glissando(
                     tie.head,
                     style=style,
-                    color=scheme_rgb_color(grayscale_to_rgb(gray)),
+                    color=scheme_rgb_color(
+                        grayscale_to_rgb(
+                            Handler._intensity_to_grayscale(pressure_start)
+                        )
+                    ),
                 )
 
                 Handler._hidden_grace_after(tie.tail)
@@ -160,7 +161,7 @@ class StringFingeringHandler(EnvelopeHandler):
 
                 self._set_y_offset(tie.head, height_start)
 
-                EnvelopeHandler._attach_notehead(tie, gray)
+                EnvelopeHandler._attach_notehead(tie, pressure_start)
 
                 if not tie.is_trivial:
                     for note in tie[1:]:

@@ -64,8 +64,9 @@ class EnvelopeHandler(Handler):
     # STATIC METHODS
 
     @staticmethod
-    def _attach_notehead(tie, pressure, size=0.75, outline=True):
-        fill = Handler._make_circle_markup(size, pressure)
+    def _attach_notehead(tie, intensity, size=0.75, outline=True):
+        gray = Handler._intensity_to_grayscale(intensity)
+        fill = Handler._make_circle_markup(size, gray)
         if outline:
             outline = Handler._make_circle_outline_markup(size)
             circle = abjad.Markup.combine([fill, outline])

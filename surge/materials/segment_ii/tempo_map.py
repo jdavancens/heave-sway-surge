@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-r''' Tempi for each stage in segment.
-'''
+""" Tempi for each stage in segment.
+"""
 
 import abjad
 

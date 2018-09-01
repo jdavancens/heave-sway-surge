@@ -62,7 +62,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         lifeline_voice = copy.deepcopy(voice)
         self._handle_lifeline_voice(lifeline_voice, current_stage)
         self._name_voices(voice, rhythm_voice, lifeline_voice)
-        return (voice, rhythm_voice, lifeline_voice)
+        return voice, rhythm_voice, lifeline_voice
 
     # PRIVATE METHODS
 

@@ -2,7 +2,7 @@
 import abjad
 from surge.materials.utils.create_ratios import create_ratios
 from surge.tools.rhythmtools import Prolater
-from surge.tools.rhythmtools.subdividers import Unit
+from surge.tools.rhythmtools.subdividers import Identity
 
 
 def test_create_ratios():
@@ -20,7 +20,7 @@ def test_create_ratios():
     ]
     subdividers = [
         [
-            Unit()
+            Identity()
         ]
     ]
     expected = [

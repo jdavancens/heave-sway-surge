@@ -11,8 +11,8 @@ rhythm_maker_classes = [
     rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
     rhythmmakertools.NoteRhythmMaker,
-    None,
-    rhythmmakertools.IncisedRhythmMaker,
+    rhythmmakertools.NoteRhythmMaker,
+    rhythmmakertools.NoteRhythmMaker,
 ]
 
 rhythm_makers = create_rhythm_makers(
