@@ -42,7 +42,7 @@ finger_heights = [
         Fraction(2, 5),
         Fraction(3, 7),
         Fraction(1, 2),
-        Fraction(10, 13),
+        Fraction(8, 13),
         Fraction(1, 3),
         Fraction(2, 13),
         Fraction(1, 2),

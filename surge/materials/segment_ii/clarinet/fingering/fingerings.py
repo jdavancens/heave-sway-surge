@@ -11,7 +11,7 @@ left = [
         instrument=instrument,
         hand='left',
         keys={
-            'thumb': None,
+            'thumb': 'down',
             'index': 'down',
             'middle': 'down',
             'ring': 'down',
@@ -22,9 +22,9 @@ left = [
         instrument=instrument,
         hand='left',
         keys={
-            'thumb': None,
-            'index': 'down',
-            'middle': None,
+            'thumb': 'down',
+            'index': None,
+            'middle': 'down',
             'ring': 'down',
             'pinky': None
         }
@@ -38,18 +38,18 @@ right = [
         keys={
             'index': 'down',
             'middle': 'down',
-            'ring': None,
-            'pinky': None
+            'ring': 'down',
+            'pinky': 'ees'
         }
     ),
     WoodwindFingering(
         instrument=instrument,
         hand='right',
         keys={
-            'index': 'down',
-            'middle': None,
+            'index': None,
+            'middle': 'down',
             'ring': 'down',
-            'pinky': None
+            'pinky': 'ees'
         }
     )
 ]

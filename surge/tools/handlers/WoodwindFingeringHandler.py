@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 Created on Nov 20, 2015
 
 @author: josephdavancens
-'''
+"""
 
 
 from surge.tools.handlers.Handler import Handler
@@ -14,11 +14,11 @@ import copy
 
 
 class WoodwindFingeringHandler(TablatureHandler):
-    '''A fingering handler for woodwind instruments.
+    """A fingering handler for woodwind instruments.
         Maps key index to staff position
         Key indication as note head (open, closed), articulation (side keys)
         Trill (piano tremolo style - between notes)
-    '''
+    """
 
     # CLASS ATTRIBUTES
 
@@ -32,15 +32,14 @@ class WoodwindFingeringHandler(TablatureHandler):
 
     # INITIALIZER
 
-    def __init__(
-        self,
-        music_maker=None,
-        fingerings=None,
-        fingering_patterns=None,
-        trill_patterns=None,
-        hand=None,
-        show_rhythmic_notation=True
-    ):
+    def __init__(self,
+                 music_maker=None,
+                 fingerings=None,
+                 fingering_patterns=None,
+                 trill_patterns=None,
+                 hand=None,
+                 show_rhythmic_notation=True):
+
         TablatureHandler.__init__(
             self,
             music_maker=music_maker,
@@ -290,7 +289,7 @@ class WoodwindFingeringHandler(TablatureHandler):
 
     @staticmethod
     def _make_note_head_markup(key_combination):
-        ''' key names: a, b, c, d, e, f, g, cis, ees, bes, low-bes, cis, fis,
+        """ key names: a, b, c, d, e, f, g, cis, ees, bes, low-bes, cis, fis,
         gis, high-fis, low-c, front-f, thumb, T, R, banana, one, two, three,
         four, h, I, II, III.
         positions: down, half
@@ -301,7 +300,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         (half, b)
 
         key_combination is a combination of keys pressed by a single finger
-        '''
+        """
         circle_size = 0.5
         markups = []
         if key_combination is None:

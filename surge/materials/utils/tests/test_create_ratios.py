@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import abjad
-from surge.materials.utils.create_ratios import create_ratios
+from surge.materials.segment_i.create_ratios import create_ratios
 from surge.tools.rhythmtools import Prolater
 from surge.tools.rhythmtools.subdividers import Identity
 

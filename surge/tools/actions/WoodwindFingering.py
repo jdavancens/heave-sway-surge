@@ -189,7 +189,7 @@ class WoodwindFingering(object):
                     'index': ('down', 'half', ),
                     'middle': ('down', 'half', 'gis', 'a'),
                     'ring': ('down', 'half', 'b', 'd'),
-                    'pinky': ('cis'),
+                    'pinky': ('cis',),
                 },
                 'right': {
                     'index': ('down', 'half', 'gis', 'a'),
@@ -210,7 +210,7 @@ class WoodwindFingering(object):
                     'index': ('down', 'one', 'two', 'three', 'four'),
                     'middle': ('down', ),
                     'ring': ('down', 'b'),
-                    'pinky': ('e', 'f', 'fis', 'gis')
+                    'pinky': ('ees', 'e', 'f', 'fis', 'gis')
                 }
             },
             'saxophone': {

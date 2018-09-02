@@ -11,10 +11,10 @@ left = [
         instrument=instrument,
         hand='left',
         keys={
-            'thumb': None,
-            'index': 'down',
+            'thumb': 'I',
+            'index': ['down', 'II'],
             'middle': 'down',
-            'ring': 'down',
+            'ring': None,
             'pinky': None
         }
     ),
@@ -22,10 +22,10 @@ left = [
         instrument=instrument,
         hand='left',
         keys={
-            'thumb': None,
-            'index': 'down',
+            'thumb': 'I',
+            'index': ['down', 'II'],
             'middle': None,
-            'ring': 'down',
+            'ring': None,
             'pinky': None
         }
     )
@@ -37,7 +37,7 @@ right = [
         hand='right',
         keys={
             'index': 'down',
-            'middle': 'down',
+            'middle': None,
             'ring': None,
             'pinky': None
         }
@@ -46,9 +46,9 @@ right = [
         instrument=instrument,
         hand='right',
         keys={
-            'index': 'down',
+            'index': None,
             'middle': None,
-            'ring': 'down',
+            'ring': None,
             'pinky': None
         }
     )

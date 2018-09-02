@@ -2,8 +2,8 @@
 from itertools import permutations
 
 string_index = [
-    ['II'],
-    ['II'],
+    ['I'],
+    ['III'],
     ['II'],
     None,
     [n for p in permutations(['II', 'III', 'I', 'IV']) for n in p], # flat list of all permutations

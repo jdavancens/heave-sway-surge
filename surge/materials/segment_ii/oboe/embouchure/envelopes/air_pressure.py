@@ -10,10 +10,10 @@ random_interpolater = RandomInterpolater(seed=hash('oboe'))
 air_pressure = [
     None,
     None,
-    Path(BezierCurve((0, 0), (stage_durations[2], 1))),
-    Path(BezierCurve((0, 0), (stage_durations[3], 1))),
-    Path(BezierCurve((0, 0), (stage_durations[4], 1))),
-    Path(BezierCurve((0, 0), (stage_durations[5], 1))),
+    Path(BezierCurve((0, 0), (stage_durations[2], 0.5))),
+    Path(BezierCurve((0.25, 0), (stage_durations[3], 0.75))),
+    Path(BezierCurve((0.5, 0), (stage_durations[4], 1))),
+    Path(BezierCurve((0, 0.25), (stage_durations[5], 0.75))),
     None
 ]
 

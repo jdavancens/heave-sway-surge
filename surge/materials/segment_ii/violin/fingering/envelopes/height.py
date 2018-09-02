@@ -25,7 +25,7 @@ finger_heights = [
         Fraction(6, 11),
         Fraction(6, 11),
         Fraction(7, 13),
-        Fraction(9, 11),
+        Fraction(3, 7),
         Fraction(7, 13),
         Fraction(5, 7),
         Fraction(8, 13),
@@ -39,7 +39,7 @@ finger_heights = [
         Fraction(2, 11),
         Fraction(5, 7),
         Fraction(1, 3),
-        Fraction(11, 13),
+        Fraction(9, 13),
         Fraction(1, 5),
         Fraction(5, 11),
         Fraction(1, 3),
@@ -59,7 +59,10 @@ height = make_glissandi(
 # stage 3
 height.append(
     Path(
-        BezierCurve((0, Fraction(9, 13)), (stage_durations[2], Fraction(1, 7)))
+        BezierCurve(
+            (0, Fraction(9, 13)),
+            (stage_durations[2], Fraction(3, 7))
+        )
     )
 )
 height[2].set_interpolater(random_interpolater)
@@ -72,7 +75,7 @@ height.append(None)
 
 height.append(
     Path(
-        BezierCurve((0, Fraction(9, 13)), (stage_durations[4], Fraction(1, 7)))
+        BezierCurve((0, Fraction(9, 13)), (stage_durations[4], Fraction(3, 7)))
     )
 )
 height[4].set_interpolater(random_interpolater)
@@ -81,7 +84,7 @@ height[4].set_interpolater(random_interpolater)
 
 height.append(
     Path(
-        BezierCurve((0, Fraction(9, 13)), (stage_durations[5], Fraction(1, 7)))
+        BezierCurve((0, Fraction(9, 13)), (stage_durations[5], Fraction(3, 7)))
     )
 )
 height[5].set_interpolater(random_interpolater)

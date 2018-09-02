@@ -41,14 +41,12 @@ def make_handlers(instrument, materials):
         force_envelopes=materials.picking.envelopes.force,
         string_index_patterns=materials.picking.patterns.string_index,
         tremolo_patterns=materials.picking.patterns.tremolo,
-        show_rhythmic_notation=False
     )
 
     fretting_music_handler = GuitarFrettingHandler(
         music_maker=fretting_music_maker,
         fret_combinations=materials.fretting.fret_combinations,
         fret_combination_patterns=materials.fretting.patterns.fret_combination,
-        show_rhythmic_notation = False
     )
 
     return [picking_music_handler, fretting_music_handler]

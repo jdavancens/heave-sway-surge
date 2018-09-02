@@ -3,6 +3,7 @@ from surge.materials.segment_ii.durations import stage_durations
 import abjad
 import math
 
+number_of_stages = 7
 time_signature = abjad.TimeSignature((2, 4))
 time_signatures = []
 measures_per_stage = []

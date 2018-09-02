@@ -5,7 +5,7 @@ from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 
 
 class Even(Subdivider):
-    '''Even subdivider. Tries to create a maximally even subdivision.
+    """Even subdivider. Tries to create a maximally even subdivision.
 
     Initializes from a list of integers, a `Subdivider`, a subdivision pattern,
     a `SustainMask` and a `SilenceMast`.
@@ -25,7 +25,7 @@ class Even(Subdivider):
         Ratio((2, 1, 2))
         >>> e(5)
         Ratio((1, 2, 2))
-    '''
+    """
     __slots__ = ('_n_cycle',)
 
     # INITIALIZER
@@ -67,11 +67,12 @@ class Even(Subdivider):
     def __repr__(self):
         return "Even()"
 
-    # PRIVATE METHODS
+    # STATIC METHODS
 
-    def _bjorklund(self, steps, pulses):
-        '''from https://github.com/brianhouse/bjorklund
-        '''
+    @staticmethod
+    def _bjorklund(steps, pulses):
+        """from https://github.com/brianhouse/bjorklund
+        """
         assert(isinstance(steps, int))
         assert(isinstance(pulses, int))
         if pulses > steps:
@@ -108,7 +109,8 @@ class Even(Subdivider):
         pattern = pattern[i:] + pattern[0:i]
         return pattern
 
-    def _binary_to_ratio(self, pattern):
+    @staticmethod
+    def _binary_to_ratio(pattern):
         indices = []
         for i, x in enumerate(pattern):
             if x == 1:

@@ -48,7 +48,6 @@ def make_handlers(instrument, materials):
         music_maker=embouchure_music_maker,
         air_pressure_envelopes=materials.embouchure.envelopes.air_pressure,
         lip_pressure_envelopes=materials.embouchure.envelopes.lip_pressure,
-        show_rhythmic_notation=False,
     )
 
     lh_fingering_music_handler = WoodwindFingeringHandler(
@@ -56,8 +55,6 @@ def make_handlers(instrument, materials):
         fingerings=materials.fingering.left_hand,
         fingering_patterns=materials.fingering.patterns.left_hand,
         hand='left',
-        show_rhythmic_notation=False
-
     )
 
     rh_fingering_music_handler = WoodwindFingeringHandler(
@@ -66,7 +63,6 @@ def make_handlers(instrument, materials):
         fingering_patterns=materials.fingering.patterns.right_hand,
         trill_patterns=materials.fingering.patterns.trill,
         hand='right',
-        show_rhythmic_notation=False
     )
 
     return [

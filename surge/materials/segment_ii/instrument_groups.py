@@ -9,7 +9,6 @@ instrument_groups = {
     ),
     "b": (
         instruments["bass clarinet"],
-        instruments["guitar 2"],
         instruments["viola"]
     ),
     "c": (
@@ -17,7 +16,7 @@ instrument_groups = {
         instruments["cello"]
     ),
     "d": (
-        instruments["trombone"],
+        instruments["guitar 2"],
         instruments["contrabass"]
     ),
     "e": (
@@ -31,11 +30,10 @@ instrument_groups = {
     ),
     "g": (
         instruments["alto saxophone"],
-        instruments["guitar 2"],
         instruments["viola"]
     ),
     "h": (
-        instruments["trombone"],
+        instruments["guitar 2"],
         instruments["violin"]
     )
 }

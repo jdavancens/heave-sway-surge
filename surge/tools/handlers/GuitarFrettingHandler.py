@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Feb 15, 2016
 
 @author: josephdavancens
-'''
+"""
 
 import abjad
 from surge.tools.handlers.Handler import Handler
@@ -12,11 +12,11 @@ import copy
 
 
 class GuitarFrettingHandler(TablatureHandler):
-    '''
+    """
         fret —> note head
         string —> staff position
         harmonic –> note head
-    '''
+    """
 
     # CLASS ATTRIBUTES #
 
@@ -59,39 +59,12 @@ class GuitarFrettingHandler(TablatureHandler):
         self._handle_rhythm_voice(rhythm_voice, current_stage)
         lifeline_voice = copy.deepcopy(voice)
         self._handle_lifeline_voice(lifeline_voice, current_stage)
-
         self._name_voices(voice, rhythm_voice, lifeline_voice)
-        return (voice, rhythm_voice)
+        return voice, rhythm_voice
 
     # PRIVATE METHODS #
 
-    def _attach_hammer(self, hammer, tie):
-        if hammer:
-            accent = abjad.indicatortools.Articulation("ltoe", direction=Up)
-            abjad.attach(accent, tie.head)
-
-    def _create_tablature_notehead(self, note_head, fret_placement):
-        markup = abjad.Markup(fret_placement.fret)
-        markup = markup.fontsize(-1).bold()
-        if fret_placement.harmonic:
-            diamond = abjad.Markup.musicglyph(
-                'noteheads.s2harmonic'
-            )
-            diamond = diamond.raise_(0.5)
-            markup = abjad.Markup.concat(
-                [markup, diamond]
-            )
-        markup = markup.whiteout()
-        note_head.tweak.stencil = \
-            'ly:text-interface::print'
-        note_head.tweak.text = markup.raise_(-0.5)
-
-    def _construct_fretting_tablature(
-        self,
-        logical_tie,
-        fret_combination,
-        last_fret_combination,
-    ):
+    def _construct_fretting_tablature(self, logical_tie, fret_combination):
         string_ids = [6, 5, 4, 3, 2, 1]
         staff_positions = [2, 5, 9, 12, 16, 19]
         for i, leaf in enumerate(logical_tie):
@@ -172,7 +145,6 @@ class GuitarFrettingHandler(TablatureHandler):
 
     def _handle_voice(self, voice, current_stage):
         instrument = abjad.inspect(voice).get_indicator(abjad.Instrument)
-        last_fret_combination = None
         # loop through logical ties, create chords with fret combination markup
         for logical_tie in abjad.iterate(voice).by_logical_tie():
             if logical_tie.is_pitched:
@@ -184,14 +156,40 @@ class GuitarFrettingHandler(TablatureHandler):
                 self._construct_fretting_tablature(
                     logical_tie,
                     fret_combination,
-                    last_fret_combination
                 )
-                last_fret_combination = fret_combination
-            else:
-                last_fret_combination = None
         abjad.attach(instrument, voice)
 
-    def _make_glissando_map(self, fret_combination, context_name):
+    def _name_voices(self, voice, rhythm_voice, lifeline_voice):
+        Handler._name_voices(self, voice, rhythm_voice)
+        lifeline_voice.name = self._music_maker.name + ' Lifeline'
+
+    # STATIC METHOD
+
+    @staticmethod
+    def _attach_hammer(hammer, tie):
+        if hammer:
+            accent = abjad.indicatortools.Articulation("ltoe", direction=Up)
+            abjad.attach(accent, tie.head)
+
+    @staticmethod
+    def _create_tablature_notehead(note_head, fret_placement):
+        markup = abjad.Markup(fret_placement.fret)
+        markup = markup.fontsize(-1).bold()
+        if fret_placement.harmonic:
+            diamond = abjad.Markup.musicglyph(
+                'noteheads.s2harmonic'
+            )
+            diamond = diamond.raise_(0.5)
+            markup = abjad.Markup.concat(
+                [markup, diamond]
+            )
+        markup = markup.whiteout()
+        note_head.tweak.stencil = \
+            'ly:text-interface::print'
+        note_head.tweak.text = markup.raise_(-0.5)
+
+    @staticmethod
+    def _make_glissando_map(fret_combination, context_name):
         binary_list = fret_combination.as_binary_list()
         binary_list.reverse()
         glissando_map_list = []
@@ -209,7 +207,3 @@ class GuitarFrettingHandler(TablatureHandler):
                 value=glissando_map_vector
             )
             return glissando_map
-
-    def _name_voices(self, voice, rhythm_voice, lifeline_voice):
-        Handler._name_voices(self, voice, rhythm_voice)
-        lifeline_voice.name = self._music_maker.name + ' Lifeline'

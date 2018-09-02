@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
+from surge.materials.segment_ii.rest_indices import rest_indices_by_group
+from surge.materials.segment_ii.woodwind_rest_indices import \
+    woodwind_rest_indices
 
-# stages 1, 2, 3 from woodwind_rest_indices in segment package
-rest_indices = [None, None, None]
 
-# stage 4
+stage_4 = [0] + list(range(3, 7)) + list(range(9, 12)) + [14, 15] + \
+          list(range(18, 24)) + list(range(26, 31)) + [33, 35]
 
-rest_indices_stage_4 = [0]
-rest_indices_stage_4.extend(range(2, 7))
-rest_indices_stage_4.extend(range(9, 12))
-rest_indices_stage_4.extend(range(14, 17))
-rest_indices_stage_4.extend(range(18, 24))
-rest_indices_stage_4.extend(range(26, 31))
-rest_indices_stage_4.extend(range(33, 35))
-rest_indices.append(rest_indices_stage_4)
+rest_indices = [
+    woodwind_rest_indices[0],
+    woodwind_rest_indices[1],
+    woodwind_rest_indices[2],
+    stage_4,
+    rest_indices_by_group['b'],
+    rest_indices_by_group['f'],
+    None,
+]
