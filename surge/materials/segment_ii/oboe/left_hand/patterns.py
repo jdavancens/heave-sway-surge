@@ -2,7 +2,7 @@
 left_hand = [[0, 1]] * 7
 right_hand = [[0, 1]] * 7
 
-trill = [None, None, [True], [True], [True], [True]]
+trill = [None] * 7
 
 vowel = [
     None,

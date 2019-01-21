@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
-
-# -*- coding: utf-8 -*-
 from abjad import rhythmmakertools
 from surge.materials.segment_ii.time_signatures import number_of_stages
 from surge.materials.utils.create_rhythm_makers import create_rhythm_makers
 from .division_masks import division_masks
 from .specifiers import specifiers
 from .tie_vectors import tie_vectors
+from .tuplet_ratios import tuplet_ratios
 
 rhythm_maker_classes = [
     None,
     None,
-    rhythmmakertools.NoteRhythmMaker,
-    rhythmmakertools.NoteRhythmMaker,
-    rhythmmakertools.NoteRhythmMaker,
-    rhythmmakertools.NoteRhythmMaker,
+    rhythmmakertools.TupletRhythmMaker,
+    rhythmmakertools.TupletRhythmMaker,
+    rhythmmakertools.TupletRhythmMaker,
+    rhythmmakertools.TupletRhythmMaker,
     None,
 ]
 
@@ -24,6 +23,7 @@ left_hand = create_rhythm_makers(
     specifiers=specifiers,
     division_masks=division_masks,
     tie_vectors=tie_vectors,
+    tuplet_ratios=tuplet_ratios,
 )
 
 right_hand = create_rhythm_makers(
@@ -32,6 +32,7 @@ right_hand = create_rhythm_makers(
     specifiers=specifiers,
     division_masks=division_masks,
     tie_vectors=tie_vectors,
+    tuplet_ratios=tuplet_ratios,
 )
 
 
