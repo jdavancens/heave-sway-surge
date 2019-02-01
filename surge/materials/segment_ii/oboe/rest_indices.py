@@ -14,7 +14,7 @@ rest_indices = [
     woodwind_rest_indices[1],
     woodwind_rest_indices[2],
     stage_4,
-    rest_indices_by_group['a'],
-    rest_indices_by_group['e'],
+    rest_indices_by_group['a'][4],
+    rest_indices_by_group['e'][5],
     None,
 ]

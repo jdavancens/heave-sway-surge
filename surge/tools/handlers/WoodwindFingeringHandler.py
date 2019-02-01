@@ -14,7 +14,7 @@ import copy
 
 
 class WoodwindFingeringHandler(TablatureHandler):
-    """A fingering handler for woodwind instruments.
+    """A left_hand handler for woodwind instruments.
         Maps key index to staff position
         Key indication as note head (open, closed), articulation (side keys)
         Trill (piano tremolo style - between notes)
@@ -72,11 +72,14 @@ class WoodwindFingeringHandler(TablatureHandler):
         previous_fingering
     ):
         # create 'chords' at particular staff positions
-        staff_positions = [7, 11, 14, 17]
+
+        staff_positions = [4, 7, 11, 14]
         if self._hand == 'left':
-            staff_positions.insert(4, 0)
+            staff_positions.append(17)
+
         finger_names = ['thumb', 'index', 'middle', 'ring', 'pinky']
         finger_names.reverse()
+
         for i, leaf in enumerate(logical_tie):
             chord = abjad.Chord(staff_positions, leaf.written_duration)
             abjad.mutate(leaf).replace(chord)
@@ -85,17 +88,21 @@ class WoodwindFingeringHandler(TablatureHandler):
                 for j, note_head in enumerate(chord.note_heads):
                     finger_name = finger_names[j]
                     current_keys = None
+
                     if finger_name in fingering.keys.keys():
                         current_keys = fingering.keys[finger_name]
+
                     previous_keys = None
+
                     if previous_fingering is not None:
                         previous_keys = previous_fingering.keys[finger_name]
+
                     if current_keys is not None:
                         # continuation: hide note head
                         if previous_keys == current_keys:
                             note_head.tweak.stencil = \
                                 abjad.Scheme('point-stencil')
-                        # new fingering: set note head to markup
+                        # new left_hand: set note head to markup
                         else:
                             markup = self._make_note_head_markup(current_keys)
                             if markup is not None:
@@ -116,16 +123,20 @@ class WoodwindFingeringHandler(TablatureHandler):
                     self._hide_leaf(leaf)
 
     def _handle_lifeline_voice(self, voice, current_stage):
-        # hide note heads if no fingerings.py
+        # hide note heads if no fingerings
         if self._fingerings is None:
             for note in abjad.iterate(voice).by_leaf():
                 self._hide_note_head(note)
             return
+
+        WoodwindFingeringHandler._reset_cycle(
+            self._fingering_patterns[current_stage]
+        )
+
         # loop through logical ties
         i = 0
         for logical_tie in abjad.iterate(voice).by_logical_tie(pitched=True):
             # hide all note heads
-
             for chord in logical_tie:
                 assert(isinstance(chord, abjad.Chord))
                 for note_head in chord.note_heads:
@@ -133,14 +144,20 @@ class WoodwindFingeringHandler(TablatureHandler):
                         abjad.schemetools.Scheme('point-stencil')
 
             # create glissando map (note index -> note index)
-            fingering_index = self._cycle_next(self._fingering_patterns, current_stage)
+            fingering_index = self._cycle_next(
+                self._fingering_patterns,
+                current_stage
+            )
+
             fingering = self._fingerings[current_stage][fingering_index]
-            glissando_map = self._make_glissando_map(
+
+            glissando_map = WoodwindFingeringHandler._make_glissando_map(
                 fingering,
                 voice.context_name
             )
 
             # attach glissando map and glissando command
+
             if glissando_map is not None:
                 abjad.attach(glissando_map, logical_tie.head)
 
@@ -150,6 +167,7 @@ class WoodwindFingeringHandler(TablatureHandler):
                     style = 'dashed-line'
                 else:
                     style = None
+
                 # attach lifelines
                 self._attach_glissando(
                     logical_tie.head,
@@ -180,23 +198,24 @@ class WoodwindFingeringHandler(TablatureHandler):
             for note in abjad.iterate(voice).by_leaf():
                 self._hide_note_head(note)
             return
-        # get logical ties and construct fingering tablature
-        i = 0
+        # get logical ties and construct left_hand tablature
         previous_fingering = None
         for logical_tie in abjad.iterate(voice).by_logical_tie():
             if logical_tie.is_pitched:
-                fingering_index = self._cycle_next(
+                fingering_index = WoodwindFingeringHandler._cycle_next(
                     self._fingering_patterns,
                     current_stage
                 )
+
                 fingering = self._fingerings[current_stage][fingering_index]
+
                 self._construct_fingering_tablature(
                     logical_tie=logical_tie,
                     fingering=fingering,
                     previous_fingering=previous_fingering,
                 )
+
                 previous_fingering = fingering
-                i += 1
             else:
                 previous_fingering = None
 
@@ -208,25 +227,28 @@ class WoodwindFingeringHandler(TablatureHandler):
 
     @staticmethod
     def _make_glissando_map(fingering, context_name):
+        # create glissando map vector
         binary_list = fingering.as_binary_list()
+
+        if binary_list == [0] * 4 or binary_list == [0] * 5:
+            return None
+
         binary_list.reverse()
         glissando_map_list = []
         for i, finger in enumerate(binary_list):
             if finger == 1:
                 mapping = abjad.schemetools.SchemePair((i, i))
                 glissando_map_list.append(mapping)
-        if binary_list == [0, 0, 0, 0] or binary_list == [0, 0, 0, 0, 0]:
-            return None
-        else:
-            glissando_map_vector = abjad.schemetools.SchemeVector(
-                glissando_map_list
-            )
-            glissando_map = abjad.lilypondnametools.LilyPondContextSetting(
-                context_name=context_name,
-                context_property='glissandoMap',
-                value=glissando_map_vector
-            )
-            return glissando_map
+
+        glissando_map_vector = abjad.schemetools.SchemeVector(
+            glissando_map_list
+        )
+
+        return abjad.lilypondnametools.LilyPondContextSetting(
+            context_name=context_name,
+            context_property='glissandoMap',
+            value=glissando_map_vector
+        )
 
     @staticmethod
     def _make_key_name_markup(key_name):
@@ -283,6 +305,7 @@ class WoodwindFingeringHandler(TablatureHandler):
         markup = markup.raise_(-0.5)
         markup = markup.fontsize(-1)
         markup = markup.bold()
+        markup = markup.parenthesize()
         markup = markup.whiteout()
         markup = markup.pad_around(0)
         return markup
@@ -302,11 +325,19 @@ class WoodwindFingeringHandler(TablatureHandler):
         key_combination is a combination of keys pressed by a single finger
         """
         circle_size = 0.5
+
         markups = []
+
+        # make markups
         if key_combination is None:
-            white_circle = WoodwindFingeringHandler._make_circle_markup(circle_size, grey=1)
-            circle_outline = WoodwindFingeringHandler._make_circle_outline_markup(circle_size)
+            white_circle = WoodwindFingeringHandler\
+                ._make_circle_markup(circle_size, grey=1)
+
+            circle_outline = WoodwindFingeringHandler\
+                ._make_circle_outline_markup(circle_size)
+
             circle = abjad.Markup.combine([white_circle, circle_outline])
+
             markups.append(circle)
         else:
             for key in key_combination:
@@ -315,39 +346,48 @@ class WoodwindFingeringHandler(TablatureHandler):
                         circle_size,
                         grey=0
                     )
-                    circle_outline = WoodwindFingeringHandler._make_circle_outline_markup(
-                        circle_size
-                    )
+
+                    circle_outline = WoodwindFingeringHandler\
+                        ._make_circle_outline_markup(circle_size)
+
                     circle = abjad.Markup.combine(
                         [black_circle, circle_outline]
                     )
                     markups.append(circle)
+
                 elif key.lower() in ('half',):
-                    white_circle = WoodwindFingeringHandler._make_circle_markup(
-                        circle_size,
-                        grey=1
-                    )
-                    circle_outline = WoodwindFingeringHandler._make_circle_outline_markup(
-                        circle_size
-                    )
-                    half_circle = WoodwindFingeringHandler._make_half_circle_markup(circle_size)
+                    white_circle = WoodwindFingeringHandler\
+                        ._make_circle_markup(circle_size, grey=1)
+
+                    circle_outline = WoodwindFingeringHandler\
+                        ._make_circle_outline_markup(circle_size)
+
+                    half_circle = WoodwindFingeringHandler\
+                        ._make_half_circle_markup(circle_size)
+
                     circle = abjad.Markup.combine(
                         [white_circle, circle_outline]
                     )
+
                     circle = abjad.Markup.combine([circle, half_circle])
+
                     markups.append(circle)
                 else:
                     markup = WoodwindFingeringHandler._make_key_name_markup(key)
                     markups.append(markup)
+
         # concatenate multiple markups
+
+        print(key_combination)
         if len(markups) > 1:
-            markups.reverse()
             markups_new = []
+            # add blank space between markups
             for markup in markups[:-1]:
                 hspace = abjad.Markup.hspace(1)
                 markups_new.append(markup)
                 markups_new.append(hspace)
             markups_new.append(markups[-1])
-            return abjad.Markup().concat(markups_new).halign(-1)
+            # markups_new.reverse()
+            return abjad.Markup.concat(markups_new).halign(-1)
         else:
             return markups[0].halign(-1)

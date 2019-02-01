@@ -9,7 +9,7 @@ import os
 
 
 class WoodwindFingeringsGenerator(object):
-    """Woodwind fingering generator. Generates fingerings.py for existing rhythmic
+    """Woodwind left_hand generator. Generates fingerings.py for existing rhythmic
     patterns.
     """
     # SPECIAL METHODS

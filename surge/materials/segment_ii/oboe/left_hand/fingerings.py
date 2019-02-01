@@ -31,28 +31,4 @@ left = [
     )
 ]
 
-right = [
-    WoodwindFingering(
-        instrument=instrument,
-        hand='right',
-        keys={
-            'index': 'down',
-            'middle': None,
-            'ring': None,
-            'pinky': None
-        }
-    ),
-    WoodwindFingering(
-        instrument=instrument,
-        hand='right',
-        keys={
-            'index': None,
-            'middle': None,
-            'ring': None,
-            'pinky': None
-        }
-    )
-]
-
-left_hand = [left] * 7
-right_hand = [right] * 7
+fingerings = [left] * 7

@@ -14,7 +14,6 @@ rhythm_maker_classes = [
     None,
     rhythmmakertools.TupletRhythmMaker,
     rhythmmakertools.TupletRhythmMaker,
-    rhythmmakertools.TupletRhythmMaker,
     None,
 ]
 

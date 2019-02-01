@@ -18,7 +18,7 @@ subdividers = [
         )
     ),
     None,
-    # stage 5 same as fingering
+    # stage 5 same as left_hand
     # 1:1 (16th notes)
     # 01234567
     # .**.-*-.
@@ -34,7 +34,7 @@ subdividers = [
             period=8
         )
     ),
-    # stage 6 same as fingering
+    # stage 6 same as left_hand
     # 1:1 (16th notes)
     # 01234567
     # .**.-*-.

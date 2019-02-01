@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from surge.materials.segment_ii.durations import stage_durations
+from surge.materials.segment_ii.stages import number_of_stages
 import abjad
 import math
 
-number_of_stages = 7
 time_signature = abjad.TimeSignature((2, 4))
 time_signatures = []
 measures_per_stage = []

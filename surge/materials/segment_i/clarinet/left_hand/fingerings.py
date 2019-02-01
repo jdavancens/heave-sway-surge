@@ -22,7 +22,7 @@ segment_2 = [
         hand=hand,
         keys={
             'thumb': 'down',
-            'index': ['down', 'r'],
+            'index': ['down', 'R'],
             'middle': 'down',
             'ring': 'down',
             'pinky': None,

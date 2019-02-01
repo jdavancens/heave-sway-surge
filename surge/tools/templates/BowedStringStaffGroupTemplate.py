@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
 import abjad
+from surge.tools.utilities import override
 
 
 class BowedStringStaffGroupTemplate:
@@ -12,27 +12,27 @@ class BowedStringStaffGroupTemplate:
     def __call__(self):
         name = self.instrument.instrument_name.title()
         short_name = self.instrument.short_instrument_name.title()
+
         bowing_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
             name='Bowing Rhythm'
         )
+
         string_space_staff = abjad.scoretools.Staff(
             [],
             context_name='StringSpaceStaff',
             is_simultaneous=True,
             name='String Space'
         )
+
         fingering_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
             name='Fingering Rhythm'
         )
 
-        abjad.override(bowing_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('UP')
-        abjad.override(fingering_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('DOWN')
+        # combine
 
         staff_list = [
             bowing_rhythm_staff,
@@ -52,5 +52,20 @@ class BowedStringStaffGroupTemplate:
             context_name='BowedStringInstrumentStaffGroup',
             name=name + ' Staff Group'
         )
+
+        # set stem direction
+
+        abjad.override(bowing_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+
+        abjad.override(fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('DOWN')
+
+        # set padding
+
+        override.staff_padding(bowing_rhythm_staff, 2)
+        override.staff_padding(string_space_staff, 2)
+        override.staff_padding(fingering_rhythm_staff, 16)
+        override.staff_group_padding(instrument_staff_group, 0)
 
         return instrument_staff_group

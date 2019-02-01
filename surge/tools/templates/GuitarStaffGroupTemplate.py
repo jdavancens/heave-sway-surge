@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import abjad
+from surge.tools.utilities import override
 
 
 class GuitarStaffGroupTemplate:
@@ -10,63 +11,86 @@ class GuitarStaffGroupTemplate:
         self.instrument = instrument
 
     def __call__(self):
-        fretting_rhythm_staff = abjad.scoretools.Staff(
+        picking_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
-            name='Fretting Rhythm'
+            name='Picking Rhythm'
         )
-        fretting_staff = abjad.scoretools.Staff(
-            [],
-            context_name='FrettingStaff',
-            is_simultaneous=True,
-            name='Fretting'
-        )
-        abjad.setting(fretting_staff).instrument_name = \
-            abjad.Markup('Fretting')
-        abjad.setting(fretting_staff).short_instrument_name = \
-            abjad.Markup('Fretting')
 
         picking_staff = abjad.scoretools.Staff(
             [],
             context_name='PickingStaff',
             name='Picking'
         )
-        abjad.setting(picking_staff).instrument_name = abjad.Markup('Picking')
-        abjad.setting(picking_staff).short_instrument_name = \
-            abjad.Markup('Picking')
 
-        picking_rhythm_staff = abjad.scoretools.Staff(
+        fretting_staff = abjad.scoretools.Staff(
+            [],
+            context_name='FrettingStaff',
+            is_simultaneous=True,
+            name='Fretting'
+        )
+
+        fretting_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
-            name='Picking Rhythm'
+            name='Fretting Rhythm'
         )
-        abjad.override(picking_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('UP')
-        abjad.override(fretting_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('DOWN')
 
         name = self.instrument.instrument_name.title()
         if name[-1] == 'i':
             name = name[0:-1] + 'I'
 
+        subgroup = abjad.StaffGroup(
+            [picking_staff, fretting_staff],
+            context_name='StaffSubgroup',
+            name=name + ' Staff Subgroup'
+        )
+
         staff_list = [
             picking_rhythm_staff,
-            abjad.StaffGroup(
-                [picking_staff, fretting_staff],
-                context_name='StaffSubgroup',
-                name=name + ' Staff Subgroup'
-            ),
+            subgroup,
             fretting_rhythm_staff,
         ]
-
-        abjad.annotate(staff_list[0], 'instrument', name)
-        abjad.annotate(staff_list[1][0], 'instrument', name)
-        abjad.annotate(staff_list[1][1], 'instrument', name)
-        abjad.annotate(staff_list[2], 'instrument', name)
 
         instrument_staff_group = abjad.scoretools.StaffGroup(
             staff_list,
             context_name='GuitarStaffGroup',
             name=name + ' Staff Group'
         )
+
+        # Naming
+
+        abjad.setting(picking_staff).instrument_name = abjad.Markup('Picking')
+
+        abjad.setting(picking_staff).short_instrument_name = \
+            abjad.Markup('Picking')
+
+        abjad.setting(fretting_staff).instrument_name = \
+            abjad.Markup('Fretting')
+
+        abjad.setting(fretting_staff).short_instrument_name = \
+            abjad.Markup('Fretting')
+
+        abjad.annotate(staff_list[0], 'instrument', name)
+        abjad.annotate(staff_list[1][0], 'instrument', name)
+        abjad.annotate(staff_list[1][1], 'instrument', name)
+        abjad.annotate(staff_list[2], 'instrument', name)
+
+        # Stem direction
+
+        abjad.override(picking_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+
+        abjad.override(fretting_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('DOWN')
+
+        # Padding
+
+        override.staff_padding(picking_rhythm_staff, 2)
+        override.staff_padding(picking_staff, 20)
+        override.staff_padding(fretting_staff, 2)
+        override.staff_group_padding(subgroup, 8)
+        override.staff_padding(fretting_rhythm_staff, 16)
+        override.staff_group_padding(instrument_staff_group, 0)
+
         return instrument_staff_group

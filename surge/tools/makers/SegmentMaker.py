@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Oct 31, 2015
 
 @author: josephdavancens
-'''
+"""
 
 from surge.materials.staff_map import staff_map
 from surge.tools.templates.ScoreTemplate import ScoreTemplate
@@ -18,10 +18,12 @@ import os
 
 
 class SegmentMaker(SegmentMakerBaseClass):
-    '''Segment-maker
+    """Segment-maker
     Fills a score template with music created in a segment_xx definition
-    '''
+    """
+
     # CLASS ATTRIBUTES
+
     __slots__ = (
         '_cached_score_template_start_clefs',
         '_cached_score_template_start_instruments',
@@ -39,44 +41,43 @@ class SegmentMaker(SegmentMakerBaseClass):
         '_staff_size',
         'check_well_formedness',
         'final_barline',
+        'first_bar_number',
         'instrument_list',
         'measures_per_stage',
-        'segment_name',
-        'title',
         'number_of_stages',
         'raise_approximate_duration',
-        'first_bar_number',
-        'time_signatures',
+        'extra_time_signature_staff_positions',
+        'segment_name',
         'tempo_map',
+        'time_signatures',
+        'title',
     )
 
     # INITIALIZER
 
-    def __init__(
-        self,
-        title,
-        segment_name,
-        final_barline=False,
-        final_markup=None,
-        final_markup_extra_offset=None,
-        instrument_list=None,
-        is_last_segment=False,
-        raise_approximate_duration=False,
-        check_well_formedness=True,
-        show_stage_annotations=True,
-        first_bar_number=None,
-        number_of_stages=None,
-        measures_per_stage=None,
-        page_size=('11x17', 'portrait'),
-        segment_number=None,
-        tempo_map=None,
-        time_signatures=None,
-        staff_size=7,
-        part=False,
-        ruler=False,
-        header_font='Open Sans',
-        body_font='Open Sans'
-    ):
+    def __init__(self,
+                 title,
+                 segment_name,
+                 extra_time_signature_staff_positions=[],
+                 final_barline=False,
+                 final_markup=None,
+                 final_markup_extra_offset=None,
+                 instrument_list=None,
+                 is_last_segment=False,
+                 raise_approximate_duration=False,
+                 check_well_formedness=True,
+                 show_stage_annotations=True,
+                 first_bar_number=None,
+                 number_of_stages=None,
+                 measures_per_stage=None,
+                 page_size=('11x17', 'portrait'),
+                 segment_number=None,
+                 tempo_map=None,
+                 time_signatures=None,
+                 staff_size=7,
+                 part=False,
+                 ruler=False):
+
         superclass = super(SegmentMaker, self)
         superclass.__init__()
         self.title = title
@@ -100,6 +101,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         else:
             self.number_of_stages = number_of_stages
         self._page_size = page_size
+        self.extra_time_signature_staff_positions = \
+            extra_time_signature_staff_positions
         self.measures_per_stage = measures_per_stage
         self.raise_approximate_duration = raise_approximate_duration
         self.check_well_formedness = check_well_formedness
@@ -114,11 +117,11 @@ class SegmentMaker(SegmentMakerBaseClass):
     # SPECIAL METHODS
 
     def __call__(self):
-        '''Calls segment maker. Creates a blank score, interprets music
+        """Calls segment maker. Creates a blank score, interprets music
         handlers, and puts it into a lilypond file.
 
         Returns LilyPond file.
-        '''
+        """
         # set up score structure and lilypond file
         self._make_score()
         self._make_lilypond_file()
@@ -147,8 +150,8 @@ class SegmentMaker(SegmentMakerBaseClass):
     # PRIVATE METHODS
 
     def _add_final_barline(self):
-        r''' Adds final barline to score.
-        '''
+        r""" Adds final barline to score.
+        """
         abbreviation = '|'
         if self._is_last_segment:
             abbreviation = '|.'
@@ -158,8 +161,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         )
 
     def _add_final_markup(self):
-        r''' Adds final markup at the end of the score.
-        '''
+        r""" Adds final markup at the end of the score.
+        """
         if self.final_markup is None:
             return
         self._score.add_final_markup(
@@ -168,8 +171,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         )
 
     def _annotate_stages(self):
-        r''' Adds stage number markup and barlines to score.
-        '''
+        r""" Adds stage number markup and barlines to score.
+        """
         if not self.show_stage_annotations:
             return
 
@@ -193,8 +196,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         abjad.setting(self._score).markFormatter = scheme
 
     def _attach_rehearsal_mark(self):
-        r''' Adds rehearsal mark (segment #) to score
-        '''
+        r""" Adds rehearsal mark (segment #) to score
+        """
         segment_number = self._segment_number
         letter_number = segment_number - 1
         if letter_number == 0:
@@ -207,8 +210,8 @@ class SegmentMaker(SegmentMakerBaseClass):
         abjad.attach(rehearsal_mark, first_leaf)
 
     def _check_well_formedness(self):
-        r''' Raises an exception if the score is not well-formed.
-        '''
+        r""" Raises an exception if the score is not well-formed.
+        """
         if self.check_well_formedness:
             score_block = self.lilypond_file['score']
             score = score_block['Score']
@@ -219,9 +222,9 @@ class SegmentMaker(SegmentMakerBaseClass):
                 raise Exception(string)
 
     def _interpret_music_handlers(self):
-        r''' Fills the empty score with music based on each instrument's music
+        r""" Fills the empty score with music based on each instrument's music
         handler and maker. Removes instrument indicators from staff contexts.
-        '''
+        """
         # For each stage,
         for stage in range(self.number_of_stages):
             # Log the stage
@@ -299,28 +302,10 @@ class SegmentMaker(SegmentMakerBaseClass):
                                 if not voice_in_staff:
                                     staff.append(voice)
 
-    def _label_instrument_changes(self):
-        r'''TODO Adds instrument change markup to score.
-        '''
-        pass
-        '''
-        for each instrument staff group
-            if instrument is different than previous segment
-                attach markup
-        '''
-
-    def _make_instrument_change_markup(self, instrument_name):
-        r''' Creates instrument change markup as text with box.
-        '''
-        string = 'to {}'.format(instrument_name.instrument_name)
-        markup = abjad.Markup(string, direction=1)
-        markup = markup.box().override(('box-padding', 0.75))
-        return markup
-
     def _make_lilypond_file(self):
-        r''' Makes a basic Lilypond file, removes the default blocks, and adds
+        r""" Makes a basic Lilypond file, removes the default blocks, and adds
         includes. Returns the Lilypond file.
-        '''
+        """
         if self._part:
             stylesheet = 'stylesheet_part.ily'
         else:
@@ -332,7 +317,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             stylesheet,
         )
         includes = [stylesheet_path]
-        if 1 < self._segment_number:
+        if self._segment_number > 1:
             path = os.path.join(
                 '..',
                 '..',
@@ -351,14 +336,18 @@ class SegmentMaker(SegmentMakerBaseClass):
             if getattr(item, 'name', None) in ('layout', 'paper'):
                 lilypond_file.items.remove(item)
 
-        composer = abjad.Markup("Joseph Davancens")
-        composer = composer.override(("font-name", "Futura"))
-        composer = composer.fontsize(6)
-
-        title = abjad.Markup(self.title)
-        title = title.override(("font-name", "Futura"))
-        title = title.fontsize(9)
-        title = title.override(("font-series", "Medium"))
+        if self._segment_number == 0:
+            print('making title')
+            composer = abjad.Markup("Joseph Davancens")
+            composer = composer.override(("font-name", "Futura"))
+            composer = composer.fontsize(6)
+            title = abjad.Markup(self.title)
+            title = title.override(("font-name", "Futura"))
+            title = title.fontsize(9)
+            title = title.override(("font-series", "Medium"))
+        else:
+            composer = False
+            title = False
 
         subtitle = abjad.Markup(self.segment_name)
         subtitle = subtitle.override(("font-name", "Futura"))
@@ -371,10 +360,10 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._lilypond_file = lilypond_file
 
     def _make_repeated_note_measures(self):
-        r''' Creates measures with repeated notes from time signatures for the
+        r""" Creates measures with repeated notes from time signatures for the
         time signature context.
         Returns list of measures.
-        '''
+        """
         time_signatures = []
         for stage in self.time_signatures[0:self.number_of_stages]:
             flattened_list = flatten_list(stage)
@@ -393,10 +382,13 @@ class SegmentMaker(SegmentMakerBaseClass):
         return measures
 
     def _make_score(self):
-        r''' Creates a blank score from a template object and configures bar
+        r""" Creates a blank score from a template object and configures bar
         numbers. Returns the blank score.
-        '''
-        score_template = ScoreTemplate(self.instrument_list)
+        """
+        score_template = ScoreTemplate(
+            self.instrument_list,
+            self.extra_time_signature_staff_positions
+        )
         score = score_template()
         first_bar_number = self.first_bar_number
         if first_bar_number is not None:
@@ -407,11 +399,11 @@ class SegmentMaker(SegmentMakerBaseClass):
         self._score = score
 
     def _make_skip_filled_measures(self):
-        r''' Creates measures with measure-length skips for time signature
+        r""" Creates measures with measure-length skips for time signature
         context.
 
         Returns list of measures.
-        '''
+        """
         time_signatures = []
         for stage in self.time_signatures[0:self.number_of_stages]:
             flattened_list = flatten_list(stage)
@@ -420,9 +412,9 @@ class SegmentMaker(SegmentMakerBaseClass):
         return measures
 
     def _populate_time_signature_contexts(self):
-        r''' Makes and inserts blank measures for time signature context and
+        r""" Makes and inserts blank measures for time signature context and
         attaches tempo indicators.
-        '''
+        """
         for staff in abjad.iterate(self._score).by_class(abjad.Context):
             # if staff.name is 'Separator':
             #     measures = self._make_skip_filled_measures()
@@ -451,9 +443,9 @@ class SegmentMaker(SegmentMakerBaseClass):
                 staff.append(voice)
 
     def _raise_approximate_duration_in_seconds(self):
-        r''' Calculates the duration, in seconds, of the segment and raises an
+        r""" Calculates the duration, in seconds, of the segment and raises an
         exception.
-        '''
+        """
         if not self.raise_approximate_duration:
             return
         context = self._score['Time Signature Context']
@@ -515,34 +507,46 @@ class SegmentMaker(SegmentMakerBaseClass):
         start_measure_index = measure_indices[stage_number - 1]
         stop_measure_index = measure_indices[stage_number] - 1
         return start_measure_index, stop_measure_index
+
+    # STATIC METHODS
+
+    @staticmethod
+    def _make_instrument_change_markup(instrument_name):
+        r""" Creates instrument change markup as text with box.
+        """
+        string = 'to {}'.format(instrument_name.instrument_name)
+        markup = abjad.Markup(string, direction=1)
+        markup = markup.box().override(('box-padding', 0.75))
+        return markup
+
     # PUBLIC PROPERTIES
 
     @property
     def final_markup(self):
-        r'''Gets final markup.
+        r"""Gets final markup.
 
         Set to markup or none.
 
         Returns markup or none.
-        '''
+        """
         return self._final_markup
 
     @property
     def final_markup_extra_offset(self):
-        r'''Gets final markup extra offset.
+        r"""Gets final markup extra offset.
 
         Set to pair or none.
 
         Returns pair or none.
-        '''
+        """
         return self._final_markup_extra_offset
 
     @property
     def measure_count(self):
-        r'''Gets measure count.
+        r"""Gets measure count.
 
         Returns nonnegative integer.
-        '''
+        """
         time_signatures = flatten_list(
             self.time_signatures[0:number_of_stages]
         )
@@ -550,59 +554,59 @@ class SegmentMaker(SegmentMakerBaseClass):
 
     @property
     def music_makers(self):
-        r'''Gets music-makers.
+        r"""Gets music-makers.
 
         Returns tuple of music-makers.
-        '''
+        """
         return self._music_makers
 
     @property
     def get_music_handlers(self):
-        r'''Gets music-handlers.
+        r"""Gets music-handlers.
 
         Returns tuples of music-handlers.
-        '''
+        """
         return tuple(self._music_handlers)
 
     @property
     def show_stage_annotations(self):
-        r'''Is true when segment should annotate stages.
+        r"""Is true when segment should annotate stages.
 
         Set to true or false.
 
         Returns true or false.
-        '''
+        """
         return self._show_stage_annotations
 
     @property
     def stage_count(self):
-        r'''Gets stage count.
+        r"""Gets stage count.
 
         Returns nonnegative integer.
-        '''
+        """
         return len(self.measures_per_stage)
 
     @property
     def transpose_score(self):
-        r'''Is true when segment should notate transposing instruments
+        r"""Is true when segment should notate transposing instruments
         as written (rather than as sounding).
 
         Set to true or false.
 
         Returns true or false.
-        '''
+        """
         return self._transpose_score
 
     # PUBLIC METHODS
 
     def add_music_handlers(self, music_handlers):
-        ''' Adds music handlers.
-        '''
+        """ Adds music handlers.
+        """
         self._music_handlers.extend(music_handlers)
 
     def get_music_maker(self, context_name, stage):
-        ''' Returns music maker
-        '''
+        """ Returns music maker
+        """
         music_makers = []
         for fingering_music_maker in self.music_makers:
             if fingering_music_maker.context_name == context_name:

@@ -36,7 +36,9 @@ def make_handlers(instrument, materials):
     # music handlers
     picking_music_handler = PickingHandler(
         music_maker=picking_music_maker,
+        position_envelope_patterns=materials.picking.patterns.position,
         position_envelopes=materials.picking.envelopes.position,
+        force_envelope_patterns=materials.picking.patterns.force,
         force_envelopes=materials.picking.envelopes.force,
         harp_harmonic_patterns=materials.picking.patterns.harp_harmonic,
         scrape_patterns=materials.picking.patterns.scrape,

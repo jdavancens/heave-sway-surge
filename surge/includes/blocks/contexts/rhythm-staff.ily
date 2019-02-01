@@ -11,13 +11,15 @@
     \consists Staff_symbol_engraver
     \consists Pitch_squash_engraver
     \accepts Voice
+
     \hide BarLine
     \hide Clef
     \hide NoteHead
-    \hide SpanBar
     \hide InstrumentName
     \hide TimeSignature
+
     \override StaffSymbol.line-count = #1
     \override StaffSymbol.transparent = ##t
+
     squashedPosition = #0
 }

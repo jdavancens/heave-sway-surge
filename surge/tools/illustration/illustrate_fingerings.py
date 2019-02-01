@@ -48,7 +48,7 @@ def illustrate_fingerings(instrument, fingering_map, file_path, kind='basic'):
     fingerings = sorted(fingerings, key=lambda fingering: fingering[0])
 
     for pitch_carrier, fingering in fingerings:
-        # create fingering combinations
+        # create left_hand combinations
         combo = WoodwindFingeringCombination(
             instrument, fingering[0], fingering[1])
         # make notes from pitch keys
@@ -56,7 +56,7 @@ def illustrate_fingerings(instrument, fingering_map, file_path, kind='basic'):
             written_note = abjad.Note(pitch_carrier, abjad.Duration(1, 1))
         else:
             written_note = abjad.Chord(pitch_carrier, abjad.Duration(1, 1))
-        # make fingering diagrams
+        # make left_hand diagrams
         # put non-transposing notes in transposed staff
         # copy transposing notes and transpose to concert pitch, put in
         # sounding staff

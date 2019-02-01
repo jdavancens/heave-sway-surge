@@ -150,6 +150,7 @@ class BowingHandler(EnvelopeHandler):
 
         for tie, offset_start, offset_end in \
                 Handler._iterate_logical_ties(voice):
+
             if tie.is_pitched:
                 height_start, height_end = \
                     EnvelopeHandler._get_value(
@@ -174,12 +175,13 @@ class BowingHandler(EnvelopeHandler):
                 staccato = Handler._cycle_next(self._staccato_patterns,
                                                current_stage)
 
-                sweep = Handler._cycle_next(self._sweep_patterns, current_stage)
-
-                tremolo = Handler._cycle_next(self._tremolo_patterns,
-                                              current_stage)
-
                 if not staccato:
+                    sweep = Handler._cycle_next(self._sweep_patterns,
+                                                current_stage)
+
+                    tremolo = Handler._cycle_next(self._tremolo_patterns,
+                                                  current_stage)
+
                     if sweep:
                         style = 'zigzag'
                     elif tremolo:
@@ -205,12 +207,22 @@ class BowingHandler(EnvelopeHandler):
                     if grace_container is not None and \
                             len(grace_container) > 0:
                         self._set_y_offset(grace_container[0], height_end)
+                        Handler._attach_glissando(
+                            grace_container[0],
+                            style=style,
+                            color=scheme_rgb_color(
+                                grayscale_to_rgb(
+                                    Handler._intensity_to_grayscale(
+                                        pressure_start)
+                                )
+                            ),
+                        )
 
                 jete = Handler._cycle_next(self._jete_patterns, current_stage)
 
                 if jete:
                     BowingHandler._add_jete(tie.head)
-                # print(current_stage, offset_start, pressure_start)
+
                 self._set_y_offset(tie.head, height_start)
                 EnvelopeHandler._attach_notehead(tie, pressure_start)
 

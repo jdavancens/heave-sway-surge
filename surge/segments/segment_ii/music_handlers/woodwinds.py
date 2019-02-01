@@ -31,7 +31,7 @@ def make_handlers(instrument, materials):
         instrument=instrument,
         name='Left Hand Fingering',
         time_signatures=time_signatures,
-        rhythm_makers=materials.fingering.rhythm_makers.left_hand
+        rhythm_makers=materials.left_hand.rhythm_makers
     )
 
     rh_music_maker = MusicMaker(
@@ -39,7 +39,7 @@ def make_handlers(instrument, materials):
         instrument=instrument,
         name='Right Hand Fingering',
         time_signatures=time_signatures,
-        rhythm_makers=materials.fingering.rhythm_makers.right_hand
+        rhythm_makers=materials.right_hand.rhythm_makers
     )
 
     # music handlers
@@ -52,16 +52,15 @@ def make_handlers(instrument, materials):
 
     lh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=lh_music_maker,
-        fingerings=materials.fingering.left_hand,
-        fingering_patterns=materials.fingering.patterns.left_hand,
+        fingerings=materials.left_hand.fingerings,
+        fingering_patterns=materials.left_hand.patterns.fingering,
         hand='left',
     )
 
     rh_fingering_music_handler = WoodwindFingeringHandler(
         music_maker=rh_music_maker,
-        fingerings=materials.fingering.right_hand,
-        fingering_patterns=materials.fingering.patterns.right_hand,
-        trill_patterns=materials.fingering.patterns.trill,
+        fingerings=materials.right_hand.fingerings,
+        fingering_patterns=materials.right_hand.patterns.fingering,
         hand='right',
     )
 

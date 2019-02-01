@@ -23,6 +23,7 @@ def create_rhythm_makers(number_of_stages,
             )
             if rhythm_maker_class == rhythmmakertools.TaleaRhythmMaker:
                 rhythm_maker = rhythm_maker_class(
+                    beam_specifier=specifiers['beam'],
                     division_masks=division_masks[i],
                     duration_spelling_specifier=specifiers['duration'],
                     talea=taleas[i],
@@ -31,6 +32,7 @@ def create_rhythm_makers(number_of_stages,
                 )
             elif rhythm_maker_class == rhythmmakertools.TupletRhythmMaker:
                 rhythm_maker = rhythm_maker_class(
+                    beam_specifier=specifiers['beam'],
                     division_masks=division_masks[i],
                     duration_spelling_specifier=specifiers['duration'],
                     tie_specifier=tie_specifier,
@@ -39,6 +41,7 @@ def create_rhythm_makers(number_of_stages,
                 )
             elif rhythm_maker_class == rhythmmakertools.IncisedRhythmMaker:
                 rhythm_maker = rhythm_maker_class(
+                    beam_specifier=specifiers['beam'],
                     division_masks=division_masks[i],
                     duration_spelling_specifier=specifiers['duration'],
                     incise_specifier=specifiers['incise'],
@@ -47,6 +50,7 @@ def create_rhythm_makers(number_of_stages,
                 )
             else:
                 rhythm_maker = rhythm_maker_class(
+                    beam_specifier=specifiers['beam'],
                     division_masks=division_masks[i],
                     duration_spelling_specifier=specifiers['duration'],
                     tie_specifier=tie_specifier,

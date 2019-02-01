@@ -17,7 +17,7 @@ def make_score(number_of_stages=None):
         title="Heave, Sway, Surge",
         segment_name="Segment I",
         number_of_stages=number_of_stages,
-        segment_number=1,
+        segment_number=0,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         first_bar_number=1,
@@ -25,9 +25,10 @@ def make_score(number_of_stages=None):
         show_stage_annotations=True,
         instrument_list=instrument_list,
         page_size=('super-b', 'portrait'),
-        staff_size=9,
+        staff_size=10,
         final_barline=True,
-        part=False
+        part=False,
+        extra_time_signature_staff_positions=['guitar i', 'violin']
     )
     segment_maker.add_music_handlers(music_handlers)
     segment = segment_maker()

@@ -5,22 +5,15 @@
     \alias Staff
     \type Engraver_group
     \consists Axis_group_engraver
-    \consists Bar_number_engraver
     \consists Mark_engraver
     \consists Metronome_mark_engraver
     \consists Script_engraver
     \consists Text_engraver
     \consists Text_spanner_engraver
     \consists Time_signature_engraver
-    \hide BarLine
     \omit Clef
+    \hide BarLine
     \hide StaffSymbol
-
-    \override BarNumber.outside-staff-priority = 1
-    \override BarNumber.self-alignment-X = #center
-    \override BarNumber.X-extent = #'(0 . 0)
-    \override BarNumber.X-offset = 0.5
-    \override BarNumber.Y-offset = -6
 
     \override MetronomeMark.break-align-symbols = #'(left-edge)
     \override MetronomeMark.extra-offset = #'(4 . -4)
@@ -32,16 +25,15 @@
     \override RehearsalMark.self-alignment-X = #left
     \override RehearsalMark.X-extent = #'(0 . 0)
 
-    \override TimeSignature.break-align-symbol = #'left-edge
-    \override TimeSignature.self-alignment-X = #left
-    \override TimeSignature.X-extent = #'(0 . 0)
-
-    \override VerticalAxisGroup #'staff-staff-spacing =
-        #'((basic-distance . 0)
-           (minimum-distance . 0)
-           (padding . 6)
-           (stretchability . 0)
+    \override VerticalAxisGroup.staff-staff-spacing = #'(
+        (basic-distance . 8)
+        (minimum-distance . 0)
+        (padding . 0)
+        (stretchability . 0)
     )
 
-    barNumberVisibility = #all-bar-numbers-visible
+    \override TimeSignature.break-align-symbol = #'left-edge
+
+    \override TimeSignature.self-alignment-X = #left
+    \override TimeSignature.X-extent = #'(0 . 0)
 }

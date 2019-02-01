@@ -6,7 +6,9 @@
     \accepts WoodwindInstrumentStaffGroup
     \accepts TimeSignatureContext
 
-    \remove Bar_number_engraver
+    \remove Span_bar_stub_engraver
+    \remove Span_bar_engraver
+
     \remove Mark_engraver
     \remove Metronome_mark_engraver
     \remove Script_engraver
@@ -14,21 +16,14 @@
     \remove Text_engraver
     \remove Time_signature_engraver
 
-    \override BarLine.color = #(x11-color 'grey33)
-    \override BarLine.layer = #1000
-    \override BarLine.hair-thickness = #1
-    \override BarLine.space-alist = #'(
-        (time-signature extra-space . 0.0)
-        (custos minimum-space . 0.0)
-        (clef minimum-space . 0.0)
-        (key-signature extra-space . 0.0)
-        (key-cancellation extra-space . 0.0)
-        (first-note fixed-space . 0.0)
-        (next-note semi-fixed-space . 0.0)
-        (right-edge extra-space . 0.0)
-    )
+    \override BarNumber.outside-staff-priority = 1
+    \override BarNumber.self-alignment-X = #center
+    \override BarNumber.X-extent = #'(0 . 0)
+    \override BarNumber.X-offset = 0.5
+    \override BarNumber.Y-extent = #'(0 . 6)
+    \override BarNumber.Y-offset = 6
+    \override BarNumber.font-size = #2
 
-    \override BarNumber.break-visibility = ##(#t #t #t)
 
     \override Glissando.breakable = ##t
 
@@ -54,20 +49,6 @@
     \override SpacingSpanner.strict-note-spacing = ##t
     \override SpacingSpanner.uniform-stretching = ##t
 
-    \remove SpanBar
-
-    \override StaffGrouper #'staff-staff-spacing =
-        #'((basic-distance . 0)
-           (minimum-distance . 12)
-           (padding . 0)
-           (stretchability . 0))
-
-    \override StaffGrouper #'staffgroup-staff-spacing =
-        #'((basic-distance . 0)
-           (minimum-distance . 16)
-           (padding . 0)
-           (stretchability . 0))
-
     \override StaffSymbol.layer = #-400
 
     \override StemTremolo.beam-width = 0.5
@@ -90,9 +71,14 @@
     \override TupletNumber.font-size = 0
     \override TupletNumber.text = #tuplet-number::calc-fraction-text
 
+    \override BarLine.break-visibility = ##(#t #t #t)
+    \override BarNumber.break-visibility = ##(#f #t #t)
+    \override RehearsalMark.break-visibility = ##(#f #t #t)
+    \override TimeSignature.break-visibility = ##(#f #t #t)
+    \override SpanBar.break-visibility = ##(#t #t #t)
+
     autoBeaming = ##f
-    defaultBarType = #"!"
+    defaultBarType = #"|"
     proportionalNotationDuration = #(ly:make-moment 1 24)
     tupletFullLength = ##t
-
 }

@@ -29,7 +29,7 @@ class FingeringMaker(object):
             random.seed(self._random_seed)
 
         if previous is None:
-            # first fingering
+            # first left_hand
             return random.choice(fingering_set)
 
         if left and not right:

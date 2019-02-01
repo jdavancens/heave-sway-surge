@@ -11,6 +11,8 @@
     \consists Staff_symbol_engraver
     \accepts Voice
 
+    \remove Instrument_name_engraver
+
     \omit Accidental
     \omit Beam
     \omit Clef
@@ -40,9 +42,10 @@
             )
         )
 
-    \override InstrumentName.padding = 0
 
     \override NoteHead.stem-attachment = #'(0 . 0)
+    \override NoteHead.X-extent = #'(0 . 0)
+
     \override StaffSymbol.layer = -200
     \override StaffSymbol.line-count = 3
     \override StaffSymbol.staff-space = 2

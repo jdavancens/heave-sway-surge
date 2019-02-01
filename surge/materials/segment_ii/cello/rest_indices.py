@@ -19,7 +19,7 @@ rest_indices = [
     None,
     rest_indices_stage_3,
     None,
-    rest_indices_by_group['c'],
-    rest_indices_by_group['f'],
+    rest_indices_by_group['c'][4],
+    rest_indices_by_group['f'][5],
     None,
 ]

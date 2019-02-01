@@ -11,9 +11,9 @@
     \consists Vertical_align_engraver
     \consists Instrument_name_engraver
 
-    \omit SpanBar
-
+    \remove Span_bar_stub_engraver
+    \remove Span_bar_engraver
     \remove System_start_delimiter_engraver
 
-    \override InstrumentName.padding = #2
+    \override InstrumentName.padding = #4
 }

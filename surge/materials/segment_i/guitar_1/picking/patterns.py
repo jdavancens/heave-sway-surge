@@ -30,3 +30,7 @@ tremolo = (
     None,
     None,
 )
+
+harp_harmonic = None
+snap = None
+scrape = None

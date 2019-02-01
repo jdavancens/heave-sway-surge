@@ -21,7 +21,6 @@
     \omit Flag
     \omit InstrumentName
     \hide Rest
-    \omit SpanBar
     \omit Stem
     \omit Tie
     \omit TimeSignature
@@ -46,6 +45,10 @@
             )
         )
     \override InstrumentName.padding = #1
+
+    \override NoteHead.stem-attachment = #'(0 . 0)
+    \override NoteHead.X-extent = #'(0 . 0)
+
     \override StaffSymbol.line-count = #31
     \override StaffSymbol.stencil = #(color-staff-lines
         (x11-color 'grey33)

@@ -11,10 +11,11 @@
 '''
 
 import abjad
+from surge.tools.utilities import override
 
 
 class WoodwindStaffGroupTemplate():
-    __slots__ = ('instrument')
+    __slots__ = ('instrument',)
 
     def __init__(self, instrument):
         self.instrument = instrument
@@ -23,10 +24,12 @@ class WoodwindStaffGroupTemplate():
         name = self.instrument.instrument_name.title()
         short_name = self.instrument.short_instrument_name.title()
 
-        separator = abjad.scoretools.Staff(
+        # Create staves
+
+        embouchure_rhythm_staff = abjad.scoretools.Staff(
             [],
-            context_name='SeparatorStaff',
-            name='Separator'
+            context_name='RhythmStaff',
+            name='Embouchure Rhythm'
         )
 
         embouchure_staff = abjad.scoretools.Staff(
@@ -36,14 +39,10 @@ class WoodwindStaffGroupTemplate():
             name='Embouchure',
         )
 
-        abjad.setting(embouchure_staff).instrument_name = abjad.Markup('Emb.')
-        abjad.setting(embouchure_staff).short_instrument_name = \
-            abjad.Markup('Emb.')
-
-        embouchure_rhythm_staff = abjad.scoretools.Staff(
+        lh_fingering_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
-            name='Embouchure Rhythm'
+            name='Left Hand Fingering Rhythm',
         )
 
         lh_fingering_staff = abjad.scoretools.Staff(
@@ -52,10 +51,6 @@ class WoodwindStaffGroupTemplate():
             is_simultaneous=True,
             name='Left Hand Fingering',
         )
-        abjad.setting(lh_fingering_staff).instrument_name = \
-            abjad.Markup('L.H.')
-        abjad.setting(lh_fingering_staff).short_instrument_name = \
-            abjad.Markup('L.H.')
 
         rh_fingering_staff = abjad.scoretools.Staff(
             [],
@@ -63,44 +58,26 @@ class WoodwindStaffGroupTemplate():
             is_simultaneous=True,
             name='Right Hand Fingering',
         )
-        abjad.setting(rh_fingering_staff).instrument_name = \
-            abjad.Markup('R.H.')
-        abjad.setting(rh_fingering_staff).short_instrument_name = \
-            abjad.Markup('R.H.')
 
-        lh_fingering_rhythm_staff = abjad.scoretools.Staff(
-            [],
-            context_name='RhythmStaff',
-            name='Left Hand Fingering Rhythm',
-        )
         rh_fingering_rhythm_staff = abjad.scoretools.Staff(
             [],
             context_name='RhythmStaff',
             name='Right Hand Fingering Rhythm',
         )
-        abjad.override(embouchure_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('UP')
-        abjad.override(lh_fingering_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('UP')
-        abjad.override(rh_fingering_rhythm_staff).stem.direction = \
-            abjad.schemetools.Scheme('DOWN')
 
-        abjad.annotate(embouchure_rhythm_staff, 'instrument', name)
-        abjad.annotate(embouchure_staff, 'instrument', name)
-        abjad.annotate(lh_fingering_rhythm_staff, 'instrument', name)
-        abjad.annotate(lh_fingering_staff, 'instrument', name)
-        abjad.annotate(rh_fingering_staff, 'instrument', name)
-        abjad.annotate(rh_fingering_rhythm_staff, 'instrument', name)
+        # Combine
+
+        subgroup = abjad.StaffGroup(
+            [lh_fingering_staff, rh_fingering_staff],
+            context_name='StaffSubgroup',
+            name=name + ' Staff Subgroup'
+        )
 
         staff_list = [
             embouchure_rhythm_staff,
             embouchure_staff,
             lh_fingering_rhythm_staff,
-            abjad.StaffGroup(
-                [lh_fingering_staff, rh_fingering_staff],
-                context_name='StaffSubgroup',
-                name=name + ' Staff Subgroup'
-            ),
+            subgroup,
             rh_fingering_rhythm_staff
         ]
 
@@ -109,9 +86,54 @@ class WoodwindStaffGroupTemplate():
             context_name='WoodwindInstrumentStaffGroup',
             name=name + ' Staff Group'
         )
+
+        # Set Names
+
+        abjad.annotate(embouchure_rhythm_staff, 'instrument', name)
+        abjad.annotate(embouchure_staff, 'instrument', name)
+        abjad.setting(embouchure_staff).instrument_name = abjad.Markup('Emb.')
+        abjad.setting(embouchure_staff).short_instrument_name = \
+            abjad.Markup('Emb.')
+
+        abjad.annotate(lh_fingering_rhythm_staff, 'instrument', name)
+
+        abjad.setting(lh_fingering_staff).instrument_name = \
+            abjad.Markup('L.H.')
+        abjad.setting(lh_fingering_staff).short_instrument_name = \
+            abjad.Markup('L.H.')
+        abjad.annotate(lh_fingering_staff, 'instrument', name)
+
+        abjad.setting(rh_fingering_staff).instrument_name = \
+            abjad.Markup('R.H.')
+        abjad.setting(rh_fingering_staff).short_instrument_name = \
+            abjad.Markup('R.H.')
+        abjad.annotate(rh_fingering_staff, 'instrument', name)
+
+        abjad.annotate(rh_fingering_rhythm_staff, 'instrument', name)
+
         abjad.setting(instrument_staff_group).instrument_name = \
             abjad.Markup(name)
         abjad.setting(instrument_staff_group).instrument_name = \
             abjad.Markup(short_name)
+
+        # Set Stem Direction
+
+        abjad.override(embouchure_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+        abjad.override(lh_fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('UP')
+        abjad.override(rh_fingering_rhythm_staff).stem.direction = \
+            abjad.schemetools.Scheme('DOWN')
+
+        # Set Padding
+
+        override.staff_padding(embouchure_rhythm_staff, 2)
+        override.staff_padding(embouchure_staff, 16)
+        override.staff_padding(lh_fingering_rhythm_staff, 0)
+        override.staff_padding(lh_fingering_staff, 10)
+        override.staff_padding(rh_fingering_staff, 8)
+        override.staff_group_padding(subgroup, 4)
+        override.staff_padding(rh_fingering_rhythm_staff, 0)
+        override.staff_group_padding(instrument_staff_group, 0)
 
         return instrument_staff_group

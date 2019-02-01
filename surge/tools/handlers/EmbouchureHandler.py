@@ -180,17 +180,12 @@ class EmbouchureHandler(EnvelopeHandler):
                         last_lip_pressure,
                     )
 
-                # make a note head
-                EnvelopeHandler._attach_notehead(tie, lip_pressure_start)
-
-                # determine if we need to draw a line
                 staccato = EmbouchureHandler._cycle_next(
                     self._staccato_patterns,
                     current_stage
                 )
 
                 if not staccato:
-                    # determine line style
                     vibrato = EmbouchureHandler._cycle_next(
                         self._vibrato_patterns,
                         current_stage
@@ -223,15 +218,26 @@ class EmbouchureHandler(EnvelopeHandler):
 
                     EnvelopeHandler._hidden_grace_after(tie.tail)
 
-                    # set y offsets
-                    self._set_y_offset(tie.head, air_pressure_start)
+                    grace_container = abjad.inspect(tie.tail)\
+                        .get_after_grace_container()
 
-                    grace = \
-                        abjad.inspect(tie.tail).get_after_grace_container()[0]
+                    if grace_container is not None and \
+                            len(grace_container) > 0:
+                        self._set_y_offset(grace_container[0], air_pressure_end)
+                        Handler._attach_glissando(
+                            grace_container[0],
+                            style=style,
+                            color=scheme_rgb_color(
+                                grayscale_to_rgb(
+                                    Handler._intensity_to_grayscale(
+                                        lip_pressure_start)
+                                )
+                            ),
+                        )
 
-                    self._set_y_offset(grace, air_pressure_end)
+                self._set_y_offset(tie.head, air_pressure_start)
+                EnvelopeHandler._attach_notehead(tie, lip_pressure_start)
 
-                # hide tied noes
                 if not tie.is_trivial:
                     for note in tie[1:]:
                         EmbouchureHandler._add_gliss_skip(note)

@@ -11,6 +11,8 @@
     \consists Staff_symbol_engraver
     \accepts Voice
 
+    \remove Instrument_name_engraver
+
     \omit Accidental
     \omit Beam
     \omit Clef
@@ -41,7 +43,8 @@
             )
         )
     \override NoteHead.stem-attachment = #'(0 . 0)
-    \override InstrumentName.padding = 0
+    \override NoteHead.X-extent = #'(0 . 0)
+
     \override StaffSymbol.line-count = #15
     \override StaffSymbol.stencil = #(color-staff-lines
         (x11-color 'grey33) white white white white

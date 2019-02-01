@@ -31,7 +31,8 @@ stage_2 = [
     False, True, False,
 ]
 
-stage_3 = False
+# tie whole sections
+stage_3 = list(range(8)) + list(range(9, 21)) + list(range(22, 33)) + list(range(34, 46))
 
 stage_4 = True
 

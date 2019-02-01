@@ -176,7 +176,7 @@ class WoodwindFingeringCombination(object):
     #     graphical=False
     # ):
     #     r''' Creates a chord object with predicted pitches, attaches a
-    #         Lilypond woodwind fingering diagram and returns it.
+    #         Lilypond woodwind left_hand diagram and returns it.
     #
     #     '''
     #     name = self._instrument.name

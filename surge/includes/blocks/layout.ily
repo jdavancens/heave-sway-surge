@@ -1,4 +1,3 @@
-
 \layout {
     \accidentalStyle modern
 
@@ -10,13 +9,11 @@
     \include "contexts/rhythm-staff.ily"
     \include "contexts/string-space-staff.ily"
     \include "contexts/time-signature-staff.ily"
-    \include "contexts/trombone-slide-position-staff.ily"
     \include "contexts/woodwind-fingering-staff.ily"
 
     \include "contexts/staff-subgroup.ily"
     \include "contexts/bowed-string-instrument-staff-group.ily"
     \include "contexts/guitar-staff-group.ily"
-    \include "contexts/trombone-staff-group.ily"
     \include "contexts/woodwind-instrument-staff-group.ily"
 
     \include "contexts/score.ily"

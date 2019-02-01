@@ -10,6 +10,7 @@
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
     \accepts Voice
+    \remove Instrument_name_engraver
 
     \omit Accidental
     \omit Beam
@@ -40,7 +41,7 @@
             )
         )
 
-    \override InstrumentName.padding = 0
+    \override InstrumentName.padding = 2
 
     \override NoteHead.stem-attachment = #'(0.75 . 0)
     \override StaffSymbol.color = #(x11-color 'grey67)

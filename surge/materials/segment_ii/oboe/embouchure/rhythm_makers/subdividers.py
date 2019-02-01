@@ -12,6 +12,7 @@ period = 13
 rotation_cycle = range(period)
 sustain_mask = abjad.sustain_every(indices=[1, 5, 10, 11], period=period)
 silence_mask = abjad.silence_every(indices=[2, 5, 6, 8], period=period)
+
 subdividers = [None, None]
 
 for i in range(4):

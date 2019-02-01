@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    There are five "sections" or cycles of 16 measures at q=54. The abjad.Duration of
-    each section is 16/1 (or 32/2, 64/4, etc.) Each section is subdivided into 2,
+    There are five "stages" or cycles of 16 measures at q=54. The abjad.Duration of
+    each stage is 16/1 (or 32/2, 64/4, etc.) Each section is subdivided into 2,
     3, 4, 3, then 2 almost equal parts.
 
     section 1 divisions: 33/4, 31/4

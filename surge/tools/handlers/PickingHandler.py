@@ -115,6 +115,7 @@ class PickingHandler(EnvelopeHandler):
         last_string_index = None
 
         for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+
             if tie.is_pitched:
                 force_start, force_end = \
                     PickingHandler._get_value(
@@ -167,6 +168,16 @@ class PickingHandler(EnvelopeHandler):
                     if (grace_container is not None and
                             len(grace_container) > 0):
                         self._set_y_offset(grace_container[0], position_end)
+                        Handler._attach_glissando(
+                            grace_container[0],
+                            style=style,
+                            color=scheme_rgb_color(
+                                grayscale_to_rgb(
+                                    Handler._intensity_to_grayscale(
+                                        force_start)
+                                )
+                            ),
+                        )
 
                 self._set_y_offset(tie.head, position_start)
 

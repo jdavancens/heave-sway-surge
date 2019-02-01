@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
 from surge.tools import rhythmtools
 
-prolaters = [None] * 3 + [rhythmtools.Prolater(6, 1)] * 3 + [None]
+prolaters = [
+    None,
+    None,
+    rhythmtools.Prolater(3, 1),
+    rhythmtools.Prolater(6, 1),
+    rhythmtools.Prolater(6, 1),
+    rhythmtools.Prolater(6, 1),
+    None,
+]

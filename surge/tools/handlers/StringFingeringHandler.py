@@ -13,7 +13,7 @@ import copy
 
 
 class StringFingeringHandler(EnvelopeHandler):
-    """Non-fretted string instrument fingering handler.
+    """Non-fretted string instrument left_hand handler.
     Height on string.
     Vibrato width.
     Vibrato rate.
@@ -158,6 +158,16 @@ class StringFingeringHandler(EnvelopeHandler):
                 if grace_container is not None and \
                         len(grace_container) > 0:
                     self._set_y_offset(grace_container[0], height_end)
+                    Handler._attach_glissando(
+                        grace_container[0],
+                        style=style,
+                        color=scheme_rgb_color(
+                            grayscale_to_rgb(
+                                Handler._intensity_to_grayscale(
+                                    pressure_start)
+                            )
+                        ),
+                    )
 
                 self._set_y_offset(tie.head, height_start)
 

@@ -8,10 +8,10 @@ Identity = subdividers.Identity
 # 0123456789ab
 # -..*.*--**.*
 
-period = 13
+period = 12
 rotation_cycle = range(period)
 sustain_mask = abjad.sustain_every(indices=[0, 6, 7], period=period)
-silence_mask = abjad.silence_every(indices=[3, 5, 8, 9, 11], period=period)
+silence_mask = abjad.silence_every(indices=[1, 2, 4, 10], period=period)
 
 subdividers = [None, None]
 

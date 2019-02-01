@@ -17,7 +17,7 @@ def make_part(part_name, number_of_stages=None, ruler=False):
         title="Heave, Sway, Surge",
         segment_name="Segment I",
         number_of_stages=number_of_stages,
-        segment_number=1,
+        segment_number=0,
         tempo_map=tempo_map,
         time_signatures=time_signatures,
         first_bar_number=1,

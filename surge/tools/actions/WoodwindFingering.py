@@ -39,41 +39,41 @@ class WoodwindFingering(object):
             if isinstance(keys['thumb'], str):
                 keys['thumb'] = (keys['thumb'], )
             elif keys['thumb'] is not None:
-                keys['thumb'] = tuple(sorted(keys['thumb']))
+                keys['thumb'] = tuple(keys['thumb'])
             if isinstance(keys['index'], str):
                 keys['index'] = (keys['index'], )
             elif keys['index'] is not None:
-                keys['index'] = tuple(sorted(keys['index']))
+                keys['index'] = tuple(keys['index'])
             if isinstance(keys['middle'], str):
                 keys['middle'] = (keys['middle'], )
             elif keys['middle'] is not None:
-                keys['middle'] = tuple(sorted(keys['middle']))
+                keys['middle'] = tuple(keys['middle'])
             if isinstance(keys['ring'], str):
                 keys['ring'] = (keys['ring'], )
             elif keys['ring'] is not None:
-                keys['ring'] = tuple(sorted(keys['ring']))
+                keys['ring'] = tuple(keys['ring'])
             if isinstance(keys['pinky'], str):
                 keys['pinky'] = (keys['pinky'], )
             elif keys['pinky'] is not None:
-                keys['pinky'] = tuple(sorted(keys['pinky']))
+                keys['pinky'] = tuple(keys['pinky'])
         if hand == "right":
             assert len(keys) == 4
             if isinstance(keys['index'], str):
                 keys['index'] = (keys['index'], )
             elif keys['index'] is not None:
-                keys['index'] = tuple(sorted(keys['index']))
+                keys['index'] = tuple(keys['index'])
             if isinstance(keys['middle'], str):
                 keys['middle'] = (keys['middle'], )
             elif keys['middle'] is not None:
-                keys['middle'] = tuple(sorted(keys['middle']))
+                keys['middle'] = tuple(keys['middle'])
             if isinstance(keys['ring'], str):
                 keys['ring'] = (keys['ring'], )
             elif keys['ring'] is not None:
-                keys['ring'] = tuple(sorted(keys['ring']))
+                keys['ring'] = tuple(keys['ring'])
             if isinstance(keys['pinky'], str):
                 keys['pinky'] = (keys['pinky'], )
             elif keys['pinky'] is not None:
-                keys['pinky'] = tuple(sorted(keys['pinky']))
+                keys['pinky'] = tuple(keys['pinky'])
 
     # SPECIAL METHODS
 
