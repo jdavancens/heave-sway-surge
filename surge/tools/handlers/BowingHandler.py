@@ -96,11 +96,12 @@ class BowingHandler(EnvelopeHandler):
     # PRIVATE METHODS
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        if (
-            self._height_envelopes is None or
-            self._height_envelopes[current_stage] is None
-        ):
+        if (self._height_envelopes is None or
+            self._height_envelopes[current_stage] is None) and \
+                (self._height_envelope_patterns is None or
+                 self._height_envelope_patterns[current_stage] is None):
             return
+
         previous_string_index = None
         for tie, offset_start, offset_end in \
                 self._iterate_logical_ties(rhythm_voice):
@@ -124,7 +125,7 @@ class BowingHandler(EnvelopeHandler):
                     self._direction_patterns,
                     current_stage
                 )
-
+                print(tie, string_index, previous_string_index)
                 if string_index != previous_string_index:
                     BowingHandler._attach_string_index(string_index, tie)
 
