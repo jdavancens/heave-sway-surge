@@ -61,6 +61,10 @@ class BowedStringStaffGroupTemplate:
         abjad.override(fingering_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
+        # Bar Line visibility
+        abjad.override(bowing_rhythm_staff).bar_line.transparent = True
+        abjad.override(fingering_rhythm_staff).bar_line.transparent = True
+
         # set padding
 
         override.staff_padding(bowing_rhythm_staff, 2)

@@ -13,17 +13,17 @@
 
     \remove Instrument_name_engraver
 
-    \omit Accidental
-    \omit Beam
+    \hide Accidental
+    \hide Beam
     \hide Clef
-    \omit Dots
-    \omit Flag
+    \hide Dots
+    \hide Flag
     \hide Rest
-    \omit Stem
-    \omit Tie
+    \hide Stem
+    \hide Tie
     \hide TimeSignature
-    \omit TupletBracket
-    \omit TupletNumber
+    \hide TupletBracket
+    \hide TupletNumber
 
     \override Glissando.after-line-breaking = ##t
     \override Glissando.thickness = #4

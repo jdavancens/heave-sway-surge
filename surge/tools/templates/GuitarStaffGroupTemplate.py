@@ -84,6 +84,10 @@ class GuitarStaffGroupTemplate:
         abjad.override(fretting_rhythm_staff).stem.direction = \
             abjad.schemetools.Scheme('DOWN')
 
+        # Bar Line visibility
+        abjad.override(picking_rhythm_staff).bar_line.transparent = True
+        abjad.override(fretting_rhythm_staff).bar_line.transparent = True
+
         # Padding
 
         override.staff_padding(picking_rhythm_staff, 2)

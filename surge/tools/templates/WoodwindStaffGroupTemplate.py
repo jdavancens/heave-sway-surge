@@ -66,19 +66,21 @@ class WoodwindStaffGroupTemplate():
         )
 
         # Combine
-
         subgroup = abjad.StaffGroup(
-            [lh_fingering_staff, rh_fingering_staff],
+            [
+                embouchure_staff,
+                lh_fingering_rhythm_staff,
+                lh_fingering_staff,
+                rh_fingering_staff,
+            ],
             context_name='StaffSubgroup',
             name=name + ' Staff Subgroup'
         )
 
         staff_list = [
             embouchure_rhythm_staff,
-            embouchure_staff,
-            lh_fingering_rhythm_staff,
             subgroup,
-            rh_fingering_rhythm_staff
+            rh_fingering_rhythm_staff,
         ]
 
         instrument_staff_group = abjad.StaffGroup(
@@ -135,5 +137,13 @@ class WoodwindStaffGroupTemplate():
         override.staff_group_padding(subgroup, 4)
         override.staff_padding(rh_fingering_rhythm_staff, 0)
         override.staff_group_padding(instrument_staff_group, 0)
+
+        # hide span bars on first and last rhythm staff, and rh fingering
+        abjad.override(embouchure_rhythm_staff).bar_line.allow_span_bar = False
+        abjad.override(embouchure_rhythm_staff).bar_line.transparent = True
+        abjad.override(rh_fingering_staff).bar_line.allow_span_bar = False
+        abjad.override(rh_fingering_rhythm_staff)\
+            .bar_line.allow_span_bar = False
+        abjad.override(rh_fingering_rhythm_staff).bar_line.transparent = True
 
         return instrument_staff_group

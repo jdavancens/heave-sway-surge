@@ -11,7 +11,7 @@
 
     \remove Mark_engraver
     \remove Metronome_mark_engraver
-    \remove Script_engraver
+    \remove Script_ensgraver
     \remove System_start_delimiter_engraver
     \remove Text_engraver
     \remove Time_signature_engraver
@@ -71,11 +71,10 @@
     \override TupletNumber.font-size = 0
     \override TupletNumber.text = #tuplet-number::calc-fraction-text
 
-    \override BarLine.break-visibility = ##(#t #t #t)
+    %{ \override BarLine.break-visibility = ##(#t #t #t) %}
     \override BarNumber.break-visibility = ##(#f #t #t)
     \override RehearsalMark.break-visibility = ##(#f #t #t)
     \override TimeSignature.break-visibility = ##(#f #t #t)
-    \override SpanBar.break-visibility = ##(#t #t #t)
 
     autoBeaming = ##f
     defaultBarType = #"|"

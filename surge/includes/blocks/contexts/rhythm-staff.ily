@@ -12,7 +12,6 @@
     \consists Pitch_squash_engraver
     \accepts Voice
 
-    \hide BarLine
     \hide Clef
     \hide NoteHead
     \hide InstrumentName

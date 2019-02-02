@@ -15,9 +15,11 @@
     \consists System_start_delimiter_engraver
     \consists Vertical_align_engraver
 
-    \remove Span_bar_engraver
-    %{ \remove System_start_delimiter_engraver %}
+    %{ draw barline through child staves %}
+    \consists Span_bar_engraver
 
+    %{ draw system start bar, make it look like a bar line %}
+    \consists System_start_delimiter_engraver
     systemStartDelimiter = #'SystemStartBar
     \override SystemStartBar.padding = 0
     \override SystemStartBar.X-offset = 0
