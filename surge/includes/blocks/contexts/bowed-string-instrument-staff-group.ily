@@ -16,4 +16,5 @@
     \remove System_start_delimiter_engraver
 
     \override InstrumentName.padding = #4
+    \override InstrumentName.font-size = #2
 }

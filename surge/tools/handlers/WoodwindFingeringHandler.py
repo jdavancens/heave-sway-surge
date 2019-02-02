@@ -342,10 +342,8 @@ class WoodwindFingeringHandler(TablatureHandler):
         else:
             for key in key_combination:
                 if key.lower() in ('t', 'thumb', 'down'):
-                    black_circle = WoodwindFingeringHandler._make_circle_markup(
-                        circle_size,
-                        grey=0
-                    )
+                    black_circle = WoodwindFingeringHandler\
+                        ._make_circle_markup(circle_size, grey=0)
 
                     circle_outline = WoodwindFingeringHandler\
                         ._make_circle_outline_markup(circle_size)
@@ -373,12 +371,12 @@ class WoodwindFingeringHandler(TablatureHandler):
 
                     markups.append(circle)
                 else:
-                    markup = WoodwindFingeringHandler._make_key_name_markup(key)
+                    markup = WoodwindFingeringHandler\
+                        ._make_key_name_markup(key)
                     markups.append(markup)
 
         # concatenate multiple markups
 
-        print(key_combination)
         if len(markups) > 1:
             markups_new = []
             # add blank space between markups

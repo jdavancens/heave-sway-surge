@@ -77,7 +77,6 @@ class MusicMaker:
         assert isinstance(voice, abjad.Voice)
         self._flatten_trivial_tuplets(voice)
         self._attach_instrument(voice)
-        # print(voice)
         return voice
 
     def __str__(self):

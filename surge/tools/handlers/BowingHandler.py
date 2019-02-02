@@ -125,7 +125,7 @@ class BowingHandler(EnvelopeHandler):
                     self._direction_patterns,
                     current_stage
                 )
-                print(tie, string_index, previous_string_index)
+
                 if string_index != previous_string_index:
                     BowingHandler._attach_string_index(string_index, tie)
 

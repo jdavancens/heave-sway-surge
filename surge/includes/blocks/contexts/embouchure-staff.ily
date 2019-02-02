@@ -9,19 +9,20 @@
     \consists Rest_collision_engraver
     \consists Axis_group_engraver
     \consists Staff_symbol_engraver
+    \consists System_start_delimiter_engraver
     \accepts Voice
     \remove Instrument_name_engraver
 
     \omit Accidental
     \omit Beam
-    \omit Clef
+    \hide Clef
     \omit Dots
     \omit Flag
     \omit MetronomeMark
     \hide Rest
     \omit Stem
     \omit Tie
-    \omit TimeSignature
+    \hide TimeSignature
     \omit TupletBracket
     \omit TupletNumber
 
@@ -52,4 +53,8 @@
         white white (x11-color 'grey67) white white
         white white white white (x11-color 'grey33)
     )
+
+    systemStartDelimiter = #'SystemStartBar
+    \override SystemStartBar.padding = 0
+    \override SystemStartBar.X-offset = 0
 }

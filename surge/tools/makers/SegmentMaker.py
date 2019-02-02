@@ -282,7 +282,7 @@ class SegmentMaker(SegmentMakerBaseClass):
                         # If instruments match, ...
                         if voice.name in staff_map[staff.name] and \
                                 voice_instrument == staff_instrument:
-                            # ... remove the instrument indicator from voice,...
+                            # ... remove the instrument indicator from voice,
                             abjad.detach(
                                 abjad.instrumenttools.Instrument,
                                 voice
@@ -339,10 +339,10 @@ class SegmentMaker(SegmentMakerBaseClass):
         if self._segment_number == 0:
             print('making title')
             composer = abjad.Markup("Joseph Davancens")
-            composer = composer.override(("font-name", "Futura"))
+            composer = composer.override(("font-name", "Helvetica"))
             composer = composer.fontsize(6)
             title = abjad.Markup(self.title)
-            title = title.override(("font-name", "Futura"))
+            title = title.override(("font-name", "Helvetica"))
             title = title.fontsize(9)
             title = title.override(("font-series", "Medium"))
         else:
@@ -350,7 +350,7 @@ class SegmentMaker(SegmentMakerBaseClass):
             title = False
 
         subtitle = abjad.Markup(self.segment_name)
-        subtitle = subtitle.override(("font-name", "Futura"))
+        subtitle = subtitle.override(("font-name", "Helvetica"))
         subtitle = subtitle.fontsize(7)
 
         lilypond_file.header_block.composer = composer

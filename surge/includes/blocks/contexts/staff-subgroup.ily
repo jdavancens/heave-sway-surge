@@ -8,17 +8,15 @@
     \accepts FrettingStaff
     \accepts PickingStaff
     \accepts StringSpaceStaff
-    \accepts TromboneSlidePositionStaff
     \accepts WoodwindFingeringStaff
 
     \consists Output_property_engraver
     \consists Separating_line_group_engraver
+    \consists System_start_delimiter_engraver
     \consists Vertical_align_engraver
 
-    \remove Span_bar_stub_engraver
     \remove Span_bar_engraver
-
-    \override SystemStartBracket.padding = #1
+    %{ \remove System_start_delimiter_engraver %}
 
     systemStartDelimiter = #'SystemStartBar
     \override SystemStartBar.padding = 0

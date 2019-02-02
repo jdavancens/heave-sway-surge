@@ -15,13 +15,13 @@
 
     \omit Accidental
     \omit Beam
-    \omit Clef
+    \hide Clef
     \omit Dots
     \omit Flag
     \hide Rest
     \omit Stem
     \omit Tie
-    \omit TimeSignature
+    \hide TimeSignature
     \omit TupletBracket
     \omit TupletNumber
 
