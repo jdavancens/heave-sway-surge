@@ -67,9 +67,10 @@ class BowedStringStaffGroupTemplate:
 
         # set padding
 
-        override.staff_padding(bowing_rhythm_staff, 2)
-        override.staff_padding(string_space_staff, 2)
-        override.staff_padding(fingering_rhythm_staff, 16)
-        override.staff_group_padding(instrument_staff_group, 0)
+        override.staff_space_after(bowing_rhythm_staff, 2, 2, 2, 2)
+        override.staff_space_after(string_space_staff, 2, 2, 2, 2)
+        override.staff_space_after(fingering_rhythm_staff, 10, 10, 10, 10)
+        # override.staff_group_space_between(instrument_staff_group, 0)
+        # override.staff_group_space_after(instrument_staff_group, 0)
 
         return instrument_staff_group

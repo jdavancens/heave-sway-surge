@@ -340,10 +340,10 @@ class SegmentMaker(SegmentMakerBaseClass):
             print('making title')
             composer = abjad.Markup("Joseph Davancens")
             composer = composer.override(("font-name", "Helvetica"))
-            composer = composer.fontsize(6)
+            composer = composer.fontsize(4)
             title = abjad.Markup(self.title)
             title = title.override(("font-name", "Helvetica"))
-            title = title.fontsize(9)
+            title = title.fontsize(5)
             title = title.override(("font-series", "Medium"))
         else:
             composer = False
@@ -351,7 +351,7 @@ class SegmentMaker(SegmentMakerBaseClass):
 
         subtitle = abjad.Markup(self.segment_name)
         subtitle = subtitle.override(("font-name", "Helvetica"))
-        subtitle = subtitle.fontsize(7)
+        subtitle = subtitle.fontsize(5)
 
         lilypond_file.header_block.composer = composer
         lilypond_file.header_block.title = title

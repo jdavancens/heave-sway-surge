@@ -3,25 +3,19 @@
     \name PickingStaff
     \alias Staff
     \type Engraver_group
-    \consists Output_property_engraver
-    \consists Font_size_engraver
-    \consists Separating_line_group_engraver
-    \consists Rest_collision_engraver
-    \consists Axis_group_engraver
-    \consists Staff_symbol_engraver
     \accepts Voice
-
     \remove Instrument_name_engraver
 
     \omit Accidental
     \omit Beam
-    \omit Clef
+    \override Clef.stencil = ##f
     \omit Dots
     \omit Flag
-    \hide Rest
+    \omit MetronomeMark
+    \omit Rest
     \omit Stem
     \omit Tie
-    \omit TimeSignature
+    \override TimeSignature.stencil = ##f
     \omit TupletBracket
     \omit TupletNumber
 

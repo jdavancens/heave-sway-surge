@@ -56,3 +56,5 @@ __illustrate_material__.py
 *.candidate.pdf
 
 /surge/build/output/**
+/docs/build/**
+/docs/source/**

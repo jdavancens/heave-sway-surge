@@ -71,7 +71,6 @@
     \override TupletNumber.font-size = 0
     \override TupletNumber.text = #tuplet-number::calc-fraction-text
 
-    %{ \override BarLine.break-visibility = ##(#t #t #t) %}
     \override BarNumber.break-visibility = ##(#f #t #t)
     \override RehearsalMark.break-visibility = ##(#f #t #t)
     \override TimeSignature.break-visibility = ##(#f #t #t)

@@ -89,12 +89,13 @@ class GuitarStaffGroupTemplate:
         abjad.override(fretting_rhythm_staff).bar_line.transparent = True
 
         # Padding
-
-        override.staff_padding(picking_rhythm_staff, 2)
-        override.staff_padding(picking_staff, 20)
-        override.staff_padding(fretting_staff, 2)
-        override.staff_group_padding(subgroup, 8)
-        override.staff_padding(fretting_rhythm_staff, 16)
-        override.staff_group_padding(instrument_staff_group, 0)
+        override.staff_space_after(picking_rhythm_staff, 2, 2, 2, 2)
+        override.staff_space_after(picking_staff, 4, 4, 4, 4)
+        override.staff_space_after(fretting_staff, 2, 2, 2, 2)
+        override.staff_space_after(fretting_rhythm_staff, 10, 10, 10, 10)
+        # override.staff_group_space_between(subgroup, 0)
+        # override.staff_group_space_after(subgroup, 0)
+        # override.staff_group_space_between(instrument_staff_group, 0)
+        # override.staff_group_space_after(instrument_staff_group, 0)
 
         return instrument_staff_group

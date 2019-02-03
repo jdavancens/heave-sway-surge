@@ -2,9 +2,9 @@
 '''
     woodwind instrument staff group
         embouchure rhythm staff
-        embouchure staff
-        left hand rhythm staff
         staff subgroup
+            embouchure staff
+            left hand rhythm staff
             left hand staff
             right hand staff
         right hand rhythm staff
@@ -129,19 +129,25 @@ class WoodwindStaffGroupTemplate():
 
         # Set Padding
 
-        override.staff_padding(embouchure_rhythm_staff, 2)
-        override.staff_padding(embouchure_staff, 16)
-        override.staff_padding(lh_fingering_rhythm_staff, 0)
-        override.staff_padding(lh_fingering_staff, 10)
-        override.staff_padding(rh_fingering_staff, 8)
-        override.staff_group_padding(subgroup, 4)
-        override.staff_padding(rh_fingering_rhythm_staff, 0)
-        override.staff_group_padding(instrument_staff_group, 0)
+        override.staff_space_after(embouchure_rhythm_staff, 0)
+        override.staff_space_after(embouchure_staff, 8, 8, 8, 8)
+        override.staff_space_after(lh_fingering_rhythm_staff, 2, 2, 2, 2)
+        override.staff_space_after(lh_fingering_staff, 4, 4, 4, 4)
+        override.staff_space_after(rh_fingering_staff, 2, 2, 2, 2)
+        override.staff_space_after(rh_fingering_rhythm_staff, 10, 10, 10, 10)
+        # override.staff_group_space_between(subgroup, 0)
+        # override.staff_group_space_after(subgroup, 0)
+        # override.staff_group_space_between(instrument_staff_group, 0)
+        # override.staff_group_space_after(instrument_staff_group, 0)
 
         # hide span bars on first and last rhythm staff, and rh fingering
         abjad.override(embouchure_rhythm_staff).bar_line.allow_span_bar = False
         abjad.override(embouchure_rhythm_staff).bar_line.transparent = True
+
+        # abjad.override(lh_fingering_rhythm_staff).bar_line.transparent = True
+
         abjad.override(rh_fingering_staff).bar_line.allow_span_bar = False
+
         abjad.override(rh_fingering_rhythm_staff)\
             .bar_line.allow_span_bar = False
         abjad.override(rh_fingering_rhythm_staff).bar_line.transparent = True
