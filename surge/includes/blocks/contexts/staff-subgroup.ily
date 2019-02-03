@@ -18,5 +18,5 @@
     \consists System_start_delimiter_engraver
     systemStartDelimiter = #'SystemStartBar
     \override SystemStartBar.padding = 0
-    \override SystemStartBar.X-offset = -3
+    \override SystemStartBar.X-offset = -2
 }
