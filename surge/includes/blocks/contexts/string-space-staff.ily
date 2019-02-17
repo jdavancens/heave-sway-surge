@@ -79,5 +79,5 @@
 
     systemStartDelimiter = #'SystemStartBar
     \override SystemStartBar.padding = 0
-    \override SystemStartBar.X-offset = -2
+    \override SystemStartBar.X-offset = 0
 }

@@ -101,7 +101,7 @@ class EmbouchureHandler(EnvelopeHandler):
         last_vowel = None
         last_direction = None
 
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 EmbouchureHandler._iterate_logical_ties(rhythm_voice):
 
             if not self._show_rhythmic_notation:
@@ -156,7 +156,7 @@ class EmbouchureHandler(EnvelopeHandler):
         last_air_pressure = None
         last_lip_pressure = None
 
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 Handler._iterate_logical_ties(voice):
 
             if tie.is_pitched:
@@ -224,16 +224,17 @@ class EmbouchureHandler(EnvelopeHandler):
                     if grace_container is not None and \
                             len(grace_container) > 0:
                         self._set_y_offset(grace_container[0], air_pressure_end)
-                        Handler._attach_glissando(
-                            grace_container[0],
-                            style=style,
-                            color=scheme_rgb_color(
-                                grayscale_to_rgb(
-                                    Handler._intensity_to_grayscale(
-                                        lip_pressure_start)
-                                )
-                            ),
-                        )
+                        if count - 1 != i:
+                            Handler._attach_glissando(
+                                grace_container[0],
+                                style=style,
+                                color=scheme_rgb_color(
+                                    grayscale_to_rgb(
+                                        Handler._intensity_to_grayscale(
+                                            lip_pressure_start)
+                                    )
+                                ),
+                            )
 
                 self._set_y_offset(tie.head, air_pressure_start)
                 EnvelopeHandler._attach_notehead(tie, lip_pressure_start)
@@ -284,4 +285,3 @@ class EmbouchureHandler(EnvelopeHandler):
         if release_envelope is None and release_envelope[current_stage] is None:
             release_envelope[current_stage] = envelopes
         return envelope, release_envelope
-

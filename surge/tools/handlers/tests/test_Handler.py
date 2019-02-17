@@ -76,7 +76,7 @@ class TestHandler(unittest.TestCase):
 
     def test__iterate_logical_ties(self):
         voice = abjad.Voice("c'4 ~ c'16 c'8. c'2")
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 self.handler._iterate_logical_ties(voice):
             self.assertIsInstance(tie, abjad.selectiontools.LogicalTie)
             self.assertIsInstance(offset_start, float)

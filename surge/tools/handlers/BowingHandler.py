@@ -103,7 +103,7 @@ class BowingHandler(EnvelopeHandler):
             return
 
         previous_string_index = None
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 self._iterate_logical_ties(rhythm_voice):
             # hide leaves if necessary
             if not self._show_rhythmic_notation:
@@ -149,7 +149,7 @@ class BowingHandler(EnvelopeHandler):
         last_height = None
         last_pressure = None
 
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 Handler._iterate_logical_ties(voice):
 
             if tie.is_pitched:
@@ -205,9 +205,10 @@ class BowingHandler(EnvelopeHandler):
                     grace_container = abjad.inspect(tie.tail)\
                         .get_after_grace_container()
 
-                    if grace_container is not None and \
-                            len(grace_container) > 0:
-                        self._set_y_offset(grace_container[0], height_end)
+                if grace_container is not None and \
+                        len(grace_container) > 0:
+                    self._set_y_offset(grace_container[0], height_end)
+                    if count - 1 != i:
                         Handler._attach_glissando(
                             grace_container[0],
                             style=style,

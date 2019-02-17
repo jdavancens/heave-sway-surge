@@ -208,13 +208,16 @@ class Handler(object):
 
     @staticmethod
     def _iterate_logical_ties(voice):
+        i = -1
+        count = len(list(abjad.iterate(voice).by_logical_tie()))
         for tie in abjad.iterate(voice).by_logical_tie():
             start_moment = abjad.inspect(
                 tie.head
             ).get_vertical_moment(voice)
             offset_start = float(start_moment.offset)
             offset_end = offset_start + float(tie.get_duration())
-            yield tie, offset_start, offset_end
+            i += 1
+            yield tie, offset_start, offset_end, i, count
 
     @staticmethod
     def _make_circle_markup(size, grey=0):
@@ -302,6 +305,16 @@ class Handler(object):
         abjad.override(note).note_head.stencil = \
             'ly:text-interface::print'
         abjad.override(note).note_head.text = markup
+
+    @staticmethod
+    def _remove_gliss_from_hidden_after_grace(tie):
+        grace = abjad.inspect(tie[:-1]).grace_container()[0]
+        glissando = abjad.indicatortools.LilyPondCommand(
+            'glissando',
+            format_slot='right'
+        )
+
+        abjad.detach(glissando, grace)
 
     @staticmethod
     def _reset_cycle(cycle):

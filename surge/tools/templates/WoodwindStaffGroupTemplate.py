@@ -129,16 +129,12 @@ class WoodwindStaffGroupTemplate():
 
         # Set Padding
 
-        override.staff_space_after(embouchure_rhythm_staff, 0)
-        override.staff_space_after(embouchure_staff, 8, 8, 8, 8)
-        override.staff_space_after(lh_fingering_rhythm_staff, 2, 2, 2, 2)
-        override.staff_space_after(lh_fingering_staff, 4, 4, 4, 4)
-        override.staff_space_after(rh_fingering_staff, 2, 2, 2, 2)
-        override.staff_space_after(rh_fingering_rhythm_staff, 10, 10, 10, 10)
-        # override.staff_group_space_between(subgroup, 0)
-        # override.staff_group_space_after(subgroup, 0)
-        # override.staff_group_space_between(instrument_staff_group, 0)
-        # override.staff_group_space_after(instrument_staff_group, 0)
+        override.staff_space_after(embouchure_rhythm_staff, 2)
+        override.staff_space_after(embouchure_staff, 8)
+        override.staff_space_after(lh_fingering_rhythm_staff, 2)
+        override.staff_space_after(lh_fingering_staff, 4)
+        override.staff_space_after(rh_fingering_staff, 2)
+        override.staff_space_after(rh_fingering_rhythm_staff, 10)
 
         # hide span bars on first and last rhythm staff, and rh fingering
         abjad.override(embouchure_rhythm_staff).bar_line.allow_span_bar = False

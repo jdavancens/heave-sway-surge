@@ -86,7 +86,7 @@ class PickingHandler(EnvelopeHandler):
     # PRIVATE METHODS
 
     def _handle_rhythm_voice(self, rhythm_voice, current_stage):
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 self._iterate_logical_ties(rhythm_voice):
             if not self._show_rhythmic_notation:
                 for leaf in tie:
@@ -114,7 +114,8 @@ class PickingHandler(EnvelopeHandler):
         last_position = None
         last_string_index = None
 
-        for tie, offset_start, offset_end in self._iterate_logical_ties(voice):
+        for tie, offset_start, offset_end, i, count \
+            in self._iterate_logical_ties(voice):
 
             if tie.is_pitched:
                 force_start, force_end = \
@@ -165,19 +166,20 @@ class PickingHandler(EnvelopeHandler):
                     grace_container = \
                         abjad.inspect(tie.tail).get_after_grace_container()
 
-                    if (grace_container is not None and
-                            len(grace_container) > 0):
+                    if grace_container is not None and \
+                            len(grace_container) > 0:
                         self._set_y_offset(grace_container[0], position_end)
-                        Handler._attach_glissando(
-                            grace_container[0],
-                            style=style,
-                            color=scheme_rgb_color(
-                                grayscale_to_rgb(
-                                    Handler._intensity_to_grayscale(
-                                        force_start)
-                                )
-                            ),
-                        )
+                        if count - 1 != i:
+                            Handler._attach_glissando(
+                                grace_container[0],
+                                style=style,
+                                color=scheme_rgb_color(
+                                    grayscale_to_rgb(
+                                        Handler._intensity_to_grayscale(
+                                            force_start)
+                                    )
+                                ),
+                            )
 
                 self._set_y_offset(tie.head, position_start)
 

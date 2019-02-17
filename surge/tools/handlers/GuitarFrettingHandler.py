@@ -174,7 +174,7 @@ class GuitarFrettingHandler(TablatureHandler):
     @staticmethod
     def _create_tablature_notehead(note_head, fret_placement):
         markup = abjad.Markup(fret_placement.fret)
-        markup = markup.fontsize(-1).bold()
+        markup = markup.fontsize(1).bold()
         if fret_placement.harmonic:
             diamond = abjad.Markup.musicglyph(
                 'noteheads.s2harmonic'

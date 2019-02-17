@@ -1,6 +1,6 @@
 #!/bin/sh
 python build_part.py segment_i oboe 5 n;
-python build_part.py segment_i clarinet 5 n;
+python build_part.py segment_i 'bass clarinet' 5 n;
 python build_part.py segment_i saxophone 5 n;
 python build_part.py segment_i trombone 5 n;
 python build_part.py segment_i 'guitar i' 5 n;

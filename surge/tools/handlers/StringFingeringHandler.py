@@ -55,7 +55,7 @@ class StringFingeringHandler(EnvelopeHandler):
             number_of_staff_lines=number_of_staff_lines,
             show_rhythmic_notation=show_rhythmic_notation
         )
-        
+
         self._height_envelope_patterns = \
             Handler._create_cycles(height_envelope_patterns)
 
@@ -84,7 +84,7 @@ class StringFingeringHandler(EnvelopeHandler):
         ):
             return
         # previous_string_index = None
-        for tie, offset_start, offset_end in \
+        for tie, offset_start, offset_end, i, count in \
                 Handler._iterate_logical_ties(rhythm_voice):
             # hide leaves if necessary
             if not self._show_rhythmic_notation:
@@ -101,7 +101,8 @@ class StringFingeringHandler(EnvelopeHandler):
         last_height = None
         last_pressure = None
 
-        for tie, offset_start, offset_end in Handler._iterate_logical_ties(voice):
+        for tie, offset_start, offset_end, i, count \
+            in Handler._iterate_logical_ties(voice):
             if tie.is_pitched:
                 height_start, height_end = \
                     EnvelopeHandler._get_value(
@@ -158,16 +159,17 @@ class StringFingeringHandler(EnvelopeHandler):
                 if grace_container is not None and \
                         len(grace_container) > 0:
                     self._set_y_offset(grace_container[0], height_end)
-                    Handler._attach_glissando(
-                        grace_container[0],
-                        style=style,
-                        color=scheme_rgb_color(
-                            grayscale_to_rgb(
-                                Handler._intensity_to_grayscale(
-                                    pressure_start)
-                            )
-                        ),
-                    )
+                    if count - 1 != i:
+                        Handler._attach_glissando(
+                            grace_container[0],
+                            style=style,
+                            color=scheme_rgb_color(
+                                grayscale_to_rgb(
+                                    Handler._intensity_to_grayscale(
+                                        pressure_start)
+                                )
+                            ),
+                        )
 
                 self._set_y_offset(tie.head, height_start)
 
