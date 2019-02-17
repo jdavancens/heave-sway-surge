@@ -2,40 +2,7 @@
 
 
 class ControlPoint(object):
-    '''A point in n dimensions.
-    ::
-        >>> p0 = ControlPoint(1, 2)
-        >>> p0
-        ControlPoint(1.0, 2.0)
-        >>> p0[0]
-        1.0
-        >>> p0[1]
-        2.0
-        >>> len(p0)
-        2
-        >>> p1 = ControlPoint([1, 2])
-        >>> p1
-        ControlPoint(1.0, 2.0)
-        >>> p0 == p1
-        True
-        >>> p2 = ControlPoint(3, 4)
-        >>> p1 == p2
-        False
-        >>> p1 != p2
-        True
-        >>> p1 < p2
-        True
-        >>> p1 <= p2
-        True
-        >>> p2 > p1
-        True
-        >>> p2 >= p1
-        True
-        >>> p3 = ControlPoint(p0)
-        >>> p3
-        ControlPoint(1.0, 2.0)
-
-    '''
+    """A point in n dimensions."""
     __slots__ = ('_coordinates')
 
     # INITIALIZER

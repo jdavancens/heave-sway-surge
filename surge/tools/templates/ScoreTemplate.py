@@ -24,8 +24,7 @@ default_instrument_list = [
 
 
 class ScoreTemplate:
-    r"""Constructs a score template.
-    """
+    """A score template."""
 
     # CLASS ATTRIBUTES
     __slots__ = (

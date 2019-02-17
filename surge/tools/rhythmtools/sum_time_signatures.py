@@ -5,6 +5,7 @@ import surge
 
 
 def sum_time_signatures(time_signatures):
+    """Calculates the total duration of a list of time signatures."""
     time_signatures = surge.tools.utilities.flatten_list(time_signatures)
     sum_ = abjad.durationtools.Duration((0, 1))
     for time_signature in time_signatures:

@@ -12,7 +12,7 @@ import copy
 
 
 class GuitarFrettingHandler(TablatureHandler):
-    """
+    """A handler for guitar fretting tablature staves.
         fret —> note head
         string —> staff position
         harmonic –> note head

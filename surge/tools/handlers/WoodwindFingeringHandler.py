@@ -14,7 +14,7 @@ import copy
 
 
 class WoodwindFingeringHandler(TablatureHandler):
-    """A left_hand handler for woodwind instruments.
+    """A fingering handler for woodwind instruments.
         Maps key index to staff position
         Key indication as note head (open, closed), articulation (side keys)
         Trill (piano tremolo style - between notes)

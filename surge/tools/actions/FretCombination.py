@@ -10,6 +10,7 @@ from surge.tools.actions.FretPlacement import FretPlacement
 
 
 class FretCombination(object):
+    """Models guitar frettings."""
     __slots__ = (
         '_instrument',
         '_fret_placements',
@@ -51,15 +52,27 @@ class FretCombination(object):
     # PUBLIC METHODS
 
     def get_fret_placement(self, string_index):
+        """Gets a fret placement for a given string
+
+        Returns a `FretPlacement`.
+        """
         if self.includes_string(string_index):
             return self._fret_placements[string_index]
         else:
             return None
 
     def includes_string(self, string_index):
+        """Does the fret combination use a particular string?
+
+        Returns a Boolean value.
+        """
         return string_index in self.fret_placements
 
     def as_binary_list(self):
+        """Creates representation of the fret combination as an array of Booleans.
+
+        Returns a list.
+        """
         binary_list = [0] * self.number_of_strings
         for i in range(self.number_of_strings):
             binary_list[i] = 1 if self.includes_string(i) else 0
@@ -68,6 +81,10 @@ class FretCombination(object):
     # STATIC METHODS
     @staticmethod
     def from_lists(instrument, strings, frets, harmonic):
+        """Instantiates a fret combination from lists of strings, frets and harmonics.
+
+        Returns a `FretCombination`.
+        """
         assert(len(strings) == len(frets))
         fret_placements = []
         for fret, string in zip(frets, strings):

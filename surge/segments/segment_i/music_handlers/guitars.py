@@ -14,6 +14,7 @@ import surge.materials.segment_i.guitar_2 as guitar_ii_materials
 
 
 def make_handlers(instrument, materials):
+    """Creates guitar handlers from materials packages."""
     stages = tuple(range(5))
 
     # music makers

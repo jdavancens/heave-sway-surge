@@ -11,36 +11,6 @@ class Identity(Subdivider):
     a `SustainMask` and a `SilenceMask`.
 
     When called, subdivides a `Duration` and returns a `Ratio`
-
-    ::
-        >>> u = Identity()
-        >>> u(3)
-        Ratio((1, 1, 1))
-
-        >>> u = Identity(multiplier=2)
-        >>> u(3)
-        Ratio((1, 1, 1, 1, 1, 1))
-
-        >>> u = Identity(multiplier=1.5)
-        >>> u(2)
-        Ratio((1, 1, 1))
-
-        >>> u = Identity(multiplier=1.5)
-        >>> u(3)
-        Ratio((1, 1, 1, 1, 1))
-
-        >>> from abjad import patterntools
-        >>> from abjad import rhythmmakertools
-        >>> pattern = patterntools.Pattern(indices=[2, 4], period=5)
-        >>> sustain_mask = rhythmmakertools.SustainMask(pattern)
-        >>> u = Identity(
-        ...     rotation_cycle=[0, 1],
-        ...     sustain_mask=sustain_mask
-        ... )
-        >>> u(5)
-        Ratio((1, 2, 2))
-        >>> u(5)
-        Ratio((2, 2, 1))
     """
 
     __slots__ = ('_multiplier',)

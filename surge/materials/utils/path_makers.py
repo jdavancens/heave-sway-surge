@@ -5,6 +5,8 @@ from surge.tools.bezzie.Path import Path
 
 def zig_zag_by_counts(low, high, offsets, measure_indices, measures_per_stage,
                       stage_durations, stage_index):
+
+    """Creates an envelope that alternates between a low and high value."""
     curves = []
     offsets = offsets[stage_index]
     offsets.append(stage_durations[stage_index])

@@ -2,6 +2,10 @@
 
 
 def normalize(l):
+    """Normalizes a list of numbers.
+
+    Returns a list.
+    """
     assert(all(isinstance(item, (int, float)) for item in l))
     min_ = min(l)
     max_ = max(l)

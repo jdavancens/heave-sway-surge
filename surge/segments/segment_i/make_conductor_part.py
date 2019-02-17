@@ -9,6 +9,7 @@ import os
 
 
 def make_conductor_part():
+    """Renders a conductor part as PDF"""
     flat = flatten_list(time_signatures)
     measures = make_spacer_skip_measures(flat)
     for i, tempo in tempo_map:

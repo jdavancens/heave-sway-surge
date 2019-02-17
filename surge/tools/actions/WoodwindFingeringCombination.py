@@ -10,7 +10,7 @@ from surge.tools.actions.WoodwindFingering import WoodwindFingering
 
 
 class WoodwindFingeringCombination(object):
-
+    """Models a woodwind fingering combination as a fingering for each hand."""
     # CLASS ATTRIBUTES
 
     __slots__ = (
@@ -212,6 +212,10 @@ class WoodwindFingeringCombination(object):
 
     @staticmethod
     def open(instrument):
+        """Creates a fingering combination with all open keys.
+
+        Returns a `WoodwindFingeringCombination`.
+        """
         wfg = WoodwindFingeringCombination(
             instrument=instrument,
             left=WoodwindFingering.open(instrument=instrument, hand='left'),

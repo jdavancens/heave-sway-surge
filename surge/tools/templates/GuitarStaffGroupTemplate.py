@@ -5,6 +5,7 @@ from surge.tools.utilities import override
 
 
 class GuitarStaffGroupTemplate:
+    """A score template for guitar."""
     __slots__ = ('instrument')
 
     def __init__(self, instrument):

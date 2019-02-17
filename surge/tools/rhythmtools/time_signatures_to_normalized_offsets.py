@@ -5,6 +5,10 @@ import surge
 
 
 def time_signatures_to_normalized_offsets(time_signatures):
+    """Calculates offset from start for each time signature, normalized to (0, 1).
+
+    Returns a list.
+    """
     time_signatures = surge.tools.utilities.flatten_list(time_signatures)
     sum_ = float(surge.tools.rhythmtools.sum_time_signatures(time_signatures))
     running_total = float(Offset(0, 1))

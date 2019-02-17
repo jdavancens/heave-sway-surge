@@ -3,7 +3,10 @@ import math
 
 
 def partition_integer_into_halves(n, bigger='left', even='allowed'):
+    """Creates an integer partitionself.
 
+    Returns a list.
+    """
     if not isinstance(n, int):
         raise TypeError
 

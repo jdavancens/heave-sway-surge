@@ -9,6 +9,7 @@ import abjad
 
 
 class WoodwindFingering(object):
+    """Models a woodwind fingering for a single hand."""
 
     # CLASS ATTRIBUTES
 
@@ -277,6 +278,7 @@ class WoodwindFingering(object):
 
     @staticmethod
     def open(instrument, hand):
+        """Static method to instantiate a woodwind fingering with all open keys."""
         if hand == 'left':
             wf = WoodwindFingering(
                 instrument=instrument,

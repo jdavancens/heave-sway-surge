@@ -17,6 +17,7 @@ from surge.tools.makers.MusicMaker import MusicMaker
 
 
 def make_string_handlers(instrument, materials):
+    """Creates bowed string instrument handlers from materials packages."""
     stages = tuple(range(7))
 
     # music makers

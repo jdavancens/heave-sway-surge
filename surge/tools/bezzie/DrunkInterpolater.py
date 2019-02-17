@@ -4,20 +4,11 @@ import random
 
 
 class DrunkInterpolater(object):
-    '''A constant interpolater. For each x, takes a step in random direction,
+    """A constant interpolater. For each x, takes a step in random direction,
     with a random step size.
 
     Initializes from a random seed and optionally, an amplitude.
-
-    ::
-        >>> interp = DrunkInterpolater()
-        >>> interp(0, 0, 1)
-        0
-        >>> interp(0.5, 0, 1)
-        0.2897142095845775
-        >>> interp(1, 0, 1)
-        1.0
-    '''
+    """
     def __init__(self, seed=0, amp=1):
         self.last_direction = None
         random.seed(seed)

@@ -4,10 +4,10 @@ import math
 
 
 class SineInterpolater(object):
-    '''Sine wave interpolater.
+    """Sine wave interpolater.
 
     Initializes with frequency and amplitude.
-    '''
+    """
     def __init__(self, freq, amp=1):
         self._freq = freq
         self._amp = amp

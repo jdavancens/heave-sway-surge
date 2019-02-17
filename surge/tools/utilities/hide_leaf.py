@@ -9,6 +9,7 @@ import abjad
 
 
 def hide_leaf(leaf):
+    """Makes a leaf render transparently."""
     if isinstance(leaf, abjad.scoretools.Rest):
         hide_rest = abjad.lilypondnametools.LilyPondGrobOverride(
             grob_name='Rest',

@@ -10,37 +10,6 @@ class BezierCurve(object):
     `ControlPoint` objects supplied determines the degree of the curve.
 
     Intializes from one or more `ControlPoint`s.
-
-        ::
-
-            >>> b = BezierCurve((0, 0), (50, 100), (100, 0))
-            >>> b
-            BezierCurve((0.0, 0.0), (50.0, 100.0), (100.0, 0.0))
-            >>> len(b)
-            3
-            >>> b.length
-            100.0
-            >>> x = 25
-            >>> x in b
-            True
-            >>> b(x)
-            37.5
-
-            >>> b = BezierCurve((0, 0), (0.5, 1))
-            >>> b
-            BezierCurve((0.0, 0.0), (0.5, 1.0))
-            >>> len(b)
-            2
-            >>> b.length
-            0.5
-            >>> x = 0.25
-            >>> x in b
-            True
-            >>> y = 2
-            >>> y in b
-            False
-            >>> b(0.25)
-            0.5
     """
     __slots__ = ('_control_points',)
 

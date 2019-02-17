@@ -19,7 +19,7 @@ import os
 
 class SegmentMaker(SegmentMakerBaseClass):
     """Segment-maker
-    Fills a score template with music created in a segment_xx definition
+    Fills a score template with music created from a segment materials package.
     """
 
     # CLASS ATTRIBUTES

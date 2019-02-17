@@ -7,6 +7,7 @@ from surge.tools.rhythmtools.subdividers.Subdivider import Subdivider
 
 
 class RandomTree(Subdivider):
+    """Random tree subdivider."""
 
     __slots__ = (
         '_minimum_duration',

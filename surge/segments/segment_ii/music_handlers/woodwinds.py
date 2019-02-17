@@ -16,6 +16,7 @@ from surge.tools.makers.MusicMaker import MusicMaker
 
 
 def make_handlers(instrument, materials):
+    """Creates woodwind instrument handlers from materials packages."""
     stages = tuple(range(7))
     # music handlers
     embouchure_music_maker = MusicMaker(

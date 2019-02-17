@@ -4,11 +4,11 @@ import random
 
 
 class RandomInterpolater(object):
-    '''A constant interpolater. For each x, jumps to a random y between y0 and
+    """A constant interpolater. For each x, jumps to a random y between y0 and
     y1.
 
     Initializes from a random seed and optionally, an amplitude.
-    '''
+    """
     def __init__(self, seed=0):
         self.last_direction = None
         random.seed(seed)

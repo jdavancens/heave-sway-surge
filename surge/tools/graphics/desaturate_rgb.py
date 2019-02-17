@@ -2,10 +2,10 @@
 
 
 def desaturate_rgb(saturation, rgb_tuple):
-    '''Changes the saturuation of an RGB color.
+    """Changes the saturuation of an RGB color.
 
     Returns a tuple.
-    '''
+    """
     import colorsys
     hsv = colorsys.rgb_to_hsv(rgb_tuple[0], rgb_tuple[1], rgb_tuple[2])
     h = hsv[0]

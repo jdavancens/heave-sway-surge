@@ -9,28 +9,6 @@ class Path(object):
 
 
     Initializes from one or more `BezierCurve`s.
-
-        ::
-            >>> b0 = BezierCurve((0,0), (50, 100), (100, 0))
-            >>> b1 = BezierCurve((100, 0), (150, -100), (200, 0))
-            >>> p = surge.tools.bezzie.Path(b0, b1)
-            >>> len(p)
-            2
-            >>> p.length
-            200.0
-            >>> x = 125
-            >>> x in p
-            True
-            >>> p(0)
-            0.0
-            >>> p(0.25)
-            50.0
-            >>> p(0.5)
-            0.0
-            >>> p(0.75)
-            -50.0
-            >>> p(1)
-            0.0
     """
     __slots__ = ('_interpolater', '_curves')
 
@@ -85,7 +63,7 @@ class Path(object):
     def length(self):
         """The combined lengths of the curves.
 
-        Returns float.
+        Returns a float.
         """
         return sum([curve.length for curve in self._curves])
 

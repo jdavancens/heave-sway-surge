@@ -9,6 +9,7 @@ import abjad
 
 
 class FretPlacement(object):
+    """Models a single fret placement as a coordinate consisting of a string number and a fret number."""
 
     # CLASS ATTRIBUTES
 

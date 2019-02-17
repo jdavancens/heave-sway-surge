@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Sept 28, 2016
 
 @author: josephdavancens
-'''
+"""
 
 import abjad
 from surge.tools.datastructures.Cycle import Cycle
@@ -11,9 +11,9 @@ import copy
 
 
 class Handler(object):
-    '''Base class for instrument-specific notation handling classes.
+    """Base class for instrument-specific notation handling classes.
 
-    '''
+    """
 
     # CLASS ATTRIBUTES
 

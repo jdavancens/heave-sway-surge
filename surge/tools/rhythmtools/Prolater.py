@@ -2,6 +2,7 @@
 
 
 class Prolater:
+    """Determines a prolation ratio for a given time signature."""
     __slots__ = (
         '_i',
         '_j',

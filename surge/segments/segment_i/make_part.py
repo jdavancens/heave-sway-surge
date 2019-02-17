@@ -13,6 +13,7 @@ from surge.tools.makers.SegmentMaker import SegmentMaker
 
 
 def make_part(part_name, number_of_stages=None, ruler=False):
+    """Renders a part as PDF."""
     segment_maker = SegmentMaker(
         title="Heave, Sway, Surge",
         segment_name="Segment I",

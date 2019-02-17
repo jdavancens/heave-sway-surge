@@ -3,7 +3,7 @@ import abjad
 
 
 def staff_space_after(element, padding):
-
+    """Adds overrides to set spacing between a staff and the next."""
     basic_distance_override = abjad.LilyPondGrobOverride(
         is_once=True,
         grob_name='VerticalAxisGroup',
@@ -54,7 +54,7 @@ def staff_space_after(element, padding):
 
 
 def staff_group_space_after(element, padding):
-
+    """Adds overrides to set spacing between a staff group and the next staff."""
     basic_distance_override = abjad.LilyPondGrobOverride(
         is_once=True,
         grob_name='StaffGrouper',

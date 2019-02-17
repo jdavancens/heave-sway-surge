@@ -6,18 +6,7 @@ import rhypy
 
 
 class BinaryPattern(Subdivider):
-    """Binary pattern subdivider.
-
-        ::
-            >>> b = BinaryPattern([1,0,1])
-            >>> b(6)
-            Ratio((2, 1, 2, 1))
-
-            >>> b = BinaryPattern([1,0,1])
-            >>> b(7)
-            Ratio((2, 1, 2, 1, 1))
-
-    """
+    """Binary pattern subdivider."""
     __slots__ = ('_binary_pattern',)
 
     # INITIALIZER

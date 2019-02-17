@@ -4,6 +4,7 @@ from surge.tools import rhythmtools
 
 
 def create_ratios(time_signatures, prolaters, subdividers):
+    """Creates ratios for a `TupletRhythmMaker`"""
     ratios = []
 
     n_stages = len(time_signatures)

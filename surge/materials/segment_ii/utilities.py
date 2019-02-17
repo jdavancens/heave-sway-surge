@@ -6,9 +6,10 @@ from surge.tools.utilities.flatten_list import flatten_list
 
 
 def make_glissandi(finger_heights, durations, denominators):
-    # creates envelopes (offset, height) from a list of finger heights and
-    # durations
-    # make sure same number of stages
+    """Creates enveleopes (offset, height) from a list of finger heights and durations.
+
+    Returns a list.
+    """
 
     assert(len(finger_heights) == len(durations))
 

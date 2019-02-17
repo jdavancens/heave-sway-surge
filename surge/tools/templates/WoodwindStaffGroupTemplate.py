@@ -1,20 +1,10 @@
 # -*- coding: utf-8 -*-
-'''
-    woodwind instrument staff group
-        embouchure rhythm staff
-        staff subgroup
-            embouchure staff
-            left hand rhythm staff
-            left hand staff
-            right hand staff
-        right hand rhythm staff
-'''
-
 import abjad
 from surge.tools.utilities import override
 
 
 class WoodwindStaffGroupTemplate():
+    """A score template for woodwind instrument."""
     __slots__ = ('instrument',)
 
     def __init__(self, instrument):

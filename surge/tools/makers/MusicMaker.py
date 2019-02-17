@@ -6,7 +6,7 @@ import copy
 
 
 class MusicMaker:
-    r''' MusicMaker calls a specified rhythm maker with a list of time
+    """ MusicMaker calls a specified rhythm maker with a list of time
     signatures for each specified stage. If no rhythm maker is supplied, or the
     current stage is inactive, MusicMaker creates a list of full measure skips.
 
@@ -16,7 +16,7 @@ class MusicMaker:
     Can substitute an pre-composed rhythm.
 
     Returns a voice with rhythms on middle-c, skips or both.
-    '''
+    """
     # CLASS ATTRIBUTES #
     __slots__ = (
         '_instrument',
@@ -58,10 +58,10 @@ class MusicMaker:
     # SPECIAL METHODS #
 
     def __call__(self, current_stage):
-        r'''Calls music-maker
+        r"""Calls music-maker
 
         Returns a voice.
-        '''
+        """
         if current_stage in self._stages:
             if (self._rhythm_makers is None
                     or self._rhythm_makers[current_stage] is None):
@@ -180,32 +180,32 @@ class MusicMaker:
 
     @property
     def instrument(self):
-        '''The target instrument.
+        """The target instrument.
 
         Returns an Abjad `Instrument`.
-        '''
+        """
         return self._instrument
 
     @property
     def name(self):
-        '''The name of the `MusicMaker`.
+        """The name of the `MusicMaker`.
 
         Returns a string.
-        '''
+        """
         return self._name
 
     @property
     def stages(self):
-        '''A tuple containing the active (non-rest) stages.
+        """A tuple containing the active (non-rest) stages.
 
         Returns a tuple.
-        '''
+        """
         return self._stages
 
     @stages.setter
     def stages(self, expr):
-        '''Sets the active (non-rest) stages.
-        '''
+        """Sets the active (non-rest) stages.
+        """
         if expr is None:
             self._stages = expr
         elif abjad.mathtools.is_positive_integer(expr):
@@ -221,12 +221,12 @@ class MusicMaker:
 
     @property
     def start_stage(self):
-        '''The first active stage.
-        '''
+        """The first active stage.
+        """
         return self._stages[0]
 
     @property
     def stop_stage(self):
-        '''The last active stage.
-        '''
+        """The last active stage.
+        """
         return self._stages[-1]

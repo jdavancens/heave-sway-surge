@@ -10,6 +10,8 @@ def create_rhythm_makers(number_of_stages,
                          tie_vectors=None,
                          tuplet_ratios=None,
                          ):
+
+    """Creates rhythm makers based on class."""
     rhythm_makers = []
 
     for i in range(number_of_stages):

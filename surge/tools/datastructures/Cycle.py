@@ -2,8 +2,7 @@
 
 
 class Cycle(object):
-    ''' Some docs
-    '''
+    """ A data structure representing a cyclic list."""
     __slots__ = ('_iterable', '_index')
 
     # INITIALIZER
@@ -20,6 +19,7 @@ class Cycle(object):
     # PUBLIC METHODS
 
     def next(self):
+        """Gets the next element in the cycle."""
         m = len(self._iterable)
         if m == 0:
             return None
@@ -27,6 +27,7 @@ class Cycle(object):
         return self._iterable[self._index]
 
     def reset(self):
+        """Resets the iterator to the beginning of the cycle."""
         self._index = -1
 
     @property

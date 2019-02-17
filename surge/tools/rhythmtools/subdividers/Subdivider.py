@@ -8,6 +8,7 @@ from surge.tools.datastructures.Cycle import Cycle
 
 
 class Subdivider:
+    """Subdivider base class."""
     __slots__ = (
         '_rotation_cycle',
         '_silence_mask',

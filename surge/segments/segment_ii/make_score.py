@@ -13,6 +13,7 @@ from surge.tools.makers.SegmentMaker import SegmentMaker
 
 
 def make_score(number_of_stages=None):
+    """Renders a score as PDF."""
     segment_maker = SegmentMaker(
         title="Heave, Sway, Surge",
         segment_name="Segment II",

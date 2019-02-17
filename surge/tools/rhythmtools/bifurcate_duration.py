@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-''' Recursively subdivides a duration into two parts.
+""" Recursively subdivides a duration into two parts.
     Converts to NonReducedFraction with forced denominator from
     maximum_denominator. Then subdivides evenly or unevenly according to
     integer partition algorithm. Recurses until minimum duration threshold
     reached.
     Returns a `abjad.Duration` or a list of `abjad.Durations`
-'''
+"""
 import abjad
 from surge.tools.utilities.flatten_list import flatten_list
 from surge.tools.utilities.partition_integer_into_halves \
@@ -30,8 +30,8 @@ def bifurcate_duration(
     assert(isinstance(duration, abjad.Duration))
     assert(duration.has_power_of_two_denominator)
 
-    ''' Force  `duration` denominator to `maximum denominator` and convert to a
-    `NonreducedFraction`.'''
+    """ Force  `duration` denominator to `maximum denominator` and convert to a
+    `NonreducedFraction`."""
     if duration.denominator < maximum_denominator:
         multiplier = int(maximum_denominator / duration.denominator)
         duration = abjad.mathtools.NonreducedFraction(
@@ -41,8 +41,8 @@ def bifurcate_duration(
     else:
         duration = abjad.mathtools.NonreducedFraction(duration)
 
-    ''' Subdivide if long enough and convert back to `abjad.Duration` from
-    `NonreducedFraction`.'''
+    """ Subdivide if long enough and convert back to `abjad.Duration` from
+    `NonreducedFraction`."""
     if (duration < minimum_duration or duration.reduce() in allowable_leafs):
         return abjad.Duration(duration)
     else:

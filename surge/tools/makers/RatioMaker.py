@@ -5,14 +5,14 @@ from surge.tools.rhythmtools.subdividers.Identity import Identity
 
 
 class RatioMaker:
-    '''Makes a ratio from a list of time signatures to use as input to a rhythm
+    """Makes a ratio from a list of time signatures to use as input to a rhythm
     maker.
 
     Initializes from a list of `TimeSignatures`, a list of rest indices, a
     `Prolater`, and a `Subdivider`.
 
     Calling the `RatioMaker` returns list of ratios.
-    '''
+    """
 
     __slots__ = (
         '_ratios',

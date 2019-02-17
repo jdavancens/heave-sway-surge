@@ -4,6 +4,7 @@ from surge.tools.utilities import override
 
 
 class BowedStringStaffGroupTemplate:
+    """A score template for a bowed string instrument."""
     __slots__ = ('instrument',)
 
     def __init__(self, instrument):

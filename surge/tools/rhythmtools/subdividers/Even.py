@@ -11,20 +11,6 @@ class Even(Subdivider):
     a `SustainMask` and a `SilenceMast`.
 
     When called, subdivides a `Duration` and returns a `Ratio`
-
-    ::
-        >>> e = Even([3, 2])
-        >>> e(5)
-        Ratio((2, 2, 1))
-        >>> e(5)
-        Ratio((2, 3))
-        >>> e = Even([3], rotation_cycle=[0, 1, 2])
-        >>> e(5)
-        Ratio((2, 2, 1))
-        >>> e(5)
-        Ratio((2, 1, 2))
-        >>> e(5)
-        Ratio((1, 2, 2))
     """
     __slots__ = ('_n_cycle',)
 

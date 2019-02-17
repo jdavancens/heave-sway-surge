@@ -1,11 +1,12 @@
 # -*- coding: utf8 -*-
-''' Flattens an arbitrarily nested list.
 
-    Returns a list
-'''
 
 
 def flatten_list(seq):
+    """ Flattens an arbitrarily nested list.
+
+        Returns a list
+    """
     res = []
     for item in seq:
         if (isinstance(item, (tuple, list))):

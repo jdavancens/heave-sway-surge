@@ -11,35 +11,8 @@ def sum_elements(
     overhang=True,
 ):
     '''Sums `sequence` elements at indices according to `pairs`.
-
-    ::
-
-        >>> sequencetools.sum_elements(list(range(10)), [(0, 3)])
-        [3, 3, 4, 5, 6, 7, 8, 9]
-
-    Sums `sequence` elements cyclically at indices according to `pairs`
-    and `period`:
-
-    ::
-
-        >>> sequencetools.sum_elements(list(range(10)), [(0, 3)], period=4)
-        [3, 3, 15, 7, 17]
-
-    Sums `sequence` elements cyclically at indices according to `pairs`
-    and `period` and do not return incomplete final sum:
-
-    ::
-
-        >>> sequencetools.sum_elements(
-        ...     list(range(10)), [(0, 3)], period=4, overhang=False)
-        [3, 3, 15, 7]
-
-    Replaces ``sequence[i:i+count]`` with ``sum(sequence[i:i+count])``
-    for each ``(i, count)`` in `pairs`.
-
-    Indices in `pairs` must be less than `period` when `period` is not none.
-
-    Returns new list.
+    
+    Returns a list.
     '''
 
     if not isinstance(sequence, collections.Sequence):
