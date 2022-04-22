@@ -57,7 +57,7 @@ pydocstyle==2.1.1
 pyflakes==1.6.0
 Pygments==2.2.0
 pyparsing==2.2.0
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pytest==3.2.3
 python-dateutil==2.6.1
 python-language-server==0.19.0
